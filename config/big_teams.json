@@ -1,0 +1,36 @@
+{
+  "description": "五大联赛豪门球队列表 - 满足任一即视为知名比赛",
+  "teams": {
+    "英超": [
+      "Arsenal FC", "Manchester City FC", "Manchester United FC",
+      "Liverpool FC", "Chelsea FC", "Tottenham Hotspur FC",
+      "Newcastle United FC"
+    ],
+    "西甲": [
+      "Real Madrid CF", "FC Barcelona", "Atlético de Madrid"
+    ],
+    "意甲": [
+      "Juventus FC", "AC Milan", "FC Internazionale Milano",
+      "SSC Napoli", "AS Roma"
+    ],
+    "德甲": [
+      "FC Bayern München", "Borussia Dortmund", "RB Leipzig",
+      "Bayer 04 Leverkusen"
+    ],
+    "法甲": [
+      "Paris Saint-Germain FC", "Olympique de Marseille",
+      "Olympique Lyonnais", "AS Monaco FC"
+    ],
+    "欧冠": []
+  },
+  "flatList": [
+    "Arsenal FC", "Manchester City FC", "Manchester United FC",
+    "Liverpool FC", "Chelsea FC", "Tottenham Hotspur FC",
+    "Newcastle United FC", "Real Madrid CF", "FC Barcelona",
+    "Atlético de Madrid", "Juventus FC", "AC Milan",
+    "FC Internazionale Milano", "SSC Napoli", "AS Roma",
+    "FC Bayern München", "Borussia Dortmund", "RB Leipzig",
+    "Bayer 04 Leverkusen", "Paris Saint-Germain FC",
+    "Olympique de Marseille", "Olympique Lyonnais", "AS Monaco FC"
+  ]
+}
