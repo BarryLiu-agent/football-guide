@@ -639,11 +639,11 @@ function renderMatchCard(match) {
       <div class="match-teams">
         <div class="team-row">
           <img src="${match.homeTeam?.crest || ''}" alt="" onerror="this.style.display='none'" loading="lazy">
-          <span>${displayTeam(match.homeTeam?.shortName || match.homeTeam?.name || '?')}${star && followedStars.some(s => STAR_PLAYERS.find(p => p.name === s)?.team === match.homeTeam?.name) ? '<span class="star-badge">⭐</span>' : ''}</span>
+          <span>${displayTeam(match.homeTeam?.name || match.homeTeam?.shortName || '?')}${star && followedStars.some(s => STAR_PLAYERS.find(p => p.name === s)?.team === match.homeTeam?.name) ? '<span class="star-badge">⭐</span>' : ''}</span>
         </div>
         <div class="team-row">
           <img src="${match.awayTeam?.crest || ''}" alt="" onerror="this.style.display='none'" loading="lazy">
-          <span>${displayTeam(match.awayTeam?.shortName || match.awayTeam?.name || '?')}${star && followedStars.some(s => STAR_PLAYERS.find(p => p.name === s)?.team === match.awayTeam?.name) ? '<span class="star-badge">⭐</span>' : ''}</span>
+          <span>${displayTeam(match.awayTeam?.name || match.awayTeam?.shortName || '?')}${star && followedStars.some(s => STAR_PLAYERS.find(p => p.name === s)?.team === match.awayTeam?.name) ? '<span class="star-badge">⭐</span>' : ''}</span>
         </div>
       </div>
       <div class="match-score ${score.cls}">
