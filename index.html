@@ -303,7 +303,7 @@ body {
 
 <!-- Tab Navigation -->
 <nav class="tab-nav">
-  <button class="tab-btn active" data-tab="today">📅 今日比赛</button>
+  <button class="tab-btn active" data-tab="today">📅 比赛</button>
   <button class="tab-btn" data-tab="history">📋 历史记录</button>
   <button class="tab-btn" data-tab="stars">⭐ 球星追踪</button>
 </nav>
@@ -351,6 +351,118 @@ body {
 const COMPETITIONS = {
   PL: '英超', PD: '西甲', SA: '意甲', BL1: '德甲', FL1: '法甲', CL: '欧冠'
 };
+
+// ===== Team Name Translation (English → Chinese) =====
+const TEAM_NAMES = {
+  // Premier League
+  'Arsenal FC': '阿森纳',
+  'Aston Villa FC': '阿斯顿维拉',
+  'Chelsea FC': '切尔西',
+  'Everton FC': '埃弗顿',
+  'Fulham FC': '富勒姆',
+  'Liverpool FC': '利物浦',
+  'Manchester City FC': '曼城',
+  'Manchester United FC': '曼联',
+  'Newcastle United FC': '纽卡斯尔',
+  'Nottingham Forest FC': '诺丁汉森林',
+  'Tottenham Hotspur FC': '热刺',
+  'West Ham United FC': '西汉姆联',
+  'Wolverhampton Wanderers FC': '狼队',
+  'Crystal Palace FC': '水晶宫',
+  'Brighton & Hove Albion FC': '布莱顿',
+  'Brentford FC': '布伦特福德',
+  'AFC Bournemouth': '伯恩茅斯',
+  'Southampton FC': '南安普顿',
+  'Ipswich Town FC': '伊普斯维奇',
+  'Leicester City FC': '莱斯特城',
+  'Leeds United FC': '利兹联',
+  // La Liga
+  'Real Madrid CF': '皇家马德里',
+  'FC Barcelona': '巴塞罗那',
+  'Atlético de Madrid': '马德里竞技',
+  'Real Betis Balompié': '皇家贝蒂斯',
+  'Real Sociedad': '皇家社会',
+  'Athletic Club': '毕尔巴鄂竞技',
+  'Sevilla FC': '塞维利亚',
+  'Villarreal CF': '比利亚雷亚尔',
+  'Valencia CF': '瓦伦西亚',
+  'RC Celta de Vigo': '塞尔塔',
+  'Deportivo Alavés': '阿拉维斯',
+  'CA Osasuna': '奥萨苏纳',
+  'Getafe CF': '赫塔费',
+  'RCD Mallorca': '马略卡',
+  'Girona FC': '赫罗纳',
+  'Rayo Vallecano': '巴列卡诺',
+  'UD Las Palmas': '拉斯帕尔马斯',
+  'CD Leganés': '莱加内斯',
+  'Real Valladolid CF': '巴拉多利德',
+  // Serie A
+  'Juventus FC': '尤文图斯',
+  'AC Milan': 'AC米兰',
+  'FC Internazionale Milano': '国际米兰',
+  'SSC Napoli': '那不勒斯',
+  'AS Roma': '罗马',
+  'SS Lazio': '拉齐奥',
+  'ACF Fiorentina': '佛罗伦萨',
+  'Atalanta BC': '亚特兰大',
+  'FC Bologna': '博洛尼亚',
+  'Torino FC': '都灵',
+  'Genoa CFC': '热那亚',
+  'Udinese Calcio': '乌迪内斯',
+  'Como 1907': '科莫',
+  'Empoli FC': '恩波利',
+  'SSC Monza 1912': '蒙扎',
+  'SSC Bari': '巴里',
+  'Cagliari Calcio': '卡利亚里',
+  'US Lecce': '莱切',
+  'Hellas Verona': '维罗纳',
+  'Parma Calcio 1913': '帕尔马',
+  // Bundesliga
+  'FC Bayern München': '拜仁慕尼黑',
+  'Borussia Dortmund': '多特蒙德',
+  'RB Leipzig': '莱比锡红牛',
+  'Bayer 04 Leverkusen': '勒沃库森',
+  'VfB Stuttgart': '斯图加特',
+  'Eintracht Frankfurt': '法兰克福',
+  'VfL Wolfsburg': '沃尔夫斯堡',
+  'Borussia Mönchengladbach': '门兴格拉德巴赫',
+  'SC Freiburg': '弗赖堡',
+  '1. FC Union Berlin': '柏林联合',
+  'FC Augsburg': '奥格斯堡',
+  '1. FSV Mainz 05': '美因茨',
+  'TSG 1899 Hoffenheim': '霍芬海姆',
+  'VfL Bochum': '波鸿',
+  'SV Werder Bremen': '不莱梅',
+  'FC St. Pauli': '圣保利',
+  'FC Schalke 04': '沙尔克04',
+  'Hertha BSC': '柏林赫塔',
+  '1. FC Heidenheim 1846': '海登海姆',
+  'Holstein Kiel': '基尔',
+  // Ligue 1
+  'Paris Saint-Germain FC': '巴黎圣日耳曼',
+  'Olympique de Marseille': '马赛',
+  'Olympique Lyonnais': '里昂',
+  'AS Monaco FC': '摩纳哥',
+  'Stade Rennais FC 1901': '雷恩',
+  'OGC Nice': '尼斯',
+  'LOSC Lille': '里尔',
+  'RC Lens': '朗斯',
+  'Montpellier Hérault SC': '蒙彼利埃',
+  'FC Nantes': '南特',
+  'RC Strasbourg Alsace': '斯特拉斯堡',
+  'Stade de Reims': '兰斯',
+  'Toulouse FC': '图卢兹',
+  'Stade Brestois 29': '布雷斯特',
+  'AJ Auxerre': '欧塞尔',
+  'Angers SCO': '昂热',
+  'Le Havre AC': '勒阿弗尔',
+};
+
+function displayTeam(name) {
+  const cn = TEAM_NAMES[name] || name;
+  if (cn !== name) return `${cn} (${name})`;
+  return name;
+}
 
 // ===== Star Players (Ballon d'Or Top 30 + popular) =====
 const STAR_PLAYERS = [
@@ -527,11 +639,11 @@ function renderMatchCard(match) {
       <div class="match-teams">
         <div class="team-row">
           <img src="${match.homeTeam?.crest || ''}" alt="" onerror="this.style.display='none'" loading="lazy">
-          <span>${match.homeTeam?.shortName || match.homeTeam?.name || '?'}${star && followedStars.some(s => STAR_PLAYERS.find(p => p.name === s)?.team === match.homeTeam?.name) ? '<span class="star-badge">⭐</span>' : ''}</span>
+          <span>${displayTeam(match.homeTeam?.shortName || match.homeTeam?.name || '?')}${star && followedStars.some(s => STAR_PLAYERS.find(p => p.name === s)?.team === match.homeTeam?.name) ? '<span class="star-badge">⭐</span>' : ''}</span>
         </div>
         <div class="team-row">
           <img src="${match.awayTeam?.crest || ''}" alt="" onerror="this.style.display='none'" loading="lazy">
-          <span>${match.awayTeam?.shortName || match.awayTeam?.name || '?'}${star && followedStars.some(s => STAR_PLAYERS.find(p => p.name === s)?.team === match.awayTeam?.name) ? '<span class="star-badge">⭐</span>' : ''}</span>
+          <span>${displayTeam(match.awayTeam?.shortName || match.awayTeam?.name || '?')}${star && followedStars.some(s => STAR_PLAYERS.find(p => p.name === s)?.team === match.awayTeam?.name) ? '<span class="star-badge">⭐</span>' : ''}</span>
         </div>
       </div>
       <div class="match-score ${score.cls}">
