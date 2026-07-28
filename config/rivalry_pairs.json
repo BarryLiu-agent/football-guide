@@ -1,0 +1,25 @@
+{
+  "description": "经典德比/宿敌对阵 - 满足任一即视为知名比赛",
+  "pairs": [
+    { "team1": "Real Madrid CF", "team2": "FC Barcelona", "name": "西班牙国家德比" },
+    { "team1": "AC Milan", "team2": "FC Internazionale Milano", "name": "米兰德比" },
+    { "team1": "Arsenal FC", "team2": "Tottenham Hotspur FC", "name": "北伦敦德比" },
+    { "team1": "Manchester United FC", "team2": "Manchester City FC", "name": "曼彻斯特德比" },
+    { "team1": "Manchester United FC", "team2": "Liverpool FC", "name": "双红会" },
+    { "team1": "Manchester United FC", "team2": "Leeds United FC", "name": "玫瑰德比" },
+    { "team1": "Liverpool FC", "team2": "Everton FC", "name": "默西赛德郡德比" },
+    { "team1": "Real Madrid CF", "team2": "Atlético de Madrid", "name": "马德里德比" },
+    { "team1": "Juventus FC", "team2": "FC Internazionale Milano", "name": "意大利国家德比" },
+    { "team1": "Juventus FC", "team2": "AC Milan", "name": "意甲经典对决" },
+    { "team1": "Juventus FC", "team2": "SSC Napoli", "name": "意甲南北大战" },
+    { "team1": "Paris Saint-Germain FC", "team2": "Olympique de Marseille", "name": "法国国家德比" },
+    { "team1": "FC Bayern München", "team2": "Borussia Dortmund", "name": "德国国家德比" },
+    { "team1": "Borussia Dortmund", "team2": "FC Schalke 04", "name": "鲁尔区德比" },
+    { "team1": "FC Barcelona", "team2": "Atlético de Madrid", "name": "西甲争冠对决" },
+    { "team1": "AS Roma", "team2": "SS Lazio", "name": "罗马德比" },
+    { "team1": "Chelsea FC", "team2": "Arsenal FC", "name": "伦敦德比" },
+    { "team1": "Chelsea FC", "team2": "Tottenham Hotspur FC", "name": "伦敦德比" },
+    { "team1": "Manchester City FC", "team2": "Liverpool FC", "name": "英超争冠对决" },
+    { "team1": "Newcastle United FC", "team2": "Sunderland AFC", "name": "泰恩-威尔德比" }
+  ]
+}

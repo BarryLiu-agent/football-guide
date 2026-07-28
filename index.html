@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>足球观看指南</title>
+<style>
+/* ===== Design System ===== */
+:root {
+  --color-bg: #f7f8fa;
+  --color-surface: #ffffff;
+  --color-border: #e8eaef;
+  --color-primary: #1a5632;
+  --color-primary-light: #2d8a4e;
+  --color-accent: #f0b90b;
+  --color-text: #1a1a2e;
+  --color-text-secondary: #5f6b7a;
+  --color-live: #dc2626;
+  --color-finished: #6b7280;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 2px 8px rgba(0,0,0,0.08);
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* ===== Header ===== */
+.header {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 14px 16px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(26,86,50,0.25);
+}
+.header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header h1 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.btn-refresh {
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: #fff;
+  width: 32px; height: 32px; border-radius: 50%;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+.btn-refresh:hover { background: rgba(255,255,255,0.25); }
+.btn-refresh:active { transform: scale(0.92); }
+.last-updated { font-size: 0.72rem; opacity: 0.8; }
+
+/* ===== Tabs ===== */
+.tab-nav {
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky; top: 56px; z-index: 99;
+  display: flex; gap: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.tab-nav::-webkit-scrollbar { display: none; }
+.tab-btn {
+  flex: 1; min-width: fit-content;
+  padding: 12px 20px;
+  border: none; background: none;
+  font-size: 0.9rem; font-weight: 600;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  font-family: inherit;
+}
+.tab-btn.active {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+.tab-btn:hover { color: var(--color-primary); }
+
+/* ===== Main Content ===== */
+.main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px;
+}
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ===== League Filter ===== */
+.league-filter {
+  display: flex; gap: 6px; flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.league-chip {
+  padding: 6px 12px; border-radius: 20px; border: 1.5px solid var(--color-border);
+  background: var(--color-surface); font-size: 0.8rem; font-weight: 600;
+  cursor: pointer; transition: all 0.2s; font-family: inherit;
+  color: var(--color-text-secondary);
+}
+.league-chip.active { background: var(--color-primary); color: #fff; border-color: var(--color-primary); }
+.league-chip:hover:not(.active) { border-color: var(--color-primary); }
+
+/* ===== Date Group ===== */
+.date-group { margin-bottom: 24px; }
+.date-label {
+  font-size: 0.85rem; font-weight: 700; color: var(--color-text-secondary);
+  padding: 8px 0 10px 0; text-transform: uppercase; letter-spacing: 0.03em;
+  border-bottom: 1px solid var(--color-border); margin-bottom: 10px;
+}
+
+/* ===== Match Card ===== */
+.match-card {
+  background: var(--color-surface); border-radius: var(--radius-md);
+  padding: 14px 16px; margin-bottom: 8px;
+  box-shadow: var(--shadow-sm);
+  display: flex; align-items: center; gap: 12px;
+  transition: box-shadow 0.2s; cursor: default;
+  border-left: 3px solid transparent;
+}
+.match-card.star-match { border-left-color: var(--color-accent); }
+.match-card:hover { box-shadow: var(--shadow-md); }
+.match-league {
+  font-size: 0.7rem; font-weight: 700; color: var(--color-text-secondary);
+  text-transform: uppercase; letter-spacing: 0.04em; min-width: 32px;
+}
+.match-time {
+  font-size: 0.78rem; color: var(--color-text-secondary);
+  min-width: 48px; text-align: center; line-height: 1.3;
+}
+.match-teams { flex: 1; min-width: 0; }
+.match-teams .team-row {
+  display: flex; align-items: center; gap: 8px; padding: 3px 0;
+  font-size: 0.9rem; font-weight: 500;
+}
+.match-teams .team-row img {
+  width: 20px; height: 20px; object-fit: contain; flex-shrink: 0;
+}
+.match-score {
+  font-size: 1.1rem; font-weight: 700; min-width: 56px; text-align: center;
+  letter-spacing: 0.04em;
+}
+.match-score.live { color: var(--color-live); }
+.match-score.scheduled { color: var(--color-text-secondary); font-size: 0.85rem; }
+.match-score.finished { color: var(--color-finished); }
+.match-status {
+  display: inline-block; font-size: 0.65rem; font-weight: 700;
+  padding: 2px 6px; border-radius: 4px; margin-top: 2px;
+}
+.status-live { background: #fef2f2; color: var(--color-live); }
+.status-paused { background: #f3f4f6; color: #92400e; }
+.status-finished { background: #f3f4f6; color: var(--color-finished); }
+.status-scheduled { background: #f0fdf4; color: var(--color-primary); }
+.star-badge {
+  font-size: 0.65rem; color: #b8860b; margin-left: 4px;
+}
+
+/* ===== History page ===== */
+.date-picker-bar {
+  display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.date-picker-bar input[type="date"] {
+  padding: 8px 12px; border: 1.5px solid var(--color-border); border-radius: var(--radius-sm);
+  font-family: inherit; font-size: 0.9rem;
+}
+.btn {
+  padding: 8px 16px; border: none; border-radius: var(--radius-sm);
+  background: var(--color-primary); color: #fff; font-weight: 600;
+  font-size: 0.85rem; cursor: pointer; font-family: inherit;
+  transition: background 0.2s;
+}
+.btn:hover { background: var(--color-primary-light); }
+.btn-secondary {
+  background: var(--color-surface); color: var(--color-text);
+  border: 1.5px solid var(--color-border);
+}
+.btn-secondary:hover { background: var(--color-bg); }
+
+/* ===== Stars page ===== */
+.star-toolbar {
+  display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px;
+}
+.search-input {
+  flex: 1; min-width: 200px; padding: 8px 12px;
+  border: 1.5px solid var(--color-border); border-radius: var(--radius-sm);
+  font-family: inherit; font-size: 0.9rem;
+}
+.search-input:focus { outline: none; border-color: var(--color-primary); }
+.star-list {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px; margin-bottom: 20px;
+}
+.star-item {
+  background: var(--color-surface); border-radius: var(--radius-md);
+  padding: 10px 14px; box-shadow: var(--shadow-sm);
+  display: flex; align-items: center; gap: 10px; cursor: pointer;
+  border: 1.5px solid transparent; transition: all 0.2s;
+}
+.star-item.followed { border-color: var(--color-accent); background: #f0fdf4; }
+.star-item:hover { box-shadow: var(--shadow-md); }
+.star-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--color-primary-light); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 0.85rem; flex-shrink: 0;
+}
+.star-info { flex: 1; min-width: 0; }
+.star-name { font-size: 0.85rem; font-weight: 600; }
+.star-team { font-size: 0.72rem; color: var(--color-text-secondary); }
+.star-follow-btn {
+  background: none; border: 1.5px solid var(--color-accent); color: #b8860b;
+  border-radius: 14px; padding: 3px 10px; font-size: 0.7rem; font-weight: 700;
+  cursor: pointer; transition: all 0.2s; font-family: inherit; white-space: nowrap;
+}
+.star-follow-btn.followed { background: var(--color-accent); color: #fff; }
+
+/* ===== Empty & Error states ===== */
+.empty-state {
+  text-align: center; padding: 48px 20px; color: var(--color-text-secondary);
+}
+.empty-state .icon { font-size: 3rem; margin-bottom: 12px; }
+.empty-state h3 { font-size: 1rem; margin-bottom: 4px; }
+.empty-state p { font-size: 0.85rem; }
+.error-banner {
+  background: #fef2f2; border: 1px solid #fecaca; color: #991b1b;
+  border-radius: var(--radius-md); padding: 12px 16px; margin-bottom: 16px;
+  font-size: 0.85rem; display: flex; align-items: center; gap: 8px;
+}
+.error-banner .retry-btn {
+  margin-left: auto; background: #991b1b; color: #fff; border: none;
+  padding: 4px 12px; border-radius: 4px; cursor: pointer; font-size: 0.8rem;
+  font-family: inherit;
+}
+.loading-spinner {
+  display: flex; justify-content: center; padding: 32px;
+}
+.spinner {
+  width: 32px; height: 32px; border: 3px solid var(--color-border);
+  border-top-color: var(--color-primary); border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .header h1 { font-size: 1rem; }
+  .match-card { padding: 10px 12px; gap: 8px; }
+  .match-teams .team-row { font-size: 0.82rem; }
+  .match-score { font-size: 0.95rem; min-width: 44px; }
+  .league-filter { gap: 4px; }
+  .league-chip { padding: 5px 10px; font-size: 0.73rem; }
+  .star-list { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .spinner { animation: none; }
+  * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="header-inner">
+    <h1>⚽ 足球观看指南</h1>
+    <div class="header-actions">
+      <span class="last-updated" id="lastUpdated"></span>
+      <button class="btn-refresh" onclick="refreshData()" title="刷新">⟳</button>
+    </div>
+  </div>
+</header>
+
+<!-- Tab Navigation -->
+<nav class="tab-nav">
+  <button class="tab-btn active" data-tab="today">📅 今日比赛</button>
+  <button class="tab-btn" data-tab="history">📋 历史记录</button>
+  <button class="tab-btn" data-tab="stars">⭐ 球星追踪</button>
+</nav>
+
+<!-- Main Content -->
+<main class="main">
+  <!-- Today Tab -->
+  <section class="tab-panel active" id="panel-today">
+    <div class="league-filter" id="leagueFilter"></div>
+    <div id="todayMatches"></div>
+  </section>
+
+  <!-- History Tab -->
+  <section class="tab-panel" id="panel-history">
+    <div class="date-picker-bar">
+      <input type="date" id="historyDate" />
+      <button class="btn" onclick="loadHistory()">查询</button>
+      <button class="btn btn-secondary" onclick="loadYesterday()">昨天</button>
+      <button class="btn btn-secondary" onclick="loadLastWeek()">上周</button>
+      <button class="btn btn-secondary" onclick="loadLastMonth()">上月</button>
+    </div>
+    <div id="historyMatches"></div>
+  </section>
+
+  <!-- Stars Tab -->
+  <section class="tab-panel" id="panel-stars">
+    <div class="star-toolbar">
+      <input class="search-input" id="starSearch" placeholder="🔍 搜索或添加球员..." onkeydown="if(event.key==='Enter')searchStar()" />
+      <button class="btn" onclick="searchStar()">添加</button>
+    </div>
+    <div class="league-filter" id="starLeagueFilter"></div>
+    <h2 style="font-size:0.85rem;color:var(--color-text-secondary);margin-bottom:10px;font-weight:500;">👤 我的关注</h2>
+    <div class="star-list" id="followedStars"></div>
+    <h2 style="font-size:0.85rem;color:var(--color-text-secondary);margin:20px 0 10px;font-weight:500;">🌟 推荐球星</h2>
+    <div class="star-list" id="suggestedStars"></div>
+    <div id="starMatches"></div>
+  </section>
+</main>
+
+<script>
+// ===== Configuration =====
+// API Key 不再硬编码前端。数据由 GitHub Actions 每日抓取并生成 data/fixtures.json。
+// 本地开发时可运行: python scripts/fetch_data.py
+
+const COMPETITIONS = {
+  PL: '英超', PD: '西甲', SA: '意甲', BL1: '德甲', FL1: '法甲', CL: '欧冠'
+};
+
+// ===== Star Players (Ballon d'Or Top 30 + popular) =====
+const STAR_PLAYERS = [
+  // Ballon d'Or 2025 contenders & all-time stars
+  { name: '姆巴佩', team: 'Real Madrid CF', league: 'PD' },
+  { name: '哈兰德', team: 'Manchester City FC', league: 'PL' },
+  { name: '贝林厄姆', team: 'Real Madrid CF', league: 'PD' },
+  { name: '维尼修斯', team: 'Real Madrid CF', league: 'PD' },
+  { name: '凯恩', team: 'FC Bayern München', league: 'BL1' },
+  { name: '萨拉赫', team: 'Liverpool FC', league: 'PL' },
+  { name: '亚马尔', team: 'FC Barcelona', league: 'PD' },
+  { name: '罗德里', team: 'Manchester City FC', league: 'PL' },
+  { name: '佩德里', team: 'FC Barcelona', league: 'PD' },
+  { name: '加维', team: 'FC Barcelona', league: 'PD' },
+  { name: '劳塔罗', team: 'FC Internazionale Milano', league: 'SA' },
+  { name: '莱万多夫斯基', team: 'FC Barcelona', league: 'PD' },
+  { name: '德布劳内', team: 'Manchester City FC', league: 'PL' },
+  { name: '萨卡', team: 'Arsenal FC', league: 'PL' },
+  { name: '穆夏拉', team: 'FC Bayern München', league: 'BL1' },
+  { name: '维尔茨', team: 'Bayer 04 Leverkusen', league: 'BL1' },
+  { name: '帕尔默', team: 'Chelsea FC', league: 'PL' },
+  { name: '奥斯梅恩', team: 'Galatasaray SK', league: null },
+  { name: '厄德高', team: 'Arsenal FC', league: 'PL' },
+  { name: '赖斯', team: 'Arsenal FC', league: 'PL' },
+  { name: '多夫比克', team: 'Liverpool FC', league: 'PL' },
+  { name: '伊萨克', team: 'Newcastle United FC', league: 'PL' },
+  { name: 'C罗', team: 'Al Nassr FC', league: null },
+  { name: '梅西', team: 'Inter Miami CF', league: null },
+  { name: '若昂·内维斯', team: 'Paris Saint-Germain FC', league: 'FL1' },
+  { name: '登贝莱', team: 'Paris Saint-Germain FC', league: 'FL1' },
+  { name: '巴尔韦德', team: 'Real Madrid CF', league: 'PD' },
+  { name: '罗德里戈', team: 'Real Madrid CF', league: 'PD' },
+  { name: '格列兹曼', team: 'Atlético de Madrid', league: 'PD' },
+  { name: '恩德里克', team: 'Real Madrid CF', league: 'PD' },
+];
+
+// ===== State =====
+let allMatches = [];
+let followedStars = JSON.parse(localStorage.getItem('followedStars') || '[]');
+let activeLeagueFilter = 'all';
+let activeStarLeagueFilter = 'all';
+let isLoading = false;
+
+// ===== Data Loading (from local JSON files) =====
+let fixturesData = null;
+
+function getDateRange() {
+  // Always use all data from fixtures.json; no need to compute date range
+  return null;
+}
+
+async function loadFixtures() {
+  try {
+    const resp = await fetch('data/fixtures.json');
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    fixturesData = await resp.json();
+    return { matches: fixturesData.matches || [], errors: fixturesData.errors || [] };
+  } catch (e) {
+    console.warn('Failed to load fixtures.json:', e);
+    return { matches: [], errors: [{ code: 'ALL', name: '全部' }] };
+  }
+}
+
+async function fetchAllMatches(dateFrom, dateTo) {
+  // Load from local JSON file (pre-generated by GitHub Actions)
+  if (!fixturesData) {
+    return await loadFixtures();
+  }
+  return { matches: fixturesData.matches || [], errors: fixturesData.errors || [] };
+}
+
+// Fetch specific date for history - filter local data
+async function fetchHistoryDate(dateStr) {
+  if (!fixturesData) {
+    const result = await loadFixtures();
+    fixturesData = { matches: result.matches, errors: result.errors };
+  }
+  const matches = (fixturesData.matches || []).filter(m => formatDate(m.utcDate) === dateStr);
+  return { matches, errors: fixturesData.errors || [] };
+}
+
+// ===== Data Processing =====
+function groupByDate(matches) {
+  const groups = {};
+  matches.forEach(m => {
+    const date = formatDate(m.utcDate);
+    if (!groups[date]) groups[date] = [];
+    groups[date].push(m);
+  });
+  // Sort by date
+  return Object.entries(groups).sort((a, b) => a[0].localeCompare(b[0]));
+}
+
+function formatDate(utcStr) {
+  const d = new Date(utcStr);
+  // Convert to Beijing time (UTC+8)
+  const bj = new Date(d.getTime() + 8 * 3600000);
+  const y = bj.getFullYear();
+  const mo = String(bj.getMonth() + 1).padStart(2, '0');
+  const day = String(bj.getDate()).padStart(2, '0');
+  return `${y}-${mo}-${day}`;
+}
+
+function formatTime(utcStr) {
+  const d = new Date(utcStr);
+  const bj = new Date(d.getTime() + 8 * 3600000);
+  return `${String(bj.getHours()).padStart(2, '0')}:${String(bj.getMinutes()).padStart(2, '0')}`;
+}
+
+function getDateLabel(dateStr) {
+  const today = formatDate(new Date().toISOString());
+  const tomorrow = formatDate(new Date(Date.now() + 86400000).toISOString());
+  if (dateStr === today) return '今天';
+  if (dateStr === tomorrow) return '明天';
+  // Friendly weekday
+  const d = new Date(dateStr);
+  const days = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
+  const md = `${d.getMonth() + 1}月${d.getDate()}日`;
+  return `${md} ${days[d.getDay()]}`;
+}
+
+function getScoreDisplay(match) {
+  const { score, status } = match;
+  const isLive = status === 'IN_PLAY' || status === 'LIVE' || status === 'PAUSED';
+  const isFinished = status === 'FINISHED';
+  
+  if (isLive) {
+    const ft = score?.fullTime || {};
+    const cls = status === 'PAUSED' ? 'live' : 'live';
+    return { text: `${ft.home ?? '-'} - ${ft.away ?? '-'}`, cls, statusText: status === 'PAUSED' ? '暂停' : '进行中' };
+  }
+  if (isFinished) {
+    const ft = score?.fullTime || {};
+    return { text: `${ft.home ?? '-'} - ${ft.away ?? '-'}`, cls: 'finished', statusText: '完赛' };
+  }
+  if (status === 'POSTPONED') return { text: '延期', cls: 'scheduled', statusText: '延期' };
+  if (status === 'CANCELLED') return { text: '取消', cls: 'scheduled', statusText: '取消' };
+  return { text: formatTime(match.utcDate), cls: 'scheduled', statusText: match.matchday ? `第${match.matchday}轮` : '' };
+}
+
+function isStarMatch(match) {
+  const starTeams = STAR_PLAYERS.filter(p => followedStars.includes(p.name)).map(p => p.team);
+  return starTeams.includes(match.homeTeam?.name) || starTeams.includes(match.awayTeam?.name);
+}
+
+// ===== Render =====
+function renderLeagueFilter(containerId, active, onChange) {
+  const el = document.getElementById(containerId);
+  el.innerHTML = `
+    <button class="league-chip ${active === 'all' ? 'active' : ''}" data-league="all">全部</button>
+    ${Object.entries(COMPETITIONS).map(([k, v]) =>
+      `<button class="league-chip ${active === k ? 'active' : ''}" data-league="${k}">${v}</button>`
+    ).join('')}
+  `;
+  el.querySelectorAll('.league-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      el.querySelectorAll('.league-chip').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      onChange(btn.dataset.league);
+    });
+  });
+}
+
+function renderMatchCard(match) {
+  const star = isStarMatch(match);
+  const score = getScoreDisplay(match);
+  const league = COMPETITIONS[match.competition?.code] || match.competition?.code || '';
+  const isLive = match.status === 'IN_PLAY' || match.status === 'LIVE' || match.status === 'PAUSED';
+  const isFinished = match.status === 'FINISHED';
+
+  return `
+    <div class="match-card ${star ? 'star-match' : ''}" data-id="${match.id}">
+      <div class="match-league">${league}</div>
+      <div class="match-teams">
+        <div class="team-row">
+          <img src="${match.homeTeam?.crest || ''}" alt="" onerror="this.style.display='none'" loading="lazy">
+          <span>${match.homeTeam?.shortName || match.homeTeam?.name || '?'}${star && followedStars.some(s => STAR_PLAYERS.find(p => p.name === s)?.team === match.homeTeam?.name) ? '<span class="star-badge">⭐</span>' : ''}</span>
+        </div>
+        <div class="team-row">
+          <img src="${match.awayTeam?.crest || ''}" alt="" onerror="this.style.display='none'" loading="lazy">
+          <span>${match.awayTeam?.shortName || match.awayTeam?.name || '?'}${star && followedStars.some(s => STAR_PLAYERS.find(p => p.name === s)?.team === match.awayTeam?.name) ? '<span class="star-badge">⭐</span>' : ''}</span>
+        </div>
+      </div>
+      <div class="match-score ${score.cls}">
+        ${score.text}
+        ${score.statusText ? `<div class="match-status status-${score.cls}">${score.statusText}</div>` : ''}
+      </div>
+    </div>
+  `;
+}
+
+function renderMatchList(containerId, matches, emptyMsg) {
+  const el = document.getElementById(containerId);
+  if (!matches.length) {
+    el.innerHTML = `<div class="empty-state"><div class="icon">📭</div><h3>暂无比赛</h3><p>${emptyMsg || '该时段没有比赛安排'}</p></div>`;
+    return;
+  }
+  const groups = groupByDate(matches);
+  el.innerHTML = groups.map(([date, ms]) => `
+    <div class="date-group">
+      <div class="date-label">${getDateLabel(date)} · ${date}</div>
+      ${ms.map(m => renderMatchCard(m)).join('')}
+    </div>
+  `).join('');
+}
+
+async function loadToday() {
+  const el = document.getElementById('todayMatches');
+  el.innerHTML = '<div class="loading-spinner"><div class="spinner"></div></div>';
+
+  if (!allMatches.length || (Date.now() - lastFetchTime > 60000)) {
+    await refreshData(true);
+  }
+
+  const today = formatDate(new Date().toISOString());
+  const maxDate = formatDate(new Date(Date.now() + 30 * 86400000).toISOString());
+  
+  let filtered = allMatches.filter(m => {
+    const d = formatDate(m.utcDate);
+    return d >= today && d <= maxDate;
+  });
+
+  if (activeLeagueFilter !== 'all') {
+    filtered = filtered.filter(m => m.competition?.code === activeLeagueFilter);
+  }
+
+  renderMatchList('todayMatches', filtered, '未来一个月暂无比赛安排');
+}
+
+function loadHistory() {
+  const dateStr = document.getElementById('historyDate').value;
+  if (!dateStr) return;
+  showHistoryForDate(dateStr);
+}
+
+async function showHistoryForDate(dateStr) {
+  const el = document.getElementById('historyMatches');
+  el.innerHTML = '<div class="loading-spinner"><div class="spinner"></div></div>';
+  
+  // Check if we already have data for this date in cache
+  let filtered = allMatches.filter(m => formatDate(m.utcDate) === dateStr);
+  
+  if (!filtered.length) {
+    // Fetch from API
+    const { matches } = await fetchHistoryDate(dateStr);
+    filtered = matches;
+    // Merge into allMatches cache
+    matches.forEach(m => {
+      if (!allMatches.find(ex => ex.id === m.id)) allMatches.push(m);
+    });
+  }
+  renderMatchList('historyMatches', filtered, `${dateStr} 没有比赛记录`);
+}
+
+function loadYesterday() {
+  const d = formatDate(new Date(Date.now() - 86400000).toISOString());
+  document.getElementById('historyDate').value = d;
+  showHistoryForDate(d);
+}
+function loadLastWeek() {
+  const d = formatDate(new Date(Date.now() - 7 * 86400000).toISOString());
+  document.getElementById('historyDate').value = d;
+  showHistoryForDate(d);
+}
+function loadLastMonth() {
+  const d = formatDate(new Date(Date.now() - 30 * 86400000).toISOString());
+  document.getElementById('historyDate').value = d;
+  showHistoryForDate(d);
+}
+
+// ===== Stars =====
+function renderStars() {
+  const followedEl = document.getElementById('followedStars');
+  const suggestedEl = document.getElementById('suggestedStars');
+  const searchVal = document.getElementById('starSearch').value.toLowerCase();
+
+  const followed = STAR_PLAYERS.filter(p => followedStars.includes(p.name));
+  const suggested = STAR_PLAYERS.filter(p => !followedStars.includes(p.name) && 
+    (searchVal ? p.name.includes(searchVal) || p.team.includes(searchVal) : true));
+
+  const renderStarItem = (p, isFollowed) => `
+    <div class="star-item ${isFollowed ? 'followed' : ''}" onclick="toggleStar('${p.name}')">
+      <div class="star-avatar">${p.name[0]}</div>
+      <div class="star-info">
+        <div class="star-name">${p.name}</div>
+        <div class="star-team">${p.team}</div>
+      </div>
+      <button class="star-follow-btn ${isFollowed ? 'followed' : ''}">${isFollowed ? '已关注' : '+ 关注'}</button>
+    </div>
+  `;
+
+  followedEl.innerHTML = followed.length 
+    ? followed.map(p => renderStarItem(p, true)).join('')
+    : '<div style="color:var(--color-text-secondary);font-size:0.85rem;padding:12px;">暂无关注球员，点击下方推荐球星关注</div>';
+
+  suggestedEl.innerHTML = suggested.map(p => renderStarItem(p, false)).join('');
+  renderStarMatches();
+}
+
+function toggleStar(name) {
+  if (followedStars.includes(name)) {
+    followedStars = followedStars.filter(s => s !== name);
+  } else {
+    followedStars.push(name);
+  }
+  localStorage.setItem('followedStars', JSON.stringify(followedStars));
+  renderStars();
+}
+
+function searchStar() {
+  // Searching within existing list only; triggers re-render with filter
+  renderStars();
+}
+
+function renderStarMatches() {
+  const el = document.getElementById('starMatches');
+  if (!followedStars.length) {
+    el.innerHTML = '';
+    return;
+  }
+  const starTeams = STAR_PLAYERS.filter(p => followedStars.includes(p.name)).map(p => p.team);
+  let matches = allMatches.filter(m => 
+    starTeams.includes(m.homeTeam?.name) || starTeams.includes(m.awayTeam?.name)
+  );
+  if (activeStarLeagueFilter !== 'all') {
+    matches = matches.filter(m => m.competition?.code === activeStarLeagueFilter);
+  }
+  // Show upcoming + recent
+  const today = formatDate(new Date().toISOString());
+  const maxDate = formatDate(new Date(Date.now() + 30 * 86400000).toISOString());
+  matches = matches.filter(m => {
+    const d = formatDate(m.utcDate);
+    return d >= today && d <= maxDate;
+  });
+  el.innerHTML = `<h3 style="font-size:0.85rem;color:var(--color-text-secondary);margin:16px 0 10px;">📅 关注球队近期比赛</h3>`;
+  if (!matches.length) {
+    el.innerHTML += '<div class="empty-state"><p>近期暂无关注球员所属球队的比赛</p></div>';
+  } else {
+    el.innerHTML += matches.map(m => renderMatchCard(m)).join('');
+  }
+}
+
+// ===== Refresh & Fetch =====
+let lastFetchTime = 0;
+
+async function refreshData(silent = false) {
+  const refreshBtn = document.querySelector('.btn-refresh');
+  if (!silent) refreshBtn.style.animation = 'spin 0.6s linear';
+  
+  try {
+    const { matches, errors } = await loadFixtures();
+    allMatches = matches;
+    lastFetchTime = Date.now();
+    
+    // Update timestamp from fixtures data if available, else use local time
+    const genTime = fixturesData?.generatedAt;
+    if (genTime) {
+      const d = new Date(genTime);
+      document.getElementById('lastUpdated').textContent = 
+        `更新于 ${d.toLocaleDateString('zh-CN')} ${d.toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' })}`;
+    } else {
+      document.getElementById('lastUpdated').textContent = 
+        `更新于 ${new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' })}`;
+    }
+    
+    if (errors.length && !silent) {
+      console.warn('部分数据加载失败:', errors);
+    }
+  } catch (e) {
+    if (!silent) {
+      document.getElementById('todayMatches').innerHTML = 
+        `<div class="error-banner">
+          ⚠️ 数据加载失败，请确保 data/fixtures.json 文件存在
+          <button class="retry-btn" onclick="refreshData()">重试</button>
+        </div>`;
+    }
+  } finally {
+    refreshBtn.style.animation = '';
+  }
+  
+  // Re-render current tab
+  const activeTab = document.querySelector('.tab-btn.active').dataset.tab;
+  if (activeTab === 'today') loadToday();
+  else if (activeTab === 'stars') renderStars();
+}
+
+// ===== Tab Switching =====
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(`panel-${btn.dataset.tab}`).classList.add('active');
+    
+    if (btn.dataset.tab === 'today') loadToday();
+    else if (btn.dataset.tab === 'stars') renderStars();
+    else if (btn.dataset.tab === 'history') {
+      document.getElementById('historyDate').value = formatDate(new Date(Date.now() - 86400000).toISOString());
+      showHistoryForDate(document.getElementById('historyDate').value);
+    }
+  });
+});
+
+// ===== League Filter Setup =====
+renderLeagueFilter('leagueFilter', activeLeagueFilter, (league) => {
+  activeLeagueFilter = league;
+  loadToday();
+});
+
+renderLeagueFilter('starLeagueFilter', activeStarLeagueFilter, (league) => {
+  activeStarLeagueFilter = league;
+  renderStarMatches();
+});
+
+// ===== Init =====
+function init() {
+  document.getElementById('historyDate').value = formatDate(new Date(Date.now() - 86400000).toISOString());
+  loadToday();
+  // Auto-refresh every 60s
+  setInterval(() => {
+    const activeTab = document.querySelector('.tab-btn.active').dataset.tab;
+    if (activeTab === 'today') refreshData(true).then(() => loadToday());
+    else refreshData(true);
+  }, 60000);
+}
+
+init();
+</script>
+</body>
+</html>
