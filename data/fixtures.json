@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-07-28T14:29:03Z",
+  "generatedAt": "2026-07-29T11:10:26Z",
   "dateRange": {
-    "from": "2026-07-21",
-    "to": "2026-09-01"
+    "from": "2026-07-22",
+    "to": "2026-09-02"
   },
   "competitions": {
     "PL": "英超",
@@ -4667,7 +4667,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-07-28T08:25:01Z",
+      "lastUpdated": "2026-07-29T05:20:05Z",
       "homeTeam": {
         "id": 5,
         "name": "FC Bayern München",
@@ -4742,7 +4742,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-07-28T08:25:01Z",
+      "lastUpdated": "2026-07-29T05:20:05Z",
       "homeTeam": {
         "id": 721,
         "name": "RB Leipzig",
@@ -4810,7 +4810,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-07-28T08:25:01Z",
+      "lastUpdated": "2026-07-29T05:20:05Z",
       "homeTeam": {
         "id": 15,
         "name": "1. FSV Mainz 05",
@@ -4870,7 +4870,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-07-28T08:25:01Z",
+      "lastUpdated": "2026-07-29T05:20:05Z",
       "homeTeam": {
         "id": 28,
         "name": "1. FC Union Berlin",
@@ -4930,7 +4930,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-07-28T08:25:01Z",
+      "lastUpdated": "2026-07-29T05:20:05Z",
       "homeTeam": {
         "id": 719,
         "name": "SV 07 Elversberg",
@@ -5004,7 +5004,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-07-28T08:25:01Z",
+      "lastUpdated": "2026-07-29T05:20:05Z",
       "homeTeam": {
         "id": 1,
         "name": "1. FC Köln",
@@ -5064,7 +5064,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-07-28T08:25:01Z",
+      "lastUpdated": "2026-07-29T05:20:05Z",
       "homeTeam": {
         "id": 4,
         "name": "Borussia Dortmund",
@@ -5132,7 +5132,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-07-28T08:25:01Z",
+      "lastUpdated": "2026-07-29T05:20:05Z",
       "homeTeam": {
         "id": 17,
         "name": "SC Freiburg",
@@ -5192,7 +5192,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-07-28T08:25:01Z",
+      "lastUpdated": "2026-07-29T05:20:05Z",
       "homeTeam": {
         "id": 16,
         "name": "FC Augsburg",
