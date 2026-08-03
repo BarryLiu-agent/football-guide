@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-08-02T09:36:19Z",
+  "generatedAt": "2026-08-03T13:22:37Z",
   "dateRange": {
-    "from": "2026-07-26",
-    "to": "2026-09-06"
+    "from": "2026-07-27",
+    "to": "2026-09-07"
   },
   "competitions": {
     "PL": "英超",
@@ -12,7 +12,7 @@
     "FL1": "法甲",
     "CL": "欧冠"
   },
-  "totalMatches": 143,
+  "totalMatches": 145,
   "notableMatches": 59,
   "errors": [
     {
@@ -6497,6 +6497,126 @@
     },
     {
       "area": {
+        "id": 2114,
+        "name": "Italy",
+        "code": "ITA",
+        "flag": "https://crests.football-data.org/784.svg"
+      },
+      "competition": {
+        "id": 2019,
+        "name": "Serie A",
+        "code": "SA",
+        "type": "LEAGUE",
+        "emblem": "https://crests.football-data.org/c111.png"
+      },
+      "season": {
+        "id": 2494,
+        "startDate": "2026-08-23",
+        "endDate": "2027-05-30",
+        "currentMatchday": 1,
+        "winner": null
+      },
+      "id": 558610,
+      "utcDate": "2026-09-07T16:00:00Z",
+      "status": "SCHEDULED",
+      "matchday": 3,
+      "stage": "REGULAR_SEASON",
+      "group": null,
+      "lastUpdated": "2026-07-14T22:53:59Z",
+      "homeTeam": {
+        "id": 104,
+        "name": "Cagliari Calcio",
+        "shortName": "Cagliari",
+        "tla": "CAG",
+        "crest": "https://crests.football-data.org/104.png"
+      },
+      "awayTeam": {
+        "id": 5890,
+        "name": "US Lecce",
+        "shortName": "Lecce",
+        "tla": "USL",
+        "crest": "https://crests.football-data.org/5890.png"
+      },
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "home": null,
+          "away": null
+        },
+        "halfTime": {
+          "home": null,
+          "away": null
+        }
+      },
+      "odds": {
+        "msg": "Activate Odds-Package in User-Panel to retrieve odds."
+      },
+      "referees": [],
+      "notable": false
+    },
+    {
+      "area": {
+        "id": 2114,
+        "name": "Italy",
+        "code": "ITA",
+        "flag": "https://crests.football-data.org/784.svg"
+      },
+      "competition": {
+        "id": 2019,
+        "name": "Serie A",
+        "code": "SA",
+        "type": "LEAGUE",
+        "emblem": "https://crests.football-data.org/c111.png"
+      },
+      "season": {
+        "id": 2494,
+        "startDate": "2026-08-23",
+        "endDate": "2027-05-30",
+        "currentMatchday": 1,
+        "winner": null
+      },
+      "id": 558617,
+      "utcDate": "2026-09-07T18:45:00Z",
+      "status": "SCHEDULED",
+      "matchday": 3,
+      "stage": "REGULAR_SEASON",
+      "group": null,
+      "lastUpdated": "2026-07-14T22:53:59Z",
+      "homeTeam": {
+        "id": 115,
+        "name": "Udinese Calcio",
+        "shortName": "Udinese",
+        "tla": "UDI",
+        "crest": "https://crests.football-data.org/115.png"
+      },
+      "awayTeam": {
+        "id": 110,
+        "name": "SS Lazio",
+        "shortName": "Lazio",
+        "tla": "LAZ",
+        "crest": "https://crests.football-data.org/110.png"
+      },
+      "score": {
+        "winner": null,
+        "duration": "REGULAR",
+        "fullTime": {
+          "home": null,
+          "away": null
+        },
+        "halfTime": {
+          "home": null,
+          "away": null
+        }
+      },
+      "odds": {
+        "msg": "Activate Odds-Package in User-Panel to retrieve odds."
+      },
+      "referees": [],
+      "notable": false
+    },
+    {
+      "area": {
         "id": 2088,
         "name": "Germany",
         "code": "DEU",
@@ -6522,7 +6642,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-02T05:20:10Z",
+      "lastUpdated": "2026-08-03T05:20:10Z",
       "homeTeam": {
         "id": 5,
         "name": "FC Bayern München",
@@ -6597,7 +6717,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-02T05:20:10Z",
+      "lastUpdated": "2026-08-03T05:20:10Z",
       "homeTeam": {
         "id": 721,
         "name": "RB Leipzig",
@@ -6665,7 +6785,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-02T05:20:10Z",
+      "lastUpdated": "2026-08-03T05:20:10Z",
       "homeTeam": {
         "id": 15,
         "name": "1. FSV Mainz 05",
@@ -6725,7 +6845,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-02T05:20:10Z",
+      "lastUpdated": "2026-08-03T05:20:10Z",
       "homeTeam": {
         "id": 28,
         "name": "1. FC Union Berlin",
@@ -6785,7 +6905,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-02T05:20:10Z",
+      "lastUpdated": "2026-08-03T05:20:10Z",
       "homeTeam": {
         "id": 719,
         "name": "SV 07 Elversberg",
@@ -6859,7 +6979,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-02T05:20:10Z",
+      "lastUpdated": "2026-08-03T05:20:10Z",
       "homeTeam": {
         "id": 1,
         "name": "1. FC Köln",
@@ -6919,7 +7039,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-02T05:20:10Z",
+      "lastUpdated": "2026-08-03T05:20:10Z",
       "homeTeam": {
         "id": 4,
         "name": "Borussia Dortmund",
@@ -6987,7 +7107,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-02T05:20:10Z",
+      "lastUpdated": "2026-08-03T05:20:10Z",
       "homeTeam": {
         "id": 17,
         "name": "SC Freiburg",
@@ -7047,7 +7167,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-02T05:20:10Z",
+      "lastUpdated": "2026-08-03T05:20:10Z",
       "homeTeam": {
         "id": 16,
         "name": "FC Augsburg",
@@ -7107,7 +7227,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-02T05:20:10Z",
+      "lastUpdated": "2026-08-03T05:20:10Z",
       "homeTeam": {
         "id": 10,
         "name": "VfB Stuttgart",
@@ -7167,7 +7287,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-02T05:20:10Z",
+      "lastUpdated": "2026-08-03T05:20:10Z",
       "homeTeam": {
         "id": 12,
         "name": "SV Werder Bremen",
@@ -7235,7 +7355,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-02T05:20:10Z",
+      "lastUpdated": "2026-08-03T05:20:10Z",
       "homeTeam": {
         "id": 2,
         "name": "TSG 1899 Hoffenheim",
@@ -7303,7 +7423,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-02T05:20:10Z",
+      "lastUpdated": "2026-08-03T05:20:10Z",
       "homeTeam": {
         "id": 3,
         "name": "Bayer 04 Leverkusen",
@@ -7377,7 +7497,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-02T05:20:10Z",
+      "lastUpdated": "2026-08-03T05:20:10Z",
       "homeTeam": {
         "id": 18,
         "name": "Borussia Mönchengladbach",
@@ -7437,7 +7557,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-02T05:20:10Z",
+      "lastUpdated": "2026-08-03T05:20:10Z",
       "homeTeam": {
         "id": 29,
         "name": "SC Paderborn 07",
@@ -7497,7 +7617,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-02T05:20:10Z",
+      "lastUpdated": "2026-08-03T05:20:10Z",
       "homeTeam": {
         "id": 6,
         "name": "FC Schalke 04",
@@ -7572,7 +7692,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-02T05:20:10Z",
+      "lastUpdated": "2026-08-03T05:20:10Z",
       "homeTeam": {
         "id": 7,
         "name": "Hamburger SV",
@@ -7632,7 +7752,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-02T05:20:10Z",
+      "lastUpdated": "2026-08-03T05:20:10Z",
       "homeTeam": {
         "id": 19,
         "name": "Eintracht Frankfurt",
