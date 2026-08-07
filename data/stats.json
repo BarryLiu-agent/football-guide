@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-06T11:07:06Z",
-  "totalMatches": 145,
-  "notableMatches": 59,
+  "generatedAt": "2026-08-07T06:12:31Z",
+  "totalMatches": 148,
+  "notableMatches": 60,
   "competitions": {
     "PL": "英超",
     "PD": "西甲",
@@ -13,8 +13,8 @@
   "byCompetition": {
     "PL": 30,
     "PD": 40,
-    "SA": 30,
-    "BL1": 18,
-    "FL1": 27
+    "SA": 31,
+    "BL1": 19,
+    "FL1": 28
   }
 }
