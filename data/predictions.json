@@ -1,8 +1,494 @@
 {
-  "generatedAt": "2026-08-08T02:32:14Z",
-  "total": 68,
+  "generatedAt": "2026-08-08T03:28:11Z",
+  "total": 186,
   "rulesVersion": "1.0",
   "predictions": [
+    {
+      "homeTeam": "Standard Liege",
+      "awayTeam": "Cercle Brugge KSV",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.35,
+        "away": 1.15
+      },
+      "probabilities": {
+        "home": 0.426,
+        "draw": 0.213,
+        "away": 0.361
+      },
+      "confidence": 0.57,
+      "reasons": [
+        "赔率隐含概率: 主39% 平28% 客33%"
+      ],
+      "messageEvidence": [],
+      "league": "BDF",
+      "kickoff": "2026-08-08T16:15:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1302
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1154
+        },
+        {
+          "score": "0-1",
+          "prob": 0.1023
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0907
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0828
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0734
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.483,
+        "under": 0.517
+      },
+      "analysis": "【胜负】双方实力接近，主队Standard Liege略占优（主胜 39% vs 客胜 33%）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（12%）、0-1（10%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%，倾向小球。\n【结论】综合赔率与消息，Standard Liege不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Sint Truiden",
+      "awayTeam": "Lommel SK",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.87,
+        "away": 0.63
+      },
+      "probabilities": {
+        "home": 0.62,
+        "draw": 0.173,
+        "away": 0.207
+      },
+      "confidence": 0.648,
+      "reasons": [
+        "赔率隐含概率: 主59% 平24% 客17%"
+      ],
+      "messageEvidence": [],
+      "league": "BDF",
+      "kickoff": "2026-08-08T18:45:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1395
+        },
+        {
+          "score": "2-0",
+          "prob": 0.1186
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1116
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0949
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0821
+        },
+        {
+          "score": "3-0",
+          "prob": 0.0672
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.517,
+        "under": 0.483
+      },
+      "analysis": "【胜负】市场高度看好主队Sint Truiden，主胜隐含概率 59%。\n【波胆】泊松模型推算最可能比分：1-0（14%）、2-0（12%）、1-1（11%）。\n【大小球】2.5 球盘口：大球 52% / 小球 48%，倾向大球。\n【结论】综合赔率与消息，Sint Truiden不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Westerlo",
+      "awayTeam": "Union Saint-Gilloise",
+      "predictedScore": "0-1",
+      "expectedGoals": {
+        "home": 0.75,
+        "away": 1.75
+      },
+      "probabilities": {
+        "home": 0.244,
+        "draw": 0.184,
+        "away": 0.572
+      },
+      "confidence": 0.629,
+      "reasons": [
+        "赔率隐含概率: 主21% 平25% 客54%"
+      ],
+      "messageEvidence": [],
+      "league": "BDF",
+      "kickoff": "2026-08-08T18:45:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "0-1",
+          "prob": 0.1313
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1182
+        },
+        {
+          "score": "0-2",
+          "prob": 0.1051
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0946
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0821
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0739
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.523,
+        "under": 0.477
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 21% / 平 25% / 客胜 54%。\n【波胆】泊松模型推算最可能比分：0-1（13%）、1-1（12%）、0-2（11%）。\n【大小球】2.5 球盘口：大球 52% / 小球 48%，倾向大球。\n【结论】综合赔率与消息，Union Saint-Gilloise不败概率更高，关注波胆 0-1 方向。"
+    },
+    {
+      "homeTeam": "Gent",
+      "awayTeam": "KV Mechelen",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.59,
+        "away": 0.91
+      },
+      "probabilities": {
+        "home": 0.505,
+        "draw": 0.204,
+        "away": 0.291
+      },
+      "confidence": 0.602,
+      "reasons": [
+        "赔率隐含概率: 主47% 平27% 客26%"
+      ],
+      "messageEvidence": [],
+      "league": "BDF",
+      "kickoff": "2026-08-09T11:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1285
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1264
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0909
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0907
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0895
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0893
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.507,
+        "under": 0.493
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 47% / 平 27% / 客胜 26%。\n【波胆】泊松模型推算最可能比分：1-0（13%）、1-1（13%）、2-0（9%）。\n【大小球】2.5 球盘口：大球 51% / 小球 49%，倾向大球。\n【结论】综合赔率与消息，Gent不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Charleroi",
+      "awayTeam": "Leuven",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.74,
+        "away": 0.76
+      },
+      "probabilities": {
+        "home": 0.559,
+        "draw": 0.196,
+        "away": 0.246
+      },
+      "confidence": 0.623,
+      "reasons": [
+        "赔率隐含概率: 主53% 平26% 客21%"
+      ],
+      "messageEvidence": [],
+      "league": "BDF",
+      "kickoff": "2026-08-09T14:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1393
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1204
+        },
+        {
+          "score": "2-0",
+          "prob": 0.107
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0925
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0907
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0784
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.476,
+        "under": 0.524
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 53% / 平 26% / 客胜 21%。\n【波胆】泊松模型推算最可能比分：1-0（14%）、1-1（12%）、2-0（11%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%，倾向小球。\n【结论】综合赔率与消息，Charleroi不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "SV Zulte-Waregem",
+      "awayTeam": "Genk",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.05,
+        "away": 1.45
+      },
+      "probabilities": {
+        "home": 0.336,
+        "draw": 0.2,
+        "away": 0.464
+      },
+      "confidence": 0.586,
+      "reasons": [
+        "赔率隐含概率: 主30% 平27% 客43%"
+      ],
+      "messageEvidence": [],
+      "league": "BDF",
+      "kickoff": "2026-08-09T14:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.127
+        },
+        {
+          "score": "0-1",
+          "prob": 0.1129
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0923
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0873
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0821
+        },
+        {
+          "score": "0-2",
+          "prob": 0.0776
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.542,
+        "under": 0.458
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 30% / 平 27% / 客胜 43%。\n【波胆】泊松模型推算最可能比分：1-1（13%）、0-1（11%）、1-0（9%）。\n【大小球】2.5 球盘口：大球 54% / 小球 46%，倾向大球。\n【结论】综合赔率与消息，Genk不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Anderlecht",
+      "awayTeam": "RAAL La Louvière",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.8,
+        "away": 0.7
+      },
+      "probabilities": {
+        "home": 0.583,
+        "draw": 0.192,
+        "away": 0.225
+      },
+      "confidence": 0.633,
+      "reasons": [
+        "赔率隐含概率: 主55% 平26% 客19%"
+      ],
+      "messageEvidence": [],
+      "league": "BDF",
+      "kickoff": "2026-08-09T16:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1437
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1173
+        },
+        {
+          "score": "2-0",
+          "prob": 0.1138
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0929
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0907
+        },
+        {
+          "score": "0-1",
+          "prob": 0.074
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.492,
+        "under": 0.508
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 55% / 平 26% / 客胜 19%。\n【波胆】泊松模型推算最可能比分：1-0（14%）、1-1（12%）、2-0（11%）。\n【大小球】2.5 球盘口：大球 49% / 小球 51%，倾向小球。\n【结论】综合赔率与消息，Anderlecht不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Royal Antwerp",
+      "awayTeam": "SK Beveren",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.78,
+        "away": 0.72
+      },
+      "probabilities": {
+        "home": 0.571,
+        "draw": 0.196,
+        "away": 0.233
+      },
+      "confidence": 0.628,
+      "reasons": [
+        "赔率隐含概率: 主54% 平26% 客20%"
+      ],
+      "messageEvidence": [],
+      "league": "BDF",
+      "kickoff": "2026-08-09T17:15:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1499
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1207
+        },
+        {
+          "score": "2-0",
+          "prob": 0.112
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1003
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0902
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0807
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.454,
+        "under": 0.546
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 54% / 平 26% / 客胜 20%。\n【波胆】泊松模型推算最可能比分：1-0（15%）、1-1（12%）、2-0（11%）。\n【大小球】2.5 球盘口：大球 45% / 小球 55%，倾向小球。\n【结论】综合赔率与消息，Royal Antwerp不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Cercle Brugge KSV",
+      "awayTeam": "Sint Truiden",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.33,
+        "away": 1.17
+      },
+      "probabilities": {
+        "home": 0.424,
+        "draw": 0.203,
+        "away": 0.373
+      },
+      "confidence": 0.57,
+      "reasons": [
+        "赔率隐含概率: 主39% 平27% 客34%"
+      ],
+      "messageEvidence": [],
+      "league": "BDF",
+      "kickoff": "2026-08-14T18:45:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1281
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1067
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0985
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0832
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0821
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0768
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.529,
+        "under": 0.471
+      },
+      "analysis": "【胜负】双方实力接近，主队Cercle Brugge KSV略占优（主胜 39% vs 客胜 34%）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（11%）、0-1（10%）。\n【大小球】2.5 球盘口：大球 53% / 小球 47%，倾向大球。\n【结论】综合赔率与消息，Cercle Brugge KSV不败概率更高，关注波胆 1-1 方向。"
+    },
     {
       "homeTeam": "Bayern Munich",
       "awayTeam": "VfB Stuttgart",
@@ -488,6 +974,1734 @@
         "under": 0.402
       },
       "analysis": "【胜负】双方实力接近，主队Augsburg略占优（主胜 45% vs 客胜 30%）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（10%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 60% / 小球 40%，倾向大球。\n【结论】综合赔率与消息，Augsburg不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Grêmio",
+      "awayTeam": "Sao Paulo",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.41,
+        "away": 1.09
+      },
+      "probabilities": {
+        "home": 0.436,
+        "draw": 0.227,
+        "away": 0.337
+      },
+      "confidence": 0.574,
+      "reasons": [
+        "赔率隐含概率: 主40% 平29% 客30%"
+      ],
+      "messageEvidence": [],
+      "league": "BSA",
+      "kickoff": "2026-08-08T19:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1414
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1337
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1225
+        },
+        {
+          "score": "0-1",
+          "prob": 0.1157
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0817
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0772
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.453,
+        "under": 0.547
+      },
+      "analysis": "【胜负】双方实力接近，主队Grêmio略占优（主胜 40% vs 客胜 30%）。\n【波胆】泊松模型推算最可能比分：1-0（14%）、1-1（13%）、0-0（12%）。\n【大小球】2.5 球盘口：大球 45% / 小球 55%，倾向小球。\n【结论】综合赔率与消息，Grêmio不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Remo",
+      "awayTeam": "Atletico Mineiro",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.14,
+        "away": 1.36
+      },
+      "probabilities": {
+        "home": 0.353,
+        "draw": 0.226,
+        "away": 0.422
+      },
+      "confidence": 0.569,
+      "reasons": [
+        "赔率隐含概率: 主32% 平29% 客39%"
+      ],
+      "messageEvidence": [],
+      "league": "BSA",
+      "kickoff": "2026-08-08T21:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1336
+        },
+        {
+          "score": "0-1",
+          "prob": 0.1292
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1146
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1108
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0779
+        },
+        {
+          "score": "0-2",
+          "prob": 0.0753
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.452,
+        "under": 0.548
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 32% / 平 29% / 客胜 39%。\n【波胆】泊松模型推算最可能比分：1-1（13%）、0-1（13%）、1-0（11%）。\n【大小球】2.5 球盘口：大球 45% / 小球 55%，倾向小球。\n【结论】综合赔率与消息，Atletico Mineiro不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Coritiba",
+      "awayTeam": "Chapecoense",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.86,
+        "away": 0.64
+      },
+      "probabilities": {
+        "home": 0.609,
+        "draw": 0.181,
+        "away": 0.21
+      },
+      "confidence": 0.644,
+      "reasons": [
+        "赔率隐含概率: 主58% 平25% 客18%"
+      ],
+      "messageEvidence": [],
+      "league": "BSA",
+      "kickoff": "2026-08-08T23:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1481
+        },
+        {
+          "score": "2-0",
+          "prob": 0.1208
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1137
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0928
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0907
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0697
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.495,
+        "under": 0.505
+      },
+      "analysis": "【胜负】市场高度看好主队Coritiba，主胜隐含概率 58%。\n【波胆】泊松模型推算最可能比分：1-0（15%）、2-0（12%）、1-1（11%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%，倾向小球。\n【结论】综合赔率与消息，Coritiba不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Botafogo",
+      "awayTeam": "Fluminense",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.38,
+        "away": 1.12
+      },
+      "probabilities": {
+        "home": 0.425,
+        "draw": 0.228,
+        "away": 0.346
+      },
+      "confidence": 0.57,
+      "reasons": [
+        "赔率隐含概率: 主39% 平30% 客31%"
+      ],
+      "messageEvidence": [],
+      "league": "BSA",
+      "kickoff": "2026-08-09T00:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1389
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1341
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1225
+        },
+        {
+          "score": "0-1",
+          "prob": 0.1183
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0787
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0761
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.48,
+        "under": 0.52
+      },
+      "analysis": "【胜负】双方实力接近，主队Botafogo略占优（主胜 39% vs 客胜 31%）。\n【波胆】泊松模型推算最可能比分：1-0（14%）、1-1（13%）、0-0（12%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%，倾向小球。\n【结论】综合赔率与消息，Botafogo不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Cruzeiro",
+      "awayTeam": "Mirassol",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.82,
+        "away": 0.68
+      },
+      "probabilities": {
+        "home": 0.59,
+        "draw": 0.19,
+        "away": 0.22
+      },
+      "confidence": 0.636,
+      "reasons": [
+        "赔率隐含概率: 主56% 平26% 客19%"
+      ],
+      "messageEvidence": [],
+      "league": "BSA",
+      "kickoff": "2026-08-09T14:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1545
+        },
+        {
+          "score": "2-0",
+          "prob": 0.119
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1173
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1003
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0904
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0761
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.487,
+        "under": 0.513
+      },
+      "analysis": "【胜负】市场高度看好主队Cruzeiro，主胜隐含概率 56%。\n【波胆】泊松模型推算最可能比分：1-0（15%）、2-0（12%）、1-1（12%）。\n【大小球】2.5 球盘口：大球 49% / 小球 51%，倾向小球。\n【结论】综合赔率与消息，Cruzeiro不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Bahia",
+      "awayTeam": "Vasco da Gama",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.61,
+        "away": 0.89
+      },
+      "probabilities": {
+        "home": 0.516,
+        "draw": 0.199,
+        "away": 0.285
+      },
+      "confidence": 0.607,
+      "reasons": [
+        "赔率隐含概率: 主48% 平27% 客25%"
+      ],
+      "messageEvidence": [],
+      "league": "BSA",
+      "kickoff": "2026-08-09T19:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1306
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1254
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0941
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0907
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0903
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0871
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.511,
+        "under": 0.489
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 48% / 平 27% / 客胜 25%。\n【波胆】泊松模型推算最可能比分：1-0（13%）、1-1（13%）、2-0（9%）。\n【大小球】2.5 球盘口：大球 51% / 小球 49%，倾向大球。\n【结论】综合赔率与消息，Bahia不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Palmeiras",
+      "awayTeam": "Internacional",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.91,
+        "away": 0.59
+      },
+      "probabilities": {
+        "home": 0.626,
+        "draw": 0.178,
+        "away": 0.195
+      },
+      "confidence": 0.651,
+      "reasons": [
+        "赔率隐含概率: 主59% 平25% 客16%"
+      ],
+      "messageEvidence": [],
+      "league": "BSA",
+      "kickoff": "2026-08-09T19:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1614
+        },
+        {
+          "score": "2-0",
+          "prob": 0.1299
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1114
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1003
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0897
+        },
+        {
+          "score": "3-0",
+          "prob": 0.0697
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.485,
+        "under": 0.515
+      },
+      "analysis": "【胜负】市场高度看好主队Palmeiras，主胜隐含概率 59%。\n【波胆】泊松模型推算最可能比分：1-0（16%）、2-0（13%）、1-1（11%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%，倾向小球。\n【结论】综合赔率与消息，Palmeiras不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Santos",
+      "awayTeam": "Atletico Paranaense",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.52,
+        "away": 0.98
+      },
+      "probabilities": {
+        "home": 0.475,
+        "draw": 0.219,
+        "away": 0.306
+      },
+      "confidence": 0.59,
+      "reasons": [
+        "赔率隐含概率: 主44% 平29% 客27%"
+      ],
+      "messageEvidence": [],
+      "league": "BSA",
+      "kickoff": "2026-08-09T21:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1414
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1306
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1108
+        },
+        {
+          "score": "0-1",
+          "prob": 0.1024
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0902
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0833
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.448,
+        "under": 0.552
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 44% / 平 29% / 客胜 27%。\n【波胆】泊松模型推算最可能比分：1-0（14%）、1-1（13%）、0-0（11%）。\n【大小球】2.5 球盘口：大球 45% / 小球 55%，倾向小球。\n【结论】综合赔率与消息，Santos不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Bragantino-SP",
+      "awayTeam": "Corinthians",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.52,
+        "away": 0.98
+      },
+      "probabilities": {
+        "home": 0.468,
+        "draw": 0.229,
+        "away": 0.303
+      },
+      "confidence": 0.587,
+      "reasons": [
+        "赔率隐含概率: 主43% 平30% 客27%"
+      ],
+      "messageEvidence": [],
+      "league": "BSA",
+      "kickoff": "2026-08-09T21:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1492
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1316
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1225
+        },
+        {
+          "score": "0-1",
+          "prob": 0.108
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0908
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0801
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.426,
+        "under": 0.574
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 43% / 平 30% / 客胜 27%。\n【波胆】泊松模型推算最可能比分：1-0（15%）、1-1（13%）、0-0（12%）。\n【大小球】2.5 球盘口：大球 43% / 小球 57%，倾向小球。\n【结论】综合赔率与消息，Bragantino-SP不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Flamengo",
+      "awayTeam": "Vitoria",
+      "predictedScore": "2-0",
+      "expectedGoals": {
+        "home": 2.19,
+        "away": 0.31
+      },
+      "probabilities": {
+        "home": 0.793,
+        "draw": 0.096,
+        "away": 0.111
+      },
+      "confidence": 0.717,
+      "reasons": [
+        "赔率隐含概率: 主76% 平16% 客8%"
+      ],
+      "messageEvidence": [],
+      "league": "BSA",
+      "kickoff": "2026-08-09T22:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "2-0",
+          "prob": 0.1174
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0978
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0939
+        },
+        {
+          "score": "3-0",
+          "prob": 0.0939
+        },
+        {
+          "score": "1-1",
+          "prob": 0.0783
+        },
+        {
+          "score": "3-1",
+          "prob": 0.0751
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.574,
+        "under": 0.426
+      },
+      "analysis": "【胜负】市场高度看好主队Flamengo，主胜隐含概率 76%。\n【波胆】泊松模型推算最可能比分：2-0（12%）、1-0（10%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 57% / 小球 43%，倾向大球。\n【结论】综合赔率与消息，Flamengo不败概率更高，关注波胆 2-0 方向。"
+    },
+    {
+      "homeTeam": "Fluminense",
+      "awayTeam": "Palmeiras",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.23,
+        "away": 1.27
+      },
+      "probabilities": {
+        "home": 0.379,
+        "draw": 0.233,
+        "away": 0.389
+      },
+      "confidence": 0.556,
+      "reasons": [
+        "赔率隐含概率: 主35% 平30% 客36%"
+      ],
+      "messageEvidence": [],
+      "league": "BSA",
+      "kickoff": "2026-08-15T19:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.135
+        },
+        {
+          "score": "0-1",
+          "prob": 0.1286
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1286
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1225
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0709
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0709
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.433,
+        "under": 0.567
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 35% / 平 30% / 客胜 36%。\n【波胆】泊松模型推算最可能比分：1-1（14%）、0-1（13%）、1-0（13%）。\n【大小球】2.5 球盘口：大球 43% / 小球 57%，倾向小球。\n【结论】综合赔率与消息，Palmeiras不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Atletico Paranaense",
+      "awayTeam": "Bragantino-SP",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.6,
+        "away": 0.9
+      },
+      "probabilities": {
+        "home": 0.5,
+        "draw": 0.218,
+        "away": 0.283
+      },
+      "confidence": 0.6,
+      "reasons": [
+        "赔率隐含概率: 主47% 平28% 客25%"
+      ],
+      "messageEvidence": [],
+      "league": "BSA",
+      "kickoff": "2026-08-15T21:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1463
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1287
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1108
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0975
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0965
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0849
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.431,
+        "under": 0.569
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 47% / 平 28% / 客胜 25%。\n【波胆】泊松模型推算最可能比分：1-0（15%）、1-1（13%）、0-0（11%）。\n【大小球】2.5 球盘口：大球 43% / 小球 57%，倾向小球。\n【结论】综合赔率与消息，Atletico Paranaense不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Sao Paulo",
+      "awayTeam": "Coritiba",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.84,
+        "away": 0.66
+      },
+      "probabilities": {
+        "home": 0.597,
+        "draw": 0.189,
+        "away": 0.215
+      },
+      "confidence": 0.639,
+      "reasons": [
+        "赔率隐含概率: 主56% 平26% 客18%"
+      ],
+      "messageEvidence": [],
+      "league": "BSA",
+      "kickoff": "2026-08-16T00:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1459
+        },
+        {
+          "score": "2-0",
+          "prob": 0.1173
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1155
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0929
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0907
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0718
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.485,
+        "under": 0.515
+      },
+      "analysis": "【胜负】市场高度看好主队Sao Paulo，主胜隐含概率 56%。\n【波胆】泊松模型推算最可能比分：1-0（15%）、2-0（12%）、1-1（12%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%，倾向小球。\n【结论】综合赔率与消息，Sao Paulo不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Chapecoense",
+      "awayTeam": "Bahia",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.0,
+        "away": 1.5
+      },
+      "probabilities": {
+        "home": 0.319,
+        "draw": 0.202,
+        "away": 0.479
+      },
+      "confidence": 0.592,
+      "reasons": [
+        "赔率隐含概率: 主29% 平27% 客45%"
+      ],
+      "messageEvidence": [],
+      "league": "BSA",
+      "kickoff": "2026-08-16T14:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1257
+        },
+        {
+          "score": "0-1",
+          "prob": 0.117
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0896
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0882
+        },
+        {
+          "score": "0-2",
+          "prob": 0.0833
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0821
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.524,
+        "under": 0.476
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 29% / 平 27% / 客胜 45%。\n【波胆】泊松模型推算最可能比分：1-1（13%）、0-1（12%）、1-2（9%）。\n【大小球】2.5 球盘口：大球 52% / 小球 48%，倾向大球。\n【结论】综合赔率与消息，Bahia不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Atletico Mineiro",
+      "awayTeam": "Grêmio",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.76,
+        "away": 0.74
+      },
+      "probabilities": {
+        "home": 0.565,
+        "draw": 0.197,
+        "away": 0.237
+      },
+      "confidence": 0.626,
+      "reasons": [
+        "赔率隐含概率: 主53% 平26% 客20%"
+      ],
+      "messageEvidence": [],
+      "league": "BSA",
+      "kickoff": "2026-08-16T19:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1499
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1207
+        },
+        {
+          "score": "2-0",
+          "prob": 0.112
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1003
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0902
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0807
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.482,
+        "under": 0.518
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 53% / 平 26% / 客胜 20%。\n【波胆】泊松模型推算最可能比分：1-0（15%）、1-1（12%）、2-0（11%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%，倾向小球。\n【结论】综合赔率与消息，Atletico Mineiro不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Vasco da Gama",
+      "awayTeam": "Santos",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.62,
+        "away": 0.88
+      },
+      "probabilities": {
+        "home": 0.515,
+        "draw": 0.208,
+        "away": 0.277
+      },
+      "confidence": 0.606,
+      "reasons": [
+        "赔率隐含概率: 主48% 平27% 客24%"
+      ],
+      "messageEvidence": [],
+      "league": "BSA",
+      "kickoff": "2026-08-16T19:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1407
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1262
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1003
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0987
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0899
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0885
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.478,
+        "under": 0.522
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 48% / 平 27% / 客胜 24%。\n【波胆】泊松模型推算最可能比分：1-0（14%）、1-1（13%）、0-0（10%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%，倾向小球。\n【结论】综合赔率与消息，Vasco da Gama不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Vitoria",
+      "awayTeam": "Botafogo",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.34,
+        "away": 1.16
+      },
+      "probabilities": {
+        "home": 0.423,
+        "draw": 0.213,
+        "away": 0.364
+      },
+      "confidence": 0.569,
+      "reasons": [
+        "赔率隐含概率: 主39% 平28% 客33%"
+      ],
+      "messageEvidence": [],
+      "league": "BSA",
+      "kickoff": "2026-08-16T21:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1321
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1222
+        },
+        {
+          "score": "0-1",
+          "prob": 0.1084
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1003
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0805
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0745
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.488,
+        "under": 0.512
+      },
+      "analysis": "【胜负】双方实力接近，主队Vitoria略占优（主胜 39% vs 客胜 33%）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（12%）、0-1（11%）。\n【大小球】2.5 球盘口：大球 49% / 小球 51%，倾向小球。\n【结论】综合赔率与消息，Vitoria不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Mirassol",
+      "awayTeam": "Flamengo",
+      "predictedScore": "0-1",
+      "expectedGoals": {
+        "home": 0.82,
+        "away": 1.68
+      },
+      "probabilities": {
+        "home": 0.261,
+        "draw": 0.209,
+        "away": 0.53
+      },
+      "confidence": 0.612,
+      "reasons": [
+        "赔率隐含概率: 主23% 平28% 客50%"
+      ],
+      "messageEvidence": [],
+      "league": "BSA",
+      "kickoff": "2026-08-16T21:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "0-1",
+          "prob": 0.143
+        },
+        {
+          "score": "1-1",
+          "prob": 0.125
+        },
+        {
+          "score": "0-2",
+          "prob": 0.1019
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1003
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0891
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0876
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.451,
+        "under": 0.549
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 23% / 平 28% / 客胜 50%。\n【波胆】泊松模型推算最可能比分：0-1（14%）、1-1（12%）、0-2（10%）。\n【大小球】2.5 球盘口：大球 45% / 小球 55%，倾向小球。\n【结论】综合赔率与消息，Flamengo不败概率更高，关注波胆 0-1 方向。"
+    },
+    {
+      "homeTeam": "Corinthians",
+      "awayTeam": "Cruzeiro",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.44,
+        "away": 1.06
+      },
+      "probabilities": {
+        "home": 0.446,
+        "draw": 0.227,
+        "away": 0.327
+      },
+      "confidence": 0.578,
+      "reasons": [
+        "赔率隐含概率: 主41% 平29% 客29%"
+      ],
+      "messageEvidence": [],
+      "league": "BSA",
+      "kickoff": "2026-08-16T22:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.144
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1331
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1225
+        },
+        {
+          "score": "0-1",
+          "prob": 0.1131
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0847
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0782
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.422,
+        "under": 0.578
+      },
+      "analysis": "【胜负】双方实力接近，主队Corinthians略占优（主胜 41% vs 客胜 29%）。\n【波胆】泊松模型推算最可能比分：1-0（14%）、1-1（13%）、0-0（12%）。\n【大小球】2.5 球盘口：大球 42% / 小球 58%，倾向小球。\n【结论】综合赔率与消息，Corinthians不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Internacional",
+      "awayTeam": "Remo",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.9,
+        "away": 0.6
+      },
+      "probabilities": {
+        "home": 0.628,
+        "draw": 0.173,
+        "away": 0.199
+      },
+      "confidence": 0.651,
+      "reasons": [
+        "赔率隐含概率: 主59% 平24% 客17%"
+      ],
+      "messageEvidence": [],
+      "league": "BSA",
+      "kickoff": "2026-08-17T23:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1416
+        },
+        {
+          "score": "2-0",
+          "prob": 0.1221
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1097
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0946
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0821
+        },
+        {
+          "score": "3-0",
+          "prob": 0.0702
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.503,
+        "under": 0.497
+      },
+      "analysis": "【胜负】市场高度看好主队Internacional，主胜隐含概率 59%。\n【波胆】泊松模型推算最可能比分：1-0（14%）、2-0（12%）、1-1（11%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%，倾向大球。\n【结论】综合赔率与消息，Internacional不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Wolverhampton Wanderers",
+      "awayTeam": "Blackburn Rovers",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.91,
+        "away": 0.59
+      },
+      "probabilities": {
+        "home": 0.637,
+        "draw": 0.164,
+        "away": 0.198
+      },
+      "confidence": 0.655,
+      "reasons": [
+        "赔率隐含概率: 主60% 平23% 客17%"
+      ],
+      "messageEvidence": [],
+      "league": "CH",
+      "kickoff": "2026-08-14T19:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1436
+        },
+        {
+          "score": "2-0",
+          "prob": 0.1257
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1077
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0943
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0821
+        },
+        {
+          "score": "3-0",
+          "prob": 0.0733
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.53,
+        "under": 0.47
+      },
+      "analysis": "【胜负】市场高度看好主队Wolverhampton Wanderers，主胜隐含概率 60%。\n【波胆】泊松模型推算最可能比分：1-0（14%）、2-0（13%）、1-1（11%）。\n【大小球】2.5 球盘口：大球 53% / 小球 47%，倾向大球。\n【结论】综合赔率与消息，Wolverhampton Wanderers不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Bolton Wanderers",
+      "awayTeam": "Preston North End",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.47,
+        "away": 1.03
+      },
+      "probabilities": {
+        "home": 0.464,
+        "draw": 0.214,
+        "away": 0.323
+      },
+      "confidence": 0.585,
+      "reasons": [
+        "赔率隐含概率: 主43% 平28% 客29%"
+      ],
+      "messageEvidence": [],
+      "league": "CH",
+      "kickoff": "2026-08-15T11:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1307
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1291
+        },
+        {
+          "score": "0-1",
+          "prob": 0.1015
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1003
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0842
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0832
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.484,
+        "under": 0.516
+      },
+      "analysis": "【胜负】双方实力接近，主队Bolton Wanderers略占优（主胜 43% vs 客胜 29%）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（13%）、0-1（10%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%，倾向小球。\n【结论】综合赔率与消息，Bolton Wanderers不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Bristol City",
+      "awayTeam": "Millwall",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.32,
+        "away": 1.18
+      },
+      "probabilities": {
+        "home": 0.413,
+        "draw": 0.215,
+        "away": 0.372
+      },
+      "confidence": 0.565,
+      "reasons": [
+        "赔率隐含概率: 主38% 平28% 客34%"
+      ],
+      "messageEvidence": [],
+      "league": "CH",
+      "kickoff": "2026-08-15T14:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1324
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1199
+        },
+        {
+          "score": "0-1",
+          "prob": 0.1107
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1003
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0792
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0731
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.487,
+        "under": 0.513
+      },
+      "analysis": "【胜负】双方实力接近，主队Bristol City略占优（主胜 38% vs 客胜 34%）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（12%）、0-1（11%）。\n【大小球】2.5 球盘口：大球 49% / 小球 51%，倾向小球。\n【结论】综合赔率与消息，Bristol City不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Charlton Athletic",
+      "awayTeam": "Derby County",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.25,
+        "away": 1.25
+      },
+      "probabilities": {
+        "home": 0.391,
+        "draw": 0.22,
+        "away": 0.389
+      },
+      "confidence": 0.557,
+      "reasons": [
+        "赔率隐含概率: 主36% 平29% 客36%"
+      ],
+      "messageEvidence": [],
+      "league": "CH",
+      "kickoff": "2026-08-15T14:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1326
+        },
+        {
+          "score": "0-1",
+          "prob": 0.1153
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1153
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1003
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0762
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0762
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.473,
+        "under": 0.527
+      },
+      "analysis": "【胜负】双方实力接近，主队Charlton Athletic略占优（主胜 36% vs 客胜 36%）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、0-1（12%）、1-0（12%）。\n【大小球】2.5 球盘口：大球 47% / 小球 53%，倾向小球。\n【结论】综合赔率与消息，Charlton Athletic不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Middlesbrough",
+      "awayTeam": "Lincoln City",
+      "predictedScore": "2-0",
+      "expectedGoals": {
+        "home": 2.11,
+        "away": 0.39
+      },
+      "probabilities": {
+        "home": 0.745,
+        "draw": 0.118,
+        "away": 0.137
+      },
+      "confidence": 0.698,
+      "reasons": [
+        "赔率隐含概率: 主71% 平18% 客10%"
+      ],
+      "messageEvidence": [],
+      "league": "CH",
+      "kickoff": "2026-08-15T14:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "2-0",
+          "prob": 0.1301
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1197
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0944
+        },
+        {
+          "score": "3-0",
+          "prob": 0.0944
+        },
+        {
+          "score": "1-1",
+          "prob": 0.0868
+        },
+        {
+          "score": "3-1",
+          "prob": 0.0684
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.576,
+        "under": 0.424
+      },
+      "analysis": "【胜负】市场高度看好主队Middlesbrough，主胜隐含概率 71%。\n【波胆】泊松模型推算最可能比分：2-0（13%）、1-0（12%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 58% / 小球 42%，倾向大球。\n【结论】综合赔率与消息，Middlesbrough不败概率更高，关注波胆 2-0 方向。"
+    },
+    {
+      "homeTeam": "Norwich City",
+      "awayTeam": "West Bromwich Albion",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.56,
+        "away": 0.94
+      },
+      "probabilities": {
+        "home": 0.496,
+        "draw": 0.206,
+        "away": 0.298
+      },
+      "confidence": 0.599,
+      "reasons": [
+        "赔率隐含概率: 主46% 平27% 客26%"
+      ],
+      "messageEvidence": [],
+      "league": "CH",
+      "kickoff": "2026-08-15T14:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1361
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1283
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1003
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0945
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0923
+        },
+        {
+          "score": "2-1",
+          "prob": 0.087
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.493,
+        "under": 0.507
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 46% / 平 27% / 客胜 26%。\n【波胆】泊松模型推算最可能比分：1-0（14%）、1-1（13%）、0-0（10%）。\n【大小球】2.5 球盘口：大球 49% / 小球 51%，倾向小球。\n【结论】综合赔率与消息，Norwich City不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Portsmouth",
+      "awayTeam": "Queens Park Rangers",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.43,
+        "away": 1.07
+      },
+      "probabilities": {
+        "home": 0.457,
+        "draw": 0.205,
+        "away": 0.339
+      },
+      "confidence": 0.583,
+      "reasons": [
+        "赔率隐含概率: 主42% 平27% 客31%"
+      ],
+      "messageEvidence": [],
+      "league": "CH",
+      "kickoff": "2026-08-15T14:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.127
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1129
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0923
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0873
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0821
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0776
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.517,
+        "under": 0.483
+      },
+      "analysis": "【胜负】双方实力接近，主队Portsmouth略占优（主胜 42% vs 客胜 31%）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（11%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 52% / 小球 48%，倾向大球。\n【结论】综合赔率与消息，Portsmouth不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Stoke City",
+      "awayTeam": "Swansea City",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.35,
+        "away": 1.15
+      },
+      "probabilities": {
+        "home": 0.422,
+        "draw": 0.22,
+        "away": 0.357
+      },
+      "confidence": 0.569,
+      "reasons": [
+        "赔率隐含概率: 主39% 平29% 客32%"
+      ],
+      "messageEvidence": [],
+      "league": "CH",
+      "kickoff": "2026-08-15T14:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1321
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1222
+        },
+        {
+          "score": "0-1",
+          "prob": 0.1084
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1003
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0805
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0745
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.456,
+        "under": 0.544
+      },
+      "analysis": "【胜负】双方实力接近，主队Stoke City略占优（主胜 39% vs 客胜 32%）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（12%）、0-1（11%）。\n【大小球】2.5 球盘口：大球 46% / 小球 54%，倾向小球。\n【结论】综合赔率与消息，Stoke City不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Sheffield United",
+      "awayTeam": "Birmingham City",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.33,
+        "away": 1.17
+      },
+      "probabilities": {
+        "home": 0.412,
+        "draw": 0.223,
+        "away": 0.365
+      },
+      "confidence": 0.565,
+      "reasons": [
+        "赔率隐含概率: 主38% 平29% 客33%"
+      ],
+      "messageEvidence": [],
+      "league": "CH",
+      "kickoff": "2026-08-15T16:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1339
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1268
+        },
+        {
+          "score": "0-1",
+          "prob": 0.117
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1108
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0766
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0725
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.472,
+        "under": 0.528
+      },
+      "analysis": "【胜负】双方实力接近，主队Sheffield United略占优（主胜 38% vs 客胜 33%）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（13%）、0-1（12%）。\n【大小球】2.5 球盘口：大球 47% / 小球 53%，倾向小球。\n【结论】综合赔率与消息，Sheffield United不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Watford",
+      "awayTeam": "Southampton",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 0.98,
+        "away": 1.52
+      },
+      "probabilities": {
+        "home": 0.315,
+        "draw": 0.199,
+        "away": 0.486
+      },
+      "confidence": 0.595,
+      "reasons": [
+        "赔率隐含概率: 主28% 平27% 客45%"
+      ],
+      "messageEvidence": [],
+      "league": "CH",
+      "kickoff": "2026-08-16T12:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1257
+        },
+        {
+          "score": "0-1",
+          "prob": 0.117
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0896
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0882
+        },
+        {
+          "score": "0-2",
+          "prob": 0.0833
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0821
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.535,
+        "under": 0.465
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 28% / 平 27% / 客胜 45%。\n【波胆】泊松模型推算最可能比分：1-1（13%）、0-1（12%）、1-2（9%）。\n【大小球】2.5 球盘口：大球 54% / 小球 46%，倾向大球。\n【结论】综合赔率与消息，Southampton不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Burnley",
+      "awayTeam": "West Ham United",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.15,
+        "away": 1.35
+      },
+      "probabilities": {
+        "home": 0.366,
+        "draw": 0.204,
+        "away": 0.43
+      },
+      "confidence": 0.572,
+      "reasons": [
+        "赔率隐含概率: 主33% 平27% 客40%"
+      ],
+      "messageEvidence": [],
+      "league": "CH",
+      "kickoff": "2026-08-16T15:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1278
+        },
+        {
+          "score": "0-1",
+          "prob": 0.1088
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0964
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0847
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0821
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0751
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.552,
+        "under": 0.448
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 33% / 平 27% / 客胜 40%。\n【波胆】泊松模型推算最可能比分：1-1（13%）、0-1（11%）、1-0（10%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%，倾向大球。\n【结论】综合赔率与消息，West Ham United不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Cardiff City",
+      "awayTeam": "Wrexham AFC",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.36,
+        "away": 1.14
+      },
+      "probabilities": {
+        "home": 0.435,
+        "draw": 0.201,
+        "away": 0.363
+      },
+      "confidence": 0.574,
+      "reasons": [
+        "赔率隐含概率: 主40% 平27% 客33%"
+      ],
+      "messageEvidence": [],
+      "league": "CH",
+      "kickoff": "2026-08-17T19:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1251
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1023
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0908
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0862
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0764
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0743
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.547,
+        "under": 0.453
+      },
+      "analysis": "【胜负】双方实力接近，主队Cardiff City略占优（主胜 40% vs 客胜 33%）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（10%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%，倾向大球。\n【结论】综合赔率与消息，Cardiff City不败概率更高，关注波胆 1-1 方向。"
     },
     {
       "homeTeam": "FC Kairat",
@@ -1030,6 +3244,546 @@
       "analysis": "【胜负】市场高度看好主队Lyon，主胜隐含概率 62%。\n【波胆】泊松模型推算最可能比分：1-0（13%）、2-0（12%）、1-1（10%）。\n【大小球】2.5 球盘口：大球 58% / 小球 42%，倾向大球。\n【结论】综合赔率与消息，Lyon不败概率更高，关注波胆 1-0 方向。"
     },
     {
+      "homeTeam": "NEC Nijmegen",
+      "awayTeam": "SC Telstar",
+      "predictedScore": "2-0",
+      "expectedGoals": {
+        "home": 1.94,
+        "away": 0.56
+      },
+      "probabilities": {
+        "home": 0.675,
+        "draw": 0.129,
+        "away": 0.195
+      },
+      "confidence": 0.67,
+      "reasons": [
+        "赔率隐含概率: 主64% 平20% 客16%"
+      ],
+      "messageEvidence": [],
+      "league": "ED",
+      "kickoff": "2026-08-08T14:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "2-0",
+          "prob": 0.1129
+        },
+        {
+          "score": "1-0",
+          "prob": 0.106
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0983
+        },
+        {
+          "score": "1-1",
+          "prob": 0.0923
+        },
+        {
+          "score": "3-0",
+          "prob": 0.0802
+        },
+        {
+          "score": "3-1",
+          "prob": 0.0698
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.464,
+        "under": 0.536
+      },
+      "analysis": "【胜负】市场高度看好主队NEC Nijmegen，主胜隐含概率 64%。\n【波胆】泊松模型推算最可能比分：2-0（11%）、1-0（11%）、2-1（10%）。\n【大小球】2.5 球盘口：大球 46% / 小球 54%，倾向小球。\n【结论】综合赔率与消息，NEC Nijmegen不败概率更高，关注波胆 2-0 方向。"
+    },
+    {
+      "homeTeam": "Go Ahead Eagles",
+      "awayTeam": "Willem II",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.81,
+        "away": 0.69
+      },
+      "probabilities": {
+        "home": 0.603,
+        "draw": 0.166,
+        "away": 0.231
+      },
+      "confidence": 0.641,
+      "reasons": [
+        "赔率隐含概率: 主57% 平23% 客20%"
+      ],
+      "messageEvidence": [],
+      "league": "ED",
+      "kickoff": "2026-08-08T16:45:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1198
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1099
+        },
+        {
+          "score": "2-0",
+          "prob": 0.1067
+        },
+        {
+          "score": "2-1",
+          "prob": 0.098
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0672
+        },
+        {
+          "score": "3-0",
+          "prob": 0.0634
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.588,
+        "under": 0.412
+      },
+      "analysis": "【胜负】市场高度看好主队Go Ahead Eagles，主胜隐含概率 57%。\n【波胆】泊松模型推算最可能比分：1-0（12%）、1-1（11%）、2-0（11%）。\n【大小球】2.5 球盘口：大球 59% / 小球 41%，倾向大球。\n【结论】综合赔率与消息，Go Ahead Eagles不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "PSV Eindhoven",
+      "awayTeam": "Fortuna Sittard",
+      "predictedScore": "2-0",
+      "expectedGoals": {
+        "home": 2.21,
+        "away": 0.29
+      },
+      "probabilities": {
+        "home": 0.837,
+        "draw": 0.051,
+        "away": 0.112
+      },
+      "confidence": 0.735,
+      "reasons": [
+        "赔率隐含概率: 主80% 平12% 客8%"
+      ],
+      "messageEvidence": [],
+      "league": "ED",
+      "kickoff": "2026-08-08T18:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "2-0",
+          "prob": 0.1174
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0978
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0939
+        },
+        {
+          "score": "3-0",
+          "prob": 0.0939
+        },
+        {
+          "score": "1-1",
+          "prob": 0.0783
+        },
+        {
+          "score": "3-1",
+          "prob": 0.0751
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.432,
+        "under": 0.568
+      },
+      "analysis": "【胜负】市场高度看好主队PSV Eindhoven，主胜隐含概率 80%。\n【波胆】泊松模型推算最可能比分：2-0（12%）、1-0（10%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 43% / 小球 57%，倾向小球。\n【结论】综合赔率与消息，PSV Eindhoven不败概率更高，关注波胆 2-0 方向。"
+    },
+    {
+      "homeTeam": "AZ Alkmaar",
+      "awayTeam": "ADO Den Haag",
+      "predictedScore": "2-0",
+      "expectedGoals": {
+        "home": 1.99,
+        "away": 0.51
+      },
+      "probabilities": {
+        "home": 0.69,
+        "draw": 0.134,
+        "away": 0.177
+      },
+      "confidence": 0.676,
+      "reasons": [
+        "赔率隐含概率: 主66% 平20% 客14%"
+      ],
+      "messageEvidence": [],
+      "league": "ED",
+      "kickoff": "2026-08-08T19:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "2-0",
+          "prob": 0.127
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1243
+        },
+        {
+          "score": "2-1",
+          "prob": 0.096
+        },
+        {
+          "score": "1-1",
+          "prob": 0.094
+        },
+        {
+          "score": "3-0",
+          "prob": 0.0865
+        },
+        {
+          "score": "3-1",
+          "prob": 0.0654
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.439,
+        "under": 0.561
+      },
+      "analysis": "【胜负】市场高度看好主队AZ Alkmaar，主胜隐含概率 66%。\n【波胆】泊松模型推算最可能比分：2-0（13%）、1-0（12%）、2-1（10%）。\n【大小球】2.5 球盘口：大球 44% / 小球 56%，倾向小球。\n【结论】综合赔率与消息，AZ Alkmaar不败概率更高，关注波胆 2-0 方向。"
+    },
+    {
+      "homeTeam": "Sparta Rotterdam",
+      "awayTeam": "Feyenoord",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 0.73,
+        "away": 1.77
+      },
+      "probabilities": {
+        "home": 0.245,
+        "draw": 0.165,
+        "away": 0.591
+      },
+      "confidence": 0.636,
+      "reasons": [
+        "赔率隐含概率: 主21% 平23% 客56%"
+      ],
+      "messageEvidence": [],
+      "league": "ED",
+      "kickoff": "2026-08-09T10:15:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1098
+        },
+        {
+          "score": "0-1",
+          "prob": 0.109
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0984
+        },
+        {
+          "score": "0-2",
+          "prob": 0.0976
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0613
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0608
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.426,
+        "under": 0.574
+      },
+      "analysis": "【胜负】市场明显看好客队Feyenoord，客胜隐含概率 56%。\n【波胆】泊松模型推算最可能比分：1-1（11%）、0-1（11%）、1-2（10%）。\n【大小球】2.5 球盘口：大球 43% / 小球 57%，倾向小球。\n【结论】综合赔率与消息，Feyenoord不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "FC Zwolle",
+      "awayTeam": "Ajax",
+      "predictedScore": "1-2",
+      "expectedGoals": {
+        "home": 0.56,
+        "away": 1.94
+      },
+      "probabilities": {
+        "home": 0.193,
+        "draw": 0.139,
+        "away": 0.668
+      },
+      "confidence": 0.667,
+      "reasons": [
+        "赔率隐含概率: 主16% 平21% 客63%"
+      ],
+      "messageEvidence": [],
+      "league": "ED",
+      "kickoff": "2026-08-09T12:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-2",
+          "prob": 0.0988
+        },
+        {
+          "score": "1-1",
+          "prob": 0.095
+        },
+        {
+          "score": "0-2",
+          "prob": 0.0882
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0848
+        },
+        {
+          "score": "1-3",
+          "prob": 0.0685
+        },
+        {
+          "score": "0-3",
+          "prob": 0.0611
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.446,
+        "under": 0.554
+      },
+      "analysis": "【胜负】市场明显看好客队Ajax，客胜隐含概率 63%。\n【波胆】泊松模型推算最可能比分：1-2（10%）、1-1（10%）、0-2（9%）。\n【大小球】2.5 球盘口：大球 45% / 小球 55%，倾向小球。\n【结论】综合赔率与消息，Ajax不败概率更高，关注波胆 1-2 方向。"
+    },
+    {
+      "homeTeam": "Groningen",
+      "awayTeam": "FC Utrecht",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.38,
+        "away": 1.12
+      },
+      "probabilities": {
+        "home": 0.438,
+        "draw": 0.207,
+        "away": 0.354
+      },
+      "confidence": 0.575,
+      "reasons": [
+        "赔率隐含概率: 主40% 平27% 客32%"
+      ],
+      "messageEvidence": [],
+      "league": "ED",
+      "kickoff": "2026-08-09T12:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1298
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1176
+        },
+        {
+          "score": "0-1",
+          "prob": 0.1002
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0907
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0841
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0762
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.531,
+        "under": 0.469
+      },
+      "analysis": "【胜负】双方实力接近，主队Groningen略占优（主胜 40% vs 客胜 32%）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（12%）、0-1（10%）。\n【大小球】2.5 球盘口：大球 53% / 小球 47%，倾向大球。\n【结论】综合赔率与消息，Groningen不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Heerenveen",
+      "awayTeam": "FC Twente Enschede",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.08,
+        "away": 1.42
+      },
+      "probabilities": {
+        "home": 0.352,
+        "draw": 0.183,
+        "away": 0.465
+      },
+      "confidence": 0.586,
+      "reasons": [
+        "赔率隐含概率: 主32% 平25% 客43%"
+      ],
+      "messageEvidence": [],
+      "league": "ED",
+      "kickoff": "2026-08-09T14:45:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.118
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0936
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0909
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0766
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0743
+        },
+        {
+          "score": "0-2",
+          "prob": 0.0721
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.449,
+        "under": 0.551
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 32% / 平 25% / 客胜 43%。\n【波胆】泊松模型推算最可能比分：1-1（12%）、0-1（9%）、1-2（9%）。\n【大小球】2.5 球盘口：大球 45% / 小球 55%，倾向小球。\n【结论】综合赔率与消息，FC Twente Enschede不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "FC Utrecht",
+      "awayTeam": "AZ Alkmaar",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.33,
+        "away": 1.17
+      },
+      "probabilities": {
+        "home": 0.432,
+        "draw": 0.188,
+        "away": 0.38
+      },
+      "confidence": 0.573,
+      "reasons": [
+        "赔率隐含概率: 主40% 平25% 客35%"
+      ],
+      "messageEvidence": [],
+      "league": "ED",
+      "kickoff": "2026-08-15T16:45:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.119
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0885
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0866
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0817
+        },
+        {
+          "score": "1-2",
+          "prob": 0.08
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0645
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.577,
+        "under": 0.423
+      },
+      "analysis": "【胜负】双方实力接近，主队FC Utrecht略占优（主胜 40% vs 客胜 35%）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（9%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 58% / 小球 42%，倾向大球。\n【结论】综合赔率与消息，FC Utrecht不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Excelsior",
+      "awayTeam": "PSV Eindhoven",
+      "predictedScore": "1-2",
+      "expectedGoals": {
+        "home": 0.68,
+        "away": 1.82
+      },
+      "probabilities": {
+        "home": 0.234,
+        "draw": 0.143,
+        "away": 0.623
+      },
+      "confidence": 0.649,
+      "reasons": [
+        "赔率隐含概率: 主20% 平21% 客59%"
+      ],
+      "messageEvidence": [],
+      "league": "ED",
+      "kickoff": "2026-08-15T18:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-2",
+          "prob": 0.0988
+        },
+        {
+          "score": "1-1",
+          "prob": 0.095
+        },
+        {
+          "score": "0-2",
+          "prob": 0.0882
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0848
+        },
+        {
+          "score": "1-3",
+          "prob": 0.0685
+        },
+        {
+          "score": "0-3",
+          "prob": 0.0611
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.61,
+        "under": 0.39
+      },
+      "analysis": "【胜负】市场明显看好客队PSV Eindhoven，客胜隐含概率 59%。\n【波胆】泊松模型推算最可能比分：1-2（10%）、1-1（10%）、0-2（9%）。\n【大小球】2.5 球盘口：大球 61% / 小球 39%，倾向大球。\n【结论】综合赔率与消息，PSV Eindhoven不败概率更高，关注波胆 1-2 方向。"
+    },
+    {
       "homeTeam": "Marseille",
       "awayTeam": "Strasbourg",
       "predictedScore": "1-1",
@@ -1516,6 +4270,2382 @@
       "analysis": "【胜负】市场高度看好主队Paris Saint Germain，主胜隐含概率 68%。\n【波胆】泊松模型推算最可能比分：2-0（11%）、2-1（10%）、1-0（10%）。\n【大小球】2.5 球盘口：大球 49% / 小球 51%，倾向小球。\n【结论】综合赔率与消息，Paris Saint Germain不败概率更高，关注波胆 2-0 方向。"
     },
     {
+      "homeTeam": "Avispa Fukuoka",
+      "awayTeam": "Vissel Kobe",
+      "predictedScore": "0-1",
+      "expectedGoals": {
+        "home": 0.83,
+        "away": 1.67
+      },
+      "probabilities": {
+        "home": 0.255,
+        "draw": 0.233,
+        "away": 0.512
+      },
+      "confidence": 0.605,
+      "reasons": [
+        "赔率隐含概率: 主22% 平30% 客48%"
+      ],
+      "messageEvidence": [],
+      "league": "JLG",
+      "kickoff": "2026-08-08T10:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "0-1",
+          "prob": 0.179
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1496
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1259
+        },
+        {
+          "score": "0-2",
+          "prob": 0.1072
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1051
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0753
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.388,
+        "under": 0.612
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 22% / 平 30% / 客胜 48%。\n【波胆】泊松模型推算最可能比分：0-1（18%）、0-0（15%）、1-1（13%）。\n【大小球】2.5 球盘口：大球 39% / 小球 61%，倾向小球。\n【结论】综合赔率与消息，Vissel Kobe不败概率更高，关注波胆 0-1 方向。"
+    },
+    {
+      "homeTeam": "Cerezo Osaka",
+      "awayTeam": "Fagiano Okayama",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.64,
+        "away": 0.86
+      },
+      "probabilities": {
+        "home": 0.531,
+        "draw": 0.191,
+        "away": 0.278
+      },
+      "confidence": 0.612,
+      "reasons": [
+        "赔率隐含概率: 主50% 平26% 客24%"
+      ],
+      "messageEvidence": [],
+      "league": "JLG",
+      "kickoff": "2026-08-08T10:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1252
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1221
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0954
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0931
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0821
+        },
+        {
+          "score": "0-1",
+          "prob": 0.08
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.518,
+        "under": 0.482
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 50% / 平 26% / 客胜 24%。\n【波胆】泊松模型推算最可能比分：1-0（13%）、1-1（12%）、2-0（10%）。\n【大小球】2.5 球盘口：大球 52% / 小球 48%，倾向大球。\n【结论】综合赔率与消息，Cerezo Osaka不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "FC Tokyo",
+      "awayTeam": "FC Machida Zelvia",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.38,
+        "away": 1.12
+      },
+      "probabilities": {
+        "home": 0.42,
+        "draw": 0.241,
+        "away": 0.34
+      },
+      "confidence": 0.568,
+      "reasons": [
+        "赔率隐含概率: 主39% 平31% 客31%"
+      ],
+      "messageEvidence": [],
+      "league": "JLG",
+      "kickoff": "2026-08-08T10:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1462
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1353
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1345
+        },
+        {
+          "score": "0-1",
+          "prob": 0.1245
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0789
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0726
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.427,
+        "under": 0.573
+      },
+      "analysis": "【胜负】双方实力接近，主队FC Tokyo略占优（主胜 39% vs 客胜 31%）。\n【波胆】泊松模型推算最可能比分：1-0（15%）、0-0（14%）、1-1（13%）。\n【大小球】2.5 球盘口：大球 43% / 小球 57%，倾向小球。\n【结论】综合赔率与消息，FC Tokyo不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Kashiwa Reysol",
+      "awayTeam": "Mito HollyHock",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.9,
+        "away": 0.6
+      },
+      "probabilities": {
+        "home": 0.632,
+        "draw": 0.17,
+        "away": 0.199
+      },
+      "confidence": 0.653,
+      "reasons": [
+        "赔率隐含概率: 主60% 平24% 客17%"
+      ],
+      "messageEvidence": [],
+      "league": "JLG",
+      "kickoff": "2026-08-08T10:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1416
+        },
+        {
+          "score": "2-0",
+          "prob": 0.1221
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1097
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0946
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0821
+        },
+        {
+          "score": "3-0",
+          "prob": 0.0702
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.495,
+        "under": 0.505
+      },
+      "analysis": "【胜负】市场高度看好主队Kashiwa Reysol，主胜隐含概率 60%。\n【波胆】泊松模型推算最可能比分：1-0（14%）、2-0（12%）、1-1（11%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%，倾向小球。\n【结论】综合赔率与消息，Kashiwa Reysol不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Nagoya Grampus",
+      "awayTeam": "Shimizu S Pulse",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.53,
+        "away": 0.97
+      },
+      "probabilities": {
+        "home": 0.487,
+        "draw": 0.207,
+        "away": 0.307
+      },
+      "confidence": 0.595,
+      "reasons": [
+        "赔率隐含概率: 主45% 平27% 客27%"
+      ],
+      "messageEvidence": [],
+      "league": "JLG",
+      "kickoff": "2026-08-08T10:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1273
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1263
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0914
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0907
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0886
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0879
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.505,
+        "under": 0.495
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 45% / 平 27% / 客胜 27%。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（13%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%，倾向大球。\n【结论】综合赔率与消息，Nagoya Grampus不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Hiroshima Sanfrecce FC",
+      "awayTeam": "JEF United Chiba",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.97,
+        "away": 0.53
+      },
+      "probabilities": {
+        "home": 0.672,
+        "draw": 0.148,
+        "away": 0.18
+      },
+      "confidence": 0.669,
+      "reasons": [
+        "赔率隐含概率: 主64% 平21% 客15%"
+      ],
+      "messageEvidence": [],
+      "league": "JLG",
+      "kickoff": "2026-08-08T10:15:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1288
+        },
+        {
+          "score": "2-0",
+          "prob": 0.1235
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1009
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0967
+        },
+        {
+          "score": "3-0",
+          "prob": 0.0789
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0672
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.527,
+        "under": 0.473
+      },
+      "analysis": "【胜负】市场高度看好主队Hiroshima Sanfrecce FC，主胜隐含概率 64%。\n【波胆】泊松模型推算最可能比分：1-0（13%）、2-0（12%）、1-1（10%）。\n【大小球】2.5 球盘口：大球 53% / 小球 47%，倾向大球。\n【结论】综合赔率与消息，Hiroshima Sanfrecce FC不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Tokyo Verdy",
+      "awayTeam": "Kawasaki Frontale",
+      "predictedScore": "0-1",
+      "expectedGoals": {
+        "home": 1.08,
+        "away": 1.42
+      },
+      "probabilities": {
+        "home": 0.332,
+        "draw": 0.232,
+        "away": 0.436
+      },
+      "confidence": 0.574,
+      "reasons": [
+        "赔率隐含概率: 主30% 平30% 客40%"
+      ],
+      "messageEvidence": [],
+      "league": "JLG",
+      "kickoff": "2026-08-09T09:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "0-1",
+          "prob": 0.1414
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1337
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1225
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1157
+        },
+        {
+          "score": "0-2",
+          "prob": 0.0817
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0772
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.443,
+        "under": 0.557
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 30% / 平 30% / 客胜 40%。\n【波胆】泊松模型推算最可能比分：0-1（14%）、1-1（13%）、0-0（12%）。\n【大小球】2.5 球盘口：大球 44% / 小球 56%，倾向小球。\n【结论】综合赔率与消息，Kawasaki Frontale不败概率更高，关注波胆 0-1 方向。"
+    },
+    {
+      "homeTeam": "V-Varen Nagasaki",
+      "awayTeam": "Kyoto Purple Sanga",
+      "predictedScore": "0-1",
+      "expectedGoals": {
+        "home": 1.14,
+        "away": 1.36
+      },
+      "probabilities": {
+        "home": 0.351,
+        "draw": 0.231,
+        "away": 0.418
+      },
+      "confidence": 0.567,
+      "reasons": [
+        "赔率隐含概率: 主32% 平30% 客38%"
+      ],
+      "messageEvidence": [],
+      "league": "JLG",
+      "kickoff": "2026-08-09T10:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "0-1",
+          "prob": 0.1363
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1345
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1225
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1209
+        },
+        {
+          "score": "0-2",
+          "prob": 0.0758
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0749
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.461,
+        "under": 0.539
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 32% / 平 30% / 客胜 38%。\n【波胆】泊松模型推算最可能比分：0-1（14%）、1-1（13%）、0-0（12%）。\n【大小球】2.5 球盘口：大球 46% / 小球 54%，倾向小球。\n【结论】综合赔率与消息，Kyoto Purple Sanga不败概率更高，关注波胆 0-1 方向。"
+    },
+    {
+      "homeTeam": "Bucheon FC 1995",
+      "awayTeam": "Gwangju FC",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.67,
+        "away": 0.83
+      },
+      "probabilities": {
+        "home": 0.519,
+        "draw": 0.224,
+        "away": 0.256
+      },
+      "confidence": 0.608,
+      "reasons": [
+        "赔率隐含概率: 主49% 平29% 客22%"
+      ],
+      "messageEvidence": [],
+      "league": "KL1",
+      "kickoff": "2026-08-08T11:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1705
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1353
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1262
+        },
+        {
+          "score": "2-0",
+          "prob": 0.1074
+        },
+        {
+          "score": "0-1",
+          "prob": 0.1001
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0795
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.414,
+        "under": 0.586
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 49% / 平 29% / 客胜 22%。\n【波胆】泊松模型推算最可能比分：1-0（17%）、0-0（14%）、1-1（13%）。\n【大小球】2.5 球盘口：大球 41% / 小球 59%，倾向小球。\n【结论】综合赔率与消息，Bucheon FC 1995不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "FC Anyang",
+      "awayTeam": "Daejeon Citizen",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.17,
+        "away": 1.33
+      },
+      "probabilities": {
+        "home": 0.366,
+        "draw": 0.219,
+        "away": 0.415
+      },
+      "confidence": 0.566,
+      "reasons": [
+        "赔率隐含概率: 主33% 平29% 客38%"
+      ],
+      "messageEvidence": [],
+      "league": "KL1",
+      "kickoff": "2026-08-08T11:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1324
+        },
+        {
+          "score": "0-1",
+          "prob": 0.1199
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1107
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1003
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0792
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0731
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.483,
+        "under": 0.517
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 33% / 平 29% / 客胜 38%。\n【波胆】泊松模型推算最可能比分：1-1（13%）、0-1（12%）、1-0（11%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%，倾向小球。\n【结论】综合赔率与消息，Daejeon Citizen不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Sangju Sangmu FC",
+      "awayTeam": "FC Seoul",
+      "predictedScore": "0-1",
+      "expectedGoals": {
+        "home": 0.88,
+        "away": 1.62
+      },
+      "probabilities": {
+        "home": 0.282,
+        "draw": 0.198,
+        "away": 0.52
+      },
+      "confidence": 0.608,
+      "reasons": [
+        "赔率隐含概率: 主25% 平26% 客49%"
+      ],
+      "messageEvidence": [],
+      "league": "KL1",
+      "kickoff": "2026-08-08T11:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "0-1",
+          "prob": 0.1328
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1243
+        },
+        {
+          "score": "0-2",
+          "prob": 0.0972
+        },
+        {
+          "score": "1-2",
+          "prob": 0.091
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0907
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0849
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.521,
+        "under": 0.479
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 25% / 平 26% / 客胜 49%。\n【波胆】泊松模型推算最可能比分：0-1（13%）、1-1（12%）、0-2（10%）。\n【大小球】2.5 球盘口：大球 52% / 小球 48%，倾向大球。\n【结论】综合赔率与消息，FC Seoul不败概率更高，关注波胆 0-1 方向。"
+    },
+    {
+      "homeTeam": "Jeonbuk Hyundai Motors",
+      "awayTeam": "Jeju United FC",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.79,
+        "away": 0.71
+      },
+      "probabilities": {
+        "home": 0.579,
+        "draw": 0.191,
+        "away": 0.231
+      },
+      "confidence": 0.631,
+      "reasons": [
+        "赔率隐含概率: 主55% 平26% 客20%"
+      ],
+      "messageEvidence": [],
+      "league": "KL1",
+      "kickoff": "2026-08-08T11:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1522
+        },
+        {
+          "score": "1-1",
+          "prob": 0.119
+        },
+        {
+          "score": "2-0",
+          "prob": 0.1155
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1003
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0903
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0784
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.478,
+        "under": 0.522
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 55% / 平 26% / 客胜 20%。\n【波胆】泊松模型推算最可能比分：1-0（15%）、1-1（12%）、2-0（12%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%，倾向小球。\n【结论】综合赔率与消息，Jeonbuk Hyundai Motors不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Pohang Steelers",
+      "awayTeam": "Ulsan Hyundai FC",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.24,
+        "away": 1.26
+      },
+      "probabilities": {
+        "home": 0.385,
+        "draw": 0.223,
+        "away": 0.392
+      },
+      "confidence": 0.557,
+      "reasons": [
+        "赔率隐含概率: 主35% 平29% 客36%"
+      ],
+      "messageEvidence": [],
+      "league": "KL1",
+      "kickoff": "2026-08-08T11:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1341
+        },
+        {
+          "score": "0-1",
+          "prob": 0.1219
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1219
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1108
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0737
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0737
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.476,
+        "under": 0.524
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 35% / 平 29% / 客胜 36%。\n【波胆】泊松模型推算最可能比分：1-1（13%）、0-1（12%）、1-0（12%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%，倾向小球。\n【结论】综合赔率与消息，Ulsan Hyundai FC不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "New England Revolution",
+      "awayTeam": "Houston Dynamo",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.33,
+        "away": 1.17
+      },
+      "probabilities": {
+        "home": 0.423,
+        "draw": 0.204,
+        "away": 0.373
+      },
+      "confidence": 0.569,
+      "reasons": [
+        "赔率隐含概率: 主39% 平27% 客34%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-08T20:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1281
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1067
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0985
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0832
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0821
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0768
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.534,
+        "under": 0.466
+      },
+      "analysis": "【胜负】双方实力接近，主队New England Revolution略占优（主胜 39% vs 客胜 34%）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（11%）、0-1（10%）。\n【大小球】2.5 球盘口：大球 53% / 小球 47%，倾向大球。\n【结论】综合赔率与消息，New England Revolution不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Atlanta United FC",
+      "awayTeam": "New York Red Bulls",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.64,
+        "away": 0.86
+      },
+      "probabilities": {
+        "home": 0.551,
+        "draw": 0.163,
+        "away": 0.286
+      },
+      "confidence": 0.62,
+      "reasons": [
+        "赔率隐含概率: 主52% 平23% 客25%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-15T23:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1066
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0975
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0911
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0834
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0624
+        },
+        {
+          "score": "3-1",
+          "prob": 0.0595
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.452,
+        "under": 0.548
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 52% / 平 23% / 客胜 25%。\n【波胆】泊松模型推算最可能比分：1-1（11%）、2-1（10%）、1-0（9%）。\n【大小球】2.5 球盘口：大球 45% / 小球 55%，倾向小球。\n【结论】综合赔率与消息，Atlanta United FC不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "CF Montreal",
+      "awayTeam": "D.C. United",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.43,
+        "away": 1.07
+      },
+      "probabilities": {
+        "home": 0.46,
+        "draw": 0.196,
+        "away": 0.344
+      },
+      "confidence": 0.584,
+      "reasons": [
+        "赔率隐含概率: 主43% 平26% 客31%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-15T23:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1243
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1062
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0889
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0869
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0759
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0743
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.557,
+        "under": 0.443
+      },
+      "analysis": "【胜负】双方实力接近，主队CF Montreal略占优（主胜 43% vs 客胜 31%）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（11%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 56% / 小球 44%，倾向大球。\n【结论】综合赔率与消息，CF Montreal不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Charlotte FC",
+      "awayTeam": "Columbus Crew SC",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.4,
+        "away": 1.1
+      },
+      "probabilities": {
+        "home": 0.451,
+        "draw": 0.196,
+        "away": 0.353
+      },
+      "confidence": 0.581,
+      "reasons": [
+        "赔率隐含概率: 主42% 平26% 客32%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-15T23:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1247
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1043
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0888
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0876
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0746
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0743
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.574,
+        "under": 0.426
+      },
+      "analysis": "【胜负】双方实力接近，主队Charlotte FC略占优（主胜 42% vs 客胜 32%）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（10%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 57% / 小球 43%，倾向大球。\n【结论】综合赔率与消息，Charlotte FC不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Orlando City SC",
+      "awayTeam": "FC Cincinnati",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.35,
+        "away": 1.15
+      },
+      "probabilities": {
+        "home": 0.453,
+        "draw": 0.163,
+        "away": 0.384
+      },
+      "confidence": 0.581,
+      "reasons": [
+        "赔率隐含概率: 主42% 平23% 客35%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-15T23:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.104
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0882
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0782
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0691
+        },
+        {
+          "score": "2-2",
+          "prob": 0.0663
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0613
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.556,
+        "under": 0.444
+      },
+      "analysis": "【胜负】双方实力接近，主队Orlando City SC略占优（主胜 42% vs 客胜 35%）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、2-1（9%）、1-2（8%）。\n【大小球】2.5 球盘口：大球 56% / 小球 44%，倾向大球。\n【结论】综合赔率与消息，Orlando City SC不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Toronto FC",
+      "awayTeam": "New England Revolution",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.37,
+        "away": 1.13
+      },
+      "probabilities": {
+        "home": 0.442,
+        "draw": 0.196,
+        "away": 0.362
+      },
+      "confidence": 0.577,
+      "reasons": [
+        "赔率隐含概率: 主41% 平26% 客33%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-15T23:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1251
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1023
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0908
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0862
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0764
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0743
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.558,
+        "under": 0.442
+      },
+      "analysis": "【胜负】双方实力接近，主队Toronto FC略占优（主胜 41% vs 客胜 33%）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（10%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 56% / 小球 44%，倾向大球。\n【结论】综合赔率与消息，Toronto FC不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Houston Dynamo",
+      "awayTeam": "LA Galaxy",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.77,
+        "away": 0.73
+      },
+      "probabilities": {
+        "home": 0.589,
+        "draw": 0.168,
+        "away": 0.244
+      },
+      "confidence": 0.635,
+      "reasons": [
+        "赔率隐含概率: 主56% 平23% 客21%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-16T00:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1179
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1115
+        },
+        {
+          "score": "2-0",
+          "prob": 0.1035
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0978
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0672
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0635
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.594,
+        "under": 0.406
+      },
+      "analysis": "【胜负】市场高度看好主队Houston Dynamo，主胜隐含概率 56%。\n【波胆】泊松模型推算最可能比分：1-0（12%）、1-1（11%）、2-0（10%）。\n【大小球】2.5 球盘口：大球 59% / 小球 41%，倾向大球。\n【消息面】LA Galaxy信号 +0.00（1条提及）。\n【结论】综合赔率与消息，Houston Dynamo不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Nashville SC",
+      "awayTeam": "Inter Miami CF",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.3,
+        "away": 1.2
+      },
+      "probabilities": {
+        "home": 0.421,
+        "draw": 0.19,
+        "away": 0.388
+      },
+      "confidence": 0.568,
+      "reasons": [
+        "赔率隐含概率: 主39% 平26% 客36%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-16T00:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1224
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0925
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0889
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0843
+        },
+        {
+          "score": "1-2",
+          "prob": 0.081
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0672
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.449,
+        "under": 0.551
+      },
+      "analysis": "【胜负】双方实力接近，主队Nashville SC略占优（主胜 39% vs 客胜 36%）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（9%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 45% / 小球 55%，倾向小球。\n【结论】综合赔率与消息，Nashville SC不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Colorado Rapids",
+      "awayTeam": "Sporting Kansas City",
+      "predictedScore": "2-0",
+      "expectedGoals": {
+        "home": 1.93,
+        "away": 0.57
+      },
+      "probabilities": {
+        "home": 0.669,
+        "draw": 0.136,
+        "away": 0.195
+      },
+      "confidence": 0.667,
+      "reasons": [
+        "赔率隐含概率: 主64% 平20% 客16%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-16T01:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "2-0",
+          "prob": 0.1067
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1031
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0992
+        },
+        {
+          "score": "1-1",
+          "prob": 0.0958
+        },
+        {
+          "score": "3-0",
+          "prob": 0.0736
+        },
+        {
+          "score": "3-1",
+          "prob": 0.0684
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.459,
+        "under": 0.541
+      },
+      "analysis": "【胜负】市场高度看好主队Colorado Rapids，主胜隐含概率 64%。\n【波胆】泊松模型推算最可能比分：2-0（11%）、1-0（10%）、2-1（10%）。\n【大小球】2.5 球盘口：大球 46% / 小球 54%，倾向小球。\n【结论】综合赔率与消息，Colorado Rapids不败概率更高，关注波胆 2-0 方向。"
+    },
+    {
+      "homeTeam": "Real Salt Lake",
+      "awayTeam": "Minnesota United FC",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.69,
+        "away": 0.81
+      },
+      "probabilities": {
+        "home": 0.557,
+        "draw": 0.178,
+        "away": 0.265
+      },
+      "confidence": 0.623,
+      "reasons": [
+        "赔率隐含概率: 主52% 平24% 客23%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-16T01:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1154
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1125
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0966
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0942
+        },
+        {
+          "score": "0-1",
+          "prob": 0.069
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0672
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.487,
+        "under": 0.513
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 52% / 平 24% / 客胜 23%。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（11%）、2-1（10%）。\n【大小球】2.5 球盘口：大球 49% / 小球 51%，倾向小球。\n【结论】综合赔率与消息，Real Salt Lake不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Los Angeles FC",
+      "awayTeam": "San Diego FC",
+      "predictedScore": "2-1",
+      "expectedGoals": {
+        "home": 1.87,
+        "away": 0.63
+      },
+      "probabilities": {
+        "home": 0.643,
+        "draw": 0.139,
+        "away": 0.218
+      },
+      "confidence": 0.657,
+      "reasons": [
+        "赔率隐含概率: 主61% 平21% 客18%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-16T02:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "2-1",
+          "prob": 0.0994
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0972
+        },
+        {
+          "score": "1-1",
+          "prob": 0.0957
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0936
+        },
+        {
+          "score": "3-1",
+          "prob": 0.0688
+        },
+        {
+          "score": "3-0",
+          "prob": 0.0673
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.476,
+        "under": 0.524
+      },
+      "analysis": "【胜负】市场高度看好主队Los Angeles FC，主胜隐含概率 61%。\n【波胆】泊松模型推算最可能比分：2-1（10%）、2-0（10%）、1-1（10%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%，倾向小球。\n【结论】综合赔率与消息，Los Angeles FC不败概率更高，关注波胆 2-1 方向。"
+    },
+    {
+      "homeTeam": "San Jose Earthquakes",
+      "awayTeam": "St. Louis City SC",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.53,
+        "away": 0.97
+      },
+      "probabilities": {
+        "home": 0.503,
+        "draw": 0.178,
+        "away": 0.32
+      },
+      "confidence": 0.601,
+      "reasons": [
+        "赔率隐含概率: 主47% 平24% 客29%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-16T02:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1134
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0937
+        },
+        {
+          "score": "1-0",
+          "prob": 0.091
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0752
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0707
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0686
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.431,
+        "under": 0.569
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 47% / 平 24% / 客胜 29%。\n【波胆】泊松模型推算最可能比分：1-1（11%）、2-1（9%）、1-0（9%）。\n【大小球】2.5 球盘口：大球 43% / 小球 57%，倾向小球。\n【结论】综合赔率与消息，San Jose Earthquakes不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Chicago Fire",
+      "awayTeam": "Portland Timbers",
+      "predictedScore": "2-1",
+      "expectedGoals": {
+        "home": 1.84,
+        "away": 0.66
+      },
+      "probabilities": {
+        "home": 0.634,
+        "draw": 0.137,
+        "away": 0.229
+      },
+      "confidence": 0.653,
+      "reasons": [
+        "赔率隐含概率: 主60% 平20% 客20%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-16T22:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "2-1",
+          "prob": 0.0989
+        },
+        {
+          "score": "1-1",
+          "prob": 0.0937
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0909
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0861
+        },
+        {
+          "score": "3-1",
+          "prob": 0.0696
+        },
+        {
+          "score": "3-0",
+          "prob": 0.064
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.504,
+        "under": 0.496
+      },
+      "analysis": "【胜负】市场高度看好主队Chicago Fire，主胜隐含概率 60%。\n【波胆】泊松模型推算最可能比分：2-1（10%）、1-1（9%）、2-0（9%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%，倾向大球。\n【结论】综合赔率与消息，Chicago Fire不败概率更高，关注波胆 2-1 方向。"
+    },
+    {
+      "homeTeam": "New York City FC",
+      "awayTeam": "Philadelphia Union",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.46,
+        "away": 1.04
+      },
+      "probabilities": {
+        "home": 0.474,
+        "draw": 0.19,
+        "away": 0.336
+      },
+      "confidence": 0.589,
+      "reasons": [
+        "赔率隐含概率: 主44% 平26% 客30%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-16T22:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1207
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1016
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0913
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0798
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0768
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0717
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.567,
+        "under": 0.433
+      },
+      "analysis": "【胜负】双方实力接近，主队New York City FC略占优（主胜 44% vs 客胜 30%）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（10%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 57% / 小球 43%，倾向大球。\n【结论】综合赔率与消息，New York City FC不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Austin FC",
+      "awayTeam": "FC Dallas",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.13,
+        "away": 1.37
+      },
+      "probabilities": {
+        "home": 0.364,
+        "draw": 0.191,
+        "away": 0.444
+      },
+      "confidence": 0.578,
+      "reasons": [
+        "赔率隐含概率: 主33% 平26% 客41%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-17T00:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.122
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0962
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0873
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0853
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0774
+        },
+        {
+          "score": "0-2",
+          "prob": 0.0688
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.59,
+        "under": 0.41
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 33% / 平 26% / 客胜 41%。\n【波胆】泊松模型推算最可能比分：1-1（12%）、0-1（10%）、1-2（9%）。\n【大小球】2.5 球盘口：大球 59% / 小球 41%，倾向大球。\n【结论】综合赔率与消息，FC Dallas不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Seattle Sounders FC",
+      "awayTeam": "Vancouver Whitecaps FC",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 0.96,
+        "away": 1.54
+      },
+      "probabilities": {
+        "home": 0.316,
+        "draw": 0.179,
+        "away": 0.505
+      },
+      "confidence": 0.602,
+      "reasons": [
+        "赔率隐含概率: 主28% 平25% 客47%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-17T02:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1161
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0988
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0943
+        },
+        {
+          "score": "0-2",
+          "prob": 0.0802
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0715
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0683
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.483,
+        "under": 0.517
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 28% / 平 25% / 客胜 47%。\n【波胆】泊松模型推算最可能比分：1-1（12%）、0-1（10%）、1-2（9%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%，倾向小球。\n【结论】综合赔率与消息，Vancouver Whitecaps FC不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Columbus Crew SC",
+      "awayTeam": "CF Montreal",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.85,
+        "away": 0.65
+      },
+      "probabilities": {
+        "home": 0.629,
+        "draw": 0.148,
+        "away": 0.223
+      },
+      "confidence": 0.652,
+      "reasons": [
+        "赔率隐含概率: 主60% 平21% 客19%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-19T23:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1005
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0995
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0986
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0976
+        },
+        {
+          "score": "3-1",
+          "prob": 0.0657
+        },
+        {
+          "score": "3-0",
+          "prob": 0.0644
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.524,
+        "under": 0.476
+      },
+      "analysis": "【胜负】市场高度看好主队Columbus Crew SC，主胜隐含概率 60%。\n【波胆】泊松模型推算最可能比分：1-1（10%）、2-1（10%）、1-0（10%）。\n【大小球】2.5 球盘口：大球 52% / 小球 48%，倾向大球。\n【结论】综合赔率与消息，Columbus Crew SC不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Toronto FC",
+      "awayTeam": "Charlotte FC",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.33,
+        "away": 1.17
+      },
+      "probabilities": {
+        "home": 0.434,
+        "draw": 0.186,
+        "away": 0.38
+      },
+      "confidence": 0.573,
+      "reasons": [
+        "赔率隐含概率: 主40% 平25% 客35%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-19T23:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.119
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0885
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0866
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0817
+        },
+        {
+          "score": "1-2",
+          "prob": 0.08
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0645
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.57,
+        "under": 0.43
+      },
+      "analysis": "【胜负】双方实力接近，主队Toronto FC略占优（主胜 40% vs 客胜 35%）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（9%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 57% / 小球 43%，倾向大球。\n【结论】综合赔率与消息，Toronto FC不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Orlando City SC",
+      "awayTeam": "Chicago Fire",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.14,
+        "away": 1.36
+      },
+      "probabilities": {
+        "home": 0.377,
+        "draw": 0.17,
+        "away": 0.452
+      },
+      "confidence": 0.581,
+      "reasons": [
+        "赔率隐含概率: 主34% 平24% 客42%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-19T23:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1078
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0886
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0786
+        },
+        {
+          "score": "0-1",
+          "prob": 0.074
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0656
+        },
+        {
+          "score": "2-2",
+          "prob": 0.0645
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.5,
+        "under": 0.5
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 34% / 平 24% / 客胜 42%。\n【波胆】泊松模型推算最可能比分：1-1（11%）、1-2（9%）、2-1（8%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%，倾向大球。\n【结论】综合赔率与消息，Chicago Fire不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "D.C. United",
+      "awayTeam": "New England Revolution",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.53,
+        "away": 0.97
+      },
+      "probabilities": {
+        "home": 0.497,
+        "draw": 0.186,
+        "away": 0.317
+      },
+      "confidence": 0.599,
+      "reasons": [
+        "赔率隐含概率: 主46% 平25% 客28%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-19T23:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1201
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1034
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0924
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0796
+        },
+        {
+          "score": "0-1",
+          "prob": 0.078
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0697
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.552,
+        "under": 0.448
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 46% / 平 25% / 客胜 28%。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（10%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%，倾向大球。\n【结论】综合赔率与消息，D.C. United不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "FC Cincinnati",
+      "awayTeam": "New York City FC",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.45,
+        "away": 1.05
+      },
+      "probabilities": {
+        "home": 0.48,
+        "draw": 0.172,
+        "away": 0.348
+      },
+      "confidence": 0.592,
+      "reasons": [
+        "赔率隐含概率: 主45% 平24% 客31%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-19T23:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1071
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0913
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0768
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0747
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0655
+        },
+        {
+          "score": "2-2",
+          "prob": 0.0637
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.472,
+        "under": 0.528
+      },
+      "analysis": "【胜负】双方实力接近，主队FC Cincinnati略占优（主胜 45% vs 客胜 31%）。\n【波胆】泊松模型推算最可能比分：1-1（11%）、2-1（9%）、1-0（8%）。\n【大小球】2.5 球盘口：大球 47% / 小球 53%，倾向小球。\n【结论】综合赔率与消息，FC Cincinnati不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Philadelphia Union",
+      "awayTeam": "Inter Miami CF",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.23,
+        "away": 1.27
+      },
+      "probabilities": {
+        "home": 0.408,
+        "draw": 0.169,
+        "away": 0.423
+      },
+      "confidence": 0.569,
+      "reasons": [
+        "赔率隐含概率: 主37% 平24% 客39%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-19T23:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1043
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0851
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0818
+        },
+        {
+          "score": "2-2",
+          "prob": 0.0667
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0665
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0639
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.481,
+        "under": 0.519
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 37% / 平 24% / 客胜 39%。\n【波胆】泊松模型推算最可能比分：1-1（10%）、1-2（9%）、2-1（8%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%，倾向小球。\n【结论】综合赔率与消息，Inter Miami CF不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "New York Red Bulls",
+      "awayTeam": "Nashville SC",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.14,
+        "away": 1.36
+      },
+      "probabilities": {
+        "home": 0.376,
+        "draw": 0.175,
+        "away": 0.449
+      },
+      "confidence": 0.58,
+      "reasons": [
+        "赔率隐含概率: 主34% 平24% 客42%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-19T23:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1116
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0887
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0792
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0787
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0702
+        },
+        {
+          "score": "0-2",
+          "prob": 0.0629
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.536,
+        "under": 0.464
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 34% / 平 24% / 客胜 42%。\n【波胆】泊松模型推算最可能比分：1-1（11%）、1-2（9%）、0-1（8%）。\n【大小球】2.5 球盘口：大球 54% / 小球 46%，倾向大球。\n【结论】综合赔率与消息，Nashville SC不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Sporting Kansas City",
+      "awayTeam": "St. Louis City SC",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 0.99,
+        "away": 1.51
+      },
+      "probabilities": {
+        "home": 0.326,
+        "draw": 0.175,
+        "away": 0.499
+      },
+      "confidence": 0.599,
+      "reasons": [
+        "赔率隐含概率: 主29% 平24% 客47%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-20T00:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1134
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0937
+        },
+        {
+          "score": "0-1",
+          "prob": 0.091
+        },
+        {
+          "score": "0-2",
+          "prob": 0.0752
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0707
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0686
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.456,
+        "under": 0.544
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 29% / 平 24% / 客胜 47%。\n【波胆】泊松模型推算最可能比分：1-1（11%）、1-2（9%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 46% / 小球 54%，倾向小球。\n【结论】综合赔率与消息，St. Louis City SC不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Minnesota United FC",
+      "awayTeam": "Atlanta United FC",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.77,
+        "away": 0.73
+      },
+      "probabilities": {
+        "home": 0.584,
+        "draw": 0.173,
+        "away": 0.243
+      },
+      "confidence": 0.634,
+      "reasons": [
+        "赔率隐含概率: 主55% 平24% 客21%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-20T00:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1161
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1129
+        },
+        {
+          "score": "2-0",
+          "prob": 0.1003
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0975
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0672
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0653
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.566,
+        "under": 0.434
+      },
+      "analysis": "【胜负】市场高度看好主队Minnesota United FC，主胜隐含概率 55%。\n【波胆】泊松模型推算最可能比分：1-0（12%）、1-1（11%）、2-0（10%）。\n【大小球】2.5 球盘口：大球 57% / 小球 43%，倾向大球。\n【结论】综合赔率与消息，Minnesota United FC不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Seattle Sounders FC",
+      "awayTeam": "Austin FC",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.8,
+        "away": 0.7
+      },
+      "probabilities": {
+        "home": 0.605,
+        "draw": 0.158,
+        "away": 0.237
+      },
+      "confidence": 0.642,
+      "reasons": [
+        "赔率隐含概率: 主57% 平22% 客20%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-20T01:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1053
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1037
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0992
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0978
+        },
+        {
+          "score": "3-1",
+          "prob": 0.0623
+        },
+        {
+          "score": "3-0",
+          "prob": 0.0614
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.576,
+        "under": 0.424
+      },
+      "analysis": "【胜负】市场高度看好主队Seattle Sounders FC，主胜隐含概率 57%。\n【波胆】泊松模型推算最可能比分：1-1（11%）、1-0（10%）、2-1（10%）。\n【大小球】2.5 球盘口：大球 58% / 小球 42%，倾向大球。\n【结论】综合赔率与消息，Seattle Sounders FC不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Colorado Rapids",
+      "awayTeam": "Los Angeles FC",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.17,
+        "away": 1.33
+      },
+      "probabilities": {
+        "home": 0.381,
+        "draw": 0.184,
+        "away": 0.435
+      },
+      "confidence": 0.574,
+      "reasons": [
+        "赔率隐含概率: 主35% 平25% 客40%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-20T01:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1155
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0871
+        },
+        {
+          "score": "0-1",
+          "prob": 0.083
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0804
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0766
+        },
+        {
+          "score": "0-2",
+          "prob": 0.0626
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.576,
+        "under": 0.424
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 35% / 平 25% / 客胜 40%。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-2（9%）、0-1（8%）。\n【大小球】2.5 球盘口：大球 58% / 小球 42%，倾向大球。\n【结论】综合赔率与消息，Los Angeles FC不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Real Salt Lake",
+      "awayTeam": "FC Dallas",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.63,
+        "away": 0.87
+      },
+      "probabilities": {
+        "home": 0.542,
+        "draw": 0.169,
+        "away": 0.289
+      },
+      "confidence": 0.617,
+      "reasons": [
+        "赔率隐含概率: 主51% 平24% 客26%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-20T01:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1111
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0966
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0957
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0833
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0644
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0638
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.446,
+        "under": 0.554
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 51% / 平 24% / 客胜 26%。\n【波胆】泊松模型推算最可能比分：1-1（11%）、2-1（10%）、1-0（10%）。\n【大小球】2.5 球盘口：大球 45% / 小球 55%，倾向小球。\n【结论】综合赔率与消息，Real Salt Lake不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Vancouver Whitecaps FC",
+      "awayTeam": "Houston Dynamo",
+      "predictedScore": "2-0",
+      "expectedGoals": {
+        "home": 1.92,
+        "away": 0.58
+      },
+      "probabilities": {
+        "home": 0.666,
+        "draw": 0.136,
+        "away": 0.199
+      },
+      "confidence": 0.666,
+      "reasons": [
+        "赔率隐含概率: 主63% 平20% 客17%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-20T02:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "2-0",
+          "prob": 0.1098
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1046
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0988
+        },
+        {
+          "score": "1-1",
+          "prob": 0.0941
+        },
+        {
+          "score": "3-0",
+          "prob": 0.0768
+        },
+        {
+          "score": "3-1",
+          "prob": 0.0692
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.455,
+        "under": 0.545
+      },
+      "analysis": "【胜负】市场高度看好主队Vancouver Whitecaps FC，主胜隐含概率 63%。\n【波胆】泊松模型推算最可能比分：2-0（11%）、1-0（10%）、2-1（10%）。\n【大小球】2.5 球盘口：大球 46% / 小球 55%，倾向小球。\n【结论】综合赔率与消息，Vancouver Whitecaps FC不败概率更高，关注波胆 2-0 方向。"
+    },
+    {
+      "homeTeam": "LA Galaxy",
+      "awayTeam": "San Jose Earthquakes",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.28,
+        "away": 1.22
+      },
+      "probabilities": {
+        "home": 0.423,
+        "draw": 0.174,
+        "away": 0.403
+      },
+      "confidence": 0.569,
+      "reasons": [
+        "赔率隐含概率: 主39% 平24% 客37%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-20T02:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1082
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0855
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0822
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0712
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0684
+        },
+        {
+          "score": "2-2",
+          "prob": 0.065
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.455,
+        "under": 0.545
+      },
+      "analysis": "【胜负】双方实力接近，主队LA Galaxy略占优（主胜 39% vs 客胜 37%）。\n【波胆】泊松模型推算最可能比分：1-1（11%）、2-1（9%）、1-2（8%）。\n【大小球】2.5 球盘口：大球 46% / 小球 55%，倾向小球。\n【消息面】LA Galaxy信号 +0.00（1条提及）。\n【结论】综合赔率与消息，LA Galaxy不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Portland Timbers",
+      "awayTeam": "San Diego FC",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.51,
+        "away": 0.99
+      },
+      "probabilities": {
+        "home": 0.506,
+        "draw": 0.159,
+        "away": 0.334
+      },
+      "confidence": 0.603,
+      "reasons": [
+        "赔率隐含概率: 主47% 平23% 客30%"
+      ],
+      "messageEvidence": [],
+      "league": "MLS",
+      "kickoff": "2026-08-20T02:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1023
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0933
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0744
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0704
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0678
+        },
+        {
+          "score": "2-2",
+          "prob": 0.0642
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.517,
+        "under": 0.483
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 47% / 平 23% / 客胜 30%。\n【波胆】泊松模型推算最可能比分：1-1（10%）、2-1（9%）、1-0（7%）。\n【大小球】2.5 球盘口：大球 52% / 小球 48%，倾向大球。\n【结论】综合赔率与消息，Portland Timbers不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
       "homeTeam": "Alavés",
       "awayTeam": "Getafe",
       "predictedScore": "1-0",
@@ -1942,8 +7072,8 @@
       ],
       "overUnder": {
         "line": 2.5,
-        "over": 0.591,
-        "under": 0.409
+        "over": 0.594,
+        "under": 0.406
       },
       "analysis": "【胜负】比赛悬念较大，主胜 45% / 平 30% / 客胜 24%。\n【波胆】泊松模型推算最可能比分：1-0（16%）、0-0（14%）、1-1（13%）。\n【大小球】2.5 球盘口：大球 59% / 小球 41%，倾向大球。\n【结论】综合赔率与消息，Rayo Vallecano不败概率更高，关注波胆 1-0 方向。"
     },
@@ -2173,10 +7303,10 @@
       },
       "probabilities": {
         "home": 0.539,
-        "draw": 0.203,
-        "away": 0.259
+        "draw": 0.202,
+        "away": 0.258
       },
-      "confidence": 0.615,
+      "confidence": 0.616,
       "reasons": [
         "赔率隐含概率: 主51% 平27% 客23%"
       ],
@@ -2222,15 +7352,15 @@
       "awayTeam": "Real Racing Club de Santander",
       "predictedScore": "1-0",
       "expectedGoals": {
-        "home": 1.73,
-        "away": 0.77
+        "home": 1.74,
+        "away": 0.76
       },
       "probabilities": {
-        "home": 0.525,
-        "draw": 0.239,
-        "away": 0.236
+        "home": 0.528,
+        "draw": 0.24,
+        "away": 0.232
       },
-      "confidence": 0.61,
+      "confidence": 0.611,
       "reasons": [
         "赔率隐含概率: 主49% 平31% 客20%"
       ],
@@ -2280,11 +7410,11 @@
         "away": 2.06
       },
       "probabilities": {
-        "home": 0.155,
-        "draw": 0.109,
-        "away": 0.736
+        "home": 0.156,
+        "draw": 0.114,
+        "away": 0.73
       },
-      "confidence": 0.694,
+      "confidence": 0.692,
       "reasons": [
         "赔率隐含概率: 主12% 平18% 客70%"
       ],
@@ -2320,8 +7450,8 @@
       ],
       "overUnder": {
         "line": 2.5,
-        "over": 0.462,
-        "under": 0.538
+        "over": 0.461,
+        "under": 0.539
       },
       "analysis": "【胜负】市场明显看好客队Barcelona，客胜隐含概率 70%。\n【波胆】泊松模型推算最可能比分：1-2（10%）、1-1（10%）、0-2（9%）。\n【大小球】2.5 球盘口：大球 46% / 小球 54%，倾向小球。\n【结论】综合赔率与消息，Barcelona不败概率更高，关注波胆 1-2 方向。"
     },
@@ -2428,10 +7558,10 @@
       ],
       "overUnder": {
         "line": 2.5,
-        "over": 0.375,
-        "under": 0.625
+        "over": 0.373,
+        "under": 0.627
       },
-      "analysis": "【胜负】双方实力接近，主队Málaga略占优（主胜 38% vs 客胜 31%）。\n【波胆】泊松模型推算最可能比分：1-0（14%）、0-0（14%）、1-1（13%）。\n【大小球】2.5 球盘口：大球 38% / 小球 62%，倾向小球。\n【结论】综合赔率与消息，Málaga不败概率更高，关注波胆 1-0 方向。"
+      "analysis": "【胜负】双方实力接近，主队Málaga略占优（主胜 38% vs 客胜 31%）。\n【波胆】泊松模型推算最可能比分：1-0（14%）、0-0（14%）、1-1（13%）。\n【大小球】2.5 球盘口：大球 37% / 小球 63%，倾向小球。\n【结论】综合赔率与消息，Málaga不败概率更高，关注波胆 1-0 方向。"
     },
     {
       "homeTeam": "Valencia",
@@ -3136,6 +8266,438 @@
       "analysis": "【胜负】比赛悬念较大，主胜 31% / 平 26% / 客胜 44%。\n【波胆】泊松模型推算最可能比分：1-1（12%）、0-1（10%）、1-2（9%）。\n【大小球】2.5 球盘口：大球 59% / 小球 41%，倾向大球。\n【消息面】Fulham信号 +0.00（1条提及）。\n【结论】综合赔率与消息，Chelsea不败概率更高，关注波胆 1-1 方向。"
     },
     {
+      "homeTeam": "CS Maritimo",
+      "awayTeam": "Casa Pia",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.34,
+        "away": 1.16
+      },
+      "probabilities": {
+        "home": 0.419,
+        "draw": 0.218,
+        "away": 0.364
+      },
+      "confidence": 0.567,
+      "reasons": [
+        "赔率隐含概率: 主39% 平28% 客33%"
+      ],
+      "messageEvidence": [],
+      "league": "PPL",
+      "kickoff": "2026-08-08T14:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1324
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1199
+        },
+        {
+          "score": "0-1",
+          "prob": 0.1107
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1003
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0792
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0731
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.496,
+        "under": 0.504
+      },
+      "analysis": "【胜负】双方实力接近，主队CS Maritimo略占优（主胜 39% vs 客胜 33%）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（12%）、0-1（11%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%，倾向小球。\n【结论】综合赔率与消息，CS Maritimo不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Vitória SC",
+      "awayTeam": "Arouca",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.64,
+        "away": 0.86
+      },
+      "probabilities": {
+        "home": 0.525,
+        "draw": 0.198,
+        "away": 0.277
+      },
+      "confidence": 0.61,
+      "reasons": [
+        "赔率隐含概率: 主49% 平26% 客24%"
+      ],
+      "messageEvidence": [],
+      "league": "PPL",
+      "kickoff": "2026-08-08T17:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1328
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1243
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0972
+        },
+        {
+          "score": "2-1",
+          "prob": 0.091
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0907
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0849
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.496,
+        "under": 0.504
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 49% / 平 26% / 客胜 24%。\n【波胆】泊松模型推算最可能比分：1-0（13%）、1-1（12%）、2-0（10%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%，倾向小球。\n【结论】综合赔率与消息，Vitória SC不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "CF Estrela",
+      "awayTeam": "Sporting Lisbon",
+      "predictedScore": "1-2",
+      "expectedGoals": {
+        "home": 0.32,
+        "away": 2.18
+      },
+      "probabilities": {
+        "home": 0.118,
+        "draw": 0.088,
+        "away": 0.794
+      },
+      "confidence": 0.718,
+      "reasons": [
+        "赔率隐含概率: 主8% 平15% 客76%"
+      ],
+      "messageEvidence": [],
+      "league": "PPL",
+      "kickoff": "2026-08-08T19:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-2",
+          "prob": 0.0988
+        },
+        {
+          "score": "1-1",
+          "prob": 0.095
+        },
+        {
+          "score": "0-2",
+          "prob": 0.0882
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0848
+        },
+        {
+          "score": "1-3",
+          "prob": 0.0685
+        },
+        {
+          "score": "0-3",
+          "prob": 0.0611
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.43,
+        "under": 0.57
+      },
+      "analysis": "【胜负】市场明显看好客队Sporting Lisbon，客胜隐含概率 76%。\n【波胆】泊松模型推算最可能比分：1-2（10%）、1-1（10%）、0-2（9%）。\n【大小球】2.5 球盘口：大球 43% / 小球 57%，倾向小球。\n【结论】综合赔率与消息，Sporting Lisbon不败概率更高，关注波胆 1-2 方向。"
+    },
+    {
+      "homeTeam": "FC Porto",
+      "awayTeam": "Alverca",
+      "predictedScore": "2-0",
+      "expectedGoals": {
+        "home": 2.22,
+        "away": 0.28
+      },
+      "probabilities": {
+        "home": 0.821,
+        "draw": 0.075,
+        "away": 0.104
+      },
+      "confidence": 0.728,
+      "reasons": [
+        "赔率隐含概率: 主79% 平14% 客7%"
+      ],
+      "messageEvidence": [],
+      "league": "PPL",
+      "kickoff": "2026-08-09T17:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "2-0",
+          "prob": 0.1174
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0978
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0939
+        },
+        {
+          "score": "3-0",
+          "prob": 0.0939
+        },
+        {
+          "score": "1-1",
+          "prob": 0.0783
+        },
+        {
+          "score": "3-1",
+          "prob": 0.0751
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.435,
+        "under": 0.565
+      },
+      "analysis": "【胜负】市场高度看好主队FC Porto，主胜隐含概率 79%。\n【波胆】泊松模型推算最可能比分：2-0（12%）、1-0（10%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 44% / 小球 56%，倾向小球。\n【结论】综合赔率与消息，FC Porto不败概率更高，关注波胆 2-0 方向。"
+    },
+    {
+      "homeTeam": "Benfica",
+      "awayTeam": "Académico de Viseu",
+      "predictedScore": "2-0",
+      "expectedGoals": {
+        "home": 2.3,
+        "away": 0.2
+      },
+      "probabilities": {
+        "home": 0.884,
+        "draw": 0.038,
+        "away": 0.078
+      },
+      "confidence": 0.753,
+      "reasons": [
+        "赔率隐含概率: 主85% 平10% 客4%"
+      ],
+      "messageEvidence": [],
+      "league": "PPL",
+      "kickoff": "2026-08-09T19:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "2-0",
+          "prob": 0.1174
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0978
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0939
+        },
+        {
+          "score": "3-0",
+          "prob": 0.0939
+        },
+        {
+          "score": "1-1",
+          "prob": 0.0783
+        },
+        {
+          "score": "3-1",
+          "prob": 0.0751
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.445,
+        "under": 0.555
+      },
+      "analysis": "【胜负】市场高度看好主队Benfica，主胜隐含概率 85%。\n【波胆】泊松模型推算最可能比分：2-0（12%）、1-0（10%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 44% / 小球 56%，倾向小球。\n【结论】综合赔率与消息，Benfica不败概率更高，关注波胆 2-0 方向。"
+    },
+    {
+      "homeTeam": "Moreirense FC",
+      "awayTeam": "Braga",
+      "predictedScore": "0-1",
+      "expectedGoals": {
+        "home": 0.7,
+        "away": 1.8
+      },
+      "probabilities": {
+        "home": 0.229,
+        "draw": 0.185,
+        "away": 0.587
+      },
+      "confidence": 0.635,
+      "reasons": [
+        "赔率隐含概率: 主20% 平25% 客55%"
+      ],
+      "messageEvidence": [],
+      "league": "PPL",
+      "kickoff": "2026-08-09T19:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "0-1",
+          "prob": 0.1334
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1167
+        },
+        {
+          "score": "0-2",
+          "prob": 0.1084
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0948
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0821
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0718
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.49,
+        "under": 0.51
+      },
+      "analysis": "【胜负】市场明显看好客队Braga，客胜隐含概率 55%。\n【波胆】泊松模型推算最可能比分：0-1（13%）、1-1（12%）、0-2（11%）。\n【大小球】2.5 球盘口：大球 49% / 小球 51%，倾向小球。\n【结论】综合赔率与消息，Braga不败概率更高，关注波胆 0-1 方向。"
+    },
+    {
+      "homeTeam": "Gil Vicente",
+      "awayTeam": "Rio Ave FC",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.63,
+        "away": 0.87
+      },
+      "probabilities": {
+        "home": 0.518,
+        "draw": 0.205,
+        "away": 0.277
+      },
+      "confidence": 0.607,
+      "reasons": [
+        "赔率隐含概率: 主48% 平27% 客24%"
+      ],
+      "messageEvidence": [],
+      "league": "PPL",
+      "kickoff": "2026-08-09T19:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1407
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1262
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1003
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0987
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0899
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0885
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.484,
+        "under": 0.516
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 48% / 平 27% / 客胜 24%。\n【波胆】泊松模型推算最可能比分：1-0（14%）、1-1（13%）、0-0（10%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%，倾向小球。\n【结论】综合赔率与消息，Gil Vicente不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Santa Clara",
+      "awayTeam": "Nacional",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.7,
+        "away": 0.8
+      },
+      "probabilities": {
+        "home": 0.536,
+        "draw": 0.212,
+        "away": 0.252
+      },
+      "confidence": 0.614,
+      "reasons": [
+        "赔率隐含概率: 主50% 平28% 客22%"
+      ],
+      "messageEvidence": [],
+      "league": "PPL",
+      "kickoff": "2026-08-10T19:15:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1536
+        },
+        {
+          "score": "1-1",
+          "prob": 0.125
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1108
+        },
+        {
+          "score": "2-0",
+          "prob": 0.1064
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0902
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0866
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.445,
+        "under": 0.555
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 50% / 平 28% / 客胜 22%。\n【波胆】泊松模型推算最可能比分：1-0（15%）、1-1（12%）、0-0（11%）。\n【大小球】2.5 球盘口：大球 44% / 小球 56%，倾向小球。\n【结论】综合赔率与消息，Santa Clara不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
       "homeTeam": "Udinese",
       "awayTeam": "Como",
       "predictedScore": "0-1",
@@ -3674,6 +9236,816 @@
         "under": 0.487
       },
       "analysis": "【胜负】市场高度看好主队AS Roma，主胜隐含概率 61%。\n【波胆】泊松模型推算最可能比分：1-0（14%）、2-0（13%）、1-1（11%）。\n【大小球】2.5 球盘口：大球 51% / 小球 49%，倾向大球。\n【结论】综合赔率与消息，AS Roma不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Dundee FC",
+      "awayTeam": "Aberdeen",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.21,
+        "away": 1.29
+      },
+      "probabilities": {
+        "home": 0.378,
+        "draw": 0.216,
+        "away": 0.406
+      },
+      "confidence": 0.562,
+      "reasons": [
+        "赔率隐含概率: 主35% 平28% 客37%"
+      ],
+      "messageEvidence": [],
+      "league": "SPL",
+      "kickoff": "2026-08-08T14:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1325
+        },
+        {
+          "score": "0-1",
+          "prob": 0.1176
+        },
+        {
+          "score": "1-0",
+          "prob": 0.113
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1003
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0777
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0747
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.516,
+        "under": 0.484
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 35% / 平 28% / 客胜 37%。\n【波胆】泊松模型推算最可能比分：1-1（13%）、0-1（12%）、1-0（11%）。\n【大小球】2.5 球盘口：大球 52% / 小球 48%，倾向大球。\n【结论】综合赔率与消息，Aberdeen不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "St Mirren",
+      "awayTeam": "St Johnstone",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.39,
+        "away": 1.11
+      },
+      "probabilities": {
+        "home": 0.437,
+        "draw": 0.215,
+        "away": 0.348
+      },
+      "confidence": 0.575,
+      "reasons": [
+        "赔率隐含概率: 主40% 平28% 客31%"
+      ],
+      "messageEvidence": [],
+      "league": "SPL",
+      "kickoff": "2026-08-08T14:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1317
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1245
+        },
+        {
+          "score": "0-1",
+          "prob": 0.1061
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1003
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0818
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0773
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.503,
+        "under": 0.497
+      },
+      "analysis": "【胜负】双方实力接近，主队St Mirren略占优（主胜 40% vs 客胜 31%）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（12%）、0-1（11%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%，倾向大球。\n【结论】综合赔率与消息，St Mirren不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Kilmarnock",
+      "awayTeam": "Celtic",
+      "predictedScore": "1-2",
+      "expectedGoals": {
+        "home": 0.47,
+        "away": 2.03
+      },
+      "probabilities": {
+        "home": 0.165,
+        "draw": 0.123,
+        "away": 0.711
+      },
+      "confidence": 0.685,
+      "reasons": [
+        "赔率隐含概率: 主13% 平19% 客68%"
+      ],
+      "messageEvidence": [],
+      "league": "SPL",
+      "kickoff": "2026-08-09T12:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-2",
+          "prob": 0.0988
+        },
+        {
+          "score": "1-1",
+          "prob": 0.095
+        },
+        {
+          "score": "0-2",
+          "prob": 0.0882
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0848
+        },
+        {
+          "score": "1-3",
+          "prob": 0.0685
+        },
+        {
+          "score": "0-3",
+          "prob": 0.0611
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.456,
+        "under": 0.544
+      },
+      "analysis": "【胜负】市场明显看好客队Celtic，客胜隐含概率 68%。\n【波胆】泊松模型推算最可能比分：1-2（10%）、1-1（10%）、0-2（9%）。\n【大小球】2.5 球盘口：大球 46% / 小球 54%，倾向小球。\n【结论】综合赔率与消息，Celtic不败概率更高，关注波胆 1-2 方向。"
+    },
+    {
+      "homeTeam": "Hearts",
+      "awayTeam": "Dundee United",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.83,
+        "away": 0.67
+      },
+      "probabilities": {
+        "home": 0.609,
+        "draw": 0.166,
+        "away": 0.225
+      },
+      "confidence": 0.644,
+      "reasons": [
+        "赔率隐含概率: 主58% 平23% 客19%"
+      ],
+      "messageEvidence": [],
+      "league": "SPL",
+      "kickoff": "2026-08-09T14:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1198
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1099
+        },
+        {
+          "score": "2-0",
+          "prob": 0.1067
+        },
+        {
+          "score": "2-1",
+          "prob": 0.098
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0672
+        },
+        {
+          "score": "3-0",
+          "prob": 0.0634
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.548,
+        "under": 0.452
+      },
+      "analysis": "【胜负】市场高度看好主队Hearts，主胜隐含概率 58%。\n【波胆】泊松模型推算最可能比分：1-0（12%）、1-1（11%）、2-0（11%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%，倾向大球。\n【消息面】Hearts信号 +0.00（1条提及）。\n【结论】综合赔率与消息，Hearts不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Motherwell",
+      "awayTeam": "Falkirk F.C.",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.69,
+        "away": 0.81
+      },
+      "probabilities": {
+        "home": 0.551,
+        "draw": 0.184,
+        "away": 0.265
+      },
+      "confidence": 0.62,
+      "reasons": [
+        "赔率隐含概率: 主52% 平25% 客23%"
+      ],
+      "messageEvidence": [],
+      "league": "SPL",
+      "kickoff": "2026-08-09T14:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1197
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1183
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0965
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0953
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0743
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0734
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.547,
+        "under": 0.453
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 52% / 平 25% / 客胜 23%。\n【波胆】泊松模型推算最可能比分：1-0（12%）、1-1（12%）、2-0（10%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%，倾向大球。\n【结论】综合赔率与消息，Motherwell不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Rangers",
+      "awayTeam": "Hibernian",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.89,
+        "away": 0.61
+      },
+      "probabilities": {
+        "home": 0.642,
+        "draw": 0.152,
+        "away": 0.207
+      },
+      "confidence": 0.657,
+      "reasons": [
+        "赔率隐含概率: 主61% 平22% 客17%"
+      ],
+      "messageEvidence": [],
+      "league": "SPL",
+      "kickoff": "2026-08-09T15:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1158
+        },
+        {
+          "score": "2-0",
+          "prob": 0.1102
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1037
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0988
+        },
+        {
+          "score": "3-0",
+          "prob": 0.07
+        },
+        {
+          "score": "3-1",
+          "prob": 0.0627
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.596,
+        "under": 0.404
+      },
+      "analysis": "【胜负】市场高度看好主队Rangers，主胜隐含概率 61%。\n【波胆】泊松模型推算最可能比分：1-0（12%）、2-0（11%）、1-1（10%）。\n【大小球】2.5 球盘口：大球 60% / 小球 40%，倾向大球。\n【结论】综合赔率与消息，Rangers不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Galatasaray",
+      "awayTeam": "Akhisar Belediyespor",
+      "predictedScore": "2-0",
+      "expectedGoals": {
+        "home": 2.18,
+        "away": 0.32
+      },
+      "probabilities": {
+        "home": 0.804,
+        "draw": 0.08,
+        "away": 0.116
+      },
+      "confidence": 0.721,
+      "reasons": [
+        "赔率隐含概率: 主77% 平15% 客8%"
+      ],
+      "messageEvidence": [],
+      "league": "TSL",
+      "kickoff": "2026-08-14T18:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "2-0",
+          "prob": 0.1174
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0978
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0939
+        },
+        {
+          "score": "3-0",
+          "prob": 0.0939
+        },
+        {
+          "score": "1-1",
+          "prob": 0.0783
+        },
+        {
+          "score": "3-1",
+          "prob": 0.0751
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.478,
+        "under": 0.522
+      },
+      "analysis": "【胜负】市场高度看好主队Galatasaray，主胜隐含概率 77%。\n【波胆】泊松模型推算最可能比分：2-0（12%）、1-0（10%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%，倾向小球。\n【结论】综合赔率与消息，Galatasaray不败概率更高，关注波胆 2-0 方向。"
+    },
+    {
+      "homeTeam": "Kasimpasa SK",
+      "awayTeam": "Trabzonspor",
+      "predictedScore": "0-1",
+      "expectedGoals": {
+        "home": 0.8,
+        "away": 1.7
+      },
+      "probabilities": {
+        "home": 0.259,
+        "draw": 0.19,
+        "away": 0.55
+      },
+      "confidence": 0.62,
+      "reasons": [
+        "赔率隐含概率: 主23% 平26% 客52%"
+      ],
+      "messageEvidence": [],
+      "league": "TSL",
+      "kickoff": "2026-08-15T16:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "0-1",
+          "prob": 0.1372
+        },
+        {
+          "score": "1-1",
+          "prob": 0.1218
+        },
+        {
+          "score": "0-2",
+          "prob": 0.1037
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0921
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0907
+        },
+        {
+          "score": "1-0",
+          "prob": 0.0806
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.535,
+        "under": 0.465
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 23% / 平 26% / 客胜 52%。\n【波胆】泊松模型推算最可能比分：0-1（14%）、1-1（12%）、0-2（10%）。\n【大小球】2.5 球盘口：大球 54% / 小球 46%，倾向大球。\n【结论】综合赔率与消息，Trabzonspor不败概率更高，关注波胆 0-1 方向。"
+    },
+    {
+      "homeTeam": "Torku Konyaspor",
+      "awayTeam": "Çaykur Rizespor",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.34,
+        "away": 1.16
+      },
+      "probabilities": {
+        "home": 0.417,
+        "draw": 0.222,
+        "away": 0.361
+      },
+      "confidence": 0.567,
+      "reasons": [
+        "赔率隐含概率: 主38% 平29% 客33%"
+      ],
+      "messageEvidence": [],
+      "league": "TSL",
+      "kickoff": "2026-08-15T16:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1336
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1292
+        },
+        {
+          "score": "0-1",
+          "prob": 0.1146
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1108
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0779
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0753
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.513,
+        "under": 0.487
+      },
+      "analysis": "【胜负】双方实力接近，主队Torku Konyaspor略占优（主胜 38% vs 客胜 33%）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（13%）、0-1（11%）。\n【大小球】2.5 球盘口：大球 51% / 小球 49%，倾向大球。\n【结论】综合赔率与消息，Torku Konyaspor不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Gazişehir Gaziantep",
+      "awayTeam": "Alanyaspor",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.29,
+        "away": 1.21
+      },
+      "probabilities": {
+        "home": 0.408,
+        "draw": 0.21,
+        "away": 0.382
+      },
+      "confidence": 0.563,
+      "reasons": [
+        "赔率隐含概率: 主38% 平28% 客35%"
+      ],
+      "messageEvidence": [],
+      "league": "TSL",
+      "kickoff": "2026-08-15T18:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1306
+        },
+        {
+          "score": "1-0",
+          "prob": 0.111
+        },
+        {
+          "score": "0-1",
+          "prob": 0.1067
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0907
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0799
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0768
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.498,
+        "under": 0.502
+      },
+      "analysis": "【胜负】双方实力接近，主队Gazişehir Gaziantep略占优（主胜 38% vs 客胜 35%）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（11%）、0-1（11%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%，倾向小球。\n【结论】综合赔率与消息，Gazişehir Gaziantep不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Genclerbirligi SK",
+      "awayTeam": "Fenerbahce",
+      "predictedScore": "1-2",
+      "expectedGoals": {
+        "home": 0.54,
+        "away": 1.96
+      },
+      "probabilities": {
+        "home": 0.185,
+        "draw": 0.15,
+        "away": 0.665
+      },
+      "confidence": 0.666,
+      "reasons": [
+        "赔率隐含概率: 主15% 平22% 客63%"
+      ],
+      "messageEvidence": [],
+      "league": "TSL",
+      "kickoff": "2026-08-15T18:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-2",
+          "prob": 0.0992
+        },
+        {
+          "score": "1-1",
+          "prob": 0.0985
+        },
+        {
+          "score": "0-2",
+          "prob": 0.0915
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0908
+        },
+        {
+          "score": "1-3",
+          "prob": 0.0666
+        },
+        {
+          "score": "0-3",
+          "prob": 0.0614
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.547,
+        "under": 0.453
+      },
+      "analysis": "【胜负】市场明显看好客队Fenerbahce，客胜隐含概率 63%。\n【波胆】泊松模型推算最可能比分：1-2（10%）、1-1（10%）、0-2（9%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%，倾向大球。\n【结论】综合赔率与消息，Fenerbahce不败概率更高，关注波胆 1-2 方向。"
+    },
+    {
+      "homeTeam": "Basaksehir",
+      "awayTeam": "Kocaelispor",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.98,
+        "away": 0.52
+      },
+      "probabilities": {
+        "home": 0.666,
+        "draw": 0.161,
+        "away": 0.173
+      },
+      "confidence": 0.666,
+      "reasons": [
+        "赔率隐含概率: 主63% 平23% 客14%"
+      ],
+      "messageEvidence": [],
+      "league": "TSL",
+      "kickoff": "2026-08-16T16:00:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1589
+        },
+        {
+          "score": "2-0",
+          "prob": 0.1392
+        },
+        {
+          "score": "1-1",
+          "prob": 0.103
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0907
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0902
+        },
+        {
+          "score": "3-0",
+          "prob": 0.0813
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.508,
+        "under": 0.492
+      },
+      "analysis": "【胜负】市场高度看好主队Basaksehir，主胜隐含概率 63%。\n【波胆】泊松模型推算最可能比分：1-0（16%）、2-0（14%）、1-1（10%）。\n【大小球】2.5 球盘口：大球 51% / 小球 49%，倾向大球。\n【结论】综合赔率与消息，Basaksehir不败概率更高，关注波胆 1-0 方向。"
+    },
+    {
+      "homeTeam": "Amed SK",
+      "awayTeam": "Erzurum BB",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.4,
+        "away": 1.1
+      },
+      "probabilities": {
+        "home": 0.446,
+        "draw": 0.202,
+        "away": 0.352
+      },
+      "confidence": 0.578,
+      "reasons": [
+        "赔率隐含概率: 主41% 平27% 客32%"
+      ],
+      "messageEvidence": [],
+      "league": "TSL",
+      "kickoff": "2026-08-16T18:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-1",
+          "prob": 0.1274
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1108
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0944
+        },
+        {
+          "score": "2-1",
+          "prob": 0.086
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0821
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0748
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.527,
+        "under": 0.473
+      },
+      "analysis": "【胜负】双方实力接近，主队Amed SK略占优（主胜 41% vs 客胜 32%）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（11%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 53% / 小球 47%，倾向大球。\n【结论】综合赔率与消息，Amed SK不败概率更高，关注波胆 1-1 方向。"
+    },
+    {
+      "homeTeam": "Besiktas JK",
+      "awayTeam": "Eyüpspor",
+      "predictedScore": "2-0",
+      "expectedGoals": {
+        "home": 2.07,
+        "away": 0.43
+      },
+      "probabilities": {
+        "home": 0.733,
+        "draw": 0.115,
+        "away": 0.152
+      },
+      "confidence": 0.693,
+      "reasons": [
+        "赔率隐含概率: 主70% 平18% 客12%"
+      ],
+      "messageEvidence": [],
+      "league": "TSL",
+      "kickoff": "2026-08-16T18:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "2-0",
+          "prob": 0.1301
+        },
+        {
+          "score": "1-0",
+          "prob": 0.1197
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0944
+        },
+        {
+          "score": "3-0",
+          "prob": 0.0944
+        },
+        {
+          "score": "1-1",
+          "prob": 0.0868
+        },
+        {
+          "score": "3-1",
+          "prob": 0.0684
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.519,
+        "under": 0.481
+      },
+      "analysis": "【胜负】市场高度看好主队Besiktas JK，主胜隐含概率 70%。\n【波胆】泊松模型推算最可能比分：2-0（13%）、1-0（12%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 52% / 小球 48%，倾向大球。\n【结论】综合赔率与消息，Besiktas JK不败概率更高，关注波胆 2-0 方向。"
+    },
+    {
+      "homeTeam": "Samsunspor",
+      "awayTeam": "Goztepe",
+      "predictedScore": "1-0",
+      "expectedGoals": {
+        "home": 1.5,
+        "away": 1.0
+      },
+      "probabilities": {
+        "home": 0.47,
+        "draw": 0.215,
+        "away": 0.315
+      },
+      "confidence": 0.588,
+      "reasons": [
+        "赔率隐含概率: 主44% 平28% 客28%"
+      ],
+      "messageEvidence": [],
+      "league": "TSL",
+      "kickoff": "2026-08-17T18:30:00Z",
+      "matchUrl": "",
+      "correctScores": [
+        {
+          "score": "1-0",
+          "prob": 0.1314
+        },
+        {
+          "score": "1-1",
+          "prob": 0.13
+        },
+        {
+          "score": "0-0",
+          "prob": 0.1003
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0992
+        },
+        {
+          "score": "2-0",
+          "prob": 0.0862
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0852
+        }
+      ],
+      "overUnder": {
+        "line": 2.5,
+        "over": 0.463,
+        "under": 0.537
+      },
+      "analysis": "【胜负】比赛悬念较大，主胜 44% / 平 28% / 客胜 28%。\n【波胆】泊松模型推算最可能比分：1-0（13%）、1-1（13%）、0-0（10%）。\n【大小球】2.5 球盘口：大球 46% / 小球 54%，倾向小球。\n【结论】综合赔率与消息，Samsunspor不败概率更高，关注波胆 1-0 方向。"
     }
   ],
   "disclaimer": "本结果仅用于个人数据分析与研究, 不构成任何投注建议"

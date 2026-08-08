@@ -1,0 +1,270 @@
+{
+  "generatedAt": "2026-08-08T03:27:45Z",
+  "league": "CH",
+  "matches": [
+    {
+      "homeTeam": "Wolverhampton Wanderers",
+      "awayTeam": "Blackburn Rovers",
+      "kickoff": "2026-08-14T19:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 1.53,
+          "draw": 4.0,
+          "away": 5.6
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.75,
+          "under": 1.97
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 37
+    },
+    {
+      "homeTeam": "Bolton Wanderers",
+      "awayTeam": "Preston North End",
+      "kickoff": "2026-08-15T11:30:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 2.15,
+          "draw": 3.3,
+          "away": 3.2
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.93,
+          "under": 1.81
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 37
+    },
+    {
+      "homeTeam": "Bristol City",
+      "awayTeam": "Millwall",
+      "kickoff": "2026-08-15T14:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 2.45,
+          "draw": 3.3,
+          "away": 2.75
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.92,
+          "under": 1.82
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 37
+    },
+    {
+      "homeTeam": "Charlton Athletic",
+      "awayTeam": "Derby County",
+      "kickoff": "2026-08-15T14:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 2.6,
+          "draw": 3.25,
+          "away": 2.62
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.96,
+          "under": 1.76
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 37
+    },
+    {
+      "homeTeam": "Middlesbrough",
+      "awayTeam": "Lincoln City",
+      "kickoff": "2026-08-15T14:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 1.3,
+          "draw": 5.0,
+          "away": 8.9
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.62,
+          "under": 2.2
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 37
+    },
+    {
+      "homeTeam": "Norwich City",
+      "awayTeam": "West Bromwich Albion",
+      "kickoff": "2026-08-15T14:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 2.0,
+          "draw": 3.4,
+          "away": 3.5
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.88,
+          "under": 1.83
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 37
+    },
+    {
+      "homeTeam": "Portsmouth",
+      "awayTeam": "Queens Park Rangers",
+      "kickoff": "2026-08-15T14:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 2.18,
+          "draw": 3.4,
+          "away": 3.02
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.8,
+          "under": 1.93
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 37
+    },
+    {
+      "homeTeam": "Stoke City",
+      "awayTeam": "Swansea City",
+      "kickoff": "2026-08-15T14:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 2.4,
+          "draw": 3.25,
+          "away": 2.88
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.04,
+          "under": 1.71
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 37
+    },
+    {
+      "homeTeam": "Sheffield United",
+      "awayTeam": "Birmingham City",
+      "kickoff": "2026-08-15T16:30:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 2.45,
+          "draw": 3.2,
+          "away": 2.8
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.97,
+          "under": 1.76
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 37
+    },
+    {
+      "homeTeam": "Watford",
+      "awayTeam": "Southampton",
+      "kickoff": "2026-08-16T12:30:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 3.3,
+          "draw": 3.5,
+          "away": 2.05
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.74,
+          "under": 2.0
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 35
+    },
+    {
+      "homeTeam": "Burnley",
+      "awayTeam": "West Ham United",
+      "kickoff": "2026-08-16T15:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 2.8,
+          "draw": 3.45,
+          "away": 2.35
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.68,
+          "under": 2.07
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 36
+    },
+    {
+      "homeTeam": "Cardiff City",
+      "awayTeam": "Wrexham AFC",
+      "kickoff": "2026-08-17T19:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 2.3,
+          "draw": 3.45,
+          "away": 2.8
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.7,
+          "under": 2.05
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 36
+    }
+  ]
+}

@@ -2,8 +2,9 @@ name: Daily Data Fetch & Deploy
 
 on:
   schedule:
-    # 每 30 分钟（北京时间 08:30 起），保证刷新分析后有新数据
-    - cron: '*/30 * * * *'
+    # 每天一次 UTC 02:00（北京 10:00）。
+    # The Odds API 免费配额 500/月：17 联赛 × 每天1次 ≈ 510/月，需控制在配额内
+    - cron: '0 2 * * *'
   push:
     branches: [main]
   workflow_dispatch:  # 允许手动触发

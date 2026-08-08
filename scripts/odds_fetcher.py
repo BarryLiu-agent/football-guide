@@ -168,6 +168,18 @@ class TheOddsApiSource(OddsSource):
         "FL1": "soccer_france_ligue_one",
         # 欧冠正赛抽签后改为 soccer_uefa_champs_league
         "CL": "soccer_uefa_champs_league_qualification",
+        # 扩展赛事（The Odds API 覆盖的其他可博彩联赛）
+        "CH": "soccer_efl_champ",
+        "EL1": "soccer_england_league1",
+        "ED": "soccer_netherlands_eredivisie",
+        "PPL": "soccer_portugal_primeira_liga",
+        "TSL": "soccer_turkey_super_league",
+        "SPL": "soccer_spl",
+        "BDF": "soccer_belgium_first_div",
+        "BSA": "soccer_brazil_campeonato",
+        "MLS": "soccer_usa_mls",
+        "JLG": "soccer_japan_j_league",
+        "KL1": "soccer_korea_kleague1",
     }
 
     def fetch(self, league_code: str) -> list:
@@ -330,7 +342,8 @@ def aggregate(matches_by_source):
 
 def main():
     parser = argparse.ArgumentParser(description="博彩赔率抓取")
-    parser.add_argument("--leagues", nargs="*", default=["PL", "PD", "SA", "BL1", "FL1", "CL"],
+    parser.add_argument("--leagues", nargs="*",
+                        default=["PL", "PD", "SA", "BL1", "FL1", "CL", "CH", "ED", "PPL", "TSL", "SPL", "BDF", "BSA", "MLS", "JLG", "KL1"],
                         help="要抓取的联赛代码")
     args = parser.parse_args()
 

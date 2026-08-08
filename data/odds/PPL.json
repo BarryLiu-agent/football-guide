@@ -1,0 +1,182 @@
+{
+  "generatedAt": "2026-08-08T03:27:49Z",
+  "league": "PPL",
+  "matches": [
+    {
+      "homeTeam": "CS Maritimo",
+      "awayTeam": "Casa Pia",
+      "kickoff": "2026-08-08T14:30:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 2.4,
+          "draw": 3.25,
+          "away": 2.8
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.875,
+          "under": 1.8450000000000002
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 34
+    },
+    {
+      "homeTeam": "Vitória SC",
+      "awayTeam": "Arouca",
+      "kickoff": "2026-08-08T17:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 1.88,
+          "draw": 3.5,
+          "away": 3.8
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.88,
+          "under": 1.85
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 35
+    },
+    {
+      "homeTeam": "CF Estrela",
+      "awayTeam": "Sporting Lisbon",
+      "kickoff": "2026-08-08T19:30:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 11.0,
+          "draw": 6.0,
+          "away": 1.22
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.15,
+          "under": 1.62
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 36
+    },
+    {
+      "homeTeam": "FC Porto",
+      "awayTeam": "Alverca",
+      "kickoff": "2026-08-09T17:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 1.17,
+          "draw": 6.5,
+          "away": 13.0
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.16,
+          "under": 1.6600000000000001
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 37
+    },
+    {
+      "homeTeam": "Benfica",
+      "awayTeam": "Académico de Viseu",
+      "kickoff": "2026-08-09T19:30:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 1.11,
+          "draw": 9.0,
+          "away": 21.0
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.12,
+          "under": 1.7
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 28
+    },
+    {
+      "homeTeam": "Moreirense FC",
+      "awayTeam": "Braga",
+      "kickoff": "2026-08-09T19:30:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 4.75,
+          "draw": 3.7,
+          "away": 1.68
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.895,
+          "under": 1.82
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 37
+    },
+    {
+      "homeTeam": "Gil Vicente",
+      "awayTeam": "Rio Ave FC",
+      "kickoff": "2026-08-09T19:30:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 1.91,
+          "draw": 3.4,
+          "away": 3.8
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.93,
+          "under": 1.81
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 37
+    },
+    {
+      "homeTeam": "Santa Clara",
+      "awayTeam": "Nacional",
+      "kickoff": "2026-08-10T19:15:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 1.83,
+          "draw": 3.3,
+          "away": 4.2
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.06,
+          "under": 1.65
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 36
+    }
+  ]
+}
