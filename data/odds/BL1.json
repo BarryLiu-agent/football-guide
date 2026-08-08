@@ -1,159 +1,204 @@
 {
-  "generatedAt": "2026-08-08T01:49:45Z",
+  "generatedAt": "2026-08-08T02:32:10Z",
   "league": "BL1",
   "matches": [
     {
       "homeTeam": "Bayern Munich",
-      "awayTeam": "Stuttgart",
-      "kickoff": "",
-      "matchUrl": "/football/germany/bundesliga/bayern-munich-vfb-stuttgart/xrtCcyAe/",
+      "awayTeam": "VfB Stuttgart",
+      "kickoff": "2026-08-28T18:30:00Z",
+      "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.29,
-          "draw": 6.17,
-          "away": 7.89
+          "home": 1.28,
+          "draw": 6.0,
+          "away": 8.0
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.63,
+          "under": 2.23
         }
       },
       "sources": [
-        "betexplorer"
+        "theoddsapi"
       ],
-      "bookmakers": 1
+      "bookmakers": 37
     },
     {
-      "homeTeam": "FC Koln",
-      "awayTeam": "Hoffenheim",
-      "kickoff": "",
-      "matchUrl": "/football/germany/bundesliga/1-fc-koln-hoffenheim/bcMB76dE/",
+      "homeTeam": "1. FC Köln",
+      "awayTeam": "TSG Hoffenheim",
+      "kickoff": "2026-08-29T13:30:00Z",
+      "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.85,
-          "draw": 3.61,
-          "away": 2.29
+          "home": 2.8,
+          "draw": 3.6,
+          "away": 2.25
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.56,
+          "under": 2.29
         }
       },
       "sources": [
-        "betexplorer"
+        "theoddsapi"
       ],
-      "bookmakers": 1
+      "bookmakers": 39
     },
     {
       "homeTeam": "Elversberg",
       "awayTeam": "Bayer Leverkusen",
-      "kickoff": "",
-      "matchUrl": "/football/germany/bundesliga/elversberg-bayer-leverkusen/6q9MVvD5/",
+      "kickoff": "2026-08-29T13:30:00Z",
+      "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 5.04,
-          "draw": 4.49,
+          "home": 5.1,
+          "draw": 4.5,
           "away": 1.54
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.105,
+          "under": 1.68
         }
       },
       "sources": [
-        "betexplorer"
+        "theoddsapi"
       ],
-      "bookmakers": 1
-    },
-    {
-      "homeTeam": "Mainz",
-      "awayTeam": "Paderborn",
-      "kickoff": "",
-      "matchUrl": "/football/germany/bundesliga/mainz-paderborn/r7qK1G8e/",
-      "markets": {
-        "h2h": {
-          "home": 1.69,
-          "draw": 3.91,
-          "away": 4.5
-        }
-      },
-      "sources": [
-        "betexplorer"
-      ],
-      "bookmakers": 1
+      "bookmakers": 39
     },
     {
       "homeTeam": "RB Leipzig",
-      "awayTeam": "B. Monchengladbach",
-      "kickoff": "",
-      "matchUrl": "/football/germany/bundesliga/rb-leipzig-b-monchengladbach/WpiYAKo9/",
+      "awayTeam": "Borussia Monchengladbach",
+      "kickoff": "2026-08-29T13:30:00Z",
+      "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.54,
-          "draw": 4.46,
-          "away": 5.21
+          "home": 1.53,
+          "draw": 4.5,
+          "away": 5.1
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.075,
+          "under": 1.71
         }
       },
       "sources": [
-        "betexplorer"
+        "theoddsapi"
       ],
-      "bookmakers": 1
+      "bookmakers": 39
     },
     {
       "homeTeam": "Union Berlin",
       "awayTeam": "Eintracht Frankfurt",
-      "kickoff": "",
-      "matchUrl": "/football/germany/bundesliga/union-berlin-eintracht-frankfurt/UNsSafw8/",
+      "kickoff": "2026-08-29T13:30:00Z",
+      "matchUrl": "",
       "markets": {
         "h2h": {
           "home": 2.35,
-          "draw": 3.48,
-          "away": 2.83
+          "draw": 3.5,
+          "away": 2.8
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.69,
+          "under": 2.1100000000000003
         }
       },
       "sources": [
-        "betexplorer"
+        "theoddsapi"
       ],
-      "bookmakers": 1
+      "bookmakers": 39
     },
     {
-      "homeTeam": "Dortmund",
+      "homeTeam": "FSV Mainz 05",
+      "awayTeam": "SC Paderborn",
+      "kickoff": "2026-08-29T13:30:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 1.67,
+          "draw": 3.95,
+          "away": 4.5
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.67,
+          "under": 2.15
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 39
+    },
+    {
+      "homeTeam": "Borussia Dortmund",
       "awayTeam": "Hamburger SV",
-      "kickoff": "",
-      "matchUrl": "/football/germany/bundesliga/dortmund-hamburger/vi4nmHg2/",
+      "kickoff": "2026-08-29T16:30:00Z",
+      "matchUrl": "",
       "markets": {
         "h2h": {
           "home": 1.33,
-          "draw": 5.32,
-          "away": 8.28
+          "draw": 5.25,
+          "away": 8.2
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.57,
+          "under": 2.3049999999999997
         }
       },
       "sources": [
-        "betexplorer"
+        "theoddsapi"
       ],
-      "bookmakers": 1
+      "bookmakers": 39
     },
     {
-      "homeTeam": "Freiburg",
+      "homeTeam": "SC Freiburg",
       "awayTeam": "Werder Bremen",
-      "kickoff": "",
-      "matchUrl": "/football/germany/bundesliga/freiburg-werder-bremen/vBft9bGL/",
+      "kickoff": "2026-08-30T13:30:00Z",
+      "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.03,
-          "draw": 3.52,
-          "away": 3.47
+          "home": 2.0,
+          "draw": 3.55,
+          "away": 3.4
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.72,
+          "under": 2.075
         }
       },
       "sources": [
-        "betexplorer"
+        "theoddsapi"
       ],
-      "bookmakers": 1
+      "bookmakers": 36
     },
     {
       "homeTeam": "Augsburg",
-      "awayTeam": "Schalke",
-      "kickoff": "",
-      "matchUrl": "/football/germany/bundesliga/augsburg-schalke/AgoC3xvq/",
+      "awayTeam": "FC Schalke 04",
+      "kickoff": "2026-08-30T15:30:00Z",
+      "matchUrl": "",
       "markets": {
         "h2h": {
           "home": 2.1,
-          "draw": 3.69,
-          "away": 3.12
+          "draw": 3.7,
+          "away": 3.1
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.565,
+          "under": 2.325
         }
       },
       "sources": [
-        "betexplorer"
+        "theoddsapi"
       ],
-      "bookmakers": 1
+      "bookmakers": 37
     }
   ]
 }

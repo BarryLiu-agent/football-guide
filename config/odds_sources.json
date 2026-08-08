@@ -1,8 +1,15 @@
 {
-  "default": "betexplorer",
+  "default": "theoddsapi",
   "sources": {
-    "betexplorer": {
+    "theoddsapi": {
       "enabled": true,
+      "apiKeyEnv": "ODDS_API_KEY",
+      "baseUrl": "https://api.the-odds-api.com/v4",
+      "markets": ["h2h", "totals", "spreads"],
+      "regions": ["eu", "uk"]
+    },
+    "betexplorer": {
+      "enabled": false,
       "baseUrl": "https://www.betexplorer.com",
       "leagues": {
         "PL": "football/england/premier-league",
@@ -14,13 +21,6 @@
       },
       "markets": ["h2h", "totals", "spreads"],
       "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
-    },
-    "theoddsapi": {
-      "enabled": false,
-      "apiKeyEnv": "ODDS_API_KEY",
-      "baseUrl": "https://api.the-odds-api.com/v4",
-      "markets": ["h2h", "totals", "spreads"],
-      "regions": ["eu", "uk"]
     }
   }
 }
