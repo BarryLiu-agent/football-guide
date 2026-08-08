@@ -1,16 +1,17 @@
 {
-  "generatedAt": "2026-08-08T01:36:44Z",
+  "generatedAt": "2026-08-08T01:49:45Z",
   "league": "BL1",
   "matches": [
     {
       "homeTeam": "Bayern Munich",
       "awayTeam": "Stuttgart",
       "kickoff": "",
+      "matchUrl": "/football/germany/bundesliga/bayern-munich-vfb-stuttgart/xrtCcyAe/",
       "markets": {
         "h2h": {
-          "home": 1.27,
-          "draw": 6.14,
-          "away": 7.94
+          "home": 1.29,
+          "draw": 6.17,
+          "away": 7.89
         }
       },
       "sources": [
@@ -22,11 +23,12 @@
       "homeTeam": "FC Koln",
       "awayTeam": "Hoffenheim",
       "kickoff": "",
+      "matchUrl": "/football/germany/bundesliga/1-fc-koln-hoffenheim/bcMB76dE/",
       "markets": {
         "h2h": {
-          "home": 2.79,
-          "draw": 3.63,
-          "away": 2.26
+          "home": 2.85,
+          "draw": 3.61,
+          "away": 2.29
         }
       },
       "sources": [
@@ -38,11 +40,12 @@
       "homeTeam": "Elversberg",
       "awayTeam": "Bayer Leverkusen",
       "kickoff": "",
+      "matchUrl": "/football/germany/bundesliga/elversberg-bayer-leverkusen/6q9MVvD5/",
       "markets": {
         "h2h": {
-          "home": 5.01,
-          "draw": 4.51,
-          "away": 1.53
+          "home": 5.04,
+          "draw": 4.49,
+          "away": 1.54
         }
       },
       "sources": [
@@ -54,11 +57,12 @@
       "homeTeam": "Mainz",
       "awayTeam": "Paderborn",
       "kickoff": "",
+      "matchUrl": "/football/germany/bundesliga/mainz-paderborn/r7qK1G8e/",
       "markets": {
         "h2h": {
-          "home": 1.68,
-          "draw": 3.87,
-          "away": 4.45
+          "home": 1.69,
+          "draw": 3.91,
+          "away": 4.5
         }
       },
       "sources": [
@@ -70,11 +74,12 @@
       "homeTeam": "RB Leipzig",
       "awayTeam": "B. Monchengladbach",
       "kickoff": "",
+      "matchUrl": "/football/germany/bundesliga/rb-leipzig-b-monchengladbach/WpiYAKo9/",
       "markets": {
         "h2h": {
-          "home": 1.53,
-          "draw": 4.4,
-          "away": 5.17
+          "home": 1.54,
+          "draw": 4.46,
+          "away": 5.21
         }
       },
       "sources": [
@@ -86,11 +91,12 @@
       "homeTeam": "Union Berlin",
       "awayTeam": "Eintracht Frankfurt",
       "kickoff": "",
+      "matchUrl": "/football/germany/bundesliga/union-berlin-eintracht-frankfurt/UNsSafw8/",
       "markets": {
         "h2h": {
-          "home": 2.34,
-          "draw": 3.49,
-          "away": 2.75
+          "home": 2.35,
+          "draw": 3.48,
+          "away": 2.83
         }
       },
       "sources": [
@@ -102,11 +108,12 @@
       "homeTeam": "Dortmund",
       "awayTeam": "Hamburger SV",
       "kickoff": "",
+      "matchUrl": "/football/germany/bundesliga/dortmund-hamburger/vi4nmHg2/",
       "markets": {
         "h2h": {
-          "home": 1.31,
-          "draw": 5.24,
-          "away": 8.2
+          "home": 1.33,
+          "draw": 5.32,
+          "away": 8.28
         }
       },
       "sources": [
@@ -118,11 +125,12 @@
       "homeTeam": "Freiburg",
       "awayTeam": "Werder Bremen",
       "kickoff": "",
+      "matchUrl": "/football/germany/bundesliga/freiburg-werder-bremen/vBft9bGL/",
       "markets": {
         "h2h": {
-          "home": 2.0,
-          "draw": 3.54,
-          "away": 3.38
+          "home": 2.03,
+          "draw": 3.52,
+          "away": 3.47
         }
       },
       "sources": [
@@ -134,11 +142,12 @@
       "homeTeam": "Augsburg",
       "awayTeam": "Schalke",
       "kickoff": "",
+      "matchUrl": "/football/germany/bundesliga/augsburg-schalke/AgoC3xvq/",
       "markets": {
         "h2h": {
-          "home": 2.08,
-          "draw": 3.73,
-          "away": 3.04
+          "home": 2.1,
+          "draw": 3.69,
+          "away": 3.12
         }
       },
       "sources": [

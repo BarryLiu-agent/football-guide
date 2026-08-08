@@ -225,6 +225,130 @@ ANALYSIS_REGISTRY = {
 }
 
 
+# ── 泊松比分模型（波胆/大小球推导）──────────────────────
+
+class ScoreModel:
+    """从 1X2 隐含概率反推主客期望进球，生成波胆分布与大小球概率。
+    标准方法：泊松分布 P(i,j) = Poisson(i;λh) × Poisson(j;λa)。"""
+
+    MAX_GOALS = 6  # 截断 0-6 球
+
+    def __init__(self):
+        self.lam_h = 1.3
+        self.lam_a = 1.1
+
+    def fit(self, p_home, p_draw, p_away):
+        """数值求解 λh/λa 使模型 1X2 概率最接近输入概率。"""
+        if not p_home or not p_draw or not p_away:
+            return self
+        best_err, best = 1e9, (self.lam_h, self.lam_a)
+        # 网格搜索: 总进球 1.8~3.2, 主队份额 0.35~0.75
+        for total in [x * 0.1 for x in range(18, 33)]:
+            for share in [x * 0.01 for x in range(35, 76)]:
+                lh, la = total * share, total * (1 - share)
+                ph, pd, pa = self._probs(lh, la)
+                err = abs(ph - p_home) + abs(pd - p_draw) + abs(pa - p_away)
+                if err < best_err:
+                    best_err, best = err, (lh, la)
+        self.lam_h, self.lam_a = best
+        return self
+
+    def _poisson(self, k, lam):
+        return math.exp(-lam) * lam ** k / math.factorial(k)
+
+    def _probs(self, lh=None, la=None):
+        lh, la = lh or self.lam_h, la or self.lam_a
+        # 网格计算 P(i,j) = Poisson(i;lh) × Poisson(j;la)
+        n = self.MAX_GOALS
+        m = [[self._poisson(i, lh) * self._poisson(j, la) for j in range(n)] for i in range(n)]
+        p_home = sum(m[i][j] for i in range(n) for j in range(n) if i > j)
+        p_draw = sum(m[i][i] for i in range(n))
+        p_away = sum(m[i][j] for i in range(n) for j in range(n) if i < j)
+        return p_home, p_draw, p_away
+
+    def correct_scores(self, top_n=6):
+        """返回 Top N 波胆: [{score: '1-0', prob: 0.12}]"""
+        n = self.MAX_GOALS
+        m = [[self._poisson(i, self.lam_h) * self._poisson(j, self.lam_a) for j in range(n)] for i in range(n)]
+        entries = [{"score": f"{i}-{j}", "prob": round(m[i][j], 4)} for i in range(n) for j in range(n)]
+        entries.sort(key=lambda x: -x["prob"])
+        return entries[:top_n]
+
+    def over_under(self, line=2.5):
+        """大小球: 返回 {over, under} 概率。"""
+        n = self.MAX_GOALS
+        m = [[self._poisson(i, self.lam_h) * self._poisson(j, self.lam_a) for j in range(n)] for i in range(n)]
+        p_over = sum(m[i][j] for i in range(n) for j in range(n) if i + j > line)
+        return {"line": line, "over": round(p_over, 3), "under": round(1 - p_over, 3)}
+
+
+# ── 文字分析生成（规则模板）──────────────────────────────
+
+class AnalysisWriter:
+    """基于赔率/波胆/大小球/消息信号生成中文文字分析。"""
+
+    @staticmethod
+    def generate(home, away, odds_result, msg_result, score_model):
+        lines = []
+        prob = odds_result.get("prob") if odds_result else None
+
+        # 1. 胜负分析
+        if prob:
+            ph, pd, pa = prob["home"], prob["draw"], prob["away"]
+            if ph >= 0.55:
+                verdict = f"市场高度看好主队{home}，主胜隐含概率 {ph:.0%}"
+            elif pa >= 0.55:
+                verdict = f"市场明显看好客队{away}，客胜隐含概率 {pa:.0%}"
+            elif ph >= pa and ph - pa < 0.15:
+                verdict = f"双方实力接近，主队{home}略占优（主胜 {ph:.0%} vs 客胜 {pa:.0%}）"
+            else:
+                verdict = f"比赛悬念较大，主胜 {ph:.0%} / 平 {pd:.0%} / 客胜 {pa:.0%}"
+            lines.append(f"【胜负】{verdict}。")
+
+        # 2. 波胆分析
+        cs = score_model.correct_scores(3)
+        if cs:
+            top = cs[0]
+            cs_str = "、".join(f"{c['score']}（{c['prob']:.0%}）" for c in cs)
+            lines.append(f"【波胆】泊松模型推算最可能比分：{cs_str}。")
+
+        # 3. 大小球
+        ou = score_model.over_under(2.5)
+        if ou:
+            direction = "大球" if ou["over"] >= 0.5 else "小球"
+            lines.append(f"【大小球】2.5 球盘口：大球 {ou['over']:.0%} / 小球 {ou['under']:.0%}，倾向{direction}。")
+
+        # 4. 消息信号
+        if msg_result:
+            signals = msg_result.get("signals", {})
+            h_sig = signals.get(home.lower(), {}).get("score", 0)
+            a_sig = signals.get(away.lower(), {}).get("score", 0)
+            h_men = signals.get(home.lower(), {}).get("mentions", 0)
+            a_men = signals.get(away.lower(), {}).get("mentions", 0)
+            if h_men or a_men:
+                parts = []
+                if h_men:
+                    parts.append(f"{home}信号 {h_sig:+.2f}（{h_men}条提及）")
+                if a_men:
+                    parts.append(f"{away}信号 {a_sig:+.2f}（{a_men}条提及）")
+                lines.append(f"【消息面】{"，".join(parts)}。")
+            ev = msg_result.get("evidence", [])[:2]
+            for e in ev:
+                lines.append(f"📰 {e['text']}（{'、'.join(e['keywords'][:3])}）")
+
+        # 5. 综合结论
+        if prob:
+            winner = home if prob["home"] >= prob["away"] else away
+            lines.append(f"【结论】综合赔率与消息，{winner}不败概率更高，关注波胆 {cs[0]['score']} 方向。")
+
+        if not lines:
+            lines.append("暂无足够数据生成分析。")
+        return "\n".join(lines)
+
+
+# ── 分析器注册表（保持兼容）──────────────────────────────
+
+
 # ── 主流程 ───────────────────────────────────────────────
 
 def load_odds():
@@ -274,9 +398,22 @@ def main():
             for a in analyzers:
                 results[a.name] = a.analyze(context)
 
-            pred = predictor.predict(home, away, results.get("odds"), results.get("message"))
+            odds_result = results.get("odds")
+            msg_result = results.get("message")
+
+            # 泊松模型: 波胆 + 大小球
+            score_model = ScoreModel()
+            if odds_result and odds_result.get("prob"):
+                p = odds_result["prob"]
+                score_model.fit(p["home"], p["draw"], p["away"])
+
+            pred = predictor.predict(home, away, odds_result, msg_result)
             pred["league"] = league
             pred["kickoff"] = m.get("kickoff", "")
+            pred["matchUrl"] = m.get("matchUrl", "")
+            pred["correctScores"] = score_model.correct_scores(6)
+            pred["overUnder"] = score_model.over_under(2.5)
+            pred["analysis"] = AnalysisWriter.generate(home, away, odds_result, msg_result, score_model)
             predictions.append(pred)
 
     out = {

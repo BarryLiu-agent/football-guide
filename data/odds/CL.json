@@ -1,11 +1,12 @@
 {
-  "generatedAt": "2026-08-08T01:36:48Z",
+  "generatedAt": "2026-08-08T01:49:49Z",
   "league": "CL",
   "matches": [
     {
       "homeTeam": "Kairat Almaty",
       "awayTeam": "Levski Sofia",
       "kickoff": "",
+      "matchUrl": "/football/europe/champions-league/kairat-almaty-levski-sofia/nRxQfha4/",
       "markets": {
         "h2h": {
           "home": 2.36,
@@ -22,6 +23,7 @@
       "homeTeam": "Bodo/Glimt",
       "awayTeam": "Royale Union SG",
       "kickoff": "",
+      "matchUrl": "/football/europe/champions-league/bodo-glimt-royale-union-sg/6TOBr6DD/",
       "markets": {
         "h2h": {
           "home": 1.66,
@@ -38,6 +40,7 @@
       "homeTeam": "Sabah Baku",
       "awayTeam": "Aarhus",
       "kickoff": "",
+      "matchUrl": "/football/europe/champions-league/sabah-baku-aarhus/rZs8POLh/",
       "markets": {
         "h2h": {
           "home": 1.97,
@@ -54,6 +57,7 @@
       "homeTeam": "Kauno Zalgiris",
       "awayTeam": "Din. Zagreb",
       "kickoff": "",
+      "matchUrl": "/football/europe/champions-league/fk-kauno-zalgiris-din-zagreb/jZwEihD7/",
       "markets": {
         "h2h": {
           "home": 6.75,
@@ -70,6 +74,7 @@
       "homeTeam": "Nijmegen",
       "awayTeam": "Olympiacos Piraeus",
       "kickoff": "",
+      "matchUrl": "/football/europe/champions-league/nijmegen-olympiacos-piraeus/8G3qc5S6/",
       "markets": {
         "h2h": {
           "home": 2.59,
@@ -86,6 +91,7 @@
       "homeTeam": "Crvena zvezda",
       "awayTeam": "H. Beer Sheva",
       "kickoff": "",
+      "matchUrl": "/football/europe/champions-league/crvena-zvezda-h-beer-sheva/bPlOLtLH/",
       "markets": {
         "h2h": {
           "home": 1.29,
@@ -102,6 +108,7 @@
       "homeTeam": "Celje",
       "awayTeam": "Ararat-Armenia",
       "kickoff": "",
+      "matchUrl": "/football/europe/champions-league/celje-ararat-armenia/h4HQXDd3/",
       "markets": {
         "h2h": {
           "home": 1.43,
@@ -118,6 +125,7 @@
       "homeTeam": "Slovan Bratislava",
       "awayTeam": "Mjallby",
       "kickoff": "",
+      "matchUrl": "/football/europe/champions-league/slovan-bratislava-mjallby/U9nGSlY1/",
       "markets": {
         "h2h": {
           "home": 1.76,
@@ -134,6 +142,7 @@
       "homeTeam": "Sturm Graz",
       "awayTeam": "Fenerbahce",
       "kickoff": "",
+      "matchUrl": "/football/europe/champions-league/sturm-graz-fenerbahce/StveztzB/",
       "markets": {
         "h2h": {
           "home": 3.78,
@@ -150,6 +159,7 @@
       "homeTeam": "Lyon",
       "awayTeam": "Sparta Prague",
       "kickoff": "",
+      "matchUrl": "/football/europe/champions-league/lyon-sparta-prague/U52T0mTs/",
       "markets": {
         "h2h": {
           "home": 1.5,

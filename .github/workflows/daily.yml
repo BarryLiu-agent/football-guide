@@ -2,8 +2,8 @@ name: Daily Data Fetch & Deploy
 
 on:
   schedule:
-    # 每天 UTC 02:00（北京时间 10:00）
-    - cron: '0 2 * * *'
+    # 每 30 分钟（北京时间 08:30 起），保证刷新分析后有新数据
+    - cron: '*/30 * * * *'
   push:
     branches: [main]
   workflow_dispatch:  # 允许手动触发
