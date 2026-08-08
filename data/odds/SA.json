@@ -1,176 +1,226 @@
 {
-  "generatedAt": "2026-08-08T02:25:00Z",
+  "generatedAt": "2026-08-08T02:33:28Z",
   "league": "SA",
   "matches": [
     {
-      "homeTeam": "Inter",
-      "awayTeam": "Monza",
-      "kickoff": "",
-      "matchUrl": "/football/italy/serie-a/inter-monza/8Mn7Y8Zh/",
-      "markets": {
-        "h2h": {
-          "home": 1.22,
-          "draw": 6.23,
-          "away": 12.13
-        }
-      },
-      "sources": [
-        "betexplorer"
-      ],
-      "bookmakers": 1
-    },
-    {
       "homeTeam": "Udinese",
       "awayTeam": "Como",
-      "kickoff": "",
-      "matchUrl": "/football/italy/serie-a/udinese-como/QuSvm8ln/",
+      "kickoff": "2026-08-22T16:30:00Z",
+      "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 4.43,
-          "draw": 3.46,
-          "away": 1.82
+          "home": 4.45,
+          "draw": 3.425,
+          "away": 1.8
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.1,
+          "under": 1.71
         }
       },
       "sources": [
-        "betexplorer"
+        "theoddsapi"
       ],
-      "bookmakers": 1
+      "bookmakers": 38
     },
     {
-      "homeTeam": "Genoa",
-      "awayTeam": "Napoli",
-      "kickoff": "",
-      "matchUrl": "/football/italy/serie-a/genoa-napoli/z9lazV4t/",
+      "homeTeam": "Inter Milan",
+      "awayTeam": "Monza",
+      "kickoff": "2026-08-22T16:30:00Z",
+      "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 4.6,
-          "draw": 3.27,
-          "away": 1.84
+          "home": 1.21,
+          "draw": 6.15,
+          "away": 12.75
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.6,
+          "under": 2.22
         }
       },
       "sources": [
-        "betexplorer"
+        "theoddsapi"
       ],
-      "bookmakers": 1
+      "bookmakers": 38
     },
     {
       "homeTeam": "Parma",
       "awayTeam": "Cagliari",
-      "kickoff": "",
-      "matchUrl": "/football/italy/serie-a/parma-cagliari/GnjFWn45/",
+      "kickoff": "2026-08-22T18:45:00Z",
+      "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.61,
-          "draw": 3.03,
-          "away": 2.83
+          "home": 2.6,
+          "draw": 3.035,
+          "away": 2.8
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.38,
+          "under": 1.55
         }
       },
       "sources": [
-        "betexplorer"
+        "theoddsapi"
       ],
-      "bookmakers": 1
+      "bookmakers": 38
+    },
+    {
+      "homeTeam": "Genoa",
+      "awayTeam": "Napoli",
+      "kickoff": "2026-08-22T18:45:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 4.5,
+          "draw": 3.3,
+          "away": 1.83
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.12,
+          "under": 1.7
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 38
     },
     {
       "homeTeam": "Frosinone",
       "awayTeam": "Juventus",
-      "kickoff": "",
-      "matchUrl": "/football/italy/serie-a/frosinone-juventus/nD9kGRJO/",
+      "kickoff": "2026-08-23T16:30:00Z",
+      "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 6.79,
-          "draw": 4.31,
-          "away": 1.45
+          "home": 6.875,
+          "draw": 4.33,
+          "away": 1.44
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.7850000000000001,
+          "under": 2.02
         }
       },
       "sources": [
-        "betexplorer"
+        "theoddsapi"
       ],
-      "bookmakers": 1
+      "bookmakers": 38
     },
     {
       "homeTeam": "Venezia",
       "awayTeam": "Lecce",
-      "kickoff": "",
-      "matchUrl": "/football/italy/serie-a/venezia-lecce/Y5VnonJb/",
+      "kickoff": "2026-08-23T16:30:00Z",
+      "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.32,
-          "draw": 3.19,
+          "home": 2.3,
+          "draw": 3.2,
           "away": 3.1
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.18,
+          "under": 1.66
         }
       },
       "sources": [
-        "betexplorer"
+        "theoddsapi"
       ],
-      "bookmakers": 1
-    },
-    {
-      "homeTeam": "Atalanta",
-      "awayTeam": "Sassuolo",
-      "kickoff": "",
-      "matchUrl": "/football/italy/serie-a/atalanta-sassuolo/6Z7ZJ9Ka/",
-      "markets": {
-        "h2h": {
-          "home": 1.52,
-          "draw": 4.26,
-          "away": 5.81
-        }
-      },
-      "sources": [
-        "betexplorer"
-      ],
-      "bookmakers": 1
+      "bookmakers": 38
     },
     {
       "homeTeam": "Torino",
       "awayTeam": "AC Milan",
-      "kickoff": "",
-      "matchUrl": "/football/italy/serie-a/torino-ac-milan/dQiVS43U/",
+      "kickoff": "2026-08-23T18:45:00Z",
+      "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 4.38,
-          "draw": 3.62,
-          "away": 1.78
+          "home": 4.4,
+          "draw": 3.6,
+          "away": 1.7650000000000001
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.88,
+          "under": 1.89
         }
       },
       "sources": [
-        "betexplorer"
+        "theoddsapi"
       ],
-      "bookmakers": 1
+      "bookmakers": 38
+    },
+    {
+      "homeTeam": "Atalanta BC",
+      "awayTeam": "Sassuolo",
+      "kickoff": "2026-08-23T18:45:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 1.5,
+          "draw": 4.3,
+          "away": 5.9
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.68,
+          "under": 2.12
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 38
     },
     {
       "homeTeam": "Bologna",
       "awayTeam": "Lazio",
-      "kickoff": "",
-      "matchUrl": "/football/italy/serie-a/bologna-lazio/vm6sImkC/",
+      "kickoff": "2026-08-24T16:30:00Z",
+      "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.13,
-          "draw": 3.2,
-          "away": 3.52
+          "home": 2.1,
+          "draw": 3.23,
+          "away": 3.4
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.15,
+          "under": 1.6749999999999998
         }
       },
       "sources": [
-        "betexplorer"
+        "theoddsapi"
       ],
-      "bookmakers": 1
+      "bookmakers": 38
     },
     {
       "homeTeam": "AS Roma",
       "awayTeam": "Fiorentina",
-      "kickoff": "",
-      "matchUrl": "/football/italy/serie-a/as-roma-fiorentina/OCgNUQYH/",
+      "kickoff": "2026-08-24T18:45:00Z",
+      "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.54,
-          "draw": 4.08,
+          "home": 1.53,
+          "draw": 4.0,
           "away": 5.9
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.83,
+          "under": 1.93
         }
       },
       "sources": [
-        "betexplorer"
+        "theoddsapi"
       ],
-      "bookmakers": 1
+      "bookmakers": 37
     }
   ]
 }

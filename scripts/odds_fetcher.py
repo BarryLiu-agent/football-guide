@@ -166,7 +166,8 @@ class TheOddsApiSource(OddsSource):
         "SA": "soccer_italy_serie_a",
         "BL1": "soccer_germany_bundesliga",
         "FL1": "soccer_france_ligue_one",
-        "CL": "soccer_uefa_champions_league",
+        # 欧冠正赛抽签后改为 soccer_uefa_champs_league
+        "CL": "soccer_uefa_champs_league_qualification",
     }
 
     def fetch(self, league_code: str) -> list:
@@ -192,25 +193,37 @@ class TheOddsApiSource(OddsSource):
             return []
 
     def normalize(self, raw: dict) -> dict:
-        h2h = {}
-        totals = {}
+        home_name = raw.get("home_team", "")
+        away_name = raw.get("away_team", "")
+        h2h = {"home": [], "draw": [], "away": []}
+        totals = {"over": [], "under": []}
         for bm in raw.get("bookmakers", []):
             for market in bm.get("markets", []):
                 key = market["key"]
                 if key == "h2h":
                     for o in market["outcomes"]:
-                        h2h[o["name"]] = o["price"]
+                        if o["name"] == home_name:
+                            h2h["home"].append(o["price"])
+                        elif o["name"] == away_name:
+                            h2h["away"].append(o["price"])
+                        elif o["name"].lower() == "draw":
+                            h2h["draw"].append(o["price"])
                 elif key == "totals":
                     for o in market["outcomes"]:
-                        totals[o["name"]] = o["price"]
+                        if o["name"].lower() == "over":
+                            totals["over"].append(o["price"])
+                        elif o["name"].lower() == "under":
+                            totals["under"].append(o["price"])
+        med = lambda xs: statistics.median(xs) if xs else None
         return {
             "league": raw.get("sport_key", ""),
             "homeTeam": raw.get("home_team", ""),
             "awayTeam": raw.get("away_team", ""),
             "kickoff": raw.get("commence_time", ""),
+            "matchUrl": "",
             "markets": {
-                "h2h": h2h,
-                "totals": totals,
+                "h2h": {"home": med(h2h["home"]), "draw": med(h2h["draw"]), "away": med(h2h["away"])},
+                "totals": {"over": med(totals["over"]), "under": med(totals["under"])},
                 "spreads": None,
             },
             "bookmakers": len(raw.get("bookmakers", [])),
@@ -245,6 +258,32 @@ def median_or_none(values):
     return statistics.median(vals) if vals else None
 
 
+def parse_totals(totals: dict) -> dict or None:
+    """把大小球结构解析为 {line, over, under}。
+    兼容两种格式: {Over 2.5: 1.8, Under 2.5: 2.0} 或 {over: 1.94, under: 1.88}(隐含2.5盘)。"""
+    if not totals:
+        return None
+    # 已归一化格式
+    if "over" in totals and "under" in totals:
+        return {"line": 2.5, "over": totals["over"], "under": totals["under"]}
+    import re
+    over_prices, under_prices, lines = {}, {}, set()
+    for name, price in totals.items():
+        m = re.search(r"([0-9.]+)", name)
+        if not m:
+            continue
+        line = float(m.group(1))
+        lines.add(line)
+        if name.lower().startswith("over"):
+            over_prices[line] = price
+        elif name.lower().startswith("under"):
+            under_prices[line] = price
+    if not lines:
+        return None
+    line = 2.5 if 2.5 in lines else sorted(lines)[0]
+    return {"line": line, "over": over_prices.get(line), "under": under_prices.get(line)}
+
+
 def aggregate(matches_by_source):
     """多源聚合：按 (主队,客队) 合并，赔率取中位数。"""
     grouped = {}
@@ -255,19 +294,34 @@ def aggregate(matches_by_source):
 
     results = []
     for (home, away), ms in grouped.items():
-        h2h_home = [m["markets"]["h2h"].get("home") for m in ms if isinstance(m["markets"]["h2h"], dict)]
-        h2h_draw = [m["markets"]["h2h"].get("draw") for m in ms if isinstance(m["markets"]["h2h"], dict)]
-        h2h_away = [m["markets"]["h2h"].get("away") for m in ms if isinstance(m["markets"]["h2h"], dict)]
+        def h2h_val(k):
+            vals = []
+            for m in ms:
+                h = m.get("markets", {}).get("h2h") or {}
+                v = h.get(k) or h.get(k.capitalize())
+                if v:
+                    vals.append(v)
+            return median_or_none(vals)
+
+        totals_parsed = [parse_totals(m.get("markets", {}).get("totals")) for m in ms]
+        totals_parsed = [t for t in totals_parsed if t]
+        totals_out = None
+        if totals_parsed:
+            totals_out = {
+                "line": totals_parsed[0]["line"],
+                "over": median_or_none([t["over"] for t in totals_parsed]),
+                "under": median_or_none([t["under"] for t in totals_parsed]),
+            }
+
         results.append({
             "homeTeam": ms[0]["homeTeam"],
             "awayTeam": ms[0]["awayTeam"],
             "kickoff": ms[0].get("kickoff", ""),
             "matchUrl": ms[0].get("matchUrl", ""),
-            "markets": {"h2h": {
-                "home": median_or_none(h2h_home),
-                "draw": median_or_none(h2h_draw),
-                "away": median_or_none(h2h_away),
-            }},
+            "markets": {
+                "h2h": {"home": h2h_val("home"), "draw": h2h_val("draw"), "away": h2h_val("away")},
+                "totals": totals_out,
+            },
             "sources": [m["source"] for m in ms],
             "bookmakers": sum(m.get("bookmakers", 0) for m in ms),
         })

@@ -1,176 +1,226 @@
 {
-  "generatedAt": "2026-08-08T02:24:57Z",
+  "generatedAt": "2026-08-08T02:33:27Z",
   "league": "PL",
   "matches": [
     {
       "homeTeam": "Arsenal",
-      "awayTeam": "Coventry",
-      "kickoff": "",
-      "matchUrl": "/football/england/premier-league/arsenal-coventry/2q2NhX43/",
+      "awayTeam": "Coventry City",
+      "kickoff": "2026-08-21T19:00:00Z",
+      "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.16,
-          "draw": 7.43,
-          "away": 15.64
+          "home": 1.15,
+          "draw": 7.5,
+          "away": 16.0
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.93,
+          "under": 1.93
         }
       },
       "sources": [
-        "betexplorer"
+        "theoddsapi"
       ],
-      "bookmakers": 1
+      "bookmakers": 39
     },
     {
-      "homeTeam": "Hull",
-      "awayTeam": "Manchester Utd",
-      "kickoff": "",
-      "matchUrl": "/football/england/premier-league/hull-city-manchester-united/zc0VjBZF/",
+      "homeTeam": "Hull City",
+      "awayTeam": "Manchester United",
+      "kickoff": "2026-08-22T11:30:00Z",
+      "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 6.95,
-          "draw": 4.41,
-          "away": 1.44
+          "home": 7.0,
+          "draw": 4.5,
+          "away": 1.43
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.72,
+          "under": 2.05
         }
       },
       "sources": [
-        "betexplorer"
+        "theoddsapi"
       ],
-      "bookmakers": 1
+      "bookmakers": 39
     },
     {
       "homeTeam": "Everton",
       "awayTeam": "Crystal Palace",
-      "kickoff": "",
-      "matchUrl": "/football/england/premier-league/everton-crystal-palace/rN3wkk4S/",
+      "kickoff": "2026-08-22T14:00:00Z",
+      "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.12,
-          "draw": 3.38,
-          "away": 3.37
+          "home": 2.1,
+          "draw": 3.4,
+          "away": 3.4
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.91,
+          "under": 1.87
         }
       },
       "sources": [
-        "betexplorer"
+        "theoddsapi"
       ],
-      "bookmakers": 1
+      "bookmakers": 39
     },
     {
-      "homeTeam": "Ipswich",
+      "homeTeam": "Ipswich Town",
       "awayTeam": "Sunderland",
-      "kickoff": "",
-      "matchUrl": "/football/england/premier-league/ipswich-sunderland/Cxf9qTRk/",
+      "kickoff": "2026-08-22T14:00:00Z",
+      "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.69,
-          "draw": 3.28,
-          "away": 2.57
+          "home": 2.7,
+          "draw": 3.3,
+          "away": 2.55
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.95,
+          "under": 1.83
         }
       },
       "sources": [
-        "betexplorer"
+        "theoddsapi"
       ],
-      "bookmakers": 1
+      "bookmakers": 39
     },
     {
-      "homeTeam": "Nottingham",
-      "awayTeam": "Leeds",
-      "kickoff": "",
-      "matchUrl": "/football/england/premier-league/nottingham-leeds/pjhHs7d2/",
+      "homeTeam": "Nottingham Forest",
+      "awayTeam": "Leeds United",
+      "kickoff": "2026-08-22T14:00:00Z",
+      "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.22,
-          "draw": 3.37,
-          "away": 3.17
+          "home": 2.2,
+          "draw": 3.4,
+          "away": 3.1
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.88,
+          "under": 1.9
         }
       },
       "sources": [
-        "betexplorer"
+        "theoddsapi"
       ],
-      "bookmakers": 1
+      "bookmakers": 39
     },
     {
       "homeTeam": "Brentford",
-      "awayTeam": "Tottenham",
-      "kickoff": "",
-      "matchUrl": "/football/england/premier-league/brentford-tottenham/EPW0kJF8/",
+      "awayTeam": "Tottenham Hotspur",
+      "kickoff": "2026-08-22T16:30:00Z",
+      "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.36,
-          "draw": 3.58,
-          "away": 2.76
+          "home": 2.38,
+          "draw": 3.6,
+          "away": 2.75
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.67,
+          "under": 2.2
         }
       },
       "sources": [
-        "betexplorer"
+        "theoddsapi"
       ],
-      "bookmakers": 1
+      "bookmakers": 39
     },
     {
-      "homeTeam": "Brighton",
+      "homeTeam": "Brighton and Hove Albion",
       "awayTeam": "Aston Villa",
-      "kickoff": "",
-      "matchUrl": "/football/england/premier-league/brighton-aston-villa/Mkz9mcpL/",
+      "kickoff": "2026-08-23T13:00:00Z",
+      "matchUrl": "",
       "markets": {
         "h2h": {
           "home": 2.26,
-          "draw": 3.59,
-          "away": 2.91
+          "draw": 3.6,
+          "away": 2.88
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.62,
+          "under": 2.28
         }
       },
       "sources": [
-        "betexplorer"
+        "theoddsapi"
       ],
-      "bookmakers": 1
+      "bookmakers": 39
     },
     {
       "homeTeam": "Manchester City",
       "awayTeam": "Bournemouth",
-      "kickoff": "",
-      "matchUrl": "/football/england/premier-league/manchester-city-bournemouth/ILLvry8r/",
+      "kickoff": "2026-08-23T13:00:00Z",
+      "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.44,
-          "draw": 4.93,
-          "away": 6.01
+          "home": 1.42,
+          "draw": 5.0,
+          "away": 6.0
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.93,
+          "under": 1.85
         }
       },
       "sources": [
-        "betexplorer"
+        "theoddsapi"
       ],
-      "bookmakers": 1
+      "bookmakers": 39
     },
     {
-      "homeTeam": "Newcastle",
+      "homeTeam": "Newcastle United",
       "awayTeam": "Liverpool",
-      "kickoff": "",
-      "matchUrl": "/football/england/premier-league/newcastle-utd-liverpool/4xKntFxe/",
+      "kickoff": "2026-08-23T15:30:00Z",
+      "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 3.21,
-          "draw": 3.78,
-          "away": 2.05
+          "home": 3.25,
+          "draw": 3.8,
+          "away": 2.04
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.13,
+          "under": 1.65
         }
       },
       "sources": [
-        "betexplorer"
+        "theoddsapi"
       ],
-      "bookmakers": 1
+      "bookmakers": 39
     },
     {
       "homeTeam": "Fulham",
       "awayTeam": "Chelsea",
-      "kickoff": "",
-      "matchUrl": "/football/england/premier-league/fulham-chelsea/C2Nfvg77/",
+      "kickoff": "2026-08-24T19:00:00Z",
+      "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 3.06,
+          "home": 3.05,
           "draw": 3.65,
           "away": 2.15
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.6,
+          "under": 2.3
         }
       },
       "sources": [
-        "betexplorer"
+        "theoddsapi"
       ],
-      "bookmakers": 1
+      "bookmakers": 38
     }
   ]
 }

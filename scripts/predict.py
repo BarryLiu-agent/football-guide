@@ -288,7 +288,7 @@ class AnalysisWriter:
     """基于赔率/波胆/大小球/消息信号生成中文文字分析。"""
 
     @staticmethod
-    def generate(home, away, odds_result, msg_result, score_model):
+    def generate(home, away, odds_result, msg_result, score_model, ou=None):
         lines = []
         prob = odds_result.get("prob") if odds_result else None
 
@@ -312,11 +312,12 @@ class AnalysisWriter:
             cs_str = "、".join(f"{c['score']}（{c['prob']:.0%}）" for c in cs)
             lines.append(f"【波胆】泊松模型推算最可能比分：{cs_str}。")
 
-        # 3. 大小球
-        ou = score_model.over_under(2.5)
+        # 3. 大小球（真实赔率优先，否则泊松）
+        if not ou:
+            ou = score_model.over_under(2.5)
         if ou:
             direction = "大球" if ou["over"] >= 0.5 else "小球"
-            lines.append(f"【大小球】2.5 球盘口：大球 {ou['over']:.0%} / 小球 {ou['under']:.0%}，倾向{direction}。")
+            lines.append(f"【大小球】{ou['line']} 球盘口：大球 {ou['over']:.0%} / 小球 {ou['under']:.0%}，倾向{direction}。")
 
         # 4. 消息信号
         if msg_result:
@@ -412,12 +413,21 @@ def main():
             pred["kickoff"] = m.get("kickoff", "")
             pred["matchUrl"] = m.get("matchUrl", "")
             pred["correctScores"] = score_model.correct_scores(6)
-            pred["overUnder"] = score_model.over_under(2.5)
+            # 真实大小球（The Odds API totals）优先，否则泊松推导
+            ou = None
+            totals_mkt = m.get("markets", {}).get("totals")
+            if totals_mkt and totals_mkt.get("over") and totals_mkt.get("under"):
+                po, pu = 1 / totals_mkt["over"], 1 / totals_mkt["under"]
+                s = po + pu
+                ou = {"line": totals_mkt["line"], "over": round(po / s, 3), "under": round(pu / s, 3)}
+            if not ou:
+                ou = score_model.over_under(2.5)
+            pred["overUnder"] = ou
             # 预测比分 = 泊松模型最可能波胆（比期望值四舍五入更有区分度）
             top_cs = score_model.correct_scores(1)
             if top_cs:
                 pred["predictedScore"] = top_cs[0]["score"]
-            pred["analysis"] = AnalysisWriter.generate(home, away, odds_result, msg_result, score_model)
+            pred["analysis"] = AnalysisWriter.generate(home, away, odds_result, msg_result, score_model, ou)
             predictions.append(pred)
 
     out = {
