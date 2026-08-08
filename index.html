@@ -150,6 +150,8 @@ body {
 }
 .match-card.star-match { border-left-color: var(--color-accent); }
 .match-card:hover { box-shadow: var(--shadow-md); }
+.match-card.clickable { cursor: pointer; }
+.match-card.clickable:hover { border-left-color: var(--color-primary); }
 .match-league {
   font-size: 0.7rem; font-weight: 700; color: var(--color-text-secondary);
   text-transform: uppercase; letter-spacing: 0.04em; min-width: 32px;
@@ -286,6 +288,64 @@ body {
   .spinner { animation: none; }
   * { transition: none !important; }
 }
+
+/* ===== Detail Modal ===== */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 200;
+  background: rgba(0,0,0,0.45);
+  display: none; align-items: flex-end; justify-content: center;
+}
+.modal-overlay.open { display: flex; }
+.modal {
+  background: var(--color-bg); border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  width: 100%; max-width: 720px; max-height: 88vh; overflow-y: auto;
+  padding: 18px 16px 24px;
+  animation: slideUp 0.25s ease;
+}
+@media (min-width: 768px) {
+  .modal-overlay { align-items: center; }
+  .modal { border-radius: var(--radius-lg); max-height: 80vh; }
+}
+@keyframes slideUp { from { transform: translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }
+.modal-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 10px;
+}
+.modal-title { font-size: 1rem; font-weight: 700; }
+.modal-close {
+  background: none; border: none; font-size: 1.3rem; cursor: pointer;
+  color: var(--color-text-secondary); padding: 4px 8px;
+}
+.mkt-tabs { display: flex; gap: 6px; margin: 10px 0; flex-wrap: wrap; }
+.mkt-tab {
+  padding: 6px 14px; border-radius: 18px; border: 1.5px solid var(--color-border);
+  background: var(--color-surface); font-size: 0.8rem; font-weight: 600;
+  cursor: pointer; color: var(--color-text-secondary); font-family: inherit;
+}
+.mkt-tab.active { background: var(--color-primary); color: #fff; border-color: var(--color-primary); }
+.odds-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 14px; }
+.odds-box {
+  background: var(--color-surface); border-radius: var(--radius-md);
+  padding: 10px; text-align: center; box-shadow: var(--shadow-sm);
+}
+.odds-box .label { font-size: 0.68rem; color: var(--color-text-secondary); }
+.odds-box .value { font-size: 1.05rem; font-weight: 700; margin-top: 2px; }
+.odds-box .prob { font-size: 0.7rem; color: var(--color-primary-light); }
+.cs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 14px; }
+.cs-item {
+  background: var(--color-surface); border-radius: var(--radius-sm);
+  padding: 8px; text-align: center; box-shadow: var(--shadow-sm); font-size: 0.85rem;
+}
+.cs-item .score { font-weight: 700; }
+.cs-item .p { font-size: 0.7rem; color: var(--color-primary-light); }
+.analysis-box {
+  background: var(--color-surface); border-radius: var(--radius-md);
+  padding: 12px 14px; box-shadow: var(--shadow-sm);
+  font-size: 0.85rem; line-height: 1.7; white-space: pre-line;
+}
+.analysis-actions { display: flex; gap: 8px; align-items: center; margin: 10px 0; }
+.refresh-note { font-size: 0.7rem; color: var(--color-text-secondary); }
+.refreshing { opacity: 0.6; pointer-events: none; }
 </style>
 </head>
 <body>
@@ -351,6 +411,28 @@ body {
     <div id="predictMatches"></div>
   </section>
 </main>
+
+<!-- Detail Modal -->
+<div class="modal-overlay" id="detailModal" onclick="if(event.target===this)closeDetail()">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title" id="modalTitle"></div>
+      <button class="modal-close" onclick="closeDetail()">×</button>
+    </div>
+    <div class="mkt-tabs">
+      <button class="mkt-tab active" data-mkt="1x2" onclick="switchMkt('1x2')">胜负 1X2</button>
+      <button class="mkt-tab" data-mkt="ou" onclick="switchMkt('ou')">大小球</button>
+      <button class="mkt-tab" data-mkt="cs" onclick="switchMkt('cs')">波胆</button>
+    </div>
+    <div id="mktContent"></div>
+    <h3 style="font-size:0.85rem;color:var(--color-text-secondary);margin:6px 0 8px;">📝 分析</h3>
+    <div class="analysis-actions">
+      <button class="btn" id="refreshBtn" onclick="refreshAnalysis()">🔄 刷新分析</button>
+      <span class="refresh-note" id="refreshNote"></span>
+    </div>
+    <div class="analysis-box" id="analysisBox"></div>
+  </div>
+</div>
 
 <script>
 // ===== Configuration =====
@@ -871,6 +953,7 @@ async function loadPredictions() {
     document.getElementById('predictDisclaimer').textContent = data.disclaimer || '';
 
     const preds = (data.predictions || []).slice().sort((a, b) => b.confidence - a.confidence);
+    lastPreds = preds;
     if (!preds.length) {
       el.innerHTML = '<div class="empty-state"><div class="icon">📊</div><h3>暂无预测数据</h3><p>数据管道每日自动生成预测</p></div>';
       return;
@@ -882,7 +965,7 @@ async function loadPredictions() {
       const probs = p.probabilities || {};
       const bar = (v, color) => `<div style="height:6px;border-radius:3px;background:${color};width:${Math.max(4, Math.round((v||0)*100))}%"></div>`;
       return `
-      <div class="match-card">
+      <div class="match-card clickable" onclick="openDetail(${preds.indexOf(p)})">
         <div class="match-league">${league}</div>
         <div class="match-teams" style="flex:1">
           <div class="team-row"><span>${displayTeam(p.homeTeam)}</span></div>
@@ -906,6 +989,102 @@ async function loadPredictions() {
   } catch (e) {
     el.innerHTML = `<div class="error-banner">⚠️ 预测数据加载失败: ${e.message}<button class="retry-btn" onclick="loadPredictions()">重试</button></div>`;
   }
+}
+
+// ===== Detail Modal =====
+let currentPred = null;
+let pollTimer = null;
+let lastGeneratedAt = null;
+let lastPreds = [];
+
+function openDetail(idx) {
+  currentPred = lastPreds[idx];
+  if (!currentPred) return;
+  document.getElementById('modalTitle').textContent =
+    `${displayTeam(currentPred.homeTeam)} vs ${displayTeam(currentPred.awayTeam)}`;
+  document.getElementById('detailModal').classList.add('open');
+  document.getElementById('refreshNote').textContent = '';
+  switchMkt('1x2');
+  document.getElementById('analysisBox').textContent = currentPred.analysis || '暂无分析';
+  lastGeneratedAt = null;
+}
+
+function closeDetail() {
+  document.getElementById('detailModal').classList.remove('open');
+  if (pollTimer) { clearInterval(pollTimer); pollTimer = null; }
+}
+
+function switchMkt(mkt) {
+  document.querySelectorAll('.mkt-tab').forEach(b => b.classList.toggle('active', b.dataset.mkt === mkt));
+  const el = document.getElementById('mktContent');
+  const p = currentPred;
+  if (!p) return;
+  const probs = p.probabilities || {};
+  const pct = v => v == null ? '—' : `${Math.round(v * 100)}%`;
+
+  if (mkt === '1x2') {
+    const h = probs.home, d = probs.draw, a = probs.away;
+    el.innerHTML = `
+      <div class="odds-grid">
+        <div class="odds-box"><div class="label">主胜</div><div class="value">${pct(h)}</div><div class="prob">隐含概率</div></div>
+        <div class="odds-box"><div class="label">平局</div><div class="value">${pct(d)}</div><div class="prob">隐含概率</div></div>
+        <div class="odds-box"><div class="label">客胜</div><div class="value">${pct(a)}</div><div class="prob">隐含概率</div></div>
+      </div>`;
+  } else if (mkt === 'ou') {
+    const ou = p.overUnder || {};
+    el.innerHTML = `
+      <div class="odds-grid">
+        <div class="odds-box"><div class="label">大球 Over ${ou.line ?? 2.5}</div><div class="value">${pct(ou.over)}</div><div class="prob">概率</div></div>
+        <div class="odds-box"><div class="label">小球 Under ${ou.line ?? 2.5}</div><div class="value">${pct(ou.under)}</div><div class="prob">概率</div></div>
+        <div class="odds-box"><div class="label">倾向</div><div class="value" style="font-size:0.95rem">${(ou.over || 0) >= 0.5 ? '大球' : '小球'}</div><div class="prob">泊松模型</div></div>
+      </div>`;
+  } else if (mkt === 'cs') {
+    const cs = p.correctScores || [];
+    el.innerHTML = `<div class="cs-grid">${cs.map(c =>
+      `<div class="cs-item"><div class="score">${c.score}</div><div class="p">${pct(c.prob)}</div></div>`
+    ).join('')}</div>`;
+  }
+}
+
+function refreshAnalysis() {
+  const btn = document.getElementById('refreshBtn');
+  const note = document.getElementById('refreshNote');
+  btn.classList.add('refreshing');
+  note.textContent = '正在请求后台重新抓取消息并生成分析…';
+
+  // 1. 尝试触发 GitHub Actions (workflow_dispatch)
+  fetch('https://api.github.com/repos/BarryLiu-agent/football-guide/actions/workflows/daily.yml/dispatches', {
+    method: 'POST',
+    headers: { 'Accept': 'application/vnd.github+json' },
+    body: JSON.stringify({ ref: 'main' })
+  }).then(r => {
+    if (r.ok) {
+      note.textContent = '已触发后台刷新，Actions 正在重新抓取消息与赔率…';
+    } else {
+      note.textContent = '无法自动触发（需 GitHub 登录）。请手动运行：github.com/BarryLiu-agent/football-guide/actions 点击 Run workflow。页面将自动检测更新。';
+    }
+  }).catch(() => {
+    note.textContent = '无法自动触发。请手动运行：github.com/BarryLiu-agent/football-guide/actions 点击 Run workflow。页面将自动检测更新。';
+  });
+
+  // 2. 轮询 predictions.json，检测 generatedAt 变化后自动刷新
+  if (pollTimer) clearInterval(pollTimer);
+  pollTimer = setInterval(async () => {
+    try {
+      const resp = await fetch('data/predictions.json?t=' + Date.now());
+      const data = await resp.json();
+      if (lastGeneratedAt && data.generatedAt !== lastGeneratedAt) {
+        note.textContent = '✅ 分析已更新（' + new Date(data.generatedAt).toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' }) + '）';
+        clearInterval(pollTimer); pollTimer = null;
+        btn.classList.remove('refreshing');
+        // 找到对应比赛的最新预测并刷新
+        const fresh = (data.predictions || []).find(p => p.homeTeam === currentPred.homeTeam && p.awayTeam === currentPred.awayTeam);
+        if (fresh) { currentPred = fresh; switchMkt(document.querySelector('.mkt-tab.active').dataset.mkt); document.getElementById('analysisBox').textContent = fresh.analysis || '暂无分析'; }
+      } else if (!lastGeneratedAt) {
+        lastGeneratedAt = data.generatedAt;
+      }
+    } catch (e) { /* 轮询失败忽略 */ }
+  }, 20000);
 }
 
 // ===== Tab Switching =====

@@ -114,6 +114,7 @@ class BetExplorerSource(OddsSource):
                     continue
                 home = spans[0].get_text(strip=True)
                 away = spans[1].get_text(strip=True)
+                match_url = link.get("href", "")
 
                 # h2h 赔率: 前 3 个 odds cell 的 data-odd
                 h2h = []
@@ -130,6 +131,7 @@ class BetExplorerSource(OddsSource):
                 matches.append(self.normalize({
                     "league": league_code,
                     "home": home, "away": away,
+                    "matchUrl": match_url,
                     "h2h": {"home": h2h[0], "draw": h2h[1], "away": h2h[2]},
                 }))
             except Exception:
@@ -142,6 +144,7 @@ class BetExplorerSource(OddsSource):
             "homeTeam": raw["home"],
             "awayTeam": raw["away"],
             "kickoff": raw.get("kickoff", ""),
+            "matchUrl": raw.get("matchUrl", ""),
             "markets": {
                 "h2h": raw["h2h"],
                 "totals": raw.get("totals"),
@@ -259,6 +262,7 @@ def aggregate(matches_by_source):
             "homeTeam": ms[0]["homeTeam"],
             "awayTeam": ms[0]["awayTeam"],
             "kickoff": ms[0].get("kickoff", ""),
+            "matchUrl": ms[0].get("matchUrl", ""),
             "markets": {"h2h": {
                 "home": median_or_none(h2h_home),
                 "draw": median_or_none(h2h_draw),

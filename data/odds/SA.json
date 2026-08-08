@@ -1,16 +1,17 @@
 {
-  "generatedAt": "2026-08-08T01:38:03Z",
+  "generatedAt": "2026-08-08T01:57:52Z",
   "league": "SA",
   "matches": [
     {
       "homeTeam": "Inter",
       "awayTeam": "Monza",
       "kickoff": "",
+      "matchUrl": "/football/italy/serie-a/inter-monza/8Mn7Y8Zh/",
       "markets": {
         "h2h": {
-          "home": 1.21,
-          "draw": 6.02,
-          "away": 12.55
+          "home": 1.22,
+          "draw": 6.18,
+          "away": 12.17
         }
       },
       "sources": [
@@ -22,11 +23,12 @@
       "homeTeam": "Udinese",
       "awayTeam": "Como",
       "kickoff": "",
+      "matchUrl": "/football/italy/serie-a/udinese-como/QuSvm8ln/",
       "markets": {
         "h2h": {
-          "home": 4.38,
-          "draw": 3.42,
-          "away": 1.8
+          "home": 4.42,
+          "draw": 3.46,
+          "away": 1.82
         }
       },
       "sources": [
@@ -38,11 +40,12 @@
       "homeTeam": "Genoa",
       "awayTeam": "Napoli",
       "kickoff": "",
+      "matchUrl": "/football/italy/serie-a/genoa-napoli/z9lazV4t/",
       "markets": {
         "h2h": {
-          "home": 4.44,
-          "draw": 3.33,
-          "away": 1.82
+          "home": 4.58,
+          "draw": 3.28,
+          "away": 1.84
         }
       },
       "sources": [
@@ -54,11 +57,12 @@
       "homeTeam": "Parma",
       "awayTeam": "Cagliari",
       "kickoff": "",
+      "matchUrl": "/football/italy/serie-a/parma-cagliari/GnjFWn45/",
       "markets": {
         "h2h": {
-          "home": 2.58,
-          "draw": 3.05,
-          "away": 2.78
+          "home": 2.6,
+          "draw": 3.04,
+          "away": 2.83
         }
       },
       "sources": [
@@ -70,11 +74,12 @@
       "homeTeam": "Frosinone",
       "awayTeam": "Juventus",
       "kickoff": "",
+      "matchUrl": "/football/italy/serie-a/frosinone-juventus/nD9kGRJO/",
       "markets": {
         "h2h": {
-          "home": 6.8,
-          "draw": 4.21,
-          "away": 1.44
+          "home": 6.75,
+          "draw": 4.29,
+          "away": 1.46
         }
       },
       "sources": [
@@ -86,11 +91,12 @@
       "homeTeam": "Venezia",
       "awayTeam": "Lecce",
       "kickoff": "",
+      "matchUrl": "/football/italy/serie-a/venezia-lecce/Y5VnonJb/",
       "markets": {
         "h2h": {
-          "home": 2.31,
-          "draw": 3.19,
-          "away": 3.04
+          "home": 2.32,
+          "draw": 3.2,
+          "away": 3.08
         }
       },
       "sources": [
@@ -102,11 +108,12 @@
       "homeTeam": "Atalanta",
       "awayTeam": "Sassuolo",
       "kickoff": "",
+      "matchUrl": "/football/italy/serie-a/atalanta-sassuolo/6Z7ZJ9Ka/",
       "markets": {
         "h2h": {
-          "home": 1.49,
-          "draw": 4.24,
-          "away": 5.92
+          "home": 1.52,
+          "draw": 4.26,
+          "away": 5.82
         }
       },
       "sources": [
@@ -118,11 +125,12 @@
       "homeTeam": "Torino",
       "awayTeam": "AC Milan",
       "kickoff": "",
+      "matchUrl": "/football/italy/serie-a/torino-ac-milan/dQiVS43U/",
       "markets": {
         "h2h": {
           "home": 4.37,
-          "draw": 3.61,
-          "away": 1.76
+          "draw": 3.62,
+          "away": 1.78
         }
       },
       "sources": [
@@ -134,11 +142,12 @@
       "homeTeam": "Bologna",
       "awayTeam": "Lazio",
       "kickoff": "",
+      "matchUrl": "/football/italy/serie-a/bologna-lazio/vm6sImkC/",
       "markets": {
         "h2h": {
-          "home": 2.12,
+          "home": 2.13,
           "draw": 3.21,
-          "away": 3.43
+          "away": 3.51
         }
       },
       "sources": [
@@ -150,11 +159,12 @@
       "homeTeam": "AS Roma",
       "awayTeam": "Fiorentina",
       "kickoff": "",
+      "matchUrl": "/football/italy/serie-a/as-roma-fiorentina/OCgNUQYH/",
       "markets": {
         "h2h": {
-          "home": 1.52,
-          "draw": 4.02,
-          "away": 5.96
+          "home": 1.54,
+          "draw": 4.06,
+          "away": 5.89
         }
       },
       "sources": [

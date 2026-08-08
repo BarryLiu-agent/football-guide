@@ -1,16 +1,17 @@
 {
-  "generatedAt": "2026-08-08T01:38:00Z",
+  "generatedAt": "2026-08-08T01:57:49Z",
   "league": "PL",
   "matches": [
     {
       "homeTeam": "Arsenal",
       "awayTeam": "Coventry",
       "kickoff": "",
+      "matchUrl": "/football/england/premier-league/arsenal-coventry/2q2NhX43/",
       "markets": {
         "h2h": {
-          "home": 1.17,
-          "draw": 7.4,
-          "away": 14.5
+          "home": 1.16,
+          "draw": 7.41,
+          "away": 15.79
         }
       },
       "sources": [
@@ -22,10 +23,11 @@
       "homeTeam": "Hull",
       "awayTeam": "Manchester Utd",
       "kickoff": "",
+      "matchUrl": "/football/england/premier-league/hull-city-manchester-united/zc0VjBZF/",
       "markets": {
         "h2h": {
-          "home": 6.69,
-          "draw": 4.51,
+          "home": 6.93,
+          "draw": 4.41,
           "away": 1.44
         }
       },
@@ -38,11 +40,12 @@
       "homeTeam": "Everton",
       "awayTeam": "Crystal Palace",
       "kickoff": "",
+      "matchUrl": "/football/england/premier-league/everton-crystal-palace/rN3wkk4S/",
       "markets": {
         "h2h": {
           "home": 2.12,
-          "draw": 3.46,
-          "away": 3.29
+          "draw": 3.39,
+          "away": 3.37
         }
       },
       "sources": [
@@ -54,11 +57,12 @@
       "homeTeam": "Ipswich",
       "awayTeam": "Sunderland",
       "kickoff": "",
+      "matchUrl": "/football/england/premier-league/ipswich-sunderland/Cxf9qTRk/",
       "markets": {
         "h2h": {
-          "home": 2.68,
-          "draw": 3.3,
-          "away": 2.55
+          "home": 2.69,
+          "draw": 3.29,
+          "away": 2.56
         }
       },
       "sources": [
@@ -70,10 +74,11 @@
       "homeTeam": "Nottingham",
       "awayTeam": "Leeds",
       "kickoff": "",
+      "matchUrl": "/football/england/premier-league/nottingham-leeds/pjhHs7d2/",
       "markets": {
         "h2h": {
           "home": 2.22,
-          "draw": 3.46,
+          "draw": 3.38,
           "away": 3.16
         }
       },
@@ -86,11 +91,12 @@
       "homeTeam": "Brentford",
       "awayTeam": "Tottenham",
       "kickoff": "",
+      "matchUrl": "/football/england/premier-league/brentford-tottenham/EPW0kJF8/",
       "markets": {
         "h2h": {
-          "home": 2.33,
-          "draw": 3.51,
-          "away": 2.82
+          "home": 2.37,
+          "draw": 3.55,
+          "away": 2.77
         }
       },
       "sources": [
@@ -102,11 +108,12 @@
       "homeTeam": "Brighton",
       "awayTeam": "Aston Villa",
       "kickoff": "",
+      "matchUrl": "/football/england/premier-league/brighton-aston-villa/Mkz9mcpL/",
       "markets": {
         "h2h": {
-          "home": 2.28,
-          "draw": 3.65,
-          "away": 2.86
+          "home": 2.27,
+          "draw": 3.6,
+          "away": 2.9
         }
       },
       "sources": [
@@ -118,11 +125,12 @@
       "homeTeam": "Manchester City",
       "awayTeam": "Bournemouth",
       "kickoff": "",
+      "matchUrl": "/football/england/premier-league/manchester-city-bournemouth/ILLvry8r/",
       "markets": {
         "h2h": {
-          "home": 1.43,
-          "draw": 5.01,
-          "away": 5.99
+          "home": 1.44,
+          "draw": 4.93,
+          "away": 6.04
         }
       },
       "sources": [
@@ -134,11 +142,12 @@
       "homeTeam": "Newcastle",
       "awayTeam": "Liverpool",
       "kickoff": "",
+      "matchUrl": "/football/england/premier-league/newcastle-utd-liverpool/4xKntFxe/",
       "markets": {
         "h2h": {
-          "home": 3.18,
-          "draw": 3.8,
-          "away": 2.06
+          "home": 3.2,
+          "draw": 3.79,
+          "away": 2.05
         }
       },
       "sources": [
@@ -150,11 +159,12 @@
       "homeTeam": "Fulham",
       "awayTeam": "Chelsea",
       "kickoff": "",
+      "matchUrl": "/football/england/premier-league/fulham-chelsea/C2Nfvg77/",
       "markets": {
         "h2h": {
-          "home": 3.05,
-          "draw": 3.63,
-          "away": 2.18
+          "home": 3.06,
+          "draw": 3.64,
+          "away": 2.15
         }
       },
       "sources": [
