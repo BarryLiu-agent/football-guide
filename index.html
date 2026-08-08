@@ -379,7 +379,9 @@ body {
 const COMPETITIONS = {
   PL: '英超', PD: '西甲', SA: '意甲', BL1: '德甲', FL1: '法甲', CL: '欧冠',
   CH: '英冠', ED: '荷甲', PPL: '葡超', TSL: '土超', SPL: '苏超',
-  BDF: '比甲', BSA: '巴甲', MLS: '美职联', JLG: '日职', KL1: 'K联赛'
+  BDF: '比甲', BSA: '巴甲', MLS: '美职联', JLG: '日职', KL1: 'K联赛',
+  // Football-Data.org 代码别名（赛程数据用）
+  EC: '英冠', DED: '荷甲', BPL: '比甲', J1: '日职', KLE: 'K联赛'
 };
 
 // ===== Team Name Translation (English → Chinese) =====
@@ -613,9 +615,16 @@ function findPrediction(home, away) {
 // ===== Render =====
 function renderLeagueFilter(containerId, active, onChange) {
   const el = document.getElementById(containerId);
+  // 去重（同一中文名的多代码只保留第一个，如 EC/CH 都显示英冠）
+  const seen = new Set();
+  const entries = Object.entries(COMPETITIONS).filter(([k, v]) => {
+    if (seen.has(v)) return false;
+    seen.add(v);
+    return true;
+  });
   el.innerHTML = `
     <button class="league-chip ${active === 'all' ? 'active' : ''}" data-league="all">全部</button>
-    ${Object.entries(COMPETITIONS).map(([k, v]) =>
+    ${entries.map(([k, v]) =>
       `<button class="league-chip ${active === k ? 'active' : ''}" data-league="${k}">${v}</button>`
     ).join('')}
   `;
@@ -699,7 +708,9 @@ async function loadToday() {
   });
 
   if (activeLeagueFilter !== 'all') {
-    filtered = filtered.filter(m => m.competition?.code === activeLeagueFilter);
+    // 按中文名匹配（兼容多代码，如 ED/DED 都对应荷甲）
+    const target = COMPETITIONS[activeLeagueFilter];
+    filtered = filtered.filter(m => COMPETITIONS[m.competition?.code] === target);
   }
 
   renderMatchList('todayMatches', filtered, '未来一个月暂无比赛安排');
