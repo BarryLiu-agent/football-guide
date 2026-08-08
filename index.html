@@ -183,9 +183,6 @@ body {
 .status-paused { background: #f3f4f6; color: #92400e; }
 .status-finished { background: #f3f4f6; color: var(--color-finished); }
 .status-scheduled { background: #f0fdf4; color: var(--color-primary); }
-.star-badge {
-  font-size: 0.65rem; color: #b8860b; margin-left: 4px;
-}
 
 /* ===== History page ===== */
 .date-picker-bar {
@@ -210,42 +207,6 @@ body {
 .btn-secondary:hover { background: var(--color-bg); }
 
 /* ===== Stars page ===== */
-.star-toolbar {
-  display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px;
-}
-.search-input {
-  flex: 1; min-width: 200px; padding: 8px 12px;
-  border: 1.5px solid var(--color-border); border-radius: var(--radius-sm);
-  font-family: inherit; font-size: 0.9rem;
-}
-.search-input:focus { outline: none; border-color: var(--color-primary); }
-.star-list {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 8px; margin-bottom: 20px;
-}
-.star-item {
-  background: var(--color-surface); border-radius: var(--radius-md);
-  padding: 10px 14px; box-shadow: var(--shadow-sm);
-  display: flex; align-items: center; gap: 10px; cursor: pointer;
-  border: 1.5px solid transparent; transition: all 0.2s;
-}
-.star-item.followed { border-color: var(--color-accent); background: #f0fdf4; }
-.star-item:hover { box-shadow: var(--shadow-md); }
-.star-avatar {
-  width: 36px; height: 36px; border-radius: 50%;
-  background: var(--color-primary-light); color: #fff;
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 700; font-size: 0.85rem; flex-shrink: 0;
-}
-.star-info { flex: 1; min-width: 0; }
-.star-name { font-size: 0.85rem; font-weight: 600; }
-.star-team { font-size: 0.72rem; color: var(--color-text-secondary); }
-.star-follow-btn {
-  background: none; border: 1.5px solid var(--color-accent); color: #b8860b;
-  border-radius: 14px; padding: 3px 10px; font-size: 0.7rem; font-weight: 700;
-  cursor: pointer; transition: all 0.2s; font-family: inherit; white-space: nowrap;
-}
-.star-follow-btn.followed { background: var(--color-accent); color: #fff; }
 
 /* ===== Empty & Error states ===== */
 .empty-state {
@@ -282,7 +243,6 @@ body {
   .match-score { font-size: 0.95rem; min-width: 44px; }
   .league-filter { gap: 4px; }
   .league-chip { padding: 5px 10px; font-size: 0.73rem; }
-  .star-list { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
 }
 @media (prefers-reduced-motion: reduce) {
   .spinner { animation: none; }
@@ -365,15 +325,14 @@ body {
 <nav class="tab-nav">
   <button class="tab-btn active" data-tab="today">📅 比赛</button>
   <button class="tab-btn" data-tab="history">📋 历史记录</button>
-  <button class="tab-btn" data-tab="stars">⭐ 球星追踪</button>
-  <button class="tab-btn" data-tab="predict">📊 预测</button>
 </nav>
 
 <!-- Main Content -->
 <main class="main">
-  <!-- Today Tab -->
+  <!-- Today Tab (merged with predictions) -->
   <section class="tab-panel active" id="panel-today">
     <div class="league-filter" id="leagueFilter"></div>
+    <div style="font-size:0.75rem;color:var(--color-text-secondary);margin-bottom:10px;">⚖️ 点击比赛查看赔率/波胆/大小球与文字分析 · 有预测的比赛显示比分徽章</div>
     <div id="todayMatches"></div>
   </section>
 
@@ -387,28 +346,6 @@ body {
       <button class="btn btn-secondary" onclick="loadLastMonth()">上月</button>
     </div>
     <div id="historyMatches"></div>
-  </section>
-
-  <!-- Stars Tab -->
-  <section class="tab-panel" id="panel-stars">
-    <div class="star-toolbar">
-      <input class="search-input" id="starSearch" placeholder="🔍 搜索或添加球员..." onkeydown="if(event.key==='Enter')searchStar()" />
-      <button class="btn" onclick="searchStar()">添加</button>
-    </div>
-    <div class="league-filter" id="starLeagueFilter"></div>
-    <h2 style="font-size:0.85rem;color:var(--color-text-secondary);margin-bottom:10px;font-weight:500;">👤 我的关注</h2>
-    <div class="star-list" id="followedStars"></div>
-    <h2 style="font-size:0.85rem;color:var(--color-text-secondary);margin:20px 0 10px;font-weight:500;">🌟 推荐球星</h2>
-    <div class="star-list" id="suggestedStars"></div>
-    <div id="starMatches"></div>
-  </section>
-  <!-- Predict Tab -->
-  <section class="tab-panel" id="panel-predict">
-    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
-      <span style="font-size:0.8rem;color:var(--color-text-secondary);">⚖️ 赔率隐含概率 + 📰 消息信号 → 比分预测</span>
-      <span style="margin-left:auto;font-size:0.7rem;color:var(--color-text-secondary);" id="predictDisclaimer"></span>
-    </div>
-    <div id="predictMatches"></div>
   </section>
 </main>
 
@@ -555,46 +492,9 @@ function displayTeam(name) {
   return name;
 }
 
-// ===== Star Players (Ballon d'Or Top 30 + popular) =====
-const STAR_PLAYERS = [
-  // Ballon d'Or 2025 contenders & all-time stars
-  { name: '姆巴佩', team: 'Real Madrid CF', league: 'PD' },
-  { name: '哈兰德', team: 'Manchester City FC', league: 'PL' },
-  { name: '贝林厄姆', team: 'Real Madrid CF', league: 'PD' },
-  { name: '维尼修斯', team: 'Real Madrid CF', league: 'PD' },
-  { name: '凯恩', team: 'FC Bayern München', league: 'BL1' },
-  { name: '萨拉赫', team: 'Liverpool FC', league: 'PL' },
-  { name: '亚马尔', team: 'FC Barcelona', league: 'PD' },
-  { name: '罗德里', team: 'Manchester City FC', league: 'PL' },
-  { name: '佩德里', team: 'FC Barcelona', league: 'PD' },
-  { name: '加维', team: 'FC Barcelona', league: 'PD' },
-  { name: '劳塔罗', team: 'FC Internazionale Milano', league: 'SA' },
-  { name: '莱万多夫斯基', team: 'FC Barcelona', league: 'PD' },
-  { name: '德布劳内', team: 'Manchester City FC', league: 'PL' },
-  { name: '萨卡', team: 'Arsenal FC', league: 'PL' },
-  { name: '穆夏拉', team: 'FC Bayern München', league: 'BL1' },
-  { name: '维尔茨', team: 'Bayer 04 Leverkusen', league: 'BL1' },
-  { name: '帕尔默', team: 'Chelsea FC', league: 'PL' },
-  { name: '奥斯梅恩', team: 'Galatasaray SK', league: null },
-  { name: '厄德高', team: 'Arsenal FC', league: 'PL' },
-  { name: '赖斯', team: 'Arsenal FC', league: 'PL' },
-  { name: '多夫比克', team: 'Liverpool FC', league: 'PL' },
-  { name: '伊萨克', team: 'Newcastle United FC', league: 'PL' },
-  { name: 'C罗', team: 'Al Nassr FC', league: null },
-  { name: '梅西', team: 'Inter Miami CF', league: null },
-  { name: '若昂·内维斯', team: 'Paris Saint-Germain FC', league: 'FL1' },
-  { name: '登贝莱', team: 'Paris Saint-Germain FC', league: 'FL1' },
-  { name: '巴尔韦德', team: 'Real Madrid CF', league: 'PD' },
-  { name: '罗德里戈', team: 'Real Madrid CF', league: 'PD' },
-  { name: '格列兹曼', team: 'Atlético de Madrid', league: 'PD' },
-  { name: '恩德里克', team: 'Real Madrid CF', league: 'PD' },
-];
-
 // ===== State =====
 let allMatches = [];
-let followedStars = JSON.parse(localStorage.getItem('followedStars') || '[]');
 let activeLeagueFilter = 'all';
-let activeStarLeagueFilter = 'all';
 let isLoading = false;
 
 // ===== Data Loading (from local JSON files) =====
@@ -694,9 +594,18 @@ function getScoreDisplay(match) {
   return { text: formatTime(match.utcDate), cls: 'scheduled', statusText: match.matchday ? `第${match.matchday}轮` : '' };
 }
 
-function isStarMatch(match) {
-  const starTeams = STAR_PLAYERS.filter(p => followedStars.includes(p.name)).map(p => p.team);
-  return starTeams.includes(match.homeTeam?.name) || starTeams.includes(match.awayTeam?.name);
+// ===== 预测匹配（比赛页 ↔ 预测数据） =====
+function normTeam(s) {
+  return (s || '').toLowerCase().replace(/\bfc\b/g, '').replace(/[^a-z0-9 ]/g, '').trim();
+}
+
+function findPrediction(home, away) {
+  const h = normTeam(home), a = normTeam(away);
+  if (!h || !a) return null;
+  return lastPreds.find(p =>
+    (normTeam(p.homeTeam) === h && normTeam(p.awayTeam) === a) ||
+    (normTeam(p.homeTeam).split(' ')[0] === h.split(' ')[0] && normTeam(p.awayTeam).split(' ')[0] === a.split(' ')[0])
+  ) || null;
 }
 
 // ===== Render =====
@@ -718,29 +627,38 @@ function renderLeagueFilter(containerId, active, onChange) {
 }
 
 function renderMatchCard(match) {
-  const star = isStarMatch(match);
   const score = getScoreDisplay(match);
   const league = COMPETITIONS[match.competition?.code] || match.competition?.code || '';
   const isLive = match.status === 'IN_PLAY' || match.status === 'LIVE' || match.status === 'PAUSED';
   const isFinished = match.status === 'FINISHED';
+  const homeName = match.homeTeam?.name || match.homeTeam?.shortName || '?';
+  const awayName = match.awayTeam?.name || match.awayTeam?.shortName || '?';
+  const pred = findPrediction(homeName, awayName);
+  const predBadge = pred
+    ? `<div style="min-width:56px;text-align:center;padding:4px 8px;border-radius:8px;background:#f0fdf4;border:1px solid #bbf7d0;font-size:0.78rem;">
+         <div style="font-weight:700;color:var(--color-primary)">预测 ${pred.predictedScore}</div>
+         <div style="font-size:0.65rem;color:var(--color-text-secondary)">${Math.round((pred.confidence || 0) * 100)}%</div>
+       </div>`
+    : '';
 
   return `
-    <div class="match-card ${star ? 'star-match' : ''}" data-id="${match.id}">
+    <div class="match-card ${pred ? 'star-match' : ''} clickable" data-id="${match.id}" onclick="openDetailByTeams('${homeName.replace(/'/g, '')}', '${awayName.replace(/'/g, '')}')">
       <div class="match-league">${league}</div>
       <div class="match-teams">
         <div class="team-row">
           <img src="${match.homeTeam?.crest || ''}" alt="" onerror="this.style.display='none'" loading="lazy">
-          <span>${displayTeam(match.homeTeam?.name || match.homeTeam?.shortName || '?')}${star && followedStars.some(s => STAR_PLAYERS.find(p => p.name === s)?.team === match.homeTeam?.name) ? '<span class="star-badge">⭐</span>' : ''}</span>
+          <span>${displayTeam(homeName)}</span>
         </div>
         <div class="team-row">
           <img src="${match.awayTeam?.crest || ''}" alt="" onerror="this.style.display='none'" loading="lazy">
-          <span>${displayTeam(match.awayTeam?.name || match.awayTeam?.shortName || '?')}${star && followedStars.some(s => STAR_PLAYERS.find(p => p.name === s)?.team === match.awayTeam?.name) ? '<span class="star-badge">⭐</span>' : ''}</span>
+          <span>${displayTeam(awayName)}</span>
         </div>
       </div>
       <div class="match-score ${score.cls}">
         ${score.text}
         ${score.statusText ? `<div class="match-status status-${score.cls}">${score.statusText}</div>` : ''}
       </div>
+      ${predBadge}
     </div>
   `;
 }
@@ -767,6 +685,8 @@ async function loadToday() {
   if (!allMatches.length || (Date.now() - lastFetchTime > 60000)) {
     await refreshData(true);
   }
+  // 预加载预测数据（供卡片徽章与详情）
+  if (!predictionsLoaded) await loadPredictionsData();
 
   const today = formatDate(new Date().toISOString());
   const maxDate = formatDate(new Date(Date.now() + 30 * 86400000).toISOString());
@@ -824,78 +744,6 @@ function loadLastMonth() {
   showHistoryForDate(d);
 }
 
-// ===== Stars =====
-function renderStars() {
-  const followedEl = document.getElementById('followedStars');
-  const suggestedEl = document.getElementById('suggestedStars');
-  const searchVal = document.getElementById('starSearch').value.toLowerCase();
-
-  const followed = STAR_PLAYERS.filter(p => followedStars.includes(p.name));
-  const suggested = STAR_PLAYERS.filter(p => !followedStars.includes(p.name) &&
-    (searchVal ? p.name.includes(searchVal) || p.team.includes(searchVal) : true));
-
-  const renderStarItem = (p, isFollowed) => `
-    <div class="star-item ${isFollowed ? 'followed' : ''}" onclick="toggleStar('${p.name}')">
-      <div class="star-avatar">${p.name[0]}</div>
-      <div class="star-info">
-        <div class="star-name">${p.name}</div>
-        <div class="star-team">${p.team}</div>
-      </div>
-      <button class="star-follow-btn ${isFollowed ? 'followed' : ''}">${isFollowed ? '已关注' : '+ 关注'}</button>
-    </div>
-  `;
-
-  followedEl.innerHTML = followed.length
-    ? followed.map(p => renderStarItem(p, true)).join('')
-    : '<div style="color:var(--color-text-secondary);font-size:0.85rem;padding:12px;">暂无关注球员,点击下方推荐球星关注</div>';
-
-  suggestedEl.innerHTML = suggested.map(p => renderStarItem(p, false)).join('');
-  renderStarMatches();
-}
-
-function toggleStar(name) {
-  if (followedStars.includes(name)) {
-    followedStars = followedStars.filter(s => s !== name);
-  } else {
-    followedStars.push(name);
-  }
-  localStorage.setItem('followedStars', JSON.stringify(followedStars));
-  renderStars();
-}
-
-function searchStar() {
-  // Searching within existing list only; triggers re-render with filter
-  renderStars();
-}
-
-function renderStarMatches() {
-  const el = document.getElementById('starMatches');
-  if (!followedStars.length) {
-    el.innerHTML = '';
-    return;
-  }
-  const starTeams = STAR_PLAYERS.filter(p => followedStars.includes(p.name)).map(p => p.team);
-  let matches = allMatches.filter(m =>
-    starTeams.includes(m.homeTeam?.name) || starTeams.includes(m.awayTeam?.name)
-  );
-  if (activeStarLeagueFilter !== 'all') {
-    matches = matches.filter(m => m.competition?.code === activeStarLeagueFilter);
-  }
-  // Show upcoming + recent
-  const today = formatDate(new Date().toISOString());
-  const maxDate = formatDate(new Date(Date.now() + 30 * 86400000).toISOString());
-  matches = matches.filter(m => {
-    const d = formatDate(m.utcDate);
-    return d >= today && d <= maxDate;
-  });
-  el.innerHTML = `<h3 style="font-size:0.85rem;color:var(--color-text-secondary);margin:16px 0 10px;">📅 关注球队近期比赛</h3>`;
-  if (!matches.length) {
-    el.innerHTML += '<div class="empty-state"><p>近期暂无关注球员所属球队的比赛</p></div>';
-  } else {
-    el.innerHTML += matches.map(m => renderMatchCard(m)).join('');
-  }
-}
-
 // ===== Refresh & Fetch =====
 let lastFetchTime = 0;
 
@@ -937,57 +785,22 @@ async function refreshData(silent = false) {
   // Re-render current tab
   const activeTab = document.querySelector('.tab-btn.active').dataset.tab;
   if (activeTab === 'today') loadToday();
-  else if (activeTab === 'stars') renderStars();
-  else if (activeTab === 'predict') loadPredictions();
 }
 
-// ===== Predictions =====
-async function loadPredictions() {
-  const el = document.getElementById('predictMatches');
-  el.innerHTML = '<div class="loading-spinner"><div class="spinner"></div></div>';
+// ===== Predictions Data =====
+let lastPreds = [];
+let predictionsLoaded = false;
+
+async function loadPredictionsData() {
   try {
-    const resp = await fetch('data/predictions.json');
+    const resp = await fetch('data/predictions.json?t=' + Date.now());
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const data = await resp.json();
-
-    document.getElementById('predictDisclaimer').textContent = data.disclaimer || '';
-
-    const preds = (data.predictions || []).slice().sort((a, b) => b.confidence - a.confidence);
-    lastPreds = preds;
-    if (!preds.length) {
-      el.innerHTML = '<div class="empty-state"><div class="icon">📊</div><h3>暂无预测数据</h3><p>数据管道每日自动生成预测</p></div>';
-      return;
-    }
-
-    const pct = v => `${Math.round(v * 100)}%`;
-    el.innerHTML = preds.map(p => {
-      const league = COMPETITIONS[p.league] || p.league || '';
-      const probs = p.probabilities || {};
-      const bar = (v, color) => `<div style="height:6px;border-radius:3px;background:${color};width:${Math.max(4, Math.round((v||0)*100))}%"></div>`;
-      return `
-      <div class="match-card clickable" onclick="openDetail(${preds.indexOf(p)})">
-        <div class="match-league">${league}</div>
-        <div class="match-teams" style="flex:1">
-          <div class="team-row"><span>${displayTeam(p.homeTeam)}</span></div>
-          <div class="team-row"><span>${displayTeam(p.awayTeam)}</span></div>
-        </div>
-        <div style="min-width:110px;text-align:center">
-          <div style="font-size:1.15rem;font-weight:700;color:var(--color-primary)">${p.predictedScore}</div>
-          <div style="font-size:0.65rem;color:var(--color-text-secondary)">置信度 ${pct(p.confidence)}</div>
-        </div>
-      </div>
-      <div style="background:var(--color-surface);border-radius:var(--radius-md);padding:10px 14px;margin:-4px 0 10px;box-shadow:var(--shadow-sm);font-size:0.75rem;color:var(--color-text-secondary)">
-        <div style="display:flex;gap:12px;align-items:center;margin-bottom:6px">
-          <span style="white-space:nowrap">主 ${pct(probs.home)}</span>
-          <div style="flex:1;display:flex;gap:2px">${bar(probs.home, '#1a5632')}${bar(probs.draw, '#9ca3af')}${bar(probs.away, '#dc2626')}</div>
-          <span style="white-space:nowrap">客 ${pct(probs.away)}</span>
-        </div>
-        ${(p.reasons || []).map(r => `<div>• ${r}</div>`).join('')}
-        ${(p.messageEvidence || []).slice(0, 2).map(e => `<div style="opacity:0.8">📰 ${e.text} <span style="color:#b8860b">${e.score > 0 ? '+' : ''}${e.score}</span></div>`).join('')}
-      </div>`;
-    }).join('');
+    lastPreds = (data.predictions || []).slice().sort((a, b) => b.confidence - a.confidence);
+    predictionsLoaded = true;
   } catch (e) {
-    el.innerHTML = `<div class="error-banner">⚠️ 预测数据加载失败: ${e.message}<button class="retry-btn" onclick="loadPredictions()">重试</button></div>`;
+    console.warn('预测数据加载失败:', e);
+    lastPreds = [];
   }
 }
 
@@ -995,18 +808,26 @@ async function loadPredictions() {
 let currentPred = null;
 let pollTimer = null;
 let lastGeneratedAt = null;
-let lastPreds = [];
 
-function openDetail(idx) {
-  currentPred = lastPreds[idx];
-  if (!currentPred) return;
-  document.getElementById('modalTitle').textContent =
-    `${displayTeam(currentPred.homeTeam)} vs ${displayTeam(currentPred.awayTeam)}`;
-  document.getElementById('detailModal').classList.add('open');
-  document.getElementById('refreshNote').textContent = '';
-  switchMkt('1x2');
-  document.getElementById('analysisBox').textContent = currentPred.analysis || '暂无分析';
-  lastGeneratedAt = null;
+function openDetailByTeams(homeName, awayName) {
+  loadPredictionsData().then(() => {
+    const pred = findPrediction(homeName, awayName);
+    if (pred) {
+      currentPred = pred;
+      document.getElementById('modalTitle').textContent =
+        `${displayTeam(pred.homeTeam)} vs ${displayTeam(pred.awayTeam)}`;
+      document.getElementById('analysisBox').textContent = pred.analysis || '暂无分析';
+    } else {
+      currentPred = null;
+      document.getElementById('modalTitle').textContent =
+        `${displayTeam(homeName)} vs ${displayTeam(awayName)}`;
+      document.getElementById('analysisBox').textContent = '该场比赛暂无赔率与预测数据（可能未开售赔率或数据源未覆盖）。';
+    }
+    document.getElementById('detailModal').classList.add('open');
+    document.getElementById('refreshNote').textContent = '';
+    switchMkt('1x2');
+    lastGeneratedAt = null;
+  });
 }
 
 function closeDetail() {
@@ -1018,7 +839,10 @@ function switchMkt(mkt) {
   document.querySelectorAll('.mkt-tab').forEach(b => b.classList.toggle('active', b.dataset.mkt === mkt));
   const el = document.getElementById('mktContent');
   const p = currentPred;
-  if (!p) return;
+  if (!p) {
+    el.innerHTML = '<div class="empty-state" style="padding:24px"><p>暂无赔率数据</p></div>';
+    return;
+  }
   const probs = p.probabilities || {};
   const pct = v => v == null ? '—' : `${Math.round(v * 100)}%`;
 
@@ -1087,9 +911,11 @@ function refreshAnalysis() {
         note.textContent = '✅ 分析已更新（' + new Date(data.generatedAt).toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' }) + '）';
         clearInterval(pollTimer); pollTimer = null;
         btn.classList.remove('refreshing');
-        // 找到对应比赛的最新预测并刷新
-        const fresh = (data.predictions || []).find(p => p.homeTeam === currentPred.homeTeam && p.awayTeam === currentPred.awayTeam);
-        if (fresh) { currentPred = fresh; switchMkt(document.querySelector('.mkt-tab.active').dataset.mkt); document.getElementById('analysisBox').textContent = fresh.analysis || '暂无分析'; }
+        if (currentPred) {
+          // 找到对应比赛的最新预测并刷新
+          const fresh = (data.predictions || []).find(p => p.homeTeam === currentPred.homeTeam && p.awayTeam === currentPred.awayTeam);
+          if (fresh) { currentPred = fresh; switchMkt(document.querySelector('.mkt-tab.active').dataset.mkt); document.getElementById('analysisBox').textContent = fresh.analysis || '暂无分析'; }
+        }
       } else if (!lastGeneratedAt) {
         lastGeneratedAt = data.generatedAt;
       }
@@ -1131,8 +957,6 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     document.getElementById(`panel-${btn.dataset.tab}`).classList.add('active');
 
     if (btn.dataset.tab === 'today') loadToday();
-    else if (btn.dataset.tab === 'stars') renderStars();
-    else if (btn.dataset.tab === 'predict') loadPredictions();
     else if (btn.dataset.tab === 'history') {
       document.getElementById('historyDate').value = formatDate(new Date(Date.now() - 86400000).toISOString());
       showHistoryForDate(document.getElementById('historyDate').value);
@@ -1144,11 +968,6 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 renderLeagueFilter('leagueFilter', activeLeagueFilter, (league) => {
   activeLeagueFilter = league;
   loadToday();
-});
-
-renderLeagueFilter('starLeagueFilter', activeStarLeagueFilter, (league) => {
-  activeStarLeagueFilter = league;
-  renderStarMatches();
 });
 
 // ===== Init =====
