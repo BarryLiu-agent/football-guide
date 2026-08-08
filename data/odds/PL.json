@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T01:57:49Z",
+  "generatedAt": "2026-08-08T02:24:57Z",
   "league": "PL",
   "matches": [
     {
@@ -10,8 +10,8 @@
       "markets": {
         "h2h": {
           "home": 1.16,
-          "draw": 7.41,
-          "away": 15.79
+          "draw": 7.43,
+          "away": 15.64
         }
       },
       "sources": [
@@ -26,7 +26,7 @@
       "matchUrl": "/football/england/premier-league/hull-city-manchester-united/zc0VjBZF/",
       "markets": {
         "h2h": {
-          "home": 6.93,
+          "home": 6.95,
           "draw": 4.41,
           "away": 1.44
         }
@@ -44,7 +44,7 @@
       "markets": {
         "h2h": {
           "home": 2.12,
-          "draw": 3.39,
+          "draw": 3.38,
           "away": 3.37
         }
       },
@@ -61,8 +61,8 @@
       "markets": {
         "h2h": {
           "home": 2.69,
-          "draw": 3.29,
-          "away": 2.56
+          "draw": 3.28,
+          "away": 2.57
         }
       },
       "sources": [
@@ -78,8 +78,8 @@
       "markets": {
         "h2h": {
           "home": 2.22,
-          "draw": 3.38,
-          "away": 3.16
+          "draw": 3.37,
+          "away": 3.17
         }
       },
       "sources": [
@@ -94,9 +94,9 @@
       "matchUrl": "/football/england/premier-league/brentford-tottenham/EPW0kJF8/",
       "markets": {
         "h2h": {
-          "home": 2.37,
-          "draw": 3.55,
-          "away": 2.77
+          "home": 2.36,
+          "draw": 3.58,
+          "away": 2.76
         }
       },
       "sources": [
@@ -111,9 +111,9 @@
       "matchUrl": "/football/england/premier-league/brighton-aston-villa/Mkz9mcpL/",
       "markets": {
         "h2h": {
-          "home": 2.27,
-          "draw": 3.6,
-          "away": 2.9
+          "home": 2.26,
+          "draw": 3.59,
+          "away": 2.91
         }
       },
       "sources": [
@@ -130,7 +130,7 @@
         "h2h": {
           "home": 1.44,
           "draw": 4.93,
-          "away": 6.04
+          "away": 6.01
         }
       },
       "sources": [
@@ -145,8 +145,8 @@
       "matchUrl": "/football/england/premier-league/newcastle-utd-liverpool/4xKntFxe/",
       "markets": {
         "h2h": {
-          "home": 3.2,
-          "draw": 3.79,
+          "home": 3.21,
+          "draw": 3.78,
           "away": 2.05
         }
       },
@@ -163,7 +163,7 @@
       "markets": {
         "h2h": {
           "home": 3.06,
-          "draw": 3.64,
+          "draw": 3.65,
           "away": 2.15
         }
       },

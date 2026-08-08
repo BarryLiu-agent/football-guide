@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T01:57:55Z",
+  "generatedAt": "2026-08-08T02:25:03Z",
   "league": "FL1",
   "matches": [
     {
@@ -11,7 +11,7 @@
         "h2h": {
           "home": 1.64,
           "draw": 4.2,
-          "away": 4.53
+          "away": 4.52
         }
       },
       "sources": [
@@ -27,8 +27,8 @@
       "markets": {
         "h2h": {
           "home": 1.59,
-          "draw": 4.15,
-          "away": 5.06
+          "draw": 4.14,
+          "away": 5.04
         }
       },
       "sources": [
@@ -61,7 +61,7 @@
       "markets": {
         "h2h": {
           "home": 2.18,
-          "draw": 3.46,
+          "draw": 3.45,
           "away": 3.13
         }
       },
@@ -77,8 +77,8 @@
       "matchUrl": "/football/france/ligue-1/toulouse-lyon/C82JQZdK/",
       "markets": {
         "h2h": {
-          "home": 3.36,
-          "draw": 3.6,
+          "home": 3.35,
+          "draw": 3.59,
           "away": 2.03
         }
       },
@@ -111,8 +111,8 @@
       "matchUrl": "/football/france/ligue-1/angers-lille/lYTqhFje/",
       "markets": {
         "h2h": {
-          "home": 4.87,
-          "draw": 3.71,
+          "home": 4.86,
+          "draw": 3.7,
           "away": 1.68
         }
       },
@@ -128,7 +128,7 @@
       "matchUrl": "/football/france/ligue-1/le-havre-monaco/zkSijgL7/",
       "markets": {
         "h2h": {
-          "home": 3.34,
+          "home": 3.33,
           "draw": 3.76,
           "away": 1.99
         }
@@ -147,7 +147,7 @@
         "h2h": {
           "home": 1.39,
           "draw": 5.16,
-          "away": 6.5
+          "away": 6.48
         }
       },
       "sources": [

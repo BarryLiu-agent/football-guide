@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T01:57:52Z",
+  "generatedAt": "2026-08-08T02:25:00Z",
   "league": "SA",
   "matches": [
     {
@@ -10,8 +10,8 @@
       "markets": {
         "h2h": {
           "home": 1.22,
-          "draw": 6.18,
-          "away": 12.17
+          "draw": 6.23,
+          "away": 12.13
         }
       },
       "sources": [
@@ -26,7 +26,7 @@
       "matchUrl": "/football/italy/serie-a/udinese-como/QuSvm8ln/",
       "markets": {
         "h2h": {
-          "home": 4.42,
+          "home": 4.43,
           "draw": 3.46,
           "away": 1.82
         }
@@ -43,8 +43,8 @@
       "matchUrl": "/football/italy/serie-a/genoa-napoli/z9lazV4t/",
       "markets": {
         "h2h": {
-          "home": 4.58,
-          "draw": 3.28,
+          "home": 4.6,
+          "draw": 3.27,
           "away": 1.84
         }
       },
@@ -60,8 +60,8 @@
       "matchUrl": "/football/italy/serie-a/parma-cagliari/GnjFWn45/",
       "markets": {
         "h2h": {
-          "home": 2.6,
-          "draw": 3.04,
+          "home": 2.61,
+          "draw": 3.03,
           "away": 2.83
         }
       },
@@ -77,9 +77,9 @@
       "matchUrl": "/football/italy/serie-a/frosinone-juventus/nD9kGRJO/",
       "markets": {
         "h2h": {
-          "home": 6.75,
-          "draw": 4.29,
-          "away": 1.46
+          "home": 6.79,
+          "draw": 4.31,
+          "away": 1.45
         }
       },
       "sources": [
@@ -95,8 +95,8 @@
       "markets": {
         "h2h": {
           "home": 2.32,
-          "draw": 3.2,
-          "away": 3.08
+          "draw": 3.19,
+          "away": 3.1
         }
       },
       "sources": [
@@ -113,7 +113,7 @@
         "h2h": {
           "home": 1.52,
           "draw": 4.26,
-          "away": 5.82
+          "away": 5.81
         }
       },
       "sources": [
@@ -128,7 +128,7 @@
       "matchUrl": "/football/italy/serie-a/torino-ac-milan/dQiVS43U/",
       "markets": {
         "h2h": {
-          "home": 4.37,
+          "home": 4.38,
           "draw": 3.62,
           "away": 1.78
         }
@@ -146,8 +146,8 @@
       "markets": {
         "h2h": {
           "home": 2.13,
-          "draw": 3.21,
-          "away": 3.51
+          "draw": 3.2,
+          "away": 3.52
         }
       },
       "sources": [
@@ -163,8 +163,8 @@
       "markets": {
         "h2h": {
           "home": 1.54,
-          "draw": 4.06,
-          "away": 5.89
+          "draw": 4.08,
+          "away": 5.9
         }
       },
       "sources": [

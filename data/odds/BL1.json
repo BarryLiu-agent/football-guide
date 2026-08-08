@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T01:57:54Z",
+  "generatedAt": "2026-08-08T02:25:02Z",
   "league": "BL1",
   "matches": [
     {
@@ -10,8 +10,8 @@
       "markets": {
         "h2h": {
           "home": 1.29,
-          "draw": 6.17,
-          "away": 7.89
+          "draw": 6.34,
+          "away": 7.81
         }
       },
       "sources": [
@@ -26,9 +26,9 @@
       "matchUrl": "/football/germany/bundesliga/1-fc-koln-hoffenheim/bcMB76dE/",
       "markets": {
         "h2h": {
-          "home": 2.85,
-          "draw": 3.61,
-          "away": 2.29
+          "home": 2.86,
+          "draw": 3.66,
+          "away": 2.31
         }
       },
       "sources": [
@@ -43,8 +43,8 @@
       "matchUrl": "/football/germany/bundesliga/elversberg-bayer-leverkusen/6q9MVvD5/",
       "markets": {
         "h2h": {
-          "home": 5.04,
-          "draw": 4.49,
+          "home": 5.13,
+          "draw": 4.66,
           "away": 1.54
         }
       },
@@ -61,8 +61,8 @@
       "markets": {
         "h2h": {
           "home": 1.69,
-          "draw": 3.91,
-          "away": 4.5
+          "draw": 3.93,
+          "away": 4.58
         }
       },
       "sources": [
@@ -78,8 +78,8 @@
       "markets": {
         "h2h": {
           "home": 1.54,
-          "draw": 4.46,
-          "away": 5.21
+          "draw": 4.5,
+          "away": 5.41
         }
       },
       "sources": [
@@ -94,9 +94,9 @@
       "matchUrl": "/football/germany/bundesliga/union-berlin-eintracht-frankfurt/UNsSafw8/",
       "markets": {
         "h2h": {
-          "home": 2.35,
-          "draw": 3.48,
-          "away": 2.83
+          "home": 2.37,
+          "draw": 3.54,
+          "away": 2.85
         }
       },
       "sources": [
@@ -112,8 +112,8 @@
       "markets": {
         "h2h": {
           "home": 1.33,
-          "draw": 5.32,
-          "away": 8.28
+          "draw": 5.48,
+          "away": 8.1
         }
       },
       "sources": [
@@ -128,9 +128,9 @@
       "matchUrl": "/football/germany/bundesliga/freiburg-werder-bremen/vBft9bGL/",
       "markets": {
         "h2h": {
-          "home": 2.03,
-          "draw": 3.52,
-          "away": 3.47
+          "home": 2.06,
+          "draw": 3.54,
+          "away": 3.49
         }
       },
       "sources": [
@@ -145,9 +145,9 @@
       "matchUrl": "/football/germany/bundesliga/augsburg-schalke/AgoC3xvq/",
       "markets": {
         "h2h": {
-          "home": 2.1,
-          "draw": 3.69,
-          "away": 3.12
+          "home": 2.13,
+          "draw": 3.75,
+          "away": 3.09
         }
       },
       "sources": [

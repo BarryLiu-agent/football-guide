@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T01:57:59Z",
+  "generatedAt": "2026-08-08T02:25:07Z",
   "total": 68,
   "rulesVersion": "1.0",
   "predictions": [
@@ -12,8 +12,8 @@
         "away": 0.3
       },
       "probabilities": {
-        "home": 0.804,
-        "draw": 0.085,
+        "home": 0.805,
+        "draw": 0.084,
         "away": 0.111
       },
       "confidence": 0.722,
@@ -60,15 +60,15 @@
     {
       "homeTeam": "Udinese",
       "awayTeam": "Como",
-      "predictedScore": "1-2",
+      "predictedScore": "0-1",
       "expectedGoals": {
         "home": 0.77,
         "away": 1.73
       },
       "probabilities": {
-        "home": 0.246,
+        "home": 0.245,
         "draw": 0.205,
-        "away": 0.549
+        "away": 0.55
       },
       "confidence": 0.62,
       "reasons": [
@@ -114,14 +114,14 @@
     {
       "homeTeam": "Genoa",
       "awayTeam": "Napoli",
-      "predictedScore": "1-2",
+      "predictedScore": "0-1",
       "expectedGoals": {
         "home": 0.76,
         "away": 1.74
       },
       "probabilities": {
-        "home": 0.238,
-        "draw": 0.219,
+        "home": 0.237,
+        "draw": 0.22,
         "away": 0.543
       },
       "confidence": 0.617,
@@ -168,17 +168,17 @@
     {
       "homeTeam": "Parma",
       "awayTeam": "Cagliari",
-      "predictedScore": "1-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.3,
         "away": 1.2
       },
       "probabilities": {
-        "home": 0.394,
-        "draw": 0.242,
+        "home": 0.393,
+        "draw": 0.243,
         "away": 0.365
       },
-      "confidence": 0.558,
+      "confidence": 0.557,
       "reasons": [
         "赔率隐含概率: 主36% 平31% 客33%"
       ],
@@ -224,17 +224,17 @@
       "awayTeam": "Juventus",
       "predictedScore": "1-2",
       "expectedGoals": {
-        "home": 0.51,
-        "away": 1.99
+        "home": 0.5,
+        "away": 2.0
       },
       "probabilities": {
-        "home": 0.172,
-        "draw": 0.152,
-        "away": 0.676
+        "home": 0.171,
+        "draw": 0.15,
+        "away": 0.679
       },
-      "confidence": 0.67,
+      "confidence": 0.671,
       "reasons": [
-        "赔率隐含概率: 主14% 平22% 客64%"
+        "赔率隐含概率: 主14% 平22% 客65%"
       ],
       "messageEvidence": [],
       "league": "SA",
@@ -242,49 +242,49 @@
       "matchUrl": "/football/italy/serie-a/frosinone-juventus/nD9kGRJO/",
       "correctScores": [
         {
-          "score": "1-1",
-          "prob": 0.1019
-        },
-        {
           "score": "1-2",
-          "prob": 0.0994
+          "prob": 0.0992
         },
         {
-          "score": "0-1",
-          "prob": 0.0971
+          "score": "1-1",
+          "prob": 0.0985
         },
         {
           "score": "0-2",
-          "prob": 0.0947
+          "prob": 0.0915
+        },
+        {
+          "score": "0-1",
+          "prob": 0.0908
         },
         {
           "score": "1-3",
-          "prob": 0.0646
+          "prob": 0.0666
         },
         {
           "score": "0-3",
-          "prob": 0.0615
+          "prob": 0.0614
         }
       ],
       "overUnder": {
         "line": 2.5,
-        "over": 0.561,
-        "under": 0.439
+        "over": 0.581,
+        "under": 0.419
       },
-      "analysis": "【胜负】市场明显看好客队Juventus，客胜隐含概率 64%。\n【波胆】泊松模型推算最可能比分：1-1（10%）、1-2（10%）、0-1（10%）。\n【大小球】2.5 球盘口：大球 56% / 小球 44%，倾向大球。\n【结论】综合赔率与消息，Juventus不败概率更高，关注波胆 1-1 方向。"
+      "analysis": "【胜负】市场明显看好客队Juventus，客胜隐含概率 65%。\n【波胆】泊松模型推算最可能比分：1-2（10%）、1-1（10%）、0-2（9%）。\n【大小球】2.5 球盘口：大球 58% / 小球 42%，倾向大球。\n【结论】综合赔率与消息，Juventus不败概率更高，关注波胆 1-2 方向。"
     },
     {
       "homeTeam": "Venezia",
       "awayTeam": "Lecce",
-      "predictedScore": "1-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.41,
         "away": 1.09
       },
       "probabilities": {
         "home": 0.437,
-        "draw": 0.226,
-        "away": 0.337
+        "draw": 0.227,
+        "away": 0.336
       },
       "confidence": 0.575,
       "reasons": [
@@ -330,7 +330,7 @@
     {
       "homeTeam": "Atalanta",
       "awayTeam": "Sassuolo",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.92,
         "away": 0.58
@@ -340,7 +340,7 @@
         "draw": 0.154,
         "away": 0.195
       },
-      "confidence": 0.661,
+      "confidence": 0.66,
       "reasons": [
         "赔率隐含概率: 主62% 平22% 客16%"
       ],
@@ -384,13 +384,13 @@
     {
       "homeTeam": "Torino",
       "awayTeam": "AC Milan",
-      "predictedScore": "1-2",
+      "predictedScore": "0-1",
       "expectedGoals": {
         "home": 0.77,
         "away": 1.73
       },
       "probabilities": {
-        "home": 0.248,
+        "home": 0.247,
         "draw": 0.192,
         "away": 0.56
       },
@@ -438,7 +438,7 @@
     {
       "homeTeam": "Bologna",
       "awayTeam": "Lazio",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.53,
         "away": 0.97
@@ -446,9 +446,9 @@
       "probabilities": {
         "home": 0.474,
         "draw": 0.226,
-        "away": 0.301
+        "away": 0.3
       },
-      "confidence": 0.59,
+      "confidence": 0.589,
       "reasons": [
         "赔率隐含概率: 主44% 平29% 客27%"
       ],
@@ -492,14 +492,14 @@
     {
       "homeTeam": "AS Roma",
       "awayTeam": "Fiorentina",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.92,
         "away": 0.58
       },
       "probabilities": {
-        "home": 0.643,
-        "draw": 0.165,
+        "home": 0.644,
+        "draw": 0.164,
         "away": 0.193
       },
       "confidence": 0.657,
@@ -654,7 +654,7 @@
     {
       "homeTeam": "Sabah Baku",
       "awayTeam": "Aarhus",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.57,
         "away": 0.93
@@ -708,7 +708,7 @@
     {
       "homeTeam": "Kauno Zalgiris",
       "awayTeam": "Din. Zagreb",
-      "predictedScore": "0-2",
+      "predictedScore": "1-2",
       "expectedGoals": {
         "home": 0.49,
         "away": 2.01
@@ -870,7 +870,7 @@
     {
       "homeTeam": "Celje",
       "awayTeam": "Ararat-Armenia",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.99,
         "away": 0.51
@@ -924,7 +924,7 @@
     {
       "homeTeam": "Slovan Bratislava",
       "awayTeam": "Mjallby",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.72,
         "away": 0.78
@@ -978,7 +978,7 @@
     {
       "homeTeam": "Sturm Graz",
       "awayTeam": "Fenerbahce",
-      "predictedScore": "1-2",
+      "predictedScore": "1-1",
       "expectedGoals": {
         "home": 0.85,
         "away": 1.65
@@ -1032,7 +1032,7 @@
     {
       "homeTeam": "Lyon",
       "awayTeam": "Sparta Prague",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.9,
         "away": 0.6
@@ -1086,19 +1086,19 @@
     {
       "homeTeam": "Alaves",
       "awayTeam": "Getafe",
-      "predictedScore": "1-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
-        "home": 1.48,
-        "away": 1.02
+        "home": 1.47,
+        "away": 1.03
       },
       "probabilities": {
-        "home": 0.432,
-        "draw": 0.27,
-        "away": 0.298
+        "home": 0.433,
+        "draw": 0.265,
+        "away": 0.302
       },
       "confidence": 0.573,
       "reasons": [
-        "赔率隐含概率: 主40% 平34% 客26%"
+        "赔率隐含概率: 主40% 平33% 客27%"
       ],
       "messageEvidence": [],
       "league": "PD",
@@ -1135,24 +1135,24 @@
         "over": 0.269,
         "under": 0.731
       },
-      "analysis": "【胜负】双方实力接近，主队Alaves略占优（主胜 40% vs 客胜 26%）。\n【波胆】泊松模型推算最可能比分：1-0（17%）、0-0（17%）、1-1（13%）。\n【大小球】2.5 球盘口：大球 27% / 小球 73%，倾向小球。\n【结论】综合赔率与消息，Alaves不败概率更高，关注波胆 1-0 方向。"
+      "analysis": "【胜负】双方实力接近，主队Alaves略占优（主胜 40% vs 客胜 27%）。\n【波胆】泊松模型推算最可能比分：1-0（17%）、0-0（17%）、1-1（13%）。\n【大小球】2.5 球盘口：大球 27% / 小球 73%，倾向小球。\n【结论】综合赔率与消息，Alaves不败概率更高，关注波胆 1-0 方向。"
     },
     {
       "homeTeam": "Sevilla",
       "awayTeam": "Rayo Vallecano",
-      "predictedScore": "1-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
-        "home": 1.46,
-        "away": 1.04
+        "home": 1.48,
+        "away": 1.02
       },
       "probabilities": {
-        "home": 0.451,
-        "draw": 0.23,
-        "away": 0.32
+        "home": 0.456,
+        "draw": 0.227,
+        "away": 0.317
       },
-      "confidence": 0.58,
+      "confidence": 0.583,
       "reasons": [
-        "赔率隐含概率: 主42% 平30% 客29%"
+        "赔率隐含概率: 主42% 平29% 客28%"
       ],
       "messageEvidence": [],
       "league": "PD",
@@ -1161,11 +1161,11 @@
       "correctScores": [
         {
           "score": "1-0",
-          "prob": 0.144
+          "prob": 0.1466
         },
         {
           "score": "1-1",
-          "prob": 0.1331
+          "prob": 0.1324
         },
         {
           "score": "0-0",
@@ -1173,15 +1173,15 @@
         },
         {
           "score": "0-1",
-          "prob": 0.1131
+          "prob": 0.1106
         },
         {
           "score": "2-0",
-          "prob": 0.0847
+          "prob": 0.0877
         },
         {
           "score": "2-1",
-          "prob": 0.0782
+          "prob": 0.0792
         }
       ],
       "overUnder": {
@@ -1189,7 +1189,7 @@
         "over": 0.349,
         "under": 0.651
       },
-      "analysis": "【胜负】双方实力接近，主队Sevilla略占优（主胜 42% vs 客胜 29%）。\n【波胆】泊松模型推算最可能比分：1-0（14%）、1-1（13%）、0-0（12%）。\n【大小球】2.5 球盘口：大球 35% / 小球 65%，倾向小球。\n【结论】综合赔率与消息，Sevilla不败概率更高，关注波胆 1-0 方向。"
+      "analysis": "【胜负】双方实力接近，主队Sevilla略占优（主胜 42% vs 客胜 28%）。\n【波胆】泊松模型推算最可能比分：1-0（15%）、1-1（13%）、0-0（12%）。\n【大小球】2.5 球盘口：大球 35% / 小球 65%，倾向小球。\n【结论】综合赔率与消息，Sevilla不败概率更高，关注波胆 1-0 方向。"
     },
     {
       "homeTeam": "Racing Santander",
@@ -1201,12 +1201,12 @@
       },
       "probabilities": {
         "home": 0.348,
-        "draw": 0.209,
-        "away": 0.442
+        "draw": 0.207,
+        "away": 0.445
       },
-      "confidence": 0.577,
+      "confidence": 0.578,
       "reasons": [
-        "赔率隐含概率: 主32% 平28% 客41%"
+        "赔率隐含概率: 主31% 平27% 客41%"
       ],
       "messageEvidence": [],
       "league": "PD",
@@ -1243,24 +1243,24 @@
         "over": 0.427,
         "under": 0.573
       },
-      "analysis": "【胜负】比赛悬念较大，主胜 32% / 平 28% / 客胜 41%。\n【波胆】泊松模型推算最可能比分：1-1（13%）、0-1（12%）、1-0（10%）。\n【大小球】2.5 球盘口：大球 43% / 小球 57%，倾向小球。\n【结论】综合赔率与消息，Villarreal不败概率更高，关注波胆 1-1 方向。"
+      "analysis": "【胜负】比赛悬念较大，主胜 31% / 平 27% / 客胜 41%。\n【波胆】泊松模型推算最可能比分：1-1（13%）、0-1（12%）、1-0（10%）。\n【大小球】2.5 球盘口：大球 43% / 小球 57%，倾向小球。\n【结论】综合赔率与消息，Villarreal不败概率更高，关注波胆 1-1 方向。"
     },
     {
       "homeTeam": "Espanyol",
       "awayTeam": "Levante",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.6,
         "away": 0.9
       },
       "probabilities": {
-        "home": 0.5,
-        "draw": 0.219,
-        "away": 0.281
+        "home": 0.502,
+        "draw": 0.216,
+        "away": 0.282
       },
-      "confidence": 0.6,
+      "confidence": 0.601,
       "reasons": [
-        "赔率隐含概率: 主47% 平29% 客25%"
+        "赔率隐含概率: 主47% 平28% 客25%"
       ],
       "messageEvidence": [],
       "league": "PD",
@@ -1297,20 +1297,20 @@
         "over": 0.375,
         "under": 0.625
       },
-      "analysis": "【胜负】比赛悬念较大，主胜 47% / 平 29% / 客胜 25%。\n【波胆】泊松模型推算最可能比分：1-0（15%）、1-1（13%）、0-0（11%）。\n【大小球】2.5 球盘口：大球 38% / 小球 62%，倾向小球。\n【结论】综合赔率与消息，Espanyol不败概率更高，关注波胆 1-0 方向。"
+      "analysis": "【胜负】比赛悬念较大，主胜 47% / 平 28% / 客胜 25%。\n【波胆】泊松模型推算最可能比分：1-0（15%）、1-1（13%）、0-0（11%）。\n【大小球】2.5 球盘口：大球 38% / 小球 62%，倾向小球。\n【结论】综合赔率与消息，Espanyol不败概率更高，关注波胆 1-0 方向。"
     },
     {
       "homeTeam": "Celta Vigo",
       "awayTeam": "Osasuna",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.6,
         "away": 0.9
       },
       "probabilities": {
         "home": 0.502,
-        "draw": 0.213,
-        "away": 0.284
+        "draw": 0.216,
+        "away": 0.282
       },
       "confidence": 0.601,
       "reasons": [
@@ -1356,19 +1356,19 @@
     {
       "homeTeam": "Dep. A Coruna",
       "awayTeam": "Elche",
-      "predictedScore": "1-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
-        "home": 1.41,
-        "away": 1.09
+        "home": 1.42,
+        "away": 1.08
       },
       "probabilities": {
-        "home": 0.433,
-        "draw": 0.233,
-        "away": 0.334
+        "home": 0.44,
+        "draw": 0.228,
+        "away": 0.333
       },
-      "confidence": 0.573,
+      "confidence": 0.576,
       "reasons": [
-        "赔率隐含概率: 主40% 平30% 客30%"
+        "赔率隐含概率: 主41% 平29% 客30%"
       ],
       "messageEvidence": [],
       "league": "PD",
@@ -1405,24 +1405,24 @@
         "over": 0.349,
         "under": 0.651
       },
-      "analysis": "【胜负】双方实力接近，主队Dep. A Coruna略占优（主胜 40% vs 客胜 30%）。\n【波胆】泊松模型推算最可能比分：1-0（14%）、1-1（13%）、0-0（12%）。\n【大小球】2.5 球盘口：大球 35% / 小球 65%，倾向小球。\n【结论】综合赔率与消息，Dep. A Coruna不败概率更高，关注波胆 1-0 方向。"
+      "analysis": "【胜负】双方实力接近，主队Dep. A Coruna略占优（主胜 41% vs 客胜 30%）。\n【波胆】泊松模型推算最可能比分：1-0（14%）、1-1（13%）、0-0（12%）。\n【大小球】2.5 球盘口：大球 35% / 小球 65%，倾向小球。\n【结论】综合赔率与消息，Dep. A Coruna不败概率更高，关注波胆 1-0 方向。"
     },
     {
       "homeTeam": "Atl. Madrid",
       "awayTeam": "Malaga",
       "predictedScore": "2-0",
       "expectedGoals": {
-        "home": 2.14,
-        "away": 0.36
+        "home": 2.13,
+        "away": 0.37
       },
       "probabilities": {
-        "home": 0.757,
-        "draw": 0.115,
-        "away": 0.128
+        "home": 0.758,
+        "draw": 0.112,
+        "away": 0.13
       },
       "confidence": 0.703,
       "reasons": [
-        "赔率隐含概率: 主72% 平18% 客9%"
+        "赔率隐含概率: 主72% 平18% 客10%"
       ],
       "messageEvidence": [],
       "league": "PD",
@@ -1466,17 +1466,17 @@
       "awayTeam": "Betis",
       "predictedScore": "1-1",
       "expectedGoals": {
-        "home": 1.25,
-        "away": 1.25
+        "home": 1.24,
+        "away": 1.26
       },
       "probabilities": {
         "home": 0.389,
-        "draw": 0.223,
-        "away": 0.389
+        "draw": 0.218,
+        "away": 0.393
       },
-      "confidence": 0.555,
+      "confidence": 0.557,
       "reasons": [
-        "赔率隐含概率: 主36% 平29% 客36%"
+        "赔率隐含概率: 主36% 平28% 客36%"
       ],
       "messageEvidence": [],
       "league": "PD",
@@ -1485,52 +1485,52 @@
       "correctScores": [
         {
           "score": "1-1",
-          "prob": 0.1341
+          "prob": 0.1326
         },
         {
           "score": "0-1",
-          "prob": 0.1219
+          "prob": 0.1153
         },
         {
           "score": "1-0",
-          "prob": 0.1219
+          "prob": 0.1153
         },
         {
           "score": "0-0",
-          "prob": 0.1108
+          "prob": 0.1003
         },
         {
           "score": "1-2",
-          "prob": 0.0737
+          "prob": 0.0762
         },
         {
           "score": "2-1",
-          "prob": 0.0737
+          "prob": 0.0762
         }
       ],
       "overUnder": {
         "line": 2.5,
-        "over": 0.375,
-        "under": 0.625
+        "over": 0.402,
+        "under": 0.598
       },
-      "analysis": "【胜负】双方实力接近，主队Valencia略占优（主胜 36% vs 客胜 36%）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、0-1（12%）、1-0（12%）。\n【大小球】2.5 球盘口：大球 38% / 小球 62%，倾向小球。\n【结论】综合赔率与消息，Valencia不败概率更高，关注波胆 1-1 方向。"
+      "analysis": "【胜负】比赛悬念较大，主胜 36% / 平 28% / 客胜 36%。\n【波胆】泊松模型推算最可能比分：1-1（13%）、0-1（12%）、1-0（12%）。\n【大小球】2.5 球盘口：大球 40% / 小球 60%，倾向小球。\n【结论】综合赔率与消息，Betis不败概率更高，关注波胆 1-1 方向。"
     },
     {
       "homeTeam": "Real Madrid",
       "awayTeam": "Real Sociedad",
       "predictedScore": "2-0",
       "expectedGoals": {
-        "home": 2.02,
-        "away": 0.48
+        "home": 2.03,
+        "away": 0.47
       },
       "probabilities": {
-        "home": 0.706,
-        "draw": 0.126,
-        "away": 0.168
+        "home": 0.715,
+        "draw": 0.12,
+        "away": 0.165
       },
-      "confidence": 0.682,
+      "confidence": 0.686,
       "reasons": [
-        "赔率隐含概率: 主67% 平19% 客13%"
+        "赔率隐含概率: 主68% 平19% 客13%"
       ],
       "messageEvidence": [],
       "league": "PD",
@@ -1539,50 +1539,50 @@
       "correctScores": [
         {
           "score": "2-0",
-          "prob": 0.1305
+          "prob": 0.1267
         },
         {
           "score": "1-0",
-          "prob": 0.126
+          "prob": 0.1181
         },
         {
           "score": "2-1",
-          "prob": 0.095
-        },
-        {
-          "score": "1-1",
-          "prob": 0.0917
+          "prob": 0.0955
         },
         {
           "score": "3-0",
-          "prob": 0.0902
+          "prob": 0.0906
+        },
+        {
+          "score": "1-1",
+          "prob": 0.089
         },
         {
           "score": "3-1",
-          "prob": 0.0656
+          "prob": 0.0683
         }
       ],
       "overUnder": {
         "line": 2.5,
-        "over": 0.511,
-        "under": 0.489
+        "over": 0.531,
+        "under": 0.469
       },
-      "analysis": "【胜负】市场高度看好主队Real Madrid，主胜隐含概率 67%。\n【波胆】泊松模型推算最可能比分：2-0（13%）、1-0（13%）、2-1（10%）。\n【大小球】2.5 球盘口：大球 51% / 小球 49%，倾向大球。\n【结论】综合赔率与消息，Real Madrid不败概率更高，关注波胆 2-0 方向。"
+      "analysis": "【胜负】市场高度看好主队Real Madrid，主胜隐含概率 68%。\n【波胆】泊松模型推算最可能比分：2-0（13%）、1-0（12%）、2-1（10%）。\n【大小球】2.5 球盘口：大球 53% / 小球 47%，倾向大球。\n【结论】综合赔率与消息，Real Madrid不败概率更高，关注波胆 2-0 方向。"
     },
     {
       "homeTeam": "Barcelona",
       "awayTeam": "Ath Bilbao",
       "predictedScore": "2-0",
       "expectedGoals": {
-        "home": 2.0,
-        "away": 0.5
+        "home": 2.01,
+        "away": 0.49
       },
       "probabilities": {
-        "home": 0.698,
-        "draw": 0.127,
-        "away": 0.175
+        "home": 0.706,
+        "draw": 0.121,
+        "away": 0.173
       },
-      "confidence": 0.679,
+      "confidence": 0.682,
       "reasons": [
         "赔率隐含概率: 主67% 平19% 客14%"
       ],
@@ -1593,52 +1593,52 @@
       "correctScores": [
         {
           "score": "2-0",
-          "prob": 0.1233
+          "prob": 0.1267
         },
         {
           "score": "1-0",
-          "prob": 0.1165
+          "prob": 0.1181
         },
         {
           "score": "2-1",
-          "prob": 0.0965
-        },
-        {
-          "score": "1-1",
-          "prob": 0.0912
+          "prob": 0.0955
         },
         {
           "score": "3-0",
-          "prob": 0.087
+          "prob": 0.0906
+        },
+        {
+          "score": "1-1",
+          "prob": 0.089
         },
         {
           "score": "3-1",
-          "prob": 0.0681
+          "prob": 0.0683
         }
       ],
       "overUnder": {
         "line": 2.5,
-        "over": 0.533,
-        "under": 0.467
+        "over": 0.531,
+        "under": 0.469
       },
-      "analysis": "【胜负】市场高度看好主队Barcelona，主胜隐含概率 67%。\n【波胆】泊松模型推算最可能比分：2-0（12%）、1-0（12%）、2-1（10%）。\n【大小球】2.5 球盘口：大球 53% / 小球 47%，倾向大球。\n【结论】综合赔率与消息，Barcelona不败概率更高，关注波胆 2-0 方向。"
+      "analysis": "【胜负】市场高度看好主队Barcelona，主胜隐含概率 67%。\n【波胆】泊松模型推算最可能比分：2-0（13%）、1-0（12%）、2-1（10%）。\n【大小球】2.5 球盘口：大球 53% / 小球 47%，倾向大球。\n【结论】综合赔率与消息，Barcelona不败概率更高，关注波胆 2-0 方向。"
     },
     {
       "homeTeam": "Rayo Vallecano",
       "awayTeam": "Alaves",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.6,
         "away": 0.9
       },
       "probabilities": {
-        "home": 0.485,
-        "draw": 0.241,
+        "home": 0.488,
+        "draw": 0.237,
         "away": 0.275
       },
-      "confidence": 0.594,
+      "confidence": 0.595,
       "reasons": [
-        "赔率隐含概率: 主45% 平31% 客24%"
+        "赔率隐含概率: 主45% 平30% 客24%"
       ],
       "messageEvidence": [],
       "league": "PD",
@@ -1647,52 +1647,52 @@
       "correctScores": [
         {
           "score": "1-0",
-          "prob": 0.1734
+          "prob": 0.1624
         },
         {
           "score": "0-0",
-          "prob": 0.1496
+          "prob": 0.1353
         },
         {
           "score": "1-1",
-          "prob": 0.1285
+          "prob": 0.1299
         },
         {
           "score": "0-1",
-          "prob": 0.1108
+          "prob": 0.1083
         },
         {
           "score": "2-0",
-          "prob": 0.1005
+          "prob": 0.0974
         },
         {
           "score": "2-1",
-          "prob": 0.0744
+          "prob": 0.078
         }
       ],
       "overUnder": {
         "line": 2.5,
-        "over": 0.295,
-        "under": 0.705
+        "over": 0.322,
+        "under": 0.678
       },
-      "analysis": "【胜负】比赛悬念较大，主胜 45% / 平 31% / 客胜 24%。\n【波胆】泊松模型推算最可能比分：1-0（17%）、0-0（15%）、1-1（13%）。\n【大小球】2.5 球盘口：大球 30% / 小球 70%，倾向小球。\n【结论】综合赔率与消息，Rayo Vallecano不败概率更高，关注波胆 1-0 方向。"
+      "analysis": "【胜负】比赛悬念较大，主胜 45% / 平 30% / 客胜 24%。\n【波胆】泊松模型推算最可能比分：1-0（16%）、0-0（14%）、1-1（13%）。\n【大小球】2.5 球盘口：大球 32% / 小球 68%，倾向小球。\n【结论】综合赔率与消息，Rayo Vallecano不败概率更高，关注波胆 1-0 方向。"
     },
     {
       "homeTeam": "Betis",
       "awayTeam": "Real Sociedad",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
-        "home": 1.52,
-        "away": 0.98
+        "home": 1.51,
+        "away": 0.99
       },
       "probabilities": {
-        "home": 0.476,
-        "draw": 0.22,
-        "away": 0.305
+        "home": 0.473,
+        "draw": 0.218,
+        "away": 0.309
       },
-      "confidence": 0.59,
+      "confidence": 0.589,
       "reasons": [
-        "赔率隐含概率: 主44% 平29% 客27%"
+        "赔率隐含概率: 主44% 平29% 客28%"
       ],
       "messageEvidence": [],
       "league": "PD",
@@ -1729,24 +1729,24 @@
         "over": 0.375,
         "under": 0.625
       },
-      "analysis": "【胜负】比赛悬念较大，主胜 44% / 平 29% / 客胜 27%。\n【波胆】泊松模型推算最可能比分：1-0（14%）、1-1（13%）、0-0（11%）。\n【大小球】2.5 球盘口：大球 38% / 小球 62%，倾向小球。\n【结论】综合赔率与消息，Betis不败概率更高，关注波胆 1-0 方向。"
+      "analysis": "【胜负】比赛悬念较大，主胜 44% / 平 29% / 客胜 28%。\n【波胆】泊松模型推算最可能比分：1-0（14%）、1-1（13%）、0-0（11%）。\n【大小球】2.5 球盘口：大球 38% / 小球 62%，倾向小球。\n【结论】综合赔率与消息，Betis不败概率更高，关注波胆 1-0 方向。"
     },
     {
       "homeTeam": "Ath Bilbao",
       "awayTeam": "Sevilla",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
-        "home": 1.88,
-        "away": 0.62
+        "home": 1.91,
+        "away": 0.59
       },
       "probabilities": {
-        "home": 0.612,
-        "draw": 0.185,
-        "away": 0.203
+        "home": 0.627,
+        "draw": 0.18,
+        "away": 0.193
       },
-      "confidence": 0.645,
+      "confidence": 0.651,
       "reasons": [
-        "赔率隐含概率: 主58% 平25% 客17%"
+        "赔率隐含概率: 主59% 平25% 客16%"
       ],
       "messageEvidence": [],
       "league": "PD",
@@ -1755,15 +1755,15 @@
       "correctScores": [
         {
           "score": "1-0",
-          "prob": 0.1591
+          "prob": 0.1614
         },
         {
           "score": "2-0",
-          "prob": 0.1263
+          "prob": 0.1299
         },
         {
           "score": "1-1",
-          "prob": 0.1134
+          "prob": 0.1114
         },
         {
           "score": "0-0",
@@ -1771,11 +1771,11 @@
         },
         {
           "score": "2-1",
-          "prob": 0.09
+          "prob": 0.0897
         },
         {
-          "score": "0-1",
-          "prob": 0.0715
+          "score": "3-0",
+          "prob": 0.0697
         }
       ],
       "overUnder": {
@@ -1783,7 +1783,7 @@
         "over": 0.398,
         "under": 0.602
       },
-      "analysis": "【胜负】市场高度看好主队Ath Bilbao，主胜隐含概率 58%。\n【波胆】泊松模型推算最可能比分：1-0（16%）、2-0（13%）、1-1（11%）。\n【大小球】2.5 球盘口：大球 40% / 小球 60%，倾向小球。\n【结论】综合赔率与消息，Ath Bilbao不败概率更高，关注波胆 1-0 方向。"
+      "analysis": "【胜负】市场高度看好主队Ath Bilbao，主胜隐含概率 59%。\n【波胆】泊松模型推算最可能比分：1-0（16%）、2-0（13%）、1-1（11%）。\n【大小球】2.5 球盘口：大球 40% / 小球 60%，倾向小球。\n【结论】综合赔率与消息，Ath Bilbao不败概率更高，关注波胆 1-0 方向。"
     },
     {
       "homeTeam": "Valencia",
@@ -1794,11 +1794,11 @@
         "away": 1.11
       },
       "probabilities": {
-        "home": 0.43,
-        "draw": 0.228,
-        "away": 0.342
+        "home": 0.431,
+        "draw": 0.225,
+        "away": 0.344
       },
-      "confidence": 0.572,
+      "confidence": 0.573,
       "reasons": [
         "赔率隐含概率: 主40% 平29% 客31%"
       ],
@@ -1842,19 +1842,19 @@
     {
       "homeTeam": "Espanyol",
       "awayTeam": "Real Madrid",
-      "predictedScore": "1-2",
+      "predictedScore": "0-1",
       "expectedGoals": {
-        "home": 0.67,
-        "away": 1.83
+        "home": 0.66,
+        "away": 1.84
       },
       "probabilities": {
-        "home": 0.223,
-        "draw": 0.169,
-        "away": 0.608
+        "home": 0.221,
+        "draw": 0.162,
+        "away": 0.616
       },
-      "confidence": 0.643,
+      "confidence": 0.646,
       "reasons": [
-        "赔率隐含概率: 主19% 平24% 客57%"
+        "赔率隐含概率: 主19% 平23% 客58%"
       ],
       "messageEvidence": [],
       "league": "PD",
@@ -1863,52 +1863,52 @@
       "correctScores": [
         {
           "score": "0-1",
-          "prob": 0.1179
+          "prob": 0.1107
         },
         {
           "score": "1-1",
-          "prob": 0.1115
+          "prob": 0.1085
         },
         {
           "score": "0-2",
-          "prob": 0.1035
+          "prob": 0.1007
         },
         {
           "score": "1-2",
-          "prob": 0.0978
+          "prob": 0.0987
+        },
+        {
+          "score": "0-3",
+          "prob": 0.0611
         },
         {
           "score": "0-0",
-          "prob": 0.0672
-        },
-        {
-          "score": "1-0",
-          "prob": 0.0635
+          "prob": 0.0608
         }
       ],
       "overUnder": {
         "line": 2.5,
-        "over": 0.497,
-        "under": 0.503
+        "over": 0.519,
+        "under": 0.481
       },
-      "analysis": "【胜负】市场明显看好客队Real Madrid，客胜隐含概率 57%。\n【波胆】泊松模型推算最可能比分：0-1（12%）、1-1（11%）、0-2（10%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%，倾向小球。\n【结论】综合赔率与消息，Real Madrid不败概率更高，关注波胆 0-1 方向。"
+      "analysis": "【胜负】市场明显看好客队Real Madrid，客胜隐含概率 58%。\n【波胆】泊松模型推算最可能比分：0-1（11%）、1-1（11%）、0-2（10%）。\n【大小球】2.5 球盘口：大球 52% / 小球 48%，倾向大球。\n【结论】综合赔率与消息，Real Madrid不败概率更高，关注波胆 0-1 方向。"
     },
     {
       "homeTeam": "Atl. Madrid",
       "awayTeam": "Villarreal",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
-        "home": 1.67,
-        "away": 0.83
+        "home": 1.7,
+        "away": 0.8
       },
       "probabilities": {
-        "home": 0.532,
-        "draw": 0.203,
-        "away": 0.265
+        "home": 0.545,
+        "draw": 0.196,
+        "away": 0.259
       },
-      "confidence": 0.613,
+      "confidence": 0.618,
       "reasons": [
-        "赔率隐含概率: 主50% 平27% 客23%"
+        "赔率隐含概率: 主51% 平26% 客23%"
       ],
       "messageEvidence": [],
       "league": "PD",
@@ -1917,52 +1917,52 @@
       "correctScores": [
         {
           "score": "1-0",
-          "prob": 0.143
+          "prob": 0.1372
         },
         {
           "score": "1-1",
-          "prob": 0.125
+          "prob": 0.1218
         },
         {
           "score": "2-0",
-          "prob": 0.1019
-        },
-        {
-          "score": "0-0",
-          "prob": 0.1003
+          "prob": 0.1037
         },
         {
           "score": "2-1",
-          "prob": 0.0891
+          "prob": 0.0921
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0907
         },
         {
           "score": "0-1",
-          "prob": 0.0876
+          "prob": 0.0806
         }
       ],
       "overUnder": {
         "line": 2.5,
-        "over": 0.4,
-        "under": 0.6
+        "over": 0.425,
+        "under": 0.575
       },
-      "analysis": "【胜负】比赛悬念较大，主胜 50% / 平 27% / 客胜 23%。\n【波胆】泊松模型推算最可能比分：1-0（14%）、1-1（12%）、2-0（10%）。\n【大小球】2.5 球盘口：大球 40% / 小球 60%，倾向小球。\n【结论】综合赔率与消息，Atl. Madrid不败概率更高，关注波胆 1-0 方向。"
+      "analysis": "【胜负】比赛悬念较大，主胜 51% / 平 26% / 客胜 23%。\n【波胆】泊松模型推算最可能比分：1-0（14%）、1-1（12%）、2-0（10%）。\n【大小球】2.5 球盘口：大球 42% / 小球 57%，倾向小球。\n【结论】综合赔率与消息，Atl. Madrid不败概率更高，关注波胆 1-0 方向。"
     },
     {
       "homeTeam": "Getafe",
       "awayTeam": "Racing Santander",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
-        "home": 1.73,
-        "away": 0.77
+        "home": 1.76,
+        "away": 0.74
       },
       "probabilities": {
-        "home": 0.524,
-        "draw": 0.244,
-        "away": 0.232
+        "home": 0.53,
+        "draw": 0.245,
+        "away": 0.225
       },
-      "confidence": 0.61,
+      "confidence": 0.612,
       "reasons": [
-        "赔率隐含概率: 主49% 平31% 客20%"
+        "赔率隐含概率: 主50% 平31% 客19%"
       ],
       "messageEvidence": [],
       "league": "PD",
@@ -1971,7 +1971,7 @@
       "correctScores": [
         {
           "score": "1-0",
-          "prob": 0.1934
+          "prob": 0.1964
         },
         {
           "score": "0-0",
@@ -1979,19 +1979,19 @@
         },
         {
           "score": "1-1",
-          "prob": 0.1218
+          "prob": 0.1202
         },
         {
           "score": "2-0",
-          "prob": 0.1131
+          "prob": 0.1166
         },
         {
           "score": "0-1",
-          "prob": 0.1041
+          "prob": 0.1012
         },
         {
           "score": "2-1",
-          "prob": 0.0713
+          "prob": 0.0714
         }
       ],
       "overUnder": {
@@ -1999,24 +1999,24 @@
         "over": 0.268,
         "under": 0.732
       },
-      "analysis": "【胜负】比赛悬念较大，主胜 49% / 平 31% / 客胜 20%。\n【波胆】泊松模型推算最可能比分：1-0（19%）、0-0（17%）、1-1（12%）。\n【大小球】2.5 球盘口：大球 27% / 小球 73%，倾向小球。\n【结论】综合赔率与消息，Getafe不败概率更高，关注波胆 1-0 方向。"
+      "analysis": "【胜负】比赛悬念较大，主胜 50% / 平 31% / 客胜 19%。\n【波胆】泊松模型推算最可能比分：1-0（20%）、0-0（17%）、1-1（12%）。\n【大小球】2.5 球盘口：大球 27% / 小球 73%，倾向小球。\n【结论】综合赔率与消息，Getafe不败概率更高，关注波胆 1-0 方向。"
     },
     {
       "homeTeam": "Elche",
       "awayTeam": "Barcelona",
-      "predictedScore": "0-2",
+      "predictedScore": "1-2",
       "expectedGoals": {
-        "home": 0.42,
-        "away": 2.08
+        "home": 0.41,
+        "away": 2.09
       },
       "probabilities": {
-        "home": 0.15,
-        "draw": 0.11,
-        "away": 0.74
+        "home": 0.147,
+        "draw": 0.099,
+        "away": 0.754
       },
-      "confidence": 0.696,
+      "confidence": 0.702,
       "reasons": [
-        "赔率隐含概率: 主12% 平18% 客71%"
+        "赔率隐含概率: 主11% 平17% 客72%"
       ],
       "messageEvidence": [],
       "league": "PD",
@@ -2053,24 +2053,24 @@
         "over": 0.599,
         "under": 0.401
       },
-      "analysis": "【胜负】市场明显看好客队Barcelona，客胜隐含概率 71%。\n【波胆】泊松模型推算最可能比分：1-2（10%）、1-1（10%）、0-2（9%）。\n【大小球】2.5 球盘口：大球 60% / 小球 40%，倾向大球。\n【结论】综合赔率与消息，Barcelona不败概率更高，关注波胆 1-2 方向。"
+      "analysis": "【胜负】市场明显看好客队Barcelona，客胜隐含概率 72%。\n【波胆】泊松模型推算最可能比分：1-2（10%）、1-1（10%）、0-2（9%）。\n【大小球】2.5 球盘口：大球 60% / 小球 40%，倾向大球。\n【结论】综合赔率与消息，Barcelona不败概率更高，关注波胆 1-2 方向。"
     },
     {
       "homeTeam": "Osasuna",
       "awayTeam": "Levante",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
-        "home": 1.78,
-        "away": 0.72
+        "home": 1.79,
+        "away": 0.71
       },
       "probabilities": {
-        "home": 0.578,
-        "draw": 0.187,
-        "away": 0.235
+        "home": 0.586,
+        "draw": 0.183,
+        "away": 0.231
       },
-      "confidence": 0.631,
+      "confidence": 0.634,
       "reasons": [
-        "赔率隐含概率: 主54% 平25% 客20%"
+        "赔率隐含概率: 主55% 平25% 客20%"
       ],
       "messageEvidence": [],
       "league": "PD",
@@ -2079,52 +2079,52 @@
       "correctScores": [
         {
           "score": "1-0",
-          "prob": 0.1334
+          "prob": 0.1437
         },
         {
           "score": "1-1",
-          "prob": 0.1167
+          "prob": 0.1173
         },
         {
           "score": "2-0",
-          "prob": 0.1084
+          "prob": 0.1138
         },
         {
           "score": "2-1",
-          "prob": 0.0948
+          "prob": 0.0929
         },
         {
           "score": "0-0",
-          "prob": 0.0821
+          "prob": 0.0907
         },
         {
           "score": "0-1",
-          "prob": 0.0718
+          "prob": 0.074
         }
       ],
       "overUnder": {
         "line": 2.5,
-        "over": 0.449,
-        "under": 0.551
+        "over": 0.424,
+        "under": 0.576
       },
-      "analysis": "【胜负】比赛悬念较大，主胜 54% / 平 25% / 客胜 20%。\n【波胆】泊松模型推算最可能比分：1-0（13%）、1-1（12%）、2-0（11%）。\n【大小球】2.5 球盘口：大球 45% / 小球 55%，倾向小球。\n【结论】综合赔率与消息，Osasuna不败概率更高，关注波胆 1-0 方向。"
+      "analysis": "【胜负】市场高度看好主队Osasuna，主胜隐含概率 55%。\n【波胆】泊松模型推算最可能比分：1-0（14%）、1-1（12%）、2-0（11%）。\n【大小球】2.5 球盘口：大球 42% / 小球 58%，倾向小球。\n【结论】综合赔率与消息，Osasuna不败概率更高，关注波胆 1-0 方向。"
     },
     {
       "homeTeam": "Malaga",
       "awayTeam": "Dep. A Coruna",
-      "predictedScore": "1-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
-        "home": 1.36,
-        "away": 1.14
+        "home": 1.35,
+        "away": 1.15
       },
       "probabilities": {
-        "home": 0.412,
-        "draw": 0.242,
-        "away": 0.345
+        "home": 0.409,
+        "draw": 0.24,
+        "away": 0.35
       },
-      "confidence": 0.565,
+      "confidence": 0.564,
       "reasons": [
-        "赔率隐含概率: 主38% 平31% 客31%"
+        "赔率隐含概率: 主38% 平31% 客32%"
       ],
       "messageEvidence": [],
       "league": "PD",
@@ -2161,7 +2161,7 @@
         "over": 0.322,
         "under": 0.678
       },
-      "analysis": "【胜负】双方实力接近，主队Malaga略占优（主胜 38% vs 客胜 31%）。\n【波胆】泊松模型推算最可能比分：1-0（14%）、0-0（14%）、1-1（13%）。\n【大小球】2.5 球盘口：大球 32% / 小球 68%，倾向小球。\n【结论】综合赔率与消息，Malaga不败概率更高，关注波胆 1-0 方向。"
+      "analysis": "【胜负】双方实力接近，主队Malaga略占优（主胜 38% vs 客胜 32%）。\n【波胆】泊松模型推算最可能比分：1-0（14%）、0-0（14%）、1-1（13%）。\n【大小球】2.5 球盘口：大球 32% / 小球 68%，倾向小球。\n【结论】综合赔率与消息，Malaga不败概率更高，关注波胆 1-0 方向。"
     },
     {
       "homeTeam": "Bayern Munich",
@@ -2172,11 +2172,11 @@
         "away": 0.42
       },
       "probabilities": {
-        "home": 0.762,
-        "draw": 0.086,
-        "away": 0.152
+        "home": 0.764,
+        "draw": 0.082,
+        "away": 0.154
       },
-      "confidence": 0.705,
+      "confidence": 0.706,
       "reasons": [
         "赔率隐含概率: 主73% 平15% 客12%"
       ],
@@ -2226,9 +2226,9 @@
         "away": 1.37
       },
       "probabilities": {
-        "home": 0.363,
-        "draw": 0.194,
-        "away": 0.444
+        "home": 0.365,
+        "draw": 0.192,
+        "away": 0.443
       },
       "confidence": 0.577,
       "reasons": [
@@ -2276,17 +2276,17 @@
       "awayTeam": "Bayer Leverkusen",
       "predictedScore": "1-2",
       "expectedGoals": {
-        "home": 0.64,
-        "away": 1.86
+        "home": 0.63,
+        "away": 1.87
       },
       "probabilities": {
-        "home": 0.219,
-        "draw": 0.141,
-        "away": 0.64
+        "home": 0.217,
+        "draw": 0.136,
+        "away": 0.647
       },
-      "confidence": 0.656,
+      "confidence": 0.659,
       "reasons": [
-        "赔率隐含概率: 主19% 平21% 客61%"
+        "赔率隐含概率: 主18% 平20% 客61%"
       ],
       "messageEvidence": [],
       "league": "BL1",
@@ -2328,19 +2328,19 @@
     {
       "homeTeam": "Mainz",
       "awayTeam": "Paderborn",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
-        "home": 1.77,
-        "away": 0.73
+        "home": 1.78,
+        "away": 0.72
       },
       "probabilities": {
-        "home": 0.586,
+        "home": 0.589,
         "draw": 0.172,
-        "away": 0.241
+        "away": 0.238
       },
-      "confidence": 0.635,
+      "confidence": 0.636,
       "reasons": [
-        "赔率隐含概率: 主55% 平24% 客21%"
+        "赔率隐含概率: 主56% 平24% 客21%"
       ],
       "messageEvidence": [],
       "league": "BL1",
@@ -2349,52 +2349,52 @@
       "correctScores": [
         {
           "score": "1-0",
-          "prob": 0.1255
+          "prob": 0.1179
         },
         {
           "score": "1-1",
-          "prob": 0.1142
+          "prob": 0.1115
         },
         {
           "score": "2-0",
-          "prob": 0.1061
+          "prob": 0.1035
         },
         {
           "score": "2-1",
-          "prob": 0.0965
+          "prob": 0.0978
         },
         {
           "score": "0-0",
-          "prob": 0.0743
+          "prob": 0.0672
         },
         {
           "score": "0-1",
-          "prob": 0.0676
+          "prob": 0.0635
         }
       ],
       "overUnder": {
         "line": 2.5,
-        "over": 0.473,
-        "under": 0.527
+        "over": 0.497,
+        "under": 0.503
       },
-      "analysis": "【胜负】市场高度看好主队Mainz，主胜隐含概率 55%。\n【波胆】泊松模型推算最可能比分：1-0（13%）、1-1（11%）、2-0（11%）。\n【大小球】2.5 球盘口：大球 47% / 小球 53%，倾向小球。\n【结论】综合赔率与消息，Mainz不败概率更高，关注波胆 1-0 方向。"
+      "analysis": "【胜负】市场高度看好主队Mainz，主胜隐含概率 56%。\n【波胆】泊松模型推算最可能比分：1-0（12%）、1-1（11%）、2-0（10%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%，倾向小球。\n【结论】综合赔率与消息，Mainz不败概率更高，关注波胆 1-0 方向。"
     },
     {
       "homeTeam": "RB Leipzig",
       "awayTeam": "B. Monchengladbach",
-      "predictedScore": "2-1",
+      "predictedScore": "2-0",
       "expectedGoals": {
-        "home": 1.88,
-        "away": 0.62
+        "home": 1.89,
+        "away": 0.61
       },
       "probabilities": {
-        "home": 0.643,
+        "home": 0.648,
         "draw": 0.144,
-        "away": 0.213
+        "away": 0.208
       },
-      "confidence": 0.657,
+      "confidence": 0.659,
       "reasons": [
-        "赔率隐含概率: 主61% 平21% 客18%"
+        "赔率隐含概率: 主61% 平21% 客17%"
       ],
       "messageEvidence": [],
       "league": "BL1",
@@ -2403,35 +2403,35 @@
       "correctScores": [
         {
           "score": "2-0",
-          "prob": 0.1006
+          "prob": 0.1102
         },
         {
           "score": "1-0",
-          "prob": 0.1001
-        },
-        {
-          "score": "2-1",
-          "prob": 0.0996
+          "prob": 0.1101
         },
         {
           "score": "1-1",
-          "prob": 0.0991
+          "prob": 0.099
+        },
+        {
+          "score": "2-1",
+          "prob": 0.099
         },
         {
           "score": "3-0",
-          "prob": 0.0674
+          "prob": 0.0735
         },
         {
           "score": "3-1",
-          "prob": 0.0667
+          "prob": 0.0661
         }
       ],
       "overUnder": {
         "line": 2.5,
-        "over": 0.559,
-        "under": 0.441
+        "over": 0.537,
+        "under": 0.463
       },
-      "analysis": "【胜负】市场高度看好主队RB Leipzig，主胜隐含概率 61%。\n【波胆】泊松模型推算最可能比分：2-0（10%）、1-0（10%）、2-1（10%）。\n【大小球】2.5 球盘口：大球 56% / 小球 44%，倾向大球。\n【结论】综合赔率与消息，RB Leipzig不败概率更高，关注波胆 2-0 方向。"
+      "analysis": "【胜负】市场高度看好主队RB Leipzig，主胜隐含概率 61%。\n【波胆】泊松模型推算最可能比分：2-0（11%）、1-0（11%）、1-1（10%）。\n【大小球】2.5 球盘口：大球 54% / 小球 46%，倾向大球。\n【结论】综合赔率与消息，RB Leipzig不败概率更高，关注波胆 2-0 方向。"
     },
     {
       "homeTeam": "Union Berlin",
@@ -2442,9 +2442,9 @@
         "away": 1.14
       },
       "probabilities": {
-        "home": 0.432,
-        "draw": 0.203,
-        "away": 0.365
+        "home": 0.433,
+        "draw": 0.201,
+        "away": 0.366
       },
       "confidence": 0.573,
       "reasons": [
@@ -2492,17 +2492,17 @@
       "awayTeam": "Hamburger SV",
       "predictedScore": "2-0",
       "expectedGoals": {
-        "home": 2.09,
-        "away": 0.41
+        "home": 2.08,
+        "away": 0.42
       },
       "probabilities": {
-        "home": 0.742,
-        "draw": 0.111,
-        "away": 0.147
+        "home": 0.744,
+        "draw": 0.106,
+        "away": 0.15
       },
-      "confidence": 0.697,
+      "confidence": 0.698,
       "reasons": [
-        "赔率隐含概率: 主71% 平18% 客11%"
+        "赔率隐含概率: 主71% 平17% 客12%"
       ],
       "messageEvidence": [],
       "league": "BL1",
@@ -2511,50 +2511,50 @@
       "correctScores": [
         {
           "score": "2-0",
-          "prob": 0.126
+          "prob": 0.1218
         },
         {
           "score": "1-0",
-          "prob": 0.112
+          "prob": 0.1047
         },
         {
           "score": "2-1",
-          "prob": 0.0945
+          "prob": 0.0944
         },
         {
           "score": "3-0",
-          "prob": 0.0945
+          "prob": 0.0944
         },
         {
           "score": "1-1",
-          "prob": 0.084
+          "prob": 0.0812
         },
         {
           "score": "3-1",
-          "prob": 0.0709
+          "prob": 0.0731
         }
       ],
       "overUnder": {
         "line": 2.5,
-        "over": 0.549,
-        "under": 0.451
+        "over": 0.567,
+        "under": 0.433
       },
-      "analysis": "【胜负】市场高度看好主队Dortmund，主胜隐含概率 71%。\n【波胆】泊松模型推算最可能比分：2-0（13%）、1-0（11%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%，倾向大球。\n【结论】综合赔率与消息，Dortmund不败概率更高，关注波胆 2-0 方向。"
+      "analysis": "【胜负】市场高度看好主队Dortmund，主胜隐含概率 71%。\n【波胆】泊松模型推算最可能比分：2-0（12%）、1-0（10%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 57% / 小球 43%，倾向大球。\n【结论】综合赔率与消息，Dortmund不败概率更高，关注波胆 2-0 方向。"
     },
     {
       "homeTeam": "Freiburg",
       "awayTeam": "Werder Bremen",
-      "predictedScore": "2-1",
+      "predictedScore": "1-1",
       "expectedGoals": {
         "home": 1.55,
         "away": 0.95
       },
       "probabilities": {
-        "home": 0.496,
-        "draw": 0.2,
-        "away": 0.304
+        "home": 0.494,
+        "draw": 0.201,
+        "away": 0.305
       },
-      "confidence": 0.598,
+      "confidence": 0.597,
       "reasons": [
         "赔率隐含概率: 主46% 平27% 客27%"
       ],
@@ -2600,17 +2600,17 @@
       "awayTeam": "Schalke",
       "predictedScore": "1-1",
       "expectedGoals": {
-        "home": 1.47,
-        "away": 1.03
+        "home": 1.46,
+        "away": 1.04
       },
       "probabilities": {
-        "home": 0.479,
-        "draw": 0.187,
-        "away": 0.334
+        "home": 0.476,
+        "draw": 0.185,
+        "away": 0.339
       },
-      "confidence": 0.592,
+      "confidence": 0.591,
       "reasons": [
-        "赔率隐含概率: 主45% 平25% 客30%"
+        "赔率隐含概率: 主44% 平25% 客31%"
       ],
       "messageEvidence": [],
       "league": "BL1",
@@ -2647,12 +2647,12 @@
         "over": 0.5,
         "under": 0.5
       },
-      "analysis": "【胜负】双方实力接近，主队Augsburg略占优（主胜 45% vs 客胜 30%）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（10%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%，倾向大球。\n【结论】综合赔率与消息，Augsburg不败概率更高，关注波胆 1-1 方向。"
+      "analysis": "【胜负】双方实力接近，主队Augsburg略占优（主胜 44% vs 客胜 31%）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（10%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%，倾向大球。\n【结论】综合赔率与消息，Augsburg不败概率更高，关注波胆 1-1 方向。"
     },
     {
       "homeTeam": "Marseille",
       "awayTeam": "Strasbourg",
-      "predictedScore": "2-1",
+      "predictedScore": "1-1",
       "expectedGoals": {
         "home": 1.79,
         "away": 0.71
@@ -2662,7 +2662,7 @@
         "draw": 0.156,
         "away": 0.24
       },
-      "confidence": 0.642,
+      "confidence": 0.641,
       "reasons": [
         "赔率隐含概率: 主57% 平22% 客21%"
       ],
@@ -2706,7 +2706,7 @@
     {
       "homeTeam": "Lens",
       "awayTeam": "Auxerre",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.85,
         "away": 0.65
@@ -2714,7 +2714,7 @@
       "probabilities": {
         "home": 0.622,
         "draw": 0.159,
-        "away": 0.218
+        "away": 0.219
       },
       "confidence": 0.649,
       "reasons": [
@@ -2821,8 +2821,8 @@
       },
       "probabilities": {
         "home": 0.463,
-        "draw": 0.204,
-        "away": 0.333
+        "draw": 0.205,
+        "away": 0.332
       },
       "confidence": 0.585,
       "reasons": [
@@ -2868,15 +2868,15 @@
     {
       "homeTeam": "Toulouse",
       "awayTeam": "Lyon",
-      "predictedScore": "1-2",
+      "predictedScore": "1-1",
       "expectedGoals": {
         "home": 0.97,
         "away": 1.53
       },
       "probabilities": {
         "home": 0.312,
-        "draw": 0.193,
-        "away": 0.495
+        "draw": 0.194,
+        "away": 0.494
       },
       "confidence": 0.598,
       "reasons": [
@@ -2889,35 +2889,35 @@
       "correctScores": [
         {
           "score": "1-1",
-          "prob": 0.1223
+          "prob": 0.125
         },
         {
           "score": "0-1",
-          "prob": 0.112
+          "prob": 0.119
         },
         {
           "score": "1-2",
-          "prob": 0.0922
+          "prob": 0.0906
         },
         {
           "score": "0-2",
-          "prob": 0.0845
+          "prob": 0.0863
         },
         {
           "score": "1-0",
-          "prob": 0.0811
+          "prob": 0.0862
         },
         {
           "score": "0-0",
-          "prob": 0.0743
+          "prob": 0.0821
         }
       ],
       "overUnder": {
         "line": 2.5,
-        "over": 0.476,
-        "under": 0.524
+        "over": 0.452,
+        "under": 0.548
       },
-      "analysis": "【胜负】比赛悬念较大，主胜 28% / 平 26% / 客胜 46%。\n【波胆】泊松模型推算最可能比分：1-1（12%）、0-1（11%）、1-2（9%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%，倾向小球。\n【结论】综合赔率与消息，Lyon不败概率更高，关注波胆 1-1 方向。"
+      "analysis": "【胜负】比赛悬念较大，主胜 28% / 平 26% / 客胜 46%。\n【波胆】泊松模型推算最可能比分：1-1（12%）、0-1（12%）、1-2（9%）。\n【大小球】2.5 球盘口：大球 45% / 小球 55%，倾向小球。\n【结论】综合赔率与消息，Lyon不败概率更高，关注波胆 1-1 方向。"
     },
     {
       "homeTeam": "Troyes",
@@ -2976,15 +2976,15 @@
     {
       "homeTeam": "Angers",
       "awayTeam": "Lille",
-      "predictedScore": "1-2",
+      "predictedScore": "0-1",
       "expectedGoals": {
         "home": 0.69,
         "away": 1.81
       },
       "probabilities": {
         "home": 0.225,
-        "draw": 0.185,
-        "away": 0.59
+        "draw": 0.186,
+        "away": 0.589
       },
       "confidence": 0.636,
       "reasons": [
@@ -3030,7 +3030,7 @@
     {
       "homeTeam": "Le Havre",
       "awayTeam": "Monaco",
-      "predictedScore": "1-2",
+      "predictedScore": "1-1",
       "expectedGoals": {
         "home": 0.96,
         "away": 1.54
@@ -3040,7 +3040,7 @@
         "draw": 0.182,
         "away": 0.504
       },
-      "confidence": 0.602,
+      "confidence": 0.601,
       "reasons": [
         "赔率隐含概率: 主28% 平25% 客47%"
       ],
@@ -3084,13 +3084,13 @@
     {
       "homeTeam": "PSG",
       "awayTeam": "Rennes",
-      "predictedScore": "2-1",
+      "predictedScore": "2-0",
       "expectedGoals": {
         "home": 2.0,
         "away": 0.5
       },
       "probabilities": {
-        "home": 0.708,
+        "home": 0.707,
         "draw": 0.115,
         "away": 0.178
       },
@@ -3145,10 +3145,10 @@
       },
       "probabilities": {
         "home": 0.846,
-        "draw": 0.061,
-        "away": 0.093
+        "draw": 0.06,
+        "away": 0.094
       },
-      "confidence": 0.739,
+      "confidence": 0.738,
       "reasons": [
         "赔率隐含概率: 主81% 平13% 客6%"
       ],
@@ -3192,13 +3192,13 @@
     {
       "homeTeam": "Hull",
       "awayTeam": "Manchester Utd",
-      "predictedScore": "0-2",
+      "predictedScore": "1-2",
       "expectedGoals": {
         "home": 0.49,
         "away": 2.01
       },
       "probabilities": {
-        "home": 0.169,
+        "home": 0.168,
         "draw": 0.146,
         "away": 0.685
       },
@@ -3246,7 +3246,7 @@
     {
       "homeTeam": "Everton",
       "awayTeam": "Crystal Palace",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.51,
         "away": 0.99
@@ -3307,10 +3307,10 @@
       },
       "probabilities": {
         "home": 0.382,
-        "draw": 0.218,
-        "away": 0.4
+        "draw": 0.219,
+        "away": 0.398
       },
-      "confidence": 0.56,
+      "confidence": 0.559,
       "reasons": [
         "赔率隐含概率: 主35% 平29% 客37%"
       ],
@@ -3361,8 +3361,8 @@
       },
       "probabilities": {
         "home": 0.457,
-        "draw": 0.212,
-        "away": 0.331
+        "draw": 0.213,
+        "away": 0.33
       },
       "confidence": 0.583,
       "reasons": [
@@ -3414,9 +3414,9 @@
         "away": 1.16
       },
       "probabilities": {
-        "home": 0.43,
-        "draw": 0.198,
-        "away": 0.372
+        "home": 0.431,
+        "draw": 0.196,
+        "away": 0.373
       },
       "confidence": 0.572,
       "reasons": [
@@ -3468,13 +3468,13 @@
         "away": 1.11
       },
       "probabilities": {
-        "home": 0.448,
+        "home": 0.449,
         "draw": 0.195,
-        "away": 0.358
+        "away": 0.356
       },
-      "confidence": 0.579,
+      "confidence": 0.58,
       "reasons": [
-        "赔率隐含概率: 主41% 平26% 客32%"
+        "赔率隐含概率: 主42% 平26% 客32%"
       ],
       "messageEvidence": [],
       "league": "PL",
@@ -3511,22 +3511,22 @@
         "over": 0.477,
         "under": 0.523
       },
-      "analysis": "【胜负】双方实力接近，主队Brighton略占优（主胜 41% vs 客胜 32%）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（10%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%，倾向小球。\n【结论】综合赔率与消息，Brighton不败概率更高，关注波胆 1-1 方向。"
+      "analysis": "【胜负】双方实力接近，主队Brighton略占优（主胜 42% vs 客胜 32%）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（10%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%，倾向小球。\n【结论】综合赔率与消息，Brighton不败概率更高，关注波胆 1-1 方向。"
     },
     {
       "homeTeam": "Manchester City",
       "awayTeam": "Bournemouth",
-      "predictedScore": "2-1",
+      "predictedScore": "2-0",
       "expectedGoals": {
         "home": 1.96,
         "away": 0.54
       },
       "probabilities": {
-        "home": 0.687,
+        "home": 0.686,
         "draw": 0.124,
-        "away": 0.189
+        "away": 0.19
       },
-      "confidence": 0.675,
+      "confidence": 0.674,
       "reasons": [
         "赔率隐含概率: 主65% 平19% 客16%"
       ],
@@ -3570,14 +3570,14 @@
     {
       "homeTeam": "Newcastle",
       "awayTeam": "Liverpool",
-      "predictedScore": "1-2",
+      "predictedScore": "1-1",
       "expectedGoals": {
         "home": 1.0,
         "away": 1.5
       },
       "probabilities": {
-        "home": 0.327,
-        "draw": 0.181,
+        "home": 0.326,
+        "draw": 0.182,
         "away": 0.492
       },
       "confidence": 0.597,
@@ -3631,8 +3631,8 @@
       },
       "probabilities": {
         "home": 0.34,
-        "draw": 0.191,
-        "away": 0.469
+        "draw": 0.19,
+        "away": 0.47
       },
       "confidence": 0.588,
       "reasons": [
