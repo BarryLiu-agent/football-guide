@@ -553,18 +553,18 @@ function groupByDate(matches) {
 
 function formatDate(utcStr) {
   const d = new Date(utcStr);
-  // Convert to Beijing time (UTC+8)
+  // Convert to Beijing time (UTC+8) - 用 getUTC* 保证任何浏览器时区都显示北京时间
   const bj = new Date(d.getTime() + 8 * 3600000);
-  const y = bj.getFullYear();
-  const mo = String(bj.getMonth() + 1).padStart(2, '0');
-  const day = String(bj.getDate()).padStart(2, '0');
+  const y = bj.getUTCFullYear();
+  const mo = String(bj.getUTCMonth() + 1).padStart(2, '0');
+  const day = String(bj.getUTCDate()).padStart(2, '0');
   return `${y}-${mo}-${day}`;
 }
 
 function formatTime(utcStr) {
   const d = new Date(utcStr);
   const bj = new Date(d.getTime() + 8 * 3600000);
-  return `${String(bj.getHours()).padStart(2, '0')}:${String(bj.getMinutes()).padStart(2, '0')}`;
+  return `${String(bj.getUTCHours()).padStart(2, '0')}:${String(bj.getUTCMinutes()).padStart(2, '0')}`;
 }
 
 function getDateLabel(dateStr) {
@@ -572,11 +572,11 @@ function getDateLabel(dateStr) {
   const tomorrow = formatDate(new Date(Date.now() + 86400000).toISOString());
   if (dateStr === today) return '今天';
   if (dateStr === tomorrow) return '明天';
-  // Friendly weekday
-  const d = new Date(dateStr);
+  // Friendly weekday - dateStr 为北京时间日期字符串，按 UTC 解析避免时区偏移
+  const d = new Date(dateStr + 'T00:00:00Z');
   const days = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
-  const md = `${d.getMonth() + 1}月${d.getDate()}日`;
-  return `${md} ${days[d.getDay()]}`;
+  const md = `${d.getUTCMonth() + 1}月${d.getUTCDate()}日`;
+  return `${md} ${days[d.getUTCDay()]}`;
 }
 
 function getScoreDisplay(match) {
@@ -787,12 +787,11 @@ async function refreshData(silent = false) {
     // Update timestamp from fixtures data if available, else use local time
     const genTime = fixturesData?.generatedAt;
     if (genTime) {
-      const d = new Date(genTime);
       document.getElementById('lastUpdated').textContent =
-        `更新于 ${d.toLocaleDateString('zh-CN')} ${d.toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' })}`;
+        `更新于 ${formatDate(genTime)} ${formatTime(genTime)} (北京时间)`;
     } else {
       document.getElementById('lastUpdated').textContent =
-        `更新于 ${new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' })}`;
+        `更新于 ${formatTime(new Date().toISOString())}`;
     }
 
     if (errors.length && !silent) {
@@ -936,7 +935,7 @@ function refreshAnalysis() {
       const resp = await fetch('data/predictions.json?t=' + Date.now());
       const data = await resp.json();
       if (lastGeneratedAt && data.generatedAt !== lastGeneratedAt) {
-        note.textContent = '✅ 分析已更新（' + new Date(data.generatedAt).toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' }) + '）';
+        note.textContent = '✅ 分析已更新（' + formatDate(data.generatedAt) + ' ' + formatTime(data.generatedAt) + ' 北京时间）';
         clearInterval(pollTimer); pollTimer = null;
         btn.classList.remove('refreshing');
         if (currentPred) {
