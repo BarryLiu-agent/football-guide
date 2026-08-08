@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T03:30:02Z",
+  "generatedAt": "2026-08-08T04:06:53Z",
   "league": "CL",
   "matches": [
     {
@@ -59,7 +59,7 @@
         },
         "totals": {
           "line": 2.5,
-          "over": 1.4649999999999999,
+          "over": 1.455,
           "under": 2.565
         }
       },
@@ -76,7 +76,7 @@
       "markets": {
         "h2h": {
           "home": 7.0,
-          "draw": 4.775,
+          "draw": 4.85,
           "away": 1.36
         },
         "totals": {

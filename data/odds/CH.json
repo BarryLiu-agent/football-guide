@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T03:30:03Z",
+  "generatedAt": "2026-08-08T04:06:54Z",
   "league": "CH",
   "matches": [
     {
@@ -22,7 +22,7 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 38
+      "bookmakers": 39
     },
     {
       "homeTeam": "Bolton Wanderers",

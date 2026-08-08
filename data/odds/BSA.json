@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T03:30:07Z",
+  "generatedAt": "2026-08-08T04:06:58Z",
   "league": "BSA",
   "matches": [
     {
@@ -10,7 +10,7 @@
       "markets": {
         "h2h": {
           "home": 2.3,
-          "draw": 3.15,
+          "draw": 3.2,
           "away": 3.05
         },
         "totals": {
@@ -76,13 +76,13 @@
       "markets": {
         "h2h": {
           "home": 2.38,
-          "draw": 3.16,
+          "draw": 3.15,
           "away": 2.98
         },
         "totals": {
           "line": 2.5,
-          "over": 1.95,
-          "under": 1.8
+          "over": 1.93,
+          "under": 1.82
         }
       },
       "sources": [
@@ -97,7 +97,7 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.68,
+          "home": 1.67,
           "draw": 3.65,
           "away": 5.0
         },
@@ -164,7 +164,7 @@
       "markets": {
         "h2h": {
           "home": 2.1,
-          "draw": 3.25,
+          "draw": 3.2,
           "away": 3.4
         },
         "totals": {
@@ -235,7 +235,7 @@
         },
         "totals": {
           "line": 2.5,
-          "over": 2.16,
+          "over": 2.14,
           "under": 1.65
         }
       },
@@ -273,8 +273,8 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.61,
-          "draw": 3.55,
+          "home": 1.605,
+          "draw": 3.585,
           "away": 5.0
         },
         "totals": {
@@ -427,7 +427,7 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.53,
+          "home": 1.51,
           "draw": 3.8,
           "away": 5.5
         },

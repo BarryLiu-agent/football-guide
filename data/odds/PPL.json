@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T03:30:04Z",
+  "generatedAt": "2026-08-08T04:06:55Z",
   "league": "PPL",
   "matches": [
     {
@@ -9,14 +9,14 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.4,
-          "draw": 3.25,
+          "home": 2.4050000000000002,
+          "draw": 3.275,
           "away": 2.8
         },
         "totals": {
           "line": 2.5,
-          "over": 1.875,
-          "under": 1.8450000000000002
+          "over": 1.94,
+          "under": 1.835
         }
       },
       "sources": [
@@ -97,20 +97,20 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.11,
-          "draw": 8.875,
-          "away": 21.0
+          "home": 1.1,
+          "draw": 8.625,
+          "away": 20.61
         },
         "totals": {
           "line": 2.5,
-          "over": 2.12,
-          "under": 1.7
+          "over": 2.045,
+          "under": 1.73
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 27
+      "bookmakers": 25
     },
     {
       "homeTeam": "Moreirense FC",

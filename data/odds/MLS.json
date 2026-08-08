@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T03:30:08Z",
+  "generatedAt": "2026-08-08T04:06:59Z",
   "league": "MLS",
   "matches": [
     {
@@ -163,8 +163,8 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.38,
-          "draw": 3.59,
+          "home": 2.3,
+          "draw": 3.6,
           "away": 2.6
         },
         "totals": {
