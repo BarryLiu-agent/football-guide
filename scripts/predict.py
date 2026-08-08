@@ -413,6 +413,10 @@ def main():
             pred["matchUrl"] = m.get("matchUrl", "")
             pred["correctScores"] = score_model.correct_scores(6)
             pred["overUnder"] = score_model.over_under(2.5)
+            # 预测比分 = 泊松模型最可能波胆（比期望值四舍五入更有区分度）
+            top_cs = score_model.correct_scores(1)
+            if top_cs:
+                pred["predictedScore"] = top_cs[0]["score"]
             pred["analysis"] = AnalysisWriter.generate(home, away, odds_result, msg_result, score_model)
             predictions.append(pred)
 

@@ -1049,25 +1049,35 @@ function switchMkt(mkt) {
 function refreshAnalysis() {
   const btn = document.getElementById('refreshBtn');
   const note = document.getElementById('refreshNote');
-  btn.classList.add('refreshing');
-  note.textContent = '正在请求后台重新抓取消息并生成分析…';
 
-  // 1. 尝试触发 GitHub Actions (workflow_dispatch)
-  fetch('https://api.github.com/repos/BarryLiu-agent/football-guide/actions/workflows/daily.yml/dispatches', {
-    method: 'POST',
-    headers: { 'Accept': 'application/vnd.github+json' },
-    body: JSON.stringify({ ref: 'main' })
-  }).then(r => {
-    if (r.ok) {
-      note.textContent = '已触发后台刷新，Actions 正在重新抓取消息与赔率…';
-    } else {
-      note.textContent = '无法自动触发（需 GitHub 登录）。请手动运行：github.com/BarryLiu-agent/football-guide/actions 点击 Run workflow。页面将自动检测更新。';
-    }
-  }).catch(() => {
-    note.textContent = '无法自动触发。请手动运行：github.com/BarryLiu-agent/football-guide/actions 点击 Run workflow。页面将自动检测更新。';
-  });
+  // 已有 PAT 则直接触发；否则引导输入
+  const pat = localStorage.getItem('gh_pat');
+  if (pat) {
+    triggerDispatch(pat, note, btn);
+  } else {
+    note.innerHTML = '要自动刷新需 GitHub Token（仅存本浏览器，不公开）。' +
+      '<a href="https://github.com/settings/tokens/new?type=classic&description=kun-refresh&scopes=workflow" target="_blank" style="color:var(--color-primary);text-decoration:underline">点此创建（勾选 workflow 权限）</a>' +
+      '，然后粘贴：';
+    const input = document.createElement('input');
+    input.type = 'password';
+    input.placeholder = 'ghp_... 或 github_pat_...';
+    input.style.cssText = 'width:180px;padding:6px 10px;border:1.5px solid var(--color-border);border-radius:6px;font-size:0.75rem;';
+    const saveBtn = document.createElement('button');
+    saveBtn.textContent = '保存并刷新';
+    saveBtn.className = 'btn';
+    saveBtn.style.cssText = 'padding:6px 12px;font-size:0.75rem;';
+    saveBtn.onclick = () => {
+      const v = input.value.trim();
+      if (!v) return;
+      localStorage.setItem('gh_pat', v);
+      note.innerHTML = '';
+      triggerDispatch(v, note, btn);
+    };
+    note.appendChild(input);
+    note.appendChild(saveBtn);
+  }
 
-  // 2. 轮询 predictions.json，检测 generatedAt 变化后自动刷新
+  // 轮询 predictions.json，检测 generatedAt 变化后自动刷新
   if (pollTimer) clearInterval(pollTimer);
   pollTimer = setInterval(async () => {
     try {
@@ -1085,6 +1095,31 @@ function refreshAnalysis() {
       }
     } catch (e) { /* 轮询失败忽略 */ }
   }, 20000);
+}
+
+function triggerDispatch(pat, note, btn) {
+  btn.classList.add('refreshing');
+  note.textContent = '正在触发后台刷新：重新抓取消息与赔率…';
+  fetch('https://api.github.com/repos/BarryLiu-agent/football-guide/actions/workflows/daily.yml/dispatches', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/vnd.github+json',
+      'Authorization': 'Bearer ' + pat,
+      'X-GitHub-Api-Version': '2022-11-28'
+    },
+    body: JSON.stringify({ ref: 'main' })
+  }).then(r => {
+    if (r.ok) {
+      note.textContent = '✅ 已触发！Actions 正在重新抓取消息/赔率并生成分析，约 2-4 分钟后自动更新…';
+    } else if (r.status === 401 || r.status === 403) {
+      localStorage.removeItem('gh_pat');
+      note.textContent = 'Token 无效或已过期，已清除。请点击刷新重新输入 Token。';
+    } else {
+      note.textContent = '触发失败（HTTP ' + r.status + '）。页面仍会自动检测更新（每30分钟自动运行）。';
+    }
+  }).catch(() => {
+    note.textContent = '网络错误，无法触发。页面仍会自动检测更新（每30分钟自动运行）。';
+  });
 }
 
 // ===== Tab Switching =====

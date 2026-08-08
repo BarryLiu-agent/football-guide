@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T01:56:42Z",
+  "generatedAt": "2026-08-08T02:24:08Z",
   "total": 68,
   "rulesVersion": "1.0",
   "predictions": [
@@ -168,7 +168,7 @@
     {
       "homeTeam": "Mainz",
       "awayTeam": "Paderborn",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.77,
         "away": 0.73
@@ -222,7 +222,7 @@
     {
       "homeTeam": "RB Leipzig",
       "awayTeam": "B. Monchengladbach",
-      "predictedScore": "2-1",
+      "predictedScore": "2-0",
       "expectedGoals": {
         "home": 1.88,
         "away": 0.62
@@ -384,7 +384,7 @@
     {
       "homeTeam": "Freiburg",
       "awayTeam": "Werder Bremen",
-      "predictedScore": "2-1",
+      "predictedScore": "1-1",
       "expectedGoals": {
         "home": 1.55,
         "away": 0.95
@@ -600,7 +600,7 @@
     {
       "homeTeam": "Sabah Baku",
       "awayTeam": "Aarhus",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.57,
         "away": 0.93
@@ -654,7 +654,7 @@
     {
       "homeTeam": "Kauno Zalgiris",
       "awayTeam": "Din. Zagreb",
-      "predictedScore": "0-2",
+      "predictedScore": "1-2",
       "expectedGoals": {
         "home": 0.49,
         "away": 2.01
@@ -816,7 +816,7 @@
     {
       "homeTeam": "Celje",
       "awayTeam": "Ararat-Armenia",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.99,
         "away": 0.51
@@ -870,7 +870,7 @@
     {
       "homeTeam": "Slovan Bratislava",
       "awayTeam": "Mjallby",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.72,
         "away": 0.78
@@ -924,7 +924,7 @@
     {
       "homeTeam": "Sturm Graz",
       "awayTeam": "Fenerbahce",
-      "predictedScore": "1-2",
+      "predictedScore": "1-1",
       "expectedGoals": {
         "home": 0.85,
         "away": 1.65
@@ -978,7 +978,7 @@
     {
       "homeTeam": "Lyon",
       "awayTeam": "Sparta Prague",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.9,
         "away": 0.6
@@ -1032,7 +1032,7 @@
     {
       "homeTeam": "Marseille",
       "awayTeam": "Strasbourg",
-      "predictedScore": "2-1",
+      "predictedScore": "1-1",
       "expectedGoals": {
         "home": 1.79,
         "away": 0.71
@@ -1086,7 +1086,7 @@
     {
       "homeTeam": "Lens",
       "awayTeam": "Auxerre",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.86,
         "away": 0.64
@@ -1248,7 +1248,7 @@
     {
       "homeTeam": "Toulouse",
       "awayTeam": "Lyon",
-      "predictedScore": "1-2",
+      "predictedScore": "1-1",
       "expectedGoals": {
         "home": 0.96,
         "away": 1.54
@@ -1356,7 +1356,7 @@
     {
       "homeTeam": "Angers",
       "awayTeam": "Lille",
-      "predictedScore": "1-2",
+      "predictedScore": "0-1",
       "expectedGoals": {
         "home": 0.69,
         "away": 1.81
@@ -1410,7 +1410,7 @@
     {
       "homeTeam": "Le Havre",
       "awayTeam": "Monaco",
-      "predictedScore": "1-2",
+      "predictedScore": "1-1",
       "expectedGoals": {
         "home": 0.96,
         "away": 1.54
@@ -1464,7 +1464,7 @@
     {
       "homeTeam": "PSG",
       "awayTeam": "Rennes",
-      "predictedScore": "2-1",
+      "predictedScore": "2-0",
       "expectedGoals": {
         "home": 2.0,
         "away": 0.5
@@ -1518,7 +1518,7 @@
     {
       "homeTeam": "Alaves",
       "awayTeam": "Getafe",
-      "predictedScore": "1-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.48,
         "away": 1.02
@@ -1572,7 +1572,7 @@
     {
       "homeTeam": "Sevilla",
       "awayTeam": "Rayo Vallecano",
-      "predictedScore": "1-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.46,
         "away": 1.04
@@ -1680,7 +1680,7 @@
     {
       "homeTeam": "Espanyol",
       "awayTeam": "Levante",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.6,
         "away": 0.9
@@ -1734,7 +1734,7 @@
     {
       "homeTeam": "Celta Vigo",
       "awayTeam": "Osasuna",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.6,
         "away": 0.9
@@ -1788,7 +1788,7 @@
     {
       "homeTeam": "Dep. A Coruna",
       "awayTeam": "Elche",
-      "predictedScore": "1-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.41,
         "away": 1.09
@@ -2058,7 +2058,7 @@
     {
       "homeTeam": "Rayo Vallecano",
       "awayTeam": "Alaves",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.6,
         "away": 0.9
@@ -2112,7 +2112,7 @@
     {
       "homeTeam": "Betis",
       "awayTeam": "Real Sociedad",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.52,
         "away": 0.98
@@ -2166,7 +2166,7 @@
     {
       "homeTeam": "Ath Bilbao",
       "awayTeam": "Sevilla",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.88,
         "away": 0.62
@@ -2274,7 +2274,7 @@
     {
       "homeTeam": "Espanyol",
       "awayTeam": "Real Madrid",
-      "predictedScore": "1-2",
+      "predictedScore": "0-1",
       "expectedGoals": {
         "home": 0.67,
         "away": 1.83
@@ -2328,7 +2328,7 @@
     {
       "homeTeam": "Atl. Madrid",
       "awayTeam": "Villarreal",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.67,
         "away": 0.83
@@ -2382,7 +2382,7 @@
     {
       "homeTeam": "Getafe",
       "awayTeam": "Racing Santander",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.73,
         "away": 0.77
@@ -2436,7 +2436,7 @@
     {
       "homeTeam": "Elche",
       "awayTeam": "Barcelona",
-      "predictedScore": "0-2",
+      "predictedScore": "1-2",
       "expectedGoals": {
         "home": 0.42,
         "away": 2.08
@@ -2490,7 +2490,7 @@
     {
       "homeTeam": "Osasuna",
       "awayTeam": "Levante",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.78,
         "away": 0.72
@@ -2544,7 +2544,7 @@
     {
       "homeTeam": "Malaga",
       "awayTeam": "Dep. A Coruna",
-      "predictedScore": "1-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.36,
         "away": 1.14
@@ -2652,7 +2652,7 @@
     {
       "homeTeam": "Hull",
       "awayTeam": "Manchester Utd",
-      "predictedScore": "0-2",
+      "predictedScore": "1-2",
       "expectedGoals": {
         "home": 0.49,
         "away": 2.01
@@ -2706,7 +2706,7 @@
     {
       "homeTeam": "Everton",
       "awayTeam": "Crystal Palace",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.51,
         "away": 0.99
@@ -2976,7 +2976,7 @@
     {
       "homeTeam": "Manchester City",
       "awayTeam": "Bournemouth",
-      "predictedScore": "2-1",
+      "predictedScore": "2-0",
       "expectedGoals": {
         "home": 1.96,
         "away": 0.54
@@ -3030,7 +3030,7 @@
     {
       "homeTeam": "Newcastle",
       "awayTeam": "Liverpool",
-      "predictedScore": "1-2",
+      "predictedScore": "1-1",
       "expectedGoals": {
         "home": 1.0,
         "away": 1.5
@@ -3192,7 +3192,7 @@
     {
       "homeTeam": "Udinese",
       "awayTeam": "Como",
-      "predictedScore": "1-2",
+      "predictedScore": "0-1",
       "expectedGoals": {
         "home": 0.77,
         "away": 1.73
@@ -3246,7 +3246,7 @@
     {
       "homeTeam": "Genoa",
       "awayTeam": "Napoli",
-      "predictedScore": "1-2",
+      "predictedScore": "0-1",
       "expectedGoals": {
         "home": 0.76,
         "away": 1.74
@@ -3300,7 +3300,7 @@
     {
       "homeTeam": "Parma",
       "awayTeam": "Cagliari",
-      "predictedScore": "1-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.3,
         "away": 1.2
@@ -3354,7 +3354,7 @@
     {
       "homeTeam": "Frosinone",
       "awayTeam": "Juventus",
-      "predictedScore": "1-2",
+      "predictedScore": "1-1",
       "expectedGoals": {
         "home": 0.51,
         "away": 1.99
@@ -3408,7 +3408,7 @@
     {
       "homeTeam": "Venezia",
       "awayTeam": "Lecce",
-      "predictedScore": "1-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.41,
         "away": 1.09
@@ -3462,7 +3462,7 @@
     {
       "homeTeam": "Atalanta",
       "awayTeam": "Sassuolo",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.92,
         "away": 0.58
@@ -3516,7 +3516,7 @@
     {
       "homeTeam": "Torino",
       "awayTeam": "AC Milan",
-      "predictedScore": "1-2",
+      "predictedScore": "0-1",
       "expectedGoals": {
         "home": 0.77,
         "away": 1.73
@@ -3570,7 +3570,7 @@
     {
       "homeTeam": "Bologna",
       "awayTeam": "Lazio",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.53,
         "away": 0.97
@@ -3624,7 +3624,7 @@
     {
       "homeTeam": "AS Roma",
       "awayTeam": "Fiorentina",
-      "predictedScore": "2-1",
+      "predictedScore": "1-0",
       "expectedGoals": {
         "home": 1.92,
         "away": 0.58
