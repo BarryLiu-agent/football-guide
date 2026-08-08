@@ -24,12 +24,21 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests beautifulsoup4 lxml
 
       - name: Fetch fixtures
         env:
           FOOTBALL_API_KEY: ${{ secrets.FOOTBALL_API_KEY }}
         run: python scripts/fetch_data.py
+
+      - name: Fetch odds
+        run: python scripts/odds_fetcher.py
+
+      - name: Fetch messages
+        run: python scripts/messages_fetcher.py
+
+      - name: Run prediction engine
+        run: python scripts/predict.py
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

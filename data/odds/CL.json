@@ -1,0 +1,166 @@
+{
+  "generatedAt": "2026-08-08T01:36:48Z",
+  "league": "CL",
+  "matches": [
+    {
+      "homeTeam": "Kairat Almaty",
+      "awayTeam": "Levski Sofia",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 2.36,
+          "draw": 3.32,
+          "away": 2.79
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Bodo/Glimt",
+      "awayTeam": "Royale Union SG",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 1.66,
+          "draw": 4.53,
+          "away": 3.89
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Sabah Baku",
+      "awayTeam": "Aarhus",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 1.97,
+          "draw": 3.44,
+          "away": 3.48
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Kauno Zalgiris",
+      "awayTeam": "Din. Zagreb",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 6.75,
+          "draw": 4.78,
+          "away": 1.38
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Nijmegen",
+      "awayTeam": "Olympiacos Piraeus",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 2.59,
+          "draw": 3.37,
+          "away": 2.49
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Crvena zvezda",
+      "awayTeam": "H. Beer Sheva",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 1.29,
+          "draw": 5.51,
+          "away": 7.99
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Celje",
+      "awayTeam": "Ararat-Armenia",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 1.43,
+          "draw": 4.4,
+          "away": 6.52
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Slovan Bratislava",
+      "awayTeam": "Mjallby",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 1.76,
+          "draw": 3.6,
+          "away": 4.21
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Sturm Graz",
+      "awayTeam": "Fenerbahce",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 3.78,
+          "draw": 3.71,
+          "away": 1.82
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Lyon",
+      "awayTeam": "Sparta Prague",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 1.5,
+          "draw": 4.32,
+          "away": 5.42
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    }
+  ]
+}

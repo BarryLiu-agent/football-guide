@@ -1,0 +1,1436 @@
+{
+  "generatedAt": "2026-08-08T01:36:48Z",
+  "total": 68,
+  "rulesVersion": "1.0",
+  "predictions": [
+    {
+      "homeTeam": "Bayern Munich",
+      "awayTeam": "Stuttgart",
+      "predictedScore": "2-0",
+      "expectedGoals": {
+        "home": 2.09,
+        "away": 0.41
+      },
+      "probabilities": {
+        "home": 0.765,
+        "draw": 0.085,
+        "away": 0.15
+      },
+      "confidence": 0.706,
+      "reasons": [
+        "赔率隐含概率: 主73% 平15% 客12%"
+      ],
+      "messageEvidence": [],
+      "league": "BL1",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "FC Koln",
+      "awayTeam": "Hoffenheim",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.13,
+        "away": 1.37
+      },
+      "probabilities": {
+        "home": 0.366,
+        "draw": 0.189,
+        "away": 0.444
+      },
+      "confidence": 0.578,
+      "reasons": [
+        "赔率隐含概率: 主33% 平26% 客41%"
+      ],
+      "messageEvidence": [],
+      "league": "BL1",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Elversberg",
+      "awayTeam": "Bayer Leverkusen",
+      "predictedScore": "1-2",
+      "expectedGoals": {
+        "home": 0.64,
+        "away": 1.86
+      },
+      "probabilities": {
+        "home": 0.219,
+        "draw": 0.14,
+        "away": 0.641
+      },
+      "confidence": 0.657,
+      "reasons": [
+        "赔率隐含概率: 主19% 平21% 客61%"
+      ],
+      "messageEvidence": [],
+      "league": "BL1",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Mainz",
+      "awayTeam": "Paderborn",
+      "predictedScore": "2-1",
+      "expectedGoals": {
+        "home": 1.77,
+        "away": 0.73
+      },
+      "probabilities": {
+        "home": 0.585,
+        "draw": 0.173,
+        "away": 0.242
+      },
+      "confidence": 0.634,
+      "reasons": [
+        "赔率隐含概率: 主55% 平24% 客21%"
+      ],
+      "messageEvidence": [],
+      "league": "BL1",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "RB Leipzig",
+      "awayTeam": "B. Monchengladbach",
+      "predictedScore": "2-1",
+      "expectedGoals": {
+        "home": 1.88,
+        "away": 0.62
+      },
+      "probabilities": {
+        "home": 0.642,
+        "draw": 0.145,
+        "away": 0.213
+      },
+      "confidence": 0.657,
+      "reasons": [
+        "赔率隐含概率: 主61% 平21% 客18%"
+      ],
+      "messageEvidence": [],
+      "league": "BL1",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Union Berlin",
+      "awayTeam": "Eintracht Frankfurt",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.34,
+        "away": 1.16
+      },
+      "probabilities": {
+        "home": 0.43,
+        "draw": 0.199,
+        "away": 0.371
+      },
+      "confidence": 0.572,
+      "reasons": [
+        "赔率隐含概率: 主40% 平27% 客34%"
+      ],
+      "messageEvidence": [],
+      "league": "BL1",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Dortmund",
+      "awayTeam": "Hamburger SV",
+      "predictedScore": "2-0",
+      "expectedGoals": {
+        "home": 2.09,
+        "away": 0.41
+      },
+      "probabilities": {
+        "home": 0.743,
+        "draw": 0.111,
+        "away": 0.147
+      },
+      "confidence": 0.697,
+      "reasons": [
+        "赔率隐含概率: 主71% 平18% 客11%"
+      ],
+      "messageEvidence": [],
+      "league": "BL1",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Freiburg",
+      "awayTeam": "Werder Bremen",
+      "predictedScore": "2-1",
+      "expectedGoals": {
+        "home": 1.54,
+        "away": 0.96
+      },
+      "probabilities": {
+        "home": 0.497,
+        "draw": 0.195,
+        "away": 0.308
+      },
+      "confidence": 0.599,
+      "reasons": [
+        "赔率隐含概率: 主46% 平26% 客27%"
+      ],
+      "messageEvidence": [],
+      "league": "BL1",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Augsburg",
+      "awayTeam": "Schalke",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.47,
+        "away": 1.03
+      },
+      "probabilities": {
+        "home": 0.479,
+        "draw": 0.182,
+        "away": 0.339
+      },
+      "confidence": 0.592,
+      "reasons": [
+        "赔率隐含概率: 主45% 平25% 客31%"
+      ],
+      "messageEvidence": [],
+      "league": "BL1",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Kairat Almaty",
+      "awayTeam": "Levski Sofia",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.35,
+        "away": 1.15
+      },
+      "probabilities": {
+        "home": 0.424,
+        "draw": 0.211,
+        "away": 0.364
+      },
+      "confidence": 0.57,
+      "reasons": [
+        "赔率隐含概率: 主39% 平28% 客33%"
+      ],
+      "messageEvidence": [],
+      "league": "CL",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Bodo/Glimt",
+      "awayTeam": "Royale Union SG",
+      "predictedScore": "2-1",
+      "expectedGoals": {
+        "home": 1.71,
+        "away": 0.79
+      },
+      "probabilities": {
+        "home": 0.591,
+        "draw": 0.138,
+        "away": 0.271
+      },
+      "confidence": 0.636,
+      "reasons": [
+        "赔率隐含概率: 主56% 平20% 客24%"
+      ],
+      "messageEvidence": [],
+      "league": "CL",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Sabah Baku",
+      "awayTeam": "Aarhus",
+      "predictedScore": "2-1",
+      "expectedGoals": {
+        "home": 1.57,
+        "away": 0.93
+      },
+      "probabilities": {
+        "home": 0.501,
+        "draw": 0.201,
+        "away": 0.298
+      },
+      "confidence": 0.6,
+      "reasons": [
+        "赔率隐含概率: 主47% 平27% 客26%"
+      ],
+      "messageEvidence": [],
+      "league": "CL",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Kauno Zalgiris",
+      "awayTeam": "Din. Zagreb",
+      "predictedScore": "0-2",
+      "expectedGoals": {
+        "home": 0.49,
+        "away": 2.01
+      },
+      "probabilities": {
+        "home": 0.17,
+        "draw": 0.127,
+        "away": 0.703
+      },
+      "confidence": 0.681,
+      "reasons": [
+        "赔率隐含概率: 主14% 平19% 客67%"
+      ],
+      "messageEvidence": [],
+      "league": "CL",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Nijmegen",
+      "awayTeam": "Olympiacos Piraeus",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.23,
+        "away": 1.27
+      },
+      "probabilities": {
+        "home": 0.389,
+        "draw": 0.207,
+        "away": 0.404
+      },
+      "confidence": 0.561,
+      "reasons": [
+        "赔率隐含概率: 主36% 平27% 客37%"
+      ],
+      "messageEvidence": [],
+      "league": "CL",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Crvena zvezda",
+      "awayTeam": "H. Beer Sheva",
+      "predictedScore": "2-0",
+      "expectedGoals": {
+        "home": 2.09,
+        "away": 0.41
+      },
+      "probabilities": {
+        "home": 0.75,
+        "draw": 0.101,
+        "away": 0.149
+      },
+      "confidence": 0.7,
+      "reasons": [
+        "赔率隐含概率: 主72% 平17% 客12%"
+      ],
+      "messageEvidence": [],
+      "league": "CL",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Celje",
+      "awayTeam": "Ararat-Armenia",
+      "predictedScore": "2-1",
+      "expectedGoals": {
+        "home": 1.99,
+        "away": 0.51
+      },
+      "probabilities": {
+        "home": 0.681,
+        "draw": 0.144,
+        "away": 0.175
+      },
+      "confidence": 0.672,
+      "reasons": [
+        "赔率隐含概率: 主65% 平21% 客14%"
+      ],
+      "messageEvidence": [],
+      "league": "CL",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Slovan Bratislava",
+      "awayTeam": "Mjallby",
+      "predictedScore": "2-1",
+      "expectedGoals": {
+        "home": 1.72,
+        "away": 0.78
+      },
+      "probabilities": {
+        "home": 0.558,
+        "draw": 0.19,
+        "away": 0.253
+      },
+      "confidence": 0.623,
+      "reasons": [
+        "赔率隐含概率: 主52% 平26% 客22%"
+      ],
+      "messageEvidence": [],
+      "league": "CL",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Sturm Graz",
+      "awayTeam": "Fenerbahce",
+      "predictedScore": "1-2",
+      "expectedGoals": {
+        "home": 0.85,
+        "away": 1.65
+      },
+      "probabilities": {
+        "home": 0.277,
+        "draw": 0.182,
+        "away": 0.54
+      },
+      "confidence": 0.616,
+      "reasons": [
+        "赔率隐含概率: 主24% 平25% 客51%"
+      ],
+      "messageEvidence": [],
+      "league": "CL",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Lyon",
+      "awayTeam": "Sparta Prague",
+      "predictedScore": "2-1",
+      "expectedGoals": {
+        "home": 1.9,
+        "away": 0.6
+      },
+      "probabilities": {
+        "home": 0.649,
+        "draw": 0.147,
+        "away": 0.204
+      },
+      "confidence": 0.66,
+      "reasons": [
+        "赔率隐含概率: 主62% 平21% 客17%"
+      ],
+      "messageEvidence": [],
+      "league": "CL",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Marseille",
+      "awayTeam": "Strasbourg",
+      "predictedScore": "2-1",
+      "expectedGoals": {
+        "home": 1.8,
+        "away": 0.7
+      },
+      "probabilities": {
+        "home": 0.608,
+        "draw": 0.154,
+        "away": 0.238
+      },
+      "confidence": 0.643,
+      "reasons": [
+        "赔率隐含概率: 主57% 平22% 客20%"
+      ],
+      "messageEvidence": [],
+      "league": "FL1",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Lens",
+      "awayTeam": "Auxerre",
+      "predictedScore": "2-1",
+      "expectedGoals": {
+        "home": 1.86,
+        "away": 0.64
+      },
+      "probabilities": {
+        "home": 0.629,
+        "draw": 0.155,
+        "away": 0.216
+      },
+      "confidence": 0.652,
+      "reasons": [
+        "赔率隐含概率: 主60% 平22% 客18%"
+      ],
+      "messageEvidence": [],
+      "league": "FL1",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Le Mans",
+      "awayTeam": "Brest",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.29,
+        "away": 1.21
+      },
+      "probabilities": {
+        "home": 0.412,
+        "draw": 0.204,
+        "away": 0.385
+      },
+      "confidence": 0.565,
+      "reasons": [
+        "赔率隐含概率: 主38% 平27% 客35%"
+      ],
+      "messageEvidence": [],
+      "league": "FL1",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Nice",
+      "awayTeam": "Lorient",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.45,
+        "away": 1.05
+      },
+      "probabilities": {
+        "home": 0.463,
+        "draw": 0.204,
+        "away": 0.333
+      },
+      "confidence": 0.585,
+      "reasons": [
+        "赔率隐含概率: 主43% 平27% 客30%"
+      ],
+      "messageEvidence": [],
+      "league": "FL1",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Toulouse",
+      "awayTeam": "Lyon",
+      "predictedScore": "1-2",
+      "expectedGoals": {
+        "home": 0.96,
+        "away": 1.54
+      },
+      "probabilities": {
+        "home": 0.308,
+        "draw": 0.194,
+        "away": 0.498
+      },
+      "confidence": 0.599,
+      "reasons": [
+        "赔率隐含概率: 主27% 平26% 客46%"
+      ],
+      "messageEvidence": [],
+      "league": "FL1",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Troyes",
+      "awayTeam": "Paris FC",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.2,
+        "away": 1.3
+      },
+      "probabilities": {
+        "home": 0.383,
+        "draw": 0.204,
+        "away": 0.413
+      },
+      "confidence": 0.565,
+      "reasons": [
+        "赔率隐含概率: 主35% 平27% 客38%"
+      ],
+      "messageEvidence": [],
+      "league": "FL1",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Angers",
+      "awayTeam": "Lille",
+      "predictedScore": "1-2",
+      "expectedGoals": {
+        "home": 0.69,
+        "away": 1.81
+      },
+      "probabilities": {
+        "home": 0.224,
+        "draw": 0.186,
+        "away": 0.59
+      },
+      "confidence": 0.636,
+      "reasons": [
+        "赔率隐含概率: 主19% 平25% 客56%"
+      ],
+      "messageEvidence": [],
+      "league": "FL1",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Le Havre",
+      "awayTeam": "Monaco",
+      "predictedScore": "1-2",
+      "expectedGoals": {
+        "home": 0.95,
+        "away": 1.55
+      },
+      "probabilities": {
+        "home": 0.31,
+        "draw": 0.185,
+        "away": 0.505
+      },
+      "confidence": 0.602,
+      "reasons": [
+        "赔率隐含概率: 主28% 平25% 客47%"
+      ],
+      "messageEvidence": [],
+      "league": "FL1",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "PSG",
+      "awayTeam": "Rennes",
+      "predictedScore": "2-0",
+      "expectedGoals": {
+        "home": 2.0,
+        "away": 0.5
+      },
+      "probabilities": {
+        "home": 0.708,
+        "draw": 0.117,
+        "away": 0.176
+      },
+      "confidence": 0.683,
+      "reasons": [
+        "赔率隐含概率: 主67% 平18% 客14%"
+      ],
+      "messageEvidence": [],
+      "league": "FL1",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Alaves",
+      "awayTeam": "Getafe",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.48,
+        "away": 1.02
+      },
+      "probabilities": {
+        "home": 0.432,
+        "draw": 0.27,
+        "away": 0.298
+      },
+      "confidence": 0.573,
+      "reasons": [
+        "赔率隐含概率: 主40% 平34% 客26%"
+      ],
+      "messageEvidence": [],
+      "league": "PD",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Sevilla",
+      "awayTeam": "Rayo Vallecano",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.46,
+        "away": 1.04
+      },
+      "probabilities": {
+        "home": 0.45,
+        "draw": 0.23,
+        "away": 0.32
+      },
+      "confidence": 0.58,
+      "reasons": [
+        "赔率隐含概率: 主42% 平30% 客29%"
+      ],
+      "messageEvidence": [],
+      "league": "PD",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Racing Santander",
+      "awayTeam": "Villarreal",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.1,
+        "away": 1.4
+      },
+      "probabilities": {
+        "home": 0.349,
+        "draw": 0.209,
+        "away": 0.441
+      },
+      "confidence": 0.577,
+      "reasons": [
+        "赔率隐含概率: 主32% 平28% 客41%"
+      ],
+      "messageEvidence": [],
+      "league": "PD",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Espanyol",
+      "awayTeam": "Levante",
+      "predictedScore": "2-1",
+      "expectedGoals": {
+        "home": 1.6,
+        "away": 0.9
+      },
+      "probabilities": {
+        "home": 0.499,
+        "draw": 0.219,
+        "away": 0.281
+      },
+      "confidence": 0.6,
+      "reasons": [
+        "赔率隐含概率: 主47% 平29% 客25%"
+      ],
+      "messageEvidence": [],
+      "league": "PD",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Celta Vigo",
+      "awayTeam": "Osasuna",
+      "predictedScore": "2-1",
+      "expectedGoals": {
+        "home": 1.6,
+        "away": 0.9
+      },
+      "probabilities": {
+        "home": 0.503,
+        "draw": 0.213,
+        "away": 0.284
+      },
+      "confidence": 0.601,
+      "reasons": [
+        "赔率隐含概率: 主47% 平28% 客25%"
+      ],
+      "messageEvidence": [],
+      "league": "PD",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Dep. A Coruna",
+      "awayTeam": "Elche",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.41,
+        "away": 1.09
+      },
+      "probabilities": {
+        "home": 0.432,
+        "draw": 0.234,
+        "away": 0.335
+      },
+      "confidence": 0.573,
+      "reasons": [
+        "赔率隐含概率: 主40% 平30% 客30%"
+      ],
+      "messageEvidence": [],
+      "league": "PD",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Atl. Madrid",
+      "awayTeam": "Malaga",
+      "predictedScore": "2-0",
+      "expectedGoals": {
+        "home": 2.14,
+        "away": 0.36
+      },
+      "probabilities": {
+        "home": 0.757,
+        "draw": 0.114,
+        "away": 0.128
+      },
+      "confidence": 0.703,
+      "reasons": [
+        "赔率隐含概率: 主72% 平18% 客9%"
+      ],
+      "messageEvidence": [],
+      "league": "PD",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Valencia",
+      "awayTeam": "Betis",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.25,
+        "away": 1.25
+      },
+      "probabilities": {
+        "home": 0.388,
+        "draw": 0.223,
+        "away": 0.389
+      },
+      "confidence": 0.556,
+      "reasons": [
+        "赔率隐含概率: 主35% 平29% 客36%"
+      ],
+      "messageEvidence": [],
+      "league": "PD",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Real Madrid",
+      "awayTeam": "Real Sociedad",
+      "predictedScore": "2-0",
+      "expectedGoals": {
+        "home": 2.02,
+        "away": 0.48
+      },
+      "probabilities": {
+        "home": 0.706,
+        "draw": 0.126,
+        "away": 0.168
+      },
+      "confidence": 0.683,
+      "reasons": [
+        "赔率隐含概率: 主67% 平19% 客13%"
+      ],
+      "messageEvidence": [],
+      "league": "PD",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Barcelona",
+      "awayTeam": "Ath Bilbao",
+      "predictedScore": "2-0",
+      "expectedGoals": {
+        "home": 2.0,
+        "away": 0.5
+      },
+      "probabilities": {
+        "home": 0.699,
+        "draw": 0.127,
+        "away": 0.174
+      },
+      "confidence": 0.68,
+      "reasons": [
+        "赔率隐含概率: 主67% 平19% 客14%"
+      ],
+      "messageEvidence": [],
+      "league": "PD",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Rayo Vallecano",
+      "awayTeam": "Alaves",
+      "predictedScore": "2-1",
+      "expectedGoals": {
+        "home": 1.6,
+        "away": 0.9
+      },
+      "probabilities": {
+        "home": 0.484,
+        "draw": 0.241,
+        "away": 0.274
+      },
+      "confidence": 0.594,
+      "reasons": [
+        "赔率隐含概率: 主45% 平31% 客24%"
+      ],
+      "messageEvidence": [],
+      "league": "PD",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Betis",
+      "awayTeam": "Real Sociedad",
+      "predictedScore": "2-1",
+      "expectedGoals": {
+        "home": 1.52,
+        "away": 0.98
+      },
+      "probabilities": {
+        "home": 0.476,
+        "draw": 0.22,
+        "away": 0.305
+      },
+      "confidence": 0.59,
+      "reasons": [
+        "赔率隐含概率: 主44% 平29% 客27%"
+      ],
+      "messageEvidence": [],
+      "league": "PD",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Ath Bilbao",
+      "awayTeam": "Sevilla",
+      "predictedScore": "2-1",
+      "expectedGoals": {
+        "home": 1.88,
+        "away": 0.62
+      },
+      "probabilities": {
+        "home": 0.612,
+        "draw": 0.185,
+        "away": 0.203
+      },
+      "confidence": 0.645,
+      "reasons": [
+        "赔率隐含概率: 主58% 平25% 客17%"
+      ],
+      "messageEvidence": [],
+      "league": "PD",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Valencia",
+      "awayTeam": "Celta Vigo",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.39,
+        "away": 1.11
+      },
+      "probabilities": {
+        "home": 0.43,
+        "draw": 0.228,
+        "away": 0.342
+      },
+      "confidence": 0.572,
+      "reasons": [
+        "赔率隐含概率: 主40% 平29% 客31%"
+      ],
+      "messageEvidence": [],
+      "league": "PD",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Espanyol",
+      "awayTeam": "Real Madrid",
+      "predictedScore": "1-2",
+      "expectedGoals": {
+        "home": 0.67,
+        "away": 1.83
+      },
+      "probabilities": {
+        "home": 0.223,
+        "draw": 0.169,
+        "away": 0.608
+      },
+      "confidence": 0.643,
+      "reasons": [
+        "赔率隐含概率: 主19% 平24% 客57%"
+      ],
+      "messageEvidence": [],
+      "league": "PD",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Atl. Madrid",
+      "awayTeam": "Villarreal",
+      "predictedScore": "2-1",
+      "expectedGoals": {
+        "home": 1.67,
+        "away": 0.83
+      },
+      "probabilities": {
+        "home": 0.532,
+        "draw": 0.203,
+        "away": 0.265
+      },
+      "confidence": 0.613,
+      "reasons": [
+        "赔率隐含概率: 主50% 平27% 客23%"
+      ],
+      "messageEvidence": [],
+      "league": "PD",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Getafe",
+      "awayTeam": "Racing Santander",
+      "predictedScore": "2-1",
+      "expectedGoals": {
+        "home": 1.73,
+        "away": 0.77
+      },
+      "probabilities": {
+        "home": 0.524,
+        "draw": 0.244,
+        "away": 0.232
+      },
+      "confidence": 0.61,
+      "reasons": [
+        "赔率隐含概率: 主49% 平31% 客20%"
+      ],
+      "messageEvidence": [],
+      "league": "PD",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Elche",
+      "awayTeam": "Barcelona",
+      "predictedScore": "0-2",
+      "expectedGoals": {
+        "home": 0.42,
+        "away": 2.08
+      },
+      "probabilities": {
+        "home": 0.15,
+        "draw": 0.11,
+        "away": 0.74
+      },
+      "confidence": 0.696,
+      "reasons": [
+        "赔率隐含概率: 主12% 平18% 客71%"
+      ],
+      "messageEvidence": [],
+      "league": "PD",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Osasuna",
+      "awayTeam": "Levante",
+      "predictedScore": "2-1",
+      "expectedGoals": {
+        "home": 1.78,
+        "away": 0.72
+      },
+      "probabilities": {
+        "home": 0.578,
+        "draw": 0.187,
+        "away": 0.235
+      },
+      "confidence": 0.631,
+      "reasons": [
+        "赔率隐含概率: 主54% 平25% 客20%"
+      ],
+      "messageEvidence": [],
+      "league": "PD",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Malaga",
+      "awayTeam": "Dep. A Coruna",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.36,
+        "away": 1.14
+      },
+      "probabilities": {
+        "home": 0.413,
+        "draw": 0.242,
+        "away": 0.346
+      },
+      "confidence": 0.565,
+      "reasons": [
+        "赔率隐含概率: 主38% 平31% 客31%"
+      ],
+      "messageEvidence": [],
+      "league": "PD",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Arsenal",
+      "awayTeam": "Coventry",
+      "predictedScore": "2-0",
+      "expectedGoals": {
+        "home": 2.24,
+        "away": 0.26
+      },
+      "probabilities": {
+        "home": 0.841,
+        "draw": 0.061,
+        "away": 0.098
+      },
+      "confidence": 0.736,
+      "reasons": [
+        "赔率隐含概率: 主81% 平13% 客7%"
+      ],
+      "messageEvidence": [],
+      "league": "PL",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Hull",
+      "awayTeam": "Manchester Utd",
+      "predictedScore": "1-2",
+      "expectedGoals": {
+        "home": 0.51,
+        "away": 1.99
+      },
+      "probabilities": {
+        "home": 0.174,
+        "draw": 0.141,
+        "away": 0.685
+      },
+      "confidence": 0.674,
+      "reasons": [
+        "赔率隐含概率: 主14% 平21% 客65%"
+      ],
+      "messageEvidence": [],
+      "league": "PL",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Everton",
+      "awayTeam": "Crystal Palace",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.5,
+        "away": 1.0
+      },
+      "probabilities": {
+        "home": 0.476,
+        "draw": 0.205,
+        "away": 0.319
+      },
+      "confidence": 0.591,
+      "reasons": [
+        "赔率隐含概率: 主44% 平27% 客29%"
+      ],
+      "messageEvidence": [],
+      "league": "PL",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Ipswich",
+      "awayTeam": "Sunderland",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.22,
+        "away": 1.28
+      },
+      "probabilities": {
+        "home": 0.383,
+        "draw": 0.217,
+        "away": 0.4
+      },
+      "confidence": 0.56,
+      "reasons": [
+        "赔率隐含概率: 主35% 平28% 客37%"
+      ],
+      "messageEvidence": [],
+      "league": "PL",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Nottingham",
+      "awayTeam": "Leeds",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.45,
+        "away": 1.05
+      },
+      "probabilities": {
+        "home": 0.46,
+        "draw": 0.207,
+        "away": 0.333
+      },
+      "confidence": 0.584,
+      "reasons": [
+        "赔率隐含概率: 主43% 平27% 客30%"
+      ],
+      "messageEvidence": [],
+      "league": "PL",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Brentford",
+      "awayTeam": "Tottenham",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.36,
+        "away": 1.14
+      },
+      "probabilities": {
+        "home": 0.435,
+        "draw": 0.2,
+        "away": 0.365
+      },
+      "confidence": 0.574,
+      "reasons": [
+        "赔率隐含概率: 主40% 平27% 客33%"
+      ],
+      "messageEvidence": [],
+      "league": "PL",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Brighton",
+      "awayTeam": "Aston Villa",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.38,
+        "away": 1.12
+      },
+      "probabilities": {
+        "home": 0.446,
+        "draw": 0.191,
+        "away": 0.363
+      },
+      "confidence": 0.578,
+      "reasons": [
+        "赔率隐含概率: 主41% 平26% 客33%"
+      ],
+      "messageEvidence": [],
+      "league": "PL",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Manchester City",
+      "awayTeam": "Bournemouth",
+      "predictedScore": "2-1",
+      "expectedGoals": {
+        "home": 1.96,
+        "away": 0.54
+      },
+      "probabilities": {
+        "home": 0.689,
+        "draw": 0.121,
+        "away": 0.19
+      },
+      "confidence": 0.676,
+      "reasons": [
+        "赔率隐含概率: 主66% 平19% 客16%"
+      ],
+      "messageEvidence": [],
+      "league": "PL",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Newcastle",
+      "awayTeam": "Liverpool",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.0,
+        "away": 1.5
+      },
+      "probabilities": {
+        "home": 0.329,
+        "draw": 0.181,
+        "away": 0.49
+      },
+      "confidence": 0.596,
+      "reasons": [
+        "赔率隐含概率: 主30% 平25% 客46%"
+      ],
+      "messageEvidence": [],
+      "league": "PL",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Fulham",
+      "awayTeam": "Chelsea",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.06,
+        "away": 1.44
+      },
+      "probabilities": {
+        "home": 0.342,
+        "draw": 0.193,
+        "away": 0.465
+      },
+      "confidence": 0.586,
+      "reasons": [
+        "赔率隐含概率: 主31% 平26% 客43%"
+      ],
+      "messageEvidence": [],
+      "league": "PL",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Inter",
+      "awayTeam": "Monza",
+      "predictedScore": "2-0",
+      "expectedGoals": {
+        "home": 2.2,
+        "away": 0.3
+      },
+      "probabilities": {
+        "home": 0.804,
+        "draw": 0.088,
+        "away": 0.108
+      },
+      "confidence": 0.722,
+      "reasons": [
+        "赔率隐含概率: 主77% 平15% 客7%"
+      ],
+      "messageEvidence": [],
+      "league": "SA",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Udinese",
+      "awayTeam": "Como",
+      "predictedScore": "1-2",
+      "expectedGoals": {
+        "home": 0.77,
+        "away": 1.73
+      },
+      "probabilities": {
+        "home": 0.245,
+        "draw": 0.205,
+        "away": 0.55
+      },
+      "confidence": 0.62,
+      "reasons": [
+        "赔率隐含概率: 主21% 平27% 客52%"
+      ],
+      "messageEvidence": [],
+      "league": "SA",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Genoa",
+      "awayTeam": "Napoli",
+      "predictedScore": "1-2",
+      "expectedGoals": {
+        "home": 0.77,
+        "away": 1.73
+      },
+      "probabilities": {
+        "home": 0.243,
+        "draw": 0.213,
+        "away": 0.544
+      },
+      "confidence": 0.618,
+      "reasons": [
+        "赔率隐含概率: 主21% 平28% 客51%"
+      ],
+      "messageEvidence": [],
+      "league": "SA",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Parma",
+      "awayTeam": "Cagliari",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.29,
+        "away": 1.21
+      },
+      "probabilities": {
+        "home": 0.394,
+        "draw": 0.238,
+        "away": 0.368
+      },
+      "confidence": 0.558,
+      "reasons": [
+        "赔率隐含概率: 主36% 平30% 客33%"
+      ],
+      "messageEvidence": [],
+      "league": "SA",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Frosinone",
+      "awayTeam": "Juventus",
+      "predictedScore": "1-2",
+      "expectedGoals": {
+        "home": 0.5,
+        "away": 2.0
+      },
+      "probabilities": {
+        "home": 0.17,
+        "draw": 0.153,
+        "away": 0.677
+      },
+      "confidence": 0.671,
+      "reasons": [
+        "赔率隐含概率: 主14% 平22% 客64%"
+      ],
+      "messageEvidence": [],
+      "league": "SA",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Venezia",
+      "awayTeam": "Lecce",
+      "predictedScore": "1-1",
+      "expectedGoals": {
+        "home": 1.41,
+        "away": 1.09
+      },
+      "probabilities": {
+        "home": 0.436,
+        "draw": 0.225,
+        "away": 0.339
+      },
+      "confidence": 0.574,
+      "reasons": [
+        "赔率隐含概率: 主40% 平29% 客31%"
+      ],
+      "messageEvidence": [],
+      "league": "SA",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Atalanta",
+      "awayTeam": "Sassuolo",
+      "predictedScore": "2-1",
+      "expectedGoals": {
+        "home": 1.94,
+        "away": 0.56
+      },
+      "probabilities": {
+        "home": 0.657,
+        "draw": 0.153,
+        "away": 0.19
+      },
+      "confidence": 0.663,
+      "reasons": [
+        "赔率隐含概率: 主62% 平22% 客16%"
+      ],
+      "messageEvidence": [],
+      "league": "SA",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Torino",
+      "awayTeam": "AC Milan",
+      "predictedScore": "1-2",
+      "expectedGoals": {
+        "home": 0.76,
+        "away": 1.74
+      },
+      "probabilities": {
+        "home": 0.246,
+        "draw": 0.191,
+        "away": 0.562
+      },
+      "confidence": 0.625,
+      "reasons": [
+        "赔率隐含概率: 主21% 平26% 客53%"
+      ],
+      "messageEvidence": [],
+      "league": "SA",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "Bologna",
+      "awayTeam": "Lazio",
+      "predictedScore": "2-1",
+      "expectedGoals": {
+        "home": 1.52,
+        "away": 0.98
+      },
+      "probabilities": {
+        "home": 0.472,
+        "draw": 0.223,
+        "away": 0.305
+      },
+      "confidence": 0.589,
+      "reasons": [
+        "赔率隐含概率: 主44% 平29% 客27%"
+      ],
+      "messageEvidence": [],
+      "league": "SA",
+      "kickoff": ""
+    },
+    {
+      "homeTeam": "AS Roma",
+      "awayTeam": "Fiorentina",
+      "predictedScore": "2-1",
+      "expectedGoals": {
+        "home": 1.93,
+        "away": 0.57
+      },
+      "probabilities": {
+        "home": 0.646,
+        "draw": 0.165,
+        "away": 0.189
+      },
+      "confidence": 0.658,
+      "reasons": [
+        "赔率隐含概率: 主61% 平23% 客16%"
+      ],
+      "messageEvidence": [],
+      "league": "SA",
+      "kickoff": ""
+    }
+  ],
+  "disclaimer": "本结果仅用于个人数据分析与研究, 不构成任何投注建议"
+}

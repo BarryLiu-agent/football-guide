@@ -1,0 +1,166 @@
+{
+  "generatedAt": "2026-08-08T01:36:42Z",
+  "league": "SA",
+  "matches": [
+    {
+      "homeTeam": "Inter",
+      "awayTeam": "Monza",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 1.21,
+          "draw": 6.02,
+          "away": 12.55
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Udinese",
+      "awayTeam": "Como",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 4.38,
+          "draw": 3.42,
+          "away": 1.8
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Genoa",
+      "awayTeam": "Napoli",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 4.44,
+          "draw": 3.33,
+          "away": 1.82
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Parma",
+      "awayTeam": "Cagliari",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 2.58,
+          "draw": 3.05,
+          "away": 2.78
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Frosinone",
+      "awayTeam": "Juventus",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 6.8,
+          "draw": 4.21,
+          "away": 1.44
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Venezia",
+      "awayTeam": "Lecce",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 2.31,
+          "draw": 3.19,
+          "away": 3.04
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Atalanta",
+      "awayTeam": "Sassuolo",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 1.49,
+          "draw": 4.24,
+          "away": 5.92
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Torino",
+      "awayTeam": "AC Milan",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 4.37,
+          "draw": 3.61,
+          "away": 1.76
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Bologna",
+      "awayTeam": "Lazio",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 2.12,
+          "draw": 3.21,
+          "away": 3.43
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "AS Roma",
+      "awayTeam": "Fiorentina",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 1.52,
+          "draw": 4.02,
+          "away": 5.96
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    }
+  ]
+}

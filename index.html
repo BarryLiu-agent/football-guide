@@ -306,6 +306,7 @@ body {
   <button class="tab-btn active" data-tab="today">📅 比赛</button>
   <button class="tab-btn" data-tab="history">📋 历史记录</button>
   <button class="tab-btn" data-tab="stars">⭐ 球星追踪</button>
+  <button class="tab-btn" data-tab="predict">📊 预测</button>
 </nav>
 
 <!-- Main Content -->
@@ -340,6 +341,14 @@ body {
     <h2 style="font-size:0.85rem;color:var(--color-text-secondary);margin:20px 0 10px;font-weight:500;">🌟 推荐球星</h2>
     <div class="star-list" id="suggestedStars"></div>
     <div id="starMatches"></div>
+  </section>
+  <!-- Predict Tab -->
+  <section class="tab-panel" id="panel-predict">
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+      <span style="font-size:0.8rem;color:var(--color-text-secondary);">⚖️ 赔率隐含概率 + 📰 消息信号 → 比分预测</span>
+      <span style="margin-left:auto;font-size:0.7rem;color:var(--color-text-secondary);" id="predictDisclaimer"></span>
+    </div>
+    <div id="predictMatches"></div>
   </section>
 </main>
 
@@ -588,7 +597,7 @@ function getScoreDisplay(match) {
   const { score, status } = match;
   const isLive = status === 'IN_PLAY' || status === 'LIVE' || status === 'PAUSED';
   const isFinished = status === 'FINISHED';
-  
+
   if (isLive) {
     const ft = score?.fullTime || {};
     const cls = status === 'PAUSED' ? 'live' : 'live';
@@ -679,7 +688,7 @@ async function loadToday() {
 
   const today = formatDate(new Date().toISOString());
   const maxDate = formatDate(new Date(Date.now() + 30 * 86400000).toISOString());
-  
+
   let filtered = allMatches.filter(m => {
     const d = formatDate(m.utcDate);
     return d >= today && d <= maxDate;
@@ -701,10 +710,10 @@ function loadHistory() {
 async function showHistoryForDate(dateStr) {
   const el = document.getElementById('historyMatches');
   el.innerHTML = '<div class="loading-spinner"><div class="spinner"></div></div>';
-  
+
   // Check if we already have data for this date in cache
   let filtered = allMatches.filter(m => formatDate(m.utcDate) === dateStr);
-  
+
   if (!filtered.length) {
     // Fetch from API
     const { matches } = await fetchHistoryDate(dateStr);
@@ -740,7 +749,7 @@ function renderStars() {
   const searchVal = document.getElementById('starSearch').value.toLowerCase();
 
   const followed = STAR_PLAYERS.filter(p => followedStars.includes(p.name));
-  const suggested = STAR_PLAYERS.filter(p => !followedStars.includes(p.name) && 
+  const suggested = STAR_PLAYERS.filter(p => !followedStars.includes(p.name) &&
     (searchVal ? p.name.includes(searchVal) || p.team.includes(searchVal) : true));
 
   const renderStarItem = (p, isFollowed) => `
@@ -754,9 +763,9 @@ function renderStars() {
     </div>
   `;
 
-  followedEl.innerHTML = followed.length 
+  followedEl.innerHTML = followed.length
     ? followed.map(p => renderStarItem(p, true)).join('')
-    : '<div style="color:var(--color-text-secondary);font-size:0.85rem;padding:12px;">暂无关注球员，点击下方推荐球星关注</div>';
+    : '<div style="color:var(--color-text-secondary);font-size:0.85rem;padding:12px;">暂无关注球员,点击下方推荐球星关注</div>';
 
   suggestedEl.innerHTML = suggested.map(p => renderStarItem(p, false)).join('');
   renderStarMatches();
@@ -784,7 +793,7 @@ function renderStarMatches() {
     return;
   }
   const starTeams = STAR_PLAYERS.filter(p => followedStars.includes(p.name)).map(p => p.team);
-  let matches = allMatches.filter(m => 
+  let matches = allMatches.filter(m =>
     starTeams.includes(m.homeTeam?.name) || starTeams.includes(m.awayTeam?.name)
   );
   if (activeStarLeagueFilter !== 'all') {
@@ -811,42 +820,92 @@ let lastFetchTime = 0;
 async function refreshData(silent = false) {
   const refreshBtn = document.querySelector('.btn-refresh');
   if (!silent) refreshBtn.style.animation = 'spin 0.6s linear';
-  
+
   try {
     const { matches, errors } = await loadFixtures();
     allMatches = matches;
     lastFetchTime = Date.now();
-    
+
     // Update timestamp from fixtures data if available, else use local time
     const genTime = fixturesData?.generatedAt;
     if (genTime) {
       const d = new Date(genTime);
-      document.getElementById('lastUpdated').textContent = 
+      document.getElementById('lastUpdated').textContent =
         `更新于 ${d.toLocaleDateString('zh-CN')} ${d.toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' })}`;
     } else {
-      document.getElementById('lastUpdated').textContent = 
+      document.getElementById('lastUpdated').textContent =
         `更新于 ${new Date().toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' })}`;
     }
-    
+
     if (errors.length && !silent) {
       console.warn('部分数据加载失败:', errors);
     }
   } catch (e) {
     if (!silent) {
-      document.getElementById('todayMatches').innerHTML = 
+      document.getElementById('todayMatches').innerHTML =
         `<div class="error-banner">
-          ⚠️ 数据加载失败，请确保 data/fixtures.json 文件存在
+          ⚠️ 数据加载失败,请确保 data/fixtures.json 文件存在
           <button class="retry-btn" onclick="refreshData()">重试</button>
         </div>`;
     }
   } finally {
     refreshBtn.style.animation = '';
   }
-  
+
   // Re-render current tab
   const activeTab = document.querySelector('.tab-btn.active').dataset.tab;
   if (activeTab === 'today') loadToday();
   else if (activeTab === 'stars') renderStars();
+  else if (activeTab === 'predict') loadPredictions();
+}
+
+// ===== Predictions =====
+async function loadPredictions() {
+  const el = document.getElementById('predictMatches');
+  el.innerHTML = '<div class="loading-spinner"><div class="spinner"></div></div>';
+  try {
+    const resp = await fetch('data/predictions.json');
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const data = await resp.json();
+
+    document.getElementById('predictDisclaimer').textContent = data.disclaimer || '';
+
+    const preds = (data.predictions || []).slice().sort((a, b) => b.confidence - a.confidence);
+    if (!preds.length) {
+      el.innerHTML = '<div class="empty-state"><div class="icon">📊</div><h3>暂无预测数据</h3><p>数据管道每日自动生成预测</p></div>';
+      return;
+    }
+
+    const pct = v => `${Math.round(v * 100)}%`;
+    el.innerHTML = preds.map(p => {
+      const league = COMPETITIONS[p.league] || p.league || '';
+      const probs = p.probabilities || {};
+      const bar = (v, color) => `<div style="height:6px;border-radius:3px;background:${color};width:${Math.max(4, Math.round((v||0)*100))}%"></div>`;
+      return `
+      <div class="match-card">
+        <div class="match-league">${league}</div>
+        <div class="match-teams" style="flex:1">
+          <div class="team-row"><span>${displayTeam(p.homeTeam)}</span></div>
+          <div class="team-row"><span>${displayTeam(p.awayTeam)}</span></div>
+        </div>
+        <div style="min-width:110px;text-align:center">
+          <div style="font-size:1.15rem;font-weight:700;color:var(--color-primary)">${p.predictedScore}</div>
+          <div style="font-size:0.65rem;color:var(--color-text-secondary)">置信度 ${pct(p.confidence)}</div>
+        </div>
+      </div>
+      <div style="background:var(--color-surface);border-radius:var(--radius-md);padding:10px 14px;margin:-4px 0 10px;box-shadow:var(--shadow-sm);font-size:0.75rem;color:var(--color-text-secondary)">
+        <div style="display:flex;gap:12px;align-items:center;margin-bottom:6px">
+          <span style="white-space:nowrap">主 ${pct(probs.home)}</span>
+          <div style="flex:1;display:flex;gap:2px">${bar(probs.home, '#1a5632')}${bar(probs.draw, '#9ca3af')}${bar(probs.away, '#dc2626')}</div>
+          <span style="white-space:nowrap">客 ${pct(probs.away)}</span>
+        </div>
+        ${(p.reasons || []).map(r => `<div>• ${r}</div>`).join('')}
+        ${(p.messageEvidence || []).slice(0, 2).map(e => `<div style="opacity:0.8">📰 ${e.text} <span style="color:#b8860b">${e.score > 0 ? '+' : ''}${e.score}</span></div>`).join('')}
+      </div>`;
+    }).join('');
+  } catch (e) {
+    el.innerHTML = `<div class="error-banner">⚠️ 预测数据加载失败: ${e.message}<button class="retry-btn" onclick="loadPredictions()">重试</button></div>`;
+  }
 }
 
 // ===== Tab Switching =====
@@ -856,9 +915,10 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById(`panel-${btn.dataset.tab}`).classList.add('active');
-    
+
     if (btn.dataset.tab === 'today') loadToday();
     else if (btn.dataset.tab === 'stars') renderStars();
+    else if (btn.dataset.tab === 'predict') loadPredictions();
     else if (btn.dataset.tab === 'history') {
       document.getElementById('historyDate').value = formatDate(new Date(Date.now() - 86400000).toISOString());
       showHistoryForDate(document.getElementById('historyDate').value);

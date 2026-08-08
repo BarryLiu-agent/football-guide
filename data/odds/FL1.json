@@ -1,0 +1,150 @@
+{
+  "generatedAt": "2026-08-08T01:36:46Z",
+  "league": "FL1",
+  "matches": [
+    {
+      "homeTeam": "Marseille",
+      "awayTeam": "Strasbourg",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 1.62,
+          "draw": 4.21,
+          "away": 4.55
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Lens",
+      "awayTeam": "Auxerre",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 1.56,
+          "draw": 4.19,
+          "away": 5.1
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Le Mans",
+      "awayTeam": "Brest",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 2.45,
+          "draw": 3.43,
+          "away": 2.64
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Nice",
+      "awayTeam": "Lorient",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 2.16,
+          "draw": 3.43,
+          "away": 3.1
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Toulouse",
+      "awayTeam": "Lyon",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 3.38,
+          "draw": 3.57,
+          "away": 2.0
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Troyes",
+      "awayTeam": "Paris FC",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 2.66,
+          "draw": 3.44,
+          "away": 2.45
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Angers",
+      "awayTeam": "Lille",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 4.88,
+          "draw": 3.68,
+          "away": 1.67
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Le Havre",
+      "awayTeam": "Monaco",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 3.36,
+          "draw": 3.69,
+          "away": 1.97
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "PSG",
+      "awayTeam": "Rennes",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 1.38,
+          "draw": 5.08,
+          "away": 6.54
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    }
+  ]
+}

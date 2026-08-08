@@ -1,0 +1,166 @@
+{
+  "generatedAt": "2026-08-08T01:36:38Z",
+  "league": "PL",
+  "matches": [
+    {
+      "homeTeam": "Arsenal",
+      "awayTeam": "Coventry",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 1.17,
+          "draw": 7.4,
+          "away": 14.5
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Hull",
+      "awayTeam": "Manchester Utd",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 6.69,
+          "draw": 4.51,
+          "away": 1.44
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Everton",
+      "awayTeam": "Crystal Palace",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 2.12,
+          "draw": 3.46,
+          "away": 3.29
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Ipswich",
+      "awayTeam": "Sunderland",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 2.68,
+          "draw": 3.3,
+          "away": 2.55
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Nottingham",
+      "awayTeam": "Leeds",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 2.22,
+          "draw": 3.46,
+          "away": 3.16
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Brentford",
+      "awayTeam": "Tottenham",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 2.33,
+          "draw": 3.51,
+          "away": 2.82
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Brighton",
+      "awayTeam": "Aston Villa",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 2.28,
+          "draw": 3.65,
+          "away": 2.86
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Manchester City",
+      "awayTeam": "Bournemouth",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 1.43,
+          "draw": 5.01,
+          "away": 5.99
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Newcastle",
+      "awayTeam": "Liverpool",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 3.18,
+          "draw": 3.8,
+          "away": 2.06
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Fulham",
+      "awayTeam": "Chelsea",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 3.05,
+          "draw": 3.63,
+          "away": 2.18
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    }
+  ]
+}
