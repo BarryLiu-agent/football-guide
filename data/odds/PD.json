@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T04:06:50Z",
+  "generatedAt": "2026-08-08T03:27:37Z",
   "league": "PD",
   "matches": [
     {
@@ -97,9 +97,9 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.0,
+          "home": 1.97,
           "draw": 3.3,
-          "away": 3.75
+          "away": 3.73
         },
         "totals": {
           "line": 2.5,
@@ -273,7 +273,7 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.84,
+          "home": 1.835,
           "draw": 3.45,
           "away": 4.125
         },
@@ -297,7 +297,7 @@
         "h2h": {
           "home": 1.85,
           "draw": 2.98,
-          "away": 4.5
+          "away": 4.6
         },
         "totals": {
           "line": 2.5,

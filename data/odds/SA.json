@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T04:06:51Z",
+  "generatedAt": "2026-08-08T03:27:38Z",
   "league": "SA",
   "matches": [
     {
@@ -59,7 +59,7 @@
         },
         "totals": {
           "line": 2.5,
-          "over": 2.41,
+          "over": 2.38,
           "under": 1.55
         }
       },

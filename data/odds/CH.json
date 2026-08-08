@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T04:06:54Z",
+  "generatedAt": "2026-08-08T03:27:45Z",
   "league": "CH",
   "matches": [
     {
@@ -9,7 +9,7 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.5350000000000001,
+          "home": 1.53,
           "draw": 4.0,
           "away": 5.6
         },
@@ -22,7 +22,7 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 39
+      "bookmakers": 37
     },
     {
       "homeTeam": "Bolton Wanderers",

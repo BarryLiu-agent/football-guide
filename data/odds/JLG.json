@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T04:06:59Z",
+  "generatedAt": "2026-08-08T03:28:01Z",
   "league": "JLG",
   "matches": [
     {
@@ -11,12 +11,12 @@
         "h2h": {
           "home": 4.2,
           "draw": 3.1,
-          "away": 1.935
+          "away": 1.9449999999999998
         },
         "totals": {
           "line": 2.5,
-          "over": 2.2,
-          "under": 1.72
+          "over": 2.45,
+          "under": 1.5550000000000002
         }
       },
       "sources": [
@@ -33,7 +33,7 @@
         "h2h": {
           "home": 1.865,
           "draw": 3.6,
-          "away": 3.815
+          "away": 3.8
         },
         "totals": {
           "line": 2.5,
@@ -53,14 +53,14 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.4050000000000002,
-          "draw": 3.075,
+          "home": 2.4,
+          "draw": 3.02,
           "away": 3.0300000000000002
         },
         "totals": {
           "line": 2.5,
           "over": 2.21,
-          "under": 1.6549999999999998
+          "under": 1.65
         }
       },
       "sources": [
@@ -76,13 +76,13 @@
       "markets": {
         "h2h": {
           "home": 1.55,
-          "draw": 3.935,
-          "away": 5.65
+          "draw": 3.925,
+          "away": 5.6
         },
         "totals": {
           "line": 2.5,
-          "over": 1.9,
-          "under": 1.88
+          "over": 1.915,
+          "under": 1.875
         }
       },
       "sources": [

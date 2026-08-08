@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T04:06:49Z",
+  "generatedAt": "2026-08-08T04:26:09Z",
   "dateRange": {
     "from": "2026-08-01",
     "to": "2026-09-12"
@@ -11133,7 +11133,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-07T20:03:42Z",
+      "lastUpdated": "2026-08-07T19:55:22Z",
       "homeTeam": {
         "id": 1909,
         "name": "SC Cambuur-Leeuwarden",
@@ -11153,7 +11153,7 @@
         "duration": "REGULAR",
         "fullTime": {
           "home": 0,
-          "away": 4
+          "away": 5
         },
         "halfTime": {
           "home": 0,

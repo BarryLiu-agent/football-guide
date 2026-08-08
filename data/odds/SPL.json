@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T04:06:57Z",
+  "generatedAt": "2026-08-08T03:27:52Z",
   "league": "SPL",
   "matches": [
     {
@@ -10,7 +10,7 @@
       "markets": {
         "h2h": {
           "home": 2.7,
-          "draw": 3.325,
+          "draw": 3.3,
           "away": 2.5
         },
         "totals": {
@@ -33,7 +33,7 @@
         "h2h": {
           "home": 2.3049999999999997,
           "draw": 3.3,
-          "away": 2.95
+          "away": 2.955
         },
         "totals": {
           "line": 2.5,
