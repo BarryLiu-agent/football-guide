@@ -36,7 +36,7 @@ if not API_KEY:
 API_BASE = "https://api.football-data.org/v4"
 HEADERS = {"X-Auth-Token": API_KEY}
 
-# Competition codes
+# Competition codes (Football-Data.org free tier 实际支持列表)
 COMPETITIONS = {
     "PL": "英超",
     "PD": "西甲",
@@ -44,16 +44,11 @@ COMPETITIONS = {
     "BL1": "德甲",
     "FL1": "法甲",
     "CL": "欧冠",
-    "EC": "英冠",
+    "ELC": "英冠",
     "DED": "荷甲",
     "PPL": "葡超",
-    "TSL": "土超",
-    "SPL": "苏超",
-    "BPL": "比甲",
     "BSA": "巴甲",
-    "MLS": "美职联",
-    "J1": "日职",
-    "KLE": "K联赛",
+    "CLI": "解放者杯",
 }
 
 # Project root (this script lives in scripts/, project is parent)

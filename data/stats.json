@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-08T04:26:09Z",
-  "totalMatches": 323,
+  "generatedAt": "2026-08-08T04:27:20Z",
+  "totalMatches": 423,
   "notableMatches": 70,
   "competitions": {
     "PL": "英超",
@@ -9,16 +9,11 @@
     "BL1": "德甲",
     "FL1": "法甲",
     "CL": "欧冠",
-    "EC": "英冠",
+    "ELC": "英冠",
     "DED": "荷甲",
     "PPL": "葡超",
-    "TSL": "土超",
-    "SPL": "苏超",
-    "BPL": "比甲",
     "BSA": "巴甲",
-    "MLS": "美职联",
-    "J1": "日职",
-    "KLE": "K联赛"
+    "CLI": "解放者杯"
   },
   "byCompetition": {
     "PL": 37,
@@ -26,8 +21,10 @@
     "SA": 34,
     "BL1": 25,
     "FL1": 33,
+    "ELC": 83,
     "DED": 49,
     "PPL": 45,
-    "BSA": 60
+    "BSA": 60,
+    "CLI": 17
   }
 }

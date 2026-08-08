@@ -707,6 +707,21 @@ async function loadToday() {
     return d >= today && d <= maxDate;
   });
 
+  // 合并"有赔率但无赛程"的比赛（如日职/K联赛/土超等 Football-Data 免费版不覆盖的联赛）
+  const fixtureKeys = new Set(filtered.map(m => normTeam(m.homeTeam?.name || m.homeTeam?.shortName) + '|' + normTeam(m.awayTeam?.name || m.awayTeam?.shortName)));
+  const extra = (lastPreds || [])
+    .filter(p => !fixtureKeys.has(normTeam(p.homeTeam) + '|' + normTeam(p.awayTeam)))
+    .map(p => ({
+      synthetic: true,
+      homeTeam: { name: p.homeTeam },
+      awayTeam: { name: p.awayTeam },
+      utcDate: p.kickoff || new Date().toISOString(),
+      competition: { code: p.league },
+      status: 'SCHEDULED',
+      pred: p
+    }));
+  filtered = filtered.concat(extra);
+
   if (activeLeagueFilter !== 'all') {
     // 按中文名匹配（兼容多代码，如 ED/DED 都对应荷甲）
     const target = COMPETITIONS[activeLeagueFilter];
