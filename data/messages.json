@@ -1,12 +1,199 @@
 {
-  "generatedAt": "2026-08-08T04:46:41Z",
+  "generatedAt": "2026-08-08T14:39:11Z",
   "total": 20,
   "messages": [
     {
       "source": "skysports",
       "type": "news",
-      "text": "Araujo set for surprise Liverpool loan move",
-      "timestamp": "Fri, 07 Aug 2026 22:51:00 BST",
+      "text": "Huddersfield Giants to leave home for Dewsbury amid major investment",
+      "timestamp": "Sat, 08 Aug 2026 15:09:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/rugby-league/news/12040/13570935/huddersfield-giants-moving-to-dewsbury-super-league-side-switching-home-from-2027-season-onwards",
+        "lang": "en",
+        "summary": "Betfred Super League side Huddersfield Giants have announced they are to leave the town and move to&#160;Dewsbury for the 2027 season onwards."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Nicholls pays tribute as Big Buck's dies aged 23",
+      "timestamp": "Sat, 08 Aug 2026 14:56:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/racing/news/12040/13570985/big-bucks-paul-nicholls-pays-tribute-as-legendary-stayer-dies-aged-23",
+        "lang": "en",
+        "summary": "Big Buck&#8217;s, one of the greatest staying hurdlers of all time, has died at the age of 23."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Australia survive late Japan rally as new coach Kiss makes winning start",
+      "timestamp": "Sat, 08 Aug 2026 13:44:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/rugby-union/news/12040/13570951/australia-edge-japan-35-32-to-give-les-kiss-winning-start-in-first-match-as-head-coach",
+        "lang": "en",
+        "summary": "Australia held on for a tight 35-32 victory over Japan, despite a first-half red card for Miles Amatosero, as they made a winning start in head coach Les Kiss' first match in charge.&#160;"
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Man Utd vs PSG team news LIVE!",
+      "timestamp": "Fri, 07 Aug 2026 17:47:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/paris-saint-germain-vs-manchester-united/live/555766",
+        "lang": "en",
+        "summary": ""
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Rockets clinch qualification for women's knockouts in The Hundred",
+      "timestamp": "Sat, 08 Aug 2026 14:15:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/cricket/news/12040/13570938/the-hundred-trent-rockets-continue-dominance-of-womens-competition-as-qualification-for-knockouts-is-clinched",
+        "lang": "en",
+        "summary": "Trent Rockets booked a place in the knockouts of The Hundred women's competition with a thumping nine-wicket win over already-eliminated MI London."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "'I'm your warrior' - Guimaraes moves to Arsenal from Newcastle for £75m",
+      "timestamp": "Sat, 08 Aug 2026 12:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13570096/bruno-guimaraes-arsenal-sign-midfielder-in-75m-transfer-as-newcastle-surpass-240m-in-player-sales-this-summer",
+        "lang": "en",
+        "summary": "Arsenal&#160;have signed midfielder Bruno Guimaraes from Newcastle in a &#163;75m transfer."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Bruno Guimaraes' FIERY clashes against Rice and Arsenal!",
+      "timestamp": "Thu, 09 Jul 2026 14:25:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13561965/bruno-guimaraes-when-arsenal-target-took-on-gunners-in-fiery-clash",
+        "lang": "en",
+        "summary": "A look back at when Arsenal target Bruno Guimaraes took on the Gunners in a fiery clash at St James' Park in 2023. "
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Guimaraes reveals hilarious Rice and Gabriel messages!",
+      "timestamp": "Sat, 08 Aug 2026 13:21:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13570945/bruno-guimaraes-reveals-hilarious-declan-rice-and-gabriel-messages-no-fights-now-were-friends",
+        "lang": "en",
+        "summary": "Bruno Guimaraes reveals hilarious Declan Rice and Gabriel messages before signing for Arsenal. Credit: Arsenal."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Chelsea cruise to big win over Milan LIVE!",
+      "timestamp": "Fri, 07 Aug 2026 17:42:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/live-blog/12040/13570761/chelsea-vs-ac-milan-live-pre-season-friendly-team-news-preview-score-updates-and-live-blog-from-jakarta",
+        "lang": "en",
+        "summary": ""
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "'I'd rather fight Aaron for world title' - Walsh dismisses Stevie McKenna call-out",
+      "timestamp": "Sat, 08 Aug 2026 07:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/boxing/news/12040/13570679/callum-walsh-aaron-mckenna-world-title-fight-makes-sense-fighting-stephen-mckenna-doesnt",
+        "lang": "en",
+        "summary": "Callum Walsh would entertain a fight against Aaron McKenna over Stephen McKenna, insisting all-Irish clashes only make sense with the world title on the line."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Where does Guimaraes fit in at Arsenal?",
+      "timestamp": "Sat, 08 Aug 2026 12:01:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13569644/bruno-guimaraes-to-arsenal-how-does-ex-newcastle-captain-fit-in-and-what-does-it-mean-for-martin-zubimendi-martin-odegaard-myles-lewis-skelly",
+        "lang": "en",
+        "summary": "It is easy to understand why Arsenal have signed Bruno Guimaraes. The now ex-Newcastle captain is one of the Premier League's most complete midfielders, capable of dominating and destroying but also scoring and creating, with passing ability to match his physicality."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Today on Sky Sports Racing: Ascot stages Shergar Cup meeting",
+      "timestamp": "Sat, 08 Aug 2026 07:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/racing/news/12040/13570627/today-on-sky-sports-racing-ascot-stages-shergar-cup-meeting-with-lingfield-also-live-on-saturday",
+        "lang": "en",
+        "summary": "We have a busy day's racing on Saturday with Flat action from Ascot and Lingfield Park, live on Sky Sports Racing..."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Bowen starts for West Ham while Norwich lead early | All Carabao Cup on Sky LIVE!",
+      "timestamp": "Sat, 08 Aug 2026 13:30:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/live-blog/12040/13570685/carabao-cup-first-round-live-scores-match-updates-and-free-highlights",
+        "lang": "en",
+        "summary": ""
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Brit Smith keeps pressure on leader Hossler after Wyndham Championship R2",
+      "timestamp": "Fri, 07 Aug 2026 23:15:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13570878/wyndham-championship-day-two-highlights",
+        "lang": "en",
+        "summary": "Highlights from day two of the Wyndham Championship held at Sedgefield Country Club in Greensboro, North Carolina."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Leigh Leopards boost play-off hopes with 22-14 win over York Knights",
+      "timestamp": "Fri, 07 Aug 2026 23:04:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13570874/leigh-leopards-22-14-york-knights-super-league-highlights",
+        "lang": "en",
+        "summary": "Highlights of Leigh Leopards against York Knights from the Super League."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Bracey shares memories of Lawrence ahead of Sunday's tribute",
+      "timestamp": "Sat, 08 Aug 2026 08:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/cricket/news/12040/13570579/james-bracey-on-memories-of-syd-lawrence-ahead-of-day-to-raise-funds-for-motor-neurone-disease-to-see-emotion-on-his-face-was-very-special",
+        "lang": "en",
+        "summary": "When James Bracey thinks of Syd Lawrence, he does not first think of wickets, records or milestones."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Hull KR thump Castleford 44-0",
+      "timestamp": "Fri, 07 Aug 2026 22:25:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13570863/castleford-tigers-0-44-hull-kr-super-league-highlights",
+        "lang": "en",
+        "summary": "Highlights of Castleford Tigers against Hull KR from the Super League."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Araujo set for medical ahead of surprise Liverpool loan move",
+      "timestamp": "Sat, 08 Aug 2026 10:00:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/football/news/12040/13570871/ronald-araujo-transfer-news-liverpool-agree-loan-deal-for-barcelona-defender-to-add-depth-at-centre-back",
         "lang": "en",
@@ -27,199 +214,12 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Late winner sees Leeds edge Wakefield",
-      "timestamp": "Fri, 07 Aug 2026 22:00:00 BST",
+      "text": "McKenna vs Oliha and Walsh vs Denny big-fight predictions",
+      "timestamp": "Sat, 08 Aug 2026 07:00:00 BST",
       "metadata": {
-        "link": "https://www.skysports.com/watch/video/13570851/wakefield-trinity-22-24-leeds-rhinos-super-league-highlights",
+        "link": "https://www.skysports.com/boxing/news/12040/13570676/aaron-mckenna-vs-etinosa-oliha-and-callum-walsh-vs-tyler-denny-big-fight-predictions-who-will-win-the-middleweight-showdowns",
         "lang": "en",
-        "summary": "Highlights of Wakefield Trinity against Leeds Rhinos from the Super League."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Debut Lankshear goal sees Boro past Wrexham as Wolves & Stevenage progress",
-      "timestamp": "Fri, 07 Aug 2026 22:05:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13570859/carabao-cup-will-lankshear-strike-sees-middlesbrough-past-wrexham-as-wolves-beat-port-vale-and-stevenage-edge-wycombe",
-        "lang": "en",
-        "summary": "Will Lankshear's debut strike ensured Middlesbrough made a winning start to the season as they beat Wrexham 1-0 in the Carabao Cup first round."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "New Zealand begin South Africa tour with flattering win over Stormers",
-      "timestamp": "Fri, 07 Aug 2026 16:42:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/rugby-union/news/12040/13570742/new-zealands-tour-of-south-africa-all-blacks-pull-away-late-on-in-flattering-38-21-win-over-stormers",
-        "lang": "en",
-        "summary": "New Zealand's first full-scale tour of South Africa in 30 years began with an underwhelming 38-21 win over the Stormers."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Coventry latest: Ghana midfielder Yirenkyi joins in £26m deal",
-      "timestamp": "Fri, 07 Aug 2026 18:41:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/live-blog/12040/13541482/coventry-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights",
-        "lang": "en",
-        "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "UEFA aware of allegation it paid off Infantino's 'mistress' while he worked for them",
-      "timestamp": "Fri, 07 Aug 2026 22:16:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13570861/gianni-infantino-uefa-aware-of-allegation-it-paid-off-an-alleged-mistress-of-fifa-president-while-he-worked-at-european-governing-body",
-        "lang": "en",
-        "summary": "UEFA has confirmed it is aware of an allegation that European football's governing body paid off an alleged mistress of Gianni Infantino. "
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "West Ham latest: Sullivan likely to attend games despite advice",
-      "timestamp": "Thu, 06 Aug 2026 11:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/live-blog/12040/13210475/west-ham-latest-news",
-        "lang": "en",
-        "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Flintoff steps down as England Lions head coach",
-      "timestamp": "Fri, 07 Aug 2026 18:15:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/cricket/news/12040/13570774/andrew-flintoff-steps-down-as-england-lions-head-coach",
-        "lang": "en",
-        "summary": "Andrew Flintoff has stepped down as head coach of the England Lions."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Hull beats pro course record at Centurion! | Story of her round",
-      "timestamp": "Fri, 07 Aug 2026 18:12:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13570772/charley-hull-beats-pro-course-record-at-centurion-story-of-her-round",
-        "lang": "en",
-        "summary": "The story of Charley Hull's record-breaking second round at the PIF London Championship from the Centurion Club. "
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Leeds pull off comeback to beat Wakefield, KR and Leigh pick up crucial wins",
-      "timestamp": "Fri, 07 Aug 2026 23:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/rugby-league/news/12040/13570737/super-league-leeds-rhinos-secure-play-off-spot-with-comeback-win-over-wakefield-trinity-hull-kr-and-leigh-leopards-pick-up-crucial-victories",
-        "lang": "en",
-        "summary": "Leeds underlined their Super League title credentials as Chris Hankinson's converted try capped a thrilling comeback 24-22 win over Wakefield at a packed-out DIY Kitchens Stadium."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Liverpool Barcola deal difficult to complete after talks with PSG",
-      "timestamp": "Fri, 07 Aug 2026 18:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13570766/bradley-barcola-transfer-news-liverpool-deal-for-psg-winger-difficult-to-complete-after-talks",
-        "lang": "en",
-        "summary": "Liverpool have held preliminary talks with Paris Saint-Germain over the possibility of signing Bradley Barcola."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "White: I know where the Fury-AJ venue is - I did the deal!",
-      "timestamp": "Fri, 07 Aug 2026 16:11:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/boxing/news/12040/13570724/dana-white-i-know-where-the-tyson-fury-vs-anthony-joshua-venue-is-i-did-the-deal",
-        "lang": "en",
-        "summary": "The long-awaited heavyweight showdown between Tyson Fury and Anthony Joshua will take place \"where the money is\", says Dana White."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Fulham latest: Garcia and Palacios make losing debuts in loss to Palace",
-      "timestamp": "Fri, 07 Aug 2026 20:54:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/live-blog/12040/13279313/fulham-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights",
-        "lang": "en",
-        "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "'What a run, what an impact!' | Faatili's moment of magic sets up Uele try",
-      "timestamp": "Fri, 07 Aug 2026 20:53:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13570819/super-league-caius-faatilis-moment-of-magic-sets-up-caleb-hamlin-uele-try",
-        "lang": "en",
-        "summary": "Caius Faatili produced an incredible run as he set up Caleb Hamlin-Uele's try, extending Wakefield's lead over Leeds in the Super League."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Wilkin: Manner of defeat is alarming! | Tomkins: So much wrong at Saints",
-      "timestamp": "Thu, 06 Aug 2026 22:39:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13570537/jon-wilkin-and-sam-tomkins-slam-st-helens-theres-so-many-things-wrong",
-        "lang": "en",
-        "summary": "Jon Wilkin and Sam Tomkins were shocked by the way St Helens lost to Hull FC and look at the massive decline of the club."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "'His dad is so proud!' | Sinfield scores in front of famous father",
-      "timestamp": "Fri, 07 Aug 2026 21:12:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13570827/super-league-jack-sinfield-scores-in-front-of-famous-father-kevin",
-        "lang": "en",
-        "summary": "Jack Sinfield scored for Wakefield against his father's former side Leeds as rugby league legend Kevin watched on proudly."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "'Would you believe it?!' | Leeds score late winning try to break Wakefield hearts",
-      "timestamp": "Fri, 07 Aug 2026 22:04:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13570857/super-league-leeds-rhinos-score-late-winning-try-to-break-wakefield-trinity-hearts",
-        "lang": "en",
-        "summary": "Chris Hankinson's late try saw Leeds Rhinos complete a dramatic comeback as they beat title rivals Wakefield Trinity to remain top of the table."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Birmingham Phoenix knocked out by SunRisers Leeds",
-      "timestamp": "Fri, 07 Aug 2026 16:42:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/cricket/news/12040/13570736/the-hundred-sunrisers-leeds-win-by-45-runs-to-eliminate-birmingham-phoenix",
-        "lang": "en",
-        "summary": "A win for SunRisers Leeds saw the elimination of Birmingham Phoenix from the men's competition, just as with their women's team earlier."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Shergar Cup Sprint tips: Kate, Sam and Jamie are taking on Ascot favourite",
-      "timestamp": "Fri, 07 Aug 2026 15:21:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/racing/news/12040/13570705/weekend-winners-kate-tracey-sam-boswell-and-jamie-lynch-have-their-say-on-saturdays-shergar-cup-sprint-at-ascot",
-        "lang": "en",
-        "summary": "Kate Tracey, Sam Boswell and Jamie Lynch reconvene to discuss the best betting angles for the Shergar Cup Sprint at Ascot on Saturday,<em> live on Sky Sports Racing.</em>"
+        "summary": "Experts have their say ahead of the Aaron McKenna vs Etinosa Oliha middleweight world championship clash and Callum Walsh's crucial fight against Tyler Denny, live on <em>Sky Sports</em> from 7pm."
       }
     }
   ]
