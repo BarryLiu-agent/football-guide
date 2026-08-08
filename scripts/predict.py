@@ -331,7 +331,7 @@ class AnalysisWriter:
                     parts.append(f"{home}信号 {h_sig:+.2f}（{h_men}条提及）")
                 if a_men:
                     parts.append(f"{away}信号 {a_sig:+.2f}（{a_men}条提及）")
-                lines.append(f"【消息面】{"，".join(parts)}。")
+                lines.append(f"【消息面】{'，'.join(parts)}。")
             ev = msg_result.get("evidence", [])[:2]
             for e in ev:
                 lines.append(f"📰 {e['text']}（{'、'.join(e['keywords'][:3])}）")
