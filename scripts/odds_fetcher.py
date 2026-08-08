@@ -7,7 +7,7 @@ odds_fetcher.py - 博彩赔率抓取
 
 可扩展接口:
   OddsSource (抽象基类) - 实现 fetch(league_code) -> list[dict]
-    已有实现: BetExplorerSource (默认, 公开页抓取), TheOddsApiSource (可选)
+    已有实现: TheOddsApiSource
   新数据源: 继承 OddsSource, 在 config/odds_sources.json 注册即可
 """
 
@@ -49,110 +49,6 @@ class OddsSource:
     def normalize(self, raw: dict) -> dict:
         """归一化单场比赛结构。"""
         raise NotImplementedError
-
-
-# ── BetExplorer 实现（默认）──────────────────────────────
-
-class BetExplorerSource(OddsSource):
-    """从 BetExplorer 公开页面抓取赔率（无需注册）。"""
-
-    LEAGUE_MAP = {
-        "PL": "football/england/premier-league",
-        "PD": "football/spain/laliga",
-        "SA": "football/italy/serie-a",
-        "BL1": "football/germany/bundesliga",
-        "FL1": "football/france/ligue-1",
-        "CL": "football/europe/champions-league",
-    }
-    HEADERS = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
-    }
-
-    def fetch(self, league_code: str) -> list:
-        if league_code not in self.LEAGUE_MAP:
-            print(f"    - {league_code}: 未配置联赛路径, 跳过")
-            return []
-
-        url = f"{self.config['baseUrl']}/{self.LEAGUE_MAP[league_code]}/fixtures/"
-        try:
-            r = requests.get(url, headers=self.HEADERS, timeout=20)
-            r.raise_for_status()
-        except Exception as e:
-            print(f"    - {league_code}: 请求失败 {e}")
-            return []
-
-        return self._parse(r.text, league_code)
-
-    def _parse(self, html: str, league_code: str) -> list:
-        """解析 BetExplorer 比赛表格。尽力而为：结构变化时返回空列表而非崩溃。"""
-        try:
-            from bs4 import BeautifulSoup
-        except ImportError:
-            print("    - 需要 beautifulsoup4: pip install beautifulsoup4")
-            return []
-
-        matches = []
-        soup = BeautifulSoup(html, "lxml")
-        table = soup.find("table", class_="table-main--leaguefixtures")
-        if not table:
-            table = soup.find("table", class_="table-main")
-        if not table:
-            return []
-
-        for row in table.find_all("tr"):
-            # 只处理含赔率的行
-            odds_cells = row.find_all("td", class_="table-main__odds")
-            if not odds_cells:
-                continue
-            try:
-                # 队名: <a class="in-match"><span>Home</span> - <span>Away</span></a>
-                link = row.find("a", class_="in-match")
-                if not link:
-                    continue
-                spans = link.find_all("span")
-                if len(spans) < 2:
-                    continue
-                home = spans[0].get_text(strip=True)
-                away = spans[1].get_text(strip=True)
-                match_url = link.get("href", "")
-
-                # h2h 赔率: 前 3 个 odds cell 的 data-odd
-                h2h = []
-                for cell in odds_cells[:3]:
-                    btn = cell.find("button", attrs={"data-odd": True})
-                    if btn:
-                        try:
-                            h2h.append(float(btn["data-odd"]))
-                        except (ValueError, KeyError):
-                            pass
-                if len(h2h) < 3:
-                    continue
-
-                matches.append(self.normalize({
-                    "league": league_code,
-                    "home": home, "away": away,
-                    "matchUrl": match_url,
-                    "h2h": {"home": h2h[0], "draw": h2h[1], "away": h2h[2]},
-                }))
-            except Exception:
-                continue
-        return matches
-
-    def normalize(self, raw: dict) -> dict:
-        return {
-            "league": raw["league"],
-            "homeTeam": raw["home"],
-            "awayTeam": raw["away"],
-            "kickoff": raw.get("kickoff", ""),
-            "matchUrl": raw.get("matchUrl", ""),
-            "markets": {
-                "h2h": raw["h2h"],
-                "totals": raw.get("totals"),
-                "spreads": raw.get("spreads"),
-            },
-            "bookmakers": 1,
-            "source": "betexplorer",
-        }
 
 
 # ── The Odds API 实现（可选降级）─────────────────────────
@@ -209,6 +105,7 @@ class TheOddsApiSource(OddsSource):
         away_name = raw.get("away_team", "")
         h2h = {"home": [], "draw": [], "away": []}
         totals = {"over": [], "under": []}
+        spreads = {"home": [], "away": []}
         for bm in raw.get("bookmakers", []):
             for market in bm.get("markets", []):
                 key = market["key"]
@@ -226,7 +123,25 @@ class TheOddsApiSource(OddsSource):
                             totals["over"].append(o["price"])
                         elif o["name"].lower() == "under":
                             totals["under"].append(o["price"])
+                elif key == "spreads":
+                    for o in market["outcomes"]:
+                        point = o.get("point")
+                        if o["name"] == home_name:
+                            spreads["home"].append({"price": o["price"], "point": point})
+                        elif o["name"] == away_name:
+                            spreads["away"].append({"price": o["price"], "point": point})
         med = lambda xs: statistics.median(xs) if xs else None
+        # 让球盘: 取最常见点差(mode)，赔率取中位数
+        def spread_agg(items):
+            if not items:
+                return None
+            from collections import Counter
+            points = [i["point"] for i in items if i.get("point") is not None]
+            if not points:
+                return None
+            point = Counter(points).most_common(1)[0][0]
+            prices = [i["price"] for i in items if i.get("point") == point]
+            return {"point": point, "price": med(prices)}
         return {
             "league": raw.get("sport_key", ""),
             "homeTeam": raw.get("home_team", ""),
@@ -236,7 +151,7 @@ class TheOddsApiSource(OddsSource):
             "markets": {
                 "h2h": {"home": med(h2h["home"]), "draw": med(h2h["draw"]), "away": med(h2h["away"])},
                 "totals": {"over": med(totals["over"]), "under": med(totals["under"])},
-                "spreads": None,
+                "spreads": {"home": spread_agg(spreads["home"]), "away": spread_agg(spreads["away"])},
             },
             "bookmakers": len(raw.get("bookmakers", [])),
             "source": "theoddsapi",
@@ -246,7 +161,6 @@ class TheOddsApiSource(OddsSource):
 # ── 源工厂（配置驱动）────────────────────────────────────
 
 SOURCE_REGISTRY = {
-    "betexplorer": BetExplorerSource,
     "theoddsapi": TheOddsApiSource,
 }
 
@@ -325,6 +239,20 @@ def aggregate(matches_by_source):
                 "under": median_or_none([t["under"] for t in totals_parsed]),
             }
 
+        # 让球聚合：取最常见盘口点差，赔率中位数
+        def spread_val(side):
+            items = []
+            for m in ms:
+                s = (m.get("markets", {}).get("spreads") or {}).get(side)
+                if s and s.get("point") is not None:
+                    items.append(s)
+            if not items:
+                return None
+            from collections import Counter
+            point = Counter(i["point"] for i in items).most_common(1)[0][0]
+            prices = [i["price"] for i in items if i["point"] == point]
+            return {"point": point, "price": median_or_none(prices)}
+
         results.append({
             "homeTeam": ms[0]["homeTeam"],
             "awayTeam": ms[0]["awayTeam"],
@@ -333,6 +261,7 @@ def aggregate(matches_by_source):
             "markets": {
                 "h2h": {"home": h2h_val("home"), "draw": h2h_val("draw"), "away": h2h_val("away")},
                 "totals": totals_out,
+                "spreads": {"home": spread_val("home"), "away": spread_val("away")},
             },
             "sources": [m["source"] for m in ms],
             "bookmakers": sum(m.get("bookmakers", 0) for m in ms),
@@ -359,6 +288,7 @@ def main():
 
     ODDS_DIR.mkdir(parents=True, exist_ok=True)
     all_odds = []
+    fetch_failed = False
     for league in args.leagues:
         print(f"  {league}...")
         per_source = []
@@ -377,8 +307,21 @@ def main():
             print(f"    ✓ {len(merged)} 场赔率 -> data/odds/{league}.json")
             all_odds.extend(merged)
         else:
+            # 抓取失败/无数据时保留旧文件，避免清空已有赔率
+            old = ODDS_DIR / f"{league}.json"
+            if old.exists():
+                with open(old, encoding="utf-8") as f:
+                    old_data = json.load(f)
+                n_old = len(old_data.get("matches", []))
+                if n_old:
+                    print(f"    - 本次无新数据, 保留旧数据 {n_old} 场")
+                    all_odds.extend(old_data["matches"])
+                    continue
             print(f"    - 无数据")
+            fetch_failed = True
 
+    if fetch_failed:
+        print("⚠ 部分联赛抓取失败(可能配额耗尽或限流), 已保留旧数据")
     print(f"\n总计: {len(all_odds)} 场比赛赔率")
     return 0
 

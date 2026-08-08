@@ -359,6 +359,7 @@ body {
     <div class="mkt-tabs">
       <button class="mkt-tab active" data-mkt="1x2" onclick="switchMkt('1x2')">胜负 1X2</button>
       <button class="mkt-tab" data-mkt="ou" onclick="switchMkt('ou')">大小球</button>
+      <button class="mkt-tab" data-mkt="sp" onclick="switchMkt('sp')">让球</button>
       <button class="mkt-tab" data-mkt="cs" onclick="switchMkt('cs')">波胆</button>
     </div>
     <div id="mktContent"></div>
@@ -509,7 +510,9 @@ function getScoreDisplay(match) {
 
 // ===== 预测匹配（比赛页 ↔ 预测数据） =====
 function normTeam(s) {
-  return (s || '').toLowerCase().replace(/\bfc\b/g, '').replace(/[^a-z0-9 ]/g, '').trim();
+  return (s || '').toLowerCase()
+    .replace(/\b(fc|afc|cf|sc)\b/g, '')
+    .replace(/[^a-z0-9 ]/g, '').trim();
 }
 
 function findPrediction(home, away) {
@@ -780,23 +783,34 @@ function switchMkt(mkt) {
     return;
   }
   const probs = p.probabilities || {};
+  const raw = p.rawOdds || {};
   const pct = v => v == null ? '—' : `${Math.round(v * 100)}%`;
+  const odds = v => v == null ? '—' : v;
 
   if (mkt === '1x2') {
     const h = probs.home, d = probs.draw, a = probs.away;
     el.innerHTML = `
       <div class="odds-grid">
-        <div class="odds-box"><div class="label">主胜</div><div class="value">${pct(h)}</div><div class="prob">隐含概率</div></div>
-        <div class="odds-box"><div class="label">平局</div><div class="value">${pct(d)}</div><div class="prob">隐含概率</div></div>
-        <div class="odds-box"><div class="label">客胜</div><div class="value">${pct(a)}</div><div class="prob">隐含概率</div></div>
+        <div class="odds-box"><div class="label">主胜</div><div class="value">${odds(raw.home)}</div><div class="prob">${pct(h)} 隐含概率</div></div>
+        <div class="odds-box"><div class="label">平局</div><div class="value">${odds(raw.draw)}</div><div class="prob">${pct(d)} 隐含概率</div></div>
+        <div class="odds-box"><div class="label">客胜</div><div class="value">${odds(raw.away)}</div><div class="prob">${pct(a)} 隐含概率</div></div>
       </div>`;
   } else if (mkt === 'ou') {
     const ou = p.overUnder || {};
     el.innerHTML = `
       <div class="odds-grid">
-        <div class="odds-box"><div class="label">大球 Over ${ou.line ?? 2.5}</div><div class="value">${pct(ou.over)}</div><div class="prob">概率</div></div>
-        <div class="odds-box"><div class="label">小球 Under ${ou.line ?? 2.5}</div><div class="value">${pct(ou.under)}</div><div class="prob">概率</div></div>
-        <div class="odds-box"><div class="label">倾向</div><div class="value" style="font-size:0.95rem">${(ou.over || 0) >= 0.5 ? '大球' : '小球'}</div><div class="prob">泊松模型</div></div>
+        <div class="odds-box"><div class="label">大球 Over ${ou.line ?? 2.5}</div><div class="value">${odds(ou.overPrice)}</div><div class="prob">${pct(ou.over)} 概率</div></div>
+        <div class="odds-box"><div class="label">小球 Under ${ou.line ?? 2.5}</div><div class="value">${odds(ou.underPrice)}</div><div class="prob">${pct(ou.under)} 概率</div></div>
+        <div class="odds-box"><div class="label">倾向</div><div class="value" style="font-size:0.95rem">${(ou.over || 0) >= 0.5 ? '大球' : '小球'}</div><div class="prob">${ou.overPrice ? '真实盘口' : '泊松模型'}</div></div>
+      </div>`;
+  } else if (mkt === 'sp') {
+    const sp = p.spreads || {};
+    const fmt = s => s ? `${s.point > 0 ? '+' : ''}${s.point} (${s.price})` : '—';
+    el.innerHTML = `
+      <div class="odds-grid">
+        <div class="odds-box"><div class="label">主队让球</div><div class="value" style="font-size:0.9rem">${fmt(sp.home)}</div><div class="prob">盘口 (赔率)</div></div>
+        <div class="odds-box"><div class="label">客队让球</div><div class="value" style="font-size:0.9rem">${fmt(sp.away)}</div><div class="prob">盘口 (赔率)</div></div>
+        <div class="odds-box"><div class="label">解读</div><div class="value" style="font-size:0.85rem">${sp.home && sp.home.point < 0 ? '主队让球' : (sp.away && sp.away.point < 0 ? '客队让球' : '平手盘')}</div><div class="prob">市场倾向</div></div>
       </div>`;
   } else if (mkt === 'cs') {
     const cs = p.correctScores || [];

@@ -3,11 +3,11 @@ name: Daily Data Fetch & Deploy
 on:
   schedule:
     # 每天一次 UTC 02:00（北京 10:00）。
-    # The Odds API 免费配额 500/月：17 联赛 × 每天1次 ≈ 510/月，需控制在配额内
+    # The Odds API 免费配额 500/月：16 联赛 × 每天1次 ≈ 480/月
     - cron: '0 2 * * *'
   push:
     branches: [main]
-  workflow_dispatch:  # 允许手动触发
+  workflow_dispatch:  # 允许手动触发（消耗配额，注意剩余量）
 
 jobs:
   fetch-and-deploy:

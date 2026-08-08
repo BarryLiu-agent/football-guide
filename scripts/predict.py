@@ -288,38 +288,56 @@ class AnalysisWriter:
     """基于赔率/波胆/大小球/消息信号生成中文文字分析。"""
 
     @staticmethod
-    def generate(home, away, odds_result, msg_result, score_model, ou=None):
+    def generate(home, away, odds_result, msg_result, score_model, ou=None, spreads=None):
         lines = []
         prob = odds_result.get("prob") if odds_result else None
+        raw = odds_result.get("rawOdds") if odds_result else None
 
-        # 1. 胜负分析
+        # 1. 胜负分析（含真实赔率）
         if prob:
             ph, pd, pa = prob["home"], prob["draw"], prob["away"]
+            odds_str = ""
+            if raw and all(raw.get(k) for k in ("home", "draw", "away")):
+                odds_str = f"（赔率 {raw['home']} / {raw['draw']} / {raw['away']}）"
             if ph >= 0.55:
-                verdict = f"市场高度看好主队{home}，主胜隐含概率 {ph:.0%}"
+                verdict = f"市场高度看好主队{home}，主胜隐含概率 {ph:.0%}{odds_str}"
             elif pa >= 0.55:
-                verdict = f"市场明显看好客队{away}，客胜隐含概率 {pa:.0%}"
+                verdict = f"市场明显看好客队{away}，客胜隐含概率 {pa:.0%}{odds_str}"
             elif ph >= pa and ph - pa < 0.15:
-                verdict = f"双方实力接近，主队{home}略占优（主胜 {ph:.0%} vs 客胜 {pa:.0%}）"
+                verdict = f"双方实力接近，主队{home}略占优（主胜 {ph:.0%} vs 客胜 {pa:.0%}）{odds_str}"
             else:
-                verdict = f"比赛悬念较大，主胜 {ph:.0%} / 平 {pd:.0%} / 客胜 {pa:.0%}"
+                verdict = f"比赛悬念较大，主胜 {ph:.0%} / 平 {pd:.0%} / 客胜 {pa:.0%}{odds_str}"
             lines.append(f"【胜负】{verdict}。")
 
-        # 2. 波胆分析
+        # 2. 让球分析
+        if spreads and spreads.get("home") and spreads.get("away"):
+            hp, ap = spreads["home"], spreads["away"]
+            # The Odds API: home point 为负表示主队让球（如 -1.5）
+            if hp["point"] < 0:
+                line_txt = f"主队{home}让 {abs(hp['point'])} 球（盘口赔率 {hp['price']} / {ap['price']}）"
+            elif ap["point"] < 0:
+                line_txt = f"客队{away}让 {abs(ap['point'])} 球（盘口赔率 {hp['price']} / {ap['price']}）"
+            else:
+                line_txt = f"平手盘（主 {hp['point']} / 客 {ap['point']}，赔率 {hp['price']} / {ap['price']}）"
+            lines.append(f"【让球】{line_txt}。")
+
+        # 3. 波胆分析
         cs = score_model.correct_scores(3)
         if cs:
-            top = cs[0]
             cs_str = "、".join(f"{c['score']}（{c['prob']:.0%}）" for c in cs)
             lines.append(f"【波胆】泊松模型推算最可能比分：{cs_str}。")
 
-        # 3. 大小球（真实赔率优先，否则泊松）
+        # 4. 大小球（真实赔率优先，否则泊松）
         if not ou:
             ou = score_model.over_under(2.5)
         if ou:
             direction = "大球" if ou["over"] >= 0.5 else "小球"
-            lines.append(f"【大小球】{ou['line']} 球盘口：大球 {ou['over']:.0%} / 小球 {ou['under']:.0%}，倾向{direction}。")
+            price_str = ""
+            if ou.get("overPrice") and ou.get("underPrice"):
+                price_str = f"（赔率 大 {ou['overPrice']} / 小 {ou['underPrice']}）"
+            lines.append(f"【大小球】{ou['line']} 球盘口：大球 {ou['over']:.0%} / 小球 {ou['under']:.0%}{price_str}，倾向{direction}。")
 
-        # 4. 消息信号
+        # 5. 消息信号
         if msg_result:
             signals = msg_result.get("signals", {})
             h_sig = signals.get(home.lower(), {}).get("score", 0)
@@ -337,10 +355,11 @@ class AnalysisWriter:
             for e in ev:
                 lines.append(f"📰 {e['text']}（{'、'.join(e['keywords'][:3])}）")
 
-        # 5. 综合结论
+        # 6. 综合结论
         if prob:
             winner = home if prob["home"] >= prob["away"] else away
-            lines.append(f"【结论】综合赔率与消息，{winner}不败概率更高，关注波胆 {cs[0]['score']} 方向。")
+            cs0 = cs[0]["score"] if cs else ""
+            lines.append(f"【结论】综合赔率与消息，{winner}不败概率更高，关注波胆 {cs0} 方向。")
 
         if not lines:
             lines.append("暂无足够数据生成分析。")
@@ -419,15 +438,21 @@ def main():
             if totals_mkt and totals_mkt.get("over") and totals_mkt.get("under"):
                 po, pu = 1 / totals_mkt["over"], 1 / totals_mkt["under"]
                 s = po + pu
-                ou = {"line": totals_mkt["line"], "over": round(po / s, 3), "under": round(pu / s, 3)}
+                ou = {"line": totals_mkt["line"], "over": round(po / s, 3), "under": round(pu / s, 3),
+                      "overPrice": totals_mkt["over"], "underPrice": totals_mkt["under"]}
             if not ou:
                 ou = score_model.over_under(2.5)
             pred["overUnder"] = ou
+            # 真实赔率数值（1X2）
+            raw_odds = odds_result.get("rawOdds") if odds_result else None
+            pred["rawOdds"] = raw_odds
+            # 让球盘口
+            pred["spreads"] = m.get("markets", {}).get("spreads")
             # 预测比分 = 泊松模型最可能波胆（比期望值四舍五入更有区分度）
             top_cs = score_model.correct_scores(1)
             if top_cs:
                 pred["predictedScore"] = top_cs[0]["score"]
-            pred["analysis"] = AnalysisWriter.generate(home, away, odds_result, msg_result, score_model, ou)
+            pred["analysis"] = AnalysisWriter.generate(home, away, odds_result, msg_result, score_model, ou, pred["spreads"])
             predictions.append(pred)
 
     out = {
