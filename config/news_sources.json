@@ -1,0 +1,20 @@
+{
+  "sources": [
+    {
+      "id": "espn",
+      "name": "ESPN Soccer",
+      "type": "rss",
+      "url": "https://www.espn.com/espn/rss/soccer/news",
+      "lang": "en",
+      "enabled": true
+    },
+    {
+      "id": "skysports",
+      "name": "Sky Sports Football",
+      "type": "rss",
+      "url": "https://www.skysports.com/rss/12040",
+      "lang": "en",
+      "enabled": true
+    }
+  ]
+}

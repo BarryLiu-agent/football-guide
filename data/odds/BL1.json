@@ -1,0 +1,150 @@
+{
+  "generatedAt": "2026-08-08T01:38:05Z",
+  "league": "BL1",
+  "matches": [
+    {
+      "homeTeam": "Bayern Munich",
+      "awayTeam": "Stuttgart",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 1.29,
+          "draw": 6.34,
+          "away": 7.81
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "FC Koln",
+      "awayTeam": "Hoffenheim",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 2.86,
+          "draw": 3.66,
+          "away": 2.31
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Elversberg",
+      "awayTeam": "Bayer Leverkusen",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 5.13,
+          "draw": 4.66,
+          "away": 1.54
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Mainz",
+      "awayTeam": "Paderborn",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 1.69,
+          "draw": 3.93,
+          "away": 4.58
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "RB Leipzig",
+      "awayTeam": "B. Monchengladbach",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 1.54,
+          "draw": 4.5,
+          "away": 5.41
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Union Berlin",
+      "awayTeam": "Eintracht Frankfurt",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 2.37,
+          "draw": 3.54,
+          "away": 2.85
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Dortmund",
+      "awayTeam": "Hamburger SV",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 1.33,
+          "draw": 5.48,
+          "away": 8.1
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Freiburg",
+      "awayTeam": "Werder Bremen",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 2.06,
+          "draw": 3.54,
+          "away": 3.49
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    },
+    {
+      "homeTeam": "Augsburg",
+      "awayTeam": "Schalke",
+      "kickoff": "",
+      "markets": {
+        "h2h": {
+          "home": 2.13,
+          "draw": 3.75,
+          "away": 3.09
+        }
+      },
+      "sources": [
+        "betexplorer"
+      ],
+      "bookmakers": 1
+    }
+  ]
+}

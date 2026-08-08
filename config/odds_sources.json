@@ -1,0 +1,26 @@
+{
+  "default": "betexplorer",
+  "sources": {
+    "betexplorer": {
+      "enabled": true,
+      "baseUrl": "https://www.betexplorer.com",
+      "leagues": {
+        "PL": "football/england/premier-league",
+        "PD": "football/spain/laliga",
+        "SA": "football/italy/serie-a",
+        "BL1": "football/germany/bundesliga",
+        "FL1": "football/france/ligue-1",
+        "CL": "football/europe/champions-league"
+      },
+      "markets": ["h2h", "totals", "spreads"],
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+    },
+    "theoddsapi": {
+      "enabled": false,
+      "apiKeyEnv": "ODDS_API_KEY",
+      "baseUrl": "https://api.the-odds-api.com/v4",
+      "markets": ["h2h", "totals", "spreads"],
+      "regions": ["eu", "uk"]
+    }
+  }
+}
