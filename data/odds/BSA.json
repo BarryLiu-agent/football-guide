@@ -1,0 +1,446 @@
+{
+  "generatedAt": "2026-08-08T03:30:07Z",
+  "league": "BSA",
+  "matches": [
+    {
+      "homeTeam": "Grêmio",
+      "awayTeam": "Sao Paulo",
+      "kickoff": "2026-08-08T19:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 2.3,
+          "draw": 3.15,
+          "away": 3.05
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.08,
+          "under": 1.72
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 39
+    },
+    {
+      "homeTeam": "Remo",
+      "awayTeam": "Atletico Mineiro",
+      "kickoff": "2026-08-08T21:30:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 2.92,
+          "draw": 3.19,
+          "away": 2.4
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.07,
+          "under": 1.71
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 39
+    },
+    {
+      "homeTeam": "Coritiba",
+      "awayTeam": "Chapecoense",
+      "kickoff": "2026-08-08T23:30:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 1.61,
+          "draw": 3.75,
+          "away": 5.25
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.89,
+          "under": 1.85
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 39
+    },
+    {
+      "homeTeam": "Botafogo",
+      "awayTeam": "Fluminense",
+      "kickoff": "2026-08-09T00:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 2.38,
+          "draw": 3.16,
+          "away": 2.98
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.95,
+          "under": 1.8
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 39
+    },
+    {
+      "homeTeam": "Cruzeiro",
+      "awayTeam": "Mirassol",
+      "kickoff": "2026-08-09T14:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 1.68,
+          "draw": 3.65,
+          "away": 5.0
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.93,
+          "under": 1.83
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 39
+    },
+    {
+      "homeTeam": "Bahia",
+      "awayTeam": "Vasco da Gama",
+      "kickoff": "2026-08-09T19:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 1.9249999999999998,
+          "draw": 3.5,
+          "away": 3.7
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.85,
+          "under": 1.93
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 38
+    },
+    {
+      "homeTeam": "Palmeiras",
+      "awayTeam": "Internacional",
+      "kickoff": "2026-08-09T19:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 1.57,
+          "draw": 3.8,
+          "away": 5.75
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.93,
+          "under": 1.82
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 39
+    },
+    {
+      "homeTeam": "Santos",
+      "awayTeam": "Atletico Paranaense",
+      "kickoff": "2026-08-09T21:30:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 2.1,
+          "draw": 3.25,
+          "away": 3.4
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.08,
+          "under": 1.685
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 38
+    },
+    {
+      "homeTeam": "Bragantino-SP",
+      "awayTeam": "Corinthians",
+      "kickoff": "2026-08-09T21:30:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 2.14,
+          "draw": 3.15,
+          "away": 3.45
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.18,
+          "under": 1.62
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 39
+    },
+    {
+      "homeTeam": "Flamengo",
+      "awayTeam": "Vitoria",
+      "kickoff": "2026-08-09T22:30:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 1.22,
+          "draw": 5.699999999999999,
+          "away": 12.0
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.63,
+          "under": 2.2
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 38
+    },
+    {
+      "homeTeam": "Fluminense",
+      "awayTeam": "Palmeiras",
+      "kickoff": "2026-08-15T19:30:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 2.6,
+          "draw": 3.0,
+          "away": 2.525
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.16,
+          "under": 1.65
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 26
+    },
+    {
+      "homeTeam": "Atletico Paranaense",
+      "awayTeam": "Bragantino-SP",
+      "kickoff": "2026-08-15T21:30:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 1.95,
+          "draw": 3.2,
+          "away": 3.65
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.1550000000000002,
+          "under": 1.63
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 25
+    },
+    {
+      "homeTeam": "Sao Paulo",
+      "awayTeam": "Coritiba",
+      "kickoff": "2026-08-16T00:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 1.61,
+          "draw": 3.55,
+          "away": 5.0
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.91,
+          "under": 1.8
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 26
+    },
+    {
+      "homeTeam": "Chapecoense",
+      "awayTeam": "Bahia",
+      "kickoff": "2026-08-16T14:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 3.2,
+          "draw": 3.4,
+          "away": 2.05
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.75,
+          "under": 1.93
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 26
+    },
+    {
+      "homeTeam": "Atletico Mineiro",
+      "awayTeam": "Grêmio",
+      "kickoff": "2026-08-16T19:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 1.725,
+          "draw": 3.475,
+          "away": 4.5
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.91,
+          "under": 1.78
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 28
+    },
+    {
+      "homeTeam": "Vasco da Gama",
+      "awayTeam": "Santos",
+      "kickoff": "2026-08-16T19:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 1.9,
+          "draw": 3.325,
+          "away": 3.75
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.94,
+          "under": 1.78
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 26
+    },
+    {
+      "homeTeam": "Vitoria",
+      "awayTeam": "Botafogo",
+      "kickoff": "2026-08-16T21:30:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 2.33,
+          "draw": 3.25,
+          "away": 2.745
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.91,
+          "under": 1.82
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 26
+    },
+    {
+      "homeTeam": "Mirassol",
+      "awayTeam": "Flamengo",
+      "kickoff": "2026-08-16T21:30:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 4.0,
+          "draw": 3.3,
+          "away": 1.83
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.07,
+          "under": 1.7
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 26
+    },
+    {
+      "homeTeam": "Corinthians",
+      "awayTeam": "Cruzeiro",
+      "kickoff": "2026-08-16T22:30:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 2.21,
+          "draw": 3.1,
+          "away": 3.1
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.22,
+          "under": 1.62
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 26
+    },
+    {
+      "homeTeam": "Internacional",
+      "awayTeam": "Remo",
+      "kickoff": "2026-08-17T23:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 1.53,
+          "draw": 3.8,
+          "away": 5.5
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.85,
+          "under": 1.87
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 26
+    }
+  ]
+}

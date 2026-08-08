@@ -1,0 +1,182 @@
+{
+  "generatedAt": "2026-08-08T03:30:08Z",
+  "league": "JLG",
+  "matches": [
+    {
+      "homeTeam": "Avispa Fukuoka",
+      "awayTeam": "Vissel Kobe",
+      "kickoff": "2026-08-08T10:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 4.175000000000001,
+          "draw": 3.1,
+          "away": 1.96
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.45,
+          "under": 1.5550000000000002
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 24
+    },
+    {
+      "homeTeam": "Cerezo Osaka",
+      "awayTeam": "Fagiano Okayama",
+      "kickoff": "2026-08-08T10:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 1.865,
+          "draw": 3.6,
+          "away": 3.8
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.8250000000000002,
+          "under": 1.96
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 24
+    },
+    {
+      "homeTeam": "FC Tokyo",
+      "awayTeam": "FC Machida Zelvia",
+      "kickoff": "2026-08-08T10:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 2.4,
+          "draw": 3.02,
+          "away": 3.0300000000000002
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.21,
+          "under": 1.65
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 24
+    },
+    {
+      "homeTeam": "Kashiwa Reysol",
+      "awayTeam": "Mito HollyHock",
+      "kickoff": "2026-08-08T10:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 1.55,
+          "draw": 3.925,
+          "away": 5.625
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.915,
+          "under": 1.875
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 24
+    },
+    {
+      "homeTeam": "Nagoya Grampus",
+      "awayTeam": "Shimizu S Pulse",
+      "kickoff": "2026-08-08T10:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 2.05,
+          "draw": 3.4,
+          "away": 3.4
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.87,
+          "under": 1.91
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 23
+    },
+    {
+      "homeTeam": "Hiroshima Sanfrecce FC",
+      "awayTeam": "JEF United Chiba",
+      "kickoff": "2026-08-08T10:15:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 1.4449999999999998,
+          "draw": 4.3,
+          "away": 6.3
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.75,
+          "under": 1.95
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 20
+    },
+    {
+      "homeTeam": "Tokyo Verdy",
+      "awayTeam": "Kawasaki Frontale",
+      "kickoff": "2026-08-09T09:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 3.1,
+          "draw": 3.1,
+          "away": 2.3
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.1,
+          "under": 1.67
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 23
+    },
+    {
+      "homeTeam": "V-Varen Nagasaki",
+      "awayTeam": "Kyoto Purple Sanga",
+      "kickoff": "2026-08-09T10:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 2.9,
+          "draw": 3.1,
+          "away": 2.4
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.05,
+          "under": 1.75
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 23
+    }
+  ]
+}
