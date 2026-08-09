@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T13:38:56Z",
+  "generatedAt": "2026-08-09T13:41:45Z",
   "league": "BSA",
   "matches": [
     {
@@ -11,7 +11,7 @@
         "h2h": {
           "home": 1.67,
           "draw": 3.6,
-          "away": 5.25
+          "away": 5.3
         },
         "totals": {
           "line": 2.5,

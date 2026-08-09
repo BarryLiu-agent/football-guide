@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T13:38:52Z",
+  "generatedAt": "2026-08-09T13:41:42Z",
   "league": "ED",
   "matches": [
     {
@@ -9,30 +9,30 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 5.675,
+          "home": 5.5,
           "draw": 3.0,
-          "away": 1.755
+          "away": 1.78
         },
         "totals": {
           "line": 2.5,
-          "over": 1.65,
+          "over": 1.635,
           "under": 2.065
         },
         "spreads": {
           "home": {
             "point": 0.75,
-            "price": 1.79
+            "price": 1.8
           },
           "away": {
             "point": -0.75,
-            "price": 2.09
+            "price": 2.07
           }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 30
+      "bookmakers": 31
     },
     {
       "homeTeam": "Groningen",
@@ -41,19 +41,19 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.435,
-          "draw": 3.8,
-          "away": 8.5
+          "home": 1.08,
+          "draw": 9.0,
+          "away": 26.0
         },
         "totals": {
           "line": 2.5,
-          "over": 2.0,
-          "under": 1.68
+          "over": 2.0599999999999996,
+          "under": 1.64
         },
         "spreads": {
           "home": {
             "point": 0.0,
-            "price": 1.99
+            "price": 2.0
           },
           "away": {
             "point": -0.0,
@@ -207,7 +207,7 @@
         },
         "totals": {
           "line": 2.5,
-          "over": 1.87,
+          "over": 1.85,
           "under": 1.93
         },
         "spreads": {

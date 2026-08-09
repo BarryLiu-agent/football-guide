@@ -1,39 +1,7 @@
 {
-  "generatedAt": "2026-08-09T13:38:55Z",
+  "generatedAt": "2026-08-09T13:41:45Z",
   "league": "BDF",
   "matches": [
-    {
-      "homeTeam": "Gent",
-      "awayTeam": "KV Mechelen",
-      "kickoff": "2026-08-09T11:30:00Z",
-      "matchUrl": "",
-      "markets": {
-        "h2h": {
-          "home": 1.0,
-          "draw": 101.0,
-          "away": 26.0
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 13.0,
-          "under": 1.01
-        },
-        "spreads": {
-          "home": {
-            "point": -1.5,
-            "price": 1.01
-          },
-          "away": {
-            "point": 1.5,
-            "price": 2.62
-          }
-        }
-      },
-      "sources": [
-        "theoddsapi"
-      ],
-      "bookmakers": 14
-    },
     {
       "homeTeam": "Charleroi",
       "awayTeam": "Leuven",
@@ -42,22 +10,22 @@
       "markets": {
         "h2h": {
           "home": 1.75,
-          "draw": 3.675,
-          "away": 4.25
+          "draw": 3.6900000000000004,
+          "away": 4.3149999999999995
         },
         "totals": {
           "line": 2.5,
           "over": 1.8,
-          "under": 1.95
+          "under": 1.96
         },
         "spreads": {
           "home": {
             "point": -0.75,
-            "price": 2.01
+            "price": 2.0
           },
           "away": {
             "point": 0.75,
-            "price": 1.85
+            "price": 1.8599999999999999
           }
         }
       },
@@ -138,7 +106,7 @@
       "markets": {
         "h2h": {
           "home": 1.91,
-          "draw": 3.37,
+          "draw": 3.4,
           "away": 3.85
         },
         "totals": {
@@ -171,7 +139,7 @@
         "h2h": {
           "home": 2.2,
           "draw": 3.5,
-          "away": 2.92
+          "away": 2.9
         },
         "totals": {
           "line": 2.5,

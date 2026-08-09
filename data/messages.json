@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T13:38:59Z",
+  "generatedAt": "2026-08-09T13:41:49Z",
   "total": 20,
   "messages": [
     {
@@ -115,6 +115,17 @@
     {
       "source": "skysports",
       "type": "news",
+      "text": "Hogh hits first-half hat-trick for Celtic at woeful Kilmarnock LIVE!",
+      "timestamp": "Sun, 09 Aug 2026 12:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/kilmarnock-vs-celtic/live/558343",
+        "lang": "en",
+        "summary": ""
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
       "text": "McKenna vows middleweight domination as heir to Golovkin and Canelo",
       "timestamp": "Sun, 09 Aug 2026 07:00:00 BST",
       "metadata": {
@@ -143,17 +154,6 @@
         "link": "https://www.skysports.com/racing/news/12040/13570933/today-on-sky-sports-racing-true-love-seeks-prix-maurice-de-gheest-crown-at-deauville",
         "lang": "en",
         "summary": "True Love heads the markets for the 2026 renewal of the Prix Maurice de Gheest - <em>live on Sky Sports Racing</em> at 3.40pm."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Hogh hits first-half hat-trick for Celtic at Kilmarnock LIVE!",
-      "timestamp": "Sun, 09 Aug 2026 12:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/kilmarnock-vs-celtic/live/558343",
-        "lang": "en",
-        "summary": ""
       }
     },
     {

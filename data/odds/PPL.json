@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T13:38:53Z",
+  "generatedAt": "2026-08-09T13:41:43Z",
   "league": "PPL",
   "matches": [
     {
@@ -85,11 +85,11 @@
         "spreads": {
           "home": {
             "point": 1.0,
-            "price": 1.82
+            "price": 1.7650000000000001
           },
           "away": {
             "point": -1.0,
-            "price": 2.1
+            "price": 2.0949999999999998
           }
         }
       },
@@ -175,8 +175,8 @@
         },
         "totals": {
           "line": 2.5,
-          "over": 2.0300000000000002,
-          "under": 1.76
+          "over": 1.95,
+          "under": 1.845
         },
         "spreads": {
           "home": {

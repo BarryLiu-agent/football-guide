@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T13:38:54Z",
+  "generatedAt": "2026-08-09T13:41:43Z",
   "league": "TSL",
   "matches": [
     {
@@ -43,7 +43,7 @@
         "h2h": {
           "home": 4.0,
           "draw": 3.625,
-          "away": 1.7650000000000001
+          "away": 1.76
         },
         "totals": {
           "line": 2.5,
