@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T15:06:50Z",
+  "generatedAt": "2026-08-09T17:08:10Z",
   "dateRange": {
     "from": "2026-08-02",
     "to": "2026-09-13"
@@ -18128,11 +18128,11 @@
       },
       "id": 558222,
       "utcDate": "2026-08-09T14:45:00Z",
-      "status": "LIVE",
+      "status": "FINISHED",
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-09T15:06:30Z",
+      "lastUpdated": "2026-08-09T16:47:07Z",
       "homeTeam": {
         "id": 673,
         "name": "SC Heerenveen",
@@ -18148,15 +18148,15 @@
         "crest": "https://crests.football-data.org/666.png"
       },
       "score": {
-        "winner": "DRAW",
+        "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 0,
+          "home": 1,
           "away": 0
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         }
       },
       "odds": {
@@ -21036,11 +21036,11 @@
       },
       "id": 554954,
       "utcDate": "2026-08-09T14:00:00Z",
-      "status": "PAUSED",
+      "status": "FINISHED",
       "matchday": 22,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-09T14:58:24Z",
+      "lastUpdated": "2026-08-09T16:08:05Z",
       "homeTeam": {
         "id": 1771,
         "name": "Cruzeiro EC",
@@ -21056,10 +21056,10 @@
         "crest": "https://crests.football-data.org/4364.png"
       },
       "score": {
-        "winner": "DRAW",
+        "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 1,
+          "home": 3,
           "away": 1
         },
         "halfTime": {

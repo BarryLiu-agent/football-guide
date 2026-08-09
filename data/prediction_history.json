@@ -190,7 +190,11 @@
    "kickoff": "2026-08-09T14:00:00Z",
    "predictedScore": "1-0",
    "confidence": 0.636,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "predictedAt": "2026-08-09T13:17:45Z",
+   "actualScore": "3-1",
+   "evaluatedAt": "2026-08-09T17:08:13Z",
+   "hitExact": false,
+   "hitOutcome": true
   },
   {
    "homeTeam": "Bahia",
@@ -556,7 +560,7 @@
    "confidence": 0.667,
    "predictedAt": "2026-08-09T13:17:45Z",
    "actualScore": "0-2",
-   "evaluatedAt": "2026-08-09T15:06:54Z",
+   "evaluatedAt": "2026-08-09T17:08:13Z",
    "hitExact": false,
    "hitOutcome": true
   },
@@ -568,7 +572,7 @@
    "confidence": 0.575,
    "predictedAt": "2026-08-09T13:17:45Z",
    "actualScore": "2-1",
-   "evaluatedAt": "2026-08-09T15:06:54Z",
+   "evaluatedAt": "2026-08-09T17:08:13Z",
    "hitExact": false,
    "hitOutcome": false
   },
@@ -578,7 +582,11 @@
    "kickoff": "2026-08-09T14:45:00Z",
    "predictedScore": "1-1",
    "confidence": 0.586,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "predictedAt": "2026-08-09T13:17:45Z",
+   "actualScore": "1-0",
+   "evaluatedAt": "2026-08-09T17:08:13Z",
+   "hitExact": false,
+   "hitOutcome": false
   },
   {
    "homeTeam": "FC Utrecht",
@@ -1877,6 +1885,15 @@
    "hitOutcome": false
   },
   {
+   "homeTeam": "Cruzeiro",
+   "awayTeam": "Mirassol",
+   "kickoff": "2026-08-09T14:00:00Z",
+   "predictedScore": "1-0",
+   "actualScore": "3-1",
+   "hitExact": false,
+   "hitOutcome": true
+  },
+  {
    "homeTeam": "FC Zwolle",
    "awayTeam": "Ajax",
    "kickoff": "2026-08-09T12:30:00Z",
@@ -1893,15 +1910,24 @@
    "actualScore": "2-1",
    "hitExact": false,
    "hitOutcome": false
+  },
+  {
+   "homeTeam": "Heerenveen",
+   "awayTeam": "FC Twente Enschede",
+   "kickoff": "2026-08-09T14:45:00Z",
+   "predictedScore": "1-1",
+   "actualScore": "1-0",
+   "hitExact": false,
+   "hitOutcome": false
   }
  ],
  "stats": {
   "total": 217,
-  "finished": 12,
+  "finished": 14,
   "exactHit": 1,
-  "exactRate": 0.0833,
-  "outcomeHit": 4,
-  "outcomeRate": 0.3333,
-  "updatedAt": "2026-08-09T15:06:54Z"
+  "exactRate": 0.0714,
+  "outcomeHit": 5,
+  "outcomeRate": 0.3571,
+  "updatedAt": "2026-08-09T17:08:13Z"
  }
 }
