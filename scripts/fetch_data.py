@@ -92,6 +92,11 @@ def fetch_standings():
     for code in COMPETITIONS:
         try:
             r = requests.get(f"{API_BASE}/competitions/{code}/standings", headers=HEADERS, timeout=20)
+            if r.status_code == 429:
+                # Football-Data 免费 10次/分钟：等待后重试一次
+                print(f"  - {code} 积分榜限流(429)，等待12秒重试...")
+                time.sleep(12)
+                r = requests.get(f"{API_BASE}/competitions/{code}/standings", headers=HEADERS, timeout=20)
             if r.status_code != 200:
                 print(f"  - {code} 积分榜: HTTP {r.status_code}")
                 continue

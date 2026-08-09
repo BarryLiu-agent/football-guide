@@ -1,7 +1,29 @@
 {
-  "generatedAt": "2026-08-09T13:13:21Z",
+  "generatedAt": "2026-08-09T13:21:40Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Sunrisers Leeds dominate Welsh Fire to remain in eliminator contention",
+      "timestamp": "Sun, 09 Aug 2026 14:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/cricket/news/12040/13571323/the-hundred-sunrisers-leeds-dominate-welsh-fire-at-headingley-to-remain-in-eliminator-contention",
+        "lang": "en",
+        "summary": "Sunrisers Leeds kept themselves in contention for The Hundred&#160;eliminator while dumping Welsh Fire out of the women's competition in a one-sided contest at Headingley. "
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "'He can't miss!' | Hogh running rampant with first-half hat-trick",
+      "timestamp": "Sun, 09 Aug 2026 14:11:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13571375/kilmarnock-vs-celtic-hogh-running-rampant-with-first-half-hat-trick",
+        "lang": "en",
+        "summary": "Hogh runs rampant with first-half hat-trick for Celtic."
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -60,7 +82,7 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Liverpool vs Monaco team news LIVE!",
+      "text": "Iraola takes charge of Liverpool for first time at Anfield vs Monaco LIVE!",
       "timestamp": "Sun, 09 Aug 2026 13:23:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/football/liverpool-vs-monaco/live/556109",
@@ -115,7 +137,7 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Hogh hits first half hat-trick for Celtic at Kilmarnock LIVE!",
+      "text": "Hogh hits first-half hat-trick for Celtic at Kilmarnock LIVE!",
       "timestamp": "Sun, 09 Aug 2026 12:00:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/football/kilmarnock-vs-celtic/live/558343",
@@ -198,28 +220,6 @@
         "link": "https://www.skysports.com/watch/video/13571216/wigan-warriors-48-18-toulouse-olympique-super-league-highlights",
         "lang": "en",
         "summary": "Highlights of the Super League clash between Wigan Warriors and Toulouse Olympique."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "FIFA hits out at critics trying to 'undermine' Infantino",
-      "timestamp": "Sun, 09 Aug 2026 08:02:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13571297/gianni-infantino-fifa-hits-out-at-critics-trying-to-undermine-president-amid-ongoing-allegations",
-        "lang": "en",
-        "summary": "FIFA has hit out at \"a concerted and ongoing effort by some to undermine\" the governing body and president Gianni Infantino over claims surrounding his conduct at UEFA."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "McKenna wins world title in Ireland homecoming fight!",
-      "timestamp": "Sat, 08 Aug 2026 23:46:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13571266/aaron-mckenna-vs-etinosa-oliha-fight-highlights",
-        "lang": "en",
-        "summary": "Highlights of Aaron McKenna's IBF middleweight world title fight against Etinosa Oliha."
       }
     }
   ]
