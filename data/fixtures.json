@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T17:08:10Z",
+  "generatedAt": "2026-08-09T19:22:22Z",
   "dateRange": {
     "from": "2026-08-02",
     "to": "2026-09-13"
@@ -17931,7 +17931,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-09T12:19:25Z",
+      "lastUpdated": "2026-08-09T18:25:02Z",
       "homeTeam": {
         "id": 6806,
         "name": "Sparta Rotterdam",
@@ -17998,7 +17998,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-09T14:38:00Z",
+      "lastUpdated": "2026-08-09T18:25:02Z",
       "homeTeam": {
         "id": 677,
         "name": "FC Groningen",
@@ -18065,7 +18065,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-09T14:36:53Z",
+      "lastUpdated": "2026-08-09T18:25:02Z",
       "homeTeam": {
         "id": 684,
         "name": "PEC Zwolle",
@@ -18132,7 +18132,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-09T16:47:07Z",
+      "lastUpdated": "2026-08-09T18:25:02Z",
       "homeTeam": {
         "id": 673,
         "name": "SC Heerenveen",
@@ -21096,11 +21096,11 @@
       },
       "id": 554950,
       "utcDate": "2026-08-09T19:00:00Z",
-      "status": "TIMED",
+      "status": "LIVE",
       "matchday": 22,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-09T01:32:01Z",
+      "lastUpdated": "2026-08-09T19:22:10Z",
       "homeTeam": {
         "id": 1777,
         "name": "EC Bahia",
@@ -21116,11 +21116,11 @@
         "crest": "https://crests.football-data.org/1780.png"
       },
       "score": {
-        "winner": null,
+        "winner": "DRAW",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         },
         "halfTime": {
           "home": null,
@@ -21156,11 +21156,11 @@
       },
       "id": 554957,
       "utcDate": "2026-08-09T19:00:00Z",
-      "status": "TIMED",
+      "status": "LIVE",
       "matchday": 22,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-09T01:32:01Z",
+      "lastUpdated": "2026-08-09T19:21:41Z",
       "homeTeam": {
         "id": 1769,
         "name": "SE Palmeiras",
@@ -21176,11 +21176,11 @@
         "crest": "https://crests.football-data.org/6684.png"
       },
       "score": {
-        "winner": null,
+        "winner": "DRAW",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         },
         "halfTime": {
           "home": null,
