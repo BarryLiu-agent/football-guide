@@ -687,10 +687,15 @@ async function loadToday() {
 
   const today = formatDate(new Date().toISOString());
   const maxDate = formatDate(new Date(Date.now() + 30 * 86400000).toISOString());
+  const nowTs = Date.now();
 
   let filtered = allMatches.filter(m => {
     const d = formatDate(m.utcDate);
-    return d >= today && d <= maxDate;
+    if (d < today || d > maxDate) return false;
+    // 已开赛超过 2.5 小时视为已完赛 → 从首页移除（进历史记录）
+    const kick = new Date(m.utcDate).getTime();
+    if (nowTs - kick > 2.5 * 3600000) return false;
+    return true;
   });
 
   // 日期快捷筛选

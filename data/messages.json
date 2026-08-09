@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T13:30:41Z",
+  "generatedAt": "2026-08-09T13:35:21Z",
   "total": 20,
   "messages": [
     {
@@ -71,7 +71,7 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Arsenal fall behind AGAIN in pre-season to Dortmund LIVE!",
+      "text": "Arsenal two goals down AGAIN in pre-season to Dortmund LIVE!",
       "timestamp": "Sun, 09 Aug 2026 12:30:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/football/live-blog/12040/13571163/arsenal-vs-borussia-dortmund-live-pre-season-friendly-team-news-preview-score-updates-and-live-blog",
@@ -99,6 +99,17 @@
         "link": "https://www.skysports.com/tennis/news/12040/13571288/national-bank-open-in-form-cam-norrie-defeated-by-arthur-fils-in-montreal-while-aryna-sabalenka-suffers-shock-canadian-open-loss",
         "lang": "en",
         "summary": "Britain's Cameron Norrie has been knocked out of the National Bank Open at the last-16 stage following a 6-2 7-6 (10-8) defeat by Arthur Fils in Montreal."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Semenyo stars as Man City impress in win over Atletico Madrid",
+      "timestamp": "Sat, 08 Aug 2026 16:57:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/manchester-city-vs-atletico-madrid/report/559827",
+        "lang": "en",
+        "summary": "Man City impressed in a 3-1 friendly win over Atletico Madrid in Seoul, with Enzo Maresca's tactical ideas beginning to take hold. "
       }
     },
     {
@@ -209,17 +220,6 @@
         "link": "https://www.skysports.com/watch/video/13571231/bradford-bulls-4-42-warrington-wolves-super-league-highlights",
         "lang": "en",
         "summary": "Highlights of the Super League clash between Bradford Bulls and Warrington Wolves as Matty Ashton scored twice in a dominant 42-4 victory for the visitors."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Wigan overpower Toulouse to close gap on leaders",
-      "timestamp": "Sun, 09 Aug 2026 00:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13571216/wigan-warriors-48-18-toulouse-olympique-super-league-highlights",
-        "lang": "en",
-        "summary": "Highlights of the Super League clash between Wigan Warriors and Toulouse Olympique."
       }
     }
   ]

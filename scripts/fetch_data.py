@@ -142,7 +142,7 @@ def is_star_match(home, away, star_teams):
 
 # ── Main ───────────────────────────────────────────────────
 
-def main(no_filter=False):
+def main(no_filter=False, no_standings=False):
     print(f"╔══════════════════════════════════════════╗")
     print(f"║  足球比赛观看指南 - 数据抓取脚本         ║")
     print(f"║  运行时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}             ║")
@@ -171,8 +171,8 @@ def main(no_filter=False):
         else:
             errors.append({"code": code, "name": name})
         all_matches.extend(matches)
-        # Rate limit: 10 req/min. 6 competitions + config loads = fine, but be safe
-        time.sleep(0.5)
+        # Football-Data 免费 10 req/min：11 联赛需间隔，防 429
+        time.sleep(4)
 
     print(f"\n 总计抓取: {len(all_matches)} 场比赛")
 
@@ -264,8 +264,9 @@ def main(no_filter=False):
 
     print(f"   统计文件: {stats_file}")
 
-    # 积分榜（供排名对比分析）
-    fetch_standings()
+    # 积分榜（供排名对比分析；高频赛果刷新时跳过以节省请求）
+    if not no_standings:
+        fetch_standings()
 
     return 0
 
@@ -274,6 +275,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="足球数据抓取")
     parser.add_argument("--no-filter", action="store_true",
                         help="不过滤比赛（保存全部）")
+    parser.add_argument("--no-standings", action="store_true",
+                        help="跳过积分榜抓取（高频赛果刷新用）")
     parser.add_argument("--output", type=str,
                         help="自定义输出路径")
     args = parser.parse_args()
@@ -281,4 +284,4 @@ if __name__ == "__main__":
     if args.output:
         OUTPUT_FILE = Path(args.output)
 
-    sys.exit(main(no_filter=args.no_filter))
+    sys.exit(main(no_filter=args.no_filter, no_standings=args.no_standings))
