@@ -1,117 +1,7 @@
 {
-  "generatedAt": "2026-08-08T03:27:47Z",
+  "generatedAt": "2026-08-09T13:36:40Z",
   "league": "ED",
   "matches": [
-    {
-      "homeTeam": "NEC Nijmegen",
-      "awayTeam": "SC Telstar",
-      "kickoff": "2026-08-08T14:30:00Z",
-      "matchUrl": "",
-      "markets": {
-        "h2h": {
-          "home": 1.45,
-          "draw": 4.75,
-          "away": 5.75
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 2.02,
-          "under": 1.75
-        }
-      },
-      "sources": [
-        "theoddsapi"
-      ],
-      "bookmakers": 39
-    },
-    {
-      "homeTeam": "Go Ahead Eagles",
-      "awayTeam": "Willem II",
-      "kickoff": "2026-08-08T16:45:00Z",
-      "matchUrl": "",
-      "markets": {
-        "h2h": {
-          "home": 1.63,
-          "draw": 4.0,
-          "away": 4.7
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 1.6,
-          "under": 2.28
-        }
-      },
-      "sources": [
-        "theoddsapi"
-      ],
-      "bookmakers": 39
-    },
-    {
-      "homeTeam": "PSV Eindhoven",
-      "awayTeam": "Fortuna Sittard",
-      "kickoff": "2026-08-08T18:00:00Z",
-      "matchUrl": "",
-      "markets": {
-        "h2h": {
-          "home": 1.17,
-          "draw": 8.0,
-          "away": 12.0
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 2.17,
-          "under": 1.65
-        }
-      },
-      "sources": [
-        "theoddsapi"
-      ],
-      "bookmakers": 39
-    },
-    {
-      "homeTeam": "AZ Alkmaar",
-      "awayTeam": "ADO Den Haag",
-      "kickoff": "2026-08-08T19:00:00Z",
-      "matchUrl": "",
-      "markets": {
-        "h2h": {
-          "home": 1.42,
-          "draw": 4.65,
-          "away": 6.5
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 2.15,
-          "under": 1.68
-        }
-      },
-      "sources": [
-        "theoddsapi"
-      ],
-      "bookmakers": 37
-    },
-    {
-      "homeTeam": "Sparta Rotterdam",
-      "awayTeam": "Feyenoord",
-      "kickoff": "2026-08-09T10:15:00Z",
-      "matchUrl": "",
-      "markets": {
-        "h2h": {
-          "home": 4.4,
-          "draw": 4.025,
-          "away": 1.67
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 2.17,
-          "under": 1.61
-        }
-      },
-      "sources": [
-        "theoddsapi"
-      ],
-      "bookmakers": 38
-    },
     {
       "homeTeam": "FC Zwolle",
       "awayTeam": "Ajax",
@@ -119,20 +9,30 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 5.8,
-          "draw": 4.5,
-          "away": 1.46
+          "home": 5.6,
+          "draw": 3.0,
+          "away": 1.75
         },
         "totals": {
           "line": 2.5,
-          "over": 2.0949999999999998,
-          "under": 1.69
+          "over": 1.65,
+          "under": 2.065
+        },
+        "spreads": {
+          "home": {
+            "point": 0.75,
+            "price": 1.79
+          },
+          "away": {
+            "point": -0.75,
+            "price": 2.09
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 38
+      "bookmakers": 31
     },
     {
       "homeTeam": "Groningen",
@@ -141,20 +41,30 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.3,
-          "draw": 3.4,
-          "away": 2.9
+          "home": 1.43,
+          "draw": 3.75,
+          "away": 8.0
         },
         "totals": {
           "line": 2.5,
-          "over": 1.77,
-          "under": 2.0
+          "over": 1.9049999999999998,
+          "under": 1.76
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.99
+          },
+          "away": {
+            "point": -0.0,
+            "price": 1.87
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 38
+      "bookmakers": 31
     },
     {
       "homeTeam": "Heerenveen",
@@ -163,20 +73,94 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.915,
-          "draw": 3.71,
+          "home": 3.0,
+          "draw": 3.72,
           "away": 2.15
         },
         "totals": {
           "line": 2.5,
-          "over": 2.0700000000000003,
-          "under": 1.685
+          "over": 2.05,
+          "under": 1.71
+        },
+        "spreads": {
+          "home": {
+            "point": 0.25,
+            "price": 1.955
+          },
+          "away": {
+            "point": -0.25,
+            "price": 1.935
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 38
+      "bookmakers": 39
+    },
+    {
+      "homeTeam": "SC Telstar",
+      "awayTeam": "Sparta Rotterdam",
+      "kickoff": "2026-08-14T18:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 2.3,
+          "draw": 3.5,
+          "away": 2.75
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.65,
+          "under": 2.2
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 3.8
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.26
+          }
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 24
+    },
+    {
+      "homeTeam": "Willem II",
+      "awayTeam": "NEC Nijmegen",
+      "kickoff": "2026-08-15T14:30:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 4.5,
+          "draw": 4.05,
+          "away": 1.54
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.03,
+          "under": 1.755
+        },
+        "spreads": {
+          "home": {
+            "point": 1.0,
+            "price": 1.82
+          },
+          "away": {
+            "point": -1.0,
+            "price": 1.96
+          }
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 20
     },
     {
       "homeTeam": "FC Utrecht",
@@ -185,20 +169,30 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.3,
+          "home": 2.62,
           "draw": 3.6,
-          "away": 2.6399999999999997
+          "away": 2.31
         },
         "totals": {
           "line": 2.5,
-          "over": 1.63,
+          "over": 1.61,
           "under": 2.22
+        },
+        "spreads": {
+          "home": {
+            "point": 1.0,
+            "price": 1.25
+          },
+          "away": {
+            "point": -1.0,
+            "price": 3.8
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 16
+      "bookmakers": 25
     },
     {
       "homeTeam": "Excelsior",
@@ -207,20 +201,190 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 4.5,
-          "draw": 4.3,
-          "away": 1.53
+          "home": 4.4,
+          "draw": 4.16,
+          "away": 1.62
         },
         "totals": {
           "line": 2.5,
-          "over": 1.62,
-          "under": 2.5300000000000002
+          "over": 1.87,
+          "under": 1.93
+        },
+        "spreads": {
+          "home": {
+            "point": 1.0,
+            "price": 1.78
+          },
+          "away": {
+            "point": -1.0,
+            "price": 2.01
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 13
+      "bookmakers": 25
+    },
+    {
+      "homeTeam": "Fortuna Sittard",
+      "awayTeam": "SC Cambuur",
+      "kickoff": "2026-08-15T19:00:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 1.8,
+          "draw": 3.75,
+          "away": 3.625
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.605,
+          "under": 2.24
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 2.49
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.52
+          }
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 20
+    },
+    {
+      "homeTeam": "ADO Den Haag",
+      "awayTeam": "Groningen",
+      "kickoff": "2026-08-16T10:15:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 2.66,
+          "draw": 3.6,
+          "away": 2.285
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.59,
+          "under": 2.275
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 2.09
+          },
+          "away": {
+            "point": 0.0,
+            "price": 1.77
+          }
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 18
+    },
+    {
+      "homeTeam": "FC Twente Enschede",
+      "awayTeam": "FC Zwolle",
+      "kickoff": "2026-08-16T12:30:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 1.255,
+          "draw": 5.55,
+          "away": 8.45
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.85,
+          "under": 1.92
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 1.755
+          },
+          "away": {
+            "point": 1.5,
+            "price": 2.08
+          }
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 20
+    },
+    {
+      "homeTeam": "Feyenoord",
+      "awayTeam": "Go Ahead Eagles",
+      "kickoff": "2026-08-16T12:30:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 1.36,
+          "draw": 5.0,
+          "away": 6.0
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.89,
+          "under": 1.93
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 1.98
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.86
+          }
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 24
+    },
+    {
+      "homeTeam": "Ajax",
+      "awayTeam": "Heerenveen",
+      "kickoff": "2026-08-16T14:45:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 1.505,
+          "draw": 4.199999999999999,
+          "away": 5.0
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.9300000000000002,
+          "under": 1.9
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 2.39
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.6
+          }
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 16
     }
   ]
 }

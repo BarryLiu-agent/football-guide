@@ -1,73 +1,7 @@
 {
-  "generatedAt": "2026-08-08T03:27:49Z",
+  "generatedAt": "2026-08-09T13:36:43Z",
   "league": "PPL",
   "matches": [
-    {
-      "homeTeam": "CS Maritimo",
-      "awayTeam": "Casa Pia",
-      "kickoff": "2026-08-08T14:30:00Z",
-      "matchUrl": "",
-      "markets": {
-        "h2h": {
-          "home": 2.4,
-          "draw": 3.25,
-          "away": 2.8
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 1.875,
-          "under": 1.8450000000000002
-        }
-      },
-      "sources": [
-        "theoddsapi"
-      ],
-      "bookmakers": 34
-    },
-    {
-      "homeTeam": "Vitória SC",
-      "awayTeam": "Arouca",
-      "kickoff": "2026-08-08T17:00:00Z",
-      "matchUrl": "",
-      "markets": {
-        "h2h": {
-          "home": 1.88,
-          "draw": 3.5,
-          "away": 3.8
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 1.88,
-          "under": 1.85
-        }
-      },
-      "sources": [
-        "theoddsapi"
-      ],
-      "bookmakers": 35
-    },
-    {
-      "homeTeam": "CF Estrela",
-      "awayTeam": "Sporting Lisbon",
-      "kickoff": "2026-08-08T19:30:00Z",
-      "matchUrl": "",
-      "markets": {
-        "h2h": {
-          "home": 11.0,
-          "draw": 6.0,
-          "away": 1.22
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 2.15,
-          "under": 1.62
-        }
-      },
-      "sources": [
-        "theoddsapi"
-      ],
-      "bookmakers": 36
-    },
     {
       "homeTeam": "FC Porto",
       "awayTeam": "Alverca",
@@ -75,14 +9,24 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.17,
-          "draw": 6.5,
+          "home": 1.19,
+          "draw": 6.25,
           "away": 13.0
         },
         "totals": {
           "line": 2.5,
-          "over": 2.16,
-          "under": 1.6600000000000001
+          "over": 1.99,
+          "under": 1.815
+        },
+        "spreads": {
+          "home": {
+            "point": -1.75,
+            "price": 1.91
+          },
+          "away": {
+            "point": 1.75,
+            "price": 1.97
+          }
         }
       },
       "sources": [
@@ -97,14 +41,24 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.11,
+          "home": 1.1,
           "draw": 9.0,
-          "away": 21.0
+          "away": 22.0
         },
         "totals": {
           "line": 2.5,
-          "over": 2.12,
-          "under": 1.7
+          "over": 1.95,
+          "under": 1.76
+        },
+        "spreads": {
+          "home": {
+            "point": -2.5,
+            "price": 1.995
+          },
+          "away": {
+            "point": 2.5,
+            "price": 1.85
+          }
         }
       },
       "sources": [
@@ -119,14 +73,24 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 4.75,
-          "draw": 3.7,
-          "away": 1.68
+          "home": 5.4,
+          "draw": 3.8,
+          "away": 1.6
         },
         "totals": {
           "line": 2.5,
-          "over": 1.895,
-          "under": 1.82
+          "over": 1.92,
+          "under": 1.85
+        },
+        "spreads": {
+          "home": {
+            "point": 1.0,
+            "price": 1.83
+          },
+          "away": {
+            "point": -1.0,
+            "price": 2.1
+          }
         }
       },
       "sources": [
@@ -141,14 +105,24 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.91,
-          "draw": 3.4,
-          "away": 3.8
+          "home": 1.95,
+          "draw": 3.35,
+          "away": 3.75
         },
         "totals": {
           "line": 2.5,
-          "over": 1.93,
-          "under": 1.81
+          "over": 1.99,
+          "under": 1.73
+        },
+        "spreads": {
+          "home": {
+            "point": -0.5,
+            "price": 2.04
+          },
+          "away": {
+            "point": 0.5,
+            "price": 1.85
+          }
         }
       },
       "sources": [
@@ -163,7 +137,7 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.83,
+          "home": 1.84,
           "draw": 3.3,
           "away": 4.2
         },
@@ -171,12 +145,54 @@
           "line": 2.5,
           "over": 2.06,
           "under": 1.65
+        },
+        "spreads": {
+          "home": {
+            "point": -0.5,
+            "price": 1.86
+          },
+          "away": {
+            "point": 0.5,
+            "price": 1.97
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
       "bookmakers": 36
+    },
+    {
+      "homeTeam": "Sporting Lisbon",
+      "awayTeam": "Vitória SC",
+      "kickoff": "2026-08-14T19:15:00Z",
+      "matchUrl": "",
+      "markets": {
+        "h2h": {
+          "home": 1.17,
+          "draw": 6.6,
+          "away": 13.0
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.0300000000000002,
+          "under": 1.76
+        },
+        "spreads": {
+          "home": {
+            "point": -2.0,
+            "price": 1.9100000000000001
+          },
+          "away": {
+            "point": 2.0,
+            "price": 1.89
+          }
+        }
+      },
+      "sources": [
+        "theoddsapi"
+      ],
+      "bookmakers": 23
     }
   ]
 }

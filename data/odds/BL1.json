@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T03:27:40Z",
+  "generatedAt": "2026-08-09T13:36:33Z",
   "league": "BL1",
   "matches": [
     {
@@ -9,7 +9,7 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.28,
+          "home": 1.29,
           "draw": 6.0,
           "away": 8.0
         },
@@ -17,12 +17,22 @@
           "line": 2.5,
           "over": 1.63,
           "under": 2.23
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 1.75
+          },
+          "away": {
+            "point": 1.5,
+            "price": 2.15
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 37
+      "bookmakers": 39
     },
     {
       "homeTeam": "1. FC Köln",
@@ -32,13 +42,23 @@
       "markets": {
         "h2h": {
           "home": 2.8,
-          "draw": 3.6,
-          "away": 2.25
+          "draw": 3.65,
+          "away": 2.28
         },
         "totals": {
           "line": 2.5,
           "over": 1.56,
           "under": 2.29
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 2.16
+          },
+          "away": {
+            "point": 0.0,
+            "price": 1.77
+          }
         }
       },
       "sources": [
@@ -55,12 +75,22 @@
         "h2h": {
           "home": 5.1,
           "draw": 4.5,
-          "away": 1.54
+          "away": 1.53
         },
         "totals": {
           "line": 2.5,
           "over": 2.105,
           "under": 1.68
+        },
+        "spreads": {
+          "home": {
+            "point": 1.0,
+            "price": 1.97
+          },
+          "away": {
+            "point": -1.0,
+            "price": 1.87
+          }
         }
       },
       "sources": [
@@ -81,8 +111,18 @@
         },
         "totals": {
           "line": 2.5,
-          "over": 2.075,
+          "over": 2.05,
           "under": 1.71
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 1.86
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.98
+          }
         }
       },
       "sources": [
@@ -105,6 +145,16 @@
           "line": 2.5,
           "over": 1.69,
           "under": 2.1100000000000003
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.775
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.1550000000000002
+          }
         }
       },
       "sources": [
@@ -127,6 +177,16 @@
           "line": 2.5,
           "over": 1.67,
           "under": 2.15
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 3.02
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.46
+          }
         }
       },
       "sources": [
@@ -141,14 +201,24 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.33,
+          "home": 1.32,
           "draw": 5.25,
           "away": 8.2
         },
         "totals": {
           "line": 2.5,
-          "over": 1.57,
-          "under": 2.3049999999999997
+          "over": 1.56,
+          "under": 2.315
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 1.955
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.9
+          }
         }
       },
       "sources": [
@@ -163,14 +233,24 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.0,
-          "draw": 3.55,
+          "home": 2.02,
+          "draw": 3.6,
           "away": 3.4
         },
         "totals": {
           "line": 2.5,
-          "over": 1.72,
-          "under": 2.075
+          "over": 1.7149999999999999,
+          "under": 2.09
+        },
+        "spreads": {
+          "home": {
+            "point": -0.5,
+            "price": 2.0199999999999996
+          },
+          "away": {
+            "point": 0.5,
+            "price": 1.83
+          }
         }
       },
       "sources": [
@@ -193,6 +273,16 @@
           "line": 2.5,
           "over": 1.565,
           "under": 2.325
+        },
+        "spreads": {
+          "home": {
+            "point": -0.25,
+            "price": 1.84
+          },
+          "away": {
+            "point": 0.25,
+            "price": 2.02
+          }
         }
       },
       "sources": [

@@ -1,29 +1,7 @@
 {
-  "generatedAt": "2026-08-08T03:27:59Z",
+  "generatedAt": "2026-08-09T13:36:57Z",
   "league": "MLS",
   "matches": [
-    {
-      "homeTeam": "New England Revolution",
-      "awayTeam": "Houston Dynamo",
-      "kickoff": "2026-08-08T20:30:00Z",
-      "matchUrl": "",
-      "markets": {
-        "h2h": {
-          "home": 2.4,
-          "draw": 3.45,
-          "away": 2.75
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 1.76,
-          "under": 2.02
-        }
-      },
-      "sources": [
-        "theoddsapi"
-      ],
-      "bookmakers": 38
-    },
     {
       "homeTeam": "Atlanta United FC",
       "awayTeam": "New York Red Bulls",
@@ -31,20 +9,30 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.76,
-          "draw": 3.975,
+          "home": 1.8,
+          "draw": 4.0,
           "away": 3.6
         },
         "totals": {
           "line": 2.5,
           "over": 2.06,
-          "under": 1.7
+          "under": 1.71
+        },
+        "spreads": {
+          "home": {
+            "point": -0.5,
+            "price": 1.84
+          },
+          "away": {
+            "point": 0.5,
+            "price": 1.96
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 28
+      "bookmakers": 33
     },
     {
       "homeTeam": "CF Montreal",
@@ -53,20 +41,30 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.15,
+          "home": 2.18,
           "draw": 3.5,
           "away": 2.95
         },
         "totals": {
           "line": 2.5,
-          "over": 1.67,
+          "over": 1.68,
           "under": 2.1
+        },
+        "spreads": {
+          "home": {
+            "point": -0.5,
+            "price": 2.22
+          },
+          "away": {
+            "point": 0.5,
+            "price": 1.65
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 27
+      "bookmakers": 32
     },
     {
       "homeTeam": "Charlotte FC",
@@ -82,13 +80,23 @@
         "totals": {
           "line": 2.5,
           "over": 1.62,
-          "under": 2.18
+          "under": 2.17
+        },
+        "spreads": {
+          "home": {
+            "point": -0.5,
+            "price": 2.13
+          },
+          "away": {
+            "point": 0.5,
+            "price": 1.665
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 30
+      "bookmakers": 33
     },
     {
       "homeTeam": "Orlando City SC",
@@ -97,20 +105,30 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.1950000000000003,
+          "home": 2.19,
           "draw": 4.0,
-          "away": 2.625
+          "away": 2.63
         },
         "totals": {
           "line": 2.5,
           "over": 1.68,
-          "under": 2.1
+          "under": 2.11
+        },
+        "spreads": {
+          "home": {
+            "point": -0.5,
+            "price": 2.21
+          },
+          "away": {
+            "point": 0.5,
+            "price": 1.65
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 28
+      "bookmakers": 33
     },
     {
       "homeTeam": "Toronto FC",
@@ -119,20 +137,30 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.25,
+          "home": 2.135,
           "draw": 3.5,
-          "away": 2.795
+          "away": 3.0
         },
         "totals": {
           "line": 2.5,
           "over": 1.68,
           "under": 2.12
+        },
+        "spreads": {
+          "home": {
+            "point": -0.5,
+            "price": 2.13
+          },
+          "away": {
+            "point": 0.5,
+            "price": 1.69
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 26
+      "bookmakers": 32
     },
     {
       "homeTeam": "Houston Dynamo",
@@ -141,20 +169,30 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.645,
+          "home": 1.73,
           "draw": 3.9,
-          "away": 4.34
+          "away": 4.02
         },
         "totals": {
           "line": 2.5,
-          "over": 1.56,
-          "under": 2.28
+          "over": 1.58,
+          "under": 2.32
+        },
+        "spreads": {
+          "home": {
+            "point": -0.5,
+            "price": 1.83
+          },
+          "away": {
+            "point": 0.5,
+            "price": 2.04
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 26
+      "bookmakers": 29
     },
     {
       "homeTeam": "Nashville SC",
@@ -163,20 +201,30 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.38,
-          "draw": 3.59,
-          "away": 2.6
+          "home": 2.2,
+          "draw": 3.675,
+          "away": 2.75
         },
         "totals": {
           "line": 2.5,
-          "over": 2.06,
+          "over": 2.05,
           "under": 1.68
+        },
+        "spreads": {
+          "home": {
+            "point": -0.5,
+            "price": 2.24
+          },
+          "away": {
+            "point": 0.5,
+            "price": 1.6400000000000001
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 28
+      "bookmakers": 32
     },
     {
       "homeTeam": "Colorado Rapids",
@@ -185,20 +233,30 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.435,
+          "home": 1.44,
           "draw": 4.5,
-          "away": 5.625
+          "away": 5.6
         },
         "totals": {
           "line": 2.5,
-          "over": 2.03,
+          "over": 2.0149999999999997,
           "under": 1.72
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 1.81
+          },
+          "away": {
+            "point": 1.0,
+            "price": 2.05
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 28
+      "bookmakers": 32
     },
     {
       "homeTeam": "Real Salt Lake",
@@ -208,19 +266,29 @@
       "markets": {
         "h2h": {
           "home": 1.75,
-          "draw": 3.75,
+          "draw": 3.7,
           "away": 3.95
         },
         "totals": {
           "line": 2.5,
           "over": 1.96,
           "under": 1.86
+        },
+        "spreads": {
+          "home": {
+            "point": -0.5,
+            "price": 1.83
+          },
+          "away": {
+            "point": 0.5,
+            "price": 2.02
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 27
+      "bookmakers": 30
     },
     {
       "homeTeam": "Los Angeles FC",
@@ -229,20 +297,30 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.5,
-          "draw": 4.45,
-          "away": 4.95
+          "home": 1.53,
+          "draw": 4.4,
+          "away": 4.85
         },
         "totals": {
           "line": 2.5,
-          "over": 1.97,
-          "under": 1.79
+          "over": 1.995,
+          "under": 1.7349999999999999
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 1.98
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.86
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 27
+      "bookmakers": 29
     },
     {
       "homeTeam": "San Jose Earthquakes",
@@ -259,12 +337,22 @@
           "line": 2.5,
           "over": 2.15,
           "under": 1.63
+        },
+        "spreads": {
+          "home": {
+            "point": -0.5,
+            "price": 1.99
+          },
+          "away": {
+            "point": 0.5,
+            "price": 1.79
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 27
+      "bookmakers": 31
     },
     {
       "homeTeam": "Chicago Fire",
@@ -273,14 +361,24 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.53,
+          "home": 1.5,
           "draw": 4.5,
-          "away": 4.7
+          "away": 4.9
         },
         "totals": {
           "line": 2.5,
-          "over": 1.85,
-          "under": 1.88
+          "over": 1.83,
+          "under": 1.93
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 1.85
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.9649999999999999
+          }
         }
       },
       "sources": [
@@ -297,12 +395,22 @@
         "h2h": {
           "home": 2.1,
           "draw": 3.6,
-          "away": 3.05
+          "away": 3.04
         },
         "totals": {
           "line": 2.5,
           "over": 1.65,
           "under": 2.16
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 3.08
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.36
+          }
         }
       },
       "sources": [
@@ -325,6 +433,16 @@
           "line": 2.5,
           "over": 1.57,
           "under": 2.26
+        },
+        "spreads": {
+          "home": {
+            "point": 1.5,
+            "price": 1.21
+          },
+          "away": {
+            "point": -1.5,
+            "price": 4.91
+          }
         }
       },
       "sources": [
@@ -339,7 +457,7 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 3.22,
+          "home": 3.3,
           "draw": 3.7,
           "away": 1.93
         },
@@ -347,6 +465,16 @@
           "line": 2.5,
           "over": 1.96,
           "under": 1.83
+        },
+        "spreads": {
+          "home": {
+            "point": 0.5,
+            "price": 1.815
+          },
+          "away": {
+            "point": -0.5,
+            "price": 1.97
+          }
         }
       },
       "sources": [
@@ -362,13 +490,23 @@
       "markets": {
         "h2h": {
           "home": 1.53,
-          "draw": 4.25,
+          "draw": 4.2,
           "away": 4.8
         },
         "totals": {
           "line": 2.5,
           "over": 1.8,
           "under": 1.98
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 2.375
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.58
+          }
         }
       },
       "sources": [
@@ -391,6 +529,16 @@
           "line": 2.5,
           "over": 1.62,
           "under": 2.15
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 5.03
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.2
+          }
         }
       },
       "sources": [
@@ -405,20 +553,30 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.62,
-          "draw": 3.8,
+          "home": 2.6550000000000002,
+          "draw": 3.8499999999999996,
           "away": 2.15
         },
         "totals": {
           "line": 2.5,
-          "over": 1.85,
-          "under": 1.85
+          "over": 1.8,
+          "under": 1.93
+        },
+        "spreads": {
+          "home": {
+            "point": 1.0,
+            "price": 1.32
+          },
+          "away": {
+            "point": -1.0,
+            "price": 3.31
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 16
+      "bookmakers": 18
     },
     {
       "homeTeam": "D.C. United",
@@ -427,7 +585,7 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.96,
+          "home": 1.95,
           "draw": 3.6,
           "away": 3.2
         },
@@ -435,6 +593,16 @@
           "line": 2.5,
           "over": 1.68,
           "under": 2.07
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 2.94
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.39
+          }
         }
       },
       "sources": [
@@ -450,13 +618,23 @@
       "markets": {
         "h2h": {
           "home": 2.03,
-          "draw": 3.8,
+          "draw": 3.85,
           "away": 2.88
         },
         "totals": {
           "line": 2.5,
           "over": 2.0,
           "under": 1.79
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 2.98
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.38
+          }
         }
       },
       "sources": [
@@ -479,6 +657,16 @@
           "line": 2.5,
           "over": 1.96,
           "under": 1.82
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 4.23
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.17
+          }
         }
       },
       "sources": [
@@ -501,6 +689,16 @@
           "line": 2.5,
           "over": 1.76,
           "under": 2.03
+        },
+        "spreads": {
+          "home": {
+            "point": 1.0,
+            "price": 1.3
+          },
+          "away": {
+            "point": -1.0,
+            "price": 3.44
+          }
         }
       },
       "sources": [
@@ -523,6 +721,16 @@
           "line": 2.5,
           "over": 2.05,
           "under": 1.72
+        },
+        "spreads": {
+          "home": {
+            "point": 1.0,
+            "price": 1.4
+          },
+          "away": {
+            "point": -1.0,
+            "price": 2.89
+          }
         }
       },
       "sources": [
@@ -545,6 +753,16 @@
           "line": 2.5,
           "over": 1.65,
           "under": 2.15
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 2.22
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.64
+          }
         }
       },
       "sources": [
@@ -561,12 +779,22 @@
         "h2h": {
           "home": 1.57,
           "draw": 4.0,
-          "away": 4.4
+          "away": 4.5
         },
         "totals": {
           "line": 2.5,
           "over": 1.62,
           "under": 2.2
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 2.03
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.76
+          }
         }
       },
       "sources": [
@@ -589,6 +817,16 @@
           "line": 2.5,
           "over": 1.62,
           "under": 2.2
+        },
+        "spreads": {
+          "home": {
+            "point": 1.0,
+            "price": 1.27
+          },
+          "away": {
+            "point": -1.0,
+            "price": 3.67
+          }
         }
       },
       "sources": [
@@ -604,13 +842,23 @@
       "markets": {
         "h2h": {
           "home": 1.76,
-          "draw": 3.8,
+          "draw": 3.85,
           "away": 3.5
         },
         "totals": {
           "line": 2.5,
           "over": 2.1,
           "under": 1.69
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 2.44
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.54
+          }
         }
       },
       "sources": [
@@ -633,6 +881,16 @@
           "line": 2.5,
           "over": 2.05,
           "under": 1.71
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 2.1900000000000004
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.67
+          }
         }
       },
       "sources": [
@@ -648,13 +906,23 @@
       "markets": {
         "h2h": {
           "home": 2.3,
-          "draw": 3.725,
+          "draw": 3.7350000000000003,
           "away": 2.425
         },
         "totals": {
           "line": 2.5,
           "over": 2.07,
           "under": 1.73
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 3.67
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.27
+          }
         }
       },
       "sources": [
@@ -677,6 +945,16 @@
           "line": 2.5,
           "over": 1.82,
           "under": 1.95
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 2.7
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.45
+          }
         }
       },
       "sources": [
