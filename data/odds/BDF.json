@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T13:41:45Z",
+  "generatedAt": "2026-08-09T13:56:13Z",
   "league": "BDF",
   "matches": [
     {
@@ -9,23 +9,23 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.75,
-          "draw": 3.6900000000000004,
-          "away": 4.3149999999999995
+          "home": 1.755,
+          "draw": 3.68,
+          "away": 4.25
         },
         "totals": {
           "line": 2.5,
-          "over": 1.8,
-          "under": 1.96
+          "over": 1.79,
+          "under": 1.975
         },
         "spreads": {
           "home": {
             "point": -0.75,
-            "price": 2.0
+            "price": 2.02
           },
           "away": {
             "point": 0.75,
-            "price": 1.8599999999999999
+            "price": 1.84
           }
         }
       },
@@ -41,23 +41,23 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 3.1,
-          "draw": 3.5149999999999997,
-          "away": 2.1
+          "home": 3.1550000000000002,
+          "draw": 3.6,
+          "away": 2.05
         },
         "totals": {
           "line": 2.5,
-          "over": 1.72,
-          "under": 2.07
+          "over": 1.74,
+          "under": 2.04
         },
         "spreads": {
           "home": {
             "point": 0.25,
-            "price": 1.9449999999999998
+            "price": 2.08
           },
           "away": {
             "point": -0.25,
-            "price": 1.9049999999999998
+            "price": 1.82
           }
         }
       },
@@ -85,11 +85,11 @@
         "spreads": {
           "home": {
             "point": -0.75,
-            "price": 1.9249999999999998
+            "price": 1.91
           },
           "away": {
             "point": 0.75,
-            "price": 1.92
+            "price": 1.94
           }
         }
       },
@@ -105,9 +105,9 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.91,
-          "draw": 3.4,
-          "away": 3.85
+          "home": 1.93,
+          "draw": 3.35,
+          "away": 3.8
         },
         "totals": {
           "line": 2.5,
@@ -121,7 +121,7 @@
           },
           "away": {
             "point": 0.5,
-            "price": 1.9049999999999998
+            "price": 1.895
           }
         }
       },

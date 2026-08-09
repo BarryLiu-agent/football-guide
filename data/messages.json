@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T13:41:49Z",
+  "generatedAt": "2026-08-09T13:56:17Z",
   "total": 20,
   "messages": [
     {
@@ -38,17 +38,6 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Semenyo stars as Man City come from behind to beat Atletico LIVE!",
-      "timestamp": "Sun, 09 Aug 2026 10:58:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/manchester-city-vs-atletico-madrid/live/559827",
-        "lang": "en",
-        "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
       "text": "'The first of many!' | Hogh opens Celtic account early on at Kilmarnock",
       "timestamp": "Sun, 09 Aug 2026 13:37:00 BST",
       "metadata": {
@@ -82,7 +71,7 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Iraola takes charge of Liverpool at Anfield for first time vs Monaco LIVE!",
+      "text": "Isak steers Liverpool ahead against Monaco in pre-season friendly LIVE!",
       "timestamp": "Sun, 09 Aug 2026 13:23:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/football/liverpool-vs-monaco/live/556109",
@@ -220,6 +209,17 @@
         "link": "https://www.skysports.com/watch/video/13571231/bradford-bulls-4-42-warrington-wolves-super-league-highlights",
         "lang": "en",
         "summary": "Highlights of the Super League clash between Bradford Bulls and Warrington Wolves as Matty Ashton scored twice in a dominant 42-4 victory for the visitors."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Wigan overpower Toulouse to close gap on leaders",
+      "timestamp": "Sun, 09 Aug 2026 00:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13571216/wigan-warriors-48-18-toulouse-olympique-super-league-highlights",
+        "lang": "en",
+        "summary": "Highlights of the Super League clash between Wigan Warriors and Toulouse Olympique."
       }
     }
   ]

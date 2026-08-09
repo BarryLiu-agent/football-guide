@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T13:41:18Z",
+  "generatedAt": "2026-08-09T13:55:49Z",
   "dateRange": {
     "from": "2026-08-02",
     "to": "2026-09-13"
@@ -17995,11 +17995,11 @@
       },
       "id": 558220,
       "utcDate": "2026-08-09T12:30:00Z",
-      "status": "PAUSED",
+      "status": "IN_PLAY",
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-09T13:25:58Z",
+      "lastUpdated": "2026-08-09T13:55:29Z",
       "homeTeam": {
         "id": 677,
         "name": "FC Groningen",
@@ -18018,7 +18018,7 @@
         "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 1,
+          "home": 2,
           "away": 0
         },
         "halfTime": {
@@ -18062,11 +18062,11 @@
       },
       "id": 558221,
       "utcDate": "2026-08-09T12:30:00Z",
-      "status": "PAUSED",
+      "status": "IN_PLAY",
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-09T13:28:38Z",
+      "lastUpdated": "2026-08-09T13:55:29Z",
       "homeTeam": {
         "id": 684,
         "name": "PEC Zwolle",

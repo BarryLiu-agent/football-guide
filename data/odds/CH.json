@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T13:41:41Z",
+  "generatedAt": "2026-08-09T13:56:10Z",
   "league": "CH",
   "matches": [
     {
@@ -41,7 +41,7 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.165,
+          "home": 2.15,
           "draw": 3.3,
           "away": 3.2
         },

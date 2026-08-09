@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T13:41:47Z",
+  "generatedAt": "2026-08-09T13:56:15Z",
   "league": "JLG",
   "matches": [
     {
@@ -149,11 +149,11 @@
         "spreads": {
           "home": {
             "point": -0.25,
-            "price": 1.895
+            "price": 1.8849999999999998
           },
           "away": {
             "point": 0.25,
-            "price": 1.935
+            "price": 1.94
           }
         }
       },

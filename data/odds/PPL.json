@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T13:41:43Z",
+  "generatedAt": "2026-08-09T13:56:11Z",
   "league": "PPL",
   "matches": [
     {
@@ -9,23 +9,23 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.19,
-          "draw": 6.25,
-          "away": 13.0
+          "home": 1.2,
+          "draw": 6.0,
+          "away": 12.68
         },
         "totals": {
           "line": 2.5,
-          "over": 1.99,
-          "under": 1.815
+          "over": 2.09,
+          "under": 1.755
         },
         "spreads": {
           "home": {
-            "point": -1.75,
-            "price": 1.91
+            "point": -2.0,
+            "price": 2.125
           },
           "away": {
-            "point": 1.75,
-            "price": 1.97
+            "point": 2.0,
+            "price": 1.73
           }
         }
       },
@@ -85,11 +85,11 @@
         "spreads": {
           "home": {
             "point": 1.0,
-            "price": 1.7650000000000001
+            "price": 1.82
           },
           "away": {
             "point": -1.0,
-            "price": 2.0949999999999998
+            "price": 2.1
           }
         }
       },
@@ -117,7 +117,7 @@
         "spreads": {
           "home": {
             "point": -0.5,
-            "price": 2.05
+            "price": 2.04
           },
           "away": {
             "point": 0.5,
