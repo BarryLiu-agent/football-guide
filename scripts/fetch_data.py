@@ -85,6 +85,40 @@ def fetch_competition(code, date_from, date_to):
         print(f"  ✗ {code}: HTTP {r.status_code} - {r.text[:200]}")
         return []
 
+
+def fetch_standings():
+    """抓取各联赛积分榜 → data/standings.json（供排名对比分析）"""
+    standings = {}
+    for code in COMPETITIONS:
+        try:
+            r = requests.get(f"{API_BASE}/competitions/{code}/standings", headers=HEADERS, timeout=20)
+            if r.status_code != 200:
+                print(f"  - {code} 积分榜: HTTP {r.status_code}")
+                continue
+            data = r.json()
+            table = None
+            for s in data.get("standings", []):
+                if s.get("type") == "TOTAL":
+                    table = s.get("table", [])
+                    break
+            if not table:
+                continue
+            standings[code] = [{
+                "position": t.get("position"),
+                "team": (t.get("team") or {}).get("name", ""),
+                "shortName": (t.get("team") or {}).get("shortName", ""),
+                "playedGames": t.get("playedGames"),
+                "points": t.get("points"),
+                "goalDifference": t.get("goalDifference"),
+                "won": t.get("won"), "draw": t.get("draw"), "lost": t.get("lost"),
+                "goalsFor": t.get("goalsFor"), "goalsAgainst": t.get("goalsAgainst"),
+            } for t in table]
+        except Exception as e:
+            print(f"  - {code} 积分榜失败: {e}")
+    out = {"generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "standings": standings}
+    (ROOT / "data" / "standings.json").write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+    print(f"  ✓ 积分榜: {len(standings)} 个联赛 -> data/standings.json")
+
 def is_big_team(team_name, flat_list):
     """判断球队是否在豪门列表中"""
     return team_name in flat_list
@@ -224,6 +258,9 @@ def main(no_filter=False):
         json.dump(stats, f, ensure_ascii=False, indent=2)
 
     print(f"   统计文件: {stats_file}")
+
+    # 积分榜（供排名对比分析）
+    fetch_standings()
 
     return 0
 
