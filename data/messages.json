@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T13:21:40Z",
+  "generatedAt": "2026-08-09T13:30:41Z",
   "total": 20,
   "messages": [
     {
@@ -38,6 +38,17 @@
     {
       "source": "skysports",
       "type": "news",
+      "text": "Semenyo stars as Man City come from behind to beat Atletico LIVE!",
+      "timestamp": "Sun, 09 Aug 2026 10:58:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/manchester-city-vs-atletico-madrid/live/559827",
+        "lang": "en",
+        "summary": ""
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
       "text": "'The first of many!' | Hogh opens Celtic account early on at Kilmarnock",
       "timestamp": "Sun, 09 Aug 2026 13:37:00 BST",
       "metadata": {
@@ -60,17 +71,6 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Semenyo stars as Man City come from behind to beat Atletico LIVE!",
-      "timestamp": "Sun, 09 Aug 2026 10:58:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/manchester-city-vs-atletico-madrid/live/559827",
-        "lang": "en",
-        "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
       "text": "Arsenal fall behind AGAIN in pre-season to Dortmund LIVE!",
       "timestamp": "Sun, 09 Aug 2026 12:30:00 BST",
       "metadata": {
@@ -82,7 +82,7 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Iraola takes charge of Liverpool for first time at Anfield vs Monaco LIVE!",
+      "text": "Iraola takes charge of Liverpool at Anfield for first time vs Monaco LIVE!",
       "timestamp": "Sun, 09 Aug 2026 13:23:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/football/liverpool-vs-monaco/live/556109",

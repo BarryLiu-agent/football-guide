@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T13:20:32Z",
+  "generatedAt": "2026-08-09T13:29:33Z",
   "dateRange": {
     "from": "2026-08-02",
     "to": "2026-09-13"
@@ -17995,11 +17995,11 @@
       },
       "id": 558220,
       "utcDate": "2026-08-09T12:30:00Z",
-      "status": "LIVE",
+      "status": "PAUSED",
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-09T13:19:45Z",
+      "lastUpdated": "2026-08-09T13:25:58Z",
       "homeTeam": {
         "id": 677,
         "name": "FC Groningen",
@@ -18018,12 +18018,12 @@
         "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": 2,
+          "home": 1,
           "away": 0
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 0
         }
       },
       "odds": {
@@ -18062,11 +18062,11 @@
       },
       "id": 558221,
       "utcDate": "2026-08-09T12:30:00Z",
-      "status": "LIVE",
+      "status": "PAUSED",
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-09T13:20:06Z",
+      "lastUpdated": "2026-08-09T13:28:38Z",
       "homeTeam": {
         "id": 684,
         "name": "PEC Zwolle",
@@ -18089,8 +18089,8 @@
           "away": 0
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         }
       },
       "odds": {
