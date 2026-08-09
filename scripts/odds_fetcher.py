@@ -51,10 +51,16 @@ class OddsSource:
         raise NotImplementedError
 
 
-# ── The Odds API 实现（可选降级）─────────────────────────
+# ── The Odds API 实现（多 Key 轮换）─────────────────────
 
 class TheOddsApiSource(OddsSource):
-    """The Odds API (https://the-odds-api.com) - 需要 ODDS_API_KEY 环境变量。"""
+    """The Odds API (https://the-odds-api.com)
+    支持多 API Key 轮换：ODDS_API_KEY(主) → ODDS_API_KEY_2(备) → ...
+    配额保护：剩余 < MIN_REMAINING 的 Key 自动跳过；401/403 时自动切换下一个。
+    """
+
+    MIN_REMAINING = 5  # 剩余配额低于此值视为不可用
+    _key_quota = {}  # key -> remaining（本次运行内缓存）
 
     LEAGUE_MAP = {
         "PL": "soccer_epl",
@@ -78,27 +84,60 @@ class TheOddsApiSource(OddsSource):
         "KL1": "soccer_korea_kleague1",
     }
 
+    def _get_keys(self):
+        """按优先级收集所有可用 Key（去空/去重）。"""
+        keys = []
+        for env_name in ["ODDS_API_KEY", "ODDS_API_KEY_2", "ODDS_API_KEY_3"]:
+            k = os.environ.get(env_name, "").strip()
+            if k and k not in keys:
+                keys.append(k)
+        return keys
+
     def fetch(self, league_code: str) -> list:
-        api_key = os.environ.get(self.config.get("apiKeyEnv", "ODDS_API_KEY"), "")
-        if not api_key:
-            return []
         sport = self.LEAGUE_MAP.get(league_code)
         if not sport:
             return []
+        keys = self._get_keys()
+        if not keys:
+            print(f"    - {league_code}: 未配置 ODDS_API_KEY")
+            return []
 
-        params = {
-            "apiKey": api_key,
+        params_base = {
             "regions": ",".join(self.config.get("regions", ["eu"])),
             "markets": ",".join(self.config.get("markets", ["h2h"])),
         }
         url = f"{self.config['baseUrl']}/sports/{sport}/odds"
-        try:
-            r = requests.get(url, params=params, timeout=20)
-            r.raise_for_status()
-            return [self.normalize(x) for x in r.json()]
-        except Exception as e:
-            print(f"    - {league_code}: TheOddsApi 失败 {e}")
-            return []
+
+        for key in keys:
+            # 配额保护：本次运行内剩余不足则跳过
+            if self._key_quota.get(key, 999) < self.MIN_REMAINING:
+                continue
+            params = dict(params_base, apiKey=key)
+            try:
+                r = requests.get(url, params=params, timeout=20)
+                # 记录剩余配额
+                try:
+                    self._key_quota[key] = int(r.headers.get("x-requests-remaining", 999))
+                except (TypeError, ValueError):
+                    pass
+                if r.status_code == 200:
+                    tag = key[-4:]
+                    print(f"      (key ...{tag}, 剩 {self._key_quota.get(key, '?')})")
+                    return [self.normalize(x) for x in r.json()]
+                if r.status_code in (401, 403):
+                    # Key 无效/配额耗尽：跳过换下一个
+                    self._key_quota[key] = 0
+                    continue
+                if r.status_code == 429:
+                    self._key_quota[key] = 0
+                    continue
+                print(f"    - {league_code}: HTTP {r.status_code} (key ...{key[-4:]})")
+                return []
+            except Exception as e:
+                print(f"    - {league_code}: 请求失败 {e} (key ...{key[-4:]})")
+                return []
+        print(f"    - {league_code}: 所有 Key 配额不足或不可用")
+        return []
 
     def normalize(self, raw: dict) -> dict:
         home_name = raw.get("home_team", "")

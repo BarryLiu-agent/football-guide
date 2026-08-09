@@ -35,6 +35,7 @@ jobs:
       - name: Fetch odds
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          ODDS_API_KEY_2: ${{ secrets.ODDS_API_KEY_2 }}
         run: python scripts/odds_fetcher.py
 
       - name: Fetch messages
