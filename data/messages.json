@@ -1,7 +1,161 @@
 {
-  "generatedAt": "2026-08-08T14:39:11Z",
+  "generatedAt": "2026-08-09T05:30:50Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "True Love seeks Prix Maurice de Gheest crown at Deauville",
+      "timestamp": "Sun, 09 Aug 2026 06:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/racing/news/12040/13570933/today-on-sky-sports-racing-true-love-seeks-prix-maurice-de-gheest-crown-at-deauville",
+        "lang": "en",
+        "summary": "True Love heads the markets for the 2026 renewal of the Prix Maurice de Gheest - <em>live on Sky Sports Racing</em> at 3.40pm."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Papers: Romero open to joining Arsenal but Spurs resist",
+      "timestamp": "Sat, 08 Aug 2026 23:15:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571259/cristian-romero-open-to-joining-arsenal-but-tottenham-adamant-their-defender-will-not-cross-the-north-london-divide-paper-talk",
+        "lang": "en",
+        "summary": "The top stories and transfer rumours from Sunday's newspapers..."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Wissa double gives Newcastle boss Jaissle winning start at 10-man Valencia",
+      "timestamp": "Sat, 08 Aug 2026 22:26:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571236/valencia-1-2-newcastle-yoane-wissas-double-gives-matthias-jaissle-winning-start-as-anthony-elanga-stretchered-off",
+        "lang": "en",
+        "summary": "Substitute Yoane Wissa scored twice to give Matthias Jaissle a winning start as Newcastle boss with a 2-1 comeback pre-season win at 10-man Valencia."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Wolves overwhelm Bradford in emphatic away victory",
+      "timestamp": "Sun, 09 Aug 2026 00:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13571231/bradford-bulls-4-42-warrington-wolves-super-league-highlights",
+        "lang": "en",
+        "summary": "Highlights of the Super League clash between Bradford Bulls and Warrington Wolves as Matty Ashton scored twice in a dominant 42-4 victory for the visitors."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Wigan overpower Toulouse to close gap on leaders",
+      "timestamp": "Sun, 09 Aug 2026 00:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13571216/wigan-warriors-48-18-toulouse-olympique-super-league-highlights",
+        "lang": "en",
+        "summary": "Highlights of the Super League clash between Wigan Warriors and Toulouse Olympique."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "McKenna wins world title in Ireland homecoming fight!",
+      "timestamp": "Sat, 08 Aug 2026 23:46:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13571266/aaron-mckenna-vs-etinosa-oliha-fight-highlights",
+        "lang": "en",
+        "summary": "Highlights of Aaron McKenna's IBF middleweight world title fight against Etinosa Oliha."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "McKenna becomes middleweight world champ with dream homecoming win",
+      "timestamp": "Sat, 08 Aug 2026 23:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/boxing/news/12040/13571057/aaron-mckenna-wins-dream-homecoming-bout-against-etinosa-oliha-to-become-ibf-middleweight-world-champion-in-dublin",
+        "lang": "en",
+        "summary": "Ireland's Aaron McKenna defeated Etinosa Oliha to become a middleweight world champion."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "'Good signs' for Man Utd as Mbeumo scores in encouraging  draw with PSG",
+      "timestamp": "Sat, 08 Aug 2026 18:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/paris-saint-germain-vs-manchester-united/report/555766",
+        "lang": "en",
+        "summary": "Bryan Mbeumo earned Man Utd a 1-1 draw with Paris St-Germain in Gothenburg, a pre-season friendly which left boss Michael Carrick encouraged by the \"good signs\" from his side.  "
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "'That is another crunching finish!' | Hickey lands DEVASTATING knockout",
+      "timestamp": "Sat, 08 Aug 2026 20:26:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13571226/zuffa-boxing-10-sam-hickey-lands-devastating-knockout-vs-brad-axe",
+        "lang": "en",
+        "summary": "Sam Hickey's huge right hand knocked out Brad Axe in the seventh round of their contest."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "St Mirren 1-0 St Johnstone",
+      "timestamp": "Sat, 08 Aug 2026 20:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13571233/st-mirren-1-0-st-johnstone-scottish-premiership-highlights",
+        "lang": "en",
+        "summary": "Highlights from the Scottish Premiership match between St Mirren and St Johnstone"
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Walsh battles through cuts and knockdown to drop Denny and take victory",
+      "timestamp": "Sat, 08 Aug 2026 19:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/boxing/news/12040/13571055/callum-walsh-comes-through-cuts-and-knockdown-to-drop-denny-and-take-battling-decision-victory-in-dublin-contest",
+        "lang": "en",
+        "summary": "Callum Walsh maintained his unbeaten record and top contender status with a unanimous decision victory over Tyler Denny."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Wissa's double gives Newcastle's Jaissle winning start at 10-man Valencia LIVE!",
+      "timestamp": "Sat, 08 Aug 2026 19:01:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/valencia-vs-newcastle-united/live/568647",
+        "lang": "en",
+        "summary": ""
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Ward rescues career with valiant Kasparian win",
+      "timestamp": "Sat, 08 Aug 2026 19:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/boxing/news/12040/13571046/joe-ward-rescues-career-with-valiant-artjom-kasparian-win-as-stevie-mckenna-and-sam-hickey-take-stunning-one-punch-finishes",
+        "lang": "en",
+        "summary": "Joe Ward staved off disaster, beating Artjom Kasparian on a unanimous decision after 10 ferocious rounds at the 3Arena in Dublin."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "'Took him off both his feet!' | Stevie McKenna with HUGE first-round KO",
+      "timestamp": "Sat, 08 Aug 2026 18:30:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13571184/zuffa-boxing-10-stevie-mckenna-with-huge-first-round-knockout",
+        "lang": "en",
+        "summary": "Stevie McKenna stopped Owen O'Neill with a devastating right hand in the opening round of their contest at Zuffa Boxing 10."
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -11,6 +165,39 @@
         "link": "https://www.skysports.com/rugby-league/news/12040/13570935/huddersfield-giants-moving-to-dewsbury-super-league-side-switching-home-from-2027-season-onwards",
         "lang": "en",
         "summary": "Betfred Super League side Huddersfield Giants have announced they are to leave the town and move to&#160;Dewsbury for the 2027 season onwards."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Moore helps GB and Ireland to Shergar Cup crown",
+      "timestamp": "Sat, 08 Aug 2026 17:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/racing/news/12040/13571076/shergar-cup-ryan-moore-helps-great-britain-and-ireland-to-ascot-crown",
+        "lang": "en",
+        "summary": "Ryan Moore bagged a Shergar Cup double on his return to the competition following a 20-year absence to help his Great Britain and Ireland team win the team event while he was also crowned leading rider over the six races."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "'There's no hiding'- IBF champ McKenna puts middleweight division on notice",
+      "timestamp": "Sat, 08 Aug 2026 17:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/boxing/live-blog/12040/13570943/aaron-mckenna-vs-etinosa-oliha-live-updates-stream-undercard-news-results-highlights-from-zuffa-boxing-10-in-dublin",
+        "lang": "en",
+        "summary": ""
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "South Africa edge Argentina in thriller but Kolisi suffers injury",
+      "timestamp": "Sat, 08 Aug 2026 22:09:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/rugby-union/news/12040/13571253/argentina-10-17-south-africa-springboks-win-buenos-aires-thriller-but-siya-kolisi-suffers-injury-ahead-of-new-zealand-series",
+        "lang": "en",
+        "summary": "South Africa scraped past Argentina 17-10 in Test rugby at the possible expense of inspirational captain Siya Kolisi in Buenos Aires on Saturday."
       }
     },
     {
@@ -27,199 +214,12 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Australia survive late Japan rally as new coach Kiss makes winning start",
-      "timestamp": "Sat, 08 Aug 2026 13:44:00 BST",
+      "text": "Phillips hits winner against St Johnstone as St Mirren go top",
+      "timestamp": "Sat, 08 Aug 2026 16:50:00 BST",
       "metadata": {
-        "link": "https://www.skysports.com/rugby-union/news/12040/13570951/australia-edge-japan-35-32-to-give-les-kiss-winning-start-in-first-match-as-head-coach",
+        "link": "https://www.skysports.com/football/st-mirren-vs-st-johnstone/report/558342",
         "lang": "en",
-        "summary": "Australia held on for a tight 35-32 victory over Japan, despite a first-half red card for Miles Amatosero, as they made a winning start in head coach Les Kiss' first match in charge.&#160;"
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Man Utd vs PSG team news LIVE!",
-      "timestamp": "Fri, 07 Aug 2026 17:47:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/paris-saint-germain-vs-manchester-united/live/555766",
-        "lang": "en",
-        "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Rockets clinch qualification for women's knockouts in The Hundred",
-      "timestamp": "Sat, 08 Aug 2026 14:15:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/cricket/news/12040/13570938/the-hundred-trent-rockets-continue-dominance-of-womens-competition-as-qualification-for-knockouts-is-clinched",
-        "lang": "en",
-        "summary": "Trent Rockets booked a place in the knockouts of The Hundred women's competition with a thumping nine-wicket win over already-eliminated MI London."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "'I'm your warrior' - Guimaraes moves to Arsenal from Newcastle for £75m",
-      "timestamp": "Sat, 08 Aug 2026 12:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13570096/bruno-guimaraes-arsenal-sign-midfielder-in-75m-transfer-as-newcastle-surpass-240m-in-player-sales-this-summer",
-        "lang": "en",
-        "summary": "Arsenal&#160;have signed midfielder Bruno Guimaraes from Newcastle in a &#163;75m transfer."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Bruno Guimaraes' FIERY clashes against Rice and Arsenal!",
-      "timestamp": "Thu, 09 Jul 2026 14:25:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13561965/bruno-guimaraes-when-arsenal-target-took-on-gunners-in-fiery-clash",
-        "lang": "en",
-        "summary": "A look back at when Arsenal target Bruno Guimaraes took on the Gunners in a fiery clash at St James' Park in 2023. "
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Guimaraes reveals hilarious Rice and Gabriel messages!",
-      "timestamp": "Sat, 08 Aug 2026 13:21:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13570945/bruno-guimaraes-reveals-hilarious-declan-rice-and-gabriel-messages-no-fights-now-were-friends",
-        "lang": "en",
-        "summary": "Bruno Guimaraes reveals hilarious Declan Rice and Gabriel messages before signing for Arsenal. Credit: Arsenal."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Chelsea cruise to big win over Milan LIVE!",
-      "timestamp": "Fri, 07 Aug 2026 17:42:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/live-blog/12040/13570761/chelsea-vs-ac-milan-live-pre-season-friendly-team-news-preview-score-updates-and-live-blog-from-jakarta",
-        "lang": "en",
-        "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "'I'd rather fight Aaron for world title' - Walsh dismisses Stevie McKenna call-out",
-      "timestamp": "Sat, 08 Aug 2026 07:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/boxing/news/12040/13570679/callum-walsh-aaron-mckenna-world-title-fight-makes-sense-fighting-stephen-mckenna-doesnt",
-        "lang": "en",
-        "summary": "Callum Walsh would entertain a fight against Aaron McKenna over Stephen McKenna, insisting all-Irish clashes only make sense with the world title on the line."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Where does Guimaraes fit in at Arsenal?",
-      "timestamp": "Sat, 08 Aug 2026 12:01:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13569644/bruno-guimaraes-to-arsenal-how-does-ex-newcastle-captain-fit-in-and-what-does-it-mean-for-martin-zubimendi-martin-odegaard-myles-lewis-skelly",
-        "lang": "en",
-        "summary": "It is easy to understand why Arsenal have signed Bruno Guimaraes. The now ex-Newcastle captain is one of the Premier League's most complete midfielders, capable of dominating and destroying but also scoring and creating, with passing ability to match his physicality."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Today on Sky Sports Racing: Ascot stages Shergar Cup meeting",
-      "timestamp": "Sat, 08 Aug 2026 07:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/racing/news/12040/13570627/today-on-sky-sports-racing-ascot-stages-shergar-cup-meeting-with-lingfield-also-live-on-saturday",
-        "lang": "en",
-        "summary": "We have a busy day's racing on Saturday with Flat action from Ascot and Lingfield Park, live on Sky Sports Racing..."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Bowen starts for West Ham while Norwich lead early | All Carabao Cup on Sky LIVE!",
-      "timestamp": "Sat, 08 Aug 2026 13:30:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/live-blog/12040/13570685/carabao-cup-first-round-live-scores-match-updates-and-free-highlights",
-        "lang": "en",
-        "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Brit Smith keeps pressure on leader Hossler after Wyndham Championship R2",
-      "timestamp": "Fri, 07 Aug 2026 23:15:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13570878/wyndham-championship-day-two-highlights",
-        "lang": "en",
-        "summary": "Highlights from day two of the Wyndham Championship held at Sedgefield Country Club in Greensboro, North Carolina."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Leigh Leopards boost play-off hopes with 22-14 win over York Knights",
-      "timestamp": "Fri, 07 Aug 2026 23:04:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13570874/leigh-leopards-22-14-york-knights-super-league-highlights",
-        "lang": "en",
-        "summary": "Highlights of Leigh Leopards against York Knights from the Super League."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Bracey shares memories of Lawrence ahead of Sunday's tribute",
-      "timestamp": "Sat, 08 Aug 2026 08:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/cricket/news/12040/13570579/james-bracey-on-memories-of-syd-lawrence-ahead-of-day-to-raise-funds-for-motor-neurone-disease-to-see-emotion-on-his-face-was-very-special",
-        "lang": "en",
-        "summary": "When James Bracey thinks of Syd Lawrence, he does not first think of wickets, records or milestones."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Hull KR thump Castleford 44-0",
-      "timestamp": "Fri, 07 Aug 2026 22:25:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13570863/castleford-tigers-0-44-hull-kr-super-league-highlights",
-        "lang": "en",
-        "summary": "Highlights of Castleford Tigers against Hull KR from the Super League."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Araujo set for medical ahead of surprise Liverpool loan move",
-      "timestamp": "Sat, 08 Aug 2026 10:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13570871/ronald-araujo-transfer-news-liverpool-agree-loan-deal-for-barcelona-defender-to-add-depth-at-centre-back",
-        "lang": "en",
-        "summary": "Liverpool have agreed a surprise deal for Barcelona defender Ronald Araujo to join on loan for the season."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Papers: Arsenal could hijack Liverpool's move for Barcola",
-      "timestamp": "Fri, 07 Aug 2026 23:30:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13570879/bradley-barcola-transfer-news-arsenal-could-hijack-liverpools-move-for-psg-winger-paper-talk",
-        "lang": "en",
-        "summary": "The top stories and transfer rumours from Saturday's newspapers..."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "McKenna vs Oliha and Walsh vs Denny big-fight predictions",
-      "timestamp": "Sat, 08 Aug 2026 07:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/boxing/news/12040/13570676/aaron-mckenna-vs-etinosa-oliha-and-callum-walsh-vs-tyler-denny-big-fight-predictions-who-will-win-the-middleweight-showdowns",
-        "lang": "en",
-        "summary": "Experts have their say ahead of the Aaron McKenna vs Etinosa Oliha middleweight world championship clash and Callum Walsh's crucial fight against Tyler Denny, live on <em>Sky Sports</em> from 7pm."
+        "summary": "Killian Phillips was on target again to keep St Mirren on top of the Premiership for a second Saturday night."
       }
     }
   ]
