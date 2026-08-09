@@ -554,7 +554,11 @@
    "kickoff": "2026-08-09T12:30:00Z",
    "predictedScore": "1-2",
    "confidence": 0.667,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "predictedAt": "2026-08-09T13:17:45Z",
+   "actualScore": "0-2",
+   "evaluatedAt": "2026-08-09T15:06:54Z",
+   "hitExact": false,
+   "hitOutcome": true
   },
   {
    "homeTeam": "Groningen",
@@ -562,7 +566,11 @@
    "kickoff": "2026-08-09T12:30:00Z",
    "predictedScore": "1-1",
    "confidence": 0.575,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "predictedAt": "2026-08-09T13:17:45Z",
+   "actualScore": "2-1",
+   "evaluatedAt": "2026-08-09T15:06:54Z",
+   "hitExact": false,
+   "hitOutcome": false
   },
   {
    "homeTeam": "Heerenveen",
@@ -1867,15 +1875,33 @@
    "actualScore": "2-2",
    "hitExact": false,
    "hitOutcome": false
+  },
+  {
+   "homeTeam": "FC Zwolle",
+   "awayTeam": "Ajax",
+   "kickoff": "2026-08-09T12:30:00Z",
+   "predictedScore": "1-2",
+   "actualScore": "0-2",
+   "hitExact": false,
+   "hitOutcome": true
+  },
+  {
+   "homeTeam": "Groningen",
+   "awayTeam": "FC Utrecht",
+   "kickoff": "2026-08-09T12:30:00Z",
+   "predictedScore": "1-1",
+   "actualScore": "2-1",
+   "hitExact": false,
+   "hitOutcome": false
   }
  ],
  "stats": {
   "total": 217,
-  "finished": 10,
+  "finished": 12,
   "exactHit": 1,
-  "exactRate": 0.1,
-  "outcomeHit": 3,
-  "outcomeRate": 0.3,
-  "updatedAt": "2026-08-09T13:58:49Z"
+  "exactRate": 0.0833,
+  "outcomeHit": 4,
+  "outcomeRate": 0.3333,
+  "updatedAt": "2026-08-09T15:06:54Z"
  }
 }

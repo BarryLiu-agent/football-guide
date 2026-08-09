@@ -1,7 +1,18 @@
 {
-  "generatedAt": "2026-08-09T13:58:47Z",
+  "generatedAt": "2026-08-09T15:06:52Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Arsenal defend badly as Dortmund win Emirates Cup",
+      "timestamp": "Sun, 09 Aug 2026 15:58:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571075/arsenal-2-3-borussia-dortmund-mikel-artetas-side-defend-poorly-but-christos-tzolis-shines-as-gunners-lose-emirates-cup",
+        "lang": "en",
+        "summary": "Arsenal produced more comical defending in pre-season as Borussia Dortmund won 3-2 in north London to win the Emirates Cup."
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -60,7 +71,7 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Arsenal two goals down AGAIN in pre-season to Dortmund LIVE!",
+      "text": "Arsenal beaten by Dortmund - but win the shootout LIVE!",
       "timestamp": "Sun, 09 Aug 2026 12:30:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/football/live-blog/12040/13571163/arsenal-vs-borussia-dortmund-live-pre-season-friendly-team-news-preview-score-updates-and-live-blog",
@@ -71,7 +82,7 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Isak steers Liverpool ahead against Monaco in pre-season friendly LIVE!",
+      "text": "Monaco hit back to level at Liverpool as Munoz makes debut LIVE!",
       "timestamp": "Sun, 09 Aug 2026 13:23:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/football/liverpool-vs-monaco/live/556109",
@@ -93,6 +104,17 @@
     {
       "source": "skysports",
       "type": "news",
+      "text": "Hogh hits hat-trick as Celtic ease past hapless Kilmarnock",
+      "timestamp": "Sun, 09 Aug 2026 15:20:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/kilmarnock-vs-celtic/report/558343",
+        "lang": "en",
+        "summary": "Record signing Kasper Hogh silenced his early critics with a first-half hat-trick as Celtic swept Kilmarnock aside on the new grass pitch at Rugby Park. "
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
       "text": "Marmoush tucks in double as Semenyo stars in Man City win over Atletico Madrid",
       "timestamp": "Sat, 08 Aug 2026 16:57:00 BST",
       "metadata": {
@@ -104,7 +126,7 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Hogh hits first-half hat-trick for Celtic at woeful Kilmarnock LIVE!",
+      "text": "Rangers face Hibs after Celtic hit five at Kilmarnock LIVE!",
       "timestamp": "Sun, 09 Aug 2026 12:00:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/football/kilmarnock-vs-celtic/live/558343",
@@ -198,28 +220,6 @@
         "link": "https://www.skysports.com/football/valencia-vs-newcastle-united/report/568647",
         "lang": "en",
         "summary": "Substitute Yoane Wissa scored twice to give Matthias Jaissle a winning start as Newcastle boss with a 2-1 comeback pre-season win at 10-man Valencia."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Wolves overwhelm Bradford in emphatic away victory",
-      "timestamp": "Sun, 09 Aug 2026 00:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13571231/bradford-bulls-4-42-warrington-wolves-super-league-highlights",
-        "lang": "en",
-        "summary": "Highlights of the Super League clash between Bradford Bulls and Warrington Wolves as Matty Ashton scored twice in a dominant 42-4 victory for the visitors."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Wigan overpower Toulouse to close gap on leaders",
-      "timestamp": "Sun, 09 Aug 2026 00:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13571216/wigan-warriors-48-18-toulouse-olympique-super-league-highlights",
-        "lang": "en",
-        "summary": "Highlights of the Super League clash between Wigan Warriors and Toulouse Olympique."
       }
     }
   ]

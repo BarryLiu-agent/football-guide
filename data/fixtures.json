@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T13:58:10Z",
+  "generatedAt": "2026-08-09T15:06:50Z",
   "dateRange": {
     "from": "2026-08-02",
     "to": "2026-09-13"
@@ -17994,11 +17994,11 @@
       },
       "id": 558220,
       "utcDate": "2026-08-09T12:30:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-09T13:57:20Z",
+      "lastUpdated": "2026-08-09T14:38:00Z",
       "homeTeam": {
         "id": 677,
         "name": "FC Groningen",
@@ -18018,7 +18018,7 @@
         "duration": "REGULAR",
         "fullTime": {
           "home": 2,
-          "away": 0
+          "away": 1
         },
         "halfTime": {
           "home": 1,
@@ -18061,11 +18061,11 @@
       },
       "id": 558221,
       "utcDate": "2026-08-09T12:30:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-09T13:57:20Z",
+      "lastUpdated": "2026-08-09T14:36:53Z",
       "homeTeam": {
         "id": 684,
         "name": "PEC Zwolle",
@@ -18081,11 +18081,11 @@
         "crest": "https://crests.football-data.org/678.png"
       },
       "score": {
-        "winner": "DRAW",
+        "winner": "AWAY_TEAM",
         "duration": "REGULAR",
         "fullTime": {
           "home": 0,
-          "away": 0
+          "away": 2
         },
         "halfTime": {
           "home": 0,
@@ -18128,11 +18128,11 @@
       },
       "id": 558222,
       "utcDate": "2026-08-09T14:45:00Z",
-      "status": "TIMED",
+      "status": "LIVE",
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-09T05:20:14Z",
+      "lastUpdated": "2026-08-09T15:06:30Z",
       "homeTeam": {
         "id": 673,
         "name": "SC Heerenveen",
@@ -18148,11 +18148,11 @@
         "crest": "https://crests.football-data.org/666.png"
       },
       "score": {
-        "winner": null,
+        "winner": "DRAW",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         },
         "halfTime": {
           "home": null,
@@ -21036,11 +21036,11 @@
       },
       "id": 554954,
       "utcDate": "2026-08-09T14:00:00Z",
-      "status": "TIMED",
+      "status": "PAUSED",
       "matchday": 22,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-09T01:32:00Z",
+      "lastUpdated": "2026-08-09T14:58:24Z",
       "homeTeam": {
         "id": 1771,
         "name": "Cruzeiro EC",
@@ -21056,15 +21056,15 @@
         "crest": "https://crests.football-data.org/4364.png"
       },
       "score": {
-        "winner": null,
+        "winner": "DRAW",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 1
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 1
         }
       },
       "odds": {
