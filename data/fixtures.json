@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T19:22:22Z",
+  "generatedAt": "2026-08-09T21:06:01Z",
   "dateRange": {
     "from": "2026-08-02",
     "to": "2026-09-13"
@@ -21100,7 +21100,7 @@
       "matchday": 22,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-09T19:22:10Z",
+      "lastUpdated": "2026-08-09T21:05:41Z",
       "homeTeam": {
         "id": 1777,
         "name": "EC Bahia",
@@ -21123,8 +21123,8 @@
           "away": 0
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         }
       },
       "odds": {
@@ -21156,11 +21156,11 @@
       },
       "id": 554957,
       "utcDate": "2026-08-09T19:00:00Z",
-      "status": "LIVE",
+      "status": "IN_PLAY",
       "matchday": 22,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-09T19:21:41Z",
+      "lastUpdated": "2026-08-09T21:05:09Z",
       "homeTeam": {
         "id": 1769,
         "name": "SE Palmeiras",
@@ -21183,8 +21183,8 @@
           "away": 0
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         }
       },
       "odds": {

@@ -1,7 +1,18 @@
 {
-  "generatedAt": "2026-08-09T19:22:23Z",
+  "generatedAt": "2026-08-09T21:06:02Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "'Very pathetic' - Koepka fumes after missing FedExCup playoffs",
+      "timestamp": "Sun, 09 Aug 2026 20:33:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/golf/news/12040/13571491/brooks-koepka-fumes-after-pathetic-wyndham-championship-performance-costs-him-place-in-fedexcup-playoffs",
+        "lang": "en",
+        "summary": "Brooks Koepka labelled missing the FedExCup playoffs \"pathetic\" in a brutally honest assessment of his game after a low finish at the Wyndham Championship."
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -16,12 +27,12 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Hibs win at Rangers as McInnes remains winless",
-      "timestamp": "Sun, 09 Aug 2026 17:50:00 BST",
+      "text": "Hibs stun Rangers with win at Ibrox",
+      "timestamp": "Sun, 09 Aug 2026 20:45:00 BST",
       "metadata": {
-        "link": "https://www.skysports.com/football/rangers-vs-hibernian/report/558344",
+        "link": "https://www.skysports.com/watch/video/13571487/rangers-1-1-hibernian-scottish-premiership-highlights",
         "lang": "en",
-        "summary": "Derek McInnes is still looking for his first win as Rangers manager after Hibernian netted an injury-time winner to triumph 2-1 at Ibrox."
+        "summary": "Watch highlights from the Scottish Premiership match between Rangers and Hibernian."
       }
     },
     {
@@ -38,12 +49,45 @@
     {
       "source": "skysports",
       "type": "news",
+      "text": "Hogh scores first half hat-trick as Celtic romp Kilmarnock",
+      "timestamp": "Sun, 09 Aug 2026 20:45:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13571399/kilmarnock-1-5-celtic-scottish-premiership-highlights",
+        "lang": "en",
+        "summary": "Highlights of the Scottish Premiership match between Kilmarnock and Celtic."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Hibs win at Rangers as McInnes remains winless",
+      "timestamp": "Sun, 09 Aug 2026 17:50:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/rangers-vs-hibernian/report/558344",
+        "lang": "en",
+        "summary": "Derek McInnes is still looking for his first win as Rangers manager after Hibernian netted an injury-time winner to triumph 2-1 at Ibrox."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
       "text": "'Exciting' Sun Goddess looks the part in Phoenix Stakes",
       "timestamp": "Sun, 09 Aug 2026 18:03:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/racing/news/12040/13571457/exciting-sun-goddess-looks-the-part-for-record-breaking-aidan-obrien-in-phoenix-stakes-at-the-curragh",
         "lang": "en",
         "summary": "Sun Goddess came from last to first to provide Aidan O&#8217;Brien with his 18th win in the Keeneland Phoenix Stakes at the Curragh."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Hearts brush aside Dundee United in return to winning ways",
+      "timestamp": "Sun, 09 Aug 2026 20:45:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13571482/hearts-4-0-dundee-utd-scottish-premiership-highlights",
+        "lang": "en",
+        "summary": "Highlights from the Scottish Premiership match between Hearts and Dundee Utd."
       }
     },
     {
@@ -66,6 +110,17 @@
         "link": "https://www.skysports.com/football/news/12040/13571075/arsenal-2-3-borussia-dortmund-mikel-artetas-side-defend-poorly-but-christos-tzolis-shines-as-gunners-lose-emirates-cup",
         "lang": "en",
         "summary": "Arsenal produced more comical defending in pre-season as Borussia Dortmund won 3-2 in north London to win the Emirates Cup."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Motherwell 0-0 Falkirk",
+      "timestamp": "Sun, 09 Aug 2026 20:45:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13571486/motherwell-0-0-falkirk-scottish-premiership-highlights",
+        "lang": "en",
+        "summary": "Watch the highlights from the Scottish Premiership match between Motherwell and Falkirk."
       }
     },
     {
@@ -126,7 +181,7 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Marsh fifty helps SunRisers ease past Welsh Fire in The Hundred",
+      "text": "Marsh fifty helps SunRisers past Welsh Fire in The Hundred",
       "timestamp": "Sun, 09 Aug 2026 18:15:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/cricket/news/12040/13571460/the-hundred-sunrisers-leeds-ease-to-71-run-win-over-welsh-fire",
@@ -165,61 +220,6 @@
         "link": "https://www.skysports.com/football/live-blog/12040/13571163/arsenal-vs-borussia-dortmund-live-pre-season-friendly-team-news-preview-score-updates-and-live-blog",
         "lang": "en",
         "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Sinner withdraws from Cincinnati Open as knee injury raises US Open fears",
-      "timestamp": "Sun, 09 Aug 2026 17:44:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/tennis/news/12040/13571440/jannik-sinner-withdraws-from-cincinnati-open-as-knee-injury-raises-us-open-fitness-concerns",
-        "lang": "en",
-        "summary": "Jannik Sinner has withdrawn from the Cincinnati Open with an injury to his right knee."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Liverpool 2-3 Monaco commentary",
-      "timestamp": "Sun, 09 Aug 2026 13:23:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/liverpool-vs-monaco/live/556109",
-        "lang": "en",
-        "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Motherwell held to goalless draw at home to Falkirk",
-      "timestamp": "Sun, 09 Aug 2026 16:50:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/motherwell-vs-falkirk/report/558341",
-        "lang": "en",
-        "summary": "Motherwell signed off for their Conference League third-round qualifier against HJK Helsinki with a goalless draw against Falkirk."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "In-form Norrie defeated in Montreal while Sabalenka suffers shock loss",
-      "timestamp": "Sun, 09 Aug 2026 07:29:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/tennis/news/12040/13571288/national-bank-open-in-form-cam-norrie-defeated-by-arthur-fils-in-montreal-while-aryna-sabalenka-suffers-shock-canadian-open-loss",
-        "lang": "en",
-        "summary": "Britain's Cameron Norrie has been knocked out of the National Bank Open at the last-16 stage following a 6-2 7-6 (10-8) defeat by Arthur Fils in Montreal."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "New boys shine as Vrancken gets first Hearts win",
-      "timestamp": "Sun, 09 Aug 2026 16:50:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/hearts-vs-dundee-united/report/558340",
-        "lang": "en",
-        "summary": "Three Hearts summer signings were on target as Wouter Vrancken belatedly got his reign up and running with an emphatic 4-0 win over Dundee United."
       }
     }
   ]
