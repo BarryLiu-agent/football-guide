@@ -332,7 +332,12 @@ body {
   <!-- Today Tab (merged with predictions) -->
   <section class="tab-panel active" id="panel-today">
     <div class="league-filter" id="leagueFilter"></div>
-    <div style="font-size:0.75rem;color:var(--color-text-secondary);margin-bottom:10px;">⚖️ 点击比赛查看赔率/波胆/大小球与文字分析 · 有预测的比赛显示比分徽章</div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;">
+      <button class="league-chip active" id="dateChipAll" onclick="setDateFilter('all')">📅 全部</button>
+      <button class="league-chip" id="dateChipToday" onclick="setDateFilter('today')">今天</button>
+      <button class="league-chip" id="dateChipTomorrow" onclick="setDateFilter('tomorrow')">明天</button>
+      <button class="league-chip" id="dateChip3d" onclick="setDateFilter('3d')">未来3天</button>
+    </div>
     <div id="todayMatches"></div>
   </section>
 
@@ -363,6 +368,7 @@ body {
       <button class="mkt-tab" data-mkt="cs" onclick="switchMkt('cs')">波胆</button>
     </div>
     <div id="mktContent"></div>
+    <div id="statsBox"></div>
     <h3 style="font-size:0.85rem;color:var(--color-text-secondary);margin:6px 0 8px;">📝 分析</h3>
     <div class="analysis-actions">
       <button class="btn" id="refreshBtn" onclick="refreshAnalysis()">🔄 刷新分析</button>
@@ -601,6 +607,18 @@ function renderMatchList(containerId, matches, emptyMsg) {
   `).join('');
 }
 
+// ===== 日期筛选（首页） =====
+let activeDateFilter = 'all';
+
+function setDateFilter(f) {
+  activeDateFilter = f;
+  ['all', 'today', 'tomorrow', '3d'].forEach(k => {
+    const el = document.getElementById('dateChip' + (k === 'all' ? 'All' : k === '3d' ? '3d' : k[0].toUpperCase() + k.slice(1)));
+    if (el) el.classList.toggle('active', k === f);
+  });
+  loadToday();
+}
+
 async function loadToday() {
   const el = document.getElementById('todayMatches');
   el.innerHTML = '<div class="loading-spinner"><div class="spinner"></div></div>';
@@ -618,6 +636,20 @@ async function loadToday() {
     const d = formatDate(m.utcDate);
     return d >= today && d <= maxDate;
   });
+
+  // 日期快捷筛选
+  if (activeDateFilter === 'today') {
+    filtered = filtered.filter(m => formatDate(m.utcDate) === today);
+  } else if (activeDateFilter === 'tomorrow') {
+    const tomorrow = formatDate(new Date(Date.now() + 86400000).toISOString());
+    filtered = filtered.filter(m => formatDate(m.utcDate) === tomorrow);
+  } else if (activeDateFilter === '3d') {
+    const d3 = formatDate(new Date(Date.now() + 3 * 86400000).toISOString());
+    filtered = filtered.filter(m => {
+      const d = formatDate(m.utcDate);
+      return d >= today && d <= d3;
+    });
+  }
 
   // 合并"有赔率但无赛程"的比赛（如日职/K联赛/土超等 Football-Data 免费版不覆盖的联赛）
   const fixtureKeys = new Set(filtered.map(m => normTeam(m.homeTeam?.name || m.homeTeam?.shortName) + '|' + normTeam(m.awayTeam?.name || m.awayTeam?.shortName)));
@@ -756,17 +788,63 @@ function openDetailByTeams(homeName, awayName) {
       document.getElementById('modalTitle').textContent =
         `${displayTeam(pred.homeTeam)} vs ${displayTeam(pred.awayTeam)}`;
       document.getElementById('analysisBox').textContent = pred.analysis || '暂无分析';
+      renderStats(pred);
     } else {
       currentPred = null;
       document.getElementById('modalTitle').textContent =
         `${displayTeam(homeName)} vs ${displayTeam(awayName)}`;
       document.getElementById('analysisBox').textContent = '该场比赛暂无赔率与预测数据（可能未开售赔率或数据源未覆盖）。';
+      document.getElementById('statsBox').innerHTML = '';
     }
     document.getElementById('detailModal').classList.add('open');
     document.getElementById('refreshNote').textContent = '';
     switchMkt('1x2');
     lastGeneratedAt = null;
   });
+}
+
+function renderStats(p) {
+  const el = document.getElementById('statsBox');
+  const pct = v => v == null ? '—' : `${Math.round(v * 100)}%`;
+  let html = '';
+
+  // 排名对比
+  const st = p.standings;
+  if (st) {
+    const f = s => s ? `第${s.position}名 · ${s.points}分/${s.playedGames}场` : '—';
+    html += `<div style="background:var(--color-surface);border-radius:var(--radius-md);padding:8px 12px;margin-bottom:8px;box-shadow:var(--shadow-sm);font-size:0.75rem;display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap">
+      <span>🏆 ${displayTeam(p.homeTeam)}：<b>${f(st.home)}</b></span>
+      <span>${displayTeam(p.awayTeam)}：<b>${f(st.away)}</b></span>
+    </div>`;
+  }
+
+  // 期望进球 + 双方进球
+  const eg = p.expectedGoals || {};
+  const btts = p.btts;
+  html += `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:8px">
+    <div class="odds-box"><div class="label">主队期望进球</div><div class="value">${eg.home ?? '—'}</div><div class="prob">泊松模型</div></div>
+    <div class="odds-box"><div class="label">客队期望进球</div><div class="value">${eg.away ?? '—'}</div><div class="prob">泊松模型</div></div>
+    <div class="odds-box"><div class="label">双方进球 BTTS</div><div class="value" style="font-size:0.95rem">${pct(btts)}</div><div class="prob">${btts != null && btts >= 0.55 ? '倾向双方有球' : '倾向一方零封'}</div></div>
+  </div>`;
+
+  // 总进球分布条
+  const dist = p.totalGoalsDist || {};
+  const entries = Object.entries(dist).slice(0, 6);
+  if (entries.length) {
+    const max = Math.max(...entries.map(([, v]) => v));
+    html += `<div style="background:var(--color-surface);border-radius:var(--radius-md);padding:8px 12px;margin-bottom:8px;box-shadow:var(--shadow-sm)">
+      <div style="font-size:0.72rem;color:var(--color-text-secondary);margin-bottom:4px">⚽ 总进球数概率分布</div>
+      <div style="display:flex;gap:3px;align-items:flex-end;height:44px">${entries.map(([k, v]) =>
+        `<div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:2px">
+          <span style="font-size:0.6rem;color:var(--color-text-secondary)">${pct(v)}</span>
+          <div style="width:100%;background:var(--color-primary-light);border-radius:2px;height:${Math.max(4, Math.round((v / max) * 30))}px"></div>
+          <span style="font-size:0.62rem;color:var(--color-text-secondary)">${k}球</span>
+        </div>`).join('')}
+      </div>
+    </div>`;
+  }
+
+  el.innerHTML = html;
 }
 
 function closeDetail() {

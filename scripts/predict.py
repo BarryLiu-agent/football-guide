@@ -281,6 +281,25 @@ class ScoreModel:
         p_over = sum(m[i][j] for i in range(n) for j in range(n) if i + j > line)
         return {"line": line, "over": round(p_over, 3), "under": round(1 - p_over, 3)}
 
+    def total_goals_dist(self):
+        """总进球数概率分布: {'0': 0.08, '1': 0.2, ...}（0-6球+，7球及以上合并）"""
+        n = self.MAX_GOALS
+        m = [[self._poisson(i, self.lam_h) * self._poisson(j, self.lam_a) for j in range(n)] for i in range(n)]
+        dist = {}
+        for i in range(n):
+            for j in range(n):
+                t = i + j
+                dist[t] = dist.get(t, 0) + m[i][j]
+        out = {str(k): round(v, 4) for k, v in sorted(dist.items())}
+        return out
+
+    def btts_prob(self):
+        """双方进球概率（BTTS）。"""
+        n = self.MAX_GOALS
+        both = sum(self._poisson(i, self.lam_h) * self._poisson(j, self.lam_a)
+                   for i in range(1, n) for j in range(1, n))
+        return round(both, 4)
+
 
 # ── 文字分析生成（规则模板）──────────────────────────────
 
@@ -288,10 +307,24 @@ class AnalysisWriter:
     """基于赔率/波胆/大小球/消息信号生成中文文字分析。"""
 
     @staticmethod
-    def generate(home, away, odds_result, msg_result, score_model, ou=None, spreads=None):
+    def generate(home, away, odds_result, msg_result, score_model, ou=None, spreads=None, standings=None):
         lines = []
         prob = odds_result.get("prob") if odds_result else None
         raw = odds_result.get("rawOdds") if odds_result else None
+
+        # 0. 排名对比（若积分榜可用）
+        if standings and standings.get("home") and standings.get("away"):
+            h = standings["home"]
+            a = standings["away"]
+            diff = a["position"] - h["position"]
+            pos_txt = f"主队{home}排名第{h['position']}（{h['points']}分/{h['playedGames']}场），客队{away}排名第{a['position']}（{a['points']}分/{a['playedGames']}场）"
+            if diff >= 3:
+                pos_txt += f"，主队排名领先 {diff} 位"
+            elif diff <= -3:
+                pos_txt += f"，客队排名领先 {abs(diff)} 位"
+            else:
+                pos_txt += "，排名接近"
+            lines.append(f"【排名】{pos_txt}。")
 
         # 1. 胜负分析（含真实赔率）
         if prob:
@@ -336,6 +369,16 @@ class AnalysisWriter:
             if ou.get("overPrice") and ou.get("underPrice"):
                 price_str = f"（赔率 大 {ou['overPrice']} / 小 {ou['underPrice']}）"
             lines.append(f"【大小球】{ou['line']} 球盘口：大球 {ou['over']:.0%} / 小球 {ou['under']:.0%}{price_str}，倾向{direction}。")
+
+        # 5. 总进球分布 + 双方进球
+        dist = score_model.total_goals_dist()
+        if dist:
+            dist_str = "、".join(f"{k}球 {v:.0%}" for k, v in list(dist.items())[:5])
+            lines.append(f"【进球数】总进球概率：{dist_str}。")
+        btts = score_model.btts_prob()
+        if btts is not None:
+            btts_txt = f"双方都进球概率 {btts:.0%}" + ("，倾向双方有球" if btts >= 0.55 else "，倾向至少一方零封")
+            lines.append(f"【双方进球】{btts_txt}。")
 
         # 5. 消息信号
         if msg_result:
@@ -391,6 +434,27 @@ def load_messages():
         return json.load(f).get("messages", [])
 
 
+def load_standings():
+    """加载 data/standings.json → {league_code: [rows]}。"""
+    path = DATA_DIR / "standings.json"
+    if not path.exists():
+        return {}
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f).get("standings", {})
+
+
+def norm_team(s):
+    """队名归一化（与前端一致）。"""
+    import re
+    return re.sub(r"\b(fc|afc|cf|sc)\b", "", (s or "").lower()).replace("&", "").strip()
+
+
+# The Odds API 联赛代码 → Football-Data.org 联赛代码（积分榜用）
+LEAGUE_ALIAS = {
+    "CH": "ELC", "ED": "DED", "BDF": "BPL", "JLG": "J1", "KL1": "KLE",
+}
+
+
 def main():
     with open(CONFIG_DIR / "prediction_rules.json", "r", encoding="utf-8") as f:
         rules = json.load(f)
@@ -400,10 +464,29 @@ def main():
 
     odds_by_league = load_odds()
     messages = load_messages()
-    print(f"赔率联赛: {list(odds_by_league.keys())}, 消息: {len(messages)} 条")
+    standings_by_league = load_standings()
+    print(f"赔率联赛: {list(odds_by_league.keys())}, 消息: {len(messages)} 条, 积分榜联赛: {len(standings_by_league)}")
 
     predictor = ScorePredictor(rules)
     predictions = []
+
+    def find_standing(league_code, team_name):
+        """在积分榜中按队名模糊匹配排名。"""
+        table = standings_by_league.get(league_code) or standings_by_league.get(LEAGUE_ALIAS.get(league_code, league_code))
+        if not table:
+            return None
+        n = norm_team(team_name)
+        for row in table:
+            if norm_team(row["team"]) == n or norm_team(row.get("shortName", "")) == n:
+                return {"position": row["position"], "points": row["points"],
+                        "playedGames": row["playedGames"], "goalDifference": row["goalDifference"]}
+        # 首词匹配
+        first = n.split()[0] if n else ""
+        for row in table:
+            if first and norm_team(row["team"]).startswith(first):
+                return {"position": row["position"], "points": row["points"],
+                        "playedGames": row["playedGames"], "goalDifference": row["goalDifference"]}
+        return None
 
     for league, matches in odds_by_league.items():
         for m in matches:
@@ -452,7 +535,17 @@ def main():
             top_cs = score_model.correct_scores(1)
             if top_cs:
                 pred["predictedScore"] = top_cs[0]["score"]
-            pred["analysis"] = AnalysisWriter.generate(home, away, odds_result, msg_result, score_model, ou, pred["spreads"])
+            # 排名对比（积分榜）
+            sh = find_standing(league, home)
+            sa = find_standing(league, away)
+            pred["standings"] = ({"home": sh, "away": sa} if sh and sa else None)
+            # 总进球分布 + 双方进球
+            pred["totalGoalsDist"] = score_model.total_goals_dist()
+            pred["btts"] = score_model.btts_prob()
+            pred["expectedGoals"] = {
+                "home": round(score_model.lam_h, 2), "away": round(score_model.lam_a, 2)
+            }
+            pred["analysis"] = AnalysisWriter.generate(home, away, odds_result, msg_result, score_model, ou, pred["spreads"], pred["standings"])
             predictions.append(pred)
 
     out = {

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T05:30:38Z",
+  "generatedAt": "2026-08-09T13:10:43Z",
   "dateRange": {
     "from": "2026-08-02",
     "to": "2026-09-13"
@@ -2733,7 +2733,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-07-21T20:42:36Z",
+      "lastUpdated": "2026-08-09T01:32:04Z",
       "homeTeam": {
         "id": 263,
         "name": "Deportivo Alavés",
@@ -2793,7 +2793,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-07-21T20:42:36Z",
+      "lastUpdated": "2026-08-09T01:32:04Z",
       "homeTeam": {
         "id": 559,
         "name": "Sevilla FC",
@@ -8496,7 +8496,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 5,
         "name": "FC Bayern München",
@@ -8571,7 +8571,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 721,
         "name": "RB Leipzig",
@@ -8639,7 +8639,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 15,
         "name": "1. FSV Mainz 05",
@@ -8699,7 +8699,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 28,
         "name": "1. FC Union Berlin",
@@ -8759,7 +8759,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 719,
         "name": "SV 07 Elversberg",
@@ -8833,7 +8833,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 1,
         "name": "1. FC Köln",
@@ -8893,7 +8893,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 4,
         "name": "Borussia Dortmund",
@@ -8961,7 +8961,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 17,
         "name": "SC Freiburg",
@@ -9021,7 +9021,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 16,
         "name": "FC Augsburg",
@@ -9081,7 +9081,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 10,
         "name": "VfB Stuttgart",
@@ -9141,7 +9141,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 12,
         "name": "SV Werder Bremen",
@@ -9209,7 +9209,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 2,
         "name": "TSG 1899 Hoffenheim",
@@ -9277,7 +9277,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 3,
         "name": "Bayer 04 Leverkusen",
@@ -9351,7 +9351,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 18,
         "name": "Borussia Mönchengladbach",
@@ -9411,7 +9411,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 29,
         "name": "SC Paderborn 07",
@@ -9471,7 +9471,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 6,
         "name": "FC Schalke 04",
@@ -9546,7 +9546,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 7,
         "name": "Hamburger SV",
@@ -9606,7 +9606,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 19,
         "name": "Eintracht Frankfurt",
@@ -9666,7 +9666,7 @@
       "matchday": 3,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 28,
         "name": "1. FC Union Berlin",
@@ -9726,7 +9726,7 @@
       "matchday": 3,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 2,
         "name": "TSG 1899 Hoffenheim",
@@ -9786,7 +9786,7 @@
       "matchday": 3,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 4,
         "name": "Borussia Dortmund",
@@ -9854,7 +9854,7 @@
       "matchday": 3,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 16,
         "name": "FC Augsburg",
@@ -9928,7 +9928,7 @@
       "matchday": 3,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 15,
         "name": "1. FSV Mainz 05",
@@ -9988,7 +9988,7 @@
       "matchday": 3,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 17,
         "name": "SC Freiburg",
@@ -10048,7 +10048,7 @@
       "matchday": 3,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 1,
         "name": "1. FC Köln",
@@ -10108,7 +10108,7 @@
       "matchday": 3,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 721,
         "name": "RB Leipzig",
@@ -10176,7 +10176,7 @@
       "matchday": 3,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 719,
         "name": "SV 07 Elversberg",
@@ -12617,7 +12617,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-07T10:31:23Z",
+      "lastUpdated": "2026-08-09T01:32:02Z",
       "homeTeam": {
         "id": 60,
         "name": "Bolton Wanderers FC",
@@ -12677,7 +12677,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-07T10:31:23Z",
+      "lastUpdated": "2026-08-09T01:32:03Z",
       "homeTeam": {
         "id": 68,
         "name": "Norwich City FC",
@@ -12737,7 +12737,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-07T10:31:23Z",
+      "lastUpdated": "2026-08-09T01:32:03Z",
       "homeTeam": {
         "id": 387,
         "name": "Bristol City FC",
@@ -12797,7 +12797,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-07T10:31:23Z",
+      "lastUpdated": "2026-08-09T01:32:03Z",
       "homeTeam": {
         "id": 343,
         "name": "Middlesbrough FC",
@@ -12857,7 +12857,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-07T10:31:23Z",
+      "lastUpdated": "2026-08-09T01:32:03Z",
       "homeTeam": {
         "id": 70,
         "name": "Stoke City FC",
@@ -12917,7 +12917,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-07T10:31:23Z",
+      "lastUpdated": "2026-08-09T01:32:03Z",
       "homeTeam": {
         "id": 348,
         "name": "Charlton Athletic FC",
@@ -12977,7 +12977,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-07T10:31:23Z",
+      "lastUpdated": "2026-08-09T01:32:03Z",
       "homeTeam": {
         "id": 325,
         "name": "Portsmouth FC",
@@ -13037,7 +13037,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-07T10:31:23Z",
+      "lastUpdated": "2026-08-09T01:32:04Z",
       "homeTeam": {
         "id": 356,
         "name": "Sheffield United FC",
@@ -17597,7 +17597,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:05Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 1909,
         "name": "SC Cambuur-Leeuwarden",
@@ -17660,11 +17660,11 @@
       },
       "id": 558215,
       "utcDate": "2026-08-08T14:30:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T22:25:02Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 1915,
         "name": "NEC",
@@ -17680,15 +17680,15 @@
         "crest": "https://crests.football-data.org/1912.png"
       },
       "score": {
-        "winner": null,
+        "winner": "AWAY_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 2
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 2
         }
       },
       "odds": {
@@ -17731,7 +17731,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T22:25:02Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 718,
         "name": "Go Ahead Eagles",
@@ -17798,7 +17798,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T22:25:02Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 674,
         "name": "PSV",
@@ -17865,7 +17865,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T22:25:02Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 682,
         "name": "AZ",
@@ -17928,11 +17928,11 @@
       },
       "id": 558219,
       "utcDate": "2026-08-09T10:15:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:05Z",
+      "lastUpdated": "2026-08-09T12:19:25Z",
       "homeTeam": {
         "id": 6806,
         "name": "Sparta Rotterdam",
@@ -17948,21 +17948,28 @@
         "crest": "https://crests.football-data.org/675.png"
       },
       "score": {
-        "winner": null,
+        "winner": "AWAY_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 1
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 1
         }
       },
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": [],
+      "referees": [
+        {
+          "id": 56923,
+          "name": "Sander Van der Eijk",
+          "type": "REFEREE",
+          "nationality": "Netherlands"
+        }
+      ],
       "notable": false
     },
     {
@@ -17988,11 +17995,11 @@
       },
       "id": 558220,
       "utcDate": "2026-08-09T12:30:00Z",
-      "status": "TIMED",
+      "status": "LIVE",
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T13:10:30Z",
       "homeTeam": {
         "id": 677,
         "name": "FC Groningen",
@@ -18008,11 +18015,11 @@
         "crest": "https://crests.football-data.org/676.png"
       },
       "score": {
-        "winner": null,
+        "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 2,
+          "away": 0
         },
         "halfTime": {
           "home": null,
@@ -18022,7 +18029,14 @@
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": [],
+      "referees": [
+        {
+          "id": 17136,
+          "name": "Joey Kooij",
+          "type": "REFEREE",
+          "nationality": "Netherlands"
+        }
+      ],
       "notable": false
     },
     {
@@ -18048,11 +18062,11 @@
       },
       "id": 558221,
       "utcDate": "2026-08-09T12:30:00Z",
-      "status": "TIMED",
+      "status": "LIVE",
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T13:10:30Z",
       "homeTeam": {
         "id": 684,
         "name": "PEC Zwolle",
@@ -18068,11 +18082,11 @@
         "crest": "https://crests.football-data.org/678.png"
       },
       "score": {
-        "winner": null,
+        "winner": "DRAW",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         },
         "halfTime": {
           "home": null,
@@ -18082,7 +18096,14 @@
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": [],
+      "referees": [
+        {
+          "id": 80087,
+          "name": "Jannick van der Laan",
+          "type": "REFEREE",
+          "nationality": "Netherlands"
+        }
+      ],
       "notable": false
     },
     {
@@ -18112,7 +18133,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 673,
         "name": "SC Heerenveen",
@@ -18142,7 +18163,14 @@
       "odds": {
         "msg": "Activate Odds-Package in User-Panel to retrieve odds."
       },
-      "referees": [],
+      "referees": [
+        {
+          "id": 80090,
+          "name": "Marc Nagtegaal",
+          "type": "REFEREE",
+          "nationality": "Netherlands"
+        }
+      ],
       "notable": false
     },
     {
@@ -18172,7 +18200,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 1912,
         "name": "Telstar 1963",
@@ -18232,7 +18260,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 672,
         "name": "Willem II Tilburg",
@@ -18292,7 +18320,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 676,
         "name": "FC Utrecht",
@@ -18352,7 +18380,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 670,
         "name": "SBV Excelsior",
@@ -18412,7 +18440,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 1920,
         "name": "Fortuna Sittard",
@@ -18472,7 +18500,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 680,
         "name": "ADO Den Haag",
@@ -18532,7 +18560,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 675,
         "name": "Feyenoord Rotterdam",
@@ -18592,7 +18620,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 666,
         "name": "FC Twente '65",
@@ -18652,7 +18680,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 678,
         "name": "AFC Ajax",
@@ -18712,7 +18740,7 @@
       "matchday": 3,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 1920,
         "name": "Fortuna Sittard",
@@ -18772,7 +18800,7 @@
       "matchday": 3,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 6806,
         "name": "Sparta Rotterdam",
@@ -18832,7 +18860,7 @@
       "matchday": 3,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 1915,
         "name": "NEC",
@@ -18892,7 +18920,7 @@
       "matchday": 3,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 673,
         "name": "SC Heerenveen",
@@ -18952,7 +18980,7 @@
       "matchday": 3,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 718,
         "name": "Go Ahead Eagles",
@@ -19012,7 +19040,7 @@
       "matchday": 3,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 674,
         "name": "PSV",
@@ -19072,7 +19100,7 @@
       "matchday": 3,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 1909,
         "name": "SC Cambuur-Leeuwarden",
@@ -19132,7 +19160,7 @@
       "matchday": 4,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 677,
         "name": "FC Groningen",
@@ -19192,7 +19220,7 @@
       "matchday": 4,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 670,
         "name": "SBV Excelsior",
@@ -19252,7 +19280,7 @@
       "matchday": 4,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 682,
         "name": "AZ",
@@ -19312,7 +19340,7 @@
       "matchday": 4,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 684,
         "name": "PEC Zwolle",
@@ -19372,7 +19400,7 @@
       "matchday": 4,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 676,
         "name": "FC Utrecht",
@@ -19432,7 +19460,7 @@
       "matchday": 4,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 672,
         "name": "Willem II Tilburg",
@@ -19492,7 +19520,7 @@
       "matchday": 4,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 675,
         "name": "Feyenoord Rotterdam",
@@ -19552,7 +19580,7 @@
       "matchday": 4,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 1912,
         "name": "Telstar 1963",
@@ -19612,7 +19640,7 @@
       "matchday": 4,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 1909,
         "name": "SC Cambuur-Leeuwarden",
@@ -19672,7 +19700,7 @@
       "matchday": 5,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 6806,
         "name": "Sparta Rotterdam",
@@ -19732,7 +19760,7 @@
       "matchday": 5,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 1915,
         "name": "NEC",
@@ -19792,7 +19820,7 @@
       "matchday": 5,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 676,
         "name": "FC Utrecht",
@@ -19852,7 +19880,7 @@
       "matchday": 5,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 678,
         "name": "AFC Ajax",
@@ -19912,7 +19940,7 @@
       "matchday": 5,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 672,
         "name": "Willem II Tilburg",
@@ -19972,7 +20000,7 @@
       "matchday": 5,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 677,
         "name": "FC Groningen",
@@ -20032,7 +20060,7 @@
       "matchday": 5,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 673,
         "name": "SC Heerenveen",
@@ -20092,7 +20120,7 @@
       "matchday": 5,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 1912,
         "name": "Telstar 1963",
@@ -20152,7 +20180,7 @@
       "matchday": 5,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 680,
         "name": "ADO Den Haag",
@@ -20212,7 +20240,7 @@
       "matchday": 3,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:22:06Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 666,
         "name": "FC Twente '65",
@@ -20272,7 +20300,7 @@
       "matchday": 6,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T22:25:02Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 682,
         "name": "AZ",
@@ -20332,7 +20360,7 @@
       "matchday": 6,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T22:25:02Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 666,
         "name": "FC Twente '65",
@@ -20392,7 +20420,7 @@
       "matchday": 6,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T22:25:02Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 718,
         "name": "Go Ahead Eagles",
@@ -20452,7 +20480,7 @@
       "matchday": 6,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T22:25:02Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 1920,
         "name": "Fortuna Sittard",
@@ -20512,7 +20540,7 @@
       "matchday": 6,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T22:25:02Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 673,
         "name": "SC Heerenveen",
@@ -20572,7 +20600,7 @@
       "matchday": 6,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T22:25:02Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 670,
         "name": "SBV Excelsior",
@@ -20632,7 +20660,7 @@
       "matchday": 6,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T22:25:02Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 674,
         "name": "PSV",
@@ -20692,7 +20720,7 @@
       "matchday": 6,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T22:25:02Z",
+      "lastUpdated": "2026-08-09T05:20:14Z",
       "homeTeam": {
         "id": 684,
         "name": "PEC Zwolle",
@@ -20748,11 +20776,11 @@
       },
       "id": 567264,
       "utcDate": "2026-08-07T19:15:00Z",
-      "status": "2026-08-07 18:15:00Z",
+      "status": "FINISHED",
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:25Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 582,
         "name": "GD Estoril Praia",
@@ -20815,11 +20843,11 @@
       },
       "id": 567263,
       "utcDate": "2026-08-08T14:30:00Z",
-      "status": "2026-08-08 13:30:00Z",
+      "status": "FINISHED",
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T22:25:13Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 5575,
         "name": "CS Marítimo",
@@ -20835,15 +20863,15 @@
         "crest": "https://crests.football-data.org/6618.png"
       },
       "score": {
-        "winner": null,
+        "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 0
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         }
       },
       "odds": {
@@ -20886,7 +20914,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T22:25:13Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 5543,
         "name": "Vitória SC",
@@ -20953,7 +20981,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T22:25:13Z",
+      "lastUpdated": "2026-08-09T08:25:06Z",
       "homeTeam": {
         "id": 9136,
         "name": "CF Estrela da Amadora",
@@ -21020,7 +21048,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:25Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 503,
         "name": "FC Porto",
@@ -21080,7 +21108,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:25Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 583,
         "name": "Moreirense FC",
@@ -21140,7 +21168,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:25Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 5533,
         "name": "Gil Vicente FC",
@@ -21200,7 +21228,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:25Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 1903,
         "name": "Sport Lisboa e Benfica",
@@ -21260,7 +21288,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:25Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 5530,
         "name": "CD Santa Clara",
@@ -21320,7 +21348,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:25Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 498,
         "name": "Sporting Clube de Portugal",
@@ -21380,7 +21408,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:25Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 7822,
         "name": "FC Alverca",
@@ -21440,7 +21468,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:25Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 5527,
         "name": "Académico de Viseu FC",
@@ -21500,7 +21528,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:25Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 496,
         "name": "Rio Ave FC",
@@ -21560,7 +21588,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:25Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 5529,
         "name": "CD Nacional",
@@ -21620,7 +21648,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:25Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 712,
         "name": "FC Arouca",
@@ -21680,7 +21708,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:25Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 5531,
         "name": "FC Famalicão",
@@ -21740,7 +21768,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:25Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 5613,
         "name": "Sporting Clube de Braga",
@@ -21800,7 +21828,7 @@
       "matchday": 2,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 6618,
         "name": "Casa Pia AC",
@@ -21860,7 +21888,7 @@
       "matchday": 3,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 5575,
         "name": "CS Marítimo",
@@ -21920,7 +21948,7 @@
       "matchday": 3,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 582,
         "name": "GD Estoril Praia",
@@ -21980,7 +22008,7 @@
       "matchday": 3,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 498,
         "name": "Sporting Clube de Portugal",
@@ -22040,7 +22068,7 @@
       "matchday": 3,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 5543,
         "name": "Vitória SC",
@@ -22100,7 +22128,7 @@
       "matchday": 3,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 5530,
         "name": "CD Santa Clara",
@@ -22160,7 +22188,7 @@
       "matchday": 3,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 503,
         "name": "FC Porto",
@@ -22220,7 +22248,7 @@
       "matchday": 3,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 5533,
         "name": "Gil Vicente FC",
@@ -22280,7 +22308,7 @@
       "matchday": 4,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 496,
         "name": "Rio Ave FC",
@@ -22340,7 +22368,7 @@
       "matchday": 4,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 7822,
         "name": "FC Alverca",
@@ -22400,7 +22428,7 @@
       "matchday": 4,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 712,
         "name": "FC Arouca",
@@ -22460,7 +22488,7 @@
       "matchday": 4,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 5527,
         "name": "Académico de Viseu FC",
@@ -22520,7 +22548,7 @@
       "matchday": 4,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 5529,
         "name": "CD Nacional",
@@ -22580,7 +22608,7 @@
       "matchday": 4,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 6618,
         "name": "Casa Pia AC",
@@ -22640,7 +22668,7 @@
       "matchday": 4,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 5531,
         "name": "FC Famalicão",
@@ -22700,7 +22728,7 @@
       "matchday": 4,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 1903,
         "name": "Sport Lisboa e Benfica",
@@ -22760,7 +22788,7 @@
       "matchday": 4,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 5613,
         "name": "Sporting Clube de Braga",
@@ -22816,11 +22844,11 @@
       },
       "id": 567296,
       "utcDate": "2026-09-06T00:00:00Z",
-      "status": "2026-09-06 14:00:00Z",
+      "status": "SCHEDULED",
       "matchday": 5,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-08T15:16:32Z",
       "homeTeam": {
         "id": 7822,
         "name": "FC Alverca",
@@ -22876,11 +22904,11 @@
       },
       "id": 567297,
       "utcDate": "2026-09-06T00:00:00Z",
-      "status": "2026-09-06 14:00:00Z",
+      "status": "SCHEDULED",
       "matchday": 5,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-08T15:16:32Z",
       "homeTeam": {
         "id": 9136,
         "name": "CF Estrela da Amadora",
@@ -22936,11 +22964,11 @@
       },
       "id": 567298,
       "utcDate": "2026-09-06T00:00:00Z",
-      "status": "2026-09-06 14:00:00Z",
+      "status": "SCHEDULED",
       "matchday": 5,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-08T15:16:32Z",
       "homeTeam": {
         "id": 498,
         "name": "Sporting Clube de Portugal",
@@ -22996,11 +23024,11 @@
       },
       "id": 567299,
       "utcDate": "2026-09-06T00:00:00Z",
-      "status": "2026-09-06 14:00:00Z",
+      "status": "SCHEDULED",
       "matchday": 5,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-08T15:16:32Z",
       "homeTeam": {
         "id": 503,
         "name": "FC Porto",
@@ -23056,11 +23084,11 @@
       },
       "id": 567300,
       "utcDate": "2026-09-06T00:00:00Z",
-      "status": "2026-09-06 14:00:00Z",
+      "status": "SCHEDULED",
       "matchday": 5,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-08T15:16:32Z",
       "homeTeam": {
         "id": 5530,
         "name": "CD Santa Clara",
@@ -23116,11 +23144,11 @@
       },
       "id": 567301,
       "utcDate": "2026-09-06T00:00:00Z",
-      "status": "2026-09-06 14:00:00Z",
+      "status": "SCHEDULED",
       "matchday": 5,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-08T15:16:32Z",
       "homeTeam": {
         "id": 5533,
         "name": "Gil Vicente FC",
@@ -23176,11 +23204,11 @@
       },
       "id": 567293,
       "utcDate": "2026-09-06T00:00:00Z",
-      "status": "2026-09-06 14:00:00Z",
+      "status": "SCHEDULED",
       "matchday": 5,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-08T15:16:32Z",
       "homeTeam": {
         "id": 5575,
         "name": "CS Marítimo",
@@ -23236,11 +23264,11 @@
       },
       "id": 567294,
       "utcDate": "2026-09-06T00:00:00Z",
-      "status": "2026-09-06 14:00:00Z",
+      "status": "SCHEDULED",
       "matchday": 5,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-08T15:16:32Z",
       "homeTeam": {
         "id": 5543,
         "name": "Vitória SC",
@@ -23296,11 +23324,11 @@
       },
       "id": 567295,
       "utcDate": "2026-09-06T00:00:00Z",
-      "status": "2026-09-06 14:00:00Z",
+      "status": "SCHEDULED",
       "matchday": 5,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-08T15:16:32Z",
       "homeTeam": {
         "id": 582,
         "name": "GD Estoril Praia",
@@ -23360,7 +23388,7 @@
       "matchday": 3,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 583,
         "name": "Moreirense FC",
@@ -23420,7 +23448,7 @@
       "matchday": 3,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-09T05:20:15Z",
       "homeTeam": {
         "id": 9136,
         "name": "CF Estrela da Amadora",
@@ -23476,11 +23504,11 @@
       },
       "id": 567302,
       "utcDate": "2026-09-13T00:00:00Z",
-      "status": "2026-09-13 14:00:00Z",
+      "status": "SCHEDULED",
       "matchday": 6,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-08T15:16:32Z",
       "homeTeam": {
         "id": 583,
         "name": "Moreirense FC",
@@ -23536,11 +23564,11 @@
       },
       "id": 567303,
       "utcDate": "2026-09-13T00:00:00Z",
-      "status": "2026-09-13 14:00:00Z",
+      "status": "SCHEDULED",
       "matchday": 6,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-08T15:16:32Z",
       "homeTeam": {
         "id": 496,
         "name": "Rio Ave FC",
@@ -23596,11 +23624,11 @@
       },
       "id": 567304,
       "utcDate": "2026-09-13T00:00:00Z",
-      "status": "2026-09-13 14:00:00Z",
+      "status": "SCHEDULED",
       "matchday": 6,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-08T15:16:32Z",
       "homeTeam": {
         "id": 1903,
         "name": "Sport Lisboa e Benfica",
@@ -23656,11 +23684,11 @@
       },
       "id": 567305,
       "utcDate": "2026-09-13T00:00:00Z",
-      "status": "2026-09-13 14:00:00Z",
+      "status": "SCHEDULED",
       "matchday": 6,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-08T15:16:32Z",
       "homeTeam": {
         "id": 5531,
         "name": "FC Famalicão",
@@ -23716,11 +23744,11 @@
       },
       "id": 567306,
       "utcDate": "2026-09-13T00:00:00Z",
-      "status": "2026-09-13 14:00:00Z",
+      "status": "SCHEDULED",
       "matchday": 6,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-08T15:16:32Z",
       "homeTeam": {
         "id": 5529,
         "name": "CD Nacional",
@@ -23776,11 +23804,11 @@
       },
       "id": 567307,
       "utcDate": "2026-09-13T00:00:00Z",
-      "status": "2026-09-13 14:00:00Z",
+      "status": "SCHEDULED",
       "matchday": 6,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-08T15:16:32Z",
       "homeTeam": {
         "id": 6618,
         "name": "Casa Pia AC",
@@ -23836,11 +23864,11 @@
       },
       "id": 567308,
       "utcDate": "2026-09-13T00:00:00Z",
-      "status": "2026-09-13 14:00:00Z",
+      "status": "SCHEDULED",
       "matchday": 6,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-08T15:16:32Z",
       "homeTeam": {
         "id": 5613,
         "name": "Sporting Clube de Braga",
@@ -23896,11 +23924,11 @@
       },
       "id": 567309,
       "utcDate": "2026-09-13T00:00:00Z",
-      "status": "2026-09-13 14:00:00Z",
+      "status": "SCHEDULED",
       "matchday": 6,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-08T15:16:32Z",
       "homeTeam": {
         "id": 5527,
         "name": "Académico de Viseu FC",
@@ -23956,11 +23984,11 @@
       },
       "id": 567310,
       "utcDate": "2026-09-13T00:00:00Z",
-      "status": "2026-09-13 14:00:00Z",
+      "status": "SCHEDULED",
       "matchday": 6,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T13:21:26Z",
+      "lastUpdated": "2026-08-08T15:16:32Z",
       "homeTeam": {
         "id": 712,
         "name": "FC Arouca",
@@ -24020,7 +24048,7 @@
       "matchday": 22,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T21:06:45Z",
+      "lastUpdated": "2026-08-09T07:09:36Z",
       "homeTeam": {
         "id": 1767,
         "name": "Grêmio FBPA",
@@ -24076,11 +24104,11 @@
       },
       "id": 554958,
       "utcDate": "2026-08-08T21:30:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 22,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T23:39:02Z",
+      "lastUpdated": "2026-08-09T07:09:36Z",
       "homeTeam": {
         "id": 4287,
         "name": "Clube do Remo",
@@ -24096,15 +24124,15 @@
         "crest": "https://crests.football-data.org/1766.png"
       },
       "score": {
-        "winner": null,
+        "winner": "DRAW",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 2,
+          "away": 2
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 2
         }
       },
       "odds": {
@@ -24143,11 +24171,11 @@
       },
       "id": 554953,
       "utcDate": "2026-08-08T23:30:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 22,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-09T01:45:34Z",
+      "lastUpdated": "2026-08-09T07:09:36Z",
       "homeTeam": {
         "id": 4241,
         "name": "Coritiba FBC",
@@ -24163,15 +24191,15 @@
         "crest": "https://crests.football-data.org/1772_large.png"
       },
       "score": {
-        "winner": null,
+        "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 2,
+          "away": 1
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 0
         }
       },
       "odds": {
@@ -24210,11 +24238,11 @@
       },
       "id": 554951,
       "utcDate": "2026-08-09T00:00:00Z",
-      "status": "TIMED",
+      "status": "FINISHED",
       "matchday": 22,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-09T02:13:52Z",
+      "lastUpdated": "2026-08-09T07:09:36Z",
       "homeTeam": {
         "id": 1770,
         "name": "Botafogo FR",
@@ -24230,15 +24258,15 @@
         "crest": "https://crests.football-data.org/1765.png"
       },
       "score": {
-        "winner": null,
+        "winner": "DRAW",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 1
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 0
         }
       },
       "odds": {
@@ -24281,7 +24309,7 @@
       "matchday": 22,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T01:32:00Z",
       "homeTeam": {
         "id": 1771,
         "name": "Cruzeiro EC",
@@ -24341,7 +24369,7 @@
       "matchday": 22,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T01:32:01Z",
       "homeTeam": {
         "id": 1777,
         "name": "EC Bahia",
@@ -24401,7 +24429,7 @@
       "matchday": 22,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T01:32:01Z",
       "homeTeam": {
         "id": 1769,
         "name": "SE Palmeiras",
@@ -24461,7 +24489,7 @@
       "matchday": 22,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T01:32:01Z",
       "homeTeam": {
         "id": 4286,
         "name": "RB Bragantino",
@@ -24521,7 +24549,7 @@
       "matchday": 22,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T01:32:01Z",
       "homeTeam": {
         "id": 6685,
         "name": "Santos FC",
@@ -24581,7 +24609,7 @@
       "matchday": 22,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1783,
         "name": "CR Flamengo",
@@ -24641,7 +24669,7 @@
       "matchday": 23,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T01:32:04Z",
       "homeTeam": {
         "id": 1765,
         "name": "Fluminense FC",
@@ -24701,7 +24729,7 @@
       "matchday": 23,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T01:32:04Z",
       "homeTeam": {
         "id": 1768,
         "name": "CA Paranaense",
@@ -24761,7 +24789,7 @@
       "matchday": 23,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-09T01:32:05Z",
       "homeTeam": {
         "id": 1776,
         "name": "São Paulo FC",
@@ -24821,7 +24849,7 @@
       "matchday": 23,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1772,
         "name": "Chapecoense AF",
@@ -24881,7 +24909,7 @@
       "matchday": 23,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1766,
         "name": "CA Mineiro",
@@ -24941,7 +24969,7 @@
       "matchday": 23,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1780,
         "name": "CR Vasco da Gama",
@@ -25001,7 +25029,7 @@
       "matchday": 23,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 4364,
         "name": "Mirassol FC",
@@ -25061,7 +25089,7 @@
       "matchday": 23,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1782,
         "name": "EC Vitória",
@@ -25121,7 +25149,7 @@
       "matchday": 23,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1779,
         "name": "SC Corinthians Paulista",
@@ -25181,7 +25209,7 @@
       "matchday": 23,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 6684,
         "name": "SC Internacional",
@@ -25241,7 +25269,7 @@
       "matchday": 24,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1765,
         "name": "Fluminense FC",
@@ -25301,7 +25329,7 @@
       "matchday": 24,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 6684,
         "name": "SC Internacional",
@@ -25361,7 +25389,7 @@
       "matchday": 24,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1771,
         "name": "Cruzeiro EC",
@@ -25421,7 +25449,7 @@
       "matchday": 24,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 4286,
         "name": "RB Bragantino",
@@ -25481,7 +25509,7 @@
       "matchday": 24,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1769,
         "name": "SE Palmeiras",
@@ -25541,7 +25569,7 @@
       "matchday": 24,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1782,
         "name": "EC Vitória",
@@ -25601,7 +25629,7 @@
       "matchday": 24,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1772,
         "name": "Chapecoense AF",
@@ -25661,7 +25689,7 @@
       "matchday": 24,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 6685,
         "name": "Santos FC",
@@ -25721,7 +25749,7 @@
       "matchday": 24,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 4241,
         "name": "Coritiba FBC",
@@ -25781,7 +25809,7 @@
       "matchday": 24,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1770,
         "name": "Botafogo FR",
@@ -25841,7 +25869,7 @@
       "matchday": 25,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1768,
         "name": "CA Paranaense",
@@ -25901,7 +25929,7 @@
       "matchday": 25,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1766,
         "name": "CA Mineiro",
@@ -25961,7 +25989,7 @@
       "matchday": 25,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1777,
         "name": "EC Bahia",
@@ -26021,7 +26049,7 @@
       "matchday": 25,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1779,
         "name": "SC Corinthians Paulista",
@@ -26081,7 +26109,7 @@
       "matchday": 25,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1783,
         "name": "CR Flamengo",
@@ -26141,7 +26169,7 @@
       "matchday": 25,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1767,
         "name": "Grêmio FBPA",
@@ -26201,7 +26229,7 @@
       "matchday": 25,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 4364,
         "name": "Mirassol FC",
@@ -26261,7 +26289,7 @@
       "matchday": 25,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 4287,
         "name": "Clube do Remo",
@@ -26321,7 +26349,7 @@
       "matchday": 25,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1776,
         "name": "São Paulo FC",
@@ -26381,7 +26409,7 @@
       "matchday": 25,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1780,
         "name": "CR Vasco da Gama",
@@ -26441,7 +26469,7 @@
       "matchday": 26,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1770,
         "name": "Botafogo FR",
@@ -26501,7 +26529,7 @@
       "matchday": 26,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 4286,
         "name": "RB Bragantino",
@@ -26561,7 +26589,7 @@
       "matchday": 26,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1779,
         "name": "SC Corinthians Paulista",
@@ -26621,7 +26649,7 @@
       "matchday": 26,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 4241,
         "name": "Coritiba FBC",
@@ -26681,7 +26709,7 @@
       "matchday": 26,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1771,
         "name": "Cruzeiro EC",
@@ -26741,7 +26769,7 @@
       "matchday": 26,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1765,
         "name": "Fluminense FC",
@@ -26801,7 +26829,7 @@
       "matchday": 26,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 6684,
         "name": "SC Internacional",
@@ -26861,7 +26889,7 @@
       "matchday": 26,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 4287,
         "name": "Clube do Remo",
@@ -26921,7 +26949,7 @@
       "matchday": 26,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1776,
         "name": "São Paulo FC",
@@ -26981,7 +27009,7 @@
       "matchday": 26,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1782,
         "name": "EC Vitória",
@@ -27041,7 +27069,7 @@
       "matchday": 27,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1769,
         "name": "SE Palmeiras",
@@ -27101,7 +27129,7 @@
       "matchday": 27,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 6685,
         "name": "Santos FC",
@@ -27161,7 +27189,7 @@
       "matchday": 27,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1766,
         "name": "CA Mineiro",
@@ -27221,7 +27249,7 @@
       "matchday": 27,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1777,
         "name": "EC Bahia",
@@ -27281,7 +27309,7 @@
       "matchday": 27,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1770,
         "name": "Botafogo FR",
@@ -27341,7 +27369,7 @@
       "matchday": 27,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1772,
         "name": "Chapecoense AF",
@@ -27401,7 +27429,7 @@
       "matchday": 27,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 4241,
         "name": "Coritiba FBC",
@@ -27461,7 +27489,7 @@
       "matchday": 27,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1783,
         "name": "CR Flamengo",
@@ -27521,7 +27549,7 @@
       "matchday": 27,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 1767,
         "name": "Grêmio FBPA",
@@ -27581,7 +27609,7 @@
       "matchday": 27,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T05:20:11Z",
+      "lastUpdated": "2026-08-08T15:20:06Z",
       "homeTeam": {
         "id": 4364,
         "name": "Mirassol FC",

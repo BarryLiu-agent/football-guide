@@ -1,7 +1,106 @@
 {
-  "generatedAt": "2026-08-09T05:30:50Z",
+  "generatedAt": "2026-08-09T13:10:59Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Five-time Super League winner Makinson to retire at end of 2026 campaign",
+      "timestamp": "Sun, 09 Aug 2026 12:43:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/rugby-league/news/12040/13571338/tommy-makinson-catalans-dragons-wing-and-former-st-helens-try-machine-announces-he-will-retire-at-end-of-2026-campaign",
+        "lang": "en",
+        "summary": "Tommy Makinson has announced he will retire from rugby league at the end of the current 2026 Super League campaign.&#160;"
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "'It'll be the first of many!' | Hogh opens Celtic account early on at Kilmarnock",
+      "timestamp": "Sun, 09 Aug 2026 13:37:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13571358/it-will-be-the-first-of-many-kasper-hogh-opens-celtic-account-early-on-at-kilmarnock",
+        "lang": "en",
+        "summary": "Kasper Hogh scored his first Celtic goal inside the opening two minutes of Celtic&#8217;s away match at Kilmarnock."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Thorslund ends Johnson's undisputed run to become world champion again",
+      "timestamp": "Sun, 09 Aug 2026 08:01:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/boxing/news/12040/13571294/dina-thorslund-ends-cherneka-johnsons-undisputed-run-to-become-world-champion-again-after-return-following-miscarriage",
+        "lang": "en",
+        "summary": "Dina Thorslund is a world champion again after ending&#160;Cherneka Johnson's undisputed run to cap an emotional return to the sport."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Semenyo stars as Man City come from behind to beat Atletico LIVE!",
+      "timestamp": "Sun, 09 Aug 2026 10:58:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/manchester-city-vs-atletico-madrid/live/559827",
+        "lang": "en",
+        "summary": ""
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Arsenal vs Dortmund LIVE!",
+      "timestamp": "Sun, 09 Aug 2026 12:30:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/live-blog/12040/13571163/arsenal-vs-borussia-dortmund-live-pre-season-friendly-team-news-preview-score-updates-and-live-blog",
+        "lang": "en",
+        "summary": ""
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Liverpool vs Monaco team news LIVE!",
+      "timestamp": "Sun, 09 Aug 2026 13:23:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/liverpool-vs-monaco/live/556109",
+        "lang": "en",
+        "summary": ""
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "In-form Norrie defeated in Montreal while Sabalenka suffers shock loss",
+      "timestamp": "Sun, 09 Aug 2026 07:29:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/tennis/news/12040/13571288/national-bank-open-in-form-cam-norrie-defeated-by-arthur-fils-in-montreal-while-aryna-sabalenka-suffers-shock-canadian-open-loss",
+        "lang": "en",
+        "summary": "Britain's Cameron Norrie has been knocked out of the National Bank Open at the last-16 stage following a 6-2 7-6 (10-8) defeat by Arthur Fils in Montreal."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "McKenna vows middleweight domination as heir to Golovkin and Canelo",
+      "timestamp": "Sun, 09 Aug 2026 07:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/boxing/news/12040/13571270/aaron-mckenna-vows-middleweight-domination-as-heir-to-gennadiy-golovkin-and-canelo-alvarez-after-world-title-win",
+        "lang": "en",
+        "summary": "New world champion Aaron McKenna is just getting started."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "TWO REDS as tempers flare between Scott and Antony!",
+      "timestamp": "Sun, 09 Aug 2026 10:20:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13571317/tempers-flare-between-real-betis-and-bournemouth-in-pre-season-friendly",
+        "lang": "en",
+        "summary": "Watch as Bournemouth's 2-2 draw with Real Betis was anything but a pre-season friendly, as an on-pitch brawl resulted in two red cards, including one for former Manchester United winger Antony. "
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -11,6 +110,28 @@
         "link": "https://www.skysports.com/racing/news/12040/13570933/today-on-sky-sports-racing-true-love-seeks-prix-maurice-de-gheest-crown-at-deauville",
         "lang": "en",
         "summary": "True Love heads the markets for the 2026 renewal of the Prix Maurice de Gheest - <em>live on Sky Sports Racing</em> at 3.40pm."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Hogh hits first half hat-trick for Celtic at Kilmarnock LIVE!",
+      "timestamp": "Sun, 09 Aug 2026 12:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/kilmarnock-vs-celtic/live/558343",
+        "lang": "en",
+        "summary": ""
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Brennan, Hossler share Wyndham R3 lead as Thompson makes albatross",
+      "timestamp": "Sun, 09 Aug 2026 07:22:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13571286/wyndham-championship-day-three-highlights",
+        "lang": "en",
+        "summary": "Highlights from day three of the Wyndham Championship held at Sedgefield Country Club in Greensboro, North Carolina, including an albatross from Davis Thompson."
       }
     },
     {
@@ -27,10 +148,32 @@
     {
       "source": "skysports",
       "type": "news",
+      "text": "What we learned from Jaissle's first game in charge at Newcastle",
+      "timestamp": "Sun, 09 Aug 2026 12:05:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571333/valencia-1-2-newcastle-what-we-learned-after-matthias-jaissles-first-game-in-charge",
+        "lang": "en",
+        "summary": "Substitute Yoane Wissa scored twice to give Matthias Jaissle a winning start as Newcastle boss with a 2-1 comeback pre-season win at 10-man Valencia."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Huddersfield blitz Catalans in dominant home win",
+      "timestamp": "Sun, 09 Aug 2026 00:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13571192/huddersfield-giants-42-20-catalans-dragons-super-league-highlights",
+        "lang": "en",
+        "summary": "Highlights of the Super League clash between Huddersfield Giants and Catalans Dragons as Sam Halsall and Connor Wrench scored twice in a 42-20 victory for the hosts."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
       "text": "Wissa double gives Newcastle boss Jaissle winning start at 10-man Valencia",
       "timestamp": "Sat, 08 Aug 2026 22:26:00 BST",
       "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13571236/valencia-1-2-newcastle-yoane-wissas-double-gives-matthias-jaissle-winning-start-as-anthony-elanga-stretchered-off",
+        "link": "https://www.skysports.com/football/valencia-vs-newcastle-united/report/568647",
         "lang": "en",
         "summary": "Substitute Yoane Wissa scored twice to give Matthias Jaissle a winning start as Newcastle boss with a 2-1 comeback pre-season win at 10-man Valencia."
       }
@@ -60,166 +203,23 @@
     {
       "source": "skysports",
       "type": "news",
+      "text": "FIFA hits out at critics trying to 'undermine' Infantino",
+      "timestamp": "Sun, 09 Aug 2026 08:02:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571297/gianni-infantino-fifa-hits-out-at-critics-trying-to-undermine-president-amid-ongoing-allegations",
+        "lang": "en",
+        "summary": "FIFA has hit out at \"a concerted and ongoing effort by some to undermine\" the governing body and president Gianni Infantino over claims surrounding his conduct at UEFA."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
       "text": "McKenna wins world title in Ireland homecoming fight!",
       "timestamp": "Sat, 08 Aug 2026 23:46:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/watch/video/13571266/aaron-mckenna-vs-etinosa-oliha-fight-highlights",
         "lang": "en",
         "summary": "Highlights of Aaron McKenna's IBF middleweight world title fight against Etinosa Oliha."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "McKenna becomes middleweight world champ with dream homecoming win",
-      "timestamp": "Sat, 08 Aug 2026 23:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/boxing/news/12040/13571057/aaron-mckenna-wins-dream-homecoming-bout-against-etinosa-oliha-to-become-ibf-middleweight-world-champion-in-dublin",
-        "lang": "en",
-        "summary": "Ireland's Aaron McKenna defeated Etinosa Oliha to become a middleweight world champion."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "'Good signs' for Man Utd as Mbeumo scores in encouraging  draw with PSG",
-      "timestamp": "Sat, 08 Aug 2026 18:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/paris-saint-germain-vs-manchester-united/report/555766",
-        "lang": "en",
-        "summary": "Bryan Mbeumo earned Man Utd a 1-1 draw with Paris St-Germain in Gothenburg, a pre-season friendly which left boss Michael Carrick encouraged by the \"good signs\" from his side.  "
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "'That is another crunching finish!' | Hickey lands DEVASTATING knockout",
-      "timestamp": "Sat, 08 Aug 2026 20:26:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13571226/zuffa-boxing-10-sam-hickey-lands-devastating-knockout-vs-brad-axe",
-        "lang": "en",
-        "summary": "Sam Hickey's huge right hand knocked out Brad Axe in the seventh round of their contest."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "St Mirren 1-0 St Johnstone",
-      "timestamp": "Sat, 08 Aug 2026 20:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13571233/st-mirren-1-0-st-johnstone-scottish-premiership-highlights",
-        "lang": "en",
-        "summary": "Highlights from the Scottish Premiership match between St Mirren and St Johnstone"
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Walsh battles through cuts and knockdown to drop Denny and take victory",
-      "timestamp": "Sat, 08 Aug 2026 19:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/boxing/news/12040/13571055/callum-walsh-comes-through-cuts-and-knockdown-to-drop-denny-and-take-battling-decision-victory-in-dublin-contest",
-        "lang": "en",
-        "summary": "Callum Walsh maintained his unbeaten record and top contender status with a unanimous decision victory over Tyler Denny."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Wissa's double gives Newcastle's Jaissle winning start at 10-man Valencia LIVE!",
-      "timestamp": "Sat, 08 Aug 2026 19:01:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/valencia-vs-newcastle-united/live/568647",
-        "lang": "en",
-        "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Ward rescues career with valiant Kasparian win",
-      "timestamp": "Sat, 08 Aug 2026 19:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/boxing/news/12040/13571046/joe-ward-rescues-career-with-valiant-artjom-kasparian-win-as-stevie-mckenna-and-sam-hickey-take-stunning-one-punch-finishes",
-        "lang": "en",
-        "summary": "Joe Ward staved off disaster, beating Artjom Kasparian on a unanimous decision after 10 ferocious rounds at the 3Arena in Dublin."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "'Took him off both his feet!' | Stevie McKenna with HUGE first-round KO",
-      "timestamp": "Sat, 08 Aug 2026 18:30:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13571184/zuffa-boxing-10-stevie-mckenna-with-huge-first-round-knockout",
-        "lang": "en",
-        "summary": "Stevie McKenna stopped Owen O'Neill with a devastating right hand in the opening round of their contest at Zuffa Boxing 10."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Huddersfield Giants to leave home for Dewsbury amid major investment",
-      "timestamp": "Sat, 08 Aug 2026 15:09:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/rugby-league/news/12040/13570935/huddersfield-giants-moving-to-dewsbury-super-league-side-switching-home-from-2027-season-onwards",
-        "lang": "en",
-        "summary": "Betfred Super League side Huddersfield Giants have announced they are to leave the town and move to&#160;Dewsbury for the 2027 season onwards."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Moore helps GB and Ireland to Shergar Cup crown",
-      "timestamp": "Sat, 08 Aug 2026 17:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/racing/news/12040/13571076/shergar-cup-ryan-moore-helps-great-britain-and-ireland-to-ascot-crown",
-        "lang": "en",
-        "summary": "Ryan Moore bagged a Shergar Cup double on his return to the competition following a 20-year absence to help his Great Britain and Ireland team win the team event while he was also crowned leading rider over the six races."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "'There's no hiding'- IBF champ McKenna puts middleweight division on notice",
-      "timestamp": "Sat, 08 Aug 2026 17:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/boxing/live-blog/12040/13570943/aaron-mckenna-vs-etinosa-oliha-live-updates-stream-undercard-news-results-highlights-from-zuffa-boxing-10-in-dublin",
-        "lang": "en",
-        "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "South Africa edge Argentina in thriller but Kolisi suffers injury",
-      "timestamp": "Sat, 08 Aug 2026 22:09:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/rugby-union/news/12040/13571253/argentina-10-17-south-africa-springboks-win-buenos-aires-thriller-but-siya-kolisi-suffers-injury-ahead-of-new-zealand-series",
-        "lang": "en",
-        "summary": "South Africa scraped past Argentina 17-10 in Test rugby at the possible expense of inspirational captain Siya Kolisi in Buenos Aires on Saturday."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Nicholls pays tribute as Big Buck's dies aged 23",
-      "timestamp": "Sat, 08 Aug 2026 14:56:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/racing/news/12040/13570985/big-bucks-paul-nicholls-pays-tribute-as-legendary-stayer-dies-aged-23",
-        "lang": "en",
-        "summary": "Big Buck&#8217;s, one of the greatest staying hurdlers of all time, has died at the age of 23."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Phillips hits winner against St Johnstone as St Mirren go top",
-      "timestamp": "Sat, 08 Aug 2026 16:50:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/st-mirren-vs-st-johnstone/report/558342",
-        "lang": "en",
-        "summary": "Killian Phillips was on target again to keep St Mirren on top of the Premiership for a second Saturday night."
       }
     }
   ]
