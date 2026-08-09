@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T13:56:14Z",
+  "generatedAt": "2026-08-09T13:58:44Z",
   "league": "BSA",
   "matches": [
     {
@@ -74,12 +74,12 @@
       "markets": {
         "h2h": {
           "home": 1.565,
-          "draw": 3.85,
-          "away": 5.8
+          "draw": 3.9,
+          "away": 5.9399999999999995
         },
         "totals": {
           "line": 2.5,
-          "over": 1.93,
+          "over": 1.91,
           "under": 1.83
         },
         "spreads": {

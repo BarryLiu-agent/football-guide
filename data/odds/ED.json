@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T13:56:11Z",
+  "generatedAt": "2026-08-09T13:58:44Z",
   "league": "ED",
   "matches": [
     {
@@ -9,23 +9,23 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 13.0,
+          "home": 15.0,
           "draw": 3.25,
-          "away": 1.43
+          "away": 1.42
         },
         "totals": {
           "line": 2.5,
-          "over": 1.87,
-          "under": 1.7349999999999999
+          "over": 1.88,
+          "under": 1.7149999999999999
         },
         "spreads": {
           "home": {
             "point": 0.5,
-            "price": 1.94
+            "price": 2.4699999999999998
           },
           "away": {
             "point": -0.5,
-            "price": 1.93
+            "price": 1.71
           }
         }
       },
@@ -47,8 +47,8 @@
         },
         "totals": {
           "line": 2.5,
-          "over": 1.43,
-          "under": 2.475
+          "over": 1.51,
+          "under": 2.275
         },
         "spreads": {
           "home": {
@@ -169,7 +169,7 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.6,
+          "home": 2.65,
           "draw": 3.6,
           "away": 2.32
         },
@@ -202,22 +202,22 @@
       "markets": {
         "h2h": {
           "home": 4.4,
-          "draw": 4.16,
+          "draw": 4.15,
           "away": 1.62
         },
         "totals": {
           "line": 2.5,
-          "over": 1.87,
+          "over": 1.88,
           "under": 1.93
         },
         "spreads": {
           "home": {
             "point": 1.0,
-            "price": 1.78
+            "price": 1.76
           },
           "away": {
             "point": -1.0,
-            "price": 2.01
+            "price": 2.03
           }
         }
       },

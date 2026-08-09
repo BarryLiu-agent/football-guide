@@ -311,7 +311,7 @@ def aggregate(matches_by_source):
 def main():
     parser = argparse.ArgumentParser(description="博彩赔率抓取")
     parser.add_argument("--leagues", nargs="*",
-                        default=["PL", "PD", "SA", "BL1", "FL1", "CL", "CH", "ED", "PPL", "TSL", "SPL", "BDF", "BSA", "MLS", "JLG", "KL1"],
+                        default=["PL", "PD", "SA", "BL1", "FL1", "CL", "CH", "ED", "BSA", "MLS"],
                         help="要抓取的联赛代码")
     args = parser.parse_args()
 

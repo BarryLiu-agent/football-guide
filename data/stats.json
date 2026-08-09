@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-09T13:55:49Z",
-  "totalMatches": 458,
+  "generatedAt": "2026-08-09T13:58:10Z",
+  "totalMatches": 404,
   "notableMatches": 79,
   "competitions": {
     "PL": "英超",
@@ -11,7 +11,6 @@
     "CL": "欧冠",
     "ELC": "英冠",
     "DED": "荷甲",
-    "PPL": "葡超",
     "BSA": "巴甲",
     "CLI": "解放者杯"
   },
@@ -23,7 +22,6 @@
     "FL1": 36,
     "ELC": 84,
     "DED": 52,
-    "PPL": 54,
     "BSA": 60,
     "CLI": 17
   }
