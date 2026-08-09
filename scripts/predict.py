@@ -555,16 +555,155 @@ def main():
         "predictions": predictions,
         "disclaimer": "本结果仅用于个人数据分析与研究, 不构成任何投注建议",
     }
+
+    # ── 预测战绩：存档 + 赛果对比 + 成功率统计 ──
+    stats = evaluate_predictions(predictions)
+    out["stats"] = stats
+
     with open(DATA_DIR / "predictions.json", "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=2)
 
     # 摘要
     notable = [p for p in predictions if p["confidence"] >= rules.get("confidenceMin", 0.4)]
     print(f"\n总计预测: {len(predictions)} 场, 高置信(≥{rules.get('confidenceMin')}): {len(notable)} 场")
+    if stats and stats.get("finished"):
+        print(f"战绩: 已结算 {stats['finished']} 场, 比分精确命中 {stats['exactHit']} ({stats['exactRate']:.0%}), 胜负方向命中 {stats['outcomeHit']} ({stats['outcomeRate']:.0%})")
     for p in notable[:5]:
         print(f"  {p['homeTeam']} vs {p['awayTeam']}: {p['predictedScore']} (置信度 {p['confidence']:.0%})")
     print(f"\n输出: data/predictions.json")
     return 0
+
+
+def outcome_of(score_str):
+    """从比分字符串推断胜负方向: home/draw/away。"""
+    try:
+        h, a = score_str.split("-")
+        h, a = int(h), int(a)
+        if h > a:
+            return "home"
+        if h < a:
+            return "away"
+        return "draw"
+    except (ValueError, AttributeError):
+        return None
+
+
+def evaluate_predictions(predictions):
+    """
+    预测战绩评估：
+    1. 存档预测到 data/prediction_history.json（去重，保留最早预测）
+    2. 从 fixtures.json 读取已完赛赛果，与存档预测对比
+    3. 统计：比分精确命中率 / 胜负方向命中率
+    """
+    history_path = DATA_DIR / "prediction_history.json"
+    hist = {"predictions": [], "results": []}
+    if history_path.exists():
+        try:
+            hist = json.loads(history_path.read_text(encoding="utf-8"))
+        except Exception:
+            hist = {"predictions": [], "results": []}
+
+    # 1. 合并当前预测（去重：同队同日期只保留最早一条）
+    seen = set()
+    for p in hist["predictions"]:
+        seen.add((norm_team(p["homeTeam"]), norm_team(p["awayTeam"]), p.get("kickoff", "")[:10]))
+    for p in predictions:
+        key = (norm_team(p["homeTeam"]), norm_team(p["awayTeam"]), (p.get("kickoff") or "")[:10])
+        if key in seen:
+            continue
+        seen.add(key)
+        hist["predictions"].append({
+            "homeTeam": p["homeTeam"], "awayTeam": p["awayTeam"],
+            "kickoff": p.get("kickoff", ""),
+            "predictedScore": p["predictedScore"],
+            "confidence": p.get("confidence"),
+            "predictedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        })
+
+    # 2. 从赛程读取已完赛结果
+    fixtures_path = DATA_DIR / "fixtures.json"
+    finished = []
+    if fixtures_path.exists():
+        try:
+            fix = json.loads(fixtures_path.read_text(encoding="utf-8"))
+            for m in fix.get("matches", []):
+                if m.get("status") == "FINISHED" and m.get("score", {}).get("fullTime"):
+                    ft = m["score"]["fullTime"]
+                    if ft.get("home") is not None and ft.get("away") is not None:
+                        finished.append({
+                            "homeTeam": m["homeTeam"]["name"],
+                            "awayTeam": m["awayTeam"]["name"],
+                            "kickoff": m.get("utcDate", ""),
+                            "actualScore": f"{ft['home']}-{ft['away']}",
+                        })
+        except Exception:
+            pass
+
+    # 3. 匹配结算
+    # 匹配规则: 队名归一化精确相等 → 首词相等 → 包含关系（日期仅作辅助）
+    def team_match(a, b):
+        if not a or not b:
+            return False
+        if a == b:
+            return True
+        if a.split()[0] == b.split()[0]:
+            return True
+        return a in b or b in a
+
+    result_keys = {}
+    for r in finished:
+        result_keys[(norm_team(r["homeTeam"]), norm_team(r["awayTeam"]), r["kickoff"][:10])] = r
+    evaluated = 0
+    exact_hit = 0
+    outcome_hit = 0
+    for p in hist["predictions"]:
+        if p.get("actualScore"):
+            evaluated += 1
+            if p.get("hitExact"):
+                exact_hit += 1
+            if p.get("hitOutcome"):
+                outcome_hit += 1
+            continue
+        key = (norm_team(p["homeTeam"]), norm_team(p["awayTeam"]), p.get("kickoff", "")[:10])
+        r = result_keys.get(key)
+        if not r:
+            # 模糊匹配：仅按队名（首词/包含），日期放宽
+            for rk, rv in result_keys.items():
+                if team_match(rk[0], key[0]) and team_match(rk[1], key[1]):
+                    r = rv
+                    break
+        if r:
+            p["actualScore"] = r["actualScore"]
+            p["evaluatedAt"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+            p["hitExact"] = (p["predictedScore"] == r["actualScore"])
+            p["hitOutcome"] = (outcome_of(p["predictedScore"]) == outcome_of(r["actualScore"]))
+            evaluated += 1
+            if p["hitExact"]:
+                exact_hit += 1
+            if p["hitOutcome"]:
+                outcome_hit += 1
+            hist["results"].append({
+                "homeTeam": p["homeTeam"], "awayTeam": p["awayTeam"],
+                "kickoff": p.get("kickoff", ""),
+                "predictedScore": p["predictedScore"],
+                "actualScore": r["actualScore"],
+                "hitExact": p["hitExact"],
+                "hitOutcome": p["hitOutcome"],
+            })
+
+    # 4. 统计
+    stats = {
+        "total": len(hist["predictions"]),
+        "finished": evaluated,
+        "exactHit": exact_hit,
+        "exactRate": round(exact_hit / evaluated, 4) if evaluated else 0,
+        "outcomeHit": outcome_hit,
+        "outcomeRate": round(outcome_hit / evaluated, 4) if evaluated else 0,
+        "updatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+    }
+    hist["stats"] = stats
+    history_path.write_text(json.dumps(hist, ensure_ascii=False, indent=1), encoding="utf-8")
+    return stats
 
 
 if __name__ == "__main__":

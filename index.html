@@ -391,6 +391,7 @@ body {
 
   <!-- History Tab -->
   <section class="tab-panel" id="panel-history">
+    <div id="recordBox"></div>
     <div class="date-picker-bar">
       <input type="date" id="historyDate" />
       <button class="btn" onclick="loadHistory()">查询</button>
@@ -709,6 +710,11 @@ async function loadToday() {
   // 合并"有赔率但无赛程"的比赛（如日职/K联赛/土超等 Football-Data 免费版不覆盖的联赛）
   const fixtureKeys = new Set(filtered.map(m => normTeam(m.homeTeam?.name || m.homeTeam?.shortName) + '|' + normTeam(m.awayTeam?.name || m.awayTeam?.shortName)));
   const extra = (lastPreds || [])
+    .filter(p => {
+      // 只取今天及以后的比赛（已完赛/过期的自动进历史）
+      const d = formatDate(p.kickoff);
+      return d >= today && d <= maxDate;
+    })
     .filter(p => !fixtureKeys.has(normTeam(p.homeTeam) + '|' + normTeam(p.awayTeam)))
     .map(p => ({
       synthetic: true,
@@ -734,6 +740,52 @@ function loadHistory() {
   const dateStr = document.getElementById('historyDate').value;
   if (!dateStr) return;
   showHistoryForDate(dateStr);
+}
+
+// ===== 预测战绩 =====
+async function loadRecord() {
+  const el = document.getElementById('recordBox');
+  try {
+    const resp = await fetch('data/prediction_history.json?t=' + Date.now());
+    if (!resp.ok) throw new Error();
+    const data = await resp.json();
+    const s = data.stats || {};
+    const results = (data.results || []).slice().reverse().slice(0, 30);
+    if (!s.finished) {
+      el.innerHTML = '';
+      return;
+    }
+    const pct = v => `${Math.round((v || 0) * 100)}%`;
+    const statCard = (label, val, sub) => `
+      <div style="background:var(--color-surface);border-radius:var(--radius-md);padding:10px 8px;text-align:center;box-shadow:var(--shadow-sm)">
+        <div style="font-size:0.68rem;color:var(--color-text-secondary)">${label}</div>
+        <div style="font-size:1.15rem;font-weight:800;color:var(--color-primary)">${val}</div>
+        <div style="font-size:0.62rem;color:var(--color-text-secondary)">${sub}</div>
+      </div>`;
+    el.innerHTML = `
+      <h2 style="font-size:0.9rem;font-weight:700;margin:4px 0 8px;">🎯 预测战绩</h2>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:10px">
+        ${statCard('累计预测', s.total || 0, '已存档')}
+        ${statCard('已结算', s.finished || 0, '有赛果')}
+        ${statCard('比分精确命中', pct(s.exactRate), `${s.exactHit || 0} 场`)}
+        ${statCard('胜负方向命中', pct(s.outcomeRate), `${s.outcomeHit || 0} 场`)}
+      </div>
+      ${results.length ? `<div style="background:var(--color-surface);border-radius:var(--radius-md);box-shadow:var(--shadow-sm);overflow:hidden;margin-bottom:12px">
+        ${results.map(r => {
+          const ok = r.hitOutcome ? '#16a34a' : '#dc2626';
+          const ex = r.hitExact ? ' 🎯' : '';
+          return `<div style="display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid var(--color-border);font-size:0.78rem">
+            <span style="font-weight:800;color:${ok}">${r.hitOutcome ? '✓' : '✗'}</span>
+            <span style="flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${displayTeam(r.homeTeam)} vs ${displayTeam(r.awayTeam)}</span>
+            <span style="color:var(--color-text-secondary)">预测 <b>${r.predictedScore}</b></span>
+            <span style="color:var(--color-text-secondary)">→ 实际 <b>${r.actualScore}</b>${ex}</span>
+          </div>`;
+        }).join('')}
+      </div>` : ''}
+    `;
+  } catch (e) {
+    el.innerHTML = '';
+  }
 }
 
 async function showHistoryForDate(dateStr) {
@@ -1042,6 +1094,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     if (btn.dataset.tab === 'today') loadToday();
     else if (btn.dataset.tab === 'history') {
       document.getElementById('historyDate').value = formatDate(new Date(Date.now() - 86400000).toISOString());
+      loadRecord();
       showHistoryForDate(document.getElementById('historyDate').value);
     }
   });
