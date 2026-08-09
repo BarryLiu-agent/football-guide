@@ -1,0 +1,45 @@
+name: Results Refresh (30min)
+
+on:
+  schedule:
+    # 每 30 分钟：只刷新赛程/赛果 + 消息 + 预测结算 + 部署
+    # 不抓赔率（The Odds API 配额限制，赔率由 daily.yml 每天更新）
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+jobs:
+  refresh-results:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch fixtures & results
+        env:
+          FOOTBALL_API_KEY: ${{ secrets.FOOTBALL_API_KEY }}
+        run: python scripts/fetch_data.py --no-standings
+
+      - name: Fetch messages
+        run: python scripts/messages_fetcher.py
+
+      - name: Run prediction engine (uses cached odds)
+        run: python scripts/predict.py
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
+          keep_files: false
+          destination_dir: ''
