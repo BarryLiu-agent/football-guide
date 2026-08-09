@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T03:27:37Z",
+  "generatedAt": "2026-08-09T13:38:48Z",
   "league": "PD",
   "matches": [
     {
@@ -9,20 +9,30 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.355,
+          "home": 2.36,
           "draw": 2.8,
           "away": 3.5
         },
         "totals": {
           "line": 2.5,
           "over": 1.7,
-          "under": 2.1
+          "under": 2.12
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.63
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.4450000000000003
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 36
+      "bookmakers": 37
     },
     {
       "homeTeam": "Sevilla",
@@ -31,7 +41,7 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.23,
+          "home": 2.25,
           "draw": 3.2,
           "away": 3.3
         },
@@ -39,12 +49,22 @@
           "line": 2.5,
           "over": 2.22,
           "under": 1.62
+        },
+        "spreads": {
+          "home": {
+            "point": -0.25,
+            "price": 1.98
+          },
+          "away": {
+            "point": 0.25,
+            "price": 1.915
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 37
+      "bookmakers": 38
     },
     {
       "homeTeam": "Real Racing Club de Santander",
@@ -55,18 +75,28 @@
         "h2h": {
           "home": 3.0,
           "draw": 3.4,
-          "away": 2.25
+          "away": 2.28
         },
         "totals": {
           "line": 2.5,
           "over": 1.87,
-          "under": 1.875
+          "under": 1.88
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 2.2350000000000003
+          },
+          "away": {
+            "point": 0.0,
+            "price": 1.725
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 35
+      "bookmakers": 37
     },
     {
       "homeTeam": "Espanyol",
@@ -81,8 +111,18 @@
         },
         "totals": {
           "line": 2.5,
-          "over": 2.1900000000000004,
+          "over": 2.18,
           "under": 1.645
+        },
+        "spreads": {
+          "home": {
+            "point": -0.5,
+            "price": 2.075
+          },
+          "away": {
+            "point": 0.5,
+            "price": 1.8050000000000002
+          }
         }
       },
       "sources": [
@@ -97,14 +137,24 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.97,
-          "draw": 3.3,
-          "away": 3.73
+          "home": 2.0,
+          "draw": 3.35,
+          "away": 3.75
         },
         "totals": {
           "line": 2.5,
-          "over": 2.08,
-          "under": 1.71
+          "over": 2.06,
+          "under": 1.73
+        },
+        "spreads": {
+          "home": {
+            "point": -0.5,
+            "price": 2.06
+          },
+          "away": {
+            "point": 0.5,
+            "price": 1.815
+          }
         }
       },
       "sources": [
@@ -119,14 +169,24 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.3,
-          "draw": 3.2,
+          "home": 2.4,
+          "draw": 3.05,
           "away": 3.1
         },
         "totals": {
           "line": 2.5,
           "over": 2.25,
-          "under": 1.62
+          "under": 1.6
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.725
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.2350000000000003
+          }
         }
       },
       "sources": [
@@ -141,14 +201,24 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.3,
-          "draw": 5.1,
-          "away": 10.0
+          "home": 1.29,
+          "draw": 5.15,
+          "away": 10.5
         },
         "totals": {
           "line": 2.5,
           "over": 1.73,
-          "under": 2.045
+          "under": 2.0549999999999997
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 1.935
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.915
+          }
         }
       },
       "sources": [
@@ -165,18 +235,28 @@
         "h2h": {
           "home": 2.05,
           "draw": 3.05,
-          "away": 3.8
+          "away": 3.9
         },
         "totals": {
           "line": 2.5,
           "over": 1.6,
           "under": 2.34
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.44
+          },
+          "away": {
+            "point": 0.0,
+            "price": 3.1
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 22
+      "bookmakers": 23
     },
     {
       "homeTeam": "Real Betis",
@@ -185,20 +265,30 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.1,
-          "draw": 3.25,
-          "away": 3.4
+          "home": 2.125,
+          "draw": 3.225,
+          "away": 3.3499999999999996
         },
         "totals": {
           "line": 2.5,
           "over": 2.1,
           "under": 1.68
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.57
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.64
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 21
+      "bookmakers": 24
     },
     {
       "homeTeam": "Athletic Bilbao",
@@ -207,20 +297,30 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.57,
+          "home": 1.6,
           "draw": 3.7,
-          "away": 5.4
+          "away": 5.5
         },
         "totals": {
           "line": 2.5,
           "over": 2.15,
           "under": 1.67
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 2.83
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.51
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 19
+      "bookmakers": 22
     },
     {
       "homeTeam": "Valencia",
@@ -230,19 +330,29 @@
       "markets": {
         "h2h": {
           "home": 2.3,
-          "draw": 3.1,
+          "draw": 3.16,
           "away": 3.0
         },
         "totals": {
           "line": 2.5,
           "over": 2.18,
           "under": 1.65
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.72
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.3
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 19
+      "bookmakers": 22
     },
     {
       "homeTeam": "Espanyol",
@@ -252,19 +362,29 @@
       "markets": {
         "h2h": {
           "home": 4.75,
-          "draw": 3.95,
-          "away": 1.6
+          "draw": 3.925,
+          "away": 1.605
         },
         "totals": {
           "line": 2.5,
           "over": 1.7,
           "under": 2.1
+        },
+        "spreads": {
+          "home": {
+            "point": 1.5,
+            "price": 1.53
+          },
+          "away": {
+            "point": -1.5,
+            "price": 2.77
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 19
+      "bookmakers": 22
     },
     {
       "homeTeam": "Atlético Madrid",
@@ -273,20 +393,30 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.835,
-          "draw": 3.45,
-          "away": 4.125
+          "home": 1.85,
+          "draw": 3.4,
+          "away": 4.1
         },
         "totals": {
           "line": 2.5,
           "over": 1.95,
           "under": 1.82
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 3.19
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.43
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 18
+      "bookmakers": 19
     },
     {
       "homeTeam": "Getafe",
@@ -295,20 +425,30 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.85,
-          "draw": 2.98,
-          "away": 4.6
+          "home": 1.875,
+          "draw": 3.0,
+          "away": 4.7
         },
         "totals": {
           "line": 2.5,
-          "over": 2.9,
-          "under": 1.37
+          "over": 1.75,
+          "under": 2.13
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 3.89
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.32
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 17
+      "bookmakers": 20
     },
     {
       "homeTeam": "Elche CF",
@@ -318,19 +458,29 @@
       "markets": {
         "h2h": {
           "home": 7.5,
-          "draw": 5.1,
-          "away": 1.32
+          "draw": 5.225,
+          "away": 1.3
         },
         "totals": {
           "line": 2.5,
           "over": 2.05,
           "under": 1.75
+        },
+        "spreads": {
+          "home": {
+            "point": 1.5,
+            "price": 1.98
+          },
+          "away": {
+            "point": -1.5,
+            "price": 1.96
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 19
+      "bookmakers": 20
     },
     {
       "homeTeam": "CA Osasuna",
@@ -347,6 +497,16 @@
           "line": 2.5,
           "over": 1.88,
           "under": 1.88
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 2.88
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.5
+          }
         }
       },
       "sources": [
@@ -361,7 +521,7 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.4,
+          "home": 2.45,
           "draw": 3.0,
           "away": 2.9
         },
@@ -369,6 +529,16 @@
           "line": 2.5,
           "over": 2.52,
           "under": 1.5
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.81
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.17
+          }
         }
       },
       "sources": [
@@ -383,20 +553,30 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.6,
-          "draw": 3.2,
-          "away": 2.6
+          "home": 2.65,
+          "draw": 3.3,
+          "away": 2.65
         },
         "totals": {
           "line": 2.5,
           "over": 1.97,
-          "under": 1.8
+          "under": 1.79
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.93
+          },
+          "away": {
+            "point": 0.0,
+            "price": 1.93
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 31
+      "bookmakers": 29
     },
     {
       "homeTeam": "Real Madrid",
@@ -413,6 +593,16 @@
           "line": 2.5,
           "over": 2.25,
           "under": 1.62
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 2.16
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.775
+          }
         }
       },
       "sources": [
@@ -435,6 +625,16 @@
           "line": 2.5,
           "over": 2.2,
           "under": 1.63
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 2.175
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.7650000000000001
+          }
         }
       },
       "sources": [

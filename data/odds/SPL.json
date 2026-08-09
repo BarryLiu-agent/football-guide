@@ -1,51 +1,7 @@
 {
-  "generatedAt": "2026-08-08T03:27:52Z",
+  "generatedAt": "2026-08-09T13:38:54Z",
   "league": "SPL",
   "matches": [
-    {
-      "homeTeam": "Dundee FC",
-      "awayTeam": "Aberdeen",
-      "kickoff": "2026-08-08T14:00:00Z",
-      "matchUrl": "",
-      "markets": {
-        "h2h": {
-          "home": 2.7,
-          "draw": 3.3,
-          "away": 2.5
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 1.81,
-          "under": 1.93
-        }
-      },
-      "sources": [
-        "theoddsapi"
-      ],
-      "bookmakers": 34
-    },
-    {
-      "homeTeam": "St Mirren",
-      "awayTeam": "St Johnstone",
-      "kickoff": "2026-08-08T14:00:00Z",
-      "matchUrl": "",
-      "markets": {
-        "h2h": {
-          "home": 2.3049999999999997,
-          "draw": 3.3,
-          "away": 2.955
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 1.85,
-          "under": 1.87
-        }
-      },
-      "sources": [
-        "theoddsapi"
-      ],
-      "bookmakers": 34
-    },
     {
       "homeTeam": "Kilmarnock",
       "awayTeam": "Celtic",
@@ -53,20 +9,30 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 7.0,
-          "draw": 4.85,
-          "away": 1.36
+          "home": 303.03,
+          "draw": 51.0,
+          "away": 1.0
         },
         "totals": {
           "line": 2.5,
-          "over": 2.05,
-          "under": 1.72
+          "over": 1.73,
+          "under": 1.88
+        },
+        "spreads": {
+          "home": {
+            "point": 0.75,
+            "price": 1.91
+          },
+          "away": {
+            "point": -0.75,
+            "price": 1.97
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 34
+      "bookmakers": 22
     },
     {
       "homeTeam": "Hearts",
@@ -75,14 +41,24 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.61,
-          "draw": 3.975,
-          "away": 4.84
+          "home": 1.72,
+          "draw": 3.9,
+          "away": 4.33
         },
         "totals": {
           "line": 2.5,
-          "over": 1.7,
-          "under": 2.0599999999999996
+          "over": 1.66,
+          "under": 2.1
+        },
+        "spreads": {
+          "home": {
+            "point": -0.75,
+            "price": 2.0
+          },
+          "away": {
+            "point": 0.75,
+            "price": 1.91
+          }
         }
       },
       "sources": [
@@ -97,14 +73,24 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.79,
-          "draw": 3.7,
-          "away": 4.0
+          "home": 1.8,
+          "draw": 3.645,
+          "away": 4.125
         },
         "totals": {
           "line": 2.5,
-          "over": 1.7,
-          "under": 2.05
+          "over": 1.71,
+          "under": 2.04
+        },
+        "spreads": {
+          "home": {
+            "point": -0.5,
+            "price": 1.835
+          },
+          "away": {
+            "point": 0.5,
+            "price": 2.065
+          }
         }
       },
       "sources": [
@@ -119,14 +105,24 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.525,
-          "draw": 4.25,
-          "away": 5.345
+          "home": 1.505,
+          "draw": 4.33,
+          "away": 5.6
         },
         "totals": {
           "line": 2.5,
           "over": 1.55,
-          "under": 2.29
+          "under": 2.28
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 1.88
+          },
+          "away": {
+            "point": 1.0,
+            "price": 2.03
+          }
         }
       },
       "sources": [

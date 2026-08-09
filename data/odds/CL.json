@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T03:27:43Z",
+  "generatedAt": "2026-08-09T13:38:51Z",
   "league": "CL",
   "matches": [
     {
@@ -9,20 +9,30 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.415,
-          "draw": 3.1,
-          "away": 2.725
+          "home": 2.35,
+          "draw": 3.2,
+          "away": 2.9
         },
         "totals": {
           "line": 2.5,
-          "over": 2.2350000000000003,
-          "under": 1.58
+          "over": 2.15,
+          "under": 1.64
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.79
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.14
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 20
+      "bookmakers": 22
     },
     {
       "homeTeam": "Sabah FK",
@@ -31,20 +41,30 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.92,
-          "draw": 3.5,
-          "away": 3.375
+          "home": 1.93,
+          "draw": 3.525,
+          "away": 3.425
         },
         "totals": {
           "line": 2.5,
           "over": 1.72,
           "under": 2.02
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 2.8
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.38
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 12
+      "bookmakers": 14
     },
     {
       "homeTeam": "Bodø/Glimt",
@@ -53,20 +73,30 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.645,
-          "draw": 4.175000000000001,
-          "away": 4.15
+          "home": 1.5750000000000002,
+          "draw": 4.33,
+          "away": 4.5
         },
         "totals": {
           "line": 2.5,
-          "over": 1.4649999999999999,
-          "under": 2.565
+          "over": 1.45,
+          "under": 2.6100000000000003
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 1.9449999999999998
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.82
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 20
+      "bookmakers": 22
     },
     {
       "homeTeam": "FK Kauno Žalgiris",
@@ -75,14 +105,24 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 7.0,
-          "draw": 4.775,
+          "home": 6.9,
+          "draw": 4.85,
           "away": 1.36
         },
         "totals": {
           "line": 2.5,
           "over": 2.28,
           "under": 1.53
+        },
+        "spreads": {
+          "home": {
+            "point": 1.5,
+            "price": 1.745
+          },
+          "away": {
+            "point": -1.5,
+            "price": 2.05
+          }
         }
       },
       "sources": [
@@ -97,20 +137,30 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.5,
+          "home": 2.63,
           "draw": 3.3,
-          "away": 2.53
+          "away": 2.475
         },
         "totals": {
           "line": 2.5,
-          "over": 2.05,
-          "under": 1.71
+          "over": 1.95,
+          "under": 1.77
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 2.0
+          },
+          "away": {
+            "point": 0.0,
+            "price": 1.83
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 14
+      "bookmakers": 16
     },
     {
       "homeTeam": "Red Star Belgrade",
@@ -120,19 +170,29 @@
       "markets": {
         "h2h": {
           "home": 1.27,
-          "draw": 5.1,
-          "away": 8.5
+          "draw": 5.4,
+          "away": 9.0
         },
         "totals": {
           "line": 2.5,
-          "over": 2.11,
-          "under": 1.65
+          "over": 2.17,
+          "under": 1.6
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 1.82
+          },
+          "away": {
+            "point": 1.5,
+            "price": 2.02
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 19
+      "bookmakers": 21
     },
     {
       "homeTeam": "NK Celje",
@@ -141,20 +201,30 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.43,
-          "draw": 4.25,
-          "away": 6.3
+          "home": 1.44,
+          "draw": 4.275,
+          "away": 6.1
         },
         "totals": {
           "line": 2.5,
           "over": 1.71,
           "under": 1.97
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 2.32
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.68
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 20
+      "bookmakers": 22
     },
     {
       "homeTeam": "ŠK Slovan Bratislava",
@@ -165,18 +235,28 @@
         "h2h": {
           "home": 1.8050000000000002,
           "draw": 3.6,
-          "away": 3.9450000000000003
+          "away": 3.975
         },
         "totals": {
           "line": 2.5,
           "over": 1.83,
           "under": 1.88
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 3.1
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.29
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 18
+      "bookmakers": 22
     },
     {
       "homeTeam": "SK Sturm Graz",
@@ -185,20 +265,30 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 3.65,
-          "draw": 3.625,
+          "home": 3.7,
+          "draw": 3.7,
           "away": 1.84
         },
         "totals": {
           "line": 2.5,
-          "over": 1.7,
+          "over": 1.69,
           "under": 2.06
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 2.96
+          },
+          "away": {
+            "point": 0.0,
+            "price": 1.45
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 20
+      "bookmakers": 22
     },
     {
       "homeTeam": "Lyon",
@@ -207,20 +297,30 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.48,
-          "draw": 4.2,
-          "away": 5.6
+          "home": 1.49,
+          "draw": 4.25,
+          "away": 5.75
         },
         "totals": {
           "line": 2.5,
           "over": 1.61,
           "under": 2.2
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 1.8050000000000002
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.9649999999999999
+          }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 19
+      "bookmakers": 21
     }
   ]
 }

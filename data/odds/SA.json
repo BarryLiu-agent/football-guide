@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-08T03:27:38Z",
+  "generatedAt": "2026-08-09T13:38:49Z",
   "league": "SA",
   "matches": [
     {
@@ -17,6 +17,16 @@
           "line": 2.5,
           "over": 2.1,
           "under": 1.71
+        },
+        "spreads": {
+          "home": {
+            "point": 0.5,
+            "price": 1.98
+          },
+          "away": {
+            "point": -0.5,
+            "price": 1.85
+          }
         }
       },
       "sources": [
@@ -32,13 +42,23 @@
       "markets": {
         "h2h": {
           "home": 1.21,
-          "draw": 6.15,
-          "away": 12.75
+          "draw": 6.05,
+          "away": 12.575
         },
         "totals": {
           "line": 2.5,
-          "over": 1.6,
+          "over": 1.63,
           "under": 2.22
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 1.72
+          },
+          "away": {
+            "point": 1.5,
+            "price": 2.19
+          }
         }
       },
       "sources": [
@@ -54,13 +74,23 @@
       "markets": {
         "h2h": {
           "home": 2.6,
-          "draw": 3.035,
+          "draw": 3.045,
           "away": 2.8
         },
         "totals": {
           "line": 2.5,
           "over": 2.38,
           "under": 1.55
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.835
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.0149999999999997
+          }
         }
       },
       "sources": [
@@ -77,12 +107,22 @@
         "h2h": {
           "home": 4.5,
           "draw": 3.3,
-          "away": 1.83
+          "away": 1.8250000000000002
         },
         "totals": {
           "line": 2.5,
-          "over": 2.12,
-          "under": 1.7
+          "over": 2.15,
+          "under": 1.67
+        },
+        "spreads": {
+          "home": {
+            "point": 0.5,
+            "price": 1.95
+          },
+          "away": {
+            "point": -0.5,
+            "price": 1.87
+          }
         }
       },
       "sources": [
@@ -97,14 +137,24 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 6.875,
+          "home": 6.9,
           "draw": 4.33,
           "away": 1.44
         },
         "totals": {
           "line": 2.5,
-          "over": 1.7850000000000001,
-          "under": 2.02
+          "over": 1.82,
+          "under": 1.955
+        },
+        "spreads": {
+          "home": {
+            "point": 1.0,
+            "price": 2.1
+          },
+          "away": {
+            "point": -1.0,
+            "price": 1.77
+          }
         }
       },
       "sources": [
@@ -127,6 +177,16 @@
           "line": 2.5,
           "over": 2.18,
           "under": 1.66
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.66
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.32
+          }
         }
       },
       "sources": [
@@ -141,14 +201,24 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 4.4,
+          "home": 4.375,
           "draw": 3.6,
-          "away": 1.7650000000000001
+          "away": 1.75
         },
         "totals": {
           "line": 2.5,
           "over": 1.88,
           "under": 1.89
+        },
+        "spreads": {
+          "home": {
+            "point": 0.5,
+            "price": 2.06
+          },
+          "away": {
+            "point": -0.5,
+            "price": 1.79
+          }
         }
       },
       "sources": [
@@ -171,6 +241,16 @@
           "line": 2.5,
           "over": 1.68,
           "under": 2.12
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 1.88
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.94
+          }
         }
       },
       "sources": [
@@ -185,14 +265,24 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.1,
-          "draw": 3.23,
-          "away": 3.4
+          "home": 2.1100000000000003,
+          "draw": 3.215,
+          "away": 3.5
         },
         "totals": {
           "line": 2.5,
           "over": 2.15,
           "under": 1.6749999999999998
+        },
+        "spreads": {
+          "home": {
+            "point": -0.5,
+            "price": 2.15
+          },
+          "away": {
+            "point": 0.5,
+            "price": 1.74
+          }
         }
       },
       "sources": [
@@ -215,6 +305,16 @@
           "line": 2.5,
           "over": 1.83,
           "under": 1.93
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 1.9
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.92
+          }
         }
       },
       "sources": [
