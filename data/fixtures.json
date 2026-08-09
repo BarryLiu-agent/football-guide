@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T21:06:01Z",
+  "generatedAt": "2026-08-09T23:02:30Z",
   "dateRange": {
     "from": "2026-08-02",
     "to": "2026-09-13"
@@ -21096,11 +21096,11 @@
       },
       "id": 554950,
       "utcDate": "2026-08-09T19:00:00Z",
-      "status": "LIVE",
+      "status": "FINISHED",
       "matchday": 22,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-09T21:05:41Z",
+      "lastUpdated": "2026-08-09T21:06:45Z",
       "homeTeam": {
         "id": 1777,
         "name": "EC Bahia",
@@ -21156,11 +21156,11 @@
       },
       "id": 554957,
       "utcDate": "2026-08-09T19:00:00Z",
-      "status": "IN_PLAY",
+      "status": "FINISHED",
       "matchday": 22,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-09T21:05:09Z",
+      "lastUpdated": "2026-08-09T21:06:26Z",
       "homeTeam": {
         "id": 1769,
         "name": "SE Palmeiras",
@@ -21216,11 +21216,11 @@
       },
       "id": 554952,
       "utcDate": "2026-08-09T21:30:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "matchday": 22,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-09T01:32:01Z",
+      "lastUpdated": "2026-08-09T23:01:57Z",
       "homeTeam": {
         "id": 4286,
         "name": "RB Bragantino",
@@ -21236,15 +21236,15 @@
         "crest": "https://crests.football-data.org/1779.png"
       },
       "score": {
-        "winner": null,
+        "winner": "AWAY_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 1
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 0
         }
       },
       "odds": {
@@ -21276,11 +21276,11 @@
       },
       "id": 554959,
       "utcDate": "2026-08-09T21:30:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "matchday": 22,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-09T01:32:01Z",
+      "lastUpdated": "2026-08-09T23:02:04Z",
       "homeTeam": {
         "id": 6685,
         "name": "Santos FC",
@@ -21296,15 +21296,15 @@
         "crest": "https://crests.football-data.org/1768.png"
       },
       "score": {
-        "winner": null,
+        "winner": "AWAY_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 3
         },
         "halfTime": {
-          "home": null,
-          "away": null
+          "home": 0,
+          "away": 2
         }
       },
       "odds": {
@@ -21336,11 +21336,11 @@
       },
       "id": 554955,
       "utcDate": "2026-08-09T22:30:00Z",
-      "status": "TIMED",
+      "status": "IN_PLAY",
       "matchday": 22,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-08T15:20:06Z",
+      "lastUpdated": "2026-08-09T23:02:06Z",
       "homeTeam": {
         "id": 1783,
         "name": "CR Flamengo",
@@ -21356,11 +21356,11 @@
         "crest": "https://crests.football-data.org/1782.png"
       },
       "score": {
-        "winner": null,
+        "winner": "HOME_TEAM",
         "duration": "REGULAR",
         "fullTime": {
-          "home": null,
-          "away": null
+          "home": 1,
+          "away": 0
         },
         "halfTime": {
           "home": null,

@@ -1,16 +1,49 @@
 {
-  "generatedAt": "2026-08-09T21:06:02Z",
+  "generatedAt": "2026-08-09T23:02:31Z",
   "total": 20,
   "messages": [
     {
       "source": "skysports",
       "type": "news",
-      "text": "'Very pathetic' - Koepka fumes after missing FedExCup playoffs",
+      "text": "Brennan secures FedEx Cup Playoffs spot with Wyndham Championship win",
+      "timestamp": "Sun, 09 Aug 2026 23:05:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/golf/news/12040/13571521/wyndham-championship-michael-brennan-secures-fedex-playoffs-spot-with-victory",
+        "lang": "en",
+        "summary": "Michael Brennan secured his place in the FedExCup Playoffs as he won the Wyndham Championship by three strokes from Beau Hossler."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Papers: Man Utd and Arsenal chase Club Brugge full-back Seys",
+      "timestamp": "Sun, 09 Aug 2026 23:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571517/manchester-united-and-arsenal-among-several-clubs-chasing-club-brugge-left-back-joaquin-seys",
+        "lang": "en",
+        "summary": "The top stories and transfer rumours from Monday's newspapers..."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Rahm reigns again after Niemann wins LIV Golf New York",
+      "timestamp": "Sun, 09 Aug 2026 22:36:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/golf/news/12040/13571516/liv-golf-jon-rahm-clinches-third-straight-title-after-joaquin-niemann-wins-in-new-york",
+        "lang": "en",
+        "summary": "Jon Rahm clinched the LIV Golf season points title for a third straight year despite finishing tied for 41st at LIV Golf New York, where Joaquin Niemann claimed a three-shot victory for his ninth win in the last three years."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "'Very pathetic' - Koepka fumes after missing FedExCup Playoffs",
       "timestamp": "Sun, 09 Aug 2026 20:33:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/golf/news/12040/13571491/brooks-koepka-fumes-after-pathetic-wyndham-championship-performance-costs-him-place-in-fedexcup-playoffs",
         "lang": "en",
-        "summary": "Brooks Koepka labelled missing the FedExCup playoffs \"pathetic\" in a brutally honest assessment of his game after a low finish at the Wyndham Championship."
+        "summary": "Brooks Koepka labelled missing the FedExCup Playoffs \"pathetic\" in a brutally honest assessment of his game after a low finish at the Wyndham Championship."
       }
     },
     {
@@ -187,39 +220,6 @@
         "link": "https://www.skysports.com/cricket/news/12040/13571460/the-hundred-sunrisers-leeds-ease-to-71-run-win-over-welsh-fire",
         "lang": "en",
         "summary": "Mitchell Marsh's half-century and three wickets from Brydon Carse helped SunRisers Leeds take a big step towards the men's Hundred eliminator with a crushing 71-run victory over Welsh Fire."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "'The first of many!' | Hogh opens Celtic account early on at Kilmarnock",
-      "timestamp": "Sun, 09 Aug 2026 13:37:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13571358/it-will-be-the-first-of-many-kasper-hogh-opens-celtic-account-early-on-at-kilmarnock",
-        "lang": "en",
-        "summary": "Kasper Hogh scored his first Celtic goal inside the opening two minutes of Celtic&#8217;s away match at Kilmarnock."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Thorslund ends Johnson's undisputed run to become world champion again",
-      "timestamp": "Sun, 09 Aug 2026 08:01:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/boxing/news/12040/13571294/dina-thorslund-ends-cherneka-johnsons-undisputed-run-to-become-world-champion-again-after-return-following-miscarriage",
-        "lang": "en",
-        "summary": "Dina Thorslund is a world champion again after ending&#160;Cherneka Johnson's undisputed run to cap an emotional return to the sport."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Is Arsenal's defending a concern after Dortmund defeat?",
-      "timestamp": "Sun, 09 Aug 2026 12:30:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/live-blog/12040/13571163/arsenal-vs-borussia-dortmund-live-pre-season-friendly-team-news-preview-score-updates-and-live-blog",
-        "lang": "en",
-        "summary": ""
       }
     }
   ]

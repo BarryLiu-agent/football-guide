@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T21:06:04Z",
+  "generatedAt": "2026-08-09T23:02:33Z",
   "total": 138,
   "rulesVersion": "1.0",
   "predictions": [
@@ -11875,11 +11875,11 @@
   "disclaimer": "本结果仅用于个人数据分析与研究, 不构成任何投注建议",
   "stats": {
     "total": 217,
-    "finished": 14,
+    "finished": 16,
     "exactHit": 1,
-    "exactRate": 0.0714,
+    "exactRate": 0.0625,
     "outcomeHit": 5,
-    "outcomeRate": 0.3571,
-    "updatedAt": "2026-08-09T21:06:04Z"
+    "outcomeRate": 0.3125,
+    "updatedAt": "2026-08-09T23:02:33Z"
   }
 }
