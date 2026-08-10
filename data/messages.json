@@ -1,7 +1,18 @@
 {
-  "generatedAt": "2026-08-09T23:02:31Z",
+  "generatedAt": "2026-08-10T05:09:36Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Today on Sky Sports Racing: Badri chases four-timer at Windsor",
+      "timestamp": "Mon, 10 Aug 2026 06:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/racing/news/12040/13571329/today-on-sky-sports-racing-flat-action-from-windsor-live-on-monday-evening-with-badri-chasing-a-four-timer",
+        "lang": "en",
+        "summary": "Windsor takes centre stage on Monday with a six-race Flat meeting live on Sky Sports Racing."
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -22,6 +33,17 @@
         "link": "https://www.skysports.com/football/news/12040/13571517/manchester-united-and-arsenal-among-several-clubs-chasing-club-brugge-left-back-joaquin-seys",
         "lang": "en",
         "summary": "The top stories and transfer rumours from Monday's newspapers..."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "'Gobsmacked!' | Hull FOUR-PUTTS the 17th moments after taking the lead!",
+      "timestamp": "Sun, 09 Aug 2026 16:35:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13571421/pif-london-championship-charley-hull-four-putts-the-17th-moments-after-taking-the-lead",
+        "lang": "en",
+        "summary": "The crowd was stunned to silence as Charley Hull four-putted on the 17th hole moments after taking the lead."
       }
     },
     {
@@ -198,28 +220,6 @@
         "link": "https://www.skysports.com/rugby-league/news/12040/13571338/tommy-makinson-catalans-dragons-wing-and-former-st-helens-try-machine-announces-he-will-retire-at-end-of-2026-campaign",
         "lang": "en",
         "summary": "Tommy Makinson has announced he will retire from rugby league at the end of the current 2026 Super League campaign.&#160;"
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "McInnes on Rangers' woe: We're not as bad as people think",
-      "timestamp": "Sun, 09 Aug 2026 19:04:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13571473/rangers-boss-derek-mcinnes-after-hibernian-loss-were-not-as-bad-as-people-think",
-        "lang": "en",
-        "summary": "Derek McInnes believes Rangers \"aren't as bad as people think\" despite his winless start to life at Ibrox."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Marsh fifty helps SunRisers past Welsh Fire in The Hundred",
-      "timestamp": "Sun, 09 Aug 2026 18:15:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/cricket/news/12040/13571460/the-hundred-sunrisers-leeds-ease-to-71-run-win-over-welsh-fire",
-        "lang": "en",
-        "summary": "Mitchell Marsh's half-century and three wickets from Brydon Carse helped SunRisers Leeds take a big step towards the men's Hundred eliminator with a crushing 71-run victory over Welsh Fire."
       }
     }
   ]
