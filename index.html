@@ -202,6 +202,8 @@ table.standings .down { color: var(--red); }
 .xg-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; background:rgba(59,130,246,.15); color:#60a5fa; border:1px solid rgba(59,130,246,.35); }
 .val-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; background:rgba(240,185,11,.12); color:#fbbf24; border:1px solid rgba(240,185,11,.4); display:inline-block; }
 
+.val-tag { font-size:10px; font-weight:800; padding:2px 8px; border-radius:10px; background:rgba(240,185,11,.15); color:var(--gold); border:1px solid rgba(240,185,11,.45); }
+
 /* ===== 异动/难度标签 ===== */
 .hot-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; background:rgba(239,68,68,.15); color:#f87171; border:1px solid rgba(239,68,68,.4); }
 .diff-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; }
@@ -623,11 +625,10 @@ function renderCard(m) {
   const score = getScore(m);
   // 异动标红：赔率涨跌 >= 0.2
   let hot = '';
-  // 模型价值标记（Elo 与市场差值 >= 5%）
+  // 模型价值标记（Elo 与市场差值 >= 10%）
   let value = '';
-  if (pred && pred.valueMarks && pred.valueMarks.picks && pred.valueMarks.picks.length) {
-    const cn = { home: '主胜', draw: '平局', away: '客胜' };
-    value = '<span class="value-tag">💰 ' + pred.valueMarks.picks.map(k => cn[k]).join('/') + '</span>';
+  if (pred && pred.valuePicks && pred.valuePicks.length) {
+    value = '<span class="value-tag">💰 ' + pred.valuePicks.map(v => v.label).join('/') + '</span>';
   }
   if (pred && pred.oddsChange) {
     const oc = pred.oddsChange;
@@ -656,6 +657,7 @@ function renderCard(m) {
     <div class="mc-score ${score.cls}"><div class="s">${score.text === 'VS' ? 'VS' : score.text}</div>${score.statusText && score.statusText !== 'VS' ? `<div class="st">${score.statusText}</div>` : ''}</div>
     ${pred ? `<div class="mc-pred"><div class="ps">${pred.predictedScore}</div><div class="pc">预测 ${Math.round((pred.confidence||0)*100)}%</div></div>` : ''}
     ${jc ? `<div class="mc-badge-jc">竞彩</div>` : ''}
+    ${(() => { const vp = (pred && pred.valuePicks && pred.valuePicks.length) ? pred.valuePicks[0] : null; return vp ? `<span class="val-tag" title="${vp.label}: 模型${Math.round(vp.modelProb*100)}% vs 盘口${Math.round(vp.oddsProb*100)}%">💰${vp.label} ${vp.edge > 0 ? '+' : ''}${Math.round(vp.edge*100)}%</span>` : ''; })()}
     ${(() => { const xm = findXgMatch(homeName, awayName); return (xm && (xm.xgHome != null || xm.xgAway != null)) ? `<span class="xg-tag">🎯 ${(xm.xgHome ?? 0).toFixed(1)}-${(xm.xgAway ?? 0).toFixed(1)}</span>` : ''; })()}
     ${pred && pred.valuePicks && pred.valuePicks.length ? `<span class="val-tag" title="${pred.valuePicks.map(v => v.label + ' 模型' + Math.round(v.modelProb*100) + '% vs 赔率' + Math.round(v.oddsProb*100) + '%').join('；')}">💰 价值 ${pred.valuePicks.map(v => v.label).join('/')}</span>` : ''}
     ${hot || diff || value ? `<div style="display:flex;gap:4px;margin-top:6px;flex-wrap:wrap">${hot}${value}${diff}</div>` : ''}
@@ -877,17 +879,19 @@ function switchMkt(mkt) {
     };
     const kellyTxt = (v) => v == null ? '' : `<div class="sub" style="color:${v > 0.05 ? '#22c55e' : (v < 0 ? '#ef4444' : '#9ca3af')}">凯利 ${v > 0 ? '+' : ''}${v.toFixed(2)}</div>`;
     el.innerHTML = `<div class="odds-grid">
-      ${(() => {
-        const mp = p.modelProbs || {};
-        const vm = p.valueMarks || {};
-        const edge = (k) => vm.edges && vm.edges[k] != null ? `<div class="sub" style="color:${vm.edges[k] >= 0.05 ? 'var(--gold)' : 'var(--muted)'}">模型 ${pct(mp[k])} ${vm.edges[k] >= 0.05 ? '💰+' + (vm.edges[k]*100).toFixed(0) + '%' : ''}</div>` : '';
-        return '';
-      })()}
+
       <div class="odds-box"><div class="label">主胜</div><div class="value">${ro.home ?? '—'}${chg(oc.home)}</div><div class="sub">${pct(pr.home)}</div>${kellyTxt(kl.home)}</div>
       <div class="odds-box"><div class="label">平局</div><div class="value">${ro.draw ?? '—'}${chg(oc.draw)}</div><div class="sub">${pct(pr.draw)}</div>${kellyTxt(kl.draw)}</div>
       <div class="odds-box"><div class="label">客胜</div><div class="value">${ro.away ?? '—'}${chg(oc.away)}</div><div class="sub">${pct(pr.away)}</div>${kellyTxt(kl.away)}</div>
     </div>
-    <div style="font-size:10px;color:var(--muted);margin-top:6px;text-align:center">▲ 赔率上升（看淡） ▼ 赔率下降（看好） · 凯利>0 表示赔率有正期望价值</div>`;
+    <div style="font-size:10px;color:var(--muted);margin-top:6px;text-align:center">▲ 赔率上升（看淡） ▼ 赔率下降（看好） · 凯利>0 表示赔率有正期望价值</div>
+    ${p.eloProb ? `<div class="section-title" style="margin-top:10px">🤖 独立模型 (Elo+修正)</div>
+    <div class="odds-grid">
+      <div class="odds-box"><div class="label">主胜</div><div class="value">${pct(p.eloProb.home)}</div><div class="sub">盘口 ${pct(pr.home)}</div></div>
+      <div class="odds-box"><div class="label">平局</div><div class="value">${pct(p.eloProb.draw)}</div><div class="sub">盘口 ${pct(pr.draw)}</div></div>
+      <div class="odds-box"><div class="label">客胜</div><div class="value">${pct(p.eloProb.away)}</div><div class="sub">盘口 ${pct(pr.away)}</div></div>
+    </div>
+    ${(p.valuePicks || []).length ? `<div style="font-size:11px;padding:8px 10px;border-radius:8px;background:rgba(240,185,11,.1);border:1px solid rgba(240,185,11,.3);color:var(--gold);margin-top:8px">💰 价值信号：${(p.valuePicks||[]).map(v => v.label + ' 模型' + Math.round(v.modelProb*100) + '% vs 盘口' + Math.round(v.oddsProb*100) + '%').join('、')}</div>` : ''}` : ''}`;
   } else if (mkt === 'jc') {
     if (!jc) { el.innerHTML = '<div class="empty-state">该场比赛未开售竞彩（或不在售）</div>'; return; }
     const had = jc.had || {};
