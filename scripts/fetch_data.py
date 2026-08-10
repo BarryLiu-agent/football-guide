@@ -44,6 +44,10 @@ COMPETITIONS = {
     "BL1": "德甲",
     "FL1": "法甲",
     "CL": "欧冠",
+    "ELC": "英冠",
+    "DED": "荷甲",
+    "BSA": "巴甲",
+    "CLI": "解放者杯",
 }
 
 # Project root (this script lives in scripts/, project is parent)
