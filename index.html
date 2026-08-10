@@ -489,7 +489,7 @@ async function loadAll() {
   ];
   // xG 逐个联赛加载（可能不存在）
   for (const lg of LEAGUES) {
-    jobs.push(loadJson(`data/xg/${lg.code}.json`).then(d => { state.xg[lg.code] = d.data || {}; }).catch(() => {}));
+    jobs.push(loadJson(`data/xg/${lg.code}.json`).then(d => { state.xg[lg.code] = d; }).catch(() => {}));
   }
   await Promise.all(jobs);
   const d = state.history?.stats;
