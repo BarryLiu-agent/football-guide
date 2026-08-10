@@ -279,17 +279,14 @@ class ScoreModel:
 
     def dc_scores(self, top_n=6, rho=-0.08):
         """Dixon-Coles 修正的波胆分布（修正 0-0/1-0/0-1/1-1 低比分依赖）。"""
-        probs = dc_probs(self.lam_h, self.lam_a, rho=rho)
-        entries = [{"score": f"{i}-{j}", "prob": round(pp, 4)} for (i, j), pp in probs.items()]
-        entries.sort(key=lambda x: -x["prob"])
-        return entries[:top_n]
+        return dc_probs(self.lam_h, self.lam_a, rho=rho)[:top_n]
 
     def dc_1x2(self, rho=-0.08):
         """Dixon-Coles 修正的胜平负概率。"""
-        probs = dc_probs(self.lam_h, self.lam_a, rho=rho)
-        p_home = sum(v for (i, j), v in probs.items() if i > j)
-        p_draw = sum(v for (i, j), v in probs.items() if i == j)
-        p_away = sum(v for (i, j), v in probs.items() if i < j)
+        entries = dc_probs(self.lam_h, self.lam_a, rho=rho)
+        p_home = sum(e["prob"] for e in entries if int(e["score"].split("-")[0]) > int(e["score"].split("-")[1]))
+        p_draw = sum(e["prob"] for e in entries if e["score"].split("-")[0] == e["score"].split("-")[1])
+        p_away = sum(e["prob"] for e in entries if int(e["score"].split("-")[0]) < int(e["score"].split("-")[1]))
         return round(p_home, 4), round(p_draw, 4), round(p_away, 4)
 
     def over_under(self, line=2.5):

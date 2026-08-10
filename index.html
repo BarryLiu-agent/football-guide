@@ -879,12 +879,7 @@ function switchMkt(mkt) {
     };
     const kellyTxt = (v) => v == null ? '' : `<div class="sub" style="color:${v > 0.05 ? '#22c55e' : (v < 0 ? '#ef4444' : '#9ca3af')}">凯利 ${v > 0 ? '+' : ''}${v.toFixed(2)}</div>`;
     el.innerHTML = `<div class="odds-grid">
-      ${(() => {
-        const mp = p.modelProbs || {};
-        const vm = p.valueMarks || {};
-        const edge = (k) => vm.edges && vm.edges[k] != null ? `<div class="sub" style="color:${vm.edges[k] >= 0.05 ? 'var(--gold)' : 'var(--muted)'}">模型 ${pct(mp[k])} ${vm.edges[k] >= 0.05 ? '💰+' + (vm.edges[k]*100).toFixed(0) + '%' : ''}</div>` : '';
-        return '';
-      })()}
+
       <div class="odds-box"><div class="label">主胜</div><div class="value">${ro.home ?? '—'}${chg(oc.home)}</div><div class="sub">${pct(pr.home)}</div>${kellyTxt(kl.home)}</div>
       <div class="odds-box"><div class="label">平局</div><div class="value">${ro.draw ?? '—'}${chg(oc.draw)}</div><div class="sub">${pct(pr.draw)}</div>${kellyTxt(kl.draw)}</div>
       <div class="odds-box"><div class="label">客胜</div><div class="value">${ro.away ?? '—'}${chg(oc.away)}</div><div class="sub">${pct(pr.away)}</div>${kellyTxt(kl.away)}</div>
