@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T16:46:10Z",
+  "generatedAt": "2026-08-10T17:00:08Z",
   "total": 58,
   "rulesVersion": "1.1",
   "modelInfo": {
@@ -38,8 +38,16 @@
         "draw": 6.4,
         "away": 8.0
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 1.29,
+        "draw": 6.4,
+        "away": 8.0
+      },
       "kelly": {
         "home": -0.184,
         "draw": -0.01,
@@ -59,6 +67,21 @@
         "home": 0.552,
         "draw": 0.209,
         "away": 0.239
+      },
+      "dcProb": {
+        "home": 0.66,
+        "draw": 0.18,
+        "away": 0.13
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1800.0,
@@ -179,8 +202,16 @@
         "draw": 3.65,
         "away": 2.3
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 2.85,
+        "draw": 3.65,
+        "away": 2.3
+      },
       "kelly": {
         "home": -0.03,
         "draw": -0.021,
@@ -200,6 +231,21 @@
         "home": 0.326,
         "draw": 0.275,
         "away": 0.399
+      },
+      "dcProb": {
+        "home": 0.33,
+        "draw": 0.263,
+        "away": 0.402
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "away",
+        "dc": "away",
+        "market": "away"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1605.0,
@@ -301,8 +347,16 @@
         "draw": 4.5,
         "away": 1.55
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 5.23,
+        "draw": 4.5,
+        "away": 1.55
+      },
       "kelly": {
         "home": -0.013,
         "draw": -0.016,
@@ -322,6 +376,21 @@
         "home": 0.256,
         "draw": 0.22,
         "away": 0.525
+      },
+      "dcProb": {
+        "home": 0.198,
+        "draw": 0.212,
+        "away": 0.572
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "away",
+        "dc": "away",
+        "market": "away"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1500.0,
@@ -410,8 +479,16 @@
         "draw": 4.6,
         "away": 5.3
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 1.54,
+        "draw": 4.6,
+        "away": 5.3
+      },
       "kelly": {
         "home": -0.097,
         "draw": -0.015,
@@ -431,6 +508,21 @@
         "home": 0.662,
         "draw": 0.167,
         "away": 0.171
+      },
+      "dcProb": {
+        "home": 0.633,
+        "draw": 0.194,
+        "away": 0.149
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1770.0,
@@ -532,8 +624,16 @@
         "draw": 3.5,
         "away": 2.8
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 2.4,
+        "draw": 3.5,
+        "away": 2.8
+      },
       "kelly": {
         "home": -0.04,
         "draw": -0.022,
@@ -553,6 +653,21 @@
         "home": 0.28,
         "draw": 0.237,
         "away": 0.484
+      },
+      "dcProb": {
+        "home": 0.346,
+        "draw": 0.252,
+        "away": 0.395
+      },
+      "diverge": true,
+      "dirs": {
+        "elo": "away",
+        "dc": "away",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1500.0,
@@ -673,8 +788,16 @@
         "draw": 4.0,
         "away": 4.6
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 1.69,
+        "draw": 4.0,
+        "away": 4.6
+      },
       "kelly": {
         "home": -0.081,
         "draw": -0.019,
@@ -694,6 +817,21 @@
         "home": 0.49,
         "draw": 0.234,
         "away": 0.276
+      },
+      "dcProb": {
+        "home": 0.526,
+        "draw": 0.232,
+        "away": 0.231
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1500.0,
@@ -765,13 +903,13 @@
         "away": 0.8
       },
       "probabilities": {
-        "home": 0.745,
+        "home": 0.748,
         "draw": 0.106,
-        "away": 0.149
+        "away": 0.146
       },
-      "confidence": 0.698,
+      "confidence": 0.699,
       "reasons": [
-        "赔率隐含概率: 主71% 平17% 客12%"
+        "赔率隐含概率: 主71% 平17% 客11%"
       ],
       "messageEvidence": [],
       "league": "BL1",
@@ -780,13 +918,21 @@
       "rawOdds": {
         "home": 1.33,
         "draw": 5.5,
-        "away": 8.19
+        "away": 8.4
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 1.33,
+        "draw": 5.5,
+        "away": 8.4
+      },
       "kelly": {
-        "home": -0.16,
-        "draw": -0.012,
+        "home": -0.152,
+        "draw": -0.011,
         "away": -0.007
       },
       "spreads": {
@@ -804,14 +950,29 @@
         "draw": 0.155,
         "away": 0.151
       },
+      "dcProb": {
+        "home": 0.693,
+        "draw": 0.166,
+        "away": 0.106
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
+      },
       "eloRatings": {
         "home": 1785.0,
         "away": 1620.0
       },
       "modelProbs": {
-        "home": 0.705,
-        "draw": 0.165,
-        "away": 0.13
+        "home": 0.706,
+        "draw": 0.166,
+        "away": 0.128
       },
       "valuePicks": [],
       "signalLevel": "none",
@@ -876,7 +1037,7 @@
         "10": 0.0001
       },
       "btts": 0.4809,
-      "analysis": "【排名】主队Borussia Dortmund排名第2（73分/34场），客队Hamburger SV排名第13（38分/34场），主队排名领先 11 位。\n【胜负】市场高度看好主队Borussia Dortmund，主胜隐含概率 71%（赔率 1.33 / 5.5 / 8.19）。\n【让球】主队Borussia Dortmund让 1.5 球（盘口赔率 1.955 / 1.9）。\n【波胆】泊松模型推算最可能比分：2-0（12%）、1-0（10%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 59% / 小球 41%（赔率 大 1.56 / 小 2.25），倾向大球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 48%，倾向至少一方零封。\n【结论】综合赔率与消息，Borussia Dortmund不败概率更高，关注波胆 2-0 方向。"
+      "analysis": "【排名】主队Borussia Dortmund排名第2（73分/34场），客队Hamburger SV排名第13（38分/34场），主队排名领先 11 位。\n【胜负】市场高度看好主队Borussia Dortmund，主胜隐含概率 71%（赔率 1.33 / 5.5 / 8.4）。\n【让球】主队Borussia Dortmund让 1.5 球（盘口赔率 1.955 / 1.9）。\n【波胆】泊松模型推算最可能比分：2-0（12%）、1-0（10%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 59% / 小球 41%（赔率 大 1.56 / 小 2.25），倾向大球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 48%，倾向至少一方零封。\n【结论】综合赔率与消息，Borussia Dortmund不败概率更高，关注波胆 2-0 方向。"
     },
     {
       "homeTeam": "SC Freiburg",
@@ -904,8 +1065,16 @@
         "draw": 3.5,
         "away": 3.55
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 2.03,
+        "draw": 3.5,
+        "away": 3.55
+      },
       "kelly": {
         "home": -0.055,
         "draw": -0.023,
@@ -925,6 +1094,21 @@
         "home": 0.738,
         "draw": 0.138,
         "away": 0.124
+      },
+      "dcProb": {
+        "home": 0.568,
+        "draw": 0.217,
+        "away": 0.199
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1710.0,
@@ -1041,8 +1225,16 @@
         "draw": 3.7,
         "away": 3.15
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 2.1,
+        "draw": 3.7,
+        "away": 3.15
+      },
       "kelly": {
         "home": -0.055,
         "draw": -0.022,
@@ -1062,6 +1254,21 @@
         "home": 0.71,
         "draw": 0.149,
         "away": 0.142
+      },
+      "dcProb": {
+        "home": 0.549,
+        "draw": 0.214,
+        "away": 0.218
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1680.0,
@@ -1178,8 +1385,16 @@
         "draw": 4.13,
         "away": 4.45
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 1.67,
+        "draw": 4.13,
+        "away": 4.45
+      },
       "kelly": {
         "home": -0.092,
         "draw": -0.02,
@@ -1199,6 +1414,21 @@
         "home": 0.49,
         "draw": 0.234,
         "away": 0.276
+      },
+      "dcProb": {
+        "home": 0.53,
+        "draw": 0.226,
+        "away": 0.23
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1500.0,
@@ -1300,8 +1530,16 @@
         "draw": 4.1,
         "away": 5.1
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 1.6,
+        "draw": 4.1,
+        "away": 5.1
+      },
       "kelly": {
         "home": -0.102,
         "draw": -0.02,
@@ -1321,6 +1559,21 @@
         "home": 0.751,
         "draw": 0.133,
         "away": 0.116
+      },
+      "dcProb": {
+        "home": 0.653,
+        "draw": 0.19,
+        "away": 0.133
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1725.0,
@@ -1432,8 +1685,16 @@
         "draw": 3.49,
         "away": 2.7
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 2.48,
+        "draw": 3.49,
+        "away": 2.7
+      },
       "kelly": {
         "home": -0.038,
         "draw": -0.023,
@@ -1453,6 +1714,21 @@
         "home": 0.809,
         "draw": 0.11,
         "away": 0.081
+      },
+      "dcProb": {
+        "home": 0.549,
+        "draw": 0.214,
+        "away": 0.218
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1800.0,
@@ -1582,8 +1858,16 @@
         "draw": 3.4,
         "away": 3.15
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 2.18,
+        "draw": 3.4,
+        "away": 3.15
+      },
       "kelly": {
         "home": -0.056,
         "draw": -0.027,
@@ -1603,6 +1887,21 @@
         "home": 0.197,
         "draw": 0.182,
         "away": 0.622
+      },
+      "dcProb": {
+        "home": 0.337,
+        "draw": 0.237,
+        "away": 0.415
+      },
+      "diverge": true,
+      "dirs": {
+        "elo": "away",
+        "dc": "away",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1500.0,
@@ -1723,8 +2022,16 @@
         "draw": 3.64,
         "away": 2.02
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 3.4,
+        "draw": 3.64,
+        "away": 2.02
+      },
       "kelly": {
         "home": -0.025,
         "draw": -0.023,
@@ -1744,6 +2051,21 @@
         "home": 0.809,
         "draw": 0.11,
         "away": 0.081
+      },
+      "dcProb": {
+        "home": 0.483,
+        "draw": 0.226,
+        "away": 0.276
+      },
+      "diverge": true,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "away"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1800.0,
@@ -1860,8 +2182,16 @@
         "draw": 3.48,
         "away": 2.46
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 2.72,
+        "draw": 3.48,
+        "away": 2.46
+      },
       "kelly": {
         "home": -0.034,
         "draw": -0.023,
@@ -1881,6 +2211,21 @@
         "home": 0.197,
         "draw": 0.182,
         "away": 0.622
+      },
+      "dcProb": {
+        "home": 0.276,
+        "draw": 0.236,
+        "away": 0.478
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "away",
+        "dc": "away",
+        "market": "away"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1500.0,
@@ -2013,8 +2358,16 @@
         "draw": 3.75,
         "away": 1.68
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 4.95,
+        "draw": 3.75,
+        "away": 1.68
+      },
       "kelly": {
         "home": -0.015,
         "draw": -0.022,
@@ -2034,6 +2387,21 @@
         "home": 0.49,
         "draw": 0.234,
         "away": 0.276
+      },
+      "dcProb": {
+        "home": 0.311,
+        "draw": 0.245,
+        "away": 0.436
+      },
+      "diverge": true,
+      "dirs": {
+        "elo": "home",
+        "dc": "away",
+        "market": "away"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1800.0,
@@ -2154,8 +2522,16 @@
         "draw": 3.8,
         "away": 1.975
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 3.45,
+        "draw": 3.8,
+        "away": 1.975
+      },
       "kelly": {
         "home": -0.023,
         "draw": -0.02,
@@ -2175,6 +2551,21 @@
         "home": 0.49,
         "draw": 0.234,
         "away": 0.276
+      },
+      "dcProb": {
+        "home": 0.361,
+        "draw": 0.243,
+        "away": 0.387
+      },
+      "diverge": true,
+      "dirs": {
+        "elo": "home",
+        "dc": "away",
+        "market": "away"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1800.0,
@@ -2295,8 +2686,16 @@
         "draw": 5.25,
         "away": 6.5
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 1.4,
+        "draw": 5.25,
+        "away": 6.5
+      },
       "kelly": {
         "home": -0.138,
         "draw": -0.013,
@@ -2316,6 +2715,21 @@
         "home": 0.809,
         "draw": 0.11,
         "away": 0.081
+      },
+      "dcProb": {
+        "home": 0.693,
+        "draw": 0.166,
+        "away": 0.106
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1800.0,
@@ -2414,8 +2828,16 @@
         "draw": 2.8,
         "away": 3.6
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 2.4,
+        "draw": 2.8,
+        "away": 3.6
+      },
       "kelly": {
         "home": -0.035,
         "draw": -0.027,
@@ -2435,6 +2857,21 @@
         "home": 0.268,
         "draw": 0.228,
         "away": 0.504
+      },
+      "dcProb": {
+        "home": 0.342,
+        "draw": 0.291,
+        "away": 0.364
+      },
+      "diverge": true,
+      "dirs": {
+        "elo": "away",
+        "dc": "away",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1500.0,
@@ -2505,7 +2942,7 @@
         "line": 2.5,
         "over": 0.554,
         "under": 0.446,
-        "overPrice": 1.705,
+        "overPrice": 1.71,
         "underPrice": 2.12
       },
       "standings": {
@@ -2536,7 +2973,7 @@
         "10": 0.0
       },
       "btts": 0.4436,
-      "analysis": "【排名】主队Alavés排名第14（43分/38场），客队Getafe排名第7（51分/38场），客队排名领先 7 位。\n【胜负】双方实力接近，主队Alavés略占优（主胜 40% vs 客胜 26%）（赔率 2.4 / 2.8 / 3.6）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.63 / 2.4450000000000003）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、0-1（12%）、1-0（12%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%（赔率 大 1.705 / 小 2.12），倾向大球。\n【进球数】总进球概率：0球 11%、1球 24%、2球 27%、3球 20%、4球 11%。\n【双方进球】双方都进球概率 44%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 27% vs 盘口 40%（差 -13%），值得关注。\n【结论】综合赔率与消息，Alavés不败概率更高，关注波胆 1-1 方向。"
+      "analysis": "【排名】主队Alavés排名第14（43分/38场），客队Getafe排名第7（51分/38场），客队排名领先 7 位。\n【胜负】双方实力接近，主队Alavés略占优（主胜 40% vs 客胜 26%）（赔率 2.4 / 2.8 / 3.6）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.63 / 2.4450000000000003）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、0-1（12%）、1-0（12%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%（赔率 大 1.71 / 小 2.12），倾向大球。\n【进球数】总进球概率：0球 11%、1球 24%、2球 27%、3球 20%、4球 11%。\n【双方进球】双方都进球概率 44%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 27% vs 盘口 40%（差 -13%），值得关注。\n【结论】综合赔率与消息，Alavés不败概率更高，关注波胆 1-1 方向。"
     },
     {
       "homeTeam": "Sevilla",
@@ -2564,8 +3001,16 @@
         "draw": 3.2,
         "away": 3.355
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 2.28,
+        "draw": 3.2,
+        "away": 3.355
+      },
       "kelly": {
         "home": -0.037,
         "draw": -0.021,
@@ -2585,6 +3030,21 @@
         "home": 0.347,
         "draw": 0.296,
         "away": 0.357
+      },
+      "dcProb": {
+        "home": 0.393,
+        "draw": 0.298,
+        "away": 0.307
+      },
+      "diverge": true,
+      "dirs": {
+        "elo": "away",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1590.0,
@@ -2686,8 +3146,16 @@
         "draw": 3.475,
         "away": 2.32
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 3.05,
+        "draw": 3.475,
+        "away": 2.32
+      },
       "kelly": {
         "home": -0.022,
         "draw": -0.018,
@@ -2707,6 +3175,21 @@
         "home": 0.511,
         "draw": 0.225,
         "away": 0.264
+      },
+      "dcProb": {
+        "home": 0.393,
+        "draw": 0.258,
+        "away": 0.344
+      },
+      "diverge": true,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "away"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1785.0,
@@ -2827,8 +3310,16 @@
         "draw": 3.3,
         "away": 3.9
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 2.05,
+        "draw": 3.3,
+        "away": 3.9
+      },
       "kelly": {
         "home": -0.043,
         "draw": -0.02,
@@ -2848,6 +3339,21 @@
         "home": 0.427,
         "draw": 0.262,
         "away": 0.311
+      },
+      "dcProb": {
+        "home": 0.449,
+        "draw": 0.278,
+        "away": 0.27
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1500.0,
@@ -2949,8 +3455,16 @@
         "draw": 3.4,
         "away": 3.775
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 2.02,
+        "draw": 3.4,
+        "away": 3.775
+      },
       "kelly": {
         "home": -0.05,
         "draw": -0.021,
@@ -2970,6 +3484,21 @@
         "home": 0.385,
         "draw": 0.282,
         "away": 0.333
+      },
+      "dcProb": {
+        "home": 0.437,
+        "draw": 0.279,
+        "away": 0.281
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1500.0,
@@ -3041,13 +3570,13 @@
         "away": 0.97
       },
       "probabilities": {
-        "home": 0.425,
-        "draw": 0.247,
-        "away": 0.328
+        "home": 0.424,
+        "draw": 0.249,
+        "away": 0.327
       },
       "confidence": 0.57,
       "reasons": [
-        "赔率隐含概率: 主39% 平31% 客29%"
+        "赔率隐含概率: 主39% 平32% 客29%"
       ],
       "messageEvidence": [],
       "league": "PD",
@@ -3055,15 +3584,23 @@
       "matchUrl": "",
       "rawOdds": {
         "home": 2.42,
-        "draw": 3.025,
+        "draw": 3.0,
         "away": 3.22
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 2.42,
+        "draw": 3.0,
+        "away": 3.22
+      },
       "kelly": {
-        "home": -0.036,
-        "draw": -0.025,
-        "away": -0.023
+        "home": -0.038,
+        "draw": -0.027,
+        "away": -0.024
       },
       "spreads": {
         "home": {
@@ -3080,14 +3617,29 @@
         "draw": 0.243,
         "away": 0.288
       },
+      "dcProb": {
+        "home": 0.421,
+        "draw": 0.288,
+        "away": 0.289
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
+      },
       "eloRatings": {
         "home": 1605.0,
         "away": 1620.0
       },
       "modelProbs": {
-        "home": 0.423,
-        "draw": 0.285,
-        "away": 0.292
+        "home": 0.422,
+        "draw": 0.286,
+        "away": 0.291
       },
       "valuePicks": [],
       "signalLevel": "none",
@@ -3152,7 +3704,7 @@
         "10": 0.0
       },
       "btts": 0.4378,
-      "analysis": "【排名】主队Deportivo La Coruña排名第14（43分/38场），客队Elche CF排名第13（43分/38场），排名接近。\n【胜负】双方实力接近，主队Deportivo La Coruña略占优（主胜 39% vs 客胜 29%）（赔率 2.42 / 3.025 / 3.22）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.725 / 2.2350000000000003）。\n【波胆】泊松模型推算最可能比分：1-0（14%）、1-1（13%）、0-0（11%）。\n【大小球】2.5 球盘口：大球 42% / 小球 58%（赔率 大 2.24 / 小 1.61），倾向小球。\n【进球数】总进球概率：0球 11%、1球 24%、2球 27%、3球 20%、4球 11%。\n【双方进球】双方都进球概率 44%，倾向至少一方零封。\n【结论】综合赔率与消息，Deportivo La Coruña不败概率更高，关注波胆 1-0 方向。"
+      "analysis": "【排名】主队Deportivo La Coruña排名第14（43分/38场），客队Elche CF排名第13（43分/38场），排名接近。\n【胜负】双方实力接近，主队Deportivo La Coruña略占优（主胜 39% vs 客胜 29%）（赔率 2.42 / 3.0 / 3.22）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.725 / 2.2350000000000003）。\n【波胆】泊松模型推算最可能比分：1-0（14%）、1-1（13%）、0-0（11%）。\n【大小球】2.5 球盘口：大球 42% / 小球 58%（赔率 大 2.24 / 小 1.61），倾向小球。\n【进球数】总进球概率：0球 11%、1球 24%、2球 27%、3球 20%、4球 11%。\n【双方进球】双方都进球概率 44%，倾向至少一方零封。\n【结论】综合赔率与消息，Deportivo La Coruña不败概率更高，关注波胆 1-0 方向。"
     },
     {
       "homeTeam": "Atlético Madrid",
@@ -3180,8 +3732,16 @@
         "draw": 5.5,
         "away": 10.45
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 1.3,
+        "draw": 5.5,
+        "away": 10.45
+      },
       "kelly": {
         "home": -0.149,
         "draw": -0.01,
@@ -3201,6 +3761,21 @@
         "home": 0.49,
         "draw": 0.234,
         "away": 0.276
+      },
+      "dcProb": {
+        "home": 0.621,
+        "draw": 0.198,
+        "away": 0.158
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1500.0,
@@ -3308,8 +3883,16 @@
         "draw": 3.1,
         "away": 3.8
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 2.05,
+        "draw": 3.1,
+        "away": 3.8
+      },
       "kelly": {
         "home": -0.065,
         "draw": -0.033,
@@ -3329,6 +3912,21 @@
         "home": 0.724,
         "draw": 0.143,
         "away": 0.133
+      },
+      "dcProb": {
+        "home": 0.562,
+        "draw": 0.238,
+        "away": 0.192
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1695.0,
@@ -3458,8 +4056,16 @@
         "draw": 3.3,
         "away": 3.45
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 2.13,
+        "draw": 3.3,
+        "away": 3.45
+      },
       "kelly": {
         "home": -0.052,
         "draw": -0.026,
@@ -3479,6 +4085,21 @@
         "home": 0.49,
         "draw": 0.234,
         "away": 0.276
+      },
+      "dcProb": {
+        "home": 0.459,
+        "draw": 0.263,
+        "away": 0.273
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1785.0,
@@ -3580,8 +4201,16 @@
         "draw": 3.65,
         "away": 5.5
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 1.6,
+        "draw": 3.65,
+        "away": 5.5
+      },
       "kelly": {
         "home": -0.125,
         "draw": -0.028,
@@ -3601,6 +4230,21 @@
         "home": 0.552,
         "draw": 0.209,
         "away": 0.239
+      },
+      "dcProb": {
+        "home": 0.568,
+        "draw": 0.231,
+        "away": 0.191
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1635.0,
@@ -3702,8 +4346,16 @@
         "draw": 3.2,
         "away": 3.05
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 2.35,
+        "draw": 3.2,
+        "away": 3.05
+      },
       "kelly": {
         "home": -0.046,
         "draw": -0.028,
@@ -3723,6 +4375,21 @@
         "home": 0.71,
         "draw": 0.149,
         "away": 0.142
+      },
+      "dcProb": {
+        "home": 0.514,
+        "draw": 0.234,
+        "away": 0.242
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1680.0,
@@ -3823,8 +4490,8 @@
       },
       "probabilities": {
         "home": 0.223,
-        "draw": 0.17,
-        "away": 0.607
+        "draw": 0.169,
+        "away": 0.608
       },
       "confidence": 0.658,
       "reasons": [
@@ -3847,16 +4514,24 @@
       "kickoff": "2026-08-22T19:30:00Z",
       "matchUrl": "",
       "rawOdds": {
-        "home": 5.0,
-        "draw": 3.9,
-        "away": 1.6
+        "home": 5.05,
+        "draw": 3.95,
+        "away": 1.61
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 5.05,
+        "draw": 3.95,
+        "away": 1.61
+      },
       "kelly": {
-        "home": -0.019,
-        "draw": -0.026,
-        "away": -0.125
+        "home": -0.017,
+        "draw": -0.023,
+        "away": -0.111
       },
       "spreads": {
         "home": {
@@ -3873,14 +4548,29 @@
         "draw": 0.189,
         "away": 0.603
       },
+      "dcProb": {
+        "home": 0.199,
+        "draw": 0.217,
+        "away": 0.568
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "away",
+        "dc": "away",
+        "market": "away"
+      },
+      "form": {
+        "home": null,
+        "away": null
+      },
       "eloRatings": {
         "home": 1500.0,
         "away": 1785.0
       },
       "modelProbs": {
         "home": 0.194,
-        "draw": 0.218,
-        "away": 0.588
+        "draw": 0.217,
+        "away": 0.589
       },
       "valuePicks": [],
       "signalLevel": "none",
@@ -3945,7 +4635,7 @@
         "10": 0.0001
       },
       "btts": 0.5473,
-      "analysis": "【排名】主队Espanyol排名第11（46分/38场），客队Real Madrid排名第2（86分/38场），客队排名领先 9 位。\n【胜负】市场明显看好客队Real Madrid，客胜隐含概率 58%（赔率 5.0 / 3.9 / 1.6）。\n【让球】客队Real Madrid让 1.5 球（盘口赔率 1.53 / 2.77）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、1-2（10%）、0-1（10%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%（赔率 大 1.7 / 小 2.1100000000000003），倾向大球。\n【进球数】总进球概率：0球 5%、1球 15%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 55%，倾向至少一方零封。\n【消息面】Real Madrid信号 -0.10（2条提及）。\n📰 Arteta 'trying' to add players after Vini Jr. blow（blow）\n【结论】综合赔率与消息，Real Madrid不败概率更高，关注波胆 1-1 方向。"
+      "analysis": "【排名】主队Espanyol排名第11（46分/38场），客队Real Madrid排名第2（86分/38场），客队排名领先 9 位。\n【胜负】市场明显看好客队Real Madrid，客胜隐含概率 58%（赔率 5.05 / 3.95 / 1.61）。\n【让球】客队Real Madrid让 1.5 球（盘口赔率 1.53 / 2.77）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、1-2（10%）、0-1（10%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%（赔率 大 1.7 / 小 2.1100000000000003），倾向大球。\n【进球数】总进球概率：0球 5%、1球 15%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 55%，倾向至少一方零封。\n【消息面】Real Madrid信号 -0.10（2条提及）。\n📰 Arteta 'trying' to add players after Vini Jr. blow（blow）\n【结论】综合赔率与消息，Real Madrid不败概率更高，关注波胆 1-1 方向。"
     },
     {
       "homeTeam": "Atlético Madrid",
@@ -3973,8 +4663,16 @@
         "draw": 3.4850000000000003,
         "away": 3.935
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 1.9,
+        "draw": 3.4850000000000003,
+        "away": 3.935
+      },
       "kelly": {
         "home": -0.07,
         "draw": -0.025,
@@ -3994,6 +4692,21 @@
         "home": 0.22,
         "draw": 0.196,
         "away": 0.584
+      },
+      "dcProb": {
+        "home": 0.376,
+        "draw": 0.238,
+        "away": 0.376
+      },
+      "diverge": true,
+      "dirs": {
+        "elo": "away",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1500.0,
@@ -4101,8 +4814,16 @@
         "draw": 3.0,
         "away": 4.6
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 1.88,
+        "draw": 3.0,
+        "away": 4.6
+      },
       "kelly": {
         "home": -0.087,
         "draw": -0.038,
@@ -4122,6 +4843,21 @@
         "home": 0.385,
         "draw": 0.282,
         "away": 0.333
+      },
+      "dcProb": {
+        "home": 0.448,
+        "draw": 0.292,
+        "away": 0.257
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1710.0,
@@ -4242,8 +4978,16 @@
         "draw": 5.2,
         "away": 1.32
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 8.4,
+        "draw": 5.2,
+        "away": 1.32
+      },
       "kelly": {
         "home": -0.009,
         "draw": -0.015,
@@ -4263,6 +5007,21 @@
         "home": 0.292,
         "draw": 0.246,
         "away": 0.463
+      },
+      "dcProb": {
+        "home": 0.197,
+        "draw": 0.208,
+        "away": 0.575
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "away",
+        "dc": "away",
+        "market": "away"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1620.0,
@@ -4383,8 +5142,16 @@
         "draw": 3.65,
         "away": 4.6
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 1.7,
+        "draw": 3.65,
+        "away": 4.6
+      },
       "kelly": {
         "home": -0.105,
         "draw": -0.028,
@@ -4404,6 +5171,21 @@
         "home": 0.532,
         "draw": 0.217,
         "away": 0.252
+      },
+      "dcProb": {
+        "home": 0.535,
+        "draw": 0.234,
+        "away": 0.221
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1575.0,
@@ -4505,8 +5287,16 @@
         "draw": 3.0,
         "away": 2.9
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 2.4,
+        "draw": 3.0,
+        "away": 2.9
+      },
       "kelly": {
         "home": -0.062,
         "draw": -0.043,
@@ -4526,6 +5316,21 @@
         "home": 0.347,
         "draw": 0.296,
         "away": 0.357
+      },
+      "dcProb": {
+        "home": 0.371,
+        "draw": 0.299,
+        "away": 0.328
+      },
+      "diverge": true,
+      "dirs": {
+        "elo": "away",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1500.0,
@@ -4614,8 +5419,16 @@
         "draw": 3.25,
         "away": 2.7
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 2.69,
+        "draw": 3.25,
+        "away": 2.7
+      },
       "kelly": {
         "home": -0.028,
         "draw": -0.021,
@@ -4635,6 +5448,21 @@
         "home": 0.347,
         "draw": 0.296,
         "away": 0.357
+      },
+      "dcProb": {
+        "home": 0.353,
+        "draw": 0.291,
+        "away": 0.353
+      },
+      "diverge": true,
+      "dirs": {
+        "elo": "away",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1680.0,
@@ -4721,7 +5549,7 @@
       "probabilities": {
         "home": 0.703,
         "draw": 0.124,
-        "away": 0.173
+        "away": 0.172
       },
       "confidence": 0.696,
       "reasons": [
@@ -4746,12 +5574,20 @@
       "rawOdds": {
         "home": 1.4,
         "draw": 4.95,
-        "away": 7.0
+        "away": 7.02
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 1.4,
+        "draw": 4.95,
+        "away": 7.02
+      },
       "kelly": {
-        "home": -0.14,
+        "home": -0.139,
         "draw": -0.014,
         "away": -0.009
       },
@@ -4770,6 +5606,21 @@
         "draw": 0.234,
         "away": 0.276
       },
+      "dcProb": {
+        "home": 0.597,
+        "draw": 0.205,
+        "away": 0.178
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
+      },
       "eloRatings": {
         "home": 1785.0,
         "away": 1785.0
@@ -4784,7 +5635,7 @@
           "side": "home",
           "label": "主胜",
           "modelProb": 0.49,
-          "oddsProb": 0.674,
+          "oddsProb": 0.675,
           "edge": -0.184,
           "level": "gold",
           "modelConf": 0.215
@@ -4861,7 +5712,7 @@
         "10": 0.0001
       },
       "btts": 0.5472,
-      "analysis": "【排名】主队Real Madrid排名第2（86分/38场），客队Real Sociedad排名第10（46分/38场），主队排名领先 8 位。\n【胜负】市场高度看好主队Real Madrid，主胜隐含概率 67%（赔率 1.4 / 4.95 / 7.0）。\n【让球】主队Real Madrid让 1.5 球（盘口赔率 2.16 / 1.775）。\n【波胆】泊松模型推算最可能比分：2-1（10%）、2-0（10%）、1-1（10%）。\n【大小球】2.5 球盘口：大球 42% / 小球 58%（赔率 大 2.225 / 小 1.625），倾向小球。\n【进球数】总进球概率：0球 4%、1球 14%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 55%，倾向至少一方零封。\n【消息面】Real Madrid信号 -0.10（2条提及）。\n📰 Arteta 'trying' to add players after Vini Jr. blow（blow）\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 67%（差 -18%），值得关注。\n【结论】综合赔率与消息，Real Madrid不败概率更高，关注波胆 2-1 方向。"
+      "analysis": "【排名】主队Real Madrid排名第2（86分/38场），客队Real Sociedad排名第10（46分/38场），主队排名领先 8 位。\n【胜负】市场高度看好主队Real Madrid，主胜隐含概率 67%（赔率 1.4 / 4.95 / 7.02）。\n【让球】主队Real Madrid让 1.5 球（盘口赔率 2.16 / 1.775）。\n【波胆】泊松模型推算最可能比分：2-1（10%）、2-0（10%）、1-1（10%）。\n【大小球】2.5 球盘口：大球 42% / 小球 58%（赔率 大 2.225 / 小 1.625），倾向小球。\n【进球数】总进球概率：0球 4%、1球 14%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 55%，倾向至少一方零封。\n【消息面】Real Madrid信号 -0.10（2条提及）。\n📰 Arteta 'trying' to add players after Vini Jr. blow（blow）\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 68%（差 -18%），值得关注。\n【结论】综合赔率与消息，Real Madrid不败概率更高，关注波胆 2-1 方向。"
     },
     {
       "homeTeam": "Barcelona",
@@ -4889,8 +5740,16 @@
         "draw": 5.0,
         "away": 6.75
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 1.4049999999999998,
+        "draw": 5.0,
+        "away": 6.75
+      },
       "kelly": {
         "home": -0.14,
         "draw": -0.014,
@@ -4910,6 +5769,21 @@
         "home": 0.694,
         "draw": 0.155,
         "away": 0.151
+      },
+      "dcProb": {
+        "home": 0.679,
+        "draw": 0.176,
+        "away": 0.115
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1800.0,
@@ -5023,8 +5897,16 @@
         "draw": 7.5,
         "away": 16.0
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 1.17,
+        "draw": 7.5,
+        "away": 16.0
+      },
       "kelly": {
         "home": -0.283,
         "draw": -0.007,
@@ -5044,6 +5926,21 @@
         "home": 0.809,
         "draw": 0.11,
         "away": 0.081
+      },
+      "dcProb": {
+        "home": 0.693,
+        "draw": 0.166,
+        "away": 0.106
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1800.0,
@@ -5117,27 +6014,35 @@
       "probabilities": {
         "home": 0.164,
         "draw": 0.148,
-        "away": 0.688
+        "away": 0.689
       },
       "confidence": 0.675,
       "reasons": [
-        "赔率隐含概率: 主13% 平21% 客65%"
+        "赔率隐含概率: 主13% 平21% 客66%"
       ],
       "messageEvidence": [],
       "league": "PL",
       "kickoff": "2026-08-22T11:30:00Z",
       "matchUrl": "",
       "rawOdds": {
-        "home": 7.2,
+        "home": 7.25,
         "draw": 4.4,
         "away": 1.44
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 7.25,
+        "draw": 4.4,
+        "away": 1.44
+      },
       "kelly": {
         "home": -0.009,
         "draw": -0.017,
-        "away": -0.13
+        "away": -0.128
       },
       "spreads": {
         "home": {
@@ -5153,6 +6058,21 @@
         "home": 0.22,
         "draw": 0.196,
         "away": 0.584
+      },
+      "dcProb": {
+        "home": 0.197,
+        "draw": 0.208,
+        "away": 0.575
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "away",
+        "dc": "away",
+        "market": "away"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1500.0,
@@ -5213,7 +6133,7 @@
         "10": 0.0002
       },
       "btts": 0.5754,
-      "analysis": "【胜负】市场明显看好客队Manchester United，客胜隐含概率 65%（赔率 7.2 / 4.4 / 1.44）。\n【让球】客队Manchester United让 1.5 球（盘口赔率 1.655 / 2.265）。\n【波胆】泊松模型推算最可能比分：1-2（10%）、1-1（10%）、0-2（9%）。\n【大小球】2.5 球盘口：大球 54% / 小球 46%（赔率 大 1.75 / 小 2.05），倾向大球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 58%，倾向双方有球。\n【结论】综合赔率与消息，Manchester United不败概率更高，关注波胆 1-2 方向。"
+      "analysis": "【胜负】市场明显看好客队Manchester United，客胜隐含概率 66%（赔率 7.25 / 4.4 / 1.44）。\n【让球】客队Manchester United让 1.5 球（盘口赔率 1.655 / 2.265）。\n【波胆】泊松模型推算最可能比分：1-2（10%）、1-1（10%）、0-2（9%）。\n【大小球】2.5 球盘口：大球 54% / 小球 46%（赔率 大 1.75 / 小 2.05），倾向大球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 58%，倾向双方有球。\n【结论】综合赔率与消息，Manchester United不败概率更高，关注波胆 1-2 方向。"
     },
     {
       "homeTeam": "Everton",
@@ -5241,8 +6161,16 @@
         "draw": 3.4,
         "away": 3.4
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 2.14,
+        "draw": 3.4,
+        "away": 3.4
+      },
       "kelly": {
         "home": -0.046,
         "draw": -0.022,
@@ -5262,6 +6190,21 @@
         "home": 0.532,
         "draw": 0.217,
         "away": 0.252
+      },
+      "dcProb": {
+        "home": 0.476,
+        "draw": 0.255,
+        "away": 0.263
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1620.0,
@@ -5363,8 +6306,16 @@
         "draw": 3.3,
         "away": 2.6
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 2.74,
+        "draw": 3.3,
+        "away": 2.6
+      },
       "kelly": {
         "home": -0.029,
         "draw": -0.022,
@@ -5384,6 +6335,21 @@
         "home": 0.268,
         "draw": 0.228,
         "away": 0.504
+      },
+      "dcProb": {
+        "home": 0.319,
+        "draw": 0.262,
+        "away": 0.414
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "away",
+        "dc": "away",
+        "market": "away"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1500.0,
@@ -5482,8 +6448,16 @@
         "draw": 3.4,
         "away": 3.2
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 2.23,
+        "draw": 3.4,
+        "away": 3.2
+      },
       "kelly": {
         "home": -0.042,
         "draw": -0.022,
@@ -5503,6 +6477,21 @@
         "home": 0.448,
         "draw": 0.252,
         "away": 0.3
+      },
+      "dcProb": {
+        "home": 0.435,
+        "draw": 0.266,
+        "away": 0.295
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1575.0,
@@ -5604,8 +6593,16 @@
         "draw": 3.6,
         "away": 2.75
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 2.4,
+        "draw": 3.6,
+        "away": 2.75
+      },
       "kelly": {
         "home": -0.039,
         "draw": -0.021,
@@ -5625,6 +6622,21 @@
         "home": 0.645,
         "draw": 0.173,
         "away": 0.182
+      },
+      "dcProb": {
+        "home": 0.483,
+        "draw": 0.226,
+        "away": 0.276
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1680.0,
@@ -5728,9 +6740,9 @@
         "away": 1.2
       },
       "probabilities": {
-        "home": 0.453,
-        "draw": 0.194,
-        "away": 0.353
+        "home": 0.452,
+        "draw": 0.195,
+        "away": 0.354
       },
       "confidence": 0.581,
       "reasons": [
@@ -5741,16 +6753,24 @@
       "kickoff": "2026-08-23T13:00:00Z",
       "matchUrl": "",
       "rawOdds": {
-        "home": 2.25,
+        "home": 2.26,
         "draw": 3.62,
         "away": 2.95
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 2.26,
+        "draw": 3.62,
+        "away": 2.95
+      },
       "kelly": {
-        "home": -0.045,
+        "home": -0.043,
         "draw": -0.021,
-        "away": -0.029
+        "away": -0.028
       },
       "spreads": {
         "home": {
@@ -5767,12 +6787,27 @@
         "draw": 0.272,
         "away": 0.323
       },
+      "dcProb": {
+        "home": 0.414,
+        "draw": 0.262,
+        "away": 0.319
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
+      },
       "eloRatings": {
         "home": 1695.0,
         "away": 1755.0
       },
       "modelProbs": {
-        "home": 0.414,
+        "home": 0.413,
         "draw": 0.265,
         "away": 0.321
       },
@@ -5806,10 +6841,10 @@
       ],
       "overUnder": {
         "line": 2.5,
-        "over": 0.582,
-        "under": 0.418,
-        "overPrice": 1.615,
-        "underPrice": 2.25
+        "over": 0.585,
+        "under": 0.415,
+        "overPrice": 1.61,
+        "underPrice": 2.2649999999999997
       },
       "standings": {
         "home": {
@@ -5839,7 +6874,7 @@
         "10": 0.0001
       },
       "btts": 0.5229,
-      "analysis": "【排名】主队Brighton and Hove Albion排名第8（53分/38场），客队Aston Villa排名第4（65分/38场），客队排名领先 4 位。\n【胜负】双方实力接近，主队Brighton and Hove Albion略占优（主胜 42% vs 客胜 32%）（赔率 2.25 / 3.62 / 2.95）。\n【让球】主队Brighton and Hove Albion让 0.5 球（盘口赔率 2.245 / 1.645）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（10%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 58% / 小球 42%（赔率 大 1.615 / 小 2.25），倾向大球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 52%，倾向至少一方零封。\n【结论】综合赔率与消息，Brighton and Hove Albion不败概率更高，关注波胆 1-1 方向。"
+      "analysis": "【排名】主队Brighton and Hove Albion排名第8（53分/38场），客队Aston Villa排名第4（65分/38场），客队排名领先 4 位。\n【胜负】双方实力接近，主队Brighton and Hove Albion略占优（主胜 42% vs 客胜 32%）（赔率 2.26 / 3.62 / 2.95）。\n【让球】主队Brighton and Hove Albion让 0.5 球（盘口赔率 2.245 / 1.645）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（10%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 58% / 小球 42%（赔率 大 1.61 / 小 2.2649999999999997），倾向大球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 52%，倾向至少一方零封。\n【结论】综合赔率与消息，Brighton and Hove Albion不败概率更高，关注波胆 1-1 方向。"
     },
     {
       "homeTeam": "Manchester City",
@@ -5879,8 +6914,16 @@
         "draw": 5.0,
         "away": 6.2
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 1.44,
+        "draw": 5.0,
+        "away": 6.2
+      },
       "kelly": {
         "home": -0.12,
         "draw": -0.013,
@@ -5900,6 +6943,21 @@
         "home": 0.571,
         "draw": 0.201,
         "away": 0.228
+      },
+      "dcProb": {
+        "home": 0.624,
+        "draw": 0.193,
+        "away": 0.157
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1785.0,
@@ -6001,8 +7059,16 @@
         "draw": 3.8,
         "away": 2.05
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 3.25,
+        "draw": 3.8,
+        "away": 2.05
+      },
       "kelly": {
         "home": -0.025,
         "draw": -0.02,
@@ -6022,6 +7088,21 @@
         "home": 0.347,
         "draw": 0.296,
         "away": 0.357
+      },
+      "dcProb": {
+        "home": 0.306,
+        "draw": 0.267,
+        "away": 0.423
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "away",
+        "dc": "away",
+        "market": "away"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1635.0,
@@ -6133,8 +7214,16 @@
         "draw": 3.65,
         "away": 2.15
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 3.12,
+        "draw": 3.65,
+        "away": 2.15
+      },
       "kelly": {
         "home": -0.027,
         "draw": -0.021,
@@ -6154,6 +7243,21 @@
         "home": 0.47,
         "draw": 0.243,
         "away": 0.288
+      },
+      "dcProb": {
+        "home": 0.37,
+        "draw": 0.253,
+        "away": 0.37
+      },
+      "diverge": true,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "away"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1650.0,
@@ -6274,8 +7378,16 @@
         "draw": 3.5,
         "away": 1.81
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 4.5,
+        "draw": 3.5,
+        "away": 1.81
+      },
       "kelly": {
         "home": -0.016,
         "draw": -0.023,
@@ -6295,6 +7407,21 @@
         "home": 0.49,
         "draw": 0.234,
         "away": 0.276
+      },
+      "dcProb": {
+        "home": 0.322,
+        "draw": 0.251,
+        "away": 0.421
+      },
+      "diverge": true,
+      "dirs": {
+        "elo": "home",
+        "dc": "away",
+        "market": "away"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1800.0,
@@ -6398,9 +7525,9 @@
         "away": 1.22
       },
       "probabilities": {
-        "home": 0.804,
+        "home": 0.805,
         "draw": 0.079,
-        "away": 0.117
+        "away": 0.116
       },
       "confidence": 0.737,
       "reasons": [
@@ -6425,12 +7552,20 @@
       "rawOdds": {
         "home": 1.22,
         "draw": 6.5,
-        "away": 12.0
+        "away": 12.15
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 1.22,
+        "draw": 6.5,
+        "away": 12.15
+      },
       "kelly": {
-        "home": -0.245,
+        "home": -0.24,
         "draw": -0.01,
         "away": -0.005
       },
@@ -6449,6 +7584,21 @@
         "draw": 0.182,
         "away": 0.622
       },
+      "dcProb": {
+        "home": 0.536,
+        "draw": 0.217,
+        "away": 0.229
+      },
+      "diverge": true,
+      "dirs": {
+        "elo": "away",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
+      },
       "eloRatings": {
         "home": 1500.0,
         "away": 1800.0
@@ -6456,7 +7606,7 @@
       "modelProbs": {
         "home": 0.544,
         "draw": 0.16,
-        "away": 0.296
+        "away": 0.295
       },
       "valuePicks": [
         {
@@ -6464,7 +7614,7 @@
           "label": "主胜",
           "modelProb": 0.197,
           "oddsProb": 0.776,
-          "edge": -0.579,
+          "edge": -0.58,
           "level": "gold",
           "modelConf": 0.425
         },
@@ -6472,8 +7622,8 @@
           "side": "away",
           "label": "客胜",
           "modelProb": 0.622,
-          "oddsProb": 0.079,
-          "edge": 0.543,
+          "oddsProb": 0.078,
+          "edge": 0.544,
           "level": "gold",
           "modelConf": 0.425
         }
@@ -6540,7 +7690,7 @@
         "10": 0.0002
       },
       "btts": 0.5942,
-      "analysis": "【排名】主队Inter Milan排名第1（0分/0场），客队Monza排名第1（0分/0场），排名接近。\n【胜负】市场高度看好主队Inter Milan，主胜隐含概率 78%（赔率 1.22 / 6.5 / 12.0）。\n【让球】主队Inter Milan让 1.5 球（盘口赔率 1.75 / 2.19）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、2-1（10%）、1-0（8%）。\n【大小球】2.5 球盘口：大球 57% / 小球 43%（赔率 大 1.65 / 小 2.21），倾向大球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 59%，倾向双方有球。\n【消息面】Inter Milan信号 -0.10（1条提及）。\n📰 Could Miller receive world title shot? 'Big Baby' interests WBA champion（rest）\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 20% vs 盘口 78%（差 -58%），值得关注。\n【结论】综合赔率与消息，Inter Milan不败概率更高，关注波胆 1-1 方向。"
+      "analysis": "【排名】主队Inter Milan排名第1（0分/0场），客队Monza排名第1（0分/0场），排名接近。\n【胜负】市场高度看好主队Inter Milan，主胜隐含概率 78%（赔率 1.22 / 6.5 / 12.15）。\n【让球】主队Inter Milan让 1.5 球（盘口赔率 1.75 / 2.19）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、2-1（10%）、1-0（8%）。\n【大小球】2.5 球盘口：大球 57% / 小球 43%（赔率 大 1.65 / 小 2.21），倾向大球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 59%，倾向双方有球。\n【消息面】Inter Milan信号 -0.10（1条提及）。\n📰 Could Miller receive world title shot? 'Big Baby' interests WBA champion（rest）\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 20% vs 盘口 78%（差 -58%），值得关注。\n【结论】综合赔率与消息，Inter Milan不败概率更高，关注波胆 1-1 方向。"
     },
     {
       "homeTeam": "Parma",
@@ -6568,8 +7718,16 @@
         "draw": 3.03,
         "away": 2.87
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 2.65,
+        "draw": 3.03,
+        "away": 2.87
+      },
       "kelly": {
         "home": -0.032,
         "draw": -0.026,
@@ -6589,6 +7747,21 @@
         "home": 0.49,
         "draw": 0.234,
         "away": 0.276
+      },
+      "dcProb": {
+        "home": 0.414,
+        "draw": 0.281,
+        "away": 0.302
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1800.0,
@@ -6639,10 +7812,10 @@
       ],
       "overUnder": {
         "line": 2.5,
-        "over": 0.4,
-        "under": 0.6,
+        "over": 0.398,
+        "under": 0.602,
         "overPrice": 2.34,
-        "underPrice": 1.56
+        "underPrice": 1.55
       },
       "standings": {
         "home": {
@@ -6672,7 +7845,7 @@
         "10": 0.0
       },
       "btts": 0.461,
-      "analysis": "【排名】主队Parma排名第1（0分/0场），客队Cagliari排名第1（0分/0场），排名接近。\n【胜负】双方实力接近，主队Parma略占优（主胜 36% vs 客胜 33%）（赔率 2.65 / 3.03 / 2.87）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.835 / 2.0149999999999997）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（13%）、0-1（10%）。\n【大小球】2.5 球盘口：大球 40% / 小球 60%（赔率 大 2.34 / 小 1.56），倾向小球。\n【进球数】总进球概率：0球 10%、1球 23%、2球 27%、3球 20%、4球 12%。\n【双方进球】双方都进球概率 46%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 36%（差 +13%），值得关注。\n【结论】综合赔率与消息，Parma不败概率更高，关注波胆 1-1 方向。"
+      "analysis": "【排名】主队Parma排名第1（0分/0场），客队Cagliari排名第1（0分/0场），排名接近。\n【胜负】双方实力接近，主队Parma略占优（主胜 36% vs 客胜 33%）（赔率 2.65 / 3.03 / 2.87）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.835 / 2.0149999999999997）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（13%）、0-1（10%）。\n【大小球】2.5 球盘口：大球 40% / 小球 60%（赔率 大 2.34 / 小 1.55），倾向小球。\n【进球数】总进球概率：0球 10%、1球 23%、2球 27%、3球 20%、4球 12%。\n【双方进球】双方都进球概率 46%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 36%（差 +13%），值得关注。\n【结论】综合赔率与消息，Parma不败概率更高，关注波胆 1-1 方向。"
     },
     {
       "homeTeam": "Genoa",
@@ -6700,8 +7873,16 @@
         "draw": 3.25,
         "away": 1.85
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 4.7,
+        "draw": 3.25,
+        "away": 1.85
+      },
       "kelly": {
         "home": -0.016,
         "draw": -0.026,
@@ -6721,6 +7902,21 @@
         "home": 0.809,
         "draw": 0.11,
         "away": 0.081
+      },
+      "dcProb": {
+        "home": 0.443,
+        "draw": 0.231,
+        "away": 0.313
+      },
+      "diverge": true,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "away"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1800.0,
@@ -6850,8 +8046,16 @@
         "draw": 4.5,
         "away": 1.44
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 7.0,
+        "draw": 4.5,
+        "away": 1.44
+      },
       "kelly": {
         "home": -0.009,
         "draw": -0.016,
@@ -6871,6 +8075,21 @@
         "home": 0.49,
         "draw": 0.234,
         "away": 0.276
+      },
+      "dcProb": {
+        "home": 0.264,
+        "draw": 0.224,
+        "away": 0.496
+      },
+      "diverge": true,
+      "dirs": {
+        "elo": "home",
+        "dc": "away",
+        "market": "away"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1800.0,
@@ -6970,15 +8189,15 @@
       "awayTeam": "Lecce",
       "predictedScore": "1-1",
       "expectedGoals": {
-        "home": 1.89,
-        "away": 1.02
+        "home": 1.92,
+        "away": 1.08
       },
       "probabilities": {
         "home": 0.436,
-        "draw": 0.23,
+        "draw": 0.229,
         "away": 0.334
       },
-      "confidence": 0.574,
+      "confidence": 0.575,
       "reasons": [
         "赔率隐含概率: 主40% 平30% 客30%"
       ],
@@ -6988,15 +8207,23 @@
       "matchUrl": "",
       "rawOdds": {
         "home": 2.35,
-        "draw": 3.19,
+        "draw": 3.2,
         "away": 3.15
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 2.35,
+        "draw": 3.2,
+        "away": 3.15
+      },
       "kelly": {
-        "home": -0.04,
+        "home": -0.039,
         "draw": -0.024,
-        "away": -0.025
+        "away": -0.024
       },
       "spreads": {
         "home": {
@@ -7012,6 +8239,21 @@
         "home": 0.809,
         "draw": 0.11,
         "away": 0.081
+      },
+      "dcProb": {
+        "home": 0.556,
+        "draw": 0.221,
+        "away": 0.209
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1800.0,
@@ -7036,7 +8278,7 @@
           "side": "draw",
           "label": "平局",
           "modelProb": 0.11,
-          "oddsProb": 0.297,
+          "oddsProb": 0.296,
           "edge": -0.186,
           "level": "gold",
           "modelConf": 0.698
@@ -7045,7 +8287,7 @@
           "side": "away",
           "label": "客胜",
           "modelProb": 0.081,
-          "oddsProb": 0.3,
+          "oddsProb": 0.301,
           "edge": -0.22,
           "level": "gold",
           "modelConf": 0.698
@@ -7055,27 +8297,27 @@
       "correctScores": [
         {
           "score": "1-1",
-          "prob": 0.1138
+          "prob": 0.1116
         },
         {
           "score": "2-1",
-          "prob": 0.0993
+          "prob": 0.0992
         },
         {
           "score": "2-0",
-          "prob": 0.0978
+          "prob": 0.0918
         },
         {
           "score": "1-0",
-          "prob": 0.0954
-        },
-        {
-          "score": "0-0",
-          "prob": 0.0635
+          "prob": 0.0874
         },
         {
           "score": "3-1",
-          "prob": 0.0624
+          "prob": 0.0635
+        },
+        {
+          "score": "3-0",
+          "prob": 0.0588
         }
       ],
       "overUnder": {
@@ -7100,20 +8342,20 @@
         }
       },
       "totalGoalsDist": {
-        "0": 0.055,
-        "1": 0.1596,
-        "2": 0.2314,
-        "3": 0.2237,
-        "4": 0.1622,
-        "5": 0.094,
-        "6": 0.0419,
-        "7": 0.0143,
-        "8": 0.0037,
-        "9": 0.0007,
+        "0": 0.0498,
+        "1": 0.1494,
+        "2": 0.224,
+        "3": 0.224,
+        "4": 0.168,
+        "5": 0.1008,
+        "6": 0.0468,
+        "7": 0.0167,
+        "8": 0.0046,
+        "9": 0.001,
         "10": 0.0001
       },
-      "btts": 0.5321,
-      "analysis": "【排名】主队Venezia排名第1（0分/0场），客队Lecce排名第1（0分/0场），排名接近。\n【胜负】双方实力接近，主队Venezia略占优（主胜 40% vs 客胜 30%）（赔率 2.35 / 3.19 / 3.15）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.66 / 2.32）。\n【波胆】泊松模型推算最可能比分：1-1（11%）、1-0（10%）、2-1（10%）。\n【大小球】2.5 球盘口：大球 43% / 小球 57%（赔率 大 2.1900000000000004 / 小 1.67），倾向小球。\n【进球数】总进球概率：0球 6%、1球 16%、2球 23%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 53%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 81% vs 盘口 40%（差 +41%），值得关注。\n【结论】综合赔率与消息，Venezia不败概率更高，关注波胆 1-1 方向。"
+      "btts": 0.5537,
+      "analysis": "【排名】主队Venezia排名第1（0分/0场），客队Lecce排名第1（0分/0场），排名接近。\n【胜负】双方实力接近，主队Venezia略占优（主胜 40% vs 客胜 30%）（赔率 2.35 / 3.2 / 3.15）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.66 / 2.32）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、2-1（10%）、1-0（10%）。\n【大小球】2.5 球盘口：大球 43% / 小球 57%（赔率 大 2.1900000000000004 / 小 1.67），倾向小球。\n【进球数】总进球概率：0球 5%、1球 15%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 55%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 81% vs 盘口 40%（差 +41%），值得关注。\n【结论】综合赔率与消息，Venezia不败概率更高，关注波胆 1-1 方向。"
     },
     {
       "homeTeam": "Torino",
@@ -7125,12 +8367,12 @@
       },
       "probabilities": {
         "home": 0.243,
-        "draw": 0.189,
-        "away": 0.568
+        "draw": 0.188,
+        "away": 0.569
       },
-      "confidence": 0.627,
+      "confidence": 0.628,
       "reasons": [
-        "赔率隐含概率: 主21% 平26% 客53%"
+        "赔率隐含概率: 主21% 平25% 客54%"
       ],
       "messageEvidence": [],
       "league": "SA",
@@ -7139,14 +8381,22 @@
       "rawOdds": {
         "home": 4.5,
         "draw": 3.7,
-        "away": 1.77
+        "away": 1.76
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 4.5,
+        "draw": 3.7,
+        "away": 1.76
+      },
       "kelly": {
         "home": -0.016,
-        "draw": -0.02,
-        "away": -0.071
+        "draw": -0.021,
+        "away": -0.075
       },
       "spreads": {
         "home": {
@@ -7163,14 +8413,29 @@
         "draw": 0.234,
         "away": 0.276
       },
+      "dcProb": {
+        "home": 0.323,
+        "draw": 0.246,
+        "away": 0.423
+      },
+      "diverge": true,
+      "dirs": {
+        "elo": "home",
+        "dc": "away",
+        "market": "away"
+      },
+      "form": {
+        "home": null,
+        "away": null
+      },
       "eloRatings": {
         "home": 1800.0,
         "away": 1800.0
       },
       "modelProbs": {
         "home": 0.322,
-        "draw": 0.247,
-        "away": 0.431
+        "draw": 0.246,
+        "away": 0.432
       },
       "valuePicks": [
         {
@@ -7178,7 +8443,7 @@
           "label": "主胜",
           "modelProb": 0.49,
           "oddsProb": 0.21,
-          "edge": 0.28,
+          "edge": 0.281,
           "level": "gold",
           "modelConf": 0.215
         },
@@ -7186,8 +8451,8 @@
           "side": "away",
           "label": "客胜",
           "modelProb": 0.276,
-          "oddsProb": 0.534,
-          "edge": -0.258,
+          "oddsProb": 0.536,
+          "edge": -0.26,
           "level": "gold",
           "modelConf": 0.215
         }
@@ -7254,7 +8519,7 @@
         "10": 0.0002
       },
       "btts": 0.5767,
-      "analysis": "【排名】主队Torino排名第1（0分/0场），客队AC Milan排名第1（0分/0场），排名接近。\n【胜负】比赛悬念较大，主胜 21% / 平 26% / 客胜 53%（赔率 4.5 / 3.7 / 1.77）。\n【让球】客队AC Milan让 0.5 球（盘口赔率 2.06 / 1.79）。\n【波胆】泊松模型推算最可能比分：1-1（11%）、1-2（9%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%（赔率 大 1.9 / 小 1.91），倾向大球。\n【进球数】总进球概率：0球 6%、1球 16%、2球 23%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 58%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 21%（差 +28%），值得关注。\n【结论】综合赔率与消息，AC Milan不败概率更高，关注波胆 1-1 方向。"
+      "analysis": "【排名】主队Torino排名第1（0分/0场），客队AC Milan排名第1（0分/0场），排名接近。\n【胜负】比赛悬念较大，主胜 21% / 平 25% / 客胜 54%（赔率 4.5 / 3.7 / 1.76）。\n【让球】客队AC Milan让 0.5 球（盘口赔率 2.06 / 1.79）。\n【波胆】泊松模型推算最可能比分：1-1（11%）、1-2（9%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%（赔率 大 1.9 / 小 1.91），倾向大球。\n【进球数】总进球概率：0球 6%、1球 16%、2球 23%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 58%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 21%（差 +28%），值得关注。\n【结论】综合赔率与消息，AC Milan不败概率更高，关注波胆 1-1 方向。"
     },
     {
       "homeTeam": "Atalanta BC",
@@ -7282,8 +8547,16 @@
         "draw": 4.33,
         "away": 5.9
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 1.53,
+        "draw": 4.33,
+        "away": 5.9
+      },
       "kelly": {
         "home": -0.097,
         "draw": -0.015,
@@ -7303,6 +8576,21 @@
         "home": 0.809,
         "draw": 0.11,
         "away": 0.081
+      },
+      "dcProb": {
+        "home": 0.687,
+        "draw": 0.177,
+        "away": 0.109
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1800.0,
@@ -7362,10 +8650,10 @@
       ],
       "overUnder": {
         "line": 2.5,
-        "over": 0.563,
-        "under": 0.437,
-        "overPrice": 1.6749999999999998,
-        "underPrice": 2.1550000000000002
+        "over": 0.566,
+        "under": 0.434,
+        "overPrice": 1.66,
+        "underPrice": 2.165
       },
       "standings": {
         "home": {
@@ -7395,7 +8683,7 @@
         "10": 0.0
       },
       "btts": 0.4575,
-      "analysis": "【排名】主队Atalanta BC排名第1（0分/0场），客队Sassuolo排名第1（0分/0场），排名接近。\n【胜负】市场高度看好主队Atalanta BC，主胜隐含概率 62%（赔率 1.53 / 4.33 / 5.9）。\n【让球】主队Atalanta BC让 1.0 球（盘口赔率 1.8849999999999998 / 1.9449999999999998）。\n【波胆】泊松模型推算最可能比分：2-0（13%）、1-0（11%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 56% / 小球 44%（赔率 大 1.6749999999999998 / 小 2.1550000000000002），倾向大球。\n【进球数】总进球概率：0球 5%、1球 15%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 46%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 81% vs 盘口 62%（差 +19%），值得关注。\n【结论】综合赔率与消息，Atalanta BC不败概率更高，关注波胆 2-0 方向。"
+      "analysis": "【排名】主队Atalanta BC排名第1（0分/0场），客队Sassuolo排名第1（0分/0场），排名接近。\n【胜负】市场高度看好主队Atalanta BC，主胜隐含概率 62%（赔率 1.53 / 4.33 / 5.9）。\n【让球】主队Atalanta BC让 1.0 球（盘口赔率 1.8849999999999998 / 1.9449999999999998）。\n【波胆】泊松模型推算最可能比分：2-0（13%）、1-0（11%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 57% / 小球 43%（赔率 大 1.66 / 小 2.165），倾向大球。\n【进球数】总进球概率：0球 5%、1球 15%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 46%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 81% vs 盘口 62%（差 +19%），值得关注。\n【结论】综合赔率与消息，Atalanta BC不败概率更高，关注波胆 2-0 方向。"
     },
     {
       "homeTeam": "Bologna",
@@ -7423,8 +8711,16 @@
         "draw": 3.23,
         "away": 3.55
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 2.15,
+        "draw": 3.23,
+        "away": 3.55
+      },
       "kelly": {
         "home": -0.046,
         "draw": -0.024,
@@ -7444,6 +8740,21 @@
         "home": 0.809,
         "draw": 0.11,
         "away": 0.081
+      },
+      "dcProb": {
+        "home": 0.577,
+        "draw": 0.219,
+        "away": 0.189
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1800.0,
@@ -7512,10 +8823,10 @@
       ],
       "overUnder": {
         "line": 2.5,
-        "over": 0.437,
-        "under": 0.563,
-        "overPrice": 2.165,
-        "underPrice": 1.68
+        "over": 0.435,
+        "under": 0.565,
+        "overPrice": 2.18,
+        "underPrice": 1.6749999999999998
       },
       "standings": {
         "home": {
@@ -7545,7 +8856,7 @@
         "10": 0.0001
       },
       "btts": 0.5254,
-      "analysis": "【排名】主队Bologna排名第1（0分/0场），客队Lazio排名第1（0分/0场），排名接近。\n【胜负】比赛悬念较大，主胜 44% / 平 29% / 客胜 27%（赔率 2.15 / 3.23 / 3.55）。\n【让球】主队Bologna让 0.5 球（盘口赔率 2.15 / 1.74）。\n【波胆】泊松模型推算最可能比分：1-0（11%）、1-1（10%）、2-0（10%）。\n【大小球】2.5 球盘口：大球 44% / 小球 56%（赔率 大 2.165 / 小 1.68），倾向小球。\n【进球数】总进球概率：0球 6%、1球 16%、2球 23%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 53%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 81% vs 盘口 44%（差 +37%），值得关注。\n【结论】综合赔率与消息，Bologna不败概率更高，关注波胆 1-0 方向。"
+      "analysis": "【排名】主队Bologna排名第1（0分/0场），客队Lazio排名第1（0分/0场），排名接近。\n【胜负】比赛悬念较大，主胜 44% / 平 29% / 客胜 27%（赔率 2.15 / 3.23 / 3.55）。\n【让球】主队Bologna让 0.5 球（盘口赔率 2.15 / 1.74）。\n【波胆】泊松模型推算最可能比分：1-0（11%）、1-1（10%）、2-0（10%）。\n【大小球】2.5 球盘口：大球 44% / 小球 56%（赔率 大 2.18 / 小 1.6749999999999998），倾向小球。\n【进球数】总进球概率：0球 6%、1球 16%、2球 23%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 53%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 81% vs 盘口 44%（差 +37%），值得关注。\n【结论】综合赔率与消息，Bologna不败概率更高，关注波胆 1-0 方向。"
     },
     {
       "homeTeam": "AS Roma",
@@ -7573,8 +8884,16 @@
         "draw": 4.1,
         "away": 5.9
       },
-      "oddsChange": null,
-      "prevOdds": null,
+      "oddsChange": {
+        "home": 0.0,
+        "draw": 0.0,
+        "away": 0.0
+      },
+      "prevOdds": {
+        "home": 1.55,
+        "draw": 4.1,
+        "away": 5.9
+      },
       "kelly": {
         "home": -0.101,
         "draw": -0.018,
@@ -7594,6 +8913,21 @@
         "home": 0.809,
         "draw": 0.11,
         "away": 0.081
+      },
+      "dcProb": {
+        "home": 0.683,
+        "draw": 0.183,
+        "away": 0.111
+      },
+      "diverge": false,
+      "dirs": {
+        "elo": "home",
+        "dc": "home",
+        "market": "home"
+      },
+      "form": {
+        "home": null,
+        "away": null
       },
       "eloRatings": {
         "home": 1800.0,
@@ -7700,6 +9034,6 @@
     "valueTotal": 0,
     "valueHit": 0,
     "valueRate": 0,
-    "updatedAt": "2026-08-10T16:46:10Z"
+    "updatedAt": "2026-08-10T17:00:08Z"
   }
 }

@@ -346,8 +346,9 @@ def main():
             time.sleep(0.5)  # 礼貌限速
         merged = aggregate(per_source)
         if merged:
-            # 赔率快照：读取旧文件作为"上次快照"（初盘→即时盘对比）
+            # 赔率快照：读取旧文件作为"上次快照"（初盘→即时盘对比）+ 累积历史曲线
             prev = {}
+            history = {}
             old_path = ODDS_DIR / f"{league}.json"
             if old_path.exists():
                 try:
@@ -356,15 +357,28 @@ def main():
                     for om in old_data.get("matches", []):
                         k = (om["homeTeam"].lower(), om["awayTeam"].lower())
                         prev[k] = om.get("markets", {}).get("h2h")
+                    history = old_data.get("history", {}) or {}
                 except Exception:
                     pass
+            ts = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
             for m in merged:
                 k = (m["homeTeam"].lower(), m["awayTeam"].lower())
                 if k in prev:
                     m["prevH2h"] = prev[k]
+                # 累积走势快照（初盘=第一条，临场=最后一条；保留最近 30 个）
+                hk = f"{k[0]}|{k[1]}"
+                snap = {"ts": ts, "h2h": m.get("markets", {}).get("h2h"),
+                        "totals": m.get("markets", {}).get("totals"),
+                        "spreads": m.get("markets", {}).get("spreads")}
+                hist = history.get(hk, [])
+                # 同一时间戳去重（重复抓取不叠加）
+                if not hist or hist[-1].get("ts") != ts:
+                    hist.append(snap)
+                history[hk] = hist[-30:]
             out = {
-                "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                "generatedAt": ts,
                 "league": league,
+                "history": history,
                 "matches": merged,
             }
             with open(ODDS_DIR / f"{league}.json", "w", encoding="utf-8") as f:

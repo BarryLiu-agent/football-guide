@@ -167,6 +167,28 @@ img { display: block; }
 .date-label.is-tomorrow .dot { background: var(--blue); }
 .date-label .count { font-size: 10px; color: var(--text-3); font-weight: 400; }
 
+/* 无价值信号场次：默认折叠，减少无效出手干扰 */
+.no-signal { margin-top: 2px; }
+.no-signal summary {
+  cursor: pointer; list-style: none; font-size: 11px; color: var(--text-3);
+  padding: 6px 10px; border-radius: 8px; background: var(--bg-2);
+  display: inline-flex; align-items: center; gap: 6px; user-select: none;
+}
+.no-signal summary:hover { color: var(--text-2); }
+.no-signal summary::before { content: '▸'; transition: transform .15s; }
+.no-signal[open] summary::before { transform: rotate(90deg); }
+.no-signal .match-list.dim { opacity: .55; filter: saturate(.6); }
+.no-signal .match-list.dim .match-card { box-shadow: none; border-color: var(--border); }
+
+/* 盘口走势（初盘→临场） */
+.trend-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.trend-box {
+  flex: 1; min-width: 110px; padding: 8px 10px; border-radius: var(--radius);
+  background: var(--bg-2); border: 1px solid var(--border);
+}
+.trend-box .label { font-size: 11px; color: var(--text-2); margin-bottom: 4px; display: flex; justify-content: space-between; }
+.trend-box svg { margin: 0 auto; }
+
 /* ===== Standing Table ===== */
 .table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); }
 table.standings { width: 100%; border-collapse: collapse; font-size: 12.5px; min-width: 560px; }
@@ -216,6 +238,7 @@ table.standings .down { color: var(--red); }
 .diff-tag.hard { background:rgba(239,68,68,.12); color:#f87171; }
 .diff-tag.mid { background:rgba(245,158,11,.12); color:#fbbf24; }
 .diff-tag.easy { background:rgba(34,197,94,.12); color:#4ade80; }
+.diff-tag.warn { background:rgba(168,85,247,.14); color:#c084fc; }
 
 .xg-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; background:rgba(59,130,246,.15); color:#60a5fa; border:1px solid rgba(59,130,246,.35); }
 .val-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; display:inline-block; }
@@ -231,6 +254,7 @@ table.standings .down { color: var(--red); }
 .diff-tag.hard { background:rgba(239,68,68,.12); color:#f87171; }
 .diff-tag.mid { background:rgba(245,158,11,.12); color:#fbbf24; }
 .diff-tag.easy { background:rgba(34,197,94,.12); color:#4ade80; }
+.diff-tag.warn { background:rgba(168,85,247,.14); color:#c084fc; }
 
 /* ===== Detail Modal ===== */
 .modal-overlay {
@@ -444,6 +468,7 @@ let state = {
   xgMatches: [],      // 单场实时 xG
   history: null,      // 预测战绩
   teamNames: {},
+  oddsByLeague: {},   // 赔率 {code: {matches, history}}
   loaded: { fixtures: false, predictions: false },
 };
 
@@ -547,6 +572,10 @@ async function loadAll() {
   // xG 逐个联赛加载（可能不存在）
   for (const lg of LEAGUES) {
     jobs.push(loadJson(`data/xg/${lg.code}.json`).then(d => { state.xg[lg.code] = d; }).catch(() => {}));
+  }
+  // 赔率快照（含初盘→临场 history）逐个联赛加载
+  for (const lg of LEAGUES) {
+    jobs.push(loadJson(`data/odds/${lg.code}.json`).then(d => { state.oddsByLeague[lg.code] = d; }).catch(() => {}));
   }
   await Promise.all(jobs);
   const d = state.history?.stats;
@@ -672,9 +701,19 @@ function renderFixtures() {
   return groupOrder.map(d => { const list = groups[d];
     const t2 = todayBJ(), tm = fmtDate(new Date(Date.now() + 86400000).toISOString());
     const cls = d === t2 ? 'is-today' : d === tm ? 'is-tomorrow' : '';
+    // 出手建议：有价值信号/异动/高置信预测的优先展示，其余折叠降噪
+    const hasSig = m => {
+      const p = m.pred || findPrediction(m.homeTeam?.name || m.homeTeam?.shortName, m.awayTeam?.name || m.awayTeam?.shortName);
+      if (p && p.valuePicks && p.valuePicks.length) return true;
+      if (p && p.oddsChange && ['home','draw','away'].some(k => p.oddsChange[k] != null && Math.abs(p.oddsChange[k]) >= 0.2)) return true;
+      if (p && p.confidence != null && p.confidence >= 0.55) return true;
+      return false;
+    };
+    const sig = list.filter(hasSig), rest = list.filter(m => !hasSig(m));
     return `<div class="date-group">
       <div class="date-label ${cls}"><span class="dot"></span>${dateLabel(d)} <span class="count">${list.length} 场</span></div>
-      <div class="match-list">${list.map(renderCard).join('')}</div>
+      ${sig.length ? `<div class="match-list">${sig.map(renderCard).join('')}</div>` : ''}
+      ${rest.length ? `<details class="no-signal"><summary>其他 ${rest.length} 场（无价值信号）</summary><div class="match-list dim">${rest.map(renderCard).join('')}</div></details>` : ''}
     </div>`;
   }).join('');
 }
@@ -710,6 +749,29 @@ function renderCard(m) {
       else if (opp >= 15) diff = '<span class="diff-tag easy">悬殊</span>';
     }
   }
+  // 模型分歧：Elo vs DC vs 市场方向不一致 → 提示不碰
+  let divTag = '';
+  if (pred && pred.diverge) divTag = '<span class="diff-tag warn" title="Elo/DC/市场方向不一致">⚠️分歧</span>';
+  // 赛程风险：周中 / 3 天内双赛
+  let riskTags = '';
+  try {
+    const bjDay = new Date(m.utcDate).getUTCDay();
+    const isMidweek = [2, 3, 4].includes(bjDay);
+    const mk = (n) => normTeam(n);
+    const myTeams = [mk(m.homeTeam?.name || ''), mk(m.awayTeam?.name || '')];
+    const near = (state.fixtures || []).filter(f => {
+      if (!f.homeTeam?.name || !f.awayTeam?.name || !f.utcDate) return false;
+      if (f.utcDate === m.utcDate) return false;
+      const ft = [mk(f.homeTeam.name), mk(f.awayTeam.name)];
+      if (!myTeams.some(x => x && ft.includes(x))) return false;
+      const diff = Math.abs(new Date(f.utcDate).getTime() - new Date(m.utcDate).getTime());
+      return diff > 0 && diff < 3 * 86400000;
+    });
+    const tags = [];
+    if (isMidweek) tags.push('<span class="diff-tag warn">⚡周中</span>');
+    if (near.length) tags.push('<span class="diff-tag warn">⏱️密集赛程</span>');
+    riskTags = tags.join('');
+  } catch (e) {}
   return `<div class="match-card" onclick="openDetail('${esc(homeName).replace(/'/g, '')}','${esc(awayName).replace(/'/g, '')}','${m.competition?.code || ''}')">
     <div class="mc-time"><div class="t">${score.text === 'VS' ? fmtTime(m.utcDate) : score.text}</div><div class="d">${score.statusText || (m.competition?.code === 'CL' ? '欧冠' : '')}</div></div>
     <div class="mc-teams">
@@ -722,7 +784,7 @@ function renderCard(m) {
     ${(() => { const vp = (pred && pred.valuePicks && pred.valuePicks.length) ? pred.valuePicks[0] : null; return vp ? `<span class="val-tag" title="${vp.label}: 模型${Math.round(vp.modelProb*100)}% vs 盘口${Math.round(vp.oddsProb*100)}%">💰${vp.label} ${vp.edge > 0 ? '+' : ''}${Math.round(vp.edge*100)}%</span>` : ''; })()}
     ${(() => { const xm = findXgMatch(homeName, awayName); if (!xm || (xm.xgHome == null && xm.xgAway == null)) return ''; const xh = xm.xgHome ?? 0, xa = xm.xgAway ?? 0; const xt = xh > xa ? 'home' : xa > xh ? 'away' : 'draw'; let diverge = false; if (pred && pred.eloProb) { const et = pred.eloProb.home > pred.eloProb.away ? 'home' : pred.eloProb.away > pred.eloProb.home ? 'away' : 'draw'; diverge = xt !== 'draw' && et !== 'draw' && xt !== et; } return diverge ? '<span class="xg-tag diverging">🎯 ' + xh.toFixed(1) + '-' + xa.toFixed(1) + ' ⚠️背离</span>' : `<span class="xg-tag">🎯 ${xh.toFixed(1)}-${xa.toFixed(1)}</span>`; })()}
     ${pred && pred.signalLevel === 'gold' ? `<span class="val-tag gold">💰 ${pred.valuePicks.map(v => v.label).join('/')}</span>` : (pred && pred.signalLevel === 'watch' ? `<span class="val-tag watch">👀 关注</span>` : '')}
-    ${hot || diff || value ? `<div style="display:flex;gap:4px;margin-top:6px;flex-wrap:wrap">${hot}${value}${diff}</div>` : ''}
+    ${hot || diff || value || divTag || riskTags ? `<div style="display:flex;gap:4px;margin-top:6px;flex-wrap:wrap">${hot}${value}${diff}${divTag}${riskTags}</div>` : ''}
   </div>`;
 }
 
@@ -901,6 +963,34 @@ function closeDetail() {
   $('detailModal').classList.remove('open');
 }
 function pct(v) { return v == null ? '—' : Math.round(v * 100) + '%'; }
+// 迷你折线（赔率走势）：赔率降=资金看好（绿色），升=看淡（橙色）
+function trendSpark(values) {
+  const vs = (values || []).filter(v => v != null);
+  if (vs.length < 2) return '<div style="font-size:10px;color:var(--muted)">采样不足</div>';
+  const w = 120, h = 28;
+  const min = Math.min(...vs), max = Math.max(...vs);
+  const span = (max - min) || 1;
+  const pts = vs.map((v, i) => `${((i / (vs.length - 1)) * w).toFixed(1)},${(h - 3 - ((v - min) / span) * (h - 6)).toFixed(1)}`).join(' ');
+  const down = vs[vs.length - 1] < vs[0];
+  const color = down ? '#22c55e' : '#f59e0b';
+  return `<svg width="${w}" height="${h}" style="display:block"><polyline points="${pts}" fill="none" stroke="${color}" stroke-width="1.5" opacity="0.85"/></svg>`;
+}
+function oddsTrendBlock(p) {
+  // 初盘→临场走势：读 odds 文件的 history 快照序列
+  const od = (p && p.league) ? state.oddsByLeague[p.league] : null;
+  if (!od || !od.history) return '';
+  const h = normTeam(p.homeTeam), a = normTeam(p.awayTeam);
+  const hk = Object.keys(od.history).find(k => { const [x, y] = k.split('|'); return x === h && y === a; });
+  if (!hk) return '';
+  const snaps = od.history[hk];
+  if (!snaps || snaps.length < 1) return '';
+  const first = snaps[0], last = snaps[snaps.length - 1];
+  const arrow = (x, y) => x != null && y != null ? (y > x ? '<span style="color:#f59e0b">↗' + (y - x).toFixed(2) + '</span>' : y < x ? '<span style="color:#22c55e">↘' + (x - y).toFixed(2) + '</span>' : '<span style="color:var(--muted)">平</span>') : '';
+  const box = (k, label) => `<div class="trend-box"><div class="label">${label} ${arrow(first.h2h?.[k], last.h2h?.[k])}</div>${trendSpark(snaps.map(s => s.h2h?.[k]))}</div>`;
+  return `<div class="section-title" style="margin-top:10px">📈 盘口走势（初盘→临场，${snaps.length} 次采样）</div>
+    <div class="trend-row">${box('home', '主胜')}${box('draw', '平局')}${box('away', '客胜')}</div>
+    <div style="font-size:10px;color:var(--muted);margin-top:4px">初盘 ${first.h2h?.home ?? '—'} / ${first.h2h?.draw ?? '—'} / ${first.h2h?.away ?? '—'} → 临场 ${last.h2h?.home ?? '—'} / ${last.h2h?.draw ?? '—'} / ${last.h2h?.away ?? '—'} · 赔率降 = 资金看好</div>`;
+}
 function switchMkt(mkt) {
   document.querySelectorAll('.mkt-tab').forEach(b => b.classList.toggle('active', b.dataset.mkt === mkt));
   const el = $('mktContent');
@@ -935,6 +1025,7 @@ function switchMkt(mkt) {
       <div class="odds-box"><div class="label">客胜 ${trend(ro.away, p.prevOdds?.away)}</div><div class="value">${ro.away ?? '—'}${chg(oc.away)}</div><div class="sub">${pct(pr.away)}</div>${kellyTxt(kl.away)}</div>
     </div>
     <div style="font-size:10px;color:var(--muted);margin-top:6px;text-align:center">↗ 较上次快照升（看淡）↘ 降（看好）· 凯利>0 有正期望 · 快照持续累积后将升级为走势曲线</div>
+    ${oddsTrendBlock(p)}
     ${p.eloProb ? `<div class="section-title" style="margin-top:10px">🤖 独立模型 (Elo+修正)</div>
     <div class="odds-grid">
       <div class="odds-box"><div class="label">主胜</div><div class="value">${pct(p.eloProb.home)}</div><div class="sub">盘口 ${pct(pr.home)}</div></div>

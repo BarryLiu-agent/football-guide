@@ -1,6 +1,440 @@
 {
-  "generatedAt": "2026-08-10T15:48:55Z",
+  "generatedAt": "2026-08-10T16:55:18Z",
   "league": "BL1",
+  "history": {
+    "bayern munich|vfb stuttgart": [
+      {
+        "ts": "2026-08-10T16:55:03Z",
+        "h2h": {
+          "home": 1.29,
+          "draw": 6.4,
+          "away": 8.0
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.63,
+          "under": 2.23
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 1.75
+          },
+          "away": {
+            "point": 1.5,
+            "price": 2.15
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T16:55:18Z",
+        "h2h": {
+          "home": 1.29,
+          "draw": 6.4,
+          "away": 8.0
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.63,
+          "under": 2.23
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 1.75
+          },
+          "away": {
+            "point": 1.5,
+            "price": 2.15
+          }
+        }
+      }
+    ],
+    "1. fc köln|tsg hoffenheim": [
+      {
+        "ts": "2026-08-10T16:55:03Z",
+        "h2h": {
+          "home": 2.85,
+          "draw": 3.65,
+          "away": 2.3
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.57,
+          "under": 2.28
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 2.16
+          },
+          "away": {
+            "point": 0.0,
+            "price": 1.77
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T16:55:18Z",
+        "h2h": {
+          "home": 2.85,
+          "draw": 3.65,
+          "away": 2.3
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.57,
+          "under": 2.28
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 2.16
+          },
+          "away": {
+            "point": 0.0,
+            "price": 1.77
+          }
+        }
+      }
+    ],
+    "elversberg|bayer leverkusen": [
+      {
+        "ts": "2026-08-10T16:55:03Z",
+        "h2h": {
+          "home": 5.23,
+          "draw": 4.5,
+          "away": 1.55
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.06,
+          "under": 1.74
+        },
+        "spreads": {
+          "home": {
+            "point": 1.0,
+            "price": 1.97
+          },
+          "away": {
+            "point": -1.0,
+            "price": 1.87
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T16:55:18Z",
+        "h2h": {
+          "home": 5.23,
+          "draw": 4.5,
+          "away": 1.55
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.06,
+          "under": 1.74
+        },
+        "spreads": {
+          "home": {
+            "point": 1.0,
+            "price": 1.97
+          },
+          "away": {
+            "point": -1.0,
+            "price": 1.87
+          }
+        }
+      }
+    ],
+    "rb leipzig|borussia monchengladbach": [
+      {
+        "ts": "2026-08-10T16:55:03Z",
+        "h2h": {
+          "home": 1.54,
+          "draw": 4.6,
+          "away": 5.3
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.05,
+          "under": 1.72
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 1.86
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.98
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T16:55:18Z",
+        "h2h": {
+          "home": 1.54,
+          "draw": 4.6,
+          "away": 5.3
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.05,
+          "under": 1.72
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 1.86
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.98
+          }
+        }
+      }
+    ],
+    "union berlin|eintracht frankfurt": [
+      {
+        "ts": "2026-08-10T16:55:03Z",
+        "h2h": {
+          "home": 2.4,
+          "draw": 3.5,
+          "away": 2.8
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.72,
+          "under": 2.1
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.82
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.1
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T16:55:18Z",
+        "h2h": {
+          "home": 2.4,
+          "draw": 3.5,
+          "away": 2.8
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.72,
+          "under": 2.1
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.82
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.1
+          }
+        }
+      }
+    ],
+    "fsv mainz 05|sc paderborn": [
+      {
+        "ts": "2026-08-10T16:55:03Z",
+        "h2h": {
+          "home": 1.69,
+          "draw": 4.0,
+          "away": 4.6
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.67,
+          "under": 2.15
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 3.02
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.46
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T16:55:18Z",
+        "h2h": {
+          "home": 1.69,
+          "draw": 4.0,
+          "away": 4.6
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.67,
+          "under": 2.15
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 3.02
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.46
+          }
+        }
+      }
+    ],
+    "borussia dortmund|hamburger sv": [
+      {
+        "ts": "2026-08-10T16:55:03Z",
+        "h2h": {
+          "home": 1.33,
+          "draw": 5.5,
+          "away": 8.4
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.56,
+          "under": 2.25
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 1.955
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.9
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T16:55:18Z",
+        "h2h": {
+          "home": 1.33,
+          "draw": 5.5,
+          "away": 8.4
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.56,
+          "under": 2.25
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 1.955
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.9
+          }
+        }
+      }
+    ],
+    "sc freiburg|werder bremen": [
+      {
+        "ts": "2026-08-10T16:55:03Z",
+        "h2h": {
+          "home": 2.03,
+          "draw": 3.5,
+          "away": 3.55
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.75,
+          "under": 2.05
+        },
+        "spreads": {
+          "home": {
+            "point": -0.5,
+            "price": 2.0199999999999996
+          },
+          "away": {
+            "point": 0.5,
+            "price": 1.83
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T16:55:18Z",
+        "h2h": {
+          "home": 2.03,
+          "draw": 3.5,
+          "away": 3.55
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.75,
+          "under": 2.05
+        },
+        "spreads": {
+          "home": {
+            "point": -0.5,
+            "price": 2.0199999999999996
+          },
+          "away": {
+            "point": 0.5,
+            "price": 1.83
+          }
+        }
+      }
+    ],
+    "augsburg|fc schalke 04": [
+      {
+        "ts": "2026-08-10T16:55:03Z",
+        "h2h": {
+          "home": 2.1,
+          "draw": 3.7,
+          "away": 3.15
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.6,
+          "under": 2.28
+        },
+        "spreads": {
+          "home": {
+            "point": -0.25,
+            "price": 1.84
+          },
+          "away": {
+            "point": 0.25,
+            "price": 2.02
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T16:55:18Z",
+        "h2h": {
+          "home": 2.1,
+          "draw": 3.7,
+          "away": 3.15
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.6,
+          "under": 2.28
+        },
+        "spreads": {
+          "home": {
+            "point": -0.25,
+            "price": 1.84
+          },
+          "away": {
+            "point": 0.25,
+            "price": 2.02
+          }
+        }
+      }
+    ]
+  },
   "matches": [
     {
       "homeTeam": "Bayern Munich",
@@ -32,7 +466,12 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 21
+      "bookmakers": 21,
+      "prevH2h": {
+        "home": 1.29,
+        "draw": 6.4,
+        "away": 8.0
+      }
     },
     {
       "homeTeam": "1. FC Köln",
@@ -64,7 +503,12 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 21
+      "bookmakers": 21,
+      "prevH2h": {
+        "home": 2.85,
+        "draw": 3.65,
+        "away": 2.3
+      }
     },
     {
       "homeTeam": "Elversberg",
@@ -96,7 +540,12 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 21
+      "bookmakers": 21,
+      "prevH2h": {
+        "home": 5.23,
+        "draw": 4.5,
+        "away": 1.55
+      }
     },
     {
       "homeTeam": "RB Leipzig",
@@ -128,7 +577,12 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 21
+      "bookmakers": 21,
+      "prevH2h": {
+        "home": 1.54,
+        "draw": 4.6,
+        "away": 5.3
+      }
     },
     {
       "homeTeam": "Union Berlin",
@@ -160,7 +614,12 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 21
+      "bookmakers": 21,
+      "prevH2h": {
+        "home": 2.4,
+        "draw": 3.5,
+        "away": 2.8
+      }
     },
     {
       "homeTeam": "FSV Mainz 05",
@@ -192,7 +651,12 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 21
+      "bookmakers": 21,
+      "prevH2h": {
+        "home": 1.69,
+        "draw": 4.0,
+        "away": 4.6
+      }
     },
     {
       "homeTeam": "Borussia Dortmund",
@@ -203,7 +667,7 @@
         "h2h": {
           "home": 1.33,
           "draw": 5.5,
-          "away": 8.19
+          "away": 8.4
         },
         "totals": {
           "line": 2.5,
@@ -224,7 +688,12 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 21
+      "bookmakers": 21,
+      "prevH2h": {
+        "home": 1.33,
+        "draw": 5.5,
+        "away": 8.4
+      }
     },
     {
       "homeTeam": "SC Freiburg",
@@ -256,7 +725,12 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 20
+      "bookmakers": 20,
+      "prevH2h": {
+        "home": 2.03,
+        "draw": 3.5,
+        "away": 3.55
+      }
     },
     {
       "homeTeam": "Augsburg",
@@ -288,7 +762,12 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 21
+      "bookmakers": 21,
+      "prevH2h": {
+        "home": 2.1,
+        "draw": 3.7,
+        "away": 3.15
+      }
     }
   ]
 }
