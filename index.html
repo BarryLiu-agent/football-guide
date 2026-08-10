@@ -437,7 +437,32 @@ let state = {
 // ===== 工具 =====
 const $ = id => document.getElementById(id);
 function esc(s) { return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
-function normTeam(s) { return (s || '').toLowerCase().replace(/\b(fc|afc|cf|sc|ac)\b/g, '').replace(/[^a-z0-9 ]/g, '').trim(); }
+// 译名别名归一化（不同英文写法指向同一队）
+const TEAM_ALIAS = {
+  'bayern munchen': 'bayern', 'bayern munich': 'bayern',
+  'internazionale milano': 'inter milan', 'inter milan': 'inter milan', 'inter': 'inter milan',
+  'athletic club': 'athletic bilbao', 'athletic bilbao': 'athletic bilbao',
+  'paris saint germain': 'psg', 'paris saint-germain': 'psg', 'psg': 'psg',
+  'manchester united': 'man utd', 'manchester united fc': 'man utd', 'man utd': 'man utd',
+  'manchester city': 'man city', 'manchester city fc': 'man city', 'man city': 'man city',
+  'spartak moscow': 'spartak', 'cska moscow': 'cska',
+};
+function normTeam(s) {
+  let n = (s || '').toLowerCase()
+    .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')  // ü->u, é->e
+    .replace(/\b(fc|afc|cf|sc|ac)\b/g, '')
+    .replace(/[^a-z0-9 ]/g, '')
+    .trim().replace(/\s+/g, ' ');
+  return TEAM_ALIAS[n] || n;
+}
+// 队名匹配：精确 → 包含 → 末尾词（SV 07 Elversberg vs Elversberg）
+function teamMatch(a, b) {
+  if (!a || !b) return false;
+  if (a === b) return true;
+  if (a.includes(b) || b.includes(a)) return true;
+  const af = a.split(' '), bf = b.split(' ');
+  return af[af.length - 1] === bf[bf.length - 1];
+}
 function cnTeam(name) {
   if (!name) return '?';
   const n = state.teamNames[name] || state.teamNames[name.replace(/\s+(FC|CF|SC|AFC)$/i, '')];
@@ -471,8 +496,7 @@ function dateLabel(dateStr) {
 function findPrediction(home, away) {
   const h = normTeam(home), a = normTeam(away);
   return (state.predictions || []).find(p =>
-    (normTeam(p.homeTeam) === h && normTeam(p.awayTeam) === a) ||
-    (normTeam(p.homeTeam).split(' ')[0] === h.split(' ')[0] && normTeam(p.awayTeam).split(' ')[0] === a.split(' ')[0]));
+    teamMatch(normTeam(p.homeTeam), h) && teamMatch(normTeam(p.awayTeam), a));
 }
 function findXgMatch(home, away) {
   const h = normTeam(home), a = normTeam(away);
@@ -558,10 +582,14 @@ function renderFixtures() {
   // 排序
   ms.sort((a, b) => a.utcDate.localeCompare(b.utcDate));
 
-  // 赛程里没有的（如欧冠未开赛）→ 用预测/竞彩补充
-  const keys = new Set(ms.map(m => normTeam(m.homeTeam?.name || m.homeTeam?.shortName) + '|' + normTeam(m.awayTeam?.name || m.awayTeam?.shortName)));
+  // 赛程里没有的（如欧冠未开赛）→ 用预测补充（首词兜底匹配，避免重复显示）
+  const hasFix = (h, a) => ms.some(m => {
+    const mh = normTeam(m.homeTeam?.name || m.homeTeam?.shortName);
+    const ma = normTeam(m.awayTeam?.name || m.awayTeam?.shortName);
+    return teamMatch(mh, h) && teamMatch(ma, a);
+  });
   const extras = (state.predictions || []).filter(p => p.league === state.league)
-    .filter(p => !keys.has(normTeam(p.homeTeam) + '|' + normTeam(p.awayTeam)))
+    .filter(p => !hasFix(normTeam(p.homeTeam), normTeam(p.awayTeam)))
     .filter(p => { const d = fmtDate(p.kickoff); return d >= t && d <= maxD; })
     .map(p => ({ synthetic: true, homeTeam: { name: p.homeTeam }, awayTeam: { name: p.awayTeam }, utcDate: p.kickoff, competition: { code: p.league }, pred: p }));
   ms = ms.concat(extras).sort((a, b) => a.utcDate.localeCompare(b.utcDate));
