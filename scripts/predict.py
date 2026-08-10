@@ -654,13 +654,23 @@ def main():
             if odds_result and odds_result.get("prob"):
                 market_prob = odds_result["prob"]
 
-            # ── 融合概率：60% 市场 + 40% Elo（供波胆/大小球建模）──
+            # ── 融合概率：60% 市场 + 40% Elo + 消息信号（供波胆/大小球/让球等全部下游模型）──
+            h_sig = msg_result.get("signals", {}).get(home.lower(), {}).get("score", 0) if msg_result else 0
+            a_sig = msg_result.get("signals", {}).get(away.lower(), {}).get("score", 0) if msg_result else 0
+            w_msg = rules.get("fusion", {}).get("messageWeight", 0.3)
+            adj = w_msg * (h_sig - a_sig) / 2  # 与 ScorePredictor 同口径
             if market_prob:
-                f_home = 0.6 * market_prob["home"] + 0.4 * ep_home
+                f_home = 0.6 * market_prob["home"] + 0.4 * ep_home + adj
                 f_draw = 0.6 * market_prob["draw"] + 0.4 * ep_draw
-                f_away = 0.6 * market_prob["away"] + 0.4 * ep_away
+                f_away = 0.6 * market_prob["away"] + 0.4 * ep_away - adj
+                _s = f_home + f_draw + f_away
+                if _s > 0:
+                    f_home, f_draw, f_away = f_home / _s, f_draw / _s, f_away / _s
             else:
-                f_home, f_draw, f_away = ep_home, ep_draw, ep_away
+                f_home, f_draw, f_away = ep_home + adj, ep_draw, ep_away - adj
+                _s = f_home + f_draw + f_away
+                if _s > 0:
+                    f_home, f_draw, f_away = f_home / _s, f_draw / _s, f_away / _s
 
             score_model = ScoreModel()
             score_model.fit(f_home, f_draw, f_away)
