@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T17:48:03Z",
+  "generatedAt": "2026-08-10T17:50:18Z",
   "dateRange": {
     "from": "2026-08-03",
     "to": "2026-09-14"
@@ -2862,7 +2862,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-10T08:25:08Z",
+      "lastUpdated": "2026-08-10T08:25:07Z",
       "homeTeam": {
         "id": 559,
         "name": "Sevilla FC",
@@ -4916,7 +4916,7 @@
       "matchday": 4,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-10T08:25:09Z",
+      "lastUpdated": "2026-08-10T08:25:08Z",
       "homeTeam": {
         "id": 87,
         "name": "Rayo Vallecano de Madrid",
