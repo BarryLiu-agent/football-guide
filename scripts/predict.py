@@ -24,6 +24,9 @@ if sys.stdout.encoding != "utf-8":
     sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8")
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from elo import EloModel, dc_probs
 CONFIG_DIR = ROOT / "config"
 DATA_DIR = ROOT / "data"
 ODDS_DIR = DATA_DIR / "odds"
@@ -274,6 +277,21 @@ class ScoreModel:
         entries.sort(key=lambda x: -x["prob"])
         return entries[:top_n]
 
+    def dc_scores(self, top_n=6, rho=-0.08):
+        """Dixon-Coles 修正的波胆分布（修正 0-0/1-0/0-1/1-1 低比分依赖）。"""
+        probs = dc_probs(self.lam_h, self.lam_a, rho=rho)
+        entries = [{"score": f"{i}-{j}", "prob": round(pp, 4)} for (i, j), pp in probs.items()]
+        entries.sort(key=lambda x: -x["prob"])
+        return entries[:top_n]
+
+    def dc_1x2(self, rho=-0.08):
+        """Dixon-Coles 修正的胜平负概率。"""
+        probs = dc_probs(self.lam_h, self.lam_a, rho=rho)
+        p_home = sum(v for (i, j), v in probs.items() if i > j)
+        p_draw = sum(v for (i, j), v in probs.items() if i == j)
+        p_away = sum(v for (i, j), v in probs.items() if i < j)
+        return round(p_home, 4), round(p_draw, 4), round(p_away, 4)
+
     def over_under(self, line=2.5):
         """大小球: 返回 {over, under} 概率。"""
         n = self.MAX_GOALS
@@ -467,6 +485,18 @@ def main():
     standings_by_league = load_standings()
     print(f"赔率联赛: {list(odds_by_league.keys())}, 消息: {len(messages)} 条, 积分榜联赛: {len(standings_by_league)}")
 
+    # Elo 独立模型：积分榜初始化 + 本赛季赛果迭代
+    elo_model = EloModel()
+    elo_model.init_from_standings(standings_by_league)
+    try:
+        with open(DATA_DIR / "fixtures.json", encoding="utf-8") as f:
+            fixtures_all = json.load(f).get("matches", [])
+        finished = [m for m in fixtures_all if m.get("status") == "FINISHED"]
+        elo_model.update(finished)
+        print(f"Elo: {len(elo_model.ratings)} 队, 已用 {len(finished)} 场赛果迭代")
+    except Exception:
+        pass
+
     predictor = ScorePredictor(rules)
     predictions = []
 
@@ -504,11 +534,22 @@ def main():
             odds_result = results.get("odds")
             msg_result = results.get("message")
 
-            # 泊松模型: 波胆 + 大小球
+            # 泊松模型: 波胆 + 大小球（融合赔率与 Elo 概率 fit）
             score_model = ScoreModel()
             if odds_result and odds_result.get("prob"):
-                p = odds_result["prob"]
-                score_model.fit(p["home"], p["draw"], p["away"])
+                op = odds_result["prob"]
+                # Elo 独立概率
+                ep_home, ep_draw, ep_away = elo_model.predict(home, away)
+                pred_elo = {"home": ep_home, "draw": ep_draw, "away": ep_away}
+                # 融合: 60% 赔率 + 40% Elo
+                f_home = 0.6 * op["home"] + 0.4 * ep_home
+                f_draw = 0.6 * op["draw"] + 0.4 * ep_draw
+                f_away = 0.6 * op["away"] + 0.4 * ep_away
+                score_model.fit(f_home, f_draw, f_away)
+            else:
+                ep_home, ep_draw, ep_away = elo_model.predict(home, away)
+                pred_elo = {"home": ep_home, "draw": ep_draw, "away": ep_away}
+                score_model.fit(ep_home, ep_draw, ep_away)
 
             pred = predictor.predict(home, away, odds_result, msg_result)
             pred["league"] = league
@@ -558,7 +599,28 @@ def main():
             pred["kelly"] = kelly
             # 让球盘口
             pred["spreads"] = m.get("markets", {}).get("spreads")
-            # 预测比分 = 泊松模型最可能波胆（比期望值四舍五入更有区分度）
+            # Elo 概率 + 价值检测（模型概率 vs 赔率隐含概率）
+            pred["eloProb"] = pred_elo
+            pred["eloRatings"] = {
+                "home": round(elo_model.get_rating(home), 0),
+                "away": round(elo_model.get_rating(away), 0),
+            }
+            value_picks = []
+            if odds_result and odds_result.get("prob"):
+                op = odds_result["prob"]
+                for k, label in (("home", "主胜"), ("draw", "平局"), ("away", "客胜")):
+                    diff = pred_elo[k] - op[k]
+                    if abs(diff) >= 0.05:
+                        value_picks.append({
+                            "side": k, "label": label,
+                            "modelProb": round(pred_elo[k], 3),
+                            "oddsProb": round(op[k], 3),
+                            "edge": round(diff, 3),
+                        })
+            pred["valuePicks"] = value_picks
+            # Dixon-Coles 修正波胆（低比分修正）
+            pred["correctScores"] = score_model.dc_scores(6)
+            # 预测比分 = 最可能波胆
             top_cs = score_model.correct_scores(1)
             if top_cs:
                 pred["predictedScore"] = top_cs[0]["score"]
