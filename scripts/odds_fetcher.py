@@ -68,8 +68,8 @@ class TheOddsApiSource(OddsSource):
         "SA": "soccer_italy_serie_a",
         "BL1": "soccer_germany_bundesliga",
         "FL1": "soccer_france_ligue_one",
-        # 欧冠正赛抽签后改为 soccer_uefa_champs_league
-        "CL": "soccer_uefa_champs_league_qualification",
+        # 欧冠仅正赛（资格赛不抓；正赛小组赛8月底开赛）
+        "CL": "soccer_uefa_champs_league",
         # 扩展赛事（The Odds API 覆盖的其他可博彩联赛）
         "CH": "soccer_efl_champ",
         "EL1": "soccer_england_league1",
