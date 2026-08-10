@@ -198,6 +198,20 @@ table.standings .down { color: var(--red); }
 .chip:hover { border-color: var(--border-light); color: var(--text); }
 .chip.active { background: var(--gold); color: #0b0e14; font-weight: 700; border-color: var(--gold); }
 
+/* ===== 异动/难度标签 ===== */
+.hot-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; background:rgba(239,68,68,.15); color:#f87171; border:1px solid rgba(239,68,68,.4); }
+.diff-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; }
+.diff-tag.hard { background:rgba(239,68,68,.12); color:#f87171; }
+.diff-tag.mid { background:rgba(245,158,11,.12); color:#fbbf24; }
+.diff-tag.easy { background:rgba(34,197,94,.12); color:#4ade80; }
+
+/* ===== 异动/难度标签 ===== */
+.hot-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; background:rgba(239,68,68,.15); color:#f87171; border:1px solid rgba(239,68,68,.4); }
+.diff-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; }
+.diff-tag.hard { background:rgba(239,68,68,.12); color:#f87171; }
+.diff-tag.mid { background:rgba(245,158,11,.12); color:#fbbf24; }
+.diff-tag.easy { background:rgba(34,197,94,.12); color:#4ade80; }
+
 /* ===== Detail Modal ===== */
 .modal-overlay {
   position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 200;
@@ -372,6 +386,7 @@ table.standings .down { color: var(--red); }
         <span class="refresh-note" id="refreshNote"></span>
       </div>
       <div class="analysis-box" id="analysisBox"></div>
+      <div id="h2hBox"></div>
     </div>
   </div>
 </div>
@@ -556,7 +571,26 @@ function renderCard(m) {
   const pred = m.pred || findPrediction(homeName, awayName);
   const jc = findJingcai(homeName, awayName);
   const score = getScore(m);
-  const alert = jc ? '' : '';
+  // 异动标红：赔率涨跌 >= 0.2
+  let hot = '';
+  if (pred && pred.oddsChange) {
+    const oc = pred.oddsChange;
+    if (['home','draw','away'].some(k => oc[k] != null && Math.abs(oc[k]) >= 0.2)) hot = '<span class="hot-tag">🔥异动</span>';
+  }
+  // 赛程难度评级：基于积分榜排名
+  let diff = '';
+  const st = state.standings?.[m.competition?.code];
+  if (st && m.homeTeam?.name) {
+    const norm = (s) => (s || '').toLowerCase().replace(/\b(fc|afc|cf|sc)\b/g, '').replace(/[^a-z0-9 ]/g, '').trim();
+    const findR = (name) => { const n = norm(name); const r = st.find(x => norm(x.team) === n || norm(x.shortName || '') === n); return r ? r.position : null; };
+    const rh = findR(m.homeTeam.name), ra = findR(m.awayTeam.name);
+    if (rh && ra) {
+      const opp = Math.min(rh, ra);
+      if (opp <= 3) diff = '<span class="diff-tag hard">强强</span>';
+      else if (opp <= 8) diff = '<span class="diff-tag mid">中上</span>';
+      else if (opp >= 15) diff = '<span class="diff-tag easy">悬殊</span>';
+    }
+  }
   return `<div class="match-card" onclick="openDetail('${esc(homeName).replace(/'/g, '')}','${esc(awayName).replace(/'/g, '')}')">
     <div class="mc-time"><div class="t">${score.text === 'VS' ? fmtTime(m.utcDate) : score.text}</div><div class="d">${score.statusText || (m.competition?.code === 'CL' ? '欧冠' : '')}</div></div>
     <div class="mc-teams">
@@ -566,6 +600,7 @@ function renderCard(m) {
     <div class="mc-score ${score.cls}"><div class="s">${score.text === 'VS' ? 'VS' : score.text}</div>${score.statusText && score.statusText !== 'VS' ? `<div class="st">${score.statusText}</div>` : ''}</div>
     ${pred ? `<div class="mc-pred"><div class="ps">${pred.predictedScore}</div><div class="pc">预测 ${Math.round((pred.confidence||0)*100)}%</div></div>` : ''}
     ${jc ? `<div class="mc-badge-jc">竞彩</div>` : ''}
+    ${hot || diff ? `<div style="display:flex;gap:4px;margin-top:6px;flex-wrap:wrap">${hot}${diff}</div>` : ''}
   </div>`;
 }
 
@@ -667,6 +702,26 @@ function openDetail(homeName, awayName) {
   $('analysisBox').textContent = currentPred?.analysis || (currentJc ? '竞彩比赛：赔率见上方，完整分析待赔率管道生成。' : '该场比赛暂无赔率与预测数据。');
   $('refreshNote').textContent = '';
   lastGen = null;
+  // 本赛季交锋记录
+  const n1 = normTeam(homeName), n2 = normTeam(awayName);
+  const h2h = (state.fixtures || []).filter(f => f.status === 'FINISHED' && (
+    (normTeam(f.homeTeam?.name || f.homeTeam?.shortName) === n1 && normTeam(f.awayTeam?.name || f.awayTeam?.shortName) === n2) ||
+    (normTeam(f.homeTeam?.name || f.homeTeam?.shortName) === n2 && normTeam(f.awayTeam?.name || f.awayTeam?.shortName) === n1)
+  )).sort((a, b) => b.utcDate.localeCompare(a.utcDate)).slice(0, 5);
+  const h2hEl = $('h2hBox');
+  if (h2h.length) {
+    h2hEl.innerHTML = '<div class="section-title" style="margin-top:12px">🔄 本赛季交锋</div>' + h2h.map(f => {
+      const ft = f.score?.fullTime || {};
+      const rev = normTeam(f.homeTeam?.name || f.homeTeam?.shortName) === n2;
+      const h = rev ? f.awayTeam?.name : f.homeTeam?.name;
+      const a = rev ? f.homeTeam?.name : f.awayTeam?.name;
+      const hs = rev ? ft.away : ft.home, as = rev ? ft.home : ft.away;
+      return `<div style="display:flex;justify-content:space-between;font-size:12px;padding:6px 0;border-bottom:1px solid var(--border)">
+        <span>${cnTeam(h)} <b>${hs ?? '-'}-${as ?? '-'}</b> ${cnTeam(a)}</span><span style="color:var(--muted)">${fmtDate(f.utcDate)}</span></div>`;
+    }).join('');
+  } else {
+    h2hEl.innerHTML = '<div class="section-title" style="margin-top:12px">🔄 本赛季交锋</div><div style="font-size:12px;color:var(--muted);padding:6px 0">本赛季暂无两队交锋记录（赛季开始后自动积累）</div>';
+  }
   switchMkt('h2h');
   $('detailModal').classList.add('open');
 }
