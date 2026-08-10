@@ -638,19 +638,19 @@ function renderStandings() {
 // ===== xG 数据 =====
 function renderXg() {
   const xg = state.xg[state.league];
-  if (!xg || !xg.teamsData) return `<div class="empty-state">
+  const teams = Object.values(xg?.data?.teams || xg?.teamsData || {});
+  if (!teams.length) return `<div class="empty-state">
     <div class="icon">📈</div>
     <div>该联赛暂无 xG 数据</div>
     <div style="font-size:11px;margin-top:8px;color:var(--text-3)">请在本机运行：python scripts/xg_fetch_local.py --push</div>
   </div>`;
-  const teams = Object.values(xg.teamsData);
   if (!teams.length) return `<div class="empty-state">暂无 xG 数据</div>`;
   const rows = teams.sort((a, b) => (b.xG || 0) - (a.xG || 0));
   const max = rows[0]?.xG || 1;
   return `<div class="table-wrap"><table class="standings">
     <thead><tr><th>#</th><th>球队</th><th style="text-align:right">xG</th><th style="text-align:right">xGA</th><th style="text-align:right">实际积分</th><th style="text-align:right">xG积分</th><th>差值</th></tr></thead>
     <tbody>${rows.map((t, i) => {
-      const pts = t.pts || 0, xPts = t.xpts || 0, diff = pts - xPts;
+      const pts = t.pts || 0, xPts = t.xPTS || t.xpts || 0, diff = pts - xPts;
       return `<tr>
         <td class="pos">${i + 1}</td>
         <td class="team">${cnTeam(t.title)}<span class="en">${esc(t.title !== cnTeam(t.title) ? t.title : '')}</span></td>
@@ -668,7 +668,7 @@ function renderXg() {
 // ===== 射手榜 =====
 function renderScorers() {
   const xg = state.xg[state.league];
-  const players = xg?.playersData;
+  const players = xg?.data?.players || xg?.playersData || null;
   if (!players) return `<div class="empty-state">
     <div class="icon">⚽</div>
     <div>暂无射手数据</div>
