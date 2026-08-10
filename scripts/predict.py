@@ -89,18 +89,52 @@ class MessageAnalyzer(Analyzer):
 
     # 常见球队名别名 → 标准化名
     TEAM_ALIASES = {
-        "manchester united": "manchester united", "man utd": "manchester united", "united": "manchester united",
+        "manchester united": "manchester united", "man utd": "manchester united",
         "manchester city": "manchester city", "man city": "manchester city",
         "real madrid": "real madrid", "barcelona": "barcelona", "barça": "barcelona",
         "bayern": "bayern munich", "bayern munich": "bayern munich",
         "psg": "paris saint-germain", "paris saint-germain": "paris saint-germain", "paris st-germain": "paris saint-germain",
-        "inter milan": "inter", "inter": "inter", "ac milan": "ac milan", "milan": "ac milan",
+        "inter milan": "inter",
         "atletico": "atletico madrid", "atlético": "atletico madrid",
         "juventus": "juventus", "juve": "juventus",
         "dortmund": "borussia dortmund", "liverpool": "liverpool",
         "arsenal": "arsenal", "chelsea": "chelsea", "tottenham": "tottenham",
         "napoli": "napoli", "roma": "roma", "lazio": "lazio",
         "marseille": "marseille", "lyon": "lyon", "monaco": "monaco",
+    }
+
+    # 球员名 → 球队（新闻标题常提球员不提队名，如 "Vini Jr. blow"）
+    # 只收录归属确定的球星，宁缺毋滥（错误归属会污染信号）
+    PLAYER_MAP = {
+        "vinicius": "real madrid", "vinícius": "real madrid", "vini jr": "real madrid",
+        "mbappe": "real madrid", "mbappé": "real madrid", "bellingham": "real madrid",
+        "rodrygo": "real madrid", "valverde": "real madrid", "courtois": "real madrid",
+        "modric": "real madrid", "modrić": "real madrid",
+        "rodri": "manchester city", "haaland": "manchester city", "de bruyne": "manchester city",
+        "foden": "manchester city", "grealish": "manchester city", "doku": "manchester city",
+        "saka": "arsenal", "odegaard": "arsenal", "ødegaard": "arsenal", "rice": "arsenal",
+        "saliba": "arsenal", "martinelli": "arsenal", "havertz": "arsenal",
+        "salah": "liverpool", "van dijk": "liverpool", "alisson": "liverpool",
+        "szoboszlai": "liverpool", "mac allister": "liverpool", "nunez": "liverpool", "gakpo": "liverpool",
+        "bruno fernandes": "manchester united", "rashford": "manchester united",
+        "garnacho": "manchester united", "mainoo": "manchester united", "hojlund": "manchester united",
+        "palmer": "chelsea", "enzo fernandez": "chelsea", "caicedo": "chelsea", "jackson": "chelsea",
+        "isak": "newcastle united", "gordon": "newcastle united", "guimaraes": "newcastle united",
+        "son": "tottenham", "kane": "bayern munich", "musiala": "bayern munich",
+        "kimmich": "bayern munich", "neuer": "bayern munich", "sane": "bayern munich",
+        "sané": "bayern munich", "gnabry": "bayern munich", "olise": "bayern munich",
+        "yamal": "barcelona", "raphinha": "barcelona", "pedri": "barcelona", "gavi": "barcelona",
+        "ter stegen": "barcelona", "lewandowski": "barcelona", "lewa": "barcelona",
+        "griezmann": "atletico madrid", "julian alvarez": "atletico madrid",
+        "julián álvarez": "atletico madrid", "lautaro": "inter", "lautaro martinez": "inter",
+        "thuram": "inter", "barella": "inter", "calhanoglu": "inter",
+        "leao": "ac milan", "leão": "ac milan", "pulisic": "ac milan",
+        "theo hernandez": "ac milan", "maignan": "ac milan",
+        "vlahovic": "juventus", "yildiz": "juventus", "chiesa": "juventus",
+        "kvaratskhelia": "psg", "kvara": "psg", "dembele": "psg", "dembélé": "psg",
+        "hakimi": "psg", "donnarumma": "psg",
+        "wirtz": "bayer leverkusen", "grimaldo": "bayer leverkusen",
+        "openda": "rb leipzig", "guirassy": "borussia dortmund", "brandt": "borussia dortmund",
     }
 
     def analyze(self, context: dict) -> dict:
@@ -119,11 +153,13 @@ class MessageAnalyzer(Analyzer):
             text = (msg.get("text", "") or "").lower()
             if not text:
                 continue
-            # 该消息涉及哪支球队
+            # 该消息涉及哪支球队（队名 + 别名 + 球员名）
             involved = set()
-            if any(tok in text for tok in [home, self.TEAM_ALIASES.get(home, home)]):
+            home_terms = [home, self.TEAM_ALIASES.get(home, home)] + [p for p, t in self.PLAYER_MAP.items() if t == home]
+            away_terms = [away, self.TEAM_ALIASES.get(away, away)] + [p for p, t in self.PLAYER_MAP.items() if t == away]
+            if any(tok in text for tok in home_terms):
                 involved.add(home)
-            if any(tok in text for tok in [away, self.TEAM_ALIASES.get(away, away)]):
+            if any(tok in text for tok in away_terms):
                 involved.add(away)
             if not involved:
                 continue

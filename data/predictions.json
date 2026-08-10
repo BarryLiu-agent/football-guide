@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T16:41:03Z",
+  "generatedAt": "2026-08-10T16:46:10Z",
   "total": 58,
   "rulesVersion": "1.1",
   "modelInfo": {
@@ -1992,7 +1992,19 @@
       "reasons": [
         "赔率隐含概率: 主19% 平25% 客56%"
       ],
-      "messageEvidence": [],
+      "messageEvidence": [
+        {
+          "text": "Rangers meeting Q&A: McInnes-Klopp compared, club failure admission & new signings update",
+          "teams": [
+            "angers"
+          ],
+          "keywords": [
+            "miss",
+            "signing"
+          ],
+          "score": 0.0
+        }
+      ],
       "league": "FL1",
       "kickoff": "2026-08-23T13:00:00Z",
       "matchUrl": "",
@@ -2114,7 +2126,7 @@
         "10": 0.0001
       },
       "btts": 0.5748,
-      "analysis": "【排名】主队Angers排名第1（0分/0场），客队Lille排名第1（0分/0场），排名接近。\n【胜负】市场明显看好客队Lille，客胜隐含概率 56%（赔率 4.95 / 3.75 / 1.68）。\n【让球】客队Lille让 1.5 球（盘口赔率 1.4 / 3.35）。\n【波胆】泊松模型推算最可能比分：1-1（11%）、1-2（9%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 49% / 小球 51%（赔率 大 1.94 / 小 1.85），倾向小球。\n【进球数】总进球概率：0球 6%、1球 16%、2球 23%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 57%，倾向双方有球。\n【消息面】Angers信号 +0.00（2条提及）。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 19%（差 +30%），值得关注。\n【结论】综合赔率与消息，Lille不败概率更高，关注波胆 1-1 方向。"
+      "analysis": "【排名】主队Angers排名第1（0分/0场），客队Lille排名第1（0分/0场），排名接近。\n【胜负】市场明显看好客队Lille，客胜隐含概率 56%（赔率 4.95 / 3.75 / 1.68）。\n【让球】客队Lille让 1.5 球（盘口赔率 1.4 / 3.35）。\n【波胆】泊松模型推算最可能比分：1-1（11%）、1-2（9%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 49% / 小球 51%（赔率 大 1.94 / 小 1.85），倾向小球。\n【进球数】总进球概率：0球 6%、1球 16%、2球 23%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 57%，倾向双方有球。\n【消息面】Angers信号 +0.00（2条提及）。\n📰 Rangers meeting Q&A: McInnes-Klopp compared, club failure admission & new signings update（miss、signing）\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 19%（差 +30%），值得关注。\n【结论】综合赔率与消息，Lille不败概率更高，关注波胆 1-1 方向。"
     },
     {
       "homeTeam": "Le Havre",
@@ -3810,15 +3822,27 @@
         "away": 1.95
       },
       "probabilities": {
-        "home": 0.218,
+        "home": 0.223,
         "draw": 0.17,
-        "away": 0.611
+        "away": 0.607
       },
-      "confidence": 0.645,
+      "confidence": 0.658,
       "reasons": [
-        "赔率隐含概率: 主18% 平24% 客58%"
+        "赔率隐含概率: 主18% 平24% 客58%",
+        "消息信号: 主队+0.00 客队-0.10"
       ],
-      "messageEvidence": [],
+      "messageEvidence": [
+        {
+          "text": "Arteta 'trying' to add players after Vini Jr. blow",
+          "teams": [
+            "real madrid"
+          ],
+          "keywords": [
+            "blow"
+          ],
+          "score": -0.2
+        }
+      ],
       "league": "PD",
       "kickoff": "2026-08-22T19:30:00Z",
       "matchUrl": "",
@@ -3921,7 +3945,7 @@
         "10": 0.0001
       },
       "btts": 0.5473,
-      "analysis": "【排名】主队Espanyol排名第11（46分/38场），客队Real Madrid排名第2（86分/38场），客队排名领先 9 位。\n【胜负】市场明显看好客队Real Madrid，客胜隐含概率 58%（赔率 5.0 / 3.9 / 1.6）。\n【让球】客队Real Madrid让 1.5 球（盘口赔率 1.53 / 2.77）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、1-2（10%）、0-1（10%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%（赔率 大 1.7 / 小 2.1100000000000003），倾向大球。\n【进球数】总进球概率：0球 5%、1球 15%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 55%，倾向至少一方零封。\n【消息面】Real Madrid信号 +0.00（1条提及）。\n【结论】综合赔率与消息，Real Madrid不败概率更高，关注波胆 1-1 方向。"
+      "analysis": "【排名】主队Espanyol排名第11（46分/38场），客队Real Madrid排名第2（86分/38场），客队排名领先 9 位。\n【胜负】市场明显看好客队Real Madrid，客胜隐含概率 58%（赔率 5.0 / 3.9 / 1.6）。\n【让球】客队Real Madrid让 1.5 球（盘口赔率 1.53 / 2.77）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、1-2（10%）、0-1（10%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%（赔率 大 1.7 / 小 2.1100000000000003），倾向大球。\n【进球数】总进球概率：0球 5%、1球 15%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 55%，倾向至少一方零封。\n【消息面】Real Madrid信号 -0.10（2条提及）。\n📰 Arteta 'trying' to add players after Vini Jr. blow（blow）\n【结论】综合赔率与消息，Real Madrid不败概率更高，关注波胆 1-1 方向。"
     },
     {
       "homeTeam": "Atlético Madrid",
@@ -4695,15 +4719,27 @@
         "away": 1.02
       },
       "probabilities": {
-        "home": 0.708,
+        "home": 0.703,
         "draw": 0.124,
-        "away": 0.168
+        "away": 0.173
       },
-      "confidence": 0.683,
+      "confidence": 0.696,
       "reasons": [
-        "赔率隐含概率: 主67% 平19% 客13%"
+        "赔率隐含概率: 主67% 平19% 客13%",
+        "消息信号: 主队-0.10 客队+0.00"
       ],
-      "messageEvidence": [],
+      "messageEvidence": [
+        {
+          "text": "Arteta 'trying' to add players after Vini Jr. blow",
+          "teams": [
+            "real madrid"
+          ],
+          "keywords": [
+            "blow"
+          ],
+          "score": -0.2
+        }
+      ],
       "league": "PD",
       "kickoff": "2026-08-26T19:00:00Z",
       "matchUrl": "",
@@ -4825,7 +4861,7 @@
         "10": 0.0001
       },
       "btts": 0.5472,
-      "analysis": "【排名】主队Real Madrid排名第2（86分/38场），客队Real Sociedad排名第10（46分/38场），主队排名领先 8 位。\n【胜负】市场高度看好主队Real Madrid，主胜隐含概率 67%（赔率 1.4 / 4.95 / 7.0）。\n【让球】主队Real Madrid让 1.5 球（盘口赔率 2.16 / 1.775）。\n【波胆】泊松模型推算最可能比分：2-1（10%）、2-0（10%）、1-1（10%）。\n【大小球】2.5 球盘口：大球 42% / 小球 58%（赔率 大 2.225 / 小 1.625），倾向小球。\n【进球数】总进球概率：0球 4%、1球 14%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 55%，倾向至少一方零封。\n【消息面】Real Madrid信号 +0.00（1条提及）。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 67%（差 -18%），值得关注。\n【结论】综合赔率与消息，Real Madrid不败概率更高，关注波胆 2-1 方向。"
+      "analysis": "【排名】主队Real Madrid排名第2（86分/38场），客队Real Sociedad排名第10（46分/38场），主队排名领先 8 位。\n【胜负】市场高度看好主队Real Madrid，主胜隐含概率 67%（赔率 1.4 / 4.95 / 7.0）。\n【让球】主队Real Madrid让 1.5 球（盘口赔率 2.16 / 1.775）。\n【波胆】泊松模型推算最可能比分：2-1（10%）、2-0（10%）、1-1（10%）。\n【大小球】2.5 球盘口：大球 42% / 小球 58%（赔率 大 2.225 / 小 1.625），倾向小球。\n【进球数】总进球概率：0球 4%、1球 14%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 55%，倾向至少一方零封。\n【消息面】Real Madrid信号 -0.10（2条提及）。\n📰 Arteta 'trying' to add players after Vini Jr. blow（blow）\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 67%（差 -18%），值得关注。\n【结论】综合赔率与消息，Real Madrid不败概率更高，关注波胆 2-1 方向。"
     },
     {
       "homeTeam": "Barcelona",
@@ -4958,15 +4994,27 @@
         "away": 0.8
       },
       "probabilities": {
-        "home": 0.847,
+        "home": 0.845,
         "draw": 0.06,
-        "away": 0.093
+        "away": 0.094
       },
-      "confidence": 0.739,
+      "confidence": 0.743,
       "reasons": [
-        "赔率隐含概率: 主81% 平13% 客6%"
+        "赔率隐含概率: 主81% 平13% 客6%",
+        "消息信号: 主队-0.03 客队+0.00"
       ],
-      "messageEvidence": [],
+      "messageEvidence": [
+        {
+          "text": "Osaka defeats local favourite to reach Canadian Open quarter-finals",
+          "teams": [
+            "arsenal"
+          ],
+          "keywords": [
+            "defeat"
+          ],
+          "score": -0.1
+        }
+      ],
       "league": "PL",
       "kickoff": "2026-08-21T19:00:00Z",
       "matchUrl": "",
@@ -5056,7 +5104,7 @@
         "10": 0.0001
       },
       "btts": 0.4809,
-      "analysis": "【胜负】市场高度看好主队Arsenal，主胜隐含概率 81%（赔率 1.17 / 7.5 / 16.0）。\n【让球】主队Arsenal让 2.0 球（盘口赔率 1.9 / 1.95）。\n【波胆】泊松模型推算最可能比分：2-0（12%）、1-0（10%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%（赔率 大 1.93 / 小 1.93），倾向大球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 48%，倾向至少一方零封。\n【消息面】Arsenal信号 +0.00（2条提及）。\n【结论】综合赔率与消息，Arsenal不败概率更高，关注波胆 2-0 方向。"
+      "analysis": "【胜负】市场高度看好主队Arsenal，主胜隐含概率 81%（赔率 1.17 / 7.5 / 16.0）。\n【让球】主队Arsenal让 2.0 球（盘口赔率 1.9 / 1.95）。\n【波胆】泊松模型推算最可能比分：2-0（12%）、1-0（10%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%（赔率 大 1.93 / 小 1.93），倾向大球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 48%，倾向至少一方零封。\n【消息面】Arsenal信号 -0.03（3条提及）。\n📰 Osaka defeats local favourite to reach Canadian Open quarter-finals（defeat）\n【结论】综合赔率与消息，Arsenal不败概率更高，关注波胆 2-0 方向。"
     },
     {
       "homeTeam": "Hull City",
@@ -5802,15 +5850,27 @@
         "away": 0.99
       },
       "probabilities": {
-        "home": 0.691,
+        "home": 0.696,
         "draw": 0.123,
-        "away": 0.186
+        "away": 0.182
       },
-      "confidence": 0.676,
+      "confidence": 0.693,
       "reasons": [
-        "赔率隐含概率: 主66% 平19% 客15%"
+        "赔率隐含概率: 主66% 平19% 客15%",
+        "消息信号: 主队+0.10 客队+0.00"
       ],
-      "messageEvidence": [],
+      "messageEvidence": [
+        {
+          "text": "Maresca expects Rodri City return 'at the moment'",
+          "teams": [
+            "manchester city"
+          ],
+          "keywords": [
+            "return"
+          ],
+          "score": 0.2
+        }
+      ],
       "league": "PL",
       "kickoff": "2026-08-23T13:00:00Z",
       "matchUrl": "",
@@ -5913,7 +5973,7 @@
         "10": 0.0001
       },
       "btts": 0.5436,
-      "analysis": "【排名】主队Manchester City排名第2（78分/38场），客队Bournemouth排名第6（57分/38场），主队排名领先 4 位。\n【胜负】市场高度看好主队Manchester City，主胜隐含概率 66%（赔率 1.44 / 5.0 / 6.2）。\n【让球】主队Manchester City让 1.5 球（盘口赔率 2.2 / 1.73）。\n【波胆】泊松模型推算最可能比分：2-0（10%）、2-1（10%）、1-0（9%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%（赔率 大 1.96 / 小 1.79），倾向小球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 54%，倾向至少一方零封。\n【结论】综合赔率与消息，Manchester City不败概率更高，关注波胆 2-0 方向。"
+      "analysis": "【排名】主队Manchester City排名第2（78分/38场），客队Bournemouth排名第6（57分/38场），主队排名领先 4 位。\n【胜负】市场高度看好主队Manchester City，主胜隐含概率 66%（赔率 1.44 / 5.0 / 6.2）。\n【让球】主队Manchester City让 1.5 球（盘口赔率 2.2 / 1.73）。\n【波胆】泊松模型推算最可能比分：2-0（10%）、2-1（10%）、1-0（9%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%（赔率 大 1.96 / 小 1.79），倾向小球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 54%，倾向至少一方零封。\n【消息面】Manchester City信号 +0.10（2条提及）。\n📰 Maresca expects Rodri City return 'at the moment'（return）\n【结论】综合赔率与消息，Manchester City不败概率更高，关注波胆 2-0 方向。"
     },
     {
       "homeTeam": "Newcastle United",
@@ -7640,6 +7700,6 @@
     "valueTotal": 0,
     "valueHit": 0,
     "valueRate": 0,
-    "updatedAt": "2026-08-10T16:41:03Z"
+    "updatedAt": "2026-08-10T16:46:10Z"
   }
 }
