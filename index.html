@@ -423,6 +423,7 @@ const SUBS = [
 // Football-Data 赛程代码 ↔ 展示代码
 const FD_CODE = { PL: 'PL', PD: 'PD', SA: 'SA', BL1: 'BL1', FL1: 'FL1', CL: 'CL' };
 const COMPETITIONS = { PL: '英超', PD: '西甲', SA: '意甲', BL1: '德甲', FL1: '法甲', CL: '欧冠' };
+const LEAGUE_CN = { PL: '英格兰超级联赛', PD: '西班牙甲级联赛', SA: '意大利甲级联赛', BL1: '德国甲级联赛', FL1: '法国甲级联赛', CL: '欧洲冠军联赛' };
 
 // ===== 状态 =====
 let state = {
@@ -500,9 +501,10 @@ function dateLabel(dateStr) {
   const days = ['周日','周一','周二','周三','周四','周五','周六'];
   return `${d.getUTCMonth()+1}月${d.getUTCDate()}日 ${days[d.getUTCDay()]}`;
 }
-function findPrediction(home, away) {
+function findPrediction(home, away, league) {
   const h = normTeam(home), a = normTeam(away);
   return (state.predictions || []).find(p =>
+    (!league || p.league === league) &&
     teamMatch(normTeam(p.homeTeam), h) && teamMatch(normTeam(p.awayTeam), a));
 }
 function findXgMatch(home, away) {
@@ -511,11 +513,12 @@ function findXgMatch(home, away) {
     (normTeam(m.homeTeam) === h && normTeam(m.awayTeam) === a) ||
     (normTeam(m.homeTeam).split(' ')[0] === h.split(' ')[0] && normTeam(m.awayTeam).split(' ')[0] === a.split(' ')[0]));
 }
-function findJingcai(home, away) {
+function findJingcai(home, away, league) {
   const h = normTeam(home), a = normTeam(away);
   return (state.jingcai || []).find(m =>
-    (normTeam(m.homeTeam) === h && normTeam(m.awayTeam) === a) ||
-    (normTeam(m.homeTeam).split(' ')[0] === h.split(' ')[0] && normTeam(m.awayTeam).split(' ')[0] === a.split(' ')[0]));
+    (!league || !m.leagueName || LEAGUE_CN[league] === m.leagueName || (m.leagueName || '').includes(COMPETITIONS[league] || '')) &&
+    ((normTeam(m.homeTeam) === h && normTeam(m.awayTeam) === a) ||
+     (normTeam(m.homeTeam).split(' ')[0] === h.split(' ')[0] && normTeam(m.awayTeam).split(' ')[0] === a.split(' ')[0])));
 }
 
 // ===== 数据加载 =====
@@ -648,7 +651,7 @@ function renderCard(m) {
       else if (opp >= 15) diff = '<span class="diff-tag easy">悬殊</span>';
     }
   }
-  return `<div class="match-card" onclick="openDetail('${esc(homeName).replace(/'/g, '')}','${esc(awayName).replace(/'/g, '')}')">
+  return `<div class="match-card" onclick="openDetail('${esc(homeName).replace(/'/g, '')}','${esc(awayName).replace(/'/g, '')}','${m.competition?.code || ''}')">
     <div class="mc-time"><div class="t">${score.text === 'VS' ? fmtTime(m.utcDate) : score.text}</div><div class="d">${score.statusText || (m.competition?.code === 'CL' ? '欧冠' : '')}</div></div>
     <div class="mc-teams">
       <div class="mc-team">${m.homeTeam?.crest ? `<img src="${m.homeTeam.crest}" onerror="this.style.display='none'">` : ''}<span class="cn">${cnTeam(homeName)}</span>${cnTeam(homeName) !== homeName ? '' : ''}</div>
@@ -776,9 +779,9 @@ function renderRecord() {
 
 // ===== 详情 =====
 let currentPred = null, currentJc = null, pollTimer = null, lastGen = null;
-function openDetail(homeName, awayName) {
-  currentPred = findPrediction(homeName, awayName);
-  currentJc = findJingcai(homeName, awayName);
+function openDetail(homeName, awayName, league) {
+  currentPred = findPrediction(homeName, awayName, league);
+  currentJc = findJingcai(homeName, awayName, league);
   $('modalTitle').innerHTML = `${cnTeam(homeName)} <span style="color:var(--text-3);font-weight:400">vs</span> ${cnTeam(awayName)}`;
   $('mktTabs').innerHTML = `
     <button class="mkt-tab active" data-mkt="h2h" onclick="switchMkt('h2h')">胜平负</button>
