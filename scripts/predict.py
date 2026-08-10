@@ -493,16 +493,16 @@ def main():
     print(f"赔率联赛: {list(odds_by_league.keys())}, 消息: {len(messages)} 条, 积分榜联赛: {len(standings_by_league)}")
 
     # Elo 独立模型：积分榜初始化 + 本赛季赛果迭代
-    elo_model = EloModel()
-    elo_model.init_from_standings(standings_by_league)
+    elo = EloModel()
+    elo.init_from_standings(standings_by_league)
     try:
         with open(DATA_DIR / "fixtures.json", encoding="utf-8") as f:
             fixtures_all = json.load(f).get("matches", [])
         finished = [m for m in fixtures_all if m.get("status") == "FINISHED"]
-        elo_model.update(finished)
-        print(f"Elo: {len(elo_model.ratings)} 队, 已用 {len(finished)} 场赛果迭代")
-    except Exception:
-        pass
+        elo.update(finished)
+        print(f"Elo: {len(elo.ratings)} 队, 已用 {len(finished)} 场赛果迭代")
+    except Exception as e:
+        print(f"Elo 赛果迭代跳过: {e}")
 
     predictor = ScorePredictor(rules)
     predictions = []
