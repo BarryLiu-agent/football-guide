@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T16:55:20Z",
+  "generatedAt": "2026-08-10T23:44:01Z",
   "league": "FL1",
   "history": {
     "marseille|strasbourg": [
@@ -31,6 +31,29 @@
         "h2h": {
           "home": 1.67,
           "draw": 4.13,
+          "away": 4.45
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.12,
+          "under": 1.68
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 2.09
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.78
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T23:44:01Z",
+        "h2h": {
+          "home": 1.67,
+          "draw": 4.1,
           "away": 4.45
         },
         "totals": {
@@ -96,6 +119,29 @@
             "price": 1.83
           }
         }
+      },
+      {
+        "ts": "2026-08-10T23:44:01Z",
+        "h2h": {
+          "home": 1.6,
+          "draw": 4.1,
+          "away": 5.12
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.62,
+          "under": 2.22
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 2.03
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.83
+          }
+        }
       }
     ],
     "le mans fc|brest": [
@@ -124,6 +170,29 @@
       },
       {
         "ts": "2026-08-10T16:55:20Z",
+        "h2h": {
+          "home": 2.48,
+          "draw": 3.49,
+          "away": 2.7
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.75,
+          "under": 2.02
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.82
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.04
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T23:44:01Z",
         "h2h": {
           "home": 2.48,
           "draw": 3.49,
@@ -192,6 +261,29 @@
             "price": 2.4
           }
         }
+      },
+      {
+        "ts": "2026-08-10T23:44:01Z",
+        "h2h": {
+          "home": 2.18,
+          "draw": 3.4,
+          "away": 3.2
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.75,
+          "under": 2.05
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.67
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.4
+          }
+        }
       }
     ],
     "toulouse|lyon": [
@@ -240,6 +332,29 @@
             "price": 1.58
           }
         }
+      },
+      {
+        "ts": "2026-08-10T23:44:01Z",
+        "h2h": {
+          "home": 3.35,
+          "draw": 3.64,
+          "away": 2.02
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.72,
+          "under": 2.1
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 2.62
+          },
+          "away": {
+            "point": 0.0,
+            "price": 1.58
+          }
+        }
       }
     ],
     "troyes|paris fc": [
@@ -268,6 +383,29 @@
       },
       {
         "ts": "2026-08-10T16:55:20Z",
+        "h2h": {
+          "home": 2.72,
+          "draw": 3.48,
+          "away": 2.46
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.68,
+          "under": 2.15
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 2.06
+          },
+          "away": {
+            "point": 0.0,
+            "price": 1.81
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T23:44:01Z",
         "h2h": {
           "home": 2.72,
           "draw": 3.48,
@@ -336,6 +474,29 @@
             "price": 3.35
           }
         }
+      },
+      {
+        "ts": "2026-08-10T23:44:01Z",
+        "h2h": {
+          "home": 4.95,
+          "draw": 3.75,
+          "away": 1.67
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.94,
+          "under": 1.85
+        },
+        "spreads": {
+          "home": {
+            "point": 1.5,
+            "price": 1.4
+          },
+          "away": {
+            "point": -1.5,
+            "price": 3.35
+          }
+        }
       }
     ],
     "le havre|as monaco": [
@@ -368,6 +529,29 @@
           "home": 3.45,
           "draw": 3.8,
           "away": 1.975
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.6,
+          "under": 2.28
+        },
+        "spreads": {
+          "home": {
+            "point": 0.5,
+            "price": 1.865
+          },
+          "away": {
+            "point": -0.5,
+            "price": 1.98
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T23:44:01Z",
+        "h2h": {
+          "home": 3.5,
+          "draw": 3.8,
+          "away": 1.96
         },
         "totals": {
           "line": 2.5,
@@ -432,6 +616,29 @@
             "price": 1.83
           }
         }
+      },
+      {
+        "ts": "2026-08-10T23:44:01Z",
+        "h2h": {
+          "home": 1.4,
+          "draw": 5.3,
+          "away": 6.5
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.95,
+          "under": 1.84
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 2.08
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.83
+          }
+        }
       }
     ]
   },
@@ -444,7 +651,7 @@
       "markets": {
         "h2h": {
           "home": 1.67,
-          "draw": 4.13,
+          "draw": 4.1,
           "away": 4.45
         },
         "totals": {
@@ -482,7 +689,7 @@
         "h2h": {
           "home": 1.6,
           "draw": 4.1,
-          "away": 5.1
+          "away": 5.12
         },
         "totals": {
           "line": 2.5,
@@ -556,7 +763,7 @@
         "h2h": {
           "home": 2.18,
           "draw": 3.4,
-          "away": 3.15
+          "away": 3.2
         },
         "totals": {
           "line": 2.5,
@@ -591,7 +798,7 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 3.4,
+          "home": 3.35,
           "draw": 3.64,
           "away": 2.02
         },
@@ -667,7 +874,7 @@
         "h2h": {
           "home": 4.95,
           "draw": 3.75,
-          "away": 1.68
+          "away": 1.67
         },
         "totals": {
           "line": 2.5,
@@ -702,9 +909,9 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 3.45,
+          "home": 3.5,
           "draw": 3.8,
-          "away": 1.975
+          "away": 1.96
         },
         "totals": {
           "line": 2.5,
@@ -740,7 +947,7 @@
       "markets": {
         "h2h": {
           "home": 1.4,
-          "draw": 5.25,
+          "draw": 5.3,
           "away": 6.5
         },
         "totals": {
