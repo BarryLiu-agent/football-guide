@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T17:19:46Z",
+  "generatedAt": "2026-08-10T17:23:19Z",
   "dateRange": {
     "from": "2026-08-03",
     "to": "2026-09-14"
@@ -2802,7 +2802,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-10T08:25:08Z",
+      "lastUpdated": "2026-08-10T08:25:07Z",
       "homeTeam": {
         "id": 263,
         "name": "Deportivo Alavés",
@@ -2862,7 +2862,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-10T08:25:08Z",
+      "lastUpdated": "2026-08-10T08:25:07Z",
       "homeTeam": {
         "id": 559,
         "name": "Sevilla FC",
