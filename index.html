@@ -198,6 +198,7 @@ table.standings .down { color: var(--red); }
 .chip:hover { border-color: var(--border-light); color: var(--text); }
 .chip.active { background: var(--gold); color: #0b0e14; font-weight: 700; border-color: var(--gold); }
 
+.value-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; background:rgba(240,185,11,.15); color:var(--gold); border:1px solid rgba(240,185,11,.4); animation: pulse 1.5s infinite; }
 .xg-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; background:rgba(59,130,246,.15); color:#60a5fa; border:1px solid rgba(59,130,246,.35); }
 .val-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; background:rgba(240,185,11,.12); color:#fbbf24; border:1px solid rgba(240,185,11,.4); display:inline-block; }
 
@@ -387,7 +388,8 @@ table.standings .down { color: var(--red); }
       <div class="mkt-tabs" id="mktTabs"></div>
       <div id="mktContent"></div>
       <div class="section-title">📝 数据分析</div>
-      <div class="analysis-actions">
+      <div id="modelBox" style="display:none"></div>
+    <div class="analysis-actions">
         <button class="btn" onclick="refreshAnalysis()">🔄 刷新分析</button>
         <span class="refresh-note" id="refreshNote"></span>
       </div>
@@ -621,6 +623,12 @@ function renderCard(m) {
   const score = getScore(m);
   // 异动标红：赔率涨跌 >= 0.2
   let hot = '';
+  // 模型价值标记（Elo 与市场差值 >= 5%）
+  let value = '';
+  if (pred && pred.valueMarks && pred.valueMarks.picks && pred.valueMarks.picks.length) {
+    const cn = { home: '主胜', draw: '平局', away: '客胜' };
+    value = '<span class="value-tag">💰 ' + pred.valueMarks.picks.map(k => cn[k]).join('/') + '</span>';
+  }
   if (pred && pred.oddsChange) {
     const oc = pred.oddsChange;
     if (['home','draw','away'].some(k => oc[k] != null && Math.abs(oc[k]) >= 0.2)) hot = '<span class="hot-tag">🔥异动</span>';
@@ -650,7 +658,7 @@ function renderCard(m) {
     ${jc ? `<div class="mc-badge-jc">竞彩</div>` : ''}
     ${(() => { const xm = findXgMatch(homeName, awayName); return (xm && (xm.xgHome != null || xm.xgAway != null)) ? `<span class="xg-tag">🎯 ${(xm.xgHome ?? 0).toFixed(1)}-${(xm.xgAway ?? 0).toFixed(1)}</span>` : ''; })()}
     ${pred && pred.valuePicks && pred.valuePicks.length ? `<span class="val-tag" title="${pred.valuePicks.map(v => v.label + ' 模型' + Math.round(v.modelProb*100) + '% vs 赔率' + Math.round(v.oddsProb*100) + '%').join('；')}">💰 价值 ${pred.valuePicks.map(v => v.label).join('/')}</span>` : ''}
-    ${hot || diff ? `<div style="display:flex;gap:4px;margin-top:6px;flex-wrap:wrap">${hot}${diff}</div>` : ''}
+    ${hot || diff || value ? `<div style="display:flex;gap:4px;margin-top:6px;flex-wrap:wrap">${hot}${value}${diff}</div>` : ''}
   </div>`;
 }
 
@@ -787,6 +795,17 @@ function openDetail(homeName, awayName) {
   )).sort((a, b) => b.utcDate.localeCompare(a.utcDate)).slice(0, 5);
   // 单场实时 xG
   const xm = findXgMatch(homeName, awayName);
+  // 模型观点（Elo vs 市场）
+  const modelBox = $('modelBox');
+  if (currentPred && currentPred.modelProbs) {
+    const mp = currentPred.modelProbs, vm = currentPred.valueMarks || {};
+    const cn = { home: '主胜', draw: '平局', away: '客胜' };
+    const picks = (vm.picks || []).map(k => cn[k]).join('/');
+    modelBox.innerHTML = `<div class="section-title" style="margin-top:10px">🧠 模型观点（Elo 独立模型）</div>
+      <div class="analysis-box" style="font-size:12px">模型胜率：主胜 ${pct(mp.home)} / 平 ${pct(mp.draw)} / 客胜 ${pct(mp.away)}
+      ${picks ? `<br><span style="color:var(--gold);font-weight:700">💰 模型认为 ${picks} 存在价值（优于市场 ${(vm.edges?.[vm.picks?.[0]]*100).toFixed(0) || 5}%+）</span>` : '<br><span style="color:var(--muted)">与市场一致，无显著价值机会</span>'}</div>`;
+    modelBox.style.display = 'block';
+  }
   const xgBox = $('xgBox');
   if (xm && (xm.xgHome != null || xm.xgAway != null)) {
     const st = xm.status === 'finished' ? '已完赛' : (xm.minute ? '第' + xm.minute + '分钟' : '未开赛');
@@ -858,6 +877,12 @@ function switchMkt(mkt) {
     };
     const kellyTxt = (v) => v == null ? '' : `<div class="sub" style="color:${v > 0.05 ? '#22c55e' : (v < 0 ? '#ef4444' : '#9ca3af')}">凯利 ${v > 0 ? '+' : ''}${v.toFixed(2)}</div>`;
     el.innerHTML = `<div class="odds-grid">
+      ${(() => {
+        const mp = p.modelProbs || {};
+        const vm = p.valueMarks || {};
+        const edge = (k) => vm.edges && vm.edges[k] != null ? `<div class="sub" style="color:${vm.edges[k] >= 0.05 ? 'var(--gold)' : 'var(--muted)'}">模型 ${pct(mp[k])} ${vm.edges[k] >= 0.05 ? '💰+' + (vm.edges[k]*100).toFixed(0) + '%' : ''}</div>` : '';
+        return '';
+      })()}
       <div class="odds-box"><div class="label">主胜</div><div class="value">${ro.home ?? '—'}${chg(oc.home)}</div><div class="sub">${pct(pr.home)}</div>${kellyTxt(kl.home)}</div>
       <div class="odds-box"><div class="label">平局</div><div class="value">${ro.draw ?? '—'}${chg(oc.draw)}</div><div class="sub">${pct(pr.draw)}</div>${kellyTxt(kl.draw)}</div>
       <div class="odds-box"><div class="label">客胜</div><div class="value">${ro.away ?? '—'}${chg(oc.away)}</div><div class="sub">${pct(pr.away)}</div>${kellyTxt(kl.away)}</div>

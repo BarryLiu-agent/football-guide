@@ -610,7 +610,7 @@ def main():
                 op = odds_result["prob"]
                 for k, label in (("home", "主胜"), ("draw", "平局"), ("away", "客胜")):
                     diff = pred_elo[k] - op[k]
-                    if abs(diff) >= 0.05:
+                    if diff >= 0.10:  # 只保留模型比市场明显看好的方向（≥10%）
                         value_picks.append({
                             "side": k, "label": label,
                             "modelProb": round(pred_elo[k], 3),
@@ -634,7 +634,7 @@ def main():
             pred["expectedGoals"] = {
                 "home": round(score_model.lam_h, 2), "away": round(score_model.lam_a, 2)
             }
-            pred["analysis"] = AnalysisWriter.generate(home, away, odds_result, msg_result, score_model, ou, pred["spreads"], pred["standings"])
+            pred["analysis"] = AnalysisWriter.generate(home, away, odds_result, msg_result, score_model, ou, pred["spreads"], pred["standings"], {"valuePicks": pred.get("valuePicks") or []})
             predictions.append(pred)
 
     out = {
