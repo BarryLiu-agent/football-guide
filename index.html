@@ -199,6 +199,7 @@ table.standings .down { color: var(--red); }
 .chip.active { background: var(--gold); color: #0b0e14; font-weight: 700; border-color: var(--gold); }
 
 .xg-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; background:rgba(59,130,246,.15); color:#60a5fa; border:1px solid rgba(59,130,246,.35); }
+.val-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; background:rgba(240,185,11,.12); color:#fbbf24; border:1px solid rgba(240,185,11,.4); display:inline-block; }
 
 /* ===== 异动/难度标签 ===== */
 .hot-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; background:rgba(239,68,68,.15); color:#f87171; border:1px solid rgba(239,68,68,.4); }
@@ -208,6 +209,7 @@ table.standings .down { color: var(--red); }
 .diff-tag.easy { background:rgba(34,197,94,.12); color:#4ade80; }
 
 .xg-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; background:rgba(59,130,246,.15); color:#60a5fa; border:1px solid rgba(59,130,246,.35); }
+.val-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; background:rgba(240,185,11,.12); color:#fbbf24; border:1px solid rgba(240,185,11,.4); display:inline-block; }
 
 /* ===== 异动/难度标签 ===== */
 .hot-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; background:rgba(239,68,68,.15); color:#f87171; border:1px solid rgba(239,68,68,.4); }
@@ -390,6 +392,7 @@ table.standings .down { color: var(--red); }
         <span class="refresh-note" id="refreshNote"></span>
       </div>
       <div class="analysis-box" id="analysisBox"></div>
+      <div id="valBox"></div>
       <div id="xgBox"></div>
       <div id="h2hBox"></div>
     </div>
@@ -614,6 +617,7 @@ function renderCard(m) {
     ${pred ? `<div class="mc-pred"><div class="ps">${pred.predictedScore}</div><div class="pc">预测 ${Math.round((pred.confidence||0)*100)}%</div></div>` : ''}
     ${jc ? `<div class="mc-badge-jc">竞彩</div>` : ''}
     ${(() => { const xm = findXgMatch(homeName, awayName); return (xm && (xm.xgHome != null || xm.xgAway != null)) ? `<span class="xg-tag">🎯 ${(xm.xgHome ?? 0).toFixed(1)}-${(xm.xgAway ?? 0).toFixed(1)}</span>` : ''; })()}
+    ${pred && pred.valuePicks && pred.valuePicks.length ? `<span class="val-tag" title="${pred.valuePicks.map(v => v.label + ' 模型' + Math.round(v.modelProb*100) + '% vs 赔率' + Math.round(v.oddsProb*100) + '%').join('；')}">💰 价值 ${pred.valuePicks.map(v => v.label).join('/')}</span>` : ''}
     ${hot || diff ? `<div style="display:flex;gap:4px;margin-top:6px;flex-wrap:wrap">${hot}${diff}</div>` : ''}
   </div>`;
 }
