@@ -1,0 +1,90 @@
+{
+ "generatedAt": "2026-08-10T17:42:24Z",
+ "source": "2025/26 赛季 Elo+泊松 盘口模型校准",
+ "total": 1752,
+ "ou25": {
+  "overall": 0.5303,
+  "buckets": [
+   {
+    "label": "≤40%",
+    "n": 140,
+    "hitRate": 0.4786,
+    "avgProb": 0.365,
+    "bias": 0.1134
+   },
+   {
+    "label": "40-50%",
+    "n": 309,
+    "hitRate": 0.5307,
+    "avgProb": 0.436,
+    "bias": 0.0948
+   },
+   {
+    "label": "50-60%",
+    "n": 970,
+    "hitRate": 0.5474,
+    "avgProb": 0.563,
+    "bias": -0.0152
+   },
+   {
+    "label": "60-70%",
+    "n": 333,
+    "hitRate": 0.5015,
+    "avgProb": 0.603,
+    "bias": -0.1014
+   }
+  ]
+ },
+ "ah05": {
+  "overall": 0.4401,
+  "buckets": [
+   {
+    "label": "≤40%",
+    "n": 435,
+    "hitRate": 0.246,
+    "avgProb": 0.336,
+    "bias": -0.0899
+   },
+   {
+    "label": "40-50%",
+    "n": 654,
+    "hitRate": 0.4159,
+    "avgProb": 0.458,
+    "bias": -0.0418
+   },
+   {
+    "label": "50-60%",
+    "n": 394,
+    "hitRate": 0.5457,
+    "avgProb": 0.544,
+    "bias": 0.0019
+   },
+   {
+    "label": "60-70%",
+    "n": 269,
+    "hitRate": 0.658,
+    "avgProb": 0.652,
+    "bias": 0.0056
+   }
+  ]
+ },
+ "ah15": {
+  "overall": 0.2237,
+  "buckets": [
+   {
+    "label": "≤40%",
+    "n": 1575,
+    "hitRate": 0.2019,
+    "avgProb": 0.237,
+    "bias": -0.035
+   },
+   {
+    "label": "40-50%",
+    "n": 177,
+    "hitRate": 0.4181,
+    "avgProb": 0.445,
+    "bias": -0.0266
+   }
+  ]
+ }
+}
