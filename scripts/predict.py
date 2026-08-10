@@ -641,7 +641,7 @@ def main():
             pred["expectedGoals"] = {
                 "home": round(score_model.lam_h, 2), "away": round(score_model.lam_a, 2)
             }
-            pred["analysis"] = AnalysisWriter.generate(home, away, odds_result, msg_result, score_model, ou, pred["spreads"], pred["standings"], value_picks)
+            pred["analysis"] = AnalysisWriter.generate(home, away, odds_result, msg_result, score_model, ou, pred["spreads"], pred["standings"], {"valuePicks": value_picks})
             predictions.append(pred)
     out = {
         "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
