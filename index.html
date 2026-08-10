@@ -740,6 +740,24 @@ function openDetail(homeName, awayName) {
   } else {
     xgBox.innerHTML = '<div class="section-title" style="margin-top:12px">🎯 本场 xG</div><div style="font-size:12px;color:var(--muted);padding:6px 0">暂无本场 xG 数据（开赛后本地脚本每 15 分钟自动更新）</div>';
   }
+  // Elo 价值检测
+  const valBox = $('valBox');
+  if (currentPred && currentPred.eloProb) {
+    const elo = currentPred.eloProb, vp = currentPred.valuePicks || [];
+    const sideName = { home: '主胜', draw: '平局', away: '客胜' };
+    valBox.innerHTML = '<div class="section-title" style="margin-top:12px">🎓 Elo 战力模型 <span style="font-size:10px;color:var(--muted);font-weight:400">Elo ' + (currentPred.eloRatings?.home ?? '—') + ' vs ' + (currentPred.eloRatings?.away ?? '—') + '</span></div>' +
+      '<div class="odds-grid">' +
+      '<div class="odds-box"><div class="label">主胜</div><div class="value">' + Math.round(elo.home * 100) + '%</div><div class="sub">模型</div></div>' +
+      '<div class="odds-box"><div class="label">平局</div><div class="value">' + Math.round(elo.draw * 100) + '%</div><div class="sub">模型</div></div>' +
+      '<div class="odds-box"><div class="label">客胜</div><div class="value">' + Math.round(elo.away * 100) + '%</div><div class="sub">模型</div></div>' +
+      '</div>' +
+      (vp.length
+        ? '<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px">' + vp.map(v => '<span class="val-tag">💰 ' + v.label + '：模型 ' + Math.round(v.modelProb * 100) + '% vs 盘口 ' + Math.round(v.oddsProb * 100) + '%（差 ' + (v.edge > 0 ? '+' : '') + Math.round(v.edge * 100) + '%）</span>').join('') + '</div><div style="font-size:11px;color:var(--muted);margin-bottom:6px">价值 = 独立模型概率与赔率隐含概率差 &gt;5%，长期按此方向有正期望</div>'
+        : '<div style="font-size:11px;color:var(--muted);margin-bottom:6px">模型与盘口一致，无显著价值差</div>') +
+      '<div style="font-size:10px;color:var(--muted)">⚠️ 模型仅为数据分析参考，不构成投注建议</div>';
+  } else {
+    valBox.innerHTML = '<div class="section-title" style="margin-top:12px">🎓 Elo 战力模型</div><div style="font-size:12px;color:var(--muted);padding:6px 0">暂无 Elo 数据</div>';
+  }
   const h2hEl = $('h2hBox');
   if (h2h.length) {
     h2hEl.innerHTML = '<div class="section-title" style="margin-top:12px">🔄 本赛季交锋</div>' + h2h.map(f => {
