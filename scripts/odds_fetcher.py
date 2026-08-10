@@ -336,6 +336,22 @@ def main():
             time.sleep(0.5)  # 礼貌限速
         merged = aggregate(per_source)
         if merged:
+            # 赔率快照：读取旧文件作为"上次快照"（初盘→即时盘对比）
+            prev = {}
+            old_path = ODDS_DIR / f"{league}.json"
+            if old_path.exists():
+                try:
+                    with open(old_path, encoding="utf-8") as f:
+                        old_data = json.load(f)
+                    for om in old_data.get("matches", []):
+                        k = (om["homeTeam"].lower(), om["awayTeam"].lower())
+                        prev[k] = om.get("markets", {}).get("h2h")
+                except Exception:
+                    pass
+            for m in merged:
+                k = (m["homeTeam"].lower(), m["awayTeam"].lower())
+                if k in prev:
+                    m["prevH2h"] = prev[k]
             out = {
                 "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
                 "league": league,

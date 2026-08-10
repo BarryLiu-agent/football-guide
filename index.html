@@ -683,11 +683,22 @@ function switchMkt(mkt) {
     if (!p) { el.innerHTML = '<div class="empty-state">暂无欧赔数据</div>'; return; }
     const pr = p.probabilities || {};
     const ro = p.rawOdds || {};
+    const oc = p.oddsChange || {};
+    const kl = p.kelly || {};
+    const chg = (v) => {
+      if (v == null) return '';
+      const cls = v > 0.01 ? 'up' : (v < -0.01 ? 'down' : '');
+      const arrow = v > 0.01 ? '▲' : (v < -0.01 ? '▼' : '');
+      const color = v > 0.01 ? '#f59e0b' : (v < -0.01 ? '#22c55e' : '');
+      return `<span style="color:${color};font-size:11px;margin-left:4px" title="较上次快照变化">${arrow}${v > 0 ? '+' : ''}${v.toFixed(2)}</span>`;
+    };
+    const kellyTxt = (v) => v == null ? '' : `<div class="sub" style="color:${v > 0.05 ? '#22c55e' : (v < 0 ? '#ef4444' : '#9ca3af')}">凯利 ${v > 0 ? '+' : ''}${v.toFixed(2)}</div>`;
     el.innerHTML = `<div class="odds-grid">
-      <div class="odds-box"><div class="label">主胜</div><div class="value">${ro.home ?? '—'}</div><div class="sub">${pct(pr.home)}</div></div>
-      <div class="odds-box"><div class="label">平局</div><div class="value">${ro.draw ?? '—'}</div><div class="sub">${pct(pr.draw)}</div></div>
-      <div class="odds-box"><div class="label">客胜</div><div class="value">${ro.away ?? '—'}</div><div class="sub">${pct(pr.away)}</div></div>
-    </div>`;
+      <div class="odds-box"><div class="label">主胜</div><div class="value">${ro.home ?? '—'}${chg(oc.home)}</div><div class="sub">${pct(pr.home)}</div>${kellyTxt(kl.home)}</div>
+      <div class="odds-box"><div class="label">平局</div><div class="value">${ro.draw ?? '—'}${chg(oc.draw)}</div><div class="sub">${pct(pr.draw)}</div>${kellyTxt(kl.draw)}</div>
+      <div class="odds-box"><div class="label">客胜</div><div class="value">${ro.away ?? '—'}${chg(oc.away)}</div><div class="sub">${pct(pr.away)}</div>${kellyTxt(kl.away)}</div>
+    </div>
+    <div style="font-size:10px;color:var(--muted);margin-top:6px;text-align:center">▲ 赔率上升（看淡） ▼ 赔率下降（看好） · 凯利>0 表示赔率有正期望价值</div>`;
   } else if (mkt === 'jc') {
     if (!jc) { el.innerHTML = '<div class="empty-state">该场比赛未开售竞彩（或不在售）</div>'; return; }
     const had = jc.had || {};

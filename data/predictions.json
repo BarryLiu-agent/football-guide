@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T13:56:02Z",
+  "generatedAt": "2026-08-10T12:43:46Z",
   "total": 138,
   "rulesVersion": "1.0",
   "predictions": [
@@ -61,6 +61,12 @@
         "home": 1.29,
         "draw": 6.0,
         "away": 8.0
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.216,
+        "draw": -0.013,
+        "away": -0.009
       },
       "spreads": {
         "home": {
@@ -148,6 +154,12 @@
         "draw": 3.65,
         "away": 2.28
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.036,
+        "draw": -0.025,
+        "away": -0.051
+      },
       "spreads": {
         "home": {
           "point": 0.0,
@@ -233,6 +245,12 @@
         "home": 5.1,
         "draw": 4.5,
         "away": 1.53
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.016,
+        "draw": -0.019,
+        "away": -0.127
       },
       "spreads": {
         "home": {
@@ -320,6 +338,12 @@
         "draw": 4.5,
         "away": 5.1
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.127,
+        "draw": -0.019,
+        "away": -0.016
+      },
       "spreads": {
         "home": {
           "point": -1.0,
@@ -405,6 +429,12 @@
         "home": 2.35,
         "draw": 3.5,
         "away": 2.8
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.047,
+        "draw": -0.026,
+        "away": -0.036
       },
       "spreads": {
         "home": {
@@ -492,6 +522,12 @@
         "draw": 3.95,
         "away": 4.5
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.103,
+        "draw": -0.023,
+        "away": -0.02
+      },
       "spreads": {
         "home": {
           "point": -1.5,
@@ -577,6 +613,12 @@
         "home": 1.32,
         "draw": 5.25,
         "away": 8.2
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.204,
+        "draw": -0.015,
+        "away": -0.009
       },
       "spreads": {
         "home": {
@@ -664,6 +706,12 @@
         "draw": 3.6,
         "away": 3.4
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.062,
+        "draw": -0.024,
+        "away": -0.026
+      },
       "spreads": {
         "home": {
           "point": -0.5,
@@ -749,6 +797,12 @@
         "home": 2.1,
         "draw": 3.7,
         "away": 3.1
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.059,
+        "draw": -0.024,
+        "away": -0.031
       },
       "spreads": {
         "home": {
@@ -836,6 +890,12 @@
         "draw": 3.6,
         "away": 5.25
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.094,
+        "draw": -0.024,
+        "away": -0.015
+      },
       "spreads": {
         "home": {
           "point": -0.5,
@@ -921,6 +981,12 @@
         "home": 1.97,
         "draw": 3.45,
         "away": 3.65
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.069,
+        "draw": -0.027,
+        "away": -0.025
       },
       "spreads": {
         "home": {
@@ -1008,6 +1074,12 @@
         "draw": 3.85,
         "away": 5.8
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.118,
+        "draw": -0.023,
+        "away": -0.014
+      },
       "spreads": {
         "home": {
           "point": -1.0,
@@ -1093,6 +1165,12 @@
         "home": 2.1,
         "draw": 3.2,
         "away": 3.475
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.065,
+        "draw": -0.032,
+        "away": -0.029
       },
       "spreads": {
         "home": {
@@ -1180,6 +1258,12 @@
         "draw": 3.1,
         "away": 3.5
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.055,
+        "draw": -0.031,
+        "away": -0.026
+      },
       "spreads": {
         "home": {
           "point": -0.5,
@@ -1265,6 +1349,12 @@
         "home": 1.23,
         "draw": 5.824999999999999,
         "away": 12.0
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.277,
+        "draw": -0.013,
+        "away": -0.006
       },
       "spreads": {
         "home": {
@@ -1352,6 +1442,12 @@
         "draw": 3.075,
         "away": 2.565
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.048,
+        "draw": -0.039,
+        "away": -0.052
+      },
       "spreads": {
         "home": {
           "point": 1.0,
@@ -1437,6 +1533,12 @@
         "home": 2.0,
         "draw": 3.2,
         "away": 3.625
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.081,
+        "draw": -0.037,
+        "away": -0.031
       },
       "spreads": {
         "home": {
@@ -1524,6 +1626,12 @@
         "draw": 3.6,
         "away": 5.0
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.126,
+        "draw": -0.031,
+        "away": -0.02
+      },
       "spreads": {
         "home": {
           "point": -1.0,
@@ -1609,6 +1717,12 @@
         "home": 3.2,
         "draw": 3.4,
         "away": 2.06
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.038,
+        "draw": -0.035,
+        "away": -0.08
       },
       "spreads": {
         "home": {
@@ -1696,6 +1810,12 @@
         "draw": 3.5,
         "away": 4.33
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.118,
+        "draw": -0.035,
+        "away": -0.026
+      },
       "spreads": {
         "home": {
           "point": -1.0,
@@ -1781,6 +1901,12 @@
         "home": 1.9,
         "draw": 3.35,
         "away": 3.75
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.093,
+        "draw": -0.036,
+        "away": -0.03
       },
       "spreads": {
         "home": {
@@ -1868,6 +1994,12 @@
         "draw": 3.25,
         "away": 2.75
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.065,
+        "draw": -0.039,
+        "away": -0.05
+      },
       "spreads": {
         "home": {
           "point": -1.0,
@@ -1953,6 +2085,12 @@
         "home": 3.9,
         "draw": 3.3,
         "away": 1.85
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.031,
+        "draw": -0.04,
+        "away": -0.107
       },
       "spreads": {
         "home": {
@@ -2040,6 +2178,12 @@
         "draw": 3.1,
         "away": 3.15
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.072,
+        "draw": -0.041,
+        "away": -0.04
+      },
       "spreads": {
         "home": {
           "point": -1.0,
@@ -2125,6 +2269,12 @@
         "home": 1.57,
         "draw": 3.7,
         "away": 5.25
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.156,
+        "draw": -0.033,
+        "away": -0.021
       },
       "spreads": {
         "home": {
@@ -2212,6 +2362,12 @@
         "draw": 4.0,
         "away": 5.6
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.143,
+        "draw": -0.025,
+        "away": -0.017
+      },
       "spreads": {
         "home": {
           "point": -1.0,
@@ -2297,6 +2453,12 @@
         "home": 2.165,
         "draw": 3.3,
         "away": 3.2
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.062,
+        "draw": -0.031,
+        "away": -0.033
       },
       "spreads": {
         "home": {
@@ -2384,6 +2546,12 @@
         "draw": 3.3,
         "away": 2.75
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.048,
+        "draw": -0.03,
+        "away": -0.04
+      },
       "spreads": {
         "home": {
           "point": 0.0,
@@ -2469,6 +2637,12 @@
         "home": 2.62,
         "draw": 3.25,
         "away": 2.62
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.041,
+        "draw": -0.029,
+        "away": -0.041
       },
       "spreads": {
         "home": {
@@ -2556,6 +2730,12 @@
         "draw": 5.0,
         "away": 8.5
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.266,
+        "draw": -0.02,
+        "away": -0.011
+      },
       "spreads": {
         "home": {
           "point": -1.5,
@@ -2641,6 +2821,12 @@
         "home": 2.0,
         "draw": 3.4,
         "away": 3.5
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.074,
+        "draw": -0.031,
+        "away": -0.03
       },
       "spreads": {
         "home": {
@@ -2728,6 +2914,12 @@
         "draw": 3.4,
         "away": 3.07
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.053,
+        "draw": -0.027,
+        "away": -0.031
+      },
       "spreads": {
         "home": {
           "point": 0.0,
@@ -2813,6 +3005,12 @@
         "home": 2.4,
         "draw": 3.25,
         "away": 2.88
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.048,
+        "draw": -0.03,
+        "away": -0.036
       },
       "spreads": {
         "home": {
@@ -2900,6 +3098,12 @@
         "draw": 3.25,
         "away": 2.8
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.045,
+        "draw": -0.029,
+        "away": -0.037
+      },
       "spreads": {
         "home": {
           "point": 0.0,
@@ -2985,6 +3189,12 @@
         "home": 3.3,
         "draw": 3.5,
         "away": 2.05
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.031,
+        "draw": -0.028,
+        "away": -0.068
       },
       "spreads": {
         "home": {
@@ -3072,6 +3282,12 @@
         "draw": 3.4850000000000003,
         "away": 2.32
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.039,
+        "draw": -0.028,
+        "away": -0.053
+      },
       "spreads": {
         "home": {
           "point": 0.0,
@@ -3157,6 +3373,12 @@
         "home": 2.32,
         "draw": 3.45,
         "away": 2.755
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.059,
+        "draw": -0.032,
+        "away": -0.044
       },
       "spreads": {
         "home": {
@@ -3244,6 +3466,12 @@
         "draw": 3.2,
         "away": 2.9
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.057,
+        "draw": -0.035,
+        "away": -0.04
+      },
       "spreads": {
         "home": {
           "point": 0.0,
@@ -3329,6 +3557,12 @@
         "home": 1.93,
         "draw": 3.525,
         "away": 3.425
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.092,
+        "draw": -0.034,
+        "away": -0.035
       },
       "spreads": {
         "home": {
@@ -3416,6 +3650,12 @@
         "draw": 4.33,
         "away": 4.5
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.141,
+        "draw": -0.024,
+        "away": -0.023
+      },
       "spreads": {
         "home": {
           "point": -1.0,
@@ -3501,6 +3741,12 @@
         "home": 6.9,
         "draw": 4.85,
         "away": 1.36
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.013,
+        "draw": -0.021,
+        "away": -0.221
       },
       "spreads": {
         "home": {
@@ -3588,6 +3834,12 @@
         "draw": 3.3,
         "away": 2.475
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.049,
+        "draw": -0.035,
+        "away": -0.054
+      },
       "spreads": {
         "home": {
           "point": 0.0,
@@ -3673,6 +3925,12 @@
         "home": 1.27,
         "draw": 5.4,
         "away": 9.0
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.286,
+        "draw": -0.018,
+        "away": -0.01
       },
       "spreads": {
         "home": {
@@ -3760,6 +4018,12 @@
         "draw": 4.275,
         "away": 6.1
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.192,
+        "draw": -0.026,
+        "away": -0.017
+      },
       "spreads": {
         "home": {
           "point": -1.5,
@@ -3845,6 +4109,12 @@
         "home": 1.8050000000000002,
         "draw": 3.6,
         "away": 3.975
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.096,
+        "draw": -0.03,
+        "away": -0.026
       },
       "spreads": {
         "home": {
@@ -3932,6 +4202,12 @@
         "draw": 3.7,
         "away": 1.84
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.029,
+        "draw": -0.029,
+        "away": -0.092
+      },
       "spreads": {
         "home": {
           "point": 0.0,
@@ -4017,6 +4293,12 @@
         "home": 1.49,
         "draw": 4.25,
         "away": 5.75
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.152,
+        "draw": -0.023,
+        "away": -0.016
       },
       "spreads": {
         "home": {
@@ -4104,6 +4386,12 @@
         "draw": 3.0,
         "away": 1.75
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.017,
+        "draw": -0.038,
+        "away": -0.103
+      },
       "spreads": {
         "home": {
           "point": 0.75,
@@ -4189,6 +4477,12 @@
         "home": 1.43,
         "draw": 3.75,
         "away": 8.0
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.194,
+        "draw": -0.03,
+        "away": -0.012
       },
       "spreads": {
         "home": {
@@ -4276,6 +4570,12 @@
         "draw": 3.72,
         "away": 2.15
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.032,
+        "draw": -0.023,
+        "away": -0.055
+      },
       "spreads": {
         "home": {
           "point": 0.25,
@@ -4361,6 +4661,12 @@
         "home": 2.3,
         "draw": 3.5,
         "away": 2.75
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.06,
+        "draw": -0.031,
+        "away": -0.044
       },
       "spreads": {
         "home": {
@@ -4448,6 +4754,12 @@
         "draw": 4.05,
         "away": 1.54
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.03,
+        "draw": -0.035,
+        "away": -0.196
+      },
       "spreads": {
         "home": {
           "point": 1.0,
@@ -4533,6 +4845,12 @@
         "home": 2.62,
         "draw": 3.6,
         "away": 2.31
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.052,
+        "draw": -0.033,
+        "away": -0.065
       },
       "spreads": {
         "home": {
@@ -4620,6 +4938,12 @@
         "draw": 4.16,
         "away": 1.62
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.023,
+        "draw": -0.025,
+        "away": -0.126
+      },
       "spreads": {
         "home": {
           "point": 1.0,
@@ -4705,6 +5029,12 @@
         "home": 1.8,
         "draw": 3.75,
         "away": 3.625
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.112,
+        "draw": -0.032,
+        "away": -0.034
       },
       "spreads": {
         "home": {
@@ -4792,6 +5122,12 @@
         "draw": 3.6,
         "away": 2.285
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.05,
+        "draw": -0.032,
+        "away": -0.065
+      },
       "spreads": {
         "home": {
           "point": 0.0,
@@ -4877,6 +5213,12 @@
         "home": 1.255,
         "draw": 5.55,
         "away": 8.45
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.341,
+        "draw": -0.019,
+        "away": -0.012
       },
       "spreads": {
         "home": {
@@ -4964,6 +5306,12 @@
         "draw": 5.0,
         "away": 6.0
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.257,
+        "draw": -0.023,
+        "away": -0.019
+      },
       "spreads": {
         "home": {
           "point": -1.5,
@@ -5049,6 +5397,12 @@
         "home": 1.505,
         "draw": 4.199999999999999,
         "away": 5.0
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.184,
+        "draw": -0.029,
+        "away": -0.023
       },
       "spreads": {
         "home": {
@@ -5136,6 +5490,12 @@
         "draw": 4.13,
         "away": 4.4
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.095,
+        "draw": -0.02,
+        "away": -0.019
+      },
       "spreads": {
         "home": {
           "point": -1.0,
@@ -5221,6 +5581,12 @@
         "home": 1.59,
         "draw": 4.1,
         "away": 5.0
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.115,
+        "draw": -0.022,
+        "away": -0.017
       },
       "spreads": {
         "home": {
@@ -5308,6 +5674,12 @@
         "draw": 3.45,
         "away": 2.63
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.05,
+        "draw": -0.03,
+        "away": -0.045
+      },
       "spreads": {
         "home": {
           "point": 0.0,
@@ -5393,6 +5765,12 @@
         "home": 2.15,
         "draw": 3.5,
         "away": 3.1
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.059,
+        "draw": -0.027,
+        "away": -0.033
       },
       "spreads": {
         "home": {
@@ -5480,6 +5858,12 @@
         "draw": 3.6,
         "away": 2.0
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.03,
+        "draw": -0.027,
+        "away": -0.071
+      },
       "spreads": {
         "home": {
           "point": 0.0,
@@ -5565,6 +5949,12 @@
         "home": 2.7,
         "draw": 3.5,
         "away": 2.4
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.04,
+        "draw": -0.027,
+        "away": -0.048
       },
       "spreads": {
         "home": {
@@ -5652,6 +6042,12 @@
         "draw": 3.7,
         "away": 1.67
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.017,
+        "draw": -0.025,
+        "away": -0.102
+      },
       "spreads": {
         "home": {
           "point": 1.5,
@@ -5737,6 +6133,12 @@
         "home": 3.3,
         "draw": 3.75,
         "away": 2.0
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.028,
+        "draw": -0.024,
+        "away": -0.065
       },
       "spreads": {
         "home": {
@@ -5824,6 +6226,12 @@
         "draw": 5.25,
         "away": 6.5
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.17,
+        "draw": -0.015,
+        "away": -0.012
+      },
       "spreads": {
         "home": {
           "point": -1.5,
@@ -5909,6 +6317,12 @@
         "home": 1.8,
         "draw": 4.0,
         "away": 3.6
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.096,
+        "draw": -0.026,
+        "away": -0.03
       },
       "spreads": {
         "home": {
@@ -5996,6 +6410,12 @@
         "draw": 3.5,
         "away": 2.95
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.065,
+        "draw": -0.031,
+        "away": -0.039
+      },
       "spreads": {
         "home": {
           "point": -0.5,
@@ -6081,6 +6501,12 @@
         "home": 2.2,
         "draw": 3.5,
         "away": 2.88
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.067,
+        "draw": -0.032,
+        "away": -0.043
       },
       "spreads": {
         "home": {
@@ -6168,6 +6594,12 @@
         "draw": 4.0,
         "away": 2.63
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.067,
+        "draw": -0.027,
+        "away": -0.049
+      },
       "spreads": {
         "home": {
           "point": -0.5,
@@ -6253,6 +6685,12 @@
         "home": 2.135,
         "draw": 3.5,
         "away": 3.0
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.071,
+        "draw": -0.032,
+        "away": -0.04
       },
       "spreads": {
         "home": {
@@ -6340,6 +6778,12 @@
         "draw": 3.9,
         "away": 4.02
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.105,
+        "draw": -0.026,
+        "away": -0.025
+      },
       "spreads": {
         "home": {
           "point": -0.5,
@@ -6425,6 +6869,12 @@
         "home": 2.2,
         "draw": 3.675,
         "away": 2.75
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.069,
+        "draw": -0.031,
+        "away": -0.047
       },
       "spreads": {
         "home": {
@@ -6512,6 +6962,12 @@
         "draw": 4.5,
         "away": 5.6
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.198,
+        "draw": -0.025,
+        "away": -0.019
+      },
       "spreads": {
         "home": {
           "point": -1.0,
@@ -6597,6 +7053,12 @@
         "home": 1.75,
         "draw": 3.7,
         "away": 3.95
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.116,
+        "draw": -0.032,
+        "away": -0.029
       },
       "spreads": {
         "home": {
@@ -6684,6 +7146,12 @@
         "draw": 4.4,
         "away": 4.85
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.151,
+        "draw": -0.024,
+        "away": -0.021
+      },
       "spreads": {
         "home": {
           "point": -1.0,
@@ -6769,6 +7237,12 @@
         "home": 1.95,
         "draw": 3.75,
         "away": 3.2
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.089,
+        "draw": -0.031,
+        "away": -0.038
       },
       "spreads": {
         "home": {
@@ -6856,6 +7330,12 @@
         "draw": 4.5,
         "away": 4.9
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.17,
+        "draw": -0.024,
+        "away": -0.022
+      },
       "spreads": {
         "home": {
           "point": -1.0,
@@ -6941,6 +7421,12 @@
         "home": 2.1,
         "draw": 3.6,
         "away": 3.04
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.07,
+        "draw": -0.029,
+        "away": -0.038
       },
       "spreads": {
         "home": {
@@ -7028,6 +7514,12 @@
         "draw": 3.55,
         "away": 2.23
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.047,
+        "draw": -0.033,
+        "away": -0.068
+      },
       "spreads": {
         "home": {
           "point": 1.5,
@@ -7113,6 +7605,12 @@
         "home": 3.3,
         "draw": 3.7,
         "away": 1.93
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.036,
+        "draw": -0.031,
+        "away": -0.09
       },
       "spreads": {
         "home": {
@@ -7200,6 +7698,12 @@
         "draw": 4.2,
         "away": 4.8
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.172,
+        "draw": -0.028,
+        "away": -0.024
+      },
       "spreads": {
         "home": {
           "point": -1.5,
@@ -7285,6 +7789,12 @@
         "home": 2.25,
         "draw": 3.56,
         "away": 2.6
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.079,
+        "draw": -0.039,
+        "away": -0.062
       },
       "spreads": {
         "home": {
@@ -7372,6 +7882,12 @@
         "draw": 3.8499999999999996,
         "away": 2.15
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.056,
+        "draw": -0.032,
+        "away": -0.08
+      },
       "spreads": {
         "home": {
           "point": 1.0,
@@ -7457,6 +7973,12 @@
         "home": 1.95,
         "draw": 3.6,
         "away": 3.2
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.098,
+        "draw": -0.036,
+        "away": -0.042
       },
       "spreads": {
         "home": {
@@ -7544,6 +8066,12 @@
         "draw": 3.85,
         "away": 2.88
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.088,
+        "draw": -0.032,
+        "away": -0.048
+      },
       "spreads": {
         "home": {
           "point": -1.0,
@@ -7629,6 +8157,12 @@
         "home": 2.3899999999999997,
         "draw": 3.8,
         "away": 2.3
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.075,
+        "draw": -0.037,
+        "away": -0.08
       },
       "spreads": {
         "home": {
@@ -7716,6 +8250,12 @@
         "draw": 3.725,
         "away": 2.165
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.062,
+        "draw": -0.037,
+        "away": -0.086
+      },
       "spreads": {
         "home": {
           "point": 1.0,
@@ -7801,6 +8341,12 @@
         "home": 3.1,
         "draw": 3.75,
         "away": 1.95
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.044,
+        "draw": -0.034,
+        "away": -0.097
       },
       "spreads": {
         "home": {
@@ -7888,6 +8434,12 @@
         "draw": 3.8,
         "away": 4.33
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.14,
+        "draw": -0.033,
+        "away": -0.027
+      },
       "spreads": {
         "home": {
           "point": -1.0,
@@ -7973,6 +8525,12 @@
         "home": 1.57,
         "draw": 4.0,
         "away": 4.5
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.173,
+        "draw": -0.033,
+        "away": -0.028
       },
       "spreads": {
         "home": {
@@ -8060,6 +8618,12 @@
         "draw": 3.6,
         "away": 2.25
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.06,
+        "draw": -0.037,
+        "away": -0.077
+      },
       "spreads": {
         "home": {
           "point": 1.0,
@@ -8145,6 +8709,12 @@
         "home": 1.76,
         "draw": 3.85,
         "away": 3.5
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.134,
+        "draw": -0.036,
+        "away": -0.041
       },
       "spreads": {
         "home": {
@@ -8232,6 +8802,12 @@
         "draw": 4.5,
         "away": 5.5
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.204,
+        "draw": -0.026,
+        "away": -0.02
+      },
       "spreads": {
         "home": {
           "point": -1.5,
@@ -8317,6 +8893,12 @@
         "home": 2.3,
         "draw": 3.7350000000000003,
         "away": 2.425
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.079,
+        "draw": -0.038,
+        "away": -0.072
       },
       "spreads": {
         "home": {
@@ -8404,6 +8986,12 @@
         "draw": 4.0,
         "away": 3.0
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.106,
+        "draw": -0.032,
+        "away": -0.048
+      },
       "spreads": {
         "home": {
           "point": -1.0,
@@ -8489,6 +9077,12 @@
         "home": 2.36,
         "draw": 2.8,
         "away": 3.5
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.046,
+        "draw": -0.035,
+        "away": -0.025
       },
       "spreads": {
         "home": {
@@ -8576,6 +9170,12 @@
         "draw": 3.2,
         "away": 3.3
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.045,
+        "draw": -0.026,
+        "away": -0.025
+      },
       "spreads": {
         "home": {
           "point": -0.25,
@@ -8661,6 +9261,12 @@
         "home": 3.0,
         "draw": 3.4,
         "away": 2.28
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.031,
+        "draw": -0.026,
+        "away": -0.048
       },
       "spreads": {
         "home": {
@@ -8748,6 +9354,12 @@
         "draw": 3.3,
         "away": 3.8
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.062,
+        "draw": -0.027,
+        "away": -0.022
+      },
       "spreads": {
         "home": {
           "point": -0.5,
@@ -8833,6 +9445,12 @@
         "home": 2.0,
         "draw": 3.35,
         "away": 3.75
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.061,
+        "draw": -0.026,
+        "away": -0.022
       },
       "spreads": {
         "home": {
@@ -8920,6 +9538,12 @@
         "draw": 3.05,
         "away": 3.1
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.045,
+        "draw": -0.031,
+        "away": -0.03
+      },
       "spreads": {
         "home": {
           "point": 0.0,
@@ -9005,6 +9629,12 @@
         "home": 1.29,
         "draw": 5.15,
         "away": 10.5
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.209,
+        "draw": -0.015,
+        "away": -0.006
       },
       "spreads": {
         "home": {
@@ -9092,6 +9722,12 @@
         "draw": 3.05,
         "away": 3.9
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.064,
+        "draw": -0.033,
+        "away": -0.023
+      },
       "spreads": {
         "home": {
           "point": 0.0,
@@ -9177,6 +9813,12 @@
         "home": 2.125,
         "draw": 3.225,
         "away": 3.3499999999999996
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.065,
+        "draw": -0.033,
+        "away": -0.031
       },
       "spreads": {
         "home": {
@@ -9264,6 +9906,12 @@
         "draw": 3.7,
         "away": 5.5
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.119,
+        "draw": -0.027,
+        "away": -0.016
+      },
       "spreads": {
         "home": {
           "point": -1.5,
@@ -9349,6 +9997,12 @@
         "home": 2.3,
         "draw": 3.16,
         "away": 3.0
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.06,
+        "draw": -0.036,
+        "away": -0.039
       },
       "spreads": {
         "home": {
@@ -9436,6 +10090,12 @@
         "draw": 3.925,
         "away": 1.605
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.022,
+        "draw": -0.028,
+        "away": -0.134
+      },
       "spreads": {
         "home": {
           "point": 1.5,
@@ -9521,6 +10181,12 @@
         "home": 1.85,
         "draw": 3.4,
         "away": 4.1
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.086,
+        "draw": -0.03,
+        "away": -0.023
       },
       "spreads": {
         "home": {
@@ -9608,6 +10274,12 @@
         "draw": 3.0,
         "away": 4.7
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.084,
+        "draw": -0.037,
+        "away": -0.02
+      },
       "spreads": {
         "home": {
           "point": -1.5,
@@ -9693,6 +10365,12 @@
         "home": 7.5,
         "draw": 5.225,
         "away": 1.3
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.013,
+        "draw": -0.02,
+        "away": -0.286
       },
       "spreads": {
         "home": {
@@ -9780,6 +10458,12 @@
         "draw": 3.75,
         "away": 4.5
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.102,
+        "draw": -0.026,
+        "away": -0.02
+      },
       "spreads": {
         "home": {
           "point": -1.5,
@@ -9865,6 +10549,12 @@
         "home": 2.45,
         "draw": 3.0,
         "away": 2.9
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.055,
+        "draw": -0.04,
+        "away": -0.042
       },
       "spreads": {
         "home": {
@@ -9952,6 +10642,12 @@
         "draw": 3.3,
         "away": 2.65
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.033,
+        "draw": -0.024,
+        "away": -0.033
+      },
       "spreads": {
         "home": {
           "point": 0.0,
@@ -10037,6 +10733,12 @@
         "home": 1.4,
         "draw": 4.9,
         "away": 7.0
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.144,
+        "draw": -0.015,
+        "away": -0.01
       },
       "spreads": {
         "home": {
@@ -10124,6 +10826,12 @@
         "draw": 4.9,
         "away": 6.675
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.16,
+        "draw": -0.016,
+        "away": -0.011
+      },
       "spreads": {
         "home": {
           "point": -1.5,
@@ -10209,6 +10917,12 @@
         "home": 1.15,
         "draw": 7.5,
         "away": 15.42
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.423,
+        "draw": -0.01,
+        "away": -0.004
       },
       "spreads": {
         "home": {
@@ -10296,6 +11010,12 @@
         "draw": 4.5,
         "away": 1.43
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.01,
+        "draw": -0.017,
+        "away": -0.141
+      },
       "spreads": {
         "home": {
           "point": 1.5,
@@ -10381,6 +11101,12 @@
         "home": 2.1,
         "draw": 3.4,
         "away": 3.4
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.055,
+        "draw": -0.025,
+        "away": -0.025
       },
       "spreads": {
         "home": {
@@ -10468,6 +11194,12 @@
         "draw": 3.3,
         "away": 2.55
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.036,
+        "draw": -0.027,
+        "away": -0.04
+      },
       "spreads": {
         "home": {
           "point": 0.0,
@@ -10553,6 +11285,12 @@
         "home": 2.2,
         "draw": 3.4,
         "away": 3.1
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.055,
+        "draw": -0.028,
+        "away": -0.032
       },
       "spreads": {
         "home": {
@@ -10640,6 +11378,12 @@
         "draw": 3.5,
         "away": 2.75
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.046,
+        "draw": -0.025,
+        "away": -0.036
+      },
       "spreads": {
         "home": {
           "point": 0.0,
@@ -10725,6 +11469,12 @@
         "home": 2.26,
         "draw": 3.6,
         "away": 2.88
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.05,
+        "draw": -0.024,
+        "away": -0.034
       },
       "spreads": {
         "home": {
@@ -10812,6 +11562,12 @@
         "draw": 4.9,
         "away": 6.0
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.139,
+        "draw": -0.016,
+        "away": -0.012
+      },
       "spreads": {
         "home": {
           "point": -1.5,
@@ -10897,6 +11653,12 @@
         "home": 3.15,
         "draw": 3.8,
         "away": 2.05
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.03,
+        "draw": -0.023,
+        "away": -0.061
       },
       "spreads": {
         "home": {
@@ -10984,6 +11746,12 @@
         "draw": 3.65,
         "away": 2.15
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.031,
+        "draw": -0.024,
+        "away": -0.055
+      },
       "spreads": {
         "home": {
           "point": 0.5,
@@ -11069,6 +11837,12 @@
         "home": 4.45,
         "draw": 3.425,
         "away": 1.8
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.02,
+        "draw": -0.028,
+        "away": -0.084
       },
       "spreads": {
         "home": {
@@ -11156,6 +11930,12 @@
         "draw": 6.05,
         "away": 12.575
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.317,
+        "draw": -0.013,
+        "away": -0.006
+      },
       "spreads": {
         "home": {
           "point": -1.5,
@@ -11241,6 +12021,12 @@
         "home": 2.6,
         "draw": 3.045,
         "away": 2.8
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.041,
+        "draw": -0.032,
+        "away": -0.036
       },
       "spreads": {
         "home": {
@@ -11328,6 +12114,12 @@
         "draw": 3.3,
         "away": 1.8250000000000002
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.019,
+        "draw": -0.03,
+        "away": -0.083
+      },
       "spreads": {
         "home": {
           "point": 0.5,
@@ -11413,6 +12205,12 @@
         "home": 6.9,
         "draw": 4.33,
         "away": 1.44
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.011,
+        "draw": -0.02,
+        "away": -0.149
       },
       "spreads": {
         "home": {
@@ -11500,6 +12298,12 @@
         "draw": 3.2,
         "away": 3.1
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.05,
+        "draw": -0.03,
+        "away": -0.031
+      },
       "spreads": {
         "home": {
           "point": 0.0,
@@ -11585,6 +12389,12 @@
         "home": 4.375,
         "draw": 3.6,
         "away": 1.75
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.021,
+        "draw": -0.028,
+        "away": -0.096
       },
       "spreads": {
         "home": {
@@ -11672,6 +12482,12 @@
         "draw": 4.3,
         "away": 5.9
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.129,
+        "draw": -0.019,
+        "away": -0.013
+      },
       "spreads": {
         "home": {
           "point": -1.0,
@@ -11757,6 +12573,12 @@
         "home": 2.1100000000000003,
         "draw": 3.215,
         "away": 3.5
+      },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.059,
+        "draw": -0.03,
+        "away": -0.026
       },
       "spreads": {
         "home": {
@@ -11844,6 +12666,12 @@
         "draw": 4.0,
         "away": 5.9
       },
+      "oddsChange": null,
+      "kelly": {
+        "home": -0.129,
+        "draw": -0.023,
+        "away": -0.014
+      },
       "spreads": {
         "home": {
           "point": -1.0,
@@ -11880,6 +12708,6 @@
     "exactRate": 0.1,
     "outcomeHit": 3,
     "outcomeRate": 0.3,
-    "updatedAt": "2026-08-09T13:56:02Z"
+    "updatedAt": "2026-08-10T12:43:46Z"
   }
 }
