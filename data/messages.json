@@ -1,7 +1,18 @@
 {
-  "generatedAt": "2026-08-10T17:34:16Z",
+  "generatedAt": "2026-08-10T17:38:35Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Liverpool sign Araujo from Barcelona",
+      "timestamp": "Mon, 10 Aug 2026 18:30:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13570899/ronald-araujo-transfer-news-liverpool-complete-deal-to-sign-barcelona-defender-on-loan-with-option-to-buy",
+        "lang": "en",
+        "summary": "Liverpool have confirmed the signing of defender Ronald Araujo from Barcelona."
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -209,17 +220,6 @@
         "link": "https://www.skysports.com/racing/news/12040/13571329/today-on-sky-sports-racing-flat-action-from-windsor-live-on-monday-evening-with-badri-chasing-a-four-timer",
         "lang": "en",
         "summary": "Windsor takes centre stage on Monday with a six-race Flat meeting live on Sky Sports Racing."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Brennan secures FedEx Cup Playoffs spot with Wyndham Championship win",
-      "timestamp": "Sun, 09 Aug 2026 23:05:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/golf/news/12040/13571521/wyndham-championship-michael-brennan-secures-fedex-playoffs-spot-with-victory",
-        "lang": "en",
-        "summary": "Michael Brennan secured his place in the FedExCup Playoffs as he won the Wyndham Championship by three strokes from Beau Hossler."
       }
     }
   ]

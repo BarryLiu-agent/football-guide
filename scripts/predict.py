@@ -344,6 +344,14 @@ class ScoreModel:
         out = {str(k): round(v, 4) for k, v in sorted(dist.items())}
         return out
 
+    def cover_prob(self, point):
+        """主队让球 point（负=让球）时的赢盘概率 P(主队进球差 > -point)。
+        用于让球盘模型价值判断：模型赢盘率 vs 盘口隐含概率。"""
+        n = self.MAX_GOALS
+        m = [[self._poisson(i, self.lam_h) * self._poisson(j, self.lam_a) for j in range(n)] for i in range(n)]
+        s = sum(m[i][j] for i in range(n) for j in range(n) if i - j > -point)
+        return s
+
     def btts_prob(self):
         """双方进球概率（BTTS）。"""
         n = self.MAX_GOALS
@@ -768,6 +776,39 @@ def main():
             sa = find_standing(league, away)
             pred["standings"] = ({"home": sh, "away": sa} if sh and sa else None)
             pred["totalGoalsDist"] = score_model.total_goals_dist()
+
+            # ── 大小球模型价值：模型大球概率 vs 盘口隐含概率 ──
+            ou_model = None
+            if ou and ou.get("line") is not None:
+                dist = score_model.total_goals_dist()
+                over_p = sum(v for k, v in dist.items() if int(k) > ou["line"])
+                over_p = min(over_p, 0.999)
+                under_p = round(1 - over_p, 3)
+                over_p = round(over_p, 3)
+                ou_model = {"line": ou["line"], "over": over_p, "under": under_p}
+                ou_edge = round(over_p - ou["over"], 3) if ou.get("over") else None
+                ou_kl = None
+                if ou.get("overPrice") and ou["overPrice"] > 1:
+                    ou_kl = round((ou["overPrice"] * over_p - 1) / (ou["overPrice"] - 1), 3)
+                ou_model["edge"] = ou_edge  # 正=模型认为大球有价值
+                ou_model["kelly"] = ou_kl
+            pred["ouModel"] = ou_model
+
+            # ── 让球模型价值：模型赢盘率 vs 盘口隐含概率 ──
+            sp_model = None
+            sp_mkt = m.get("markets", {}).get("spreads") or {}
+            hp = (sp_mkt.get("home") or {}).get("point")
+            if hp is not None:
+                cover = score_model.cover_prob(-hp)
+                price = (sp_mkt.get("home") or {}).get("price")
+                implied = round(1 / price, 3) if price and price > 1 else None
+                sp_model = {
+                    "point": hp, "cover": round(cover, 3), "price": price,
+                    "implied": implied,
+                    "edge": round(cover - implied, 3) if implied else None,
+                    "kelly": round((price * cover - 1) / (price - 1), 3) if price and price > 1 and cover else None,
+                }
+            pred["spModel"] = sp_model
             pred["btts"] = score_model.btts_prob()
             pred["expectedGoals"] = {
                 "home": round(score_model.lam_h, 2), "away": round(score_model.lam_a, 2)
