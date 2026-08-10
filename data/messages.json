@@ -1,7 +1,18 @@
 {
-  "generatedAt": "2026-08-10T14:11:57Z",
+  "generatedAt": "2026-08-10T14:24:07Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Scotland, Netherlands criticise Cricket World Cup format changes",
+      "timestamp": "Mon, 10 Aug 2026 15:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/cricket/news/12040/13571677/cricket-world-cup-scotland-and-netherlands-criticise-format-changes-to-50-over-tournament-announced-by-icc",
+        "lang": "en",
+        "summary": "Scotland and the Netherlands have criticised the restructuring of next year's 50-over World Cup, saying the changes \"risk weakening the integrity and credibility of international cricket\"."
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -209,17 +220,6 @@
         "link": "https://www.skysports.com/golf/news/12040/13571516/liv-golf-jon-rahm-clinches-third-straight-title-after-joaquin-niemann-wins-in-new-york",
         "lang": "en",
         "summary": "Jon Rahm clinched the LIV Golf season points title for a third straight year despite finishing tied for 41st at LIV Golf New York, where Joaquin Niemann claimed a three-shot victory for his ninth win in the last three years."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "'Gobsmacked!' | Hull FOUR-PUTTS the 17th moments after taking the lead!",
-      "timestamp": "Sun, 09 Aug 2026 16:35:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13571421/pif-london-championship-charley-hull-four-putts-the-17th-moments-after-taking-the-lead",
-        "lang": "en",
-        "summary": "The crowd was stunned to silence as Charley Hull four-putted on the 17th hole moments after taking the lead."
       }
     }
   ]
