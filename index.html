@@ -198,12 +198,16 @@ table.standings .down { color: var(--red); }
 .chip:hover { border-color: var(--border-light); color: var(--text); }
 .chip.active { background: var(--gold); color: #0b0e14; font-weight: 700; border-color: var(--gold); }
 
+.xg-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; background:rgba(59,130,246,.15); color:#60a5fa; border:1px solid rgba(59,130,246,.35); }
+
 /* ===== 异动/难度标签 ===== */
 .hot-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; background:rgba(239,68,68,.15); color:#f87171; border:1px solid rgba(239,68,68,.4); }
 .diff-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; }
 .diff-tag.hard { background:rgba(239,68,68,.12); color:#f87171; }
 .diff-tag.mid { background:rgba(245,158,11,.12); color:#fbbf24; }
 .diff-tag.easy { background:rgba(34,197,94,.12); color:#4ade80; }
+
+.xg-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; background:rgba(59,130,246,.15); color:#60a5fa; border:1px solid rgba(59,130,246,.35); }
 
 /* ===== 异动/难度标签 ===== */
 .hot-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; background:rgba(239,68,68,.15); color:#f87171; border:1px solid rgba(239,68,68,.4); }
@@ -386,6 +390,7 @@ table.standings .down { color: var(--red); }
         <span class="refresh-note" id="refreshNote"></span>
       </div>
       <div class="analysis-box" id="analysisBox"></div>
+      <div id="xgBox"></div>
       <div id="h2hBox"></div>
     </div>
   </div>
@@ -420,6 +425,7 @@ let state = {
   xg: {},             // xG {code: {...}}
   predictions: [],    // 预测
   jingcai: [],        // 竞彩
+  xgMatches: [],      // 单场实时 xG
   history: null,      // 预测战绩
   teamNames: {},
   loaded: { fixtures: false, predictions: false },
@@ -465,6 +471,12 @@ function findPrediction(home, away) {
     (normTeam(p.homeTeam) === h && normTeam(p.awayTeam) === a) ||
     (normTeam(p.homeTeam).split(' ')[0] === h.split(' ')[0] && normTeam(p.awayTeam).split(' ')[0] === a.split(' ')[0]));
 }
+function findXgMatch(home, away) {
+  const h = normTeam(home), a = normTeam(away);
+  return (state.xgMatches || []).find(m =>
+    (normTeam(m.homeTeam) === h && normTeam(m.awayTeam) === a) ||
+    (normTeam(m.homeTeam).split(' ')[0] === h.split(' ')[0] && normTeam(m.awayTeam).split(' ')[0] === a.split(' ')[0]));
+}
 function findJingcai(home, away) {
   const h = normTeam(home), a = normTeam(away);
   return (state.jingcai || []).find(m =>
@@ -484,6 +496,7 @@ async function loadAll() {
     loadJson('data/predictions.json').then(d => { state.predictions = d.predictions || []; state.loaded.predictions = true; }).catch(() => {}),
     loadJson('data/standings.json').then(d => { state.standings = d.standings || {}; }).catch(() => {}),
     loadJson('data/jingcai.json').then(d => { state.jingcai = d.matches || []; }).catch(() => {}),
+    loadJson('data/xg/matches.json').then(d => { state.xgMatches = d.matches || []; }).catch(() => {}),
     loadJson('data/prediction_history.json').then(d => { state.history = d; }).catch(() => {}),
     loadJson('data/team_names.json').then(d => { state.teamNames = d; }).catch(() => {}),
   ];
@@ -600,6 +613,7 @@ function renderCard(m) {
     <div class="mc-score ${score.cls}"><div class="s">${score.text === 'VS' ? 'VS' : score.text}</div>${score.statusText && score.statusText !== 'VS' ? `<div class="st">${score.statusText}</div>` : ''}</div>
     ${pred ? `<div class="mc-pred"><div class="ps">${pred.predictedScore}</div><div class="pc">预测 ${Math.round((pred.confidence||0)*100)}%</div></div>` : ''}
     ${jc ? `<div class="mc-badge-jc">竞彩</div>` : ''}
+    ${(() => { const xm = findXgMatch(homeName, awayName); return (xm && (xm.xgHome != null || xm.xgAway != null)) ? `<span class="xg-tag">🎯 ${(xm.xgHome ?? 0).toFixed(1)}-${(xm.xgAway ?? 0).toFixed(1)}</span>` : ''; })()}
     ${hot || diff ? `<div style="display:flex;gap:4px;margin-top:6px;flex-wrap:wrap">${hot}${diff}</div>` : ''}
   </div>`;
 }
@@ -708,6 +722,20 @@ function openDetail(homeName, awayName) {
     (normTeam(f.homeTeam?.name || f.homeTeam?.shortName) === n1 && normTeam(f.awayTeam?.name || f.awayTeam?.shortName) === n2) ||
     (normTeam(f.homeTeam?.name || f.homeTeam?.shortName) === n2 && normTeam(f.awayTeam?.name || f.awayTeam?.shortName) === n1)
   )).sort((a, b) => b.utcDate.localeCompare(a.utcDate)).slice(0, 5);
+  // 单场实时 xG
+  const xm = findXgMatch(homeName, awayName);
+  const xgBox = $('xgBox');
+  if (xm && (xm.xgHome != null || xm.xgAway != null)) {
+    const st = xm.status === 'finished' ? '已完赛' : (xm.minute ? '第' + xm.minute + '分钟' : '未开赛');
+    xgBox.innerHTML = '<div class="section-title" style="margin-top:12px">🎯 本场 xG（实时）<span style="font-size:10px;color:var(--muted);font-weight:400">' + st + '</span></div>' +
+      '<div class="odds-grid">' +
+      '<div class="odds-box"><div class="label">主队</div><div class="value">' + (xm.xgHome ?? 0).toFixed(2) + '</div><div class="sub">' + cnTeam(xm.homeTeam) + '</div></div>' +
+      '<div class="odds-box"><div class="label">客队</div><div class="value">' + (xm.xgAway ?? 0).toFixed(2) + '</div><div class="sub">' + cnTeam(xm.awayTeam) + '</div></div>' +
+      '<div class="odds-box"><div class="label">倾向</div><div class="value" style="font-size:13px">' + ((xm.xgHome ?? 0) > (xm.xgAway ?? 0) ? '主队占优' : (xm.xgHome ?? 0) < (xm.xgAway ?? 0) ? '客队占优' : '势均力敌') + '</div><div class="sub">' + (xm.score ? '比分 ' + xm.score : '') + '</div></div>' +
+      '</div>';
+  } else {
+    xgBox.innerHTML = '<div class="section-title" style="margin-top:12px">🎯 本场 xG</div><div style="font-size:12px;color:var(--muted);padding:6px 0">暂无本场 xG 数据（开赛后本地脚本每 15 分钟自动更新）</div>';
+  }
   const h2hEl = $('h2hBox');
   if (h2h.length) {
     h2hEl.innerHTML = '<div class="section-title" style="margin-top:12px">🔄 本赛季交锋</div>' + h2h.map(f => {

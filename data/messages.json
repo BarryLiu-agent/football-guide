@@ -1,7 +1,18 @@
 {
-  "generatedAt": "2026-08-10T13:36:23Z",
+  "generatedAt": "2026-08-10T13:57:16Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Man City latest: Marmoush will decide Etihad future, says Maresca",
+      "timestamp": "Mon, 10 Aug 2026 14:30:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/live-blog/12040/13025499/man-city-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts",
+        "lang": "en",
+        "summary": ""
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -209,17 +220,6 @@
         "link": "https://www.skysports.com/watch/video/13571421/pif-london-championship-charley-hull-four-putts-the-17th-moments-after-taking-the-lead",
         "lang": "en",
         "summary": "The crowd was stunned to silence as Charley Hull four-putted on the 17th hole moments after taking the lead."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Sutherland with DOUBLE drop against Welsh Fire",
-      "timestamp": "Sun, 09 Aug 2026 12:01:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13571332/annabel-sutherland-makes-double-drop-catch-against-welsh-fire",
-        "lang": "en",
-        "summary": "Annabel Sutherland dropped two catches that could have proved costly for her side as Sunrisers Leeds looked to topple Welsh Fire to stay in the The Hundred. "
       }
     }
   ]
