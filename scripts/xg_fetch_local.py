@@ -209,9 +209,18 @@ def _get_match_info(match_id: int) -> dict or None:
 
 
 def git_push(message: str):
-    for cmd in [["add", "-A"], ["commit", "-m", message], ["push", "origin", "main"]]:
-        r = subprocess.run(["git", *cmd], cwd=ROOT, capture_output=True, text=True)
-        print(f"  git {cmd[0]}: {'OK' if r.returncode == 0 else r.stderr.strip()[:100]}")
+    """add → commit → pull --rebase（防云端 Actions 并发冲突）→ push，失败重试 3 次。"""
+    for attempt in range(3):
+        for cmd in [["add", "-A"], ["commit", "-m", message]]:
+            subprocess.run(["git", *cmd], cwd=ROOT, capture_output=True, text=True)
+        subprocess.run(["git", "pull", "--rebase", "--autostash", "origin", "main"],
+                       cwd=ROOT, capture_output=True, text=True)
+        r = subprocess.run(["git", "push", "origin", "main"], cwd=ROOT, capture_output=True, text=True)
+        if r.returncode == 0:
+            print("  git push: OK")
+            return
+        print(f"  git push 失败，重试 {attempt + 1}/3: {r.stderr.strip()[:120]}")
+    print("  git push: 失败（请检查网络/凭据）")
 
 
 def main():

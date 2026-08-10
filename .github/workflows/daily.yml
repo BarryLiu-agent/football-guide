@@ -2,8 +2,8 @@ name: Daily Data Fetch & Deploy
 
 on:
   schedule:
-    # 每天一次 UTC 02:00（北京 10:00）。
-    # The Odds API 免费配额 500/月：16 联赛 × 每天1次 ≈ 480/月
+    # 每天一次 UTC 02:00（北京 10:00）→ 赔率走势曲线每天累积 1 个采样点。
+    # The Odds API 免费配额 500/月：5 联赛 × 3 markets = 15/天 ≈ 450/月（CL 休赛期不抓）
     - cron: '0 2 * * *'
   push:
     branches: [main]
@@ -36,13 +36,17 @@ jobs:
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
           ODDS_API_KEY_2: ${{ secrets.ODDS_API_KEY_2 }}
-        run: python scripts/odds_fetcher.py
+          ODDS_API_KEY_3: ${{ secrets.ODDS_API_KEY_3 }}
+        run: python scripts/odds_fetcher.py --leagues PL PD SA BL1 FL1
 
       - name: Fetch messages
         run: python scripts/messages_fetcher.py
 
       - name: Run prediction engine
         run: python scripts/predict.py
+
+      - name: Model calibration backtest
+        run: python scripts/backtest.py
 
       - name: Post-process (Elo + value)
         run: python scripts/postprocess.py
