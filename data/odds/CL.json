@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T06:21:52Z",
+  "generatedAt": "2026-08-09T13:36:37Z",
   "league": "CL",
   "matches": [
     {
@@ -9,9 +9,9 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.4,
-          "draw": 3.175,
-          "away": 2.865
+          "home": 2.35,
+          "draw": 3.2,
+          "away": 2.9
         },
         "totals": {
           "line": 2.5,
@@ -21,11 +21,11 @@
         "spreads": {
           "home": {
             "point": 0.0,
-            "price": 1.83
+            "price": 1.79
           },
           "away": {
             "point": 0.0,
-            "price": 2.08
+            "price": 2.14
           }
         }
       },
@@ -41,7 +41,7 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.935,
+          "home": 1.93,
           "draw": 3.525,
           "away": 3.425
         },
@@ -73,23 +73,23 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.56,
+          "home": 1.5750000000000002,
           "draw": 4.33,
-          "away": 4.574999999999999
+          "away": 4.5
         },
         "totals": {
           "line": 2.5,
-          "over": 1.4449999999999998,
-          "under": 2.62
+          "over": 1.45,
+          "under": 2.6100000000000003
         },
         "spreads": {
           "home": {
             "point": -1.0,
-            "price": 1.9249999999999998
+            "price": 1.9449999999999998
           },
           "away": {
             "point": 1.0,
-            "price": 1.835
+            "price": 1.82
           }
         }
       },
@@ -105,8 +105,8 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 7.0,
-          "draw": 4.875,
+          "home": 6.9,
+          "draw": 4.85,
           "away": 1.36
         },
         "totals": {
@@ -117,11 +117,11 @@
         "spreads": {
           "home": {
             "point": 1.5,
-            "price": 1.73
+            "price": 1.745
           },
           "away": {
             "point": -1.5,
-            "price": 2.075
+            "price": 2.05
           }
         }
       },
@@ -137,9 +137,9 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.6,
+          "home": 2.63,
           "draw": 3.3,
-          "away": 2.5
+          "away": 2.475
         },
         "totals": {
           "line": 2.5,
@@ -185,7 +185,7 @@
           },
           "away": {
             "point": 1.5,
-            "price": 2.0
+            "price": 2.02
           }
         }
       },
@@ -201,23 +201,23 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.42,
-          "draw": 4.3,
-          "away": 6.75
+          "home": 1.44,
+          "draw": 4.275,
+          "away": 6.1
         },
         "totals": {
           "line": 2.5,
-          "over": 1.68,
-          "under": 2.02
+          "over": 1.71,
+          "under": 1.97
         },
         "spreads": {
           "home": {
             "point": -1.5,
-            "price": 2.3
+            "price": 2.32
           },
           "away": {
             "point": 1.5,
-            "price": 1.69
+            "price": 1.68
           }
         }
       },
@@ -233,14 +233,14 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.81,
-          "draw": 3.575,
-          "away": 4.0
+          "home": 1.8050000000000002,
+          "draw": 3.6,
+          "away": 3.975
         },
         "totals": {
           "line": 2.5,
-          "over": 1.85,
-          "under": 1.87
+          "over": 1.83,
+          "under": 1.88
         },
         "spreads": {
           "home": {
@@ -297,14 +297,14 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.45,
-          "draw": 4.33,
-          "away": 6.0
+          "home": 1.49,
+          "draw": 4.25,
+          "away": 5.75
         },
         "totals": {
           "line": 2.5,
-          "over": 1.6,
-          "under": 2.225
+          "over": 1.61,
+          "under": 2.2
         },
         "spreads": {
           "home": {

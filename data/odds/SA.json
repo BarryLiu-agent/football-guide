@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T06:21:50Z",
+  "generatedAt": "2026-08-09T13:36:31Z",
   "league": "SA",
   "matches": [
     {
@@ -9,14 +9,14 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 4.4,
-          "draw": 3.45,
+          "home": 4.45,
+          "draw": 3.425,
           "away": 1.8
         },
         "totals": {
           "line": 2.5,
-          "over": 2.12,
-          "under": 1.7
+          "over": 2.1,
+          "under": 1.71
         },
         "spreads": {
           "home": {
@@ -32,7 +32,7 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 39
+      "bookmakers": 38
     },
     {
       "homeTeam": "Inter Milan",
@@ -42,8 +42,8 @@
       "markets": {
         "h2h": {
           "home": 1.21,
-          "draw": 6.1,
-          "away": 13.0
+          "draw": 6.05,
+          "away": 12.575
         },
         "totals": {
           "line": 2.5,
@@ -53,7 +53,7 @@
         "spreads": {
           "home": {
             "point": -1.5,
-            "price": 1.75
+            "price": 1.72
           },
           "away": {
             "point": 1.5,
@@ -64,7 +64,7 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 39
+      "bookmakers": 38
     },
     {
       "homeTeam": "Parma",
@@ -74,7 +74,7 @@
       "markets": {
         "h2h": {
           "home": 2.6,
-          "draw": 3.04,
+          "draw": 3.045,
           "away": 2.8
         },
         "totals": {
@@ -96,7 +96,7 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 39
+      "bookmakers": 38
     },
     {
       "homeTeam": "Genoa",
@@ -107,7 +107,7 @@
         "h2h": {
           "home": 4.5,
           "draw": 3.3,
-          "away": 1.83
+          "away": 1.8250000000000002
         },
         "totals": {
           "line": 2.5,
@@ -128,7 +128,7 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 39
+      "bookmakers": 38
     },
     {
       "homeTeam": "Frosinone",
@@ -144,7 +144,7 @@
         "totals": {
           "line": 2.5,
           "over": 1.82,
-          "under": 1.96
+          "under": 1.955
         },
         "spreads": {
           "home": {
@@ -160,7 +160,7 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 39
+      "bookmakers": 38
     },
     {
       "homeTeam": "Venezia",
@@ -192,7 +192,7 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 39
+      "bookmakers": 38
     },
     {
       "homeTeam": "Torino",
@@ -201,14 +201,14 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 4.42,
+          "home": 4.375,
           "draw": 3.6,
           "away": 1.75
         },
         "totals": {
           "line": 2.5,
-          "over": 1.87,
-          "under": 1.91
+          "over": 1.88,
+          "under": 1.89
         },
         "spreads": {
           "home": {
@@ -224,7 +224,7 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 39
+      "bookmakers": 38
     },
     {
       "homeTeam": "Atalanta BC",
@@ -245,18 +245,18 @@
         "spreads": {
           "home": {
             "point": -1.0,
-            "price": 1.8849999999999998
+            "price": 1.88
           },
           "away": {
             "point": 1.0,
-            "price": 1.9449999999999998
+            "price": 1.94
           }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 39
+      "bookmakers": 38
     },
     {
       "homeTeam": "Bologna",
@@ -265,14 +265,14 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.12,
-          "draw": 3.23,
+          "home": 2.1100000000000003,
+          "draw": 3.215,
           "away": 3.5
         },
         "totals": {
           "line": 2.5,
           "over": 2.15,
-          "under": 1.68
+          "under": 1.6749999999999998
         },
         "spreads": {
           "home": {
@@ -288,7 +288,7 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 39
+      "bookmakers": 38
     },
     {
       "homeTeam": "AS Roma",
@@ -297,9 +297,9 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.54,
+          "home": 1.53,
           "draw": 4.0,
-          "away": 5.85
+          "away": 5.9
         },
         "totals": {
           "line": 2.5,
@@ -309,18 +309,18 @@
         "spreads": {
           "home": {
             "point": -1.0,
-            "price": 1.95
+            "price": 1.9
           },
           "away": {
             "point": 1.0,
-            "price": 1.885
+            "price": 1.92
           }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 38
+      "bookmakers": 37
     }
   ]
 }

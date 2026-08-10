@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T06:21:51Z",
+  "generatedAt": "2026-08-09T13:36:33Z",
   "league": "BL1",
   "matches": [
     {
@@ -137,9 +137,9 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.38,
+          "home": 2.35,
           "draw": 3.5,
-          "away": 2.75
+          "away": 2.8
         },
         "totals": {
           "line": 2.5,
@@ -149,11 +149,11 @@
         "spreads": {
           "home": {
             "point": 0.0,
-            "price": 1.82
+            "price": 1.775
           },
           "away": {
             "point": 0.0,
-            "price": 2.1
+            "price": 2.1550000000000002
           }
         }
       },
@@ -201,9 +201,9 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.33,
+          "home": 1.32,
           "draw": 5.25,
-          "away": 8.19
+          "away": 8.2
         },
         "totals": {
           "line": 2.5,
