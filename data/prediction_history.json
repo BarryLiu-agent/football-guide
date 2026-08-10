@@ -192,7 +192,7 @@
    "confidence": 0.636,
    "predictedAt": "2026-08-09T13:17:45Z",
    "actualScore": "3-1",
-   "evaluatedAt": "2026-08-10T13:28:24Z",
+   "evaluatedAt": "2026-08-10T13:36:24Z",
    "hitExact": false,
    "hitOutcome": true
   },
@@ -204,7 +204,7 @@
    "confidence": 0.607,
    "predictedAt": "2026-08-09T13:17:45Z",
    "actualScore": "0-0",
-   "evaluatedAt": "2026-08-10T13:28:24Z",
+   "evaluatedAt": "2026-08-10T13:36:24Z",
    "hitExact": false,
    "hitOutcome": false
   },
@@ -216,7 +216,7 @@
    "confidence": 0.651,
    "predictedAt": "2026-08-09T13:17:45Z",
    "actualScore": "0-0",
-   "evaluatedAt": "2026-08-10T13:28:24Z",
+   "evaluatedAt": "2026-08-10T13:36:24Z",
    "hitExact": false,
    "hitOutcome": false
   },
@@ -568,7 +568,7 @@
    "confidence": 0.667,
    "predictedAt": "2026-08-09T13:17:45Z",
    "actualScore": "0-2",
-   "evaluatedAt": "2026-08-10T13:28:24Z",
+   "evaluatedAt": "2026-08-10T13:36:24Z",
    "hitExact": false,
    "hitOutcome": true
   },
@@ -580,7 +580,7 @@
    "confidence": 0.575,
    "predictedAt": "2026-08-09T13:17:45Z",
    "actualScore": "2-1",
-   "evaluatedAt": "2026-08-10T13:28:24Z",
+   "evaluatedAt": "2026-08-10T13:36:24Z",
    "hitExact": false,
    "hitOutcome": false
   },
@@ -592,7 +592,7 @@
    "confidence": 0.586,
    "predictedAt": "2026-08-09T13:17:45Z",
    "actualScore": "1-0",
-   "evaluatedAt": "2026-08-10T13:28:24Z",
+   "evaluatedAt": "2026-08-10T13:36:24Z",
    "hitExact": false,
    "hitOutcome": false
   },
@@ -1954,6 +1954,6 @@
   "exactRate": 0.0625,
   "outcomeHit": 5,
   "outcomeRate": 0.3125,
-  "updatedAt": "2026-08-10T13:28:24Z"
+  "updatedAt": "2026-08-10T13:36:24Z"
  }
 }
