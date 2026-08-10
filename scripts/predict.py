@@ -565,7 +565,33 @@ def main():
             fixtures_all = json.load(f).get("matches", [])
         finished = [m for m in fixtures_all if m.get("status") == "FINISHED"]
         elo.update(finished)
-        print(f"Elo: {len(elo.ratings)} 队, 已用 {len(finished)} 场赛果迭代")
+        # 上赛季 1752 场迭代（与回测同源）：消除 Football-Data 积分榜与赔率源
+        # 球队构成不一致导致的无历史评级（国米/马竞/里昂等被误判为 1500 初始）
+        season_path = DATA_DIR / "season_2025.json"
+        if season_path.exists():
+            try:
+                with open(season_path, encoding="utf-8") as f:
+                    season = json.load(f)
+                ms_by_lg = {}
+                for sm in season.get("matches", []):
+                    if sm.get("homeGoals") is None or sm.get("awayGoals") is None:
+                        continue
+                    ms_by_lg.setdefault(sm["league"], []).append(sm)
+                season_total = 0
+                for lg_ms in ms_by_lg.values():
+                    # 抓取顺序 = 从最新往回 → 反转即时间正序
+                    elo.update([{
+                        "utcDate": sm.get("utcDate", ""),
+                        "homeTeam": {"name": sm["homeTeam"]},
+                        "awayTeam": {"name": sm["awayTeam"]},
+                        "score": {"fullTime": {"home": sm["homeGoals"], "away": sm["awayGoals"]}},
+                    } for sm in reversed(lg_ms)])
+                    season_total += len(lg_ms)
+                print(f"Elo: {len(elo.ratings)} 队, 已用 {len(finished)} 场本赛季 + {season_total} 场上赛季赛果迭代")
+            except Exception as e:
+                print(f"Elo 上赛季迭代失败: {e}")
+        else:
+            print(f"Elo: {len(elo.ratings)} 队, 已用 {len(finished)} 场赛果迭代")
     except Exception as e:
         print(f"Elo 赛果迭代跳过: {e}")
 
@@ -694,13 +720,14 @@ def main():
                 "home": round(f_home, 3), "draw": round(f_draw, 3), "away": round(f_away, 3)
             }
             value_picks = []
+            reverse_picks = []  # 模型 vs 市场对立（负 edge）：提示不碰，非价值
             if market_prob:
                 sorted_probs = sorted(pred_elo.values(), reverse=True)
                 model_conf = sorted_probs[0] - sorted_probs[1] if len(sorted_probs) > 1 else 0
                 for k, label in (("home", "主胜"), ("draw", "平局"), ("away", "客胜")):
                     diff = pred_elo[k] - market_prob[k]
-                    if abs(diff) >= 0.10:  # 四象限：edge≥10% 才标记
-                        level = "gold" if abs(diff) >= 0.15 and model_conf >= 0.15 else "watch"
+                    if diff >= 0.10:  # 正 edge：模型比市场更看好 = 价值信号
+                        level = "gold" if diff >= 0.15 and model_conf >= 0.15 else "watch"
                         value_picks.append({
                             "side": k, "label": label,
                             "modelProb": round(pred_elo[k], 3),
@@ -709,7 +736,15 @@ def main():
                             "level": level,
                             "modelConf": round(model_conf, 3),
                         })
+                    elif diff <= -0.10:  # 负 edge：模型比市场更不看好 = 反向信号（提示不碰）
+                        reverse_picks.append({
+                            "side": k, "label": label,
+                            "modelProb": round(pred_elo[k], 3),
+                            "oddsProb": round(market_prob[k], 3),
+                            "edge": round(diff, 3),
+                        })
             pred["valuePicks"] = value_picks
+            pred["reversePicks"] = reverse_picks
             pred["signalLevel"] = "gold" if any(v["level"] == "gold" for v in value_picks) else ("watch" if value_picks else "none")
 
             # Dixon-Coles 波胆 + 大小球 + 分布
