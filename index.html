@@ -636,19 +636,23 @@ function renderTopBar(leagueCode) {
 // ===== 赛程赛果 =====
 function renderFixtures() {
   const code = FD_CODE[state.league];
-  const now = Date.now();
   let ms = state.fixtures.filter(m => m.competition?.code === code);
-  // 未来 30 天 + 今天（已开赛 2.5h 内的）
-  const t = todayBJ();
-  const maxD = fmtDate(new Date(Date.now() + 30 * 86400000).toISOString());
-  ms = ms.filter(m => {
-    const d = fmtDate(m.utcDate);
-    if (d < t || d > maxD) return false;
-    if (now - new Date(m.utcDate).getTime() > 2.5 * 3600000) return false;
-    return true;
-  });
-  // 排序
-  ms.sort((a, b) => a.utcDate.localeCompare(b.utcDate));
+  // 展示模式：已完赛倒序（最近在前），最多 120 场
+  const finished = ms.filter(m => m.status === 'FINISHED');
+  if (finished.length >= ms.length * 0.8) {
+    ms = finished.sort((a, b) => b.utcDate.localeCompare(a.utcDate)).slice(0, 120);
+  } else {
+    // 常规模式：今天 + 未来 30 天
+    const t = todayBJ();
+    const maxD = fmtDate(new Date(Date.now() + 30 * 86400000).toISOString());
+    const now = Date.now();
+    ms = ms.filter(m => {
+      const d = fmtDate(m.utcDate);
+      if (d < t || d > maxD) return false;
+      if (now - new Date(m.utcDate).getTime() > 2.5 * 3600000) return false;
+      return true;
+    }).sort((a, b) => a.utcDate.localeCompare(b.utcDate));
+  }
 
   // 赛程里没有的（如欧冠未开赛）→ 用预测补充（首词兜底匹配，避免重复显示）
   const hasFix = (h, a) => ms.some(m => {
@@ -664,10 +668,11 @@ function renderFixtures() {
 
   if (!ms.length) return `<div class="empty-state"><div class="icon">📭</div>该联赛暂无未来比赛安排</div>`;
 
-  // 分组
+  // 分组（按日期从近到远升序）
   const groups = {};
   ms.forEach(m => { const d = fmtDate(m.utcDate); (groups[d] = groups[d] || []).push(m); });
-  return Object.entries(groups).map(([d, list]) => {
+  const groupOrder = Object.keys(groups).sort((a, b) => a.localeCompare(b));
+  return groupOrder.map(d => { const list = groups[d];
     const t2 = todayBJ(), tm = fmtDate(new Date(Date.now() + 86400000).toISOString());
     const cls = d === t2 ? 'is-today' : d === tm ? 'is-tomorrow' : '';
     return `<div class="date-group">
