@@ -529,6 +529,33 @@ def main():
             # 真实赔率数值（1X2）
             raw_odds = odds_result.get("rawOdds") if odds_result else None
             pred["rawOdds"] = raw_odds
+            # 赔率涨跌（相对上次快照 prevH2h）
+            prev_h2h = m.get("markets", {}).get("prevH2h") or m.get("prevH2h")
+            odds_change = None
+            if prev_h2h and raw_odds:
+                def _delta(cur, prev):
+                    if isinstance(cur, (int, float)) and isinstance(prev, (int, float)):
+                        return round(cur - prev, 2)
+                    return None
+                odds_change = {
+                    "home": _delta(raw_odds.get("home"), prev_h2h.get("home") or prev_h2h.get("Home")),
+                    "draw": _delta(raw_odds.get("draw"), prev_h2h.get("draw") or prev_h2h.get("Draw")),
+                    "away": _delta(raw_odds.get("away"), prev_h2h.get("away") or prev_h2h.get("Away")),
+                }
+            pred["oddsChange"] = odds_change
+            # 凯利指数 = (赔率×真实概率−1)/(赔率−1)
+            kelly = None
+            if raw_odds and odds_result and odds_result.get("prob"):
+                prob = odds_result["prob"]
+                kelly = {}
+                for k in ("home", "draw", "away"):
+                    o = raw_odds.get(k)
+                    pp = prob.get(k)
+                    if isinstance(o, (int, float)) and o > 1 and pp:
+                        kelly[k] = round((o * pp - 1) / (o - 1), 3)
+                    else:
+                        kelly[k] = None
+            pred["kelly"] = kelly
             # 让球盘口
             pred["spreads"] = m.get("markets", {}).get("spreads")
             # 预测比分 = 泊松模型最可能波胆（比期望值四舍五入更有区分度）
