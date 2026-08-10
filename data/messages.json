@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T15:20:59Z",
+  "generatedAt": "2026-08-10T17:13:30Z",
   "total": 20,
   "messages": [
     {
@@ -16,6 +16,17 @@
     {
       "source": "skysports",
       "type": "news",
+      "text": "Man City in Bouaddi talks and Chelsea's Fernandez also an option",
+      "timestamp": "Mon, 10 Aug 2026 17:39:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571742/man-city-transfer-news-talks-ongoing-with-lilles-ayyoub-bouaddi-but-rodri-to-barcelona-talks-inactive-with-enzo-fernandez-also-an-option",
+        "lang": "en",
+        "summary": "Man City&#160;are in ongoing talks with&#160;Lille&#160;for Morocco midfielder&#160;Ayyoub Bouaddi."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
       "text": "Scotland, Netherlands criticise Cricket World Cup format changes",
       "timestamp": "Mon, 10 Aug 2026 15:00:00 BST",
       "metadata": {
@@ -27,7 +38,7 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Man City latest: Marmoush will decide Etihad future, says Maresca",
+      "text": "Man City latest: Bouaddi, Rodri, Reijnders transfer updates",
       "timestamp": "Mon, 10 Aug 2026 14:30:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/football/live-blog/12040/13025499/man-city-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts",
@@ -99,6 +110,17 @@
         "link": "https://www.skysports.com/golf/news/12040/13571664/solheim-cup-anna-nordqvist-captains-column-team-europes-pairings-puzzle-and-why-aggressive-rookies-can-impress",
         "lang": "en",
         "summary": "Team Europe is finalised! "
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Could Miller receive world title shot? 'Big Baby' interests WBA champion",
+      "timestamp": "Mon, 10 Aug 2026 16:13:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/boxing/news/12040/13571708/jarrell-miller-could-receive-world-heavyweight-title-fight-as-murat-gassiev-is-interested-in-fighting-the-american",
+        "lang": "en",
+        "summary": "Jarrell Miller could receive a  a WBA world heavyweight title fight against Murat Gassiev."
       }
     },
     {
@@ -198,28 +220,6 @@
         "link": "https://www.skysports.com/football/news/12040/13561572/victor-munoz-to-liverpool-spain-international-is-a-symbol-of-andoni-iraolas-plan-to-add-intensity-in-attack",
         "lang": "en",
         "summary": "Andoni Iraola could not have been clearer about how he plans to change Liverpool when speaking in his opening press conference. \"We have to be a team that works hard, intense and aggressive.&#8221; That shift in approach is embodied by Victor Munoz."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Rangers frustrations, Celtic's Hogh silences critics, Hearts win under Vrancken",
-      "timestamp": "Mon, 10 Aug 2026 11:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13571564/scottish-premiership-review-rangers-struggle-kasper-hogh-silences-celtic-critics-hearts-shine-in-another-dramatic-weekend",
-        "lang": "en",
-        "summary": "Rangers manager Derek McInnes is still waiting for his first win, but both Celtic striker Kasper Hogh and Hearts boss Wouter Vrancken answered some of their critics. "
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Papers: Man Utd and Arsenal chase Club Brugge full-back Seys",
-      "timestamp": "Sun, 09 Aug 2026 23:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13571517/manchester-united-and-arsenal-among-several-clubs-chasing-club-brugge-left-back-joaquin-seys",
-        "lang": "en",
-        "summary": "The top stories and transfer rumours from Monday's newspapers..."
       }
     }
   ]

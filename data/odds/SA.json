@@ -1,6 +1,488 @@
 {
-  "generatedAt": "2026-08-09T13:36:31Z",
+  "generatedAt": "2026-08-10T16:55:16Z",
   "league": "SA",
+  "history": {
+    "udinese|como": [
+      {
+        "ts": "2026-08-10T16:55:02Z",
+        "h2h": {
+          "home": 4.5,
+          "draw": 3.5,
+          "away": 1.81
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.12,
+          "under": 1.705
+        },
+        "spreads": {
+          "home": {
+            "point": 0.5,
+            "price": 1.98
+          },
+          "away": {
+            "point": -0.5,
+            "price": 1.85
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T16:55:16Z",
+        "h2h": {
+          "home": 4.5,
+          "draw": 3.5,
+          "away": 1.81
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.12,
+          "under": 1.705
+        },
+        "spreads": {
+          "home": {
+            "point": 0.5,
+            "price": 1.98
+          },
+          "away": {
+            "point": -0.5,
+            "price": 1.85
+          }
+        }
+      }
+    ],
+    "inter milan|monza": [
+      {
+        "ts": "2026-08-10T16:55:02Z",
+        "h2h": {
+          "home": 1.22,
+          "draw": 6.5,
+          "away": 12.15
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.65,
+          "under": 2.21
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 1.75
+          },
+          "away": {
+            "point": 1.5,
+            "price": 2.19
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T16:55:16Z",
+        "h2h": {
+          "home": 1.22,
+          "draw": 6.5,
+          "away": 12.15
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.65,
+          "under": 2.21
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 1.75
+          },
+          "away": {
+            "point": 1.5,
+            "price": 2.19
+          }
+        }
+      }
+    ],
+    "parma|cagliari": [
+      {
+        "ts": "2026-08-10T16:55:02Z",
+        "h2h": {
+          "home": 2.65,
+          "draw": 3.03,
+          "away": 2.87
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.34,
+          "under": 1.55
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.835
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.0149999999999997
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T16:55:16Z",
+        "h2h": {
+          "home": 2.65,
+          "draw": 3.03,
+          "away": 2.87
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.34,
+          "under": 1.55
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.835
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.0149999999999997
+          }
+        }
+      }
+    ],
+    "genoa|napoli": [
+      {
+        "ts": "2026-08-10T16:55:02Z",
+        "h2h": {
+          "home": 4.7,
+          "draw": 3.25,
+          "away": 1.85
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.165,
+          "under": 1.6749999999999998
+        },
+        "spreads": {
+          "home": {
+            "point": 0.5,
+            "price": 1.95
+          },
+          "away": {
+            "point": -0.5,
+            "price": 1.87
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T16:55:16Z",
+        "h2h": {
+          "home": 4.7,
+          "draw": 3.25,
+          "away": 1.85
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.165,
+          "under": 1.6749999999999998
+        },
+        "spreads": {
+          "home": {
+            "point": 0.5,
+            "price": 1.95
+          },
+          "away": {
+            "point": -0.5,
+            "price": 1.87
+          }
+        }
+      }
+    ],
+    "frosinone|juventus": [
+      {
+        "ts": "2026-08-10T16:55:02Z",
+        "h2h": {
+          "home": 7.0,
+          "draw": 4.5,
+          "away": 1.44
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.82,
+          "under": 1.955
+        },
+        "spreads": {
+          "home": {
+            "point": 1.0,
+            "price": 2.1
+          },
+          "away": {
+            "point": -1.0,
+            "price": 1.77
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T16:55:16Z",
+        "h2h": {
+          "home": 7.0,
+          "draw": 4.5,
+          "away": 1.44
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.82,
+          "under": 1.955
+        },
+        "spreads": {
+          "home": {
+            "point": 1.0,
+            "price": 2.1
+          },
+          "away": {
+            "point": -1.0,
+            "price": 1.77
+          }
+        }
+      }
+    ],
+    "venezia|lecce": [
+      {
+        "ts": "2026-08-10T16:55:02Z",
+        "h2h": {
+          "home": 2.35,
+          "draw": 3.2,
+          "away": 3.15
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.1900000000000004,
+          "under": 1.67
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.66
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.32
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T16:55:16Z",
+        "h2h": {
+          "home": 2.35,
+          "draw": 3.2,
+          "away": 3.15
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.1900000000000004,
+          "under": 1.67
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.66
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.32
+          }
+        }
+      }
+    ],
+    "torino|ac milan": [
+      {
+        "ts": "2026-08-10T16:55:02Z",
+        "h2h": {
+          "home": 4.5,
+          "draw": 3.7,
+          "away": 1.76
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.9,
+          "under": 1.91
+        },
+        "spreads": {
+          "home": {
+            "point": 0.5,
+            "price": 2.06
+          },
+          "away": {
+            "point": -0.5,
+            "price": 1.79
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T16:55:16Z",
+        "h2h": {
+          "home": 4.5,
+          "draw": 3.7,
+          "away": 1.76
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.9,
+          "under": 1.91
+        },
+        "spreads": {
+          "home": {
+            "point": 0.5,
+            "price": 2.06
+          },
+          "away": {
+            "point": -0.5,
+            "price": 1.79
+          }
+        }
+      }
+    ],
+    "atalanta bc|sassuolo": [
+      {
+        "ts": "2026-08-10T16:55:02Z",
+        "h2h": {
+          "home": 1.53,
+          "draw": 4.33,
+          "away": 5.9
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.66,
+          "under": 2.165
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 1.8849999999999998
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.9449999999999998
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T16:55:16Z",
+        "h2h": {
+          "home": 1.53,
+          "draw": 4.33,
+          "away": 5.9
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.66,
+          "under": 2.165
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 1.8849999999999998
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.9449999999999998
+          }
+        }
+      }
+    ],
+    "bologna|lazio": [
+      {
+        "ts": "2026-08-10T16:55:02Z",
+        "h2h": {
+          "home": 2.15,
+          "draw": 3.23,
+          "away": 3.55
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.18,
+          "under": 1.6749999999999998
+        },
+        "spreads": {
+          "home": {
+            "point": -0.5,
+            "price": 2.15
+          },
+          "away": {
+            "point": 0.5,
+            "price": 1.74
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T16:55:16Z",
+        "h2h": {
+          "home": 2.15,
+          "draw": 3.23,
+          "away": 3.55
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.18,
+          "under": 1.6749999999999998
+        },
+        "spreads": {
+          "home": {
+            "point": -0.5,
+            "price": 2.15
+          },
+          "away": {
+            "point": 0.5,
+            "price": 1.74
+          }
+        }
+      }
+    ],
+    "as roma|fiorentina": [
+      {
+        "ts": "2026-08-10T16:55:02Z",
+        "h2h": {
+          "home": 1.55,
+          "draw": 4.1,
+          "away": 5.9
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.86,
+          "under": 1.935
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 1.95
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.885
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T16:55:16Z",
+        "h2h": {
+          "home": 1.55,
+          "draw": 4.1,
+          "away": 5.9
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.86,
+          "under": 1.935
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 1.95
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.885
+          }
+        }
+      }
+    ]
+  },
   "matches": [
     {
       "homeTeam": "Udinese",
@@ -9,14 +491,14 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 4.45,
-          "draw": 3.425,
-          "away": 1.8
+          "home": 4.5,
+          "draw": 3.5,
+          "away": 1.81
         },
         "totals": {
           "line": 2.5,
-          "over": 2.1,
-          "under": 1.71
+          "over": 2.12,
+          "under": 1.705
         },
         "spreads": {
           "home": {
@@ -32,7 +514,12 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 38
+      "bookmakers": 21,
+      "prevH2h": {
+        "home": 4.5,
+        "draw": 3.5,
+        "away": 1.81
+      }
     },
     {
       "homeTeam": "Inter Milan",
@@ -41,19 +528,19 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.21,
-          "draw": 6.05,
-          "away": 12.575
+          "home": 1.22,
+          "draw": 6.5,
+          "away": 12.15
         },
         "totals": {
           "line": 2.5,
-          "over": 1.63,
-          "under": 2.22
+          "over": 1.65,
+          "under": 2.21
         },
         "spreads": {
           "home": {
             "point": -1.5,
-            "price": 1.72
+            "price": 1.75
           },
           "away": {
             "point": 1.5,
@@ -64,7 +551,12 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 38
+      "bookmakers": 21,
+      "prevH2h": {
+        "home": 1.22,
+        "draw": 6.5,
+        "away": 12.15
+      }
     },
     {
       "homeTeam": "Parma",
@@ -73,13 +565,13 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.6,
-          "draw": 3.045,
-          "away": 2.8
+          "home": 2.65,
+          "draw": 3.03,
+          "away": 2.87
         },
         "totals": {
           "line": 2.5,
-          "over": 2.38,
+          "over": 2.34,
           "under": 1.55
         },
         "spreads": {
@@ -96,7 +588,12 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 38
+      "bookmakers": 21,
+      "prevH2h": {
+        "home": 2.65,
+        "draw": 3.03,
+        "away": 2.87
+      }
     },
     {
       "homeTeam": "Genoa",
@@ -105,14 +602,14 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 4.5,
-          "draw": 3.3,
-          "away": 1.8250000000000002
+          "home": 4.7,
+          "draw": 3.25,
+          "away": 1.85
         },
         "totals": {
           "line": 2.5,
-          "over": 2.15,
-          "under": 1.67
+          "over": 2.165,
+          "under": 1.6749999999999998
         },
         "spreads": {
           "home": {
@@ -128,7 +625,12 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 38
+      "bookmakers": 21,
+      "prevH2h": {
+        "home": 4.7,
+        "draw": 3.25,
+        "away": 1.85
+      }
     },
     {
       "homeTeam": "Frosinone",
@@ -137,8 +639,8 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 6.9,
-          "draw": 4.33,
+          "home": 7.0,
+          "draw": 4.5,
           "away": 1.44
         },
         "totals": {
@@ -160,7 +662,12 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 38
+      "bookmakers": 21,
+      "prevH2h": {
+        "home": 7.0,
+        "draw": 4.5,
+        "away": 1.44
+      }
     },
     {
       "homeTeam": "Venezia",
@@ -169,14 +676,14 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.3,
+          "home": 2.35,
           "draw": 3.2,
-          "away": 3.1
+          "away": 3.15
         },
         "totals": {
           "line": 2.5,
-          "over": 2.18,
-          "under": 1.66
+          "over": 2.1900000000000004,
+          "under": 1.67
         },
         "spreads": {
           "home": {
@@ -192,7 +699,12 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 38
+      "bookmakers": 21,
+      "prevH2h": {
+        "home": 2.35,
+        "draw": 3.2,
+        "away": 3.15
+      }
     },
     {
       "homeTeam": "Torino",
@@ -201,14 +713,14 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 4.375,
-          "draw": 3.6,
-          "away": 1.75
+          "home": 4.5,
+          "draw": 3.7,
+          "away": 1.76
         },
         "totals": {
           "line": 2.5,
-          "over": 1.88,
-          "under": 1.89
+          "over": 1.9,
+          "under": 1.91
         },
         "spreads": {
           "home": {
@@ -224,7 +736,12 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 38
+      "bookmakers": 21,
+      "prevH2h": {
+        "home": 4.5,
+        "draw": 3.7,
+        "away": 1.76
+      }
     },
     {
       "homeTeam": "Atalanta BC",
@@ -233,30 +750,35 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.5,
-          "draw": 4.3,
+          "home": 1.53,
+          "draw": 4.33,
           "away": 5.9
         },
         "totals": {
           "line": 2.5,
-          "over": 1.68,
-          "under": 2.12
+          "over": 1.66,
+          "under": 2.165
         },
         "spreads": {
           "home": {
             "point": -1.0,
-            "price": 1.88
+            "price": 1.8849999999999998
           },
           "away": {
             "point": 1.0,
-            "price": 1.94
+            "price": 1.9449999999999998
           }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 38
+      "bookmakers": 21,
+      "prevH2h": {
+        "home": 1.53,
+        "draw": 4.33,
+        "away": 5.9
+      }
     },
     {
       "homeTeam": "Bologna",
@@ -265,13 +787,13 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.1100000000000003,
-          "draw": 3.215,
-          "away": 3.5
+          "home": 2.15,
+          "draw": 3.23,
+          "away": 3.55
         },
         "totals": {
           "line": 2.5,
-          "over": 2.15,
+          "over": 2.18,
           "under": 1.6749999999999998
         },
         "spreads": {
@@ -288,7 +810,12 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 38
+      "bookmakers": 21,
+      "prevH2h": {
+        "home": 2.15,
+        "draw": 3.23,
+        "away": 3.55
+      }
     },
     {
       "homeTeam": "AS Roma",
@@ -297,30 +824,35 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.53,
-          "draw": 4.0,
+          "home": 1.55,
+          "draw": 4.1,
           "away": 5.9
         },
         "totals": {
           "line": 2.5,
-          "over": 1.83,
-          "under": 1.93
+          "over": 1.86,
+          "under": 1.935
         },
         "spreads": {
           "home": {
             "point": -1.0,
-            "price": 1.9
+            "price": 1.95
           },
           "away": {
             "point": 1.0,
-            "price": 1.92
+            "price": 1.885
           }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 37
+      "bookmakers": 21,
+      "prevH2h": {
+        "home": 1.55,
+        "draw": 4.1,
+        "away": 5.9
+      }
     }
   ]
 }

@@ -1,92 +1,43 @@
 {
  "predictions": [
   {
-   "homeTeam": "Standard Liege",
-   "awayTeam": "Cercle Brugge KSV",
-   "kickoff": "2026-08-08T16:15:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.57,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Sint Truiden",
-   "awayTeam": "Lommel SK",
-   "kickoff": "2026-08-08T18:45:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.648,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Westerlo",
-   "awayTeam": "Union Saint-Gilloise",
-   "kickoff": "2026-08-08T18:45:00Z",
-   "predictedScore": "0-1",
-   "confidence": 0.629,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Gent",
-   "awayTeam": "KV Mechelen",
-   "kickoff": "2026-08-09T11:30:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.602,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Charleroi",
-   "awayTeam": "Leuven",
-   "kickoff": "2026-08-09T14:00:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.623,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "SV Zulte-Waregem",
-   "awayTeam": "Genk",
-   "kickoff": "2026-08-09T14:00:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.586,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Anderlecht",
-   "awayTeam": "RAAL La Louvière",
-   "kickoff": "2026-08-09T16:30:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.633,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Royal Antwerp",
-   "awayTeam": "SK Beveren",
-   "kickoff": "2026-08-09T17:15:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.628,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Cercle Brugge KSV",
-   "awayTeam": "Sint Truiden",
-   "kickoff": "2026-08-14T18:45:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.57,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
    "homeTeam": "Bayern Munich",
    "awayTeam": "VfB Stuttgart",
    "kickoff": "2026-08-28T18:30:00Z",
    "predictedScore": "2-0",
-   "confidence": 0.705,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.707,
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.552,
+     "oddsProb": 0.734,
+     "edge": -0.182,
+     "level": "gold",
+     "modelConf": 0.312
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.239,
+     "oddsProb": 0.118,
+     "edge": 0.121,
+     "level": "watch",
+     "modelConf": 0.312
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "1. FC Köln",
    "awayTeam": "TSG Hoffenheim",
    "kickoff": "2026-08-29T13:30:00Z",
    "predictedScore": "1-1",
-   "confidence": 0.578,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.577,
+   "valuePicks": [],
+   "signalLevel": "none",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Elversberg",
@@ -94,39 +45,68 @@
    "kickoff": "2026-08-29T13:30:00Z",
    "predictedScore": "1-2",
    "confidence": 0.657,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "valuePicks": [],
+   "signalLevel": "none",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "RB Leipzig",
    "awayTeam": "Borussia Monchengladbach",
    "kickoff": "2026-08-29T13:30:00Z",
    "predictedScore": "2-0",
-   "confidence": 0.657,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.659,
+   "valuePicks": [],
+   "signalLevel": "none",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Union Berlin",
    "awayTeam": "Eintracht Frankfurt",
    "kickoff": "2026-08-29T13:30:00Z",
    "predictedScore": "1-1",
-   "confidence": 0.573,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.571,
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.28,
+     "oddsProb": 0.393,
+     "edge": -0.113,
+     "level": "watch",
+     "modelConf": 0.204
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.484,
+     "oddsProb": 0.337,
+     "edge": 0.147,
+     "level": "watch",
+     "modelConf": 0.204
+    }
+   ],
+   "signalLevel": "watch",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "FSV Mainz 05",
    "awayTeam": "SC Paderborn",
    "kickoff": "2026-08-29T13:30:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.636,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "predictedScore": "1-1",
+   "confidence": 0.637,
+   "valuePicks": [],
+   "signalLevel": "none",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Borussia Dortmund",
    "awayTeam": "Hamburger SV",
    "kickoff": "2026-08-29T16:30:00Z",
    "predictedScore": "2-0",
-   "confidence": 0.696,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.698,
+   "valuePicks": [],
+   "signalLevel": "none",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "SC Freiburg",
@@ -134,491 +114,172 @@
    "kickoff": "2026-08-30T13:30:00Z",
    "predictedScore": "1-1",
    "confidence": 0.599,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.738,
+     "oddsProb": 0.465,
+     "edge": 0.273,
+     "level": "gold",
+     "modelConf": 0.6
+    },
+    {
+     "side": "draw",
+     "label": "平局",
+     "modelProb": 0.138,
+     "oddsProb": 0.27,
+     "edge": -0.131,
+     "level": "watch",
+     "modelConf": 0.6
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.124,
+     "oddsProb": 0.266,
+     "edge": -0.142,
+     "level": "watch",
+     "modelConf": 0.6
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Augsburg",
    "awayTeam": "FC Schalke 04",
    "kickoff": "2026-08-30T15:30:00Z",
-   "predictedScore": "1-1",
+   "predictedScore": "2-1",
    "confidence": 0.592,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Grêmio",
-   "awayTeam": "Sao Paulo",
-   "kickoff": "2026-08-08T19:00:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.574,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Remo",
-   "awayTeam": "Atletico Mineiro",
-   "kickoff": "2026-08-08T21:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.569,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Coritiba",
-   "awayTeam": "Chapecoense",
-   "kickoff": "2026-08-08T23:30:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.644,
-   "predictedAt": "2026-08-09T13:17:45Z",
-   "actualScore": "2-1",
-   "evaluatedAt": "2026-08-09T13:19:26Z",
-   "hitExact": false,
-   "hitOutcome": true
-  },
-  {
-   "homeTeam": "Botafogo",
-   "awayTeam": "Fluminense",
-   "kickoff": "2026-08-09T00:00:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.57,
-   "predictedAt": "2026-08-09T13:17:45Z",
-   "actualScore": "1-1",
-   "evaluatedAt": "2026-08-09T13:19:26Z",
-   "hitExact": false,
-   "hitOutcome": false
-  },
-  {
-   "homeTeam": "Cruzeiro",
-   "awayTeam": "Mirassol",
-   "kickoff": "2026-08-09T14:00:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.636,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Bahia",
-   "awayTeam": "Vasco da Gama",
-   "kickoff": "2026-08-09T19:00:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.607,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Palmeiras",
-   "awayTeam": "Internacional",
-   "kickoff": "2026-08-09T19:00:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.651,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Santos",
-   "awayTeam": "Atletico Paranaense",
-   "kickoff": "2026-08-09T21:30:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.59,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Bragantino-SP",
-   "awayTeam": "Corinthians",
-   "kickoff": "2026-08-09T21:30:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.587,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Flamengo",
-   "awayTeam": "Vitoria",
-   "kickoff": "2026-08-09T22:30:00Z",
-   "predictedScore": "2-0",
-   "confidence": 0.717,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Fluminense",
-   "awayTeam": "Palmeiras",
-   "kickoff": "2026-08-15T19:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.556,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Atletico Paranaense",
-   "awayTeam": "Bragantino-SP",
-   "kickoff": "2026-08-15T21:30:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.6,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Sao Paulo",
-   "awayTeam": "Coritiba",
-   "kickoff": "2026-08-16T00:00:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.639,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Chapecoense",
-   "awayTeam": "Bahia",
-   "kickoff": "2026-08-16T14:00:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.592,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Atletico Mineiro",
-   "awayTeam": "Grêmio",
-   "kickoff": "2026-08-16T19:00:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.626,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Vasco da Gama",
-   "awayTeam": "Santos",
-   "kickoff": "2026-08-16T19:00:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.606,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Vitoria",
-   "awayTeam": "Botafogo",
-   "kickoff": "2026-08-16T21:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.569,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Mirassol",
-   "awayTeam": "Flamengo",
-   "kickoff": "2026-08-16T21:30:00Z",
-   "predictedScore": "0-1",
-   "confidence": 0.612,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Corinthians",
-   "awayTeam": "Cruzeiro",
-   "kickoff": "2026-08-16T22:30:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.578,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Internacional",
-   "awayTeam": "Remo",
-   "kickoff": "2026-08-17T23:00:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.651,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Wolverhampton Wanderers",
-   "awayTeam": "Blackburn Rovers",
-   "kickoff": "2026-08-14T19:00:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.655,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Bolton Wanderers",
-   "awayTeam": "Preston North End",
-   "kickoff": "2026-08-15T11:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.585,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Bristol City",
-   "awayTeam": "Millwall",
-   "kickoff": "2026-08-15T14:00:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.565,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Charlton Athletic",
-   "awayTeam": "Derby County",
-   "kickoff": "2026-08-15T14:00:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.557,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Middlesbrough",
-   "awayTeam": "Lincoln City",
-   "kickoff": "2026-08-15T14:00:00Z",
-   "predictedScore": "2-0",
-   "confidence": 0.698,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Norwich City",
-   "awayTeam": "West Bromwich Albion",
-   "kickoff": "2026-08-15T14:00:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.599,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Portsmouth",
-   "awayTeam": "Queens Park Rangers",
-   "kickoff": "2026-08-15T14:00:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.583,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Stoke City",
-   "awayTeam": "Swansea City",
-   "kickoff": "2026-08-15T14:00:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.569,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Sheffield United",
-   "awayTeam": "Birmingham City",
-   "kickoff": "2026-08-15T16:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.565,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Watford",
-   "awayTeam": "Southampton",
-   "kickoff": "2026-08-16T12:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.595,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Burnley",
-   "awayTeam": "West Ham United",
-   "kickoff": "2026-08-16T15:00:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.572,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Cardiff City",
-   "awayTeam": "Wrexham AFC",
-   "kickoff": "2026-08-17T19:00:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.574,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "FC Kairat",
-   "awayTeam": "PFC Levski Sofia",
-   "kickoff": "2026-08-11T15:00:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.563,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Sabah FK",
-   "awayTeam": "AGF Aarhus",
-   "kickoff": "2026-08-11T16:00:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.602,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Bodø/Glimt",
-   "awayTeam": "Union Saint-Gilloise",
-   "kickoff": "2026-08-11T16:00:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.637,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "FK Kauno Žalgiris",
-   "awayTeam": "Dinamo Zagreb",
-   "kickoff": "2026-08-11T17:00:00Z",
-   "predictedScore": "1-2",
-   "confidence": 0.684,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "NEC Nijmegen",
-   "awayTeam": "Olympiakos Piraeus",
-   "kickoff": "2026-08-11T17:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.559,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Red Star Belgrade",
-   "awayTeam": "Hapoel Be'er Sheva",
-   "kickoff": "2026-08-11T18:00:00Z",
-   "predictedScore": "2-0",
-   "confidence": 0.699,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "NK Celje",
-   "awayTeam": "FC Ararat-Armenia",
-   "kickoff": "2026-08-11T18:15:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.669,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "ŠK Slovan Bratislava",
-   "awayTeam": "Mjällby AIF",
-   "kickoff": "2026-08-11T18:15:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.618,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "SK Sturm Graz",
-   "awayTeam": "Fenerbahce",
-   "kickoff": "2026-08-11T18:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.612,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Lyon",
-   "awayTeam": "Sparta Prague",
-   "kickoff": "2026-08-11T19:00:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.661,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "NEC Nijmegen",
-   "awayTeam": "SC Telstar",
-   "kickoff": "2026-08-08T14:30:00Z",
-   "predictedScore": "2-0",
-   "confidence": 0.67,
-   "predictedAt": "2026-08-09T13:17:45Z",
-   "actualScore": "1-2",
-   "evaluatedAt": "2026-08-09T13:19:26Z",
-   "hitExact": false,
-   "hitOutcome": false
-  },
-  {
-   "homeTeam": "Go Ahead Eagles",
-   "awayTeam": "Willem II",
-   "kickoff": "2026-08-08T16:45:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.641,
-   "predictedAt": "2026-08-09T13:17:45Z",
-   "actualScore": "4-1",
-   "evaluatedAt": "2026-08-09T13:19:26Z",
-   "hitExact": false,
-   "hitOutcome": true
-  },
-  {
-   "homeTeam": "PSV Eindhoven",
-   "awayTeam": "Fortuna Sittard",
-   "kickoff": "2026-08-08T18:00:00Z",
-   "predictedScore": "2-0",
-   "confidence": 0.735,
-   "predictedAt": "2026-08-09T13:17:45Z",
-   "actualScore": "2-2",
-   "evaluatedAt": "2026-08-09T13:19:26Z",
-   "hitExact": false,
-   "hitOutcome": false
-  },
-  {
-   "homeTeam": "AZ Alkmaar",
-   "awayTeam": "ADO Den Haag",
-   "kickoff": "2026-08-08T19:00:00Z",
-   "predictedScore": "2-0",
-   "confidence": 0.676,
-   "predictedAt": "2026-08-09T13:17:45Z",
-   "actualScore": "2-0",
-   "evaluatedAt": "2026-08-09T13:19:26Z",
-   "hitExact": true,
-   "hitOutcome": true
-  },
-  {
-   "homeTeam": "Sparta Rotterdam",
-   "awayTeam": "Feyenoord",
-   "kickoff": "2026-08-09T10:15:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.636,
-   "predictedAt": "2026-08-09T13:17:45Z",
-   "actualScore": "0-1",
-   "evaluatedAt": "2026-08-09T13:19:26Z",
-   "hitExact": false,
-   "hitOutcome": false
-  },
-  {
-   "homeTeam": "FC Zwolle",
-   "awayTeam": "Ajax",
-   "kickoff": "2026-08-09T12:30:00Z",
-   "predictedScore": "1-2",
-   "confidence": 0.667,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Groningen",
-   "awayTeam": "FC Utrecht",
-   "kickoff": "2026-08-09T12:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.575,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Heerenveen",
-   "awayTeam": "FC Twente Enschede",
-   "kickoff": "2026-08-09T14:45:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.586,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "FC Utrecht",
-   "awayTeam": "AZ Alkmaar",
-   "kickoff": "2026-08-15T16:45:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.573,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Excelsior",
-   "awayTeam": "PSV Eindhoven",
-   "kickoff": "2026-08-15T18:00:00Z",
-   "predictedScore": "1-2",
-   "confidence": 0.649,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.71,
+     "oddsProb": 0.448,
+     "edge": 0.262,
+     "level": "gold",
+     "modelConf": 0.56
+    },
+    {
+     "side": "draw",
+     "label": "平局",
+     "modelProb": 0.149,
+     "oddsProb": 0.254,
+     "edge": -0.105,
+     "level": "watch",
+     "modelConf": 0.56
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.142,
+     "oddsProb": 0.298,
+     "edge": -0.157,
+     "level": "gold",
+     "modelConf": 0.56
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Marseille",
    "awayTeam": "Strasbourg",
    "kickoff": "2026-08-21T18:45:00Z",
    "predictedScore": "1-1",
-   "confidence": 0.643,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.638,
+   "valuePicks": [],
+   "signalLevel": "none",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "RC Lens",
    "awayTeam": "Auxerre",
    "kickoff": "2026-08-22T15:15:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.651,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "predictedScore": "2-0",
+   "confidence": 0.648,
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.751,
+     "oddsProb": 0.587,
+     "edge": 0.164,
+     "level": "gold",
+     "modelConf": 0.618
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Le Mans FC",
    "awayTeam": "Brest",
    "kickoff": "2026-08-22T18:45:00Z",
-   "predictedScore": "1-1",
+   "predictedScore": "2-1",
    "confidence": 0.565,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.809,
+     "oddsProb": 0.38,
+     "edge": 0.428,
+     "level": "gold",
+     "modelConf": 0.698
+    },
+    {
+     "side": "draw",
+     "label": "平局",
+     "modelProb": 0.11,
+     "oddsProb": 0.27,
+     "edge": -0.16,
+     "level": "gold",
+     "modelConf": 0.698
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.081,
+     "oddsProb": 0.349,
+     "edge": -0.268,
+     "level": "gold",
+     "modelConf": 0.698
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Nice",
    "awayTeam": "Lorient",
    "kickoff": "2026-08-22T18:45:00Z",
    "predictedScore": "1-1",
-   "confidence": 0.587,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.585,
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.197,
+     "oddsProb": 0.429,
+     "edge": -0.232,
+     "level": "gold",
+     "modelConf": 0.425
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.622,
+     "oddsProb": 0.297,
+     "edge": 0.325,
+     "level": "gold",
+     "modelConf": 0.425
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Toulouse",
@@ -626,583 +287,592 @@
    "kickoff": "2026-08-22T18:45:00Z",
    "predictedScore": "1-1",
    "confidence": 0.599,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.809,
+     "oddsProb": 0.276,
+     "edge": 0.532,
+     "level": "gold",
+     "modelConf": 0.698
+    },
+    {
+     "side": "draw",
+     "label": "平局",
+     "modelProb": 0.11,
+     "oddsProb": 0.258,
+     "edge": -0.148,
+     "level": "watch",
+     "modelConf": 0.698
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.081,
+     "oddsProb": 0.465,
+     "edge": -0.384,
+     "level": "gold",
+     "modelConf": 0.698
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Troyes",
    "awayTeam": "Paris FC",
    "kickoff": "2026-08-22T18:45:00Z",
    "predictedScore": "1-1",
-   "confidence": 0.568,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.567,
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.197,
+     "oddsProb": 0.346,
+     "edge": -0.15,
+     "level": "watch",
+     "modelConf": 0.425
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.622,
+     "oddsProb": 0.383,
+     "edge": 0.239,
+     "level": "gold",
+     "modelConf": 0.425
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Angers",
    "awayTeam": "Lille",
    "kickoff": "2026-08-23T13:00:00Z",
-   "predictedScore": "0-1",
+   "predictedScore": "1-1",
    "confidence": 0.637,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.49,
+     "oddsProb": 0.19,
+     "edge": 0.301,
+     "level": "gold",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.559,
+     "edge": -0.284,
+     "level": "gold",
+     "modelConf": 0.215
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Le Havre",
    "awayTeam": "AS Monaco",
    "kickoff": "2026-08-23T15:15:00Z",
    "predictedScore": "1-1",
-   "confidence": 0.6,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.605,
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.49,
+     "oddsProb": 0.274,
+     "edge": 0.217,
+     "level": "gold",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.478,
+     "edge": -0.202,
+     "level": "gold",
+     "modelConf": 0.215
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Paris Saint Germain",
    "awayTeam": "Rennes",
    "kickoff": "2026-08-23T18:45:00Z",
    "predictedScore": "2-0",
-   "confidence": 0.684,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Avispa Fukuoka",
-   "awayTeam": "Vissel Kobe",
-   "kickoff": "2026-08-08T10:00:00Z",
-   "predictedScore": "0-1",
-   "confidence": 0.605,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Cerezo Osaka",
-   "awayTeam": "Fagiano Okayama",
-   "kickoff": "2026-08-08T10:00:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.612,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "FC Tokyo",
-   "awayTeam": "FC Machida Zelvia",
-   "kickoff": "2026-08-08T10:00:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.568,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Kashiwa Reysol",
-   "awayTeam": "Mito HollyHock",
-   "kickoff": "2026-08-08T10:00:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.653,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Nagoya Grampus",
-   "awayTeam": "Shimizu S Pulse",
-   "kickoff": "2026-08-08T10:00:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.595,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Hiroshima Sanfrecce FC",
-   "awayTeam": "JEF United Chiba",
-   "kickoff": "2026-08-08T10:15:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.669,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Tokyo Verdy",
-   "awayTeam": "Kawasaki Frontale",
-   "kickoff": "2026-08-09T09:00:00Z",
-   "predictedScore": "0-1",
-   "confidence": 0.574,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "V-Varen Nagasaki",
-   "awayTeam": "Kyoto Purple Sanga",
-   "kickoff": "2026-08-09T10:00:00Z",
-   "predictedScore": "0-1",
-   "confidence": 0.567,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Bucheon FC 1995",
-   "awayTeam": "Gwangju FC",
-   "kickoff": "2026-08-08T11:00:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.608,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "FC Anyang",
-   "awayTeam": "Daejeon Citizen",
-   "kickoff": "2026-08-08T11:00:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.566,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Sangju Sangmu FC",
-   "awayTeam": "FC Seoul",
-   "kickoff": "2026-08-08T11:00:00Z",
-   "predictedScore": "0-1",
-   "confidence": 0.608,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Jeonbuk Hyundai Motors",
-   "awayTeam": "Jeju United FC",
-   "kickoff": "2026-08-08T11:00:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.631,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Pohang Steelers",
-   "awayTeam": "Ulsan Hyundai FC",
-   "kickoff": "2026-08-08T11:00:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.557,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "New England Revolution",
-   "awayTeam": "Houston Dynamo",
-   "kickoff": "2026-08-08T20:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.569,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Atlanta United FC",
-   "awayTeam": "New York Red Bulls",
-   "kickoff": "2026-08-15T23:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.62,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "CF Montreal",
-   "awayTeam": "D.C. United",
-   "kickoff": "2026-08-15T23:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.584,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Charlotte FC",
-   "awayTeam": "Columbus Crew SC",
-   "kickoff": "2026-08-15T23:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.581,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Orlando City SC",
-   "awayTeam": "FC Cincinnati",
-   "kickoff": "2026-08-15T23:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.581,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Toronto FC",
-   "awayTeam": "New England Revolution",
-   "kickoff": "2026-08-15T23:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.577,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Houston Dynamo",
-   "awayTeam": "LA Galaxy",
-   "kickoff": "2026-08-16T00:30:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.635,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Nashville SC",
-   "awayTeam": "Inter Miami CF",
-   "kickoff": "2026-08-16T00:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.568,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Colorado Rapids",
-   "awayTeam": "Sporting Kansas City",
-   "kickoff": "2026-08-16T01:30:00Z",
-   "predictedScore": "2-0",
-   "confidence": 0.667,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Real Salt Lake",
-   "awayTeam": "Minnesota United FC",
-   "kickoff": "2026-08-16T01:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.623,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Los Angeles FC",
-   "awayTeam": "San Diego FC",
-   "kickoff": "2026-08-16T02:30:00Z",
-   "predictedScore": "2-1",
-   "confidence": 0.657,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "San Jose Earthquakes",
-   "awayTeam": "St. Louis City SC",
-   "kickoff": "2026-08-16T02:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.601,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Chicago Fire",
-   "awayTeam": "Portland Timbers",
-   "kickoff": "2026-08-16T22:00:00Z",
-   "predictedScore": "2-1",
-   "confidence": 0.653,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "New York City FC",
-   "awayTeam": "Philadelphia Union",
-   "kickoff": "2026-08-16T22:00:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.589,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Austin FC",
-   "awayTeam": "FC Dallas",
-   "kickoff": "2026-08-17T00:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.578,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Seattle Sounders FC",
-   "awayTeam": "Vancouver Whitecaps FC",
-   "kickoff": "2026-08-17T02:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.602,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Columbus Crew SC",
-   "awayTeam": "CF Montreal",
-   "kickoff": "2026-08-19T23:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.652,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Toronto FC",
-   "awayTeam": "Charlotte FC",
-   "kickoff": "2026-08-19T23:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.573,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Orlando City SC",
-   "awayTeam": "Chicago Fire",
-   "kickoff": "2026-08-19T23:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.581,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "D.C. United",
-   "awayTeam": "New England Revolution",
-   "kickoff": "2026-08-19T23:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.599,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "FC Cincinnati",
-   "awayTeam": "New York City FC",
-   "kickoff": "2026-08-19T23:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.592,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Philadelphia Union",
-   "awayTeam": "Inter Miami CF",
-   "kickoff": "2026-08-19T23:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.569,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "New York Red Bulls",
-   "awayTeam": "Nashville SC",
-   "kickoff": "2026-08-19T23:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.58,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Sporting Kansas City",
-   "awayTeam": "St. Louis City SC",
-   "kickoff": "2026-08-20T00:00:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.599,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Minnesota United FC",
-   "awayTeam": "Atlanta United FC",
-   "kickoff": "2026-08-20T00:30:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.634,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Seattle Sounders FC",
-   "awayTeam": "Austin FC",
-   "kickoff": "2026-08-20T01:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.642,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Colorado Rapids",
-   "awayTeam": "Los Angeles FC",
-   "kickoff": "2026-08-20T01:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.574,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Real Salt Lake",
-   "awayTeam": "FC Dallas",
-   "kickoff": "2026-08-20T01:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.617,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Vancouver Whitecaps FC",
-   "awayTeam": "Houston Dynamo",
-   "kickoff": "2026-08-20T02:30:00Z",
-   "predictedScore": "2-0",
-   "confidence": 0.666,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "LA Galaxy",
-   "awayTeam": "San Jose Earthquakes",
-   "kickoff": "2026-08-20T02:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.569,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Portland Timbers",
-   "awayTeam": "San Diego FC",
-   "kickoff": "2026-08-20T02:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.603,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.683,
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.809,
+     "oddsProb": 0.675,
+     "edge": 0.134,
+     "level": "watch",
+     "modelConf": 0.698
+    }
+   ],
+   "signalLevel": "watch",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Alavés",
    "awayTeam": "Getafe",
    "kickoff": "2026-08-15T17:30:00Z",
-   "predictedScore": "1-0",
+   "predictedScore": "1-1",
    "confidence": 0.572,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.268,
+     "oddsProb": 0.396,
+     "edge": -0.128,
+     "level": "watch",
+     "modelConf": 0.237
+    },
+    {
+     "side": "draw",
+     "label": "平局",
+     "modelProb": 0.228,
+     "oddsProb": 0.34,
+     "edge": -0.112,
+     "level": "watch",
+     "modelConf": 0.237
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.504,
+     "oddsProb": 0.264,
+     "edge": 0.24,
+     "level": "gold",
+     "modelConf": 0.237
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Sevilla",
    "awayTeam": "Rayo Vallecano",
    "kickoff": "2026-08-15T19:30:00Z",
    "predictedScore": "1-0",
-   "confidence": 0.582,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.581,
+   "valuePicks": [],
+   "signalLevel": "none",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Real Racing Club de Santander",
    "awayTeam": "Villarreal",
    "kickoff": "2026-08-16T15:00:00Z",
    "predictedScore": "1-1",
-   "confidence": 0.579,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.578,
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.511,
+     "oddsProb": 0.313,
+     "edge": 0.198,
+     "level": "gold",
+     "modelConf": 0.247
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.264,
+     "oddsProb": 0.412,
+     "edge": -0.148,
+     "level": "watch",
+     "modelConf": 0.247
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Espanyol",
    "awayTeam": "Levante",
    "kickoff": "2026-08-16T17:00:00Z",
    "predictedScore": "1-0",
-   "confidence": 0.601,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.6,
+   "valuePicks": [],
+   "signalLevel": "none",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Celta Vigo",
    "awayTeam": "CA Osasuna",
    "kickoff": "2026-08-16T19:30:00Z",
    "predictedScore": "1-0",
-   "confidence": 0.602,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.601,
+   "valuePicks": [],
+   "signalLevel": "none",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Deportivo La Coruña",
    "awayTeam": "Elche CF",
    "kickoff": "2026-08-17T19:00:00Z",
    "predictedScore": "1-0",
-   "confidence": 0.576,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.57,
+   "valuePicks": [],
+   "signalLevel": "none",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Atlético Madrid",
    "awayTeam": "Málaga",
    "kickoff": "2026-08-19T19:00:00Z",
    "predictedScore": "2-0",
-   "confidence": 0.702,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.707,
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.49,
+     "oddsProb": 0.735,
+     "edge": -0.244,
+     "level": "gold",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.091,
+     "edge": 0.184,
+     "level": "gold",
+     "modelConf": 0.215
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Rayo Vallecano",
    "awayTeam": "Alavés",
    "kickoff": "2026-08-20T19:00:00Z",
    "predictedScore": "1-0",
-   "confidence": 0.594,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.595,
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.724,
+     "oddsProb": 0.454,
+     "edge": 0.27,
+     "level": "gold",
+     "modelConf": 0.581
+    },
+    {
+     "side": "draw",
+     "label": "平局",
+     "modelProb": 0.143,
+     "oddsProb": 0.3,
+     "edge": -0.157,
+     "level": "gold",
+     "modelConf": 0.581
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.133,
+     "oddsProb": 0.245,
+     "edge": -0.113,
+     "level": "watch",
+     "modelConf": 0.581
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Real Betis",
    "awayTeam": "Real Sociedad",
    "kickoff": "2026-08-21T19:00:00Z",
-   "predictedScore": "1-0",
+   "predictedScore": "1-1",
    "confidence": 0.59,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "valuePicks": [],
+   "signalLevel": "none",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Athletic Bilbao",
    "awayTeam": "Sevilla",
    "kickoff": "2026-08-22T15:00:00Z",
    "predictedScore": "1-0",
-   "confidence": 0.647,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.645,
+   "valuePicks": [],
+   "signalLevel": "none",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Valencia",
    "awayTeam": "Celta Vigo",
    "kickoff": "2026-08-22T17:30:00Z",
-   "predictedScore": "1-0",
+   "predictedScore": "1-1",
    "confidence": 0.573,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.71,
+     "oddsProb": 0.399,
+     "edge": 0.31,
+     "level": "gold",
+     "modelConf": 0.56
+    },
+    {
+     "side": "draw",
+     "label": "平局",
+     "modelProb": 0.149,
+     "oddsProb": 0.293,
+     "edge": -0.144,
+     "level": "watch",
+     "modelConf": 0.56
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.142,
+     "oddsProb": 0.308,
+     "edge": -0.166,
+     "level": "gold",
+     "modelConf": 0.56
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Espanyol",
    "awayTeam": "Real Madrid",
    "kickoff": "2026-08-22T19:30:00Z",
-   "predictedScore": "0-1",
-   "confidence": 0.643,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "predictedScore": "1-1",
+   "confidence": 0.645,
+   "valuePicks": [],
+   "signalLevel": "none",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Atlético Madrid",
    "awayTeam": "Villarreal",
    "kickoff": "2026-08-23T15:00:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.616,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "predictedScore": "1-1",
+   "confidence": 0.611,
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.22,
+     "oddsProb": 0.493,
+     "edge": -0.273,
+     "level": "gold",
+     "modelConf": 0.365
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.584,
+     "oddsProb": 0.238,
+     "edge": 0.346,
+     "level": "gold",
+     "modelConf": 0.365
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Getafe",
    "awayTeam": "Real Racing Club de Santander",
    "kickoff": "2026-08-23T17:30:00Z",
    "predictedScore": "1-0",
-   "confidence": 0.611,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.61,
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.385,
+     "oddsProb": 0.491,
+     "edge": -0.106,
+     "level": "watch",
+     "modelConf": 0.052
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.333,
+     "oddsProb": 0.201,
+     "edge": 0.133,
+     "level": "watch",
+     "modelConf": 0.052
+    }
+   ],
+   "signalLevel": "watch",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Elche CF",
    "awayTeam": "Barcelona",
    "kickoff": "2026-08-23T19:30:00Z",
    "predictedScore": "1-2",
-   "confidence": 0.692,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.697,
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.292,
+     "oddsProb": 0.111,
+     "edge": 0.18,
+     "level": "gold",
+     "modelConf": 0.171
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.463,
+     "oddsProb": 0.709,
+     "edge": -0.246,
+     "level": "gold",
+     "modelConf": 0.171
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "CA Osasuna",
    "awayTeam": "Levante",
    "kickoff": "2026-08-24T17:30:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.632,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "predictedScore": "1-1",
+   "confidence": 0.631,
+   "valuePicks": [],
+   "signalLevel": "none",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Málaga",
    "awayTeam": "Deportivo La Coruña",
    "kickoff": "2026-08-24T19:30:00Z",
-   "predictedScore": "1-0",
+   "predictedScore": "1-1",
    "confidence": 0.566,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "valuePicks": [],
+   "signalLevel": "none",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Valencia",
    "awayTeam": "Real Betis",
    "kickoff": "2026-08-25T19:00:00Z",
    "predictedScore": "1-1",
-   "confidence": 0.556,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.555,
+   "valuePicks": [],
+   "signalLevel": "none",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Real Madrid",
    "awayTeam": "Real Sociedad",
    "kickoff": "2026-08-26T19:00:00Z",
-   "predictedScore": "2-0",
+   "predictedScore": "2-1",
    "confidence": 0.683,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.49,
+     "oddsProb": 0.674,
+     "edge": -0.184,
+     "level": "gold",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.135,
+     "edge": 0.141,
+     "level": "watch",
+     "modelConf": 0.215
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Barcelona",
    "awayTeam": "Athletic Bilbao",
    "kickoff": "2026-08-27T19:00:00Z",
    "predictedScore": "2-0",
-   "confidence": 0.681,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.682,
+   "valuePicks": [],
+   "signalLevel": "none",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Arsenal",
    "awayTeam": "Coventry City",
    "kickoff": "2026-08-21T19:00:00Z",
    "predictedScore": "2-0",
-   "confidence": 0.74,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.739,
+   "valuePicks": [],
+   "signalLevel": "none",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Hull City",
    "awayTeam": "Manchester United",
    "kickoff": "2026-08-22T11:30:00Z",
    "predictedScore": "1-2",
-   "confidence": 0.676,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.675,
+   "valuePicks": [],
+   "signalLevel": "none",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Everton",
    "awayTeam": "Crystal Palace",
    "kickoff": "2026-08-22T14:00:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.592,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "predictedScore": "1-1",
+   "confidence": 0.59,
+   "valuePicks": [],
+   "signalLevel": "none",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Ipswich Town",
    "awayTeam": "Sunderland",
    "kickoff": "2026-08-22T14:00:00Z",
    "predictedScore": "1-1",
-   "confidence": 0.561,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.559,
+   "valuePicks": [
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.504,
+     "oddsProb": 0.365,
+     "edge": 0.139,
+     "level": "watch",
+     "modelConf": 0.237
+    }
+   ],
+   "signalLevel": "watch",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Nottingham Forest",
@@ -1210,23 +880,48 @@
    "kickoff": "2026-08-22T14:00:00Z",
    "predictedScore": "1-1",
    "confidence": 0.583,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "valuePicks": [],
+   "signalLevel": "none",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Brentford",
    "awayTeam": "Tottenham Hotspur",
    "kickoff": "2026-08-22T16:30:00Z",
    "predictedScore": "1-1",
-   "confidence": 0.572,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.571,
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.645,
+     "oddsProb": 0.394,
+     "edge": 0.251,
+     "level": "gold",
+     "modelConf": 0.463
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.182,
+     "oddsProb": 0.344,
+     "edge": -0.162,
+     "level": "gold",
+     "modelConf": 0.463
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Brighton and Hove Albion",
    "awayTeam": "Aston Villa",
    "kickoff": "2026-08-23T13:00:00Z",
    "predictedScore": "1-1",
-   "confidence": 0.579,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.581,
+   "valuePicks": [],
+   "signalLevel": "none",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Manchester City",
@@ -1234,7 +929,9 @@
    "kickoff": "2026-08-23T13:00:00Z",
    "predictedScore": "2-0",
    "confidence": 0.676,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "valuePicks": [],
+   "signalLevel": "none",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Newcastle United",
@@ -1242,643 +939,369 @@
    "kickoff": "2026-08-23T15:30:00Z",
    "predictedScore": "1-1",
    "confidence": 0.598,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "valuePicks": [
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.357,
+     "oddsProb": 0.461,
+     "edge": -0.104,
+     "level": "watch",
+     "modelConf": 0.01
+    }
+   ],
+   "signalLevel": "watch",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Fulham",
    "awayTeam": "Chelsea",
    "kickoff": "2026-08-24T19:00:00Z",
    "predictedScore": "1-1",
-   "confidence": 0.588,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "CS Maritimo",
-   "awayTeam": "Casa Pia",
-   "kickoff": "2026-08-08T14:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.567,
-   "predictedAt": "2026-08-09T13:17:45Z",
-   "actualScore": "1-0",
-   "evaluatedAt": "2026-08-09T13:19:26Z",
-   "hitExact": false,
-   "hitOutcome": false
-  },
-  {
-   "homeTeam": "Vitória SC",
-   "awayTeam": "Arouca",
-   "kickoff": "2026-08-08T17:00:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.61,
-   "predictedAt": "2026-08-09T13:17:45Z",
-   "actualScore": "0-1",
-   "evaluatedAt": "2026-08-09T13:19:03Z",
-   "hitExact": false,
-   "hitOutcome": false
-  },
-  {
-   "homeTeam": "CF Estrela",
-   "awayTeam": "Sporting Lisbon",
-   "kickoff": "2026-08-08T19:30:00Z",
-   "predictedScore": "1-2",
-   "confidence": 0.718,
-   "predictedAt": "2026-08-09T13:17:45Z",
-   "actualScore": "2-2",
-   "evaluatedAt": "2026-08-09T13:19:26Z",
-   "hitExact": false,
-   "hitOutcome": false
-  },
-  {
-   "homeTeam": "FC Porto",
-   "awayTeam": "Alverca",
-   "kickoff": "2026-08-09T17:00:00Z",
-   "predictedScore": "2-0",
-   "confidence": 0.728,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Benfica",
-   "awayTeam": "Académico de Viseu",
-   "kickoff": "2026-08-09T19:30:00Z",
-   "predictedScore": "2-0",
-   "confidence": 0.753,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Moreirense FC",
-   "awayTeam": "Braga",
-   "kickoff": "2026-08-09T19:30:00Z",
-   "predictedScore": "0-1",
-   "confidence": 0.635,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Gil Vicente",
-   "awayTeam": "Rio Ave FC",
-   "kickoff": "2026-08-09T19:30:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.607,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Santa Clara",
-   "awayTeam": "Nacional",
-   "kickoff": "2026-08-10T19:15:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.614,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.589,
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.47,
+     "oddsProb": 0.302,
+     "edge": 0.167,
+     "level": "gold",
+     "modelConf": 0.182
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.288,
+     "oddsProb": 0.439,
+     "edge": -0.151,
+     "level": "gold",
+     "modelConf": 0.182
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Udinese",
    "awayTeam": "Como",
    "kickoff": "2026-08-22T16:30:00Z",
-   "predictedScore": "0-1",
-   "confidence": 0.621,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "predictedScore": "1-1",
+   "confidence": 0.622,
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.49,
+     "oddsProb": 0.21,
+     "edge": 0.281,
+     "level": "gold",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.521,
+     "edge": -0.245,
+     "level": "gold",
+     "modelConf": 0.215
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Inter Milan",
    "awayTeam": "Monza",
    "kickoff": "2026-08-22T16:30:00Z",
-   "predictedScore": "2-0",
-   "confidence": 0.723,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "predictedScore": "1-1",
+   "confidence": 0.724,
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.197,
+     "oddsProb": 0.776,
+     "edge": -0.579,
+     "level": "gold",
+     "modelConf": 0.425
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.622,
+     "oddsProb": 0.079,
+     "edge": 0.543,
+     "level": "gold",
+     "modelConf": 0.425
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Parma",
    "awayTeam": "Cagliari",
    "kickoff": "2026-08-22T18:45:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.557,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "predictedScore": "1-1",
+   "confidence": 0.556,
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.49,
+     "oddsProb": 0.357,
+     "edge": 0.133,
+     "level": "watch",
+     "modelConf": 0.215
+    }
+   ],
+   "signalLevel": "watch",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Genoa",
    "awayTeam": "Napoli",
    "kickoff": "2026-08-22T18:45:00Z",
-   "predictedScore": "0-1",
+   "predictedScore": "1-1",
    "confidence": 0.617,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.809,
+     "oddsProb": 0.201,
+     "edge": 0.608,
+     "level": "gold",
+     "modelConf": 0.698
+    },
+    {
+     "side": "draw",
+     "label": "平局",
+     "modelProb": 0.11,
+     "oddsProb": 0.29,
+     "edge": -0.18,
+     "level": "gold",
+     "modelConf": 0.698
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.081,
+     "oddsProb": 0.509,
+     "edge": -0.429,
+     "level": "gold",
+     "modelConf": 0.698
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Frosinone",
    "awayTeam": "Juventus",
    "kickoff": "2026-08-23T16:30:00Z",
-   "predictedScore": "1-2",
-   "confidence": 0.673,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "predictedScore": "1-1",
+   "confidence": 0.676,
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.49,
+     "oddsProb": 0.135,
+     "edge": 0.356,
+     "level": "gold",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.655,
+     "edge": -0.38,
+     "level": "gold",
+     "modelConf": 0.215
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Venezia",
    "awayTeam": "Lecce",
    "kickoff": "2026-08-23T16:30:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.576,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "predictedScore": "1-1",
+   "confidence": 0.574,
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.809,
+     "oddsProb": 0.403,
+     "edge": 0.406,
+     "level": "gold",
+     "modelConf": 0.698
+    },
+    {
+     "side": "draw",
+     "label": "平局",
+     "modelProb": 0.11,
+     "oddsProb": 0.297,
+     "edge": -0.186,
+     "level": "gold",
+     "modelConf": 0.698
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.081,
+     "oddsProb": 0.3,
+     "edge": -0.22,
+     "level": "gold",
+     "modelConf": 0.698
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Torino",
    "awayTeam": "AC Milan",
    "kickoff": "2026-08-23T18:45:00Z",
-   "predictedScore": "0-1",
-   "confidence": 0.625,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "predictedScore": "1-1",
+   "confidence": 0.627,
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.49,
+     "oddsProb": 0.21,
+     "edge": 0.28,
+     "level": "gold",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.534,
+     "edge": -0.258,
+     "level": "gold",
+     "modelConf": 0.215
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Atalanta BC",
    "awayTeam": "Sassuolo",
    "kickoff": "2026-08-23T18:45:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.663,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "predictedScore": "2-0",
+   "confidence": 0.661,
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.809,
+     "oddsProb": 0.62,
+     "edge": 0.189,
+     "level": "gold",
+     "modelConf": 0.698
+    },
+    {
+     "side": "draw",
+     "label": "平局",
+     "modelProb": 0.11,
+     "oddsProb": 0.219,
+     "edge": -0.109,
+     "level": "watch",
+     "modelConf": 0.698
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "Bologna",
    "awayTeam": "Lazio",
    "kickoff": "2026-08-24T16:30:00Z",
    "predictedScore": "1-0",
-   "confidence": 0.59,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "confidence": 0.589,
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.809,
+     "oddsProb": 0.44,
+     "edge": 0.369,
+     "level": "gold",
+     "modelConf": 0.698
+    },
+    {
+     "side": "draw",
+     "label": "平局",
+     "modelProb": 0.11,
+     "oddsProb": 0.293,
+     "edge": -0.183,
+     "level": "gold",
+     "modelConf": 0.698
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.081,
+     "oddsProb": 0.267,
+     "edge": -0.186,
+     "level": "gold",
+     "modelConf": 0.698
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   },
   {
    "homeTeam": "AS Roma",
    "awayTeam": "Fiorentina",
    "kickoff": "2026-08-24T18:45:00Z",
-   "predictedScore": "1-0",
+   "predictedScore": "2-0",
    "confidence": 0.657,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Dundee FC",
-   "awayTeam": "Aberdeen",
-   "kickoff": "2026-08-08T14:00:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.562,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "St Mirren",
-   "awayTeam": "St Johnstone",
-   "kickoff": "2026-08-08T14:00:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.575,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Kilmarnock",
-   "awayTeam": "Celtic",
-   "kickoff": "2026-08-09T12:30:00Z",
-   "predictedScore": "1-2",
-   "confidence": 0.685,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Hearts",
-   "awayTeam": "Dundee United",
-   "kickoff": "2026-08-09T14:00:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.644,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Motherwell",
-   "awayTeam": "Falkirk F.C.",
-   "kickoff": "2026-08-09T14:00:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.62,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Rangers",
-   "awayTeam": "Hibernian",
-   "kickoff": "2026-08-09T15:00:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.657,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Galatasaray",
-   "awayTeam": "Akhisar Belediyespor",
-   "kickoff": "2026-08-14T18:30:00Z",
-   "predictedScore": "2-0",
-   "confidence": 0.721,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Kasimpasa SK",
-   "awayTeam": "Trabzonspor",
-   "kickoff": "2026-08-15T16:00:00Z",
-   "predictedScore": "0-1",
-   "confidence": 0.62,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Torku Konyaspor",
-   "awayTeam": "Çaykur Rizespor",
-   "kickoff": "2026-08-15T16:00:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.567,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Gazişehir Gaziantep",
-   "awayTeam": "Alanyaspor",
-   "kickoff": "2026-08-15T18:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.563,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Genclerbirligi SK",
-   "awayTeam": "Fenerbahce",
-   "kickoff": "2026-08-15T18:30:00Z",
-   "predictedScore": "1-2",
-   "confidence": 0.666,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Basaksehir",
-   "awayTeam": "Kocaelispor",
-   "kickoff": "2026-08-16T16:00:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.666,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Amed SK",
-   "awayTeam": "Erzurum BB",
-   "kickoff": "2026-08-16T18:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.578,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Besiktas JK",
-   "awayTeam": "Eyüpspor",
-   "kickoff": "2026-08-16T18:30:00Z",
-   "predictedScore": "2-0",
-   "confidence": 0.693,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Samsunspor",
-   "awayTeam": "Goztepe",
-   "kickoff": "2026-08-17T18:30:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.588,
-   "predictedAt": "2026-08-09T13:17:45Z"
-  },
-  {
-   "homeTeam": "Union Saint-Gilloise",
-   "awayTeam": "SV Zulte-Waregem",
-   "kickoff": "2026-08-15T14:00:00Z",
-   "predictedScore": "2-0",
-   "confidence": 0.691,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "KV Kortrijk",
-   "awayTeam": "Royal Antwerp",
-   "kickoff": "2026-08-15T16:15:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.559,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "Leuven",
-   "awayTeam": "Club Brugge",
-   "kickoff": "2026-08-15T18:45:00Z",
-   "predictedScore": "1-2",
-   "confidence": 0.662,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "Genk",
-   "awayTeam": "Westerlo",
-   "kickoff": "2026-08-15T18:45:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.642,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "SK Beveren",
-   "awayTeam": "Anderlecht",
-   "kickoff": "2026-08-16T11:30:00Z",
-   "predictedScore": "0-1",
-   "confidence": 0.594,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "RAAL La Louvière",
-   "awayTeam": "Gent",
-   "kickoff": "2026-08-16T14:00:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.58,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "KV Mechelen",
-   "awayTeam": "Standard Liege",
-   "kickoff": "2026-08-16T16:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.571,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "SC Telstar",
-   "awayTeam": "Sparta Rotterdam",
-   "kickoff": "2026-08-14T18:00:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.574,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "Willem II",
-   "awayTeam": "NEC Nijmegen",
-   "kickoff": "2026-08-15T14:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.646,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "Fortuna Sittard",
-   "awayTeam": "SC Cambuur",
-   "kickoff": "2026-08-15T19:00:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.616,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "ADO Den Haag",
-   "awayTeam": "Groningen",
-   "kickoff": "2026-08-16T10:15:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.574,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "FC Twente Enschede",
-   "awayTeam": "FC Zwolle",
-   "kickoff": "2026-08-16T12:30:00Z",
-   "predictedScore": "2-0",
-   "confidence": 0.704,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "Feyenoord",
-   "awayTeam": "Go Ahead Eagles",
-   "kickoff": "2026-08-16T12:30:00Z",
-   "predictedScore": "2-0",
-   "confidence": 0.68,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "Ajax",
-   "awayTeam": "Heerenveen",
-   "kickoff": "2026-08-16T14:45:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.654,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "Tokyo Verdy",
-   "awayTeam": "Kashiwa Reysol",
-   "kickoff": "2026-08-14T10:00:00Z",
-   "predictedScore": "0-1",
-   "confidence": 0.627,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "Mito HollyHock",
-   "awayTeam": "Gamba Osaka",
-   "kickoff": "2026-08-15T09:00:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.562,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "Kashima Antlers",
-   "awayTeam": "Nagoya Grampus",
-   "kickoff": "2026-08-15T09:00:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.626,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "Shimizu S Pulse",
-   "awayTeam": "Yokohama F Marinos",
-   "kickoff": "2026-08-15T09:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.57,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "Fagiano Okayama",
-   "awayTeam": "V-Varen Nagasaki",
-   "kickoff": "2026-08-15T09:55:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.584,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "Avispa Fukuoka",
-   "awayTeam": "Cerezo Osaka",
-   "kickoff": "2026-08-15T10:00:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.559,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "JEF United Chiba",
-   "awayTeam": "FC Machida Zelvia",
-   "kickoff": "2026-08-15T10:00:00Z",
-   "predictedScore": "0-1",
-   "confidence": 0.597,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "Vissel Kobe",
-   "awayTeam": "FC Tokyo",
-   "kickoff": "2026-08-15T10:00:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.577,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "Urawa Red Diamonds",
-   "awayTeam": "Hiroshima Sanfrecce FC",
-   "kickoff": "2026-08-15T10:00:00Z",
-   "predictedScore": "0-1",
-   "confidence": 0.608,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "Kawasaki Frontale",
-   "awayTeam": "Kyoto Purple Sanga",
-   "kickoff": "2026-08-15T10:00:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.587,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "FC Seoul",
-   "awayTeam": "Daejeon Citizen",
-   "kickoff": "2026-08-15T10:30:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.612,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "Jeju United FC",
-   "awayTeam": "FC Anyang",
-   "kickoff": "2026-08-15T10:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.572,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "Gwangju FC",
-   "awayTeam": "Pohang Steelers",
-   "kickoff": "2026-08-15T10:30:00Z",
-   "predictedScore": "0-1",
-   "confidence": 0.612,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "Bucheon FC 1995",
-   "awayTeam": "Jeonbuk Hyundai Motors",
-   "kickoff": "2026-08-16T10:30:00Z",
-   "predictedScore": "0-1",
-   "confidence": 0.623,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "Ulsan Hyundai FC",
-   "awayTeam": "Gangwon FC",
-   "kickoff": "2026-08-16T10:30:00Z",
-   "predictedScore": "1-1",
-   "confidence": 0.564,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "Incheon United",
-   "awayTeam": "Sangju Sangmu FC",
-   "kickoff": "2026-08-16T10:30:00Z",
-   "predictedScore": "1-0",
-   "confidence": 0.59,
-   "predictedAt": "2026-08-09T13:37:03Z"
-  },
-  {
-   "homeTeam": "Sporting Lisbon",
-   "awayTeam": "Vitória SC",
-   "kickoff": "2026-08-14T19:15:00Z",
-   "predictedScore": "2-0",
-   "confidence": 0.729,
-   "predictedAt": "2026-08-09T13:37:03Z"
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.809,
+     "oddsProb": 0.609,
+     "edge": 0.199,
+     "level": "gold",
+     "modelConf": 0.698
+    },
+    {
+     "side": "draw",
+     "label": "平局",
+     "modelProb": 0.11,
+     "oddsProb": 0.23,
+     "edge": -0.12,
+     "level": "watch",
+     "modelConf": 0.698
+    }
+   ],
+   "signalLevel": "gold",
+   "predictedAt": "2026-08-10T16:07:16Z"
   }
  ],
- "results": [
-  {
-   "homeTeam": "Vitória SC",
-   "awayTeam": "Arouca",
-   "kickoff": "2026-08-08T17:00:00Z",
-   "predictedScore": "1-0",
-   "actualScore": "0-1",
-   "hitExact": false,
-   "hitOutcome": false
-  },
-  {
-   "homeTeam": "Coritiba",
-   "awayTeam": "Chapecoense",
-   "kickoff": "2026-08-08T23:30:00Z",
-   "predictedScore": "1-0",
-   "actualScore": "2-1",
-   "hitExact": false,
-   "hitOutcome": true
-  },
-  {
-   "homeTeam": "Botafogo",
-   "awayTeam": "Fluminense",
-   "kickoff": "2026-08-09T00:00:00Z",
-   "predictedScore": "1-0",
-   "actualScore": "1-1",
-   "hitExact": false,
-   "hitOutcome": false
-  },
-  {
-   "homeTeam": "NEC Nijmegen",
-   "awayTeam": "SC Telstar",
-   "kickoff": "2026-08-08T14:30:00Z",
-   "predictedScore": "2-0",
-   "actualScore": "1-2",
-   "hitExact": false,
-   "hitOutcome": false
-  },
-  {
-   "homeTeam": "Go Ahead Eagles",
-   "awayTeam": "Willem II",
-   "kickoff": "2026-08-08T16:45:00Z",
-   "predictedScore": "1-0",
-   "actualScore": "4-1",
-   "hitExact": false,
-   "hitOutcome": true
-  },
-  {
-   "homeTeam": "PSV Eindhoven",
-   "awayTeam": "Fortuna Sittard",
-   "kickoff": "2026-08-08T18:00:00Z",
-   "predictedScore": "2-0",
-   "actualScore": "2-2",
-   "hitExact": false,
-   "hitOutcome": false
-  },
-  {
-   "homeTeam": "AZ Alkmaar",
-   "awayTeam": "ADO Den Haag",
-   "kickoff": "2026-08-08T19:00:00Z",
-   "predictedScore": "2-0",
-   "actualScore": "2-0",
-   "hitExact": true,
-   "hitOutcome": true
-  },
-  {
-   "homeTeam": "Sparta Rotterdam",
-   "awayTeam": "Feyenoord",
-   "kickoff": "2026-08-09T10:15:00Z",
-   "predictedScore": "1-1",
-   "actualScore": "0-1",
-   "hitExact": false,
-   "hitOutcome": false
-  },
-  {
-   "homeTeam": "CS Maritimo",
-   "awayTeam": "Casa Pia",
-   "kickoff": "2026-08-08T14:30:00Z",
-   "predictedScore": "1-1",
-   "actualScore": "1-0",
-   "hitExact": false,
-   "hitOutcome": false
-  },
-  {
-   "homeTeam": "CF Estrela",
-   "awayTeam": "Sporting Lisbon",
-   "kickoff": "2026-08-08T19:30:00Z",
-   "predictedScore": "1-2",
-   "actualScore": "2-2",
-   "hitExact": false,
-   "hitOutcome": false
-  }
- ],
+ "results": [],
  "stats": {
-  "total": 217,
-  "finished": 10,
-  "exactHit": 1,
-  "exactRate": 0.1,
-  "outcomeHit": 3,
-  "outcomeRate": 0.3,
+  "total": 58,
+  "finished": 0,
+  "exactHit": 0,
+  "exactRate": 0,
+  "outcomeHit": 0,
+  "outcomeRate": 0,
   "valueTotal": 0,
   "valueHit": 0,
   "valueRate": 0,
-  "updatedAt": "2026-08-10T15:21:01Z"
+  "updatedAt": "2026-08-10T17:13:31Z"
  }
 }

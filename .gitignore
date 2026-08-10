@@ -16,3 +16,6 @@ test_*.py
 .agents/
 _*.py
 _preview*.png
+
+# API keys (never commit)
+.env

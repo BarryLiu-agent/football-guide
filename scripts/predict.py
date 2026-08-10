@@ -89,18 +89,52 @@ class MessageAnalyzer(Analyzer):
 
     # 常见球队名别名 → 标准化名
     TEAM_ALIASES = {
-        "manchester united": "manchester united", "man utd": "manchester united", "united": "manchester united",
+        "manchester united": "manchester united", "man utd": "manchester united",
         "manchester city": "manchester city", "man city": "manchester city",
         "real madrid": "real madrid", "barcelona": "barcelona", "barça": "barcelona",
         "bayern": "bayern munich", "bayern munich": "bayern munich",
         "psg": "paris saint-germain", "paris saint-germain": "paris saint-germain", "paris st-germain": "paris saint-germain",
-        "inter milan": "inter", "inter": "inter", "ac milan": "ac milan", "milan": "ac milan",
+        "inter milan": "inter",
         "atletico": "atletico madrid", "atlético": "atletico madrid",
         "juventus": "juventus", "juve": "juventus",
         "dortmund": "borussia dortmund", "liverpool": "liverpool",
         "arsenal": "arsenal", "chelsea": "chelsea", "tottenham": "tottenham",
         "napoli": "napoli", "roma": "roma", "lazio": "lazio",
         "marseille": "marseille", "lyon": "lyon", "monaco": "monaco",
+    }
+
+    # 球员名 → 球队（新闻标题常提球员不提队名，如 "Vini Jr. blow"）
+    # 只收录归属确定的球星，宁缺毋滥（错误归属会污染信号）
+    PLAYER_MAP = {
+        "vinicius": "real madrid", "vinícius": "real madrid", "vini jr": "real madrid",
+        "mbappe": "real madrid", "mbappé": "real madrid", "bellingham": "real madrid",
+        "rodrygo": "real madrid", "valverde": "real madrid", "courtois": "real madrid",
+        "modric": "real madrid", "modrić": "real madrid",
+        "rodri": "manchester city", "haaland": "manchester city", "de bruyne": "manchester city",
+        "foden": "manchester city", "grealish": "manchester city", "doku": "manchester city",
+        "saka": "arsenal", "odegaard": "arsenal", "ødegaard": "arsenal", "rice": "arsenal",
+        "saliba": "arsenal", "martinelli": "arsenal", "havertz": "arsenal",
+        "salah": "liverpool", "van dijk": "liverpool", "alisson": "liverpool",
+        "szoboszlai": "liverpool", "mac allister": "liverpool", "nunez": "liverpool", "gakpo": "liverpool",
+        "bruno fernandes": "manchester united", "rashford": "manchester united",
+        "garnacho": "manchester united", "mainoo": "manchester united", "hojlund": "manchester united",
+        "palmer": "chelsea", "enzo fernandez": "chelsea", "caicedo": "chelsea", "jackson": "chelsea",
+        "isak": "newcastle united", "gordon": "newcastle united", "guimaraes": "newcastle united",
+        "son": "tottenham", "kane": "bayern munich", "musiala": "bayern munich",
+        "kimmich": "bayern munich", "neuer": "bayern munich", "sane": "bayern munich",
+        "sané": "bayern munich", "gnabry": "bayern munich", "olise": "bayern munich",
+        "yamal": "barcelona", "raphinha": "barcelona", "pedri": "barcelona", "gavi": "barcelona",
+        "ter stegen": "barcelona", "lewandowski": "barcelona", "lewa": "barcelona",
+        "griezmann": "atletico madrid", "julian alvarez": "atletico madrid",
+        "julián álvarez": "atletico madrid", "lautaro": "inter", "lautaro martinez": "inter",
+        "thuram": "inter", "barella": "inter", "calhanoglu": "inter",
+        "leao": "ac milan", "leão": "ac milan", "pulisic": "ac milan",
+        "theo hernandez": "ac milan", "maignan": "ac milan",
+        "vlahovic": "juventus", "yildiz": "juventus", "chiesa": "juventus",
+        "kvaratskhelia": "psg", "kvara": "psg", "dembele": "psg", "dembélé": "psg",
+        "hakimi": "psg", "donnarumma": "psg",
+        "wirtz": "bayer leverkusen", "grimaldo": "bayer leverkusen",
+        "openda": "rb leipzig", "guirassy": "borussia dortmund", "brandt": "borussia dortmund",
     }
 
     def analyze(self, context: dict) -> dict:
@@ -119,11 +153,13 @@ class MessageAnalyzer(Analyzer):
             text = (msg.get("text", "") or "").lower()
             if not text:
                 continue
-            # 该消息涉及哪支球队
+            # 该消息涉及哪支球队（队名 + 别名 + 球员名）
             involved = set()
-            if any(tok in text for tok in [home, self.TEAM_ALIASES.get(home, home)]):
+            home_terms = [home, self.TEAM_ALIASES.get(home, home)] + [p for p, t in self.PLAYER_MAP.items() if t == home]
+            away_terms = [away, self.TEAM_ALIASES.get(away, away)] + [p for p, t in self.PLAYER_MAP.items() if t == away]
+            if any(tok in text for tok in home_terms):
                 involved.add(home)
-            if any(tok in text for tok in [away, self.TEAM_ALIASES.get(away, away)]):
+            if any(tok in text for tok in away_terms):
                 involved.add(away)
             if not involved:
                 continue
@@ -471,6 +507,37 @@ def norm_team(s):
     return re.sub(r"\b(fc|afc|cf|sc)\b", "", (s or "").lower()).replace("&", "").strip()
 
 
+FORM_LAST = 5  # 近 5 场状态
+
+
+def load_form():
+    """每队最近 N 场场均积分（0~3）。数据源 data/season_2025.json（上赛季末段状态，
+    赛季开打后由新赛果自然延续）。抓取顺序为从最新往回翻，故数组头部即最近场次。"""
+    path = DATA_DIR / "season_2025.json"
+    if not path.exists():
+        return {}
+    try:
+        with open(path, encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception:
+        return {}
+    form = {}
+    per_league = {}
+    for m in data.get("matches", []):
+        if m.get("homeGoals") is None or m.get("awayGoals") is None:
+            continue
+        per_league.setdefault(m["league"], []).append(m)
+    for ms in per_league.values():
+        for m in ms[:FORM_LAST]:
+            for side, gf, ga in (("home", "homeGoals", "awayGoals"), ("away", "awayGoals", "homeGoals")):
+                pts = 3 if m[gf] > m[ga] else (1 if m[gf] == m[ga] else 0)
+                t = norm_team(m["homeTeam" if side == "home" else "awayTeam"])
+                acc = form.setdefault(t, [0.0, 0])
+                acc[0] += pts
+                acc[1] += 1
+    return {t: round(s / n, 3) for t, (s, n) in form.items() if n}
+
+
 # The Odds API 联赛代码 → Football-Data.org 联赛代码（积分榜用）
 LEAGUE_ALIAS = {
     "CH": "ELC", "ED": "DED", "BDF": "BPL", "JLG": "J1", "KL1": "KLE",
@@ -487,7 +554,8 @@ def main():
     odds_by_league = load_odds()
     messages = load_messages()
     standings_by_league = load_standings()
-    print(f"赔率联赛: {list(odds_by_league.keys())}, 消息: {len(messages)} 条, 积分榜联赛: {len(standings_by_league)}")
+    form = load_form()
+    print(f"赔率联赛: {list(odds_by_league.keys())}, 消息: {len(messages)} 条, 积分榜联赛: {len(standings_by_league)}, 近5场form球队: {len(form)}")
 
     # Elo 独立模型：积分榜初始化 + 本赛季赛果迭代
     elo = EloModel()
@@ -538,8 +606,15 @@ def main():
             odds_result = results.get("odds")
             msg_result = results.get("message")
 
-            # ── Elo 独立概率 ──
+            # ── Elo 独立概率（近 5 场 form 微调，幅度 ≤±5%）──
             ep_home, ep_draw, ep_away = elo.predict(home, away)
+            fh, fa = form.get(norm_team(home)), form.get(norm_team(away))
+            if fh is not None and fa is not None:
+                adj = (fh - fa) * 0.02
+                ep_home += adj
+                ep_away -= adj
+                _s = ep_home + ep_draw + ep_away
+                ep_home, ep_draw, ep_away = ep_home / _s, ep_draw / _s, ep_away / _s
             pred_elo = {"home": ep_home, "draw": ep_draw, "away": ep_away}
             market_prob = None
             if odds_result and odds_result.get("prob"):
@@ -555,6 +630,19 @@ def main():
 
             score_model = ScoreModel()
             score_model.fit(f_home, f_draw, f_away)
+
+            # ── 多模型分歧：Elo vs Dixon-Coles vs 市场（方向不一致 = 不碰）──
+            dc_home, dc_draw, dc_away = score_model._probs()
+            dc12 = {"home": dc_home, "draw": dc_draw, "away": dc_away}
+
+            def _dir(probs):
+                return max(probs, key=probs.get)
+
+            dir_elo = _dir(pred_elo)
+            dir_dc = _dir(dc12)
+            dir_mkt = _dir(market_prob) if market_prob else dir_elo
+            diverge = len({dir_elo, dir_dc, dir_mkt}) >= 2
+            pred_dirs = {"elo": dir_elo, "dc": dir_dc, "market": dir_mkt}
 
             pred = predictor.predict(home, away, odds_result, msg_result)
             pred["league"] = league
@@ -594,6 +682,10 @@ def main():
 
             # ── Elo 输出 + 价值检测 ──
             pred["eloProb"] = {k: round(v, 3) for k, v in pred_elo.items()}
+            pred["dcProb"] = {k: round(v, 3) for k, v in dc12.items()}
+            pred["diverge"] = diverge
+            pred["dirs"] = pred_dirs
+            pred["form"] = {"home": fh, "away": fa}
             pred["eloRatings"] = {
                 "home": round(elo.get_rating(home), 0),
                 "away": round(elo.get_rating(away), 0),

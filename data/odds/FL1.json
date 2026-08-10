@@ -1,6 +1,440 @@
 {
-  "generatedAt": "2026-08-09T13:36:35Z",
+  "generatedAt": "2026-08-10T16:55:20Z",
   "league": "FL1",
+  "history": {
+    "marseille|strasbourg": [
+      {
+        "ts": "2026-08-10T16:55:05Z",
+        "h2h": {
+          "home": 1.67,
+          "draw": 4.13,
+          "away": 4.45
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.12,
+          "under": 1.68
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 2.09
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.78
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T16:55:20Z",
+        "h2h": {
+          "home": 1.67,
+          "draw": 4.13,
+          "away": 4.45
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.12,
+          "under": 1.68
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 2.09
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.78
+          }
+        }
+      }
+    ],
+    "rc lens|auxerre": [
+      {
+        "ts": "2026-08-10T16:55:05Z",
+        "h2h": {
+          "home": 1.6,
+          "draw": 4.1,
+          "away": 5.1
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.62,
+          "under": 2.22
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 2.03
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.83
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T16:55:20Z",
+        "h2h": {
+          "home": 1.6,
+          "draw": 4.1,
+          "away": 5.1
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.62,
+          "under": 2.22
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 2.03
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.83
+          }
+        }
+      }
+    ],
+    "le mans fc|brest": [
+      {
+        "ts": "2026-08-10T16:55:05Z",
+        "h2h": {
+          "home": 2.48,
+          "draw": 3.49,
+          "away": 2.7
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.75,
+          "under": 2.02
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.82
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.04
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T16:55:20Z",
+        "h2h": {
+          "home": 2.48,
+          "draw": 3.49,
+          "away": 2.7
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.75,
+          "under": 2.02
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.82
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.04
+          }
+        }
+      }
+    ],
+    "nice|lorient": [
+      {
+        "ts": "2026-08-10T16:55:05Z",
+        "h2h": {
+          "home": 2.18,
+          "draw": 3.4,
+          "away": 3.15
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.75,
+          "under": 2.05
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.67
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.4
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T16:55:20Z",
+        "h2h": {
+          "home": 2.18,
+          "draw": 3.4,
+          "away": 3.15
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.75,
+          "under": 2.05
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.67
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.4
+          }
+        }
+      }
+    ],
+    "toulouse|lyon": [
+      {
+        "ts": "2026-08-10T16:55:05Z",
+        "h2h": {
+          "home": 3.4,
+          "draw": 3.64,
+          "away": 2.02
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.72,
+          "under": 2.1
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 2.62
+          },
+          "away": {
+            "point": 0.0,
+            "price": 1.58
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T16:55:20Z",
+        "h2h": {
+          "home": 3.4,
+          "draw": 3.64,
+          "away": 2.02
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.72,
+          "under": 2.1
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 2.62
+          },
+          "away": {
+            "point": 0.0,
+            "price": 1.58
+          }
+        }
+      }
+    ],
+    "troyes|paris fc": [
+      {
+        "ts": "2026-08-10T16:55:05Z",
+        "h2h": {
+          "home": 2.72,
+          "draw": 3.48,
+          "away": 2.46
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.68,
+          "under": 2.15
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 2.06
+          },
+          "away": {
+            "point": 0.0,
+            "price": 1.81
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T16:55:20Z",
+        "h2h": {
+          "home": 2.72,
+          "draw": 3.48,
+          "away": 2.46
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.68,
+          "under": 2.15
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 2.06
+          },
+          "away": {
+            "point": 0.0,
+            "price": 1.81
+          }
+        }
+      }
+    ],
+    "angers|lille": [
+      {
+        "ts": "2026-08-10T16:55:05Z",
+        "h2h": {
+          "home": 4.95,
+          "draw": 3.75,
+          "away": 1.68
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.94,
+          "under": 1.85
+        },
+        "spreads": {
+          "home": {
+            "point": 1.5,
+            "price": 1.4
+          },
+          "away": {
+            "point": -1.5,
+            "price": 3.35
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T16:55:20Z",
+        "h2h": {
+          "home": 4.95,
+          "draw": 3.75,
+          "away": 1.68
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.94,
+          "under": 1.85
+        },
+        "spreads": {
+          "home": {
+            "point": 1.5,
+            "price": 1.4
+          },
+          "away": {
+            "point": -1.5,
+            "price": 3.35
+          }
+        }
+      }
+    ],
+    "le havre|as monaco": [
+      {
+        "ts": "2026-08-10T16:55:05Z",
+        "h2h": {
+          "home": 3.45,
+          "draw": 3.8,
+          "away": 1.975
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.6,
+          "under": 2.28
+        },
+        "spreads": {
+          "home": {
+            "point": 0.5,
+            "price": 1.865
+          },
+          "away": {
+            "point": -0.5,
+            "price": 1.98
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T16:55:20Z",
+        "h2h": {
+          "home": 3.45,
+          "draw": 3.8,
+          "away": 1.975
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.6,
+          "under": 2.28
+        },
+        "spreads": {
+          "home": {
+            "point": 0.5,
+            "price": 1.865
+          },
+          "away": {
+            "point": -0.5,
+            "price": 1.98
+          }
+        }
+      }
+    ],
+    "paris saint germain|rennes": [
+      {
+        "ts": "2026-08-10T16:55:05Z",
+        "h2h": {
+          "home": 1.4,
+          "draw": 5.25,
+          "away": 6.5
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.95,
+          "under": 1.84
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 2.08
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.83
+          }
+        }
+      },
+      {
+        "ts": "2026-08-10T16:55:20Z",
+        "h2h": {
+          "home": 1.4,
+          "draw": 5.25,
+          "away": 6.5
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.95,
+          "under": 1.84
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 2.08
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.83
+          }
+        }
+      }
+    ]
+  },
   "matches": [
     {
       "homeTeam": "Marseille",
@@ -11,12 +445,12 @@
         "h2h": {
           "home": 1.67,
           "draw": 4.13,
-          "away": 4.4
+          "away": 4.45
         },
         "totals": {
           "line": 2.5,
-          "over": 2.165,
-          "under": 1.635
+          "over": 2.12,
+          "under": 1.68
         },
         "spreads": {
           "home": {
@@ -32,7 +466,12 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 39
+      "bookmakers": 21,
+      "prevH2h": {
+        "home": 1.67,
+        "draw": 4.13,
+        "away": 4.45
+      }
     },
     {
       "homeTeam": "RC Lens",
@@ -41,14 +480,14 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.59,
+          "home": 1.6,
           "draw": 4.1,
-          "away": 5.0
+          "away": 5.1
         },
         "totals": {
           "line": 2.5,
           "over": 1.62,
-          "under": 2.225
+          "under": 2.22
         },
         "spreads": {
           "home": {
@@ -64,7 +503,12 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 39
+      "bookmakers": 21,
+      "prevH2h": {
+        "home": 1.6,
+        "draw": 4.1,
+        "away": 5.1
+      }
     },
     {
       "homeTeam": "Le Mans FC",
@@ -73,9 +517,9 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.45,
-          "draw": 3.45,
-          "away": 2.63
+          "home": 2.48,
+          "draw": 3.49,
+          "away": 2.7
         },
         "totals": {
           "line": 2.5,
@@ -96,7 +540,12 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 39
+      "bookmakers": 21,
+      "prevH2h": {
+        "home": 2.48,
+        "draw": 3.49,
+        "away": 2.7
+      }
     },
     {
       "homeTeam": "Nice",
@@ -105,14 +554,14 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.15,
-          "draw": 3.5,
-          "away": 3.1
+          "home": 2.18,
+          "draw": 3.4,
+          "away": 3.15
         },
         "totals": {
           "line": 2.5,
           "over": 1.75,
-          "under": 2.0549999999999997
+          "under": 2.05
         },
         "spreads": {
           "home": {
@@ -128,7 +577,12 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 39
+      "bookmakers": 21,
+      "prevH2h": {
+        "home": 2.18,
+        "draw": 3.4,
+        "away": 3.15
+      }
     },
     {
       "homeTeam": "Toulouse",
@@ -137,13 +591,13 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 3.35,
-          "draw": 3.6,
-          "away": 2.0
+          "home": 3.4,
+          "draw": 3.64,
+          "away": 2.02
         },
         "totals": {
           "line": 2.5,
-          "over": 1.71,
+          "over": 1.72,
           "under": 2.1
         },
         "spreads": {
@@ -160,7 +614,12 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 39
+      "bookmakers": 21,
+      "prevH2h": {
+        "home": 3.4,
+        "draw": 3.64,
+        "away": 2.02
+      }
     },
     {
       "homeTeam": "Troyes",
@@ -169,13 +628,13 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.7,
-          "draw": 3.5,
-          "away": 2.4
+          "home": 2.72,
+          "draw": 3.48,
+          "away": 2.46
         },
         "totals": {
           "line": 2.5,
-          "over": 1.6749999999999998,
+          "over": 1.68,
           "under": 2.15
         },
         "spreads": {
@@ -192,7 +651,12 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 39
+      "bookmakers": 21,
+      "prevH2h": {
+        "home": 2.72,
+        "draw": 3.48,
+        "away": 2.46
+      }
     },
     {
       "homeTeam": "Angers",
@@ -201,13 +665,13 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 4.9,
-          "draw": 3.7,
-          "away": 1.67
+          "home": 4.95,
+          "draw": 3.75,
+          "away": 1.68
         },
         "totals": {
           "line": 2.5,
-          "over": 1.935,
+          "over": 1.94,
           "under": 1.85
         },
         "spreads": {
@@ -224,7 +688,12 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 39
+      "bookmakers": 21,
+      "prevH2h": {
+        "home": 4.95,
+        "draw": 3.75,
+        "away": 1.68
+      }
     },
     {
       "homeTeam": "Le Havre",
@@ -233,30 +702,35 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 3.3,
-          "draw": 3.75,
-          "away": 2.0
+          "home": 3.45,
+          "draw": 3.8,
+          "away": 1.975
         },
         "totals": {
           "line": 2.5,
-          "over": 1.5750000000000002,
-          "under": 2.32
+          "over": 1.6,
+          "under": 2.28
         },
         "spreads": {
           "home": {
             "point": 0.5,
-            "price": 1.8250000000000002
+            "price": 1.865
           },
           "away": {
             "point": -0.5,
-            "price": 2.025
+            "price": 1.98
           }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 36
+      "bookmakers": 20,
+      "prevH2h": {
+        "home": 3.45,
+        "draw": 3.8,
+        "away": 1.975
+      }
     },
     {
       "homeTeam": "Paris Saint Germain",
@@ -265,19 +739,19 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.38,
+          "home": 1.4,
           "draw": 5.25,
           "away": 6.5
         },
         "totals": {
           "line": 2.5,
           "over": 1.95,
-          "under": 1.835
+          "under": 1.84
         },
         "spreads": {
           "home": {
             "point": -1.5,
-            "price": 2.0549999999999997
+            "price": 2.08
           },
           "away": {
             "point": 1.5,
@@ -288,7 +762,12 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 37
+      "bookmakers": 21,
+      "prevH2h": {
+        "home": 1.4,
+        "draw": 5.25,
+        "away": 6.5
+      }
     }
   ]
 }

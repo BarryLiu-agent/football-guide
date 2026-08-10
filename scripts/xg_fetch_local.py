@@ -52,12 +52,33 @@ def _num(val):
         return 0.0
 
 
+# 共享 Playwright 实例：重复 start/stop 在新版驱动下会报
+# "Sync API inside the asyncio loop"，改为整个进程复用一次，最后统一关闭。
+_PW = {"p": None, "browser": None}
+
+
 def _browser():
     from playwright.sync_api import sync_playwright
-    p = sync_playwright().start()
-    browser = p.chromium.launch(headless=False, args=["--disable-blink-features=AutomationControlled"])
-    ctx = browser.new_context(user_agent=UA, viewport={"width": 1400, "height": 900})
-    return p, browser, ctx
+    if _PW["p"] is None:
+        p = sync_playwright().start()
+        browser = p.chromium.launch(headless=False, args=["--disable-blink-features=AutomationControlled"])
+        _PW["p"], _PW["browser"] = p, browser
+    ctx = _PW["browser"].new_context(user_agent=UA, viewport={"width": 1400, "height": 900})
+    return _PW["p"], _PW["browser"], ctx
+
+
+def _close_browser():
+    """进程结束时统一关闭 Playwright。"""
+    if _PW["browser"] is not None:
+        try:
+            _PW["browser"].close()
+        except Exception:
+            pass
+        try:
+            _PW["p"].stop()
+        except Exception:
+            pass
+        _PW["p"] = _PW["browser"] = None
 
 
 def _wait_data(page, min_tables=1, min_size=40000, marker=None):
@@ -83,7 +104,7 @@ def fetch_league(league_code: str, understat_path: str) -> dict:
     page = ctx.new_page()
     page.goto(url, timeout=60000, wait_until="domcontentloaded")
     html = _wait_data(page, marker="<tbody>")
-    browser.close(); p.stop()
+    ctx.close()
 
     soup = BeautifulSoup(html, "lxml")
     teams, players = [], []
@@ -156,7 +177,7 @@ def _get_match_links(understat_path: str) -> list:
     page = ctx.new_page()
     page.goto(url, timeout=60000, wait_until="domcontentloaded")
     html = _wait_data(page, min_size=100000)
-    browser.close(); p.stop()
+    ctx.close()
     links = set(re.findall(r'href="(/match/\d+)"', html))
     return [int(l.split("/")[-1]) for l in links]
 
@@ -167,7 +188,7 @@ def _get_match_info(match_id: int) -> dict or None:
     page = ctx.new_page()
     page.goto(f"https://understat.com/match/{match_id}", timeout=60000, wait_until="domcontentloaded")
     html = _wait_data(page, min_size=50000, marker="match_info")
-    browser.close(); p.stop()
+    ctx.close()
 
     m = re.search(r"match_info\s*=\s*JSON\.parse\('(.+?)'\)", html, re.S)
     if not m:
@@ -188,9 +209,18 @@ def _get_match_info(match_id: int) -> dict or None:
 
 
 def git_push(message: str):
-    for cmd in [["add", "-A"], ["commit", "-m", message], ["push", "origin", "main"]]:
-        r = subprocess.run(["git", *cmd], cwd=ROOT, capture_output=True, text=True)
-        print(f"  git {cmd[0]}: {'OK' if r.returncode == 0 else r.stderr.strip()[:100]}")
+    """add → commit → pull --rebase（防云端 Actions 并发冲突）→ push，失败重试 3 次。"""
+    for attempt in range(3):
+        for cmd in [["add", "-A"], ["commit", "-m", message]]:
+            subprocess.run(["git", *cmd], cwd=ROOT, capture_output=True, text=True)
+        subprocess.run(["git", "pull", "--rebase", "--autostash", "origin", "main"],
+                       cwd=ROOT, capture_output=True, text=True)
+        r = subprocess.run(["git", "push", "origin", "main"], cwd=ROOT, capture_output=True, text=True)
+        if r.returncode == 0:
+            print("  git push: OK")
+            return
+        print(f"  git push 失败，重试 {attempt + 1}/3: {r.stderr.strip()[:120]}")
+    print("  git push: 失败（请检查网络/凭据）")
 
 
 def main():
@@ -241,6 +271,8 @@ def main():
             except Exception as e:
                 print(f"  ✗ {code}: {e}")
         print(f"完成: {ok}/{len(args.leagues)} 联赛")
+
+    _close_browser()
 
     if args.push:
         print("提交推送...")
