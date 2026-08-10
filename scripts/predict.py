@@ -325,7 +325,7 @@ class AnalysisWriter:
     """基于赔率/波胆/大小球/消息信号生成中文文字分析。"""
 
     @staticmethod
-    def generate(home, away, odds_result, msg_result, score_model, ou=None, spreads=None, standings=None):
+    def generate(home, away, odds_result, msg_result, score_model, ou=None, spreads=None, standings=None, context=None):
         lines = []
         prob = odds_result.get("prob") if odds_result else None
         raw = odds_result.get("rawOdds") if odds_result else None
@@ -415,6 +415,13 @@ class AnalysisWriter:
             ev = msg_result.get("evidence", [])[:2]
             for e in ev:
                 lines.append(f"📰 {e['text']}（{'、'.join(e['keywords'][:3])}）")
+
+        # 5.5 独立模型 + 价值信号
+        if context and context.get("valuePicks"):
+            vp = context["valuePicks"]
+            if vp:
+                first = vp[0]
+                lines.append(f"【价值】独立模型(Elo)与市场存在分歧：{first['label']} 模型 {first['modelProb']:.0%} vs 盘口 {first['oddsProb']:.0%}（差 {first['edge']:+.0%}），值得关注。")
 
         # 6. 综合结论
         if prob:
@@ -534,43 +541,32 @@ def main():
             odds_result = results.get("odds")
             msg_result = results.get("message")
 
-            # 泊松模型: 波胆 + 大小球（融合赔率与 Elo 概率 fit）
-            score_model = ScoreModel()
+            # ── Elo 独立概率 ──
+            ep_home, ep_draw, ep_away = elo.predict(home, away)
+            pred_elo = {"home": ep_home, "draw": ep_draw, "away": ep_away}
+            market_prob = None
             if odds_result and odds_result.get("prob"):
-                op = odds_result["prob"]
-                # Elo 独立概率
-                ep_home, ep_draw, ep_away = elo_model.predict(home, away)
-                pred_elo = {"home": ep_home, "draw": ep_draw, "away": ep_away}
-                # 融合: 60% 赔率 + 40% Elo
-                f_home = 0.6 * op["home"] + 0.4 * ep_home
-                f_draw = 0.6 * op["draw"] + 0.4 * ep_draw
-                f_away = 0.6 * op["away"] + 0.4 * ep_away
-                score_model.fit(f_home, f_draw, f_away)
+                market_prob = odds_result["prob"]
+
+            # ── 融合概率：60% 市场 + 40% Elo（供波胆/大小球建模）──
+            if market_prob:
+                f_home = 0.6 * market_prob["home"] + 0.4 * ep_home
+                f_draw = 0.6 * market_prob["draw"] + 0.4 * ep_draw
+                f_away = 0.6 * market_prob["away"] + 0.4 * ep_away
             else:
-                ep_home, ep_draw, ep_away = elo_model.predict(home, away)
-                pred_elo = {"home": ep_home, "draw": ep_draw, "away": ep_away}
-                score_model.fit(ep_home, ep_draw, ep_away)
+                f_home, f_draw, f_away = ep_home, ep_draw, ep_away
+
+            score_model = ScoreModel()
+            score_model.fit(f_home, f_draw, f_away)
 
             pred = predictor.predict(home, away, odds_result, msg_result)
             pred["league"] = league
             pred["kickoff"] = m.get("kickoff", "")
             pred["matchUrl"] = m.get("matchUrl", "")
-            pred["correctScores"] = score_model.correct_scores(6)
-            # 真实大小球（The Odds API totals）优先，否则泊松推导
-            ou = None
-            totals_mkt = m.get("markets", {}).get("totals")
-            if totals_mkt and totals_mkt.get("over") and totals_mkt.get("under"):
-                po, pu = 1 / totals_mkt["over"], 1 / totals_mkt["under"]
-                s = po + pu
-                ou = {"line": totals_mkt["line"], "over": round(po / s, 3), "under": round(pu / s, 3),
-                      "overPrice": totals_mkt["over"], "underPrice": totals_mkt["under"]}
-            if not ou:
-                ou = score_model.over_under(2.5)
-            pred["overUnder"] = ou
-            # 真实赔率数值（1X2）
+
+            # 真实赔率 + 涨跌 + 凯利
             raw_odds = odds_result.get("rawOdds") if odds_result else None
             pred["rawOdds"] = raw_odds
-            # 赔率涨跌（相对上次快照 prevH2h）
             prev_h2h = m.get("markets", {}).get("prevH2h") or m.get("prevH2h")
             odds_change = None
             if prev_h2h and raw_odds:
@@ -584,59 +580,69 @@ def main():
                     "away": _delta(raw_odds.get("away"), prev_h2h.get("away") or prev_h2h.get("Away")),
                 }
             pred["oddsChange"] = odds_change
-            # 凯利指数 = (赔率×真实概率−1)/(赔率−1)
+
             kelly = None
-            if raw_odds and odds_result and odds_result.get("prob"):
-                prob = odds_result["prob"]
+            if raw_odds and market_prob:
                 kelly = {}
                 for k in ("home", "draw", "away"):
                     o = raw_odds.get(k)
-                    pp = prob.get(k)
+                    pp = market_prob.get(k)
                     if isinstance(o, (int, float)) and o > 1 and pp:
                         kelly[k] = round((o * pp - 1) / (o - 1), 3)
                     else:
                         kelly[k] = None
             pred["kelly"] = kelly
-            # 让球盘口
             pred["spreads"] = m.get("markets", {}).get("spreads")
-            # Elo 概率 + 价值检测（模型概率 vs 赔率隐含概率）
-            pred["eloProb"] = pred_elo
+
+            # ── Elo 输出 + 价值检测 ──
+            pred["eloProb"] = {k: round(v, 3) for k, v in pred_elo.items()}
             pred["eloRatings"] = {
-                "home": round(elo_model.get_rating(home), 0),
-                "away": round(elo_model.get_rating(away), 0),
+                "home": round(elo.get_rating(home), 0),
+                "away": round(elo.get_rating(away), 0),
+            }
+            pred["modelProbs"] = {
+                "home": round(f_home, 3), "draw": round(f_draw, 3), "away": round(f_away, 3)
             }
             value_picks = []
-            if odds_result and odds_result.get("prob"):
-                op = odds_result["prob"]
+            if market_prob:
                 for k, label in (("home", "主胜"), ("draw", "平局"), ("away", "客胜")):
-                    diff = pred_elo[k] - op[k]
-                    if diff >= 0.10:  # 只保留模型比市场明显看好的方向（≥10%）
+                    diff = pred_elo[k] - market_prob[k]
+                    if abs(diff) >= 0.05:
                         value_picks.append({
                             "side": k, "label": label,
                             "modelProb": round(pred_elo[k], 3),
-                            "oddsProb": round(op[k], 3),
+                            "oddsProb": round(market_prob[k], 3),
                             "edge": round(diff, 3),
                         })
             pred["valuePicks"] = value_picks
-            # Dixon-Coles 修正波胆（低比分修正）
+
+            # Dixon-Coles 波胆 + 大小球 + 分布
             pred["correctScores"] = score_model.dc_scores(6)
-            # 预测比分 = 最可能波胆
             top_cs = score_model.correct_scores(1)
             if top_cs:
                 pred["predictedScore"] = top_cs[0]["score"]
-            # 排名对比（积分榜）
+
+            ou = None
+            totals_mkt = m.get("markets", {}).get("totals")
+            if totals_mkt and totals_mkt.get("over") and totals_mkt.get("under"):
+                po, pu = 1 / totals_mkt["over"], 1 / totals_mkt["under"]
+                s = po + pu
+                ou = {"line": totals_mkt["line"], "over": round(po / s, 3), "under": round(pu / s, 3),
+                      "overPrice": totals_mkt["over"], "underPrice": totals_mkt["under"]}
+            if not ou:
+                ou = score_model.over_under(2.5)
+            pred["overUnder"] = ou
+
             sh = find_standing(league, home)
             sa = find_standing(league, away)
             pred["standings"] = ({"home": sh, "away": sa} if sh and sa else None)
-            # 总进球分布 + 双方进球
             pred["totalGoalsDist"] = score_model.total_goals_dist()
             pred["btts"] = score_model.btts_prob()
             pred["expectedGoals"] = {
                 "home": round(score_model.lam_h, 2), "away": round(score_model.lam_a, 2)
             }
-            pred["analysis"] = AnalysisWriter.generate(home, away, odds_result, msg_result, score_model, ou, pred["spreads"], pred["standings"], {"valuePicks": pred.get("valuePicks") or []})
+            pred["analysis"] = AnalysisWriter.generate(home, away, odds_result, msg_result, score_model, ou, pred["spreads"], pred["standings"], value_picks)
             predictions.append(pred)
-
     out = {
         "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "total": len(predictions),
