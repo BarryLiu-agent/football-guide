@@ -788,7 +788,7 @@ function refreshAnalysis() {
 function refreshAll() { loadAll().then(render); }
 
 // ===== Init =====
-loadAll();
+loadAll().then(render);
 </script>
 </body>
 </html>
