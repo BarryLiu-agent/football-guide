@@ -414,6 +414,7 @@ const SUBS = [
   { id: 'standings', name: '🏆 积分榜' },
   { id: 'xg', name: '📈 xG 数据' },
   { id: 'scorers', name: '⚽ 射手榜' },
+  { id: 'record', name: '📊 战绩' },
 ];
 // Football-Data 赛程代码 ↔ 展示代码
 const FD_CODE = { PL: 'PL', PD: 'PD', SA: 'SA', BL1: 'BL1', FL1: 'FL1', CL: 'CL' };
@@ -446,11 +447,13 @@ const TEAM_ALIAS = {
   'manchester united': 'man utd', 'manchester united fc': 'man utd', 'man utd': 'man utd',
   'manchester city': 'man city', 'manchester city fc': 'man city', 'man city': 'man city',
   'spartak moscow': 'spartak', 'cska moscow': 'cska',
+  'stade rennais 1901': 'rennes', 'stade rennais': 'rennes', 'rennes': 'rennes',
 };
 function normTeam(s) {
   let n = (s || '').toLowerCase()
     .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')  // ü->u, é->e
     .replace(/\b(fc|afc|cf|sc|ac)\b/g, '')
+    .replace(/[-\u2013\u2014]/g, ' ')   // 连字符变空格（saint-germain -> saint germain）
     .replace(/[^a-z0-9 ]/g, '')
     .trim().replace(/\s+/g, ' ');
   return TEAM_ALIAS[n] || n;
@@ -561,7 +564,8 @@ function render() {
   </div>`;
   const body = state.sub === 'fixtures' ? renderFixtures() :
                state.sub === 'standings' ? renderStandings() :
-               state.sub === 'xg' ? renderXg() : renderScorers();
+               state.sub === 'xg' ? renderXg() :
+               state.sub === 'record' ? renderRecord() : renderScorers();
   el.innerHTML = header + body;
 }
 
@@ -731,6 +735,33 @@ function renderScorers() {
     <div class="val">${p.goals || 0} 球</div>
     <div style="min-width:52px;text-align:right;font-size:11px;color:var(--text-2)">xG ${(p.xG || 0).toFixed(2)}</div>
   </div>`).join('') || `<div class="empty-state">暂无射手数据</div>`;
+}
+
+// ===== 预测战绩 =====
+function renderRecord() {
+  const h = state.history;
+  if (!h) return '<div class="empty-state"><div class="icon">📊</div>暂无战绩数据（预测结算后自动累积）</div>';
+  const s = h.stats || {};
+  const pct = v => (v == null ? '—' : Math.round(v * 100) + '%');
+  const cards = [
+    { k: '累计预测', v: s.total ?? 0 },
+    { k: '已结算', v: s.finished ?? 0 },
+    { k: '比分精确命中', v: pct(s.exactRate), cls: 'gold' },
+    { k: '胜负方向命中', v: pct(s.outcomeRate), cls: s.outcomeRate >= 0.5 ? 'green' : 'red' },
+    { k: '价值标记命中', v: pct(s.valueRate), cls: s.valueRate >= 0.5 ? 'green' : '' },
+  ];
+  const rows = (h.results || []).slice().reverse().slice(0, 30).map(r => {
+    const hit = r.hitOutcome;
+    return '<div class="record-row"><div class="res ' + (hit ? 'hit' : 'miss') + '">' + (hit ? '✓' : '✗') + '</div>' +
+      '<span style="flex:1">' + cnTeam(r.homeTeam) + ' vs ' + cnTeam(r.awayTeam) + '</span>' +
+      '<span style="color:var(--muted);font-size:11px">预测</span> <span class="pred">' + (r.predictedScore || '—') + '</span>' +
+      '<span style="color:var(--muted);font-size:11px">实际</span> <span class="actual">' + (r.actualScore || '—') + '</span></div>';
+  }).join('');
+  return '<div class="record-cards">' + cards.map(c =>
+    '<div class="rec-card"><div class="v ' + (c.cls || '') + '">' + c.v + '</div><div class="k">' + c.k + '</div></div>'
+  ).join('') + '</div>' +
+  '<div style="font-size:11px;color:var(--muted);margin-bottom:10px">命中判定基于预测时的胜负方向；价值标记命中 = 模型 vs 盘口差>5%的方向是否正确 · 样本越多越可信</div>' +
+  (rows || '<div class="empty-state">暂无结算记录</div>');
 }
 
 // ===== 详情 =====

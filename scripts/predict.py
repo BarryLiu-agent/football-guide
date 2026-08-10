@@ -745,6 +745,8 @@ def evaluate_predictions(predictions):
     evaluated = 0
     exact_hit = 0
     outcome_hit = 0
+    value_total = 0
+    value_hit = 0
     for p in hist["predictions"]:
         if p.get("actualScore"):
             evaluated += 1
@@ -771,6 +773,13 @@ def evaluate_predictions(predictions):
                 exact_hit += 1
             if p["hitOutcome"]:
                 outcome_hit += 1
+            # 价值标记方向命中（bestOutcome）
+            vp = p.get("valuePicks") or []
+            if vp:
+                value_total += 1
+                best = max(vp, key=lambda v: abs(v.get("edge", 0)))
+                if best.get("side") == outcome_of(r["actualScore"]):
+                    value_hit += 1
             hist["results"].append({
                 "homeTeam": p["homeTeam"], "awayTeam": p["awayTeam"],
                 "kickoff": p.get("kickoff", ""),
@@ -788,6 +797,9 @@ def evaluate_predictions(predictions):
         "exactRate": round(exact_hit / evaluated, 4) if evaluated else 0,
         "outcomeHit": outcome_hit,
         "outcomeRate": round(outcome_hit / evaluated, 4) if evaluated else 0,
+        "valueTotal": value_total,
+        "valueHit": value_hit,
+        "valueRate": round(value_hit / value_total, 4) if value_total else 0,
         "updatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
     }
     hist["stats"] = stats

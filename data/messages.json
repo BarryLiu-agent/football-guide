@@ -1,7 +1,18 @@
 {
-  "generatedAt": "2026-08-10T14:24:07Z",
+  "generatedAt": "2026-08-10T14:26:26Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Rangers meeting Q&A: McInnes-Klopp compared, club failure admission & new signings update",
+      "timestamp": "Mon, 10 Aug 2026 15:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571632/rangers-meeting-qa-derek-mcinnes-jurgen-klopp-comparison-club-became-used-to-finishing-second-admission-and-new-signings-update",
+        "lang": "en",
+        "summary": "Rangers chairman Andrew Cavanagh believes the Ibrox side have become used to finishing second or worse over the last 15 years, and admits that failure had begun to \"seep through\" every corner of the club."
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -209,17 +220,6 @@
         "link": "https://www.skysports.com/golf/news/12040/13571538/frankie-harris-shoots-59-in-final-round-before-winning-korn-ferry-tours-pinnacle-bank-championship-in-play-off",
         "lang": "en",
         "summary": "Frankie Harris made an 18-foot birdie putt on the final hole as he shot a 12-under 59 before winning the Korn Ferry Tour's Pinnacle Bank Championship in a play-off."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Rahm reigns again after Niemann wins LIV Golf New York",
-      "timestamp": "Sun, 09 Aug 2026 22:36:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/golf/news/12040/13571516/liv-golf-jon-rahm-clinches-third-straight-title-after-joaquin-niemann-wins-in-new-york",
-        "lang": "en",
-        "summary": "Jon Rahm clinched the LIV Golf season points title for a third straight year despite finishing tied for 41st at LIV Golf New York, where Joaquin Niemann claimed a three-shot victory for his ninth win in the last three years."
       }
     }
   ]
