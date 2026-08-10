@@ -1,7 +1,18 @@
 {
-  "generatedAt": "2026-08-10T12:48:36Z",
+  "generatedAt": "2026-08-10T12:59:34Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Carabao Cup second-round draw tonight as Chelsea, Spurs and Newcastle enter",
+      "timestamp": "Mon, 10 Aug 2026 13:45:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/live-blog/12040/13571626/carabao-cup-draw-chelsea-spurs-everton-newcastle-leeds-nottingham-forest-and-more-join-first-round-winners-in-second-round",
+        "lang": "en",
+        "summary": ""
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -209,17 +220,6 @@
         "link": "https://www.skysports.com/golf/news/12040/13571491/brooks-koepka-fumes-after-pathetic-wyndham-championship-performance-costs-him-place-in-fedexcup-playoffs",
         "lang": "en",
         "summary": "Brooks Koepka labelled missing the FedExCup Playoffs \"pathetic\" in a brutally honest assessment of his game after a low finish at the Wyndham Championship."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Saints playoff hopes take big blow after poor defeat to Hull FC",
-      "timestamp": "Thu, 06 Aug 2026 22:09:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13570528/st-helens-18-32-hull-fc-super-league-highlights",
-        "lang": "en",
-        "summary": "Highlights of St Helens against Hull FC in the Betfred Super League."
       }
     }
   ]
