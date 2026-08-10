@@ -887,7 +887,14 @@ function switchMkt(mkt) {
       <div class="odds-box"><div class="label">平局</div><div class="value">${ro.draw ?? '—'}${chg(oc.draw)}</div><div class="sub">${pct(pr.draw)}</div>${kellyTxt(kl.draw)}</div>
       <div class="odds-box"><div class="label">客胜</div><div class="value">${ro.away ?? '—'}${chg(oc.away)}</div><div class="sub">${pct(pr.away)}</div>${kellyTxt(kl.away)}</div>
     </div>
-    <div style="font-size:10px;color:var(--muted);margin-top:6px;text-align:center">▲ 赔率上升（看淡） ▼ 赔率下降（看好） · 凯利>0 表示赔率有正期望价值</div>`;
+    <div style="font-size:10px;color:var(--muted);margin-top:6px;text-align:center">▲ 赔率上升（看淡） ▼ 赔率下降（看好） · 凯利>0 表示赔率有正期望价值</div>
+    ${p.eloProb ? `<div class="section-title" style="margin-top:10px">🤖 独立模型 (Elo+修正)</div>
+    <div class="odds-grid">
+      <div class="odds-box"><div class="label">主胜</div><div class="value">${pct(p.eloProb.home)}</div><div class="sub">盘口 ${pct(pr.home)}</div></div>
+      <div class="odds-box"><div class="label">平局</div><div class="value">${pct(p.eloProb.draw)}</div><div class="sub">盘口 ${pct(pr.draw)}</div></div>
+      <div class="odds-box"><div class="label">客胜</div><div class="value">${pct(p.eloProb.away)}</div><div class="sub">盘口 ${pct(pr.away)}</div></div>
+    </div>
+    ${(p.valuePicks || []).length ? `<div style="font-size:11px;padding:8px 10px;border-radius:8px;background:rgba(240,185,11,.1);border:1px solid rgba(240,185,11,.3);color:var(--gold);margin-top:8px">💰 价值信号：${(p.valuePicks||[]).map(v => v.label + ' 模型' + Math.round(v.modelProb*100) + '% vs 盘口' + Math.round(v.oddsProb*100) + '%').join('、')}</div>` : ''}` : ''}`;
   } else if (mkt === 'jc') {
     if (!jc) { el.innerHTML = '<div class="empty-state">该场比赛未开售竞彩（或不在售）</div>'; return; }
     const had = jc.had || {};

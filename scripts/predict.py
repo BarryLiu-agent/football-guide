@@ -607,7 +607,7 @@ def main():
             if market_prob:
                 for k, label in (("home", "主胜"), ("draw", "平局"), ("away", "客胜")):
                     diff = pred_elo[k] - market_prob[k]
-                    if abs(diff) >= 0.05:
+                    if diff >= 0.10:  # 只保留模型比市场明显看好的方向（≥10%）
                         value_picks.append({
                             "side": k, "label": label,
                             "modelProb": round(pred_elo[k], 3),
