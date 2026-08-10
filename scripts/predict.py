@@ -577,6 +577,7 @@ def main():
                     "away": _delta(raw_odds.get("away"), prev_h2h.get("away") or prev_h2h.get("Away")),
                 }
             pred["oddsChange"] = odds_change
+            pred["prevOdds"] = prev_h2h if isinstance(prev_h2h, dict) else None
 
             kelly = None
             if raw_odds and market_prob:
@@ -602,16 +603,22 @@ def main():
             }
             value_picks = []
             if market_prob:
+                sorted_probs = sorted(pred_elo.values(), reverse=True)
+                model_conf = sorted_probs[0] - sorted_probs[1] if len(sorted_probs) > 1 else 0
                 for k, label in (("home", "主胜"), ("draw", "平局"), ("away", "客胜")):
                     diff = pred_elo[k] - market_prob[k]
-                    if diff >= 0.10:  # 只保留模型比市场明显看好的方向（≥10%）
+                    if abs(diff) >= 0.10:  # 四象限：edge≥10% 才标记
+                        level = "gold" if abs(diff) >= 0.15 and model_conf >= 0.15 else "watch"
                         value_picks.append({
                             "side": k, "label": label,
                             "modelProb": round(pred_elo[k], 3),
                             "oddsProb": round(market_prob[k], 3),
                             "edge": round(diff, 3),
+                            "level": level,
+                            "modelConf": round(model_conf, 3),
                         })
             pred["valuePicks"] = value_picks
+            pred["signalLevel"] = "gold" if any(v["level"] == "gold" for v in value_picks) else ("watch" if value_picks else "none")
 
             # Dixon-Coles 波胆 + 大小球 + 分布
             pred["correctScores"] = score_model.dc_scores(6)
@@ -640,10 +647,30 @@ def main():
             }
             pred["analysis"] = AnalysisWriter.generate(home, away, odds_result, msg_result, score_model, ou, pred["spreads"], pred["standings"], {"valuePicks": value_picks})
             predictions.append(pred)
+    # 模型校准信息：赛季已进行轮次
+    season_info = {"seasonStarted": False, "round": 0, "finishedMatches": 0}
+    try:
+        with open(DATA_DIR / "fixtures.json", encoding="utf-8") as f:
+            fx = json.load(f).get("matches", [])
+        fin = [m for m in fx if m.get("status") == "FINISHED"]
+        season_info["finishedMatches"] = len(fin)
+        if fin:
+            season_info["seasonStarted"] = True
+            matchdays = [m.get("matchday") for m in fin if m.get("matchday")]
+            if matchdays:
+                season_info["round"] = max(matchdays)
+    except Exception:
+        pass
+
     out = {
         "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "total": len(predictions),
-        "rulesVersion": "1.0",
+        "rulesVersion": "1.1",
+        "modelInfo": {
+            "name": "Elo + Dixon-Coles + 赔率融合",
+            "eloTeams": len(elo.ratings),
+            "season": season_info,
+        },
         "predictions": predictions,
         "disclaimer": "本结果仅用于个人数据分析与研究, 不构成任何投注建议",
     }
@@ -709,6 +736,8 @@ def evaluate_predictions(predictions):
             "kickoff": p.get("kickoff", ""),
             "predictedScore": p["predictedScore"],
             "confidence": p.get("confidence"),
+            "valuePicks": p.get("valuePicks") or [],
+            "signalLevel": p.get("signalLevel", "none"),
             "predictedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         })
 

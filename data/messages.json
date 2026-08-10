@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T14:41:42Z",
+  "generatedAt": "2026-08-10T15:20:59Z",
   "total": 20,
   "messages": [
     {
@@ -88,6 +88,28 @@
         "link": "https://www.skysports.com/football/news/12040/13571596/liverpool-amazon-founder-jeff-bezos-nears-deal-to-buy-stake-with-consortium-led-by-amit-bhatia",
         "lang": "en",
         "summary": "<em>Sky News</em> understands a consortium including the Amazon founder Jeff Bezos is closing in on a deal to buy a roughly one-third stake in Liverpool."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Nordqvist: Bring on the pairings 'puzzle' for Team Europe!",
+      "timestamp": "Mon, 10 Aug 2026 16:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/golf/news/12040/13571664/solheim-cup-anna-nordqvist-captains-column-team-europes-pairings-puzzle-and-why-aggressive-rookies-can-impress",
+        "lang": "en",
+        "summary": "Team Europe is finalised! "
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Has Arsenal's indifferent pre-season revealed a surprise weakness?",
+      "timestamp": "Mon, 10 Aug 2026 14:29:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571668/arsenal-have-looked-defensively-weak-in-pre-season-can-they-cope-without-william-saliba-as-premier-league-campaign-nears",
+        "lang": "en",
+        "summary": "Arsenal have been conceding goals at an alarming rate in pre-season. Seven across three games. Has their greatest strength, one that contributed hugely to their Premier League title success last season, become a surprise source of frailty on the eve of the next?"
       }
     },
     {
@@ -198,28 +220,6 @@
         "link": "https://www.skysports.com/football/news/12040/13571517/manchester-united-and-arsenal-among-several-clubs-chasing-club-brugge-left-back-joaquin-seys",
         "lang": "en",
         "summary": "The top stories and transfer rumours from Monday's newspapers..."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "UEFA signs joint letter slamming 'deception' as Infantino fallout continues",
-      "timestamp": "Mon, 10 Aug 2026 10:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13571573/gianni-infantino-uefa-signs-joint-letter-slamming-deception-at-top-of-fifa-as-world-cup-stake-sale-fallout-continues",
-        "lang": "en",
-        "summary": "UEFA,  CONCACAF and AFC have hit out at \"deception\" and a \"fundamental breach of trust\" around Gianni Infantino's botched World Cup stake sale plans to further raise the pressure on the under-fire FIFA president."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Golfer shoots 59 in final round en route to win on Korn Ferry Tour",
-      "timestamp": "Mon, 10 Aug 2026 06:45:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/golf/news/12040/13571538/frankie-harris-shoots-59-in-final-round-before-winning-korn-ferry-tours-pinnacle-bank-championship-in-play-off",
-        "lang": "en",
-        "summary": "Frankie Harris made an 18-foot birdie putt on the final hole as he shot a 12-under 59 before winning the Korn Ferry Tour's Pinnacle Bank Championship in a play-off."
       }
     }
   ]

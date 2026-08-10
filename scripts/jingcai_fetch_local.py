@@ -38,7 +38,7 @@ HEADERS = {
 }
 
 
-def fetch(pool_code: str = "hhad,had,ttg,hafu") -> dict:
+def fetch(pool_code: str = "hhad,had,ttg,hafu,crs") -> dict:
     """抓取竞彩全部在售比赛与 SP。"""
     params = {"poolCode": pool_code, "channel": "c"}
     r = requests.get(API_URL, params=params, headers=HEADERS, timeout=20)
@@ -55,13 +55,24 @@ def normalize(d: dict) -> dict:
     matches = []
     for day in value.get("matchInfoList", []):
         for m in day.get("subMatchList", []):
-            if m.get("sellStatus") != 1:  # 只保留在售
+            if m.get("sellStatus") not in (1, 2):  # 在售/部分销售都保留
                 continue
             # 四种玩法 SP
             had = m.get("had") or {}
             hhad = m.get("hhad") or {}
             ttg = m.get("ttg") or {}
             hafu = m.get("hafu") or {}
+
+            # 比分玩法（波胆）SP：键格式 s{主} s{客}，如 s00s01 = 0:1
+            crs = m.get("crs") or {}
+            crs_odds = {}
+            for k, v in crs.items():
+                if k.startswith("s") and "s" in k[1:] and v not in (None, ""):
+                    try:
+                        hs, as_ = k[1:].split("s")
+                        crs_odds[f"{int(hs)}-{int(as_)}"] = v
+                    except (ValueError, TypeError):
+                        pass
 
             # SP 历史（用于涨跌监控）
             odds_history = []
@@ -98,6 +109,7 @@ def normalize(d: dict) -> dict:
                     "平胜": hafu.get("dh"), "平平": hafu.get("dd"), "平负": hafu.get("da"),
                     "负胜": hafu.get("ah"), "负平": hafu.get("ad"), "负负": hafu.get("aa"),
                 },
+                "crsOdds": crs_odds,
                 "oddsHistory": odds_history,
             })
 

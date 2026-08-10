@@ -1,7 +1,16 @@
 {
- "generatedAt": "2026-08-10T14:41:44Z",
+ "generatedAt": "2026-08-10T15:21:01Z",
  "total": 128,
- "rulesVersion": "1.0",
+ "rulesVersion": "1.1",
+ "modelInfo": {
+  "name": "Elo + Dixon-Coles + 赔率融合",
+  "eloTeams": 96,
+  "season": {
+   "seasonStarted": false,
+   "round": 0,
+   "finishedMatches": 0
+  }
+ },
  "predictions": [
   {
    "homeTeam": "Udinese",
@@ -30,6 +39,7 @@
     "away": 1.8
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.02,
     "draw": -0.028,
@@ -65,9 +75,21 @@
      "label": "主胜",
      "modelProb": 0.49,
      "oddsProb": 0.21,
-     "edge": 0.281
+     "edge": 0.281,
+     "level": "gold",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.518,
+     "edge": -0.242,
+     "level": "gold",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -173,6 +195,7 @@
     "away": 12.575
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.317,
     "draw": -0.013,
@@ -204,13 +227,25 @@
    },
    "valuePicks": [
     {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.197,
+     "oddsProb": 0.771,
+     "edge": -0.575,
+     "level": "gold",
+     "modelConf": 0.425
+    },
+    {
      "side": "away",
      "label": "客胜",
      "modelProb": 0.622,
      "oddsProb": 0.074,
-     "edge": 0.547
+     "edge": 0.547,
+     "level": "gold",
+     "modelConf": 0.425
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -272,7 +307,7 @@
     "10": 0.0002
    },
    "btts": 0.5942,
-   "analysis": "【排名】主队Inter Milan排名第1（0分/0场），客队Monza排名第1（0分/0场），排名接近。\n【胜负】市场高度看好主队Inter Milan，主胜隐含概率 77%（赔率 1.21 / 6.05 / 12.575）。\n【让球】主队Inter Milan让 1.5 球（盘口赔率 1.72 / 2.19）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、2-1（10%）、1-0（8%）。\n【大小球】2.5 球盘口：大球 58% / 小球 42%（赔率 大 1.63 / 小 2.22），倾向大球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 59%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 62% vs 盘口 7%（差 +55%），值得关注。\n【结论】综合赔率与消息，Inter Milan不败概率更高，关注波胆 1-1 方向。",
+   "analysis": "【排名】主队Inter Milan排名第1（0分/0场），客队Monza排名第1（0分/0场），排名接近。\n【胜负】市场高度看好主队Inter Milan，主胜隐含概率 77%（赔率 1.21 / 6.05 / 12.575）。\n【让球】主队Inter Milan让 1.5 球（盘口赔率 1.72 / 2.19）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、2-1（10%）、1-0（8%）。\n【大小球】2.5 球盘口：大球 58% / 小球 42%（赔率 大 1.63 / 小 2.22），倾向大球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 59%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 20% vs 盘口 77%（差 -57%），值得关注。\n【结论】综合赔率与消息，Inter Milan不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
     "home": 0.197,
     "draw": 0.182,
@@ -316,6 +351,7 @@
     "away": 2.8
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.041,
     "draw": -0.032,
@@ -351,9 +387,12 @@
      "label": "主胜",
      "modelProb": 0.49,
      "oddsProb": 0.359,
-     "edge": 0.131
+     "edge": 0.131,
+     "level": "watch",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "watch",
    "correctScores": [
     {
      "score": "1-1",
@@ -457,6 +496,7 @@
     "away": 1.8250000000000002
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.019,
     "draw": -0.03,
@@ -492,9 +532,30 @@
      "label": "主胜",
      "modelProb": 0.809,
      "oddsProb": 0.207,
-     "edge": 0.602
+     "edge": 0.602,
+     "level": "gold",
+     "modelConf": 0.698
+    },
+    {
+     "side": "draw",
+     "label": "平局",
+     "modelProb": 0.11,
+     "oddsProb": 0.282,
+     "edge": -0.172,
+     "level": "gold",
+     "modelConf": 0.698
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.081,
+     "oddsProb": 0.511,
+     "edge": -0.43,
+     "level": "gold",
+     "modelConf": 0.698
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -600,6 +661,7 @@
     "away": 1.44
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.011,
     "draw": -0.02,
@@ -635,9 +697,21 @@
      "label": "主胜",
      "modelProb": 0.49,
      "oddsProb": 0.135,
-     "edge": 0.355
+     "edge": 0.355,
+     "level": "gold",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.649,
+     "edge": -0.373,
+     "level": "gold",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -743,6 +817,7 @@
     "away": 3.1
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.05,
     "draw": -0.03,
@@ -778,9 +853,30 @@
      "label": "主胜",
      "modelProb": 0.809,
      "oddsProb": 0.406,
-     "edge": 0.402
+     "edge": 0.402,
+     "level": "gold",
+     "modelConf": 0.698
+    },
+    {
+     "side": "draw",
+     "label": "平局",
+     "modelProb": 0.11,
+     "oddsProb": 0.292,
+     "edge": -0.182,
+     "level": "gold",
+     "modelConf": 0.698
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.081,
+     "oddsProb": 0.302,
+     "edge": -0.221,
+     "level": "gold",
+     "modelConf": 0.698
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -886,6 +982,7 @@
     "away": 1.75
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.021,
     "draw": -0.028,
@@ -921,9 +1018,21 @@
      "label": "主胜",
      "modelProb": 0.49,
      "oddsProb": 0.212,
-     "edge": 0.278
+     "edge": 0.278,
+     "level": "gold",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.53,
+     "edge": -0.254,
+     "level": "gold",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -1029,6 +1138,7 @@
     "away": 5.9
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.129,
     "draw": -0.019,
@@ -1064,9 +1174,21 @@
      "label": "主胜",
      "modelProb": 0.809,
      "oddsProb": 0.624,
-     "edge": 0.185
+     "edge": 0.185,
+     "level": "gold",
+     "modelConf": 0.698
+    },
+    {
+     "side": "draw",
+     "label": "平局",
+     "modelProb": 0.11,
+     "oddsProb": 0.218,
+     "edge": -0.107,
+     "level": "watch",
+     "modelConf": 0.698
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "2-0",
@@ -1172,6 +1294,7 @@
     "away": 3.5
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.059,
     "draw": -0.03,
@@ -1207,9 +1330,30 @@
      "label": "主胜",
      "modelProb": 0.809,
      "oddsProb": 0.443,
-     "edge": 0.366
+     "edge": 0.366,
+     "level": "gold",
+     "modelConf": 0.698
+    },
+    {
+     "side": "draw",
+     "label": "平局",
+     "modelProb": 0.11,
+     "oddsProb": 0.291,
+     "edge": -0.18,
+     "level": "gold",
+     "modelConf": 0.698
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.081,
+     "oddsProb": 0.267,
+     "edge": -0.186,
+     "level": "gold",
+     "modelConf": 0.698
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -1315,6 +1459,7 @@
     "away": 5.9
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.129,
     "draw": -0.023,
@@ -1350,9 +1495,21 @@
      "label": "主胜",
      "modelProb": 0.809,
      "oddsProb": 0.609,
-     "edge": 0.2
+     "edge": 0.2,
+     "level": "gold",
+     "modelConf": 0.698
+    },
+    {
+     "side": "draw",
+     "label": "平局",
+     "modelProb": 0.11,
+     "oddsProb": 0.233,
+     "edge": -0.123,
+     "level": "watch",
+     "modelConf": 0.698
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "2-0",
@@ -1436,8 +1593,8 @@
    "awayTeam": "Mirassol",
    "predictedScore": "1-0",
    "expectedGoals": {
-    "home": 1.89,
-    "away": 0.81
+    "home": 1.6,
+    "away": 0.9
    },
    "probabilities": {
     "home": 0.595,
@@ -1458,6 +1615,7 @@
     "away": 5.25
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.094,
     "draw": -0.024,
@@ -1474,52 +1632,45 @@
     }
    },
    "eloProb": {
-    "home": 0.707,
-    "draw": 0.15,
-    "away": 0.143
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "eloRatings": {
-    "home": 1754.0,
-    "away": 1576.0
+    "home": 1500.0,
+    "away": 1500.0
    },
    "modelProbs": {
-    "home": 0.64,
-    "draw": 0.176,
-    "away": 0.184
+    "home": 0.553,
+    "draw": 0.21,
+    "away": 0.238
    },
-   "valuePicks": [
-    {
-     "side": "home",
-     "label": "主胜",
-     "modelProb": 0.707,
-     "oddsProb": 0.561,
-     "edge": 0.146
-    }
-   ],
+   "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
-     "score": "2-0",
-     "prob": 0.1201
+     "score": "1-1",
+     "prob": 0.1277
     },
     {
      "score": "1-0",
-     "prob": 0.1189
+     "prob": 0.1219
     },
     {
-     "score": "1-1",
-     "prob": 0.1112
+     "score": "2-0",
+     "prob": 0.1051
     },
     {
      "score": "2-1",
-     "prob": 0.0973
-    },
-    {
-     "score": "3-0",
-     "prob": 0.0757
+     "prob": 0.0946
     },
     {
      "score": "0-0",
-     "prob": 0.0755
+     "prob": 0.0916
+    },
+    {
+     "score": "0-1",
+     "prob": 0.0644
     }
    ],
    "overUnder": {
@@ -1529,45 +1680,32 @@
     "overPrice": 1.94,
     "underPrice": 1.81
    },
-   "standings": {
-    "home": {
-     "position": 5,
-     "points": 33,
-     "playedGames": 22,
-     "goalDifference": -1
-    },
-    "away": {
-     "position": 15,
-     "points": 23,
-     "playedGames": 21,
-     "goalDifference": -6
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
-    "0": 0.0672,
-    "1": 0.1815,
-    "2": 0.245,
-    "3": 0.2205,
-    "4": 0.1488,
-    "5": 0.0804,
-    "6": 0.0319,
-    "7": 0.0093,
-    "8": 0.0021,
+    "0": 0.0821,
+    "1": 0.2052,
+    "2": 0.2565,
+    "3": 0.2138,
+    "4": 0.1336,
+    "5": 0.0668,
+    "6": 0.0259,
+    "7": 0.0077,
+    "8": 0.0018,
     "9": 0.0003,
     "10": 0.0
    },
-   "btts": 0.4639,
-   "analysis": "【排名】主队Cruzeiro排名第5（33分/22场），客队Mirassol排名第15（23分/21场），主队排名领先 10 位。\n【胜负】市场高度看好主队Cruzeiro，主胜隐含概率 56%（赔率 1.67 / 3.6 / 5.25）。\n【让球】主队Cruzeiro让 0.5 球（盘口赔率 1.69 / 2.15）。\n【波胆】泊松模型推算最可能比分：1-0（13%）、2-0（12%）、1-1（10%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%（赔率 大 1.94 / 小 1.81），倾向小球。\n【进球数】总进球概率：0球 7%、1球 18%、2球 24%、3球 22%、4球 15%。\n【双方进球】双方都进球概率 46%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 71% vs 盘口 56%（差 +15%），值得关注。\n【结论】综合赔率与消息，Cruzeiro不败概率更高，关注波胆 1-0 方向。",
+   "btts": 0.4698,
+   "analysis": "【胜负】市场高度看好主队Cruzeiro，主胜隐含概率 56%（赔率 1.67 / 3.6 / 5.25）。\n【让球】主队Cruzeiro让 0.5 球（盘口赔率 1.69 / 2.15）。\n【波胆】泊松模型推算最可能比分：1-0（13%）、1-1（12%）、2-0（11%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%（赔率 大 1.94 / 小 1.81），倾向小球。\n【进球数】总进球概率：0球 8%、1球 21%、2球 26%、3球 21%、4球 13%。\n【双方进球】双方都进球概率 47%，倾向至少一方零封。\n【结论】综合赔率与消息，Cruzeiro不败概率更高，关注波胆 1-0 方向。",
    "eloProbs": {
-    "home": 0.707,
-    "draw": 0.15,
-    "away": 0.143
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "valueMarks": {
     "edges": {
-     "home": 0.045,
-     "draw": -0.018,
-     "away": -0.028
+     "home": -0.042,
+     "draw": 0.016,
+     "away": 0.026
     },
     "picks": []
    }
@@ -1599,6 +1737,7 @@
     "away": 3.65
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.069,
     "draw": -0.027,
@@ -1629,6 +1768,7 @@
     "away": 0.284
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -1662,20 +1802,7 @@
     "overPrice": 1.85,
     "underPrice": 1.89
    },
-   "standings": {
-    "home": {
-     "position": 6,
-     "points": 33,
-     "playedGames": 22,
-     "goalDifference": 4
-    },
-    "away": {
-     "position": 18,
-     "points": 22,
-     "playedGames": 21,
-     "goalDifference": -8
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
     "0": 0.0743,
     "1": 0.1931,
@@ -1690,7 +1817,7 @@
     "10": 0.0001
    },
    "btts": 0.5103,
-   "analysis": "【排名】主队Bahia排名第6（33分/22场），客队Vasco da Gama排名第18（22分/21场），主队排名领先 12 位。\n【胜负】比赛悬念较大，主胜 47% / 平 27% / 客胜 26%（赔率 1.97 / 3.45 / 3.65）。\n【让球】主队Bahia让 0.5 球（盘口赔率 2.04 / 1.82）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（11%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%（赔率 大 1.85 / 小 1.89），倾向大球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 51%，倾向至少一方零封。\n【结论】综合赔率与消息，Bahia不败概率更高，关注波胆 1-1 方向。",
+   "analysis": "【胜负】比赛悬念较大，主胜 47% / 平 27% / 客胜 26%（赔率 1.97 / 3.45 / 3.65）。\n【让球】主队Bahia让 0.5 球（盘口赔率 2.04 / 1.82）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（11%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%（赔率 大 1.85 / 小 1.89），倾向大球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 51%，倾向至少一方零封。\n【结论】综合赔率与消息，Bahia不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
     "home": 0.49,
     "draw": 0.234,
@@ -1710,8 +1837,8 @@
    "awayTeam": "Internacional",
    "predictedScore": "1-0",
    "expectedGoals": {
-    "home": 1.55,
-    "away": 0.95
+    "home": 1.69,
+    "away": 0.91
    },
    "probabilities": {
     "home": 0.63,
@@ -1732,6 +1859,7 @@
     "away": 5.8
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.118,
     "draw": -0.023,
@@ -1748,52 +1876,64 @@
     }
    },
    "eloProb": {
-    "home": 0.377,
-    "draw": 0.286,
-    "away": 0.337
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "eloRatings": {
     "home": 1500.0,
-    "away": 1581.0
+    "away": 1500.0
    },
    "modelProbs": {
-    "home": 0.529,
-    "draw": 0.22,
-    "away": 0.251
+    "home": 0.574,
+    "draw": 0.199,
+    "away": 0.227
    },
    "valuePicks": [
     {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.49,
+     "oddsProb": 0.597,
+     "edge": -0.106,
+     "level": "watch",
+     "modelConf": 0.215
+    },
+    {
      "side": "away",
      "label": "客胜",
-     "modelProb": 0.337,
+     "modelProb": 0.276,
      "oddsProb": 0.161,
-     "edge": 0.176
+     "edge": 0.115,
+     "level": "watch",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "watch",
    "correctScores": [
     {
      "score": "1-1",
-     "prob": 0.1306
+     "prob": 0.1234
     },
     {
      "score": "1-0",
-     "prob": 0.1176
+     "prob": 0.1164
     },
     {
      "score": "2-0",
-     "prob": 0.0986
+     "prob": 0.1061
     },
     {
      "score": "2-1",
-     "prob": 0.0937
+     "prob": 0.0966
     },
     {
      "score": "0-0",
-     "prob": 0.0918
+     "prob": 0.0834
     },
     {
-     "score": "0-1",
-     "prob": 0.0683
+     "score": "3-0",
+     "prob": 0.0598
     }
    ],
    "overUnder": {
@@ -1803,49 +1943,34 @@
     "overPrice": 1.93,
     "underPrice": 1.83
    },
-   "standings": {
-    "home": {
-     "position": 1,
-     "points": 48,
-     "playedGames": 22,
-     "goalDifference": 22
-    },
-    "away": {
-     "position": 16,
-     "points": 23,
-     "playedGames": 22,
-     "goalDifference": -4
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
-    "0": 0.0821,
-    "1": 0.2052,
-    "2": 0.2565,
-    "3": 0.2138,
-    "4": 0.1336,
-    "5": 0.0668,
-    "6": 0.0262,
-    "7": 0.0079,
-    "8": 0.0019,
-    "9": 0.0003,
+    "0": 0.0743,
+    "1": 0.1931,
+    "2": 0.251,
+    "3": 0.2176,
+    "4": 0.1414,
+    "5": 0.0735,
+    "6": 0.0294,
+    "7": 0.009,
+    "8": 0.0021,
+    "9": 0.0004,
     "10": 0.0
    },
-   "btts": 0.4795,
-   "analysis": "【排名】主队Palmeiras排名第1（48分/22场），客队Internacional排名第16（23分/22场），主队排名领先 15 位。\n【胜负】市场高度看好主队Palmeiras，主胜隐含概率 60%（赔率 1.565 / 3.85 / 5.8）。\n【让球】主队Palmeiras让 1.0 球（盘口赔率 1.98 / 1.85）。\n【波胆】泊松模型推算最可能比分：1-0（13%）、1-1（12%）、2-0（10%）。\n【大小球】2.5 球盘口：大球 49% / 小球 51%（赔率 大 1.93 / 小 1.83），倾向小球。\n【进球数】总进球概率：0球 8%、1球 21%、2球 26%、3球 21%、4球 13%。\n【双方进球】双方都进球概率 48%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 34% vs 盘口 16%（差 +18%），值得关注。\n【结论】综合赔率与消息，Palmeiras不败概率更高，关注波胆 1-0 方向。",
+   "btts": 0.4823,
+   "analysis": "【胜负】市场高度看好主队Palmeiras，主胜隐含概率 60%（赔率 1.565 / 3.85 / 5.8）。\n【让球】主队Palmeiras让 1.0 球（盘口赔率 1.98 / 1.85）。\n【波胆】泊松模型推算最可能比分：1-0（13%）、1-1（11%）、2-0（11%）。\n【大小球】2.5 球盘口：大球 49% / 小球 51%（赔率 大 1.93 / 小 1.83），倾向小球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 48%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 60%（差 -11%），值得关注。\n【结论】综合赔率与消息，Palmeiras不败概率更高，关注波胆 1-0 方向。",
    "eloProbs": {
-    "home": 0.377,
-    "draw": 0.286,
-    "away": 0.337
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "valueMarks": {
     "edges": {
-     "home": -0.101,
-     "draw": 0.044,
-     "away": 0.057
+     "home": -0.056,
+     "draw": 0.023,
+     "away": 0.033
     },
-    "picks": [
-     "away"
-    ]
+    "picks": []
    }
   },
   {
@@ -1853,8 +1978,8 @@
    "awayTeam": "Atletico Paranaense",
    "predictedScore": "1-1",
    "expectedGoals": {
-    "home": 1.56,
-    "away": 1.04
+    "home": 1.45,
+    "away": 1.05
    },
    "probabilities": {
     "home": 0.476,
@@ -1875,6 +2000,7 @@
     "away": 3.475
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.065,
     "draw": -0.032,
@@ -1891,52 +2017,45 @@
     }
    },
    "eloProb": {
-    "home": 0.565,
-    "draw": 0.203,
-    "away": 0.231
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "eloRatings": {
-    "home": 1555.0,
+    "home": 1500.0,
     "away": 1500.0
    },
    "modelProbs": {
-    "home": 0.512,
-    "draw": 0.216,
-    "away": 0.273
+    "home": 0.482,
+    "draw": 0.228,
+    "away": 0.291
    },
-   "valuePicks": [
-    {
-     "side": "home",
-     "label": "主胜",
-     "modelProb": 0.565,
-     "oddsProb": 0.442,
-     "edge": 0.123
-    }
-   ],
+   "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
-     "prob": 0.1302
+     "prob": 0.135
     },
     {
      "score": "1-0",
-     "prob": 0.1063
-    },
-    {
-     "score": "2-1",
-     "prob": 0.094
-    },
-    {
-     "score": "2-0",
-     "prob": 0.0904
+     "prob": 0.109
     },
     {
      "score": "0-0",
-     "prob": 0.0839
+     "prob": 0.0921
+    },
+    {
+     "score": "2-1",
+     "prob": 0.0906
+    },
+    {
+     "score": "2-0",
+     "prob": 0.0863
     },
     {
      "score": "0-1",
-     "prob": 0.0676
+     "prob": 0.0762
     }
    ],
    "overUnder": {
@@ -1948,30 +2067,30 @@
    },
    "standings": null,
    "totalGoalsDist": {
-    "0": 0.0743,
-    "1": 0.1931,
-    "2": 0.251,
-    "3": 0.2176,
-    "4": 0.1414,
-    "5": 0.0735,
-    "6": 0.0302,
-    "7": 0.0097,
-    "8": 0.0024,
-    "9": 0.0005,
-    "10": 0.0001
+    "0": 0.0821,
+    "1": 0.2052,
+    "2": 0.2565,
+    "3": 0.2138,
+    "4": 0.1336,
+    "5": 0.0668,
+    "6": 0.0266,
+    "7": 0.0084,
+    "8": 0.0021,
+    "9": 0.0004,
+    "10": 0.0
    },
-   "btts": 0.5066,
-   "analysis": "【胜负】比赛悬念较大，主胜 44% / 平 29% / 客胜 27%（赔率 2.1 / 3.2 / 3.475）。\n【让球】主队Santos让 0.5 球（盘口赔率 2.08 / 1.76）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（12%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 45% / 小球 55%（赔率 大 2.09 / 小 1.7），倾向小球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 51%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 56% vs 盘口 44%（差 +12%），值得关注。\n【结论】综合赔率与消息，Santos不败概率更高，关注波胆 1-1 方向。",
+   "btts": 0.4945,
+   "analysis": "【胜负】比赛悬念较大，主胜 44% / 平 29% / 客胜 27%（赔率 2.1 / 3.2 / 3.475）。\n【让球】主队Santos让 0.5 球（盘口赔率 2.08 / 1.76）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（12%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 45% / 小球 55%（赔率 大 2.09 / 小 1.7），倾向小球。\n【进球数】总进球概率：0球 8%、1球 21%、2球 26%、3球 21%、4球 13%。\n【双方进球】双方都进球概率 49%，倾向至少一方零封。\n【结论】综合赔率与消息，Santos不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
-    "home": 0.565,
-    "draw": 0.203,
-    "away": 0.231
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "valueMarks": {
     "edges": {
-     "home": 0.036,
-     "draw": -0.008,
-     "away": -0.028
+     "home": 0.006,
+     "draw": 0.004,
+     "away": -0.01
     },
     "picks": []
    }
@@ -1981,8 +2100,8 @@
    "awayTeam": "Corinthians",
    "predictedScore": "1-1",
    "expectedGoals": {
-    "home": 1.25,
-    "away": 1.25
+    "home": 1.39,
+    "away": 1.01
    },
    "probabilities": {
     "home": 0.464,
@@ -2003,6 +2122,7 @@
     "away": 3.5
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.055,
     "draw": -0.031,
@@ -2019,52 +2139,45 @@
     }
    },
    "eloProb": {
-    "home": 0.259,
-    "draw": 0.222,
-    "away": 0.519
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "eloRatings": {
     "home": 1500.0,
-    "away": 1721.0
+    "away": 1500.0
    },
    "modelProbs": {
-    "home": 0.382,
-    "draw": 0.23,
-    "away": 0.388
+    "home": 0.475,
+    "draw": 0.234,
+    "away": 0.291
    },
-   "valuePicks": [
-    {
-     "side": "away",
-     "label": "客胜",
-     "modelProb": 0.519,
-     "oddsProb": 0.267,
-     "edge": 0.252
-    }
-   ],
+   "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
-     "prob": 0.1385
-    },
-    {
-     "score": "0-0",
-     "prob": 0.0924
-    },
-    {
-     "score": "0-1",
-     "prob": 0.0924
+     "prob": 0.1375
     },
     {
      "score": "1-0",
-     "prob": 0.0924
+     "prob": 0.1161
     },
     {
-     "score": "1-2",
-     "prob": 0.0802
+     "score": "0-0",
+     "prob": 0.1009
     },
     {
      "score": "2-1",
-     "prob": 0.0802
+     "prob": 0.0886
+    },
+    {
+     "score": "2-0",
+     "prob": 0.0879
+    },
+    {
+     "score": "0-1",
+     "prob": 0.0813
     }
    ],
    "overUnder": {
@@ -2076,34 +2189,32 @@
    },
    "standings": null,
    "totalGoalsDist": {
-    "0": 0.0821,
-    "1": 0.2052,
-    "2": 0.2565,
-    "3": 0.2138,
-    "4": 0.1336,
-    "5": 0.0668,
-    "6": 0.027,
-    "7": 0.0087,
-    "8": 0.0022,
-    "9": 0.0004,
-    "10": 0.0001
+    "0": 0.0907,
+    "1": 0.2177,
+    "2": 0.2613,
+    "3": 0.209,
+    "4": 0.1254,
+    "5": 0.0602,
+    "6": 0.023,
+    "7": 0.0069,
+    "8": 0.0016,
+    "9": 0.0003,
+    "10": 0.0
    },
-   "btts": 0.5065,
-   "analysis": "【胜负】比赛悬念较大，主胜 43% / 平 30% / 客胜 27%（赔率 2.17 / 3.1 / 3.5）。\n【让球】主队Bragantino-SP让 0.5 球（盘口赔率 2.13 / 1.7）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、0-1（10%）、1-0（10%）。\n【大小球】2.5 球盘口：大球 40% / 小球 60%（赔率 大 2.32 / 小 1.57），倾向小球。\n【进球数】总进球概率：0球 8%、1球 21%、2球 26%、3球 21%、4球 13%。\n【双方进球】双方都进球概率 51%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 52% vs 盘口 27%（差 +25%），值得关注。\n【结论】综合赔率与消息，Bragantino-SP不败概率更高，关注波胆 1-1 方向。",
+   "btts": 0.4748,
+   "analysis": "【胜负】比赛悬念较大，主胜 43% / 平 30% / 客胜 27%（赔率 2.17 / 3.1 / 3.5）。\n【让球】主队Bragantino-SP让 0.5 球（盘口赔率 2.13 / 1.7）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（13%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 40% / 小球 60%（赔率 大 2.32 / 小 1.57），倾向小球。\n【进球数】总进球概率：0球 9%、1球 22%、2球 26%、3球 21%、4球 13%。\n【双方进球】双方都进球概率 47%，倾向至少一方零封。\n【结论】综合赔率与消息，Bragantino-SP不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
-    "home": 0.259,
-    "draw": 0.222,
-    "away": 0.519
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "valueMarks": {
     "edges": {
-     "home": -0.082,
-     "draw": -0.005,
-     "away": 0.087
+     "home": 0.011,
+     "draw": -0.001,
+     "away": -0.01
     },
-    "picks": [
-     "away"
-    ]
+    "picks": []
    }
   },
   {
@@ -2133,6 +2244,7 @@
     "away": 12.0
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.277,
     "draw": -0.013,
@@ -2164,13 +2276,25 @@
    },
    "valuePicks": [
     {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.49,
+     "oddsProb": 0.761,
+     "edge": -0.271,
+     "level": "gold",
+     "modelConf": 0.215
+    },
+    {
      "side": "away",
      "label": "客胜",
      "modelProb": 0.276,
      "oddsProb": 0.078,
-     "edge": 0.198
+     "edge": 0.198,
+     "level": "gold",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "2-0",
@@ -2219,7 +2343,7 @@
     "10": 0.0001
    },
    "btts": 0.4894,
-   "analysis": "【胜负】市场高度看好主队Flamengo，主胜隐含概率 76%（赔率 1.23 / 5.824999999999999 / 12.0）。\n【让球】主队Flamengo让 1.5 球（盘口赔率 1.71 / 2.1）。\n【波胆】泊松模型推算最可能比分：2-0（12%）、1-0（11%）、2-1（10%）。\n【大小球】2.5 球盘口：大球 57% / 小球 43%（赔率 大 1.64 / 小 2.2），倾向大球。\n【进球数】总进球概率：0球 5%、1球 15%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 49%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 28% vs 盘口 8%（差 +20%），值得关注。\n【结论】综合赔率与消息，Flamengo不败概率更高，关注波胆 2-0 方向。",
+   "analysis": "【胜负】市场高度看好主队Flamengo，主胜隐含概率 76%（赔率 1.23 / 5.824999999999999 / 12.0）。\n【让球】主队Flamengo让 1.5 球（盘口赔率 1.71 / 2.1）。\n【波胆】泊松模型推算最可能比分：2-0（12%）、1-0（11%）、2-1（10%）。\n【大小球】2.5 球盘口：大球 57% / 小球 43%（赔率 大 1.64 / 小 2.2），倾向大球。\n【进球数】总进球概率：0球 5%、1球 15%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 49%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 76%（差 -27%），值得关注。\n【结论】综合赔率与消息，Flamengo不败概率更高，关注波胆 2-0 方向。",
    "eloProbs": {
     "home": 0.49,
     "draw": 0.234,
@@ -2242,8 +2366,8 @@
    "awayTeam": "Palmeiras",
    "predictedScore": "1-1",
    "expectedGoals": {
-    "home": 1.86,
-    "away": 1.24
+    "home": 1.33,
+    "away": 1.17
    },
    "probabilities": {
     "home": 0.376,
@@ -2264,6 +2388,7 @@
     "away": 2.565
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.048,
     "draw": -0.039,
@@ -2280,52 +2405,55 @@
     }
    },
    "eloProb": {
-    "home": 0.77,
-    "draw": 0.126,
-    "away": 0.104
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "eloRatings": {
-    "home": 1748.0,
+    "home": 1500.0,
     "away": 1500.0
    },
    "modelProbs": {
-    "home": 0.534,
-    "draw": 0.19,
-    "away": 0.277
+    "home": 0.422,
+    "draw": 0.233,
+    "away": 0.346
    },
    "valuePicks": [
     {
      "side": "home",
      "label": "主胜",
-     "modelProb": 0.77,
+     "modelProb": 0.49,
      "oddsProb": 0.343,
-     "edge": 0.427
+     "edge": 0.148,
+     "level": "watch",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "watch",
    "correctScores": [
     {
      "score": "1-1",
-     "prob": 0.1123
-    },
-    {
-     "score": "2-1",
-     "prob": 0.0967
-    },
-    {
-     "score": "2-0",
-     "prob": 0.078
+     "prob": 0.138
     },
     {
      "score": "1-0",
-     "prob": 0.0755
+     "prob": 0.0985
+    },
+    {
+     "score": "0-0",
+     "prob": 0.0923
+    },
+    {
+     "score": "0-1",
+     "prob": 0.0862
+    },
+    {
+     "score": "2-1",
+     "prob": 0.0847
     },
     {
      "score": "1-2",
-     "prob": 0.0645
-    },
-    {
-     "score": "2-2",
-     "prob": 0.06
+     "prob": 0.0751
     }
    ],
    "overUnder": {
@@ -2335,49 +2463,34 @@
     "overPrice": 2.16,
     "underPrice": 1.63
    },
-   "standings": {
-    "home": {
-     "position": 4,
-     "points": 35,
-     "playedGames": 22,
-     "goalDifference": 5
-    },
-    "away": {
-     "position": 1,
-     "points": 48,
-     "playedGames": 22,
-     "goalDifference": 22
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
-    "0": 0.045,
-    "1": 0.1397,
-    "2": 0.2165,
-    "3": 0.2237,
-    "4": 0.1733,
-    "5": 0.1075,
-    "6": 0.0527,
-    "7": 0.0202,
-    "8": 0.006,
-    "9": 0.0014,
-    "10": 0.0002
+    "0": 0.0821,
+    "1": 0.2052,
+    "2": 0.2565,
+    "3": 0.2138,
+    "4": 0.1336,
+    "5": 0.0668,
+    "6": 0.0269,
+    "7": 0.0087,
+    "8": 0.0022,
+    "9": 0.0004,
+    "10": 0.0001
    },
-   "btts": 0.59,
-   "analysis": "【排名】主队Fluminense排名第4（35分/22场），客队Palmeiras排名第1（48分/22场），客队排名领先 3 位。\n【胜负】比赛悬念较大，主胜 34% / 平 30% / 客胜 36%（赔率 2.68 / 3.075 / 2.565）。\n【让球】客队Palmeiras让 1.0 球（盘口赔率 1.19 / 4.6）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、2-1（10%）、1-0（8%）。\n【大小球】2.5 球盘口：大球 43% / 小球 57%（赔率 大 2.16 / 小 1.63），倾向小球。\n【进球数】总进球概率：0球 4%、1球 14%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 59%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 77% vs 盘口 34%（差 +43%），值得关注。\n【结论】综合赔率与消息，Palmeiras不败概率更高，关注波胆 1-1 方向。",
+   "btts": 0.5048,
+   "analysis": "【胜负】比赛悬念较大，主胜 34% / 平 30% / 客胜 36%（赔率 2.68 / 3.075 / 2.565）。\n【让球】客队Palmeiras让 1.0 球（盘口赔率 1.19 / 4.6）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（11%）、0-1（10%）。\n【大小球】2.5 球盘口：大球 43% / 小球 57%（赔率 大 2.16 / 小 1.63），倾向小球。\n【进球数】总进球概率：0球 8%、1球 21%、2球 26%、3球 21%、4球 13%。\n【双方进球】双方都进球概率 50%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 34%（差 +15%），值得关注。\n【结论】综合赔率与消息，Palmeiras不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
-    "home": 0.77,
-    "draw": 0.126,
-    "away": 0.104
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "valueMarks": {
     "edges": {
-     "home": 0.158,
-     "draw": -0.042,
-     "away": -0.115
+     "home": 0.046,
+     "draw": 0.001,
+     "away": -0.046
     },
-    "picks": [
-     "home"
-    ]
+    "picks": []
    }
   },
   {
@@ -2407,6 +2520,7 @@
     "away": 3.625
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.081,
     "draw": -0.037,
@@ -2437,6 +2551,7 @@
     "away": 0.283
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -2505,8 +2620,8 @@
    "awayTeam": "Coritiba",
    "predictedScore": "1-0",
    "expectedGoals": {
-    "home": 1.52,
-    "away": 0.98
+    "home": 1.64,
+    "away": 0.96
    },
    "probabilities": {
     "home": 0.594,
@@ -2527,6 +2642,7 @@
     "away": 5.0
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.126,
     "draw": -0.031,
@@ -2543,52 +2659,45 @@
     }
    },
    "eloProb": {
-    "home": 0.398,
-    "draw": 0.275,
-    "away": 0.327
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "eloRatings": {
-    "home": 1613.0,
-    "away": 1679.0
+    "home": 1500.0,
+    "away": 1500.0
    },
    "modelProbs": {
-    "home": 0.516,
-    "draw": 0.223,
-    "away": 0.261
+    "home": 0.553,
+    "draw": 0.207,
+    "away": 0.241
    },
-   "valuePicks": [
-    {
-     "side": "away",
-     "label": "客胜",
-     "modelProb": 0.327,
-     "oddsProb": 0.184,
-     "edge": 0.143
-    }
-   ],
+   "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
-     "prob": 0.1318
+     "prob": 0.1264
     },
     {
      "score": "1-0",
-     "prob": 0.1154
+     "prob": 0.1123
     },
     {
      "score": "2-0",
-     "prob": 0.0955
+     "prob": 0.0997
     },
     {
      "score": "2-1",
-     "prob": 0.0931
+     "prob": 0.0959
     },
     {
      "score": "0-0",
-     "prob": 0.0919
+     "prob": 0.0837
     },
     {
      "score": "0-1",
-     "prob": 0.0703
+     "prob": 0.0621
     }
    ],
    "overUnder": {
@@ -2600,30 +2709,30 @@
    },
    "standings": null,
    "totalGoalsDist": {
-    "0": 0.0821,
-    "1": 0.2052,
-    "2": 0.2565,
-    "3": 0.2138,
-    "4": 0.1336,
-    "5": 0.0668,
-    "6": 0.0263,
-    "7": 0.0081,
-    "8": 0.0019,
-    "9": 0.0003,
-    "10": 0.0
+    "0": 0.0743,
+    "1": 0.1931,
+    "2": 0.251,
+    "3": 0.2176,
+    "4": 0.1414,
+    "5": 0.0735,
+    "6": 0.0298,
+    "7": 0.0093,
+    "8": 0.0023,
+    "9": 0.0004,
+    "10": 0.0001
    },
-   "btts": 0.4839,
-   "analysis": "【胜负】市场高度看好主队Sao Paulo，主胜隐含概率 56%（赔率 1.64 / 3.6 / 5.0）。\n【让球】主队Sao Paulo让 1.0 球（盘口赔率 2.2 / 1.65）。\n【波胆】泊松模型推算最可能比分：1-0（13%）、1-1（12%）、2-0（10%）。\n【大小球】2.5 球盘口：大球 49% / 小球 51%（赔率 大 1.91 / 小 1.82），倾向小球。\n【进球数】总进球概率：0球 8%、1球 21%、2球 26%、3球 21%、4球 13%。\n【双方进球】双方都进球概率 48%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 33% vs 盘口 18%（差 +14%），值得关注。\n【结论】综合赔率与消息，Sao Paulo不败概率更高，关注波胆 1-0 方向。",
+   "btts": 0.4932,
+   "analysis": "【胜负】市场高度看好主队Sao Paulo，主胜隐含概率 56%（赔率 1.64 / 3.6 / 5.0）。\n【让球】主队Sao Paulo让 1.0 球（盘口赔率 2.2 / 1.65）。\n【波胆】泊松模型推算最可能比分：1-0（12%）、1-1（12%）、2-0（10%）。\n【大小球】2.5 球盘口：大球 49% / 小球 51%（赔率 大 1.91 / 小 1.82），倾向小球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 49%，倾向至少一方零封。\n【结论】综合赔率与消息，Sao Paulo不败概率更高，关注波胆 1-0 方向。",
    "eloProbs": {
-    "home": 0.398,
-    "draw": 0.275,
-    "away": 0.327
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "valueMarks": {
     "edges": {
-     "home": -0.078,
-     "draw": 0.034,
-     "away": 0.044
+     "home": -0.041,
+     "draw": 0.018,
+     "away": 0.024
     },
     "picks": []
    }
@@ -2655,6 +2764,7 @@
     "away": 2.06
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.038,
     "draw": -0.035,
@@ -2671,12 +2781,12 @@
     }
    },
    "eloProb": {
-    "home": 0.492,
-    "draw": 0.233,
-    "away": 0.275
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "eloRatings": {
-    "home": 1501.0,
+    "home": 1500.0,
     "away": 1500.0
    },
    "modelProbs": {
@@ -2688,11 +2798,23 @@
     {
      "side": "home",
      "label": "主胜",
-     "modelProb": 0.492,
+     "modelProb": 0.49,
      "oddsProb": 0.286,
-     "edge": 0.206
+     "edge": 0.204,
+     "level": "gold",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.445,
+     "edge": -0.169,
+     "level": "gold",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -2726,20 +2848,7 @@
     "overPrice": 1.75,
     "underPrice": 1.93
    },
-   "standings": {
-    "home": {
-     "position": 20,
-     "points": 10,
-     "playedGames": 21,
-     "goalDifference": -23
-    },
-    "away": {
-     "position": 6,
-     "points": 33,
-     "playedGames": 22,
-     "goalDifference": 4
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
     "0": 0.0608,
     "1": 0.1703,
@@ -2754,11 +2863,11 @@
     "10": 0.0001
    },
    "btts": 0.5628,
-   "analysis": "【排名】主队Chapecoense排名第20（10分/21场），客队Bahia排名第6（33分/22场），客队排名领先 14 位。\n【胜负】比赛悬念较大，主胜 29% / 平 27% / 客胜 44%（赔率 3.2 / 3.4 / 2.06）。\n【让球】客队Bahia让 1.0 球（盘口赔率 1.36 / 3.08）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、0-1（9%）、1-0（9%）。\n【大小球】2.5 球盘口：大球 52% / 小球 48%（赔率 大 1.75 / 小 1.93），倾向大球。\n【进球数】总进球概率：0球 6%、1球 17%、2球 24%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 56%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 29%（差 +21%），值得关注。\n【结论】综合赔率与消息，Bahia不败概率更高，关注波胆 1-1 方向。",
+   "analysis": "【胜负】比赛悬念较大，主胜 29% / 平 27% / 客胜 44%（赔率 3.2 / 3.4 / 2.06）。\n【让球】客队Bahia让 1.0 球（盘口赔率 1.36 / 3.08）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、0-1（9%）、1-0（9%）。\n【大小球】2.5 球盘口：大球 52% / 小球 48%（赔率 大 1.75 / 小 1.93），倾向大球。\n【进球数】总进球概率：0球 6%、1球 17%、2球 24%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 56%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 29%（差 +20%），值得关注。\n【结论】综合赔率与消息，Bahia不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
-    "home": 0.492,
-    "draw": 0.233,
-    "away": 0.275
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "valueMarks": {
     "edges": {
@@ -2774,10 +2883,10 @@
   {
    "homeTeam": "Atletico Mineiro",
    "awayTeam": "Grêmio",
-   "predictedScore": "1-1",
+   "predictedScore": "1-0",
    "expectedGoals": {
-    "home": 1.43,
-    "away": 1.07
+    "home": 1.61,
+    "away": 0.99
    },
    "probabilities": {
     "home": 0.561,
@@ -2798,6 +2907,7 @@
     "away": 4.33
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.118,
     "draw": -0.035,
@@ -2814,52 +2924,45 @@
     }
    },
    "eloProb": {
-    "home": 0.332,
-    "draw": 0.281,
-    "away": 0.387
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "eloRatings": {
     "home": 1500.0,
-    "away": 1627.0
+    "away": 1500.0
    },
    "modelProbs": {
-    "home": 0.469,
-    "draw": 0.229,
-    "away": 0.301
+    "home": 0.533,
+    "draw": 0.21,
+    "away": 0.257
    },
-   "valuePicks": [
-    {
-     "side": "away",
-     "label": "客胜",
-     "modelProb": 0.387,
-     "oddsProb": 0.211,
-     "edge": 0.176
-    }
-   ],
+   "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
-     "prob": 0.1358
+     "prob": 0.1278
     },
     {
      "score": "1-0",
-     "prob": 0.1069
-    },
-    {
-     "score": "0-0",
-     "prob": 0.0922
-    },
-    {
-     "score": "2-1",
-     "prob": 0.0896
+     "prob": 0.1103
     },
     {
      "score": "2-0",
-     "prob": 0.0834
+     "prob": 0.0965
+    },
+    {
+     "score": "2-1",
+     "prob": 0.0954
+    },
+    {
+     "score": "0-0",
+     "prob": 0.0838
     },
     {
      "score": "0-1",
-     "prob": 0.0782
+     "prob": 0.0639
     }
    ],
    "overUnder": {
@@ -2871,43 +2974,41 @@
    },
    "standings": null,
    "totalGoalsDist": {
-    "0": 0.0821,
-    "1": 0.2052,
-    "2": 0.2565,
-    "3": 0.2138,
-    "4": 0.1336,
-    "5": 0.0668,
-    "6": 0.0267,
-    "7": 0.0084,
-    "8": 0.0021,
+    "0": 0.0743,
+    "1": 0.1931,
+    "2": 0.251,
+    "3": 0.2176,
+    "4": 0.1414,
+    "5": 0.0735,
+    "6": 0.03,
+    "7": 0.0095,
+    "8": 0.0023,
     "9": 0.0004,
-    "10": 0.0
+    "10": 0.0001
    },
-   "btts": 0.4973,
-   "analysis": "【胜负】比赛悬念较大，主胜 53% / 平 26% / 客胜 21%（赔率 1.73 / 3.5 / 4.33）。\n【让球】主队Atletico Mineiro让 1.0 球（盘口赔率 2.41 / 1.55）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（12%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 49% / 小球 51%（赔率 大 1.92 / 小 1.815），倾向小球。\n【进球数】总进球概率：0球 8%、1球 21%、2球 26%、3球 21%、4球 13%。\n【双方进球】双方都进球概率 50%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 39% vs 盘口 21%（差 +18%），值得关注。\n【结论】综合赔率与消息，Atletico Mineiro不败概率更高，关注波胆 1-1 方向。",
+   "btts": 0.4981,
+   "analysis": "【胜负】比赛悬念较大，主胜 53% / 平 26% / 客胜 21%（赔率 1.73 / 3.5 / 4.33）。\n【让球】主队Atletico Mineiro让 1.0 球（盘口赔率 2.41 / 1.55）。\n【波胆】泊松模型推算最可能比分：1-0（12%）、1-1（12%）、2-0（10%）。\n【大小球】2.5 球盘口：大球 49% / 小球 51%（赔率 大 1.92 / 小 1.815），倾向小球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 50%，倾向至少一方零封。\n【结论】综合赔率与消息，Atletico Mineiro不败概率更高，关注波胆 1-0 方向。",
    "eloProbs": {
-    "home": 0.332,
-    "draw": 0.281,
-    "away": 0.387
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "valueMarks": {
     "edges": {
-     "home": -0.092,
-     "draw": 0.035,
-     "away": 0.057
+     "home": -0.028,
+     "draw": 0.016,
+     "away": 0.013
     },
-    "picks": [
-     "away"
-    ]
+    "picks": []
    }
   },
   {
    "homeTeam": "Vasco da Gama",
    "awayTeam": "Santos",
-   "predictedScore": "1-1",
+   "predictedScore": "1-0",
    "expectedGoals": {
-    "home": 1.39,
-    "away": 1.01
+    "home": 1.5,
+    "away": 1.0
    },
    "probabilities": {
     "home": 0.516,
@@ -2928,6 +3029,7 @@
     "away": 3.75
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.093,
     "draw": -0.036,
@@ -2944,44 +3046,45 @@
     }
    },
    "eloProb": {
-    "home": 0.412,
-    "draw": 0.268,
-    "away": 0.319
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "eloRatings": {
     "home": 1500.0,
-    "away": 1555.0
+    "away": 1500.0
    },
    "modelProbs": {
-    "home": 0.475,
-    "draw": 0.232,
-    "away": 0.294
+    "home": 0.506,
+    "draw": 0.218,
+    "away": 0.277
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
-     "prob": 0.1375
+     "prob": 0.133
     },
     {
      "score": "1-0",
-     "prob": 0.1161
-    },
-    {
-     "score": "0-0",
-     "prob": 0.1009
-    },
-    {
-     "score": "2-1",
-     "prob": 0.0886
+     "prob": 0.1133
     },
     {
      "score": "2-0",
-     "prob": 0.0879
+     "prob": 0.0924
+    },
+    {
+     "score": "2-1",
+     "prob": 0.0924
+    },
+    {
+     "score": "0-0",
+     "prob": 0.092
     },
     {
      "score": "0-1",
-     "prob": 0.0813
+     "prob": 0.0722
     }
    ],
    "overUnder": {
@@ -2991,45 +3094,32 @@
     "overPrice": 1.93,
     "underPrice": 1.78
    },
-   "standings": {
-    "home": {
-     "position": 18,
-     "points": 22,
-     "playedGames": 21,
-     "goalDifference": -8
-    },
-    "away": {
-     "position": 17,
-     "points": 22,
-     "playedGames": 21,
-     "goalDifference": -6
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
-    "0": 0.0907,
-    "1": 0.2177,
-    "2": 0.2613,
-    "3": 0.209,
-    "4": 0.1254,
-    "5": 0.0602,
-    "6": 0.023,
-    "7": 0.0069,
-    "8": 0.0016,
-    "9": 0.0003,
+    "0": 0.0821,
+    "1": 0.2052,
+    "2": 0.2565,
+    "3": 0.2138,
+    "4": 0.1336,
+    "5": 0.0668,
+    "6": 0.0264,
+    "7": 0.0082,
+    "8": 0.002,
+    "9": 0.0004,
     "10": 0.0
    },
-   "btts": 0.4748,
-   "analysis": "【排名】主队Vasco da Gama排名第18（22分/21场），客队Santos排名第17（22分/21场），排名接近。\n【胜负】比赛悬念较大，主胜 48% / 平 27% / 客胜 24%（赔率 1.9 / 3.35 / 3.75）。\n【让球】主队Vasco da Gama让 1.0 球（盘口赔率 2.77 / 1.43）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（13%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%（赔率 大 1.93 / 小 1.78），倾向小球。\n【进球数】总进球概率：0球 9%、1球 22%、2球 26%、3球 21%、4球 13%。\n【双方进球】双方都进球概率 47%，倾向至少一方零封。\n【结论】综合赔率与消息，Vasco da Gama不败概率更高，关注波胆 1-1 方向。",
+   "btts": 0.4878,
+   "analysis": "【胜负】比赛悬念较大，主胜 48% / 平 27% / 客胜 24%（赔率 1.9 / 3.35 / 3.75）。\n【让球】主队Vasco da Gama让 1.0 球（盘口赔率 2.77 / 1.43）。\n【波胆】泊松模型推算最可能比分：1-0（12%）、1-1（12%）、2-0（9%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%（赔率 大 1.93 / 小 1.78），倾向小球。\n【进球数】总进球概率：0球 8%、1球 21%、2球 26%、3球 21%、4球 13%。\n【双方进球】双方都进球概率 49%，倾向至少一方零封。\n【结论】综合赔率与消息，Vasco da Gama不败概率更高，关注波胆 1-0 方向。",
    "eloProbs": {
-    "home": 0.412,
-    "draw": 0.268,
-    "away": 0.319
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "valueMarks": {
     "edges": {
-     "home": -0.041,
-     "draw": 0.025,
-     "away": 0.016
+     "home": -0.01,
+     "draw": 0.011,
+     "away": -0.001
     },
     "picks": []
    }
@@ -3039,8 +3129,8 @@
    "awayTeam": "Botafogo",
    "predictedScore": "1-1",
    "expectedGoals": {
-    "home": 1.25,
-    "away": 1.35
+    "home": 1.43,
+    "away": 1.17
    },
    "probabilities": {
     "home": 0.421,
@@ -3061,6 +3151,7 @@
     "away": 2.75
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.065,
     "draw": -0.039,
@@ -3077,52 +3168,55 @@
     }
    },
    "eloProb": {
-    "home": 0.286,
-    "draw": 0.241,
-    "away": 0.473
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "eloRatings": {
     "home": 1500.0,
-    "away": 1687.0
+    "away": 1500.0
    },
    "modelProbs": {
-    "home": 0.367,
-    "draw": 0.225,
-    "away": 0.408
+    "home": 0.449,
+    "draw": 0.222,
+    "away": 0.329
    },
    "valuePicks": [
     {
-     "side": "away",
-     "label": "客胜",
-     "modelProb": 0.473,
-     "oddsProb": 0.332,
-     "edge": 0.141
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.49,
+     "oddsProb": 0.388,
+     "edge": 0.103,
+     "level": "watch",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "watch",
    "correctScores": [
     {
      "score": "1-1",
-     "prob": 0.1354
-    },
-    {
-     "score": "0-1",
-     "prob": 0.0904
-    },
-    {
-     "score": "1-2",
-     "prob": 0.0847
-    },
-    {
-     "score": "0-0",
-     "prob": 0.0843
+     "prob": 0.1342
     },
     {
      "score": "1-0",
-     "prob": 0.0827
+     "prob": 0.0963
     },
     {
      "score": "2-1",
-     "prob": 0.0782
+     "prob": 0.0889
+    },
+    {
+     "score": "0-0",
+     "prob": 0.0842
+    },
+    {
+     "score": "0-1",
+     "prob": 0.077
+    },
+    {
+     "score": "2-0",
+     "prob": 0.076
     }
    ],
    "overUnder": {
@@ -3140,24 +3234,24 @@
     "3": 0.2176,
     "4": 0.1414,
     "5": 0.0735,
-    "6": 0.0308,
-    "7": 0.0103,
+    "6": 0.0307,
+    "7": 0.0102,
     "8": 0.0027,
     "9": 0.0005,
     "10": 0.0001
    },
-   "btts": 0.5252,
-   "analysis": "【胜负】双方实力接近，主队Vitoria略占优（主胜 39% vs 客胜 33%）（赔率 2.35 / 3.25 / 2.75）。\n【让球】主队Vitoria让 1.0 球（盘口赔率 3.8 / 1.26）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、0-1（10%）、1-0（9%）。\n【大小球】2.5 球盘口：大球 49% / 小球 51%（赔率 大 1.91 / 小 1.82），倾向小球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 53%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 47% vs 盘口 33%（差 +14%），值得关注。\n【结论】综合赔率与消息，Vitoria不败概率更高，关注波胆 1-1 方向。",
+   "btts": 0.5212,
+   "analysis": "【胜负】双方实力接近，主队Vitoria略占优（主胜 39% vs 客胜 33%）（赔率 2.35 / 3.25 / 2.75）。\n【让球】主队Vitoria让 1.0 球（盘口赔率 3.8 / 1.26）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（11%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 49% / 小球 51%（赔率 大 1.91 / 小 1.82），倾向小球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 52%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 39%（差 +10%），值得关注。\n【结论】综合赔率与消息，Vitoria不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
-    "home": 0.286,
-    "draw": 0.241,
-    "away": 0.473
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "valueMarks": {
     "edges": {
-     "home": -0.054,
-     "draw": 0.011,
-     "away": 0.043
+     "home": 0.028,
+     "draw": 0.008,
+     "away": -0.036
     },
     "picks": []
    }
@@ -3167,8 +3261,8 @@
    "awayTeam": "Flamengo",
    "predictedScore": "1-1",
    "expectedGoals": {
-    "home": 1.5,
-    "away": 1.5
+    "home": 1.27,
+    "away": 1.43
    },
    "probabilities": {
     "home": 0.266,
@@ -3189,6 +3283,7 @@
     "away": 1.85
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.031,
     "draw": -0.04,
@@ -3205,52 +3300,64 @@
     }
    },
    "eloProb": {
-    "home": 0.592,
-    "draw": 0.193,
-    "away": 0.215
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "eloRatings": {
-    "home": 1576.0,
+    "home": 1500.0,
     "away": 1500.0
    },
    "modelProbs": {
-    "home": 0.396,
-    "draw": 0.203,
-    "away": 0.401
+    "home": 0.356,
+    "draw": 0.219,
+    "away": 0.425
    },
    "valuePicks": [
     {
      "side": "home",
      "label": "主胜",
-     "modelProb": 0.592,
+     "modelProb": 0.49,
      "oddsProb": 0.233,
-     "edge": 0.359
+     "edge": 0.257,
+     "level": "gold",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.491,
+     "edge": -0.216,
+     "level": "gold",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
-     "prob": 0.121
+     "prob": 0.1318
     },
     {
      "score": "1-2",
-     "prob": 0.084
-    },
-    {
-     "score": "2-1",
-     "prob": 0.084
+     "prob": 0.0873
     },
     {
      "score": "0-1",
-     "prob": 0.0657
+     "prob": 0.0864
+    },
+    {
+     "score": "2-1",
+     "prob": 0.0774
+    },
+    {
+     "score": "0-0",
+     "prob": 0.077
     },
     {
      "score": "1-0",
-     "prob": 0.0657
-    },
-    {
-     "score": "2-2",
-     "prob": 0.063
+     "prob": 0.0755
     }
    ],
    "overUnder": {
@@ -3260,45 +3367,32 @@
     "overPrice": 2.08,
     "underPrice": 1.7
    },
-   "standings": {
-    "home": {
-     "position": 15,
-     "points": 23,
-     "playedGames": 21,
-     "goalDifference": -6
-    },
-    "away": {
-     "position": 2,
-     "points": 42,
-     "playedGames": 21,
-     "goalDifference": 21
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
-    "0": 0.0498,
-    "1": 0.1494,
-    "2": 0.224,
-    "3": 0.224,
-    "4": 0.168,
-    "5": 0.1008,
-    "6": 0.0488,
-    "7": 0.0189,
-    "8": 0.0058,
-    "9": 0.0013,
-    "10": 0.0002
+    "0": 0.0672,
+    "1": 0.1815,
+    "2": 0.245,
+    "3": 0.2205,
+    "4": 0.1488,
+    "5": 0.0804,
+    "6": 0.035,
+    "7": 0.0121,
+    "8": 0.0033,
+    "9": 0.0007,
+    "10": 0.0001
    },
-   "btts": 0.5966,
-   "analysis": "【排名】主队Mirassol排名第15（23分/21场），客队Flamengo排名第2（42分/21场），客队排名领先 13 位。\n【胜负】比赛悬念较大，主胜 23% / 平 28% / 客胜 49%（赔率 3.9 / 3.3 / 1.85）。\n【让球】客队Flamengo让 1.0 球（盘口赔率 1.43 / 2.77）。\n【波胆】泊松模型推算最可能比分：1-1（11%）、1-2（8%）、2-1（8%）。\n【大小球】2.5 球盘口：大球 45% / 小球 55%（赔率 大 2.08 / 小 1.7），倾向小球。\n【进球数】总进球概率：0球 5%、1球 15%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 60%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 59% vs 盘口 23%（差 +36%），值得关注。\n【结论】综合赔率与消息，Flamengo不败概率更高，关注波胆 1-1 方向。",
+   "btts": 0.543,
+   "analysis": "【胜负】比赛悬念较大，主胜 23% / 平 28% / 客胜 49%（赔率 3.9 / 3.3 / 1.85）。\n【让球】客队Flamengo让 1.0 球（盘口赔率 1.43 / 2.77）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、0-1（10%）、1-2（9%）。\n【大小球】2.5 球盘口：大球 45% / 小球 55%（赔率 大 2.08 / 小 1.7），倾向小球。\n【进球数】总进球概率：0球 7%、1球 18%、2球 24%、3球 22%、4球 15%。\n【双方进球】双方都进球概率 54%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 23%（差 +26%），值得关注。\n【结论】综合赔率与消息，Flamengo不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
-    "home": 0.592,
-    "draw": 0.193,
-    "away": 0.215
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "valueMarks": {
     "edges": {
-     "home": 0.13,
-     "draw": -0.006,
-     "away": -0.124
+     "home": 0.09,
+     "draw": 0.01,
+     "away": -0.1
     },
     "picks": [
      "home"
@@ -3310,8 +3404,8 @@
    "awayTeam": "Cruzeiro",
    "predictedScore": "1-1",
    "expectedGoals": {
-    "home": 1.29,
-    "away": 1.01
+    "home": 1.37,
+    "away": 1.03
    },
    "probabilities": {
     "home": 0.449,
@@ -3332,6 +3426,7 @@
     "away": 3.15
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.072,
     "draw": -0.041,
@@ -3348,44 +3443,45 @@
     }
    },
    "eloProb": {
-    "home": 0.445,
-    "draw": 0.254,
-    "away": 0.302
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "eloRatings": {
-    "home": 1721.0,
-    "away": 1754.0
+    "home": 1500.0,
+    "away": 1500.0
    },
    "modelProbs": {
-    "home": 0.447,
-    "draw": 0.238,
-    "away": 0.315
+    "home": 0.466,
+    "draw": 0.23,
+    "away": 0.304
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
-     "prob": 0.1411
+     "prob": 0.1383
     },
     {
      "score": "1-0",
-     "prob": 0.1187
+     "prob": 0.1139
     },
     {
      "score": "0-0",
-     "prob": 0.1107
-    },
-    {
-     "score": "0-1",
-     "prob": 0.091
+     "prob": 0.101
     },
     {
      "score": "2-1",
-     "prob": 0.0842
+     "prob": 0.0876
     },
     {
      "score": "2-0",
-     "prob": 0.0832
+     "prob": 0.0849
+    },
+    {
+     "score": "0-1",
+     "prob": 0.0834
     }
    ],
    "overUnder": {
@@ -3395,45 +3491,32 @@
     "overPrice": 2.22,
     "underPrice": 1.62
    },
-   "standings": {
-    "home": {
-     "position": 7,
-     "points": 32,
-     "playedGames": 22,
-     "goalDifference": 4
-    },
-    "away": {
-     "position": 5,
-     "points": 33,
-     "playedGames": 22,
-     "goalDifference": -1
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
-    "0": 0.1003,
-    "1": 0.2306,
-    "2": 0.2652,
-    "3": 0.2033,
-    "4": 0.1169,
-    "5": 0.0538,
-    "6": 0.0198,
-    "7": 0.0058,
-    "8": 0.0013,
-    "9": 0.0002,
+    "0": 0.0907,
+    "1": 0.2177,
+    "2": 0.2613,
+    "3": 0.209,
+    "4": 0.1254,
+    "5": 0.0602,
+    "6": 0.0231,
+    "7": 0.007,
+    "8": 0.0017,
+    "9": 0.0003,
     "10": 0.0
    },
-   "btts": 0.4591,
-   "analysis": "【排名】主队Corinthians排名第7（32分/22场），客队Cruzeiro排名第5（33分/22场），排名接近。\n【胜负】双方实力接近，主队Corinthians略占优（主胜 42% vs 客胜 29%）（赔率 2.2 / 3.1 / 3.15）。\n【让球】主队Corinthians让 1.0 球（盘口赔率 3.67 / 1.27）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（13%）、0-1（10%）。\n【大小球】2.5 球盘口：大球 42% / 小球 58%（赔率 大 2.22 / 小 1.62），倾向小球。\n【进球数】总进球概率：0球 10%、1球 23%、2球 27%、3球 20%、4球 12%。\n【双方进球】双方都进球概率 46%，倾向至少一方零封。\n【结论】综合赔率与消息，Corinthians不败概率更高，关注波胆 1-1 方向。",
+   "btts": 0.4774,
+   "analysis": "【胜负】双方实力接近，主队Corinthians略占优（主胜 42% vs 客胜 29%）（赔率 2.2 / 3.1 / 3.15）。\n【让球】主队Corinthians让 1.0 球（盘口赔率 3.67 / 1.27）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（12%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 42% / 小球 58%（赔率 大 2.22 / 小 1.62），倾向小球。\n【进球数】总进球概率：0球 9%、1球 22%、2球 26%、3球 21%、4球 13%。\n【双方进球】双方都进球概率 48%，倾向至少一方零封。\n【结论】综合赔率与消息，Corinthians不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
-    "home": 0.445,
-    "draw": 0.254,
-    "away": 0.302
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "valueMarks": {
     "edges": {
-     "home": -0.002,
-     "draw": 0.01,
-     "away": -0.008
+     "home": 0.017,
+     "draw": 0.002,
+     "away": -0.019
     },
     "picks": []
    }
@@ -3443,8 +3526,8 @@
    "awayTeam": "Remo",
    "predictedScore": "1-0",
    "expectedGoals": {
-    "home": 1.88,
-    "away": 0.92
+    "home": 1.73,
+    "away": 0.97
    },
    "probabilities": {
     "home": 0.614,
@@ -3465,6 +3548,7 @@
     "away": 5.25
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.156,
     "draw": -0.033,
@@ -3481,44 +3565,55 @@
     }
    },
    "eloProb": {
-    "home": 0.598,
-    "draw": 0.191,
-    "away": 0.211
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "eloRatings": {
-    "home": 1581.0,
+    "home": 1500.0,
     "away": 1500.0
    },
    "modelProbs": {
-    "home": 0.607,
-    "draw": 0.184,
-    "away": 0.209
+    "home": 0.565,
+    "draw": 0.201,
+    "away": 0.235
    },
-   "valuePicks": [],
+   "valuePicks": [
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.174,
+     "edge": 0.102,
+     "level": "watch",
+     "modelConf": 0.215
+    }
+   ],
+   "signalLevel": "watch",
    "correctScores": [
     {
      "score": "1-1",
-     "prob": 0.1139
-    },
-    {
-     "score": "2-0",
-     "prob": 0.1071
+     "prob": 0.122
     },
     {
      "score": "1-0",
-     "prob": 0.1057
+     "prob": 0.1071
+    },
+    {
+     "score": "2-0",
+     "prob": 0.1004
     },
     {
      "score": "2-1",
-     "prob": 0.0989
+     "prob": 0.0976
     },
     {
      "score": "0-0",
-     "prob": 0.0693
+     "prob": 0.0763
     },
     {
      "score": "3-0",
-     "prob": 0.067
+     "prob": 0.0578
     }
    ],
    "overUnder": {
@@ -3530,30 +3625,30 @@
    },
    "standings": null,
    "totalGoalsDist": {
-    "0": 0.0608,
-    "1": 0.1703,
-    "2": 0.2384,
-    "3": 0.2225,
-    "4": 0.1557,
-    "5": 0.0872,
-    "6": 0.037,
-    "7": 0.0118,
-    "8": 0.0029,
+    "0": 0.0672,
+    "1": 0.1815,
+    "2": 0.245,
+    "3": 0.2205,
+    "4": 0.1488,
+    "5": 0.0804,
+    "6": 0.0336,
+    "7": 0.0108,
+    "8": 0.0027,
     "9": 0.0005,
     "10": 0.0001
    },
-   "btts": 0.5028,
-   "analysis": "【胜负】市场高度看好主队Internacional，主胜隐含概率 58%（赔率 1.57 / 3.7 / 5.25）。\n【让球】主队Internacional让 1.0 球（盘口赔率 2.06 / 1.74）。\n【波胆】泊松模型推算最可能比分：1-0（11%）、2-0（11%）、1-1（11%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%（赔率 大 1.88 / 小 1.85），倾向小球。\n【进球数】总进球概率：0球 6%、1球 17%、2球 24%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 50%，倾向至少一方零封。\n【结论】综合赔率与消息，Internacional不败概率更高，关注波胆 1-0 方向。",
+   "btts": 0.5055,
+   "analysis": "【胜负】市场高度看好主队Internacional，主胜隐含概率 58%（赔率 1.57 / 3.7 / 5.25）。\n【让球】主队Internacional让 1.0 球（盘口赔率 2.06 / 1.74）。\n【波胆】泊松模型推算最可能比分：1-0（12%）、1-1（11%）、2-0（10%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%（赔率 大 1.88 / 小 1.85），倾向小球。\n【进球数】总进球概率：0球 7%、1球 18%、2球 24%、3球 22%、4球 15%。\n【双方进球】双方都进球概率 51%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 28% vs 盘口 17%（差 +10%），值得关注。\n【结论】综合赔率与消息，Internacional不败概率更高，关注波胆 1-0 方向。",
    "eloProbs": {
-    "home": 0.598,
-    "draw": 0.191,
-    "away": 0.211
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "valueMarks": {
     "edges": {
-     "home": -0.007,
-     "draw": 0.004,
-     "away": 0.002
+     "home": -0.049,
+     "draw": 0.021,
+     "away": 0.028
     },
     "picks": []
    }
@@ -3585,6 +3680,7 @@
     "away": 3.5
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.046,
     "draw": -0.035,
@@ -3616,13 +3712,34 @@
    },
    "valuePicks": [
     {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.268,
+     "oddsProb": 0.397,
+     "edge": -0.129,
+     "level": "watch",
+     "modelConf": 0.237
+    },
+    {
+     "side": "draw",
+     "label": "平局",
+     "modelProb": 0.228,
+     "oddsProb": 0.335,
+     "edge": -0.107,
+     "level": "watch",
+     "modelConf": 0.237
+    },
+    {
      "side": "away",
      "label": "客胜",
      "modelProb": 0.504,
      "oddsProb": 0.268,
-     "edge": 0.237
+     "edge": 0.237,
+     "level": "gold",
+     "modelConf": 0.237
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -3684,7 +3801,7 @@
     "10": 0.0
    },
    "btts": 0.4436,
-   "analysis": "【排名】主队Alavés排名第14（43分/38场），客队Getafe排名第7（51分/38场），客队排名领先 7 位。\n【胜负】双方实力接近，主队Alavés略占优（主胜 40% vs 客胜 27%）（赔率 2.36 / 2.8 / 3.5）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.63 / 2.4450000000000003）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、0-1（12%）、1-0（12%）。\n【大小球】2.5 球盘口：大球 56% / 小球 44%（赔率 大 1.7 / 小 2.12），倾向大球。\n【进球数】总进球概率：0球 11%、1球 24%、2球 27%、3球 20%、4球 11%。\n【双方进球】双方都进球概率 44%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 50% vs 盘口 27%（差 +24%），值得关注。\n【结论】综合赔率与消息，Alavés不败概率更高，关注波胆 1-1 方向。",
+   "analysis": "【排名】主队Alavés排名第14（43分/38场），客队Getafe排名第7（51分/38场），客队排名领先 7 位。\n【胜负】双方实力接近，主队Alavés略占优（主胜 40% vs 客胜 27%）（赔率 2.36 / 2.8 / 3.5）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.63 / 2.4450000000000003）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、0-1（12%）、1-0（12%）。\n【大小球】2.5 球盘口：大球 56% / 小球 44%（赔率 大 1.7 / 小 2.12），倾向大球。\n【进球数】总进球概率：0球 11%、1球 24%、2球 27%、3球 20%、4球 11%。\n【双方进球】双方都进球概率 44%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 27% vs 盘口 40%（差 -13%），值得关注。\n【结论】综合赔率与消息，Alavés不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
     "home": 0.268,
     "draw": 0.228,
@@ -3728,6 +3845,7 @@
     "away": 3.3
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.045,
     "draw": -0.026,
@@ -3758,6 +3876,7 @@
     "away": 0.334
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -3861,6 +3980,7 @@
     "away": 2.28
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.031,
     "draw": -0.026,
@@ -3896,9 +4016,21 @@
      "label": "主胜",
      "modelProb": 0.511,
      "oddsProb": 0.313,
-     "edge": 0.199
+     "edge": 0.199,
+     "level": "gold",
+     "modelConf": 0.247
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.264,
+     "oddsProb": 0.411,
+     "edge": -0.148,
+     "level": "watch",
+     "modelConf": 0.247
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -4004,6 +4136,7 @@
     "away": 3.8
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.062,
     "draw": -0.027,
@@ -4034,6 +4167,7 @@
     "away": 0.293
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -4137,6 +4271,7 @@
     "away": 3.75
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.061,
     "draw": -0.026,
@@ -4167,6 +4302,7 @@
     "away": 0.304
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -4257,6 +4393,7 @@
     "away": 3.1
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.045,
     "draw": -0.031,
@@ -4287,6 +4424,7 @@
     "away": 0.317
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -4390,6 +4528,7 @@
     "away": 10.5
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.209,
     "draw": -0.015,
@@ -4421,13 +4560,25 @@
    },
    "valuePicks": [
     {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.49,
+     "oddsProb": 0.728,
+     "edge": -0.238,
+     "level": "gold",
+     "modelConf": 0.215
+    },
+    {
      "side": "away",
      "label": "客胜",
      "modelProb": 0.276,
      "oddsProb": 0.089,
-     "edge": 0.186
+     "edge": 0.186,
+     "level": "gold",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "2-0",
@@ -4476,7 +4627,7 @@
     "10": 0.0001
    },
    "btts": 0.5171,
-   "analysis": "【胜负】市场高度看好主队Atlético Madrid，主胜隐含概率 73%（赔率 1.29 / 5.15 / 10.5）。\n【让球】主队Atlético Madrid让 1.5 球（盘口赔率 1.935 / 1.915）。\n【波胆】泊松模型推算最可能比分：2-0（11%）、1-0（10%）、2-1（10%）。\n【大小球】2.5 球盘口：大球 54% / 小球 46%（赔率 大 1.73 / 小 2.0549999999999997），倾向大球。\n【进球数】总进球概率：0球 5%、1球 15%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 52%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 28% vs 盘口 9%（差 +19%），值得关注。\n【结论】综合赔率与消息，Atlético Madrid不败概率更高，关注波胆 2-0 方向。",
+   "analysis": "【胜负】市场高度看好主队Atlético Madrid，主胜隐含概率 73%（赔率 1.29 / 5.15 / 10.5）。\n【让球】主队Atlético Madrid让 1.5 球（盘口赔率 1.935 / 1.915）。\n【波胆】泊松模型推算最可能比分：2-0（11%）、1-0（10%）、2-1（10%）。\n【大小球】2.5 球盘口：大球 54% / 小球 46%（赔率 大 1.73 / 小 2.0549999999999997），倾向大球。\n【进球数】总进球概率：0球 5%、1球 15%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 52%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 73%（差 -24%），值得关注。\n【结论】综合赔率与消息，Atlético Madrid不败概率更高，关注波胆 2-0 方向。",
    "eloProbs": {
     "home": 0.49,
     "draw": 0.234,
@@ -4520,6 +4671,7 @@
     "away": 3.9
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.064,
     "draw": -0.033,
@@ -4555,9 +4707,30 @@
      "label": "主胜",
      "modelProb": 0.724,
      "oddsProb": 0.455,
-     "edge": 0.269
+     "edge": 0.269,
+     "level": "gold",
+     "modelConf": 0.581
+    },
+    {
+     "side": "draw",
+     "label": "平局",
+     "modelProb": 0.143,
+     "oddsProb": 0.306,
+     "edge": -0.162,
+     "level": "gold",
+     "modelConf": 0.581
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.133,
+     "oddsProb": 0.239,
+     "edge": -0.107,
+     "level": "watch",
+     "modelConf": 0.581
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -4663,6 +4836,7 @@
     "away": 3.3499999999999996
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.065,
     "draw": -0.033,
@@ -4693,6 +4867,7 @@
     "away": 0.296
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -4796,6 +4971,7 @@
     "away": 5.5
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.119,
     "draw": -0.027,
@@ -4826,6 +5002,7 @@
     "away": 0.217
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -4929,6 +5106,7 @@
     "away": 3.0
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.06,
     "draw": -0.036,
@@ -4964,9 +5142,30 @@
      "label": "主胜",
      "modelProb": 0.71,
      "oddsProb": 0.401,
-     "edge": 0.309
+     "edge": 0.309,
+     "level": "gold",
+     "modelConf": 0.56
+    },
+    {
+     "side": "draw",
+     "label": "平局",
+     "modelProb": 0.149,
+     "oddsProb": 0.292,
+     "edge": -0.143,
+     "level": "watch",
+     "modelConf": 0.56
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.142,
+     "oddsProb": 0.307,
+     "edge": -0.166,
+     "level": "gold",
+     "modelConf": 0.56
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -5059,6 +5258,7 @@
     "away": 1.605
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.022,
     "draw": -0.028,
@@ -5089,6 +5289,7 @@
     "away": 0.605
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -5192,6 +5393,7 @@
     "away": 4.1
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.086,
     "draw": -0.03,
@@ -5223,13 +5425,25 @@
    },
    "valuePicks": [
     {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.22,
+     "oddsProb": 0.501,
+     "edge": -0.282,
+     "level": "gold",
+     "modelConf": 0.365
+    },
+    {
      "side": "away",
      "label": "客胜",
      "modelProb": 0.584,
      "oddsProb": 0.226,
-     "edge": 0.358
+     "edge": 0.358,
+     "level": "gold",
+     "modelConf": 0.365
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -5278,7 +5492,7 @@
     "10": 0.0002
    },
    "btts": 0.6122,
-   "analysis": "【胜负】比赛悬念较大，主胜 50% / 平 27% / 客胜 23%（赔率 1.85 / 3.4 / 4.1）。\n【让球】主队Atlético Madrid让 1.5 球（盘口赔率 3.19 / 1.43）。\n【波胆】泊松模型推算最可能比分：1-1（11%）、2-1（9%）、1-2（8%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%（赔率 大 1.95 / 小 1.82），倾向小球。\n【进球数】总进球概率：0球 4%、1球 14%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 61%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 58% vs 盘口 23%（差 +36%），值得关注。\n【结论】综合赔率与消息，Atlético Madrid不败概率更高，关注波胆 1-1 方向。",
+   "analysis": "【胜负】比赛悬念较大，主胜 50% / 平 27% / 客胜 23%（赔率 1.85 / 3.4 / 4.1）。\n【让球】主队Atlético Madrid让 1.5 球（盘口赔率 3.19 / 1.43）。\n【波胆】泊松模型推算最可能比分：1-1（11%）、2-1（9%）、1-2（8%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%（赔率 大 1.95 / 小 1.82），倾向小球。\n【进球数】总进球概率：0球 4%、1球 14%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 61%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 22% vs 盘口 50%（差 -28%），值得关注。\n【结论】综合赔率与消息，Atlético Madrid不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
     "home": 0.22,
     "draw": 0.196,
@@ -5322,6 +5536,7 @@
     "away": 4.7
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.084,
     "draw": -0.037,
@@ -5353,13 +5568,25 @@
    },
    "valuePicks": [
     {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.385,
+     "oddsProb": 0.494,
+     "edge": -0.109,
+     "level": "watch",
+     "modelConf": 0.052
+    },
+    {
      "side": "away",
      "label": "客胜",
      "modelProb": 0.333,
      "oddsProb": 0.197,
-     "edge": 0.136
+     "edge": 0.136,
+     "level": "watch",
+     "modelConf": 0.052
     }
    ],
+   "signalLevel": "watch",
    "correctScores": [
     {
      "score": "1-0",
@@ -5421,7 +5648,7 @@
     "10": 0.0
    },
    "btts": 0.3839,
-   "analysis": "【排名】主队Getafe排名第7（51分/38场），客队Real Racing Club de Santander排名第2（86分/38场），客队排名领先 5 位。\n【胜负】比赛悬念较大，主胜 49% / 平 31% / 客胜 20%（赔率 1.875 / 3.0 / 4.7）。\n【让球】主队Getafe让 1.5 球（盘口赔率 3.89 / 1.32）。\n【波胆】泊松模型推算最可能比分：1-0（16%）、0-0（14%）、1-1（13%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%（赔率 大 1.75 / 小 2.13），倾向大球。\n【进球数】总进球概率：0球 14%、1球 27%、2球 27%、3球 18%、4球 9%。\n【双方进球】双方都进球概率 38%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 33% vs 盘口 20%（差 +14%），值得关注。\n【结论】综合赔率与消息，Getafe不败概率更高，关注波胆 1-0 方向。",
+   "analysis": "【排名】主队Getafe排名第7（51分/38场），客队Real Racing Club de Santander排名第2（86分/38场），客队排名领先 5 位。\n【胜负】比赛悬念较大，主胜 49% / 平 31% / 客胜 20%（赔率 1.875 / 3.0 / 4.7）。\n【让球】主队Getafe让 1.5 球（盘口赔率 3.89 / 1.32）。\n【波胆】泊松模型推算最可能比分：1-0（16%）、0-0（14%）、1-1（13%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%（赔率 大 1.75 / 小 2.13），倾向大球。\n【进球数】总进球概率：0球 14%、1球 27%、2球 27%、3球 18%、4球 9%。\n【双方进球】双方都进球概率 38%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 38% vs 盘口 49%（差 -11%），值得关注。\n【结论】综合赔率与消息，Getafe不败概率更高，关注波胆 1-0 方向。",
    "eloProbs": {
     "home": 0.385,
     "draw": 0.282,
@@ -5463,6 +5690,7 @@
     "away": 1.3
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.013,
     "draw": -0.02,
@@ -5498,9 +5726,21 @@
      "label": "主胜",
      "modelProb": 0.292,
      "oddsProb": 0.122,
-     "edge": 0.17
+     "edge": 0.17,
+     "level": "gold",
+     "modelConf": 0.171
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.463,
+     "oddsProb": 0.703,
+     "edge": -0.241,
+     "level": "gold",
+     "modelConf": 0.171
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -5607,6 +5847,7 @@
     "away": 4.5
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.102,
     "draw": -0.026,
@@ -5637,6 +5878,7 @@
     "away": 0.245
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -5740,6 +5982,7 @@
     "away": 2.9
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.055,
     "draw": -0.04,
@@ -5770,6 +6013,7 @@
     "away": 0.353
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -5860,6 +6104,7 @@
     "away": 2.65
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.033,
     "draw": -0.024,
@@ -5890,6 +6135,7 @@
     "away": 0.377
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -5993,6 +6239,7 @@
     "away": 7.0
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.144,
     "draw": -0.015,
@@ -6024,13 +6271,25 @@
    },
    "valuePicks": [
     {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.49,
+     "oddsProb": 0.673,
+     "edge": -0.183,
+     "level": "gold",
+     "modelConf": 0.215
+    },
+    {
      "side": "away",
      "label": "客胜",
      "modelProb": 0.276,
      "oddsProb": 0.135,
-     "edge": 0.141
+     "edge": 0.141,
+     "level": "watch",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -6092,7 +6351,7 @@
     "10": 0.0001
    },
    "btts": 0.5547,
-   "analysis": "【排名】主队Real Madrid排名第2（86分/38场），客队Real Sociedad排名第10（46分/38场），主队排名领先 8 位。\n【胜负】市场高度看好主队Real Madrid，主胜隐含概率 67%（赔率 1.4 / 4.9 / 7.0）。\n【让球】主队Real Madrid让 1.5 球（盘口赔率 2.16 / 1.775）。\n【波胆】泊松模型推算最可能比分：2-1（10%）、1-1（10%）、2-0（9%）。\n【大小球】2.5 球盘口：大球 42% / 小球 58%（赔率 大 2.25 / 小 1.62），倾向小球。\n【进球数】总进球概率：0球 4%、1球 14%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 55%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 28% vs 盘口 14%（差 +14%），值得关注。\n【结论】综合赔率与消息，Real Madrid不败概率更高，关注波胆 2-1 方向。",
+   "analysis": "【排名】主队Real Madrid排名第2（86分/38场），客队Real Sociedad排名第10（46分/38场），主队排名领先 8 位。\n【胜负】市场高度看好主队Real Madrid，主胜隐含概率 67%（赔率 1.4 / 4.9 / 7.0）。\n【让球】主队Real Madrid让 1.5 球（盘口赔率 2.16 / 1.775）。\n【波胆】泊松模型推算最可能比分：2-1（10%）、1-1（10%）、2-0（9%）。\n【大小球】2.5 球盘口：大球 42% / 小球 58%（赔率 大 2.25 / 小 1.62），倾向小球。\n【进球数】总进球概率：0球 4%、1球 14%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 55%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 67%（差 -18%），值得关注。\n【结论】综合赔率与消息，Real Madrid不败概率更高，关注波胆 2-1 方向。",
    "eloProbs": {
     "home": 0.49,
     "draw": 0.234,
@@ -6134,6 +6393,7 @@
     "away": 6.675
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.16,
     "draw": -0.016,
@@ -6164,6 +6424,7 @@
     "away": 0.165
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "2-0",
@@ -6243,10 +6504,10 @@
   {
    "homeTeam": "Wolverhampton Wanderers",
    "awayTeam": "Blackburn Rovers",
-   "predictedScore": "1-1",
+   "predictedScore": "1-0",
    "expectedGoals": {
-    "home": 1.76,
-    "away": 1.44
+    "home": 1.82,
+    "away": 0.98
    },
    "probabilities": {
     "home": 0.637,
@@ -6267,6 +6528,7 @@
     "away": 5.6
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.143,
     "draw": -0.025,
@@ -6283,52 +6545,45 @@
     }
    },
    "eloProb": {
-    "home": 0.208,
-    "draw": 0.189,
-    "away": 0.603
+    "home": 0.511,
+    "draw": 0.225,
+    "away": 0.264
    },
    "eloRatings": {
     "home": 1515.0,
-    "away": 1800.0
+    "away": 1500.0
    },
    "modelProbs": {
-    "home": 0.465,
-    "draw": 0.174,
-    "away": 0.36
+    "home": 0.587,
+    "draw": 0.188,
+    "away": 0.224
    },
-   "valuePicks": [
-    {
-     "side": "away",
-     "label": "客胜",
-     "modelProb": 0.603,
-     "oddsProb": 0.165,
-     "edge": 0.438
-    }
-   ],
+   "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
-     "prob": 0.1116
-    },
-    {
-     "score": "2-1",
-     "prob": 0.091
-    },
-    {
-     "score": "1-2",
-     "prob": 0.0744
-    },
-    {
-     "score": "2-2",
-     "prob": 0.0655
+     "prob": 0.1172
     },
     {
      "score": "1-0",
-     "prob": 0.0635
+     "prob": 0.1021
     },
     {
      "score": "2-0",
-     "prob": 0.0632
+     "prob": 0.1008
+    },
+    {
+     "score": "2-1",
+     "prob": 0.0988
+    },
+    {
+     "score": "0-0",
+     "prob": 0.0695
+    },
+    {
+     "score": "3-0",
+     "prob": 0.0611
     }
    ],
    "overUnder": {
@@ -6338,49 +6593,34 @@
     "overPrice": 1.77,
     "underPrice": 1.95
    },
-   "standings": {
-    "home": {
-     "position": 1,
-     "points": 0,
-     "playedGames": 0,
-     "goalDifference": 0
-    },
-    "away": {
-     "position": 1,
-     "points": 0,
-     "playedGames": 0,
-     "goalDifference": 0
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
-    "0": 0.0408,
-    "1": 0.1304,
-    "2": 0.2087,
-    "3": 0.2226,
-    "4": 0.1781,
-    "5": 0.114,
-    "6": 0.0586,
-    "7": 0.024,
-    "8": 0.0077,
-    "9": 0.0019,
-    "10": 0.0003
+    "0": 0.0608,
+    "1": 0.1703,
+    "2": 0.2384,
+    "3": 0.2225,
+    "4": 0.1557,
+    "5": 0.0872,
+    "6": 0.0376,
+    "7": 0.0123,
+    "8": 0.0031,
+    "9": 0.0006,
+    "10": 0.0001
    },
-   "btts": 0.6216,
-   "analysis": "【排名】主队Wolverhampton Wanderers排名第1（0分/0场），客队Blackburn Rovers排名第1（0分/0场），排名接近。\n【胜负】市场高度看好主队Wolverhampton Wanderers，主胜隐含概率 60%（赔率 1.53 / 4.0 / 5.6）。\n【让球】主队Wolverhampton Wanderers让 1.0 球（盘口赔率 1.915 / 1.895）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、2-1（9%）、1-2（7%）。\n【大小球】2.5 球盘口：大球 52% / 小球 48%（赔率 大 1.77 / 小 1.95），倾向大球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 62%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 60% vs 盘口 16%（差 +44%），值得关注。\n【结论】综合赔率与消息，Wolverhampton Wanderers不败概率更高，关注波胆 1-1 方向。",
+   "btts": 0.5162,
+   "analysis": "【胜负】市场高度看好主队Wolverhampton Wanderers，主胜隐含概率 60%（赔率 1.53 / 4.0 / 5.6）。\n【让球】主队Wolverhampton Wanderers让 1.0 球（盘口赔率 1.915 / 1.895）。\n【波胆】泊松模型推算最可能比分：1-0（11%）、1-1（11%）、2-0（10%）。\n【大小球】2.5 球盘口：大球 52% / 小球 48%（赔率 大 1.77 / 小 1.95），倾向大球。\n【进球数】总进球概率：0球 6%、1球 17%、2球 24%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 52%，倾向至少一方零封。\n【结论】综合赔率与消息，Wolverhampton Wanderers不败概率更高，关注波胆 1-0 方向。",
    "eloProbs": {
-    "home": 0.208,
-    "draw": 0.189,
-    "away": 0.603
+    "home": 0.511,
+    "draw": 0.225,
+    "away": 0.264
    },
    "valueMarks": {
     "edges": {
-     "home": -0.172,
-     "draw": 0.01,
-     "away": 0.162
+     "home": -0.05,
+     "draw": 0.024,
+     "away": 0.026
     },
-    "picks": [
-     "away"
-    ]
+    "picks": []
    }
   },
   {
@@ -6410,6 +6650,7 @@
     "away": 3.2
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.062,
     "draw": -0.031,
@@ -6431,8 +6672,8 @@
     "away": 0.276
    },
    "eloRatings": {
-    "home": 1800.0,
-    "away": 1800.0
+    "home": 1500.0,
+    "away": 1500.0
    },
    "modelProbs": {
     "home": 0.473,
@@ -6440,6 +6681,7 @@
     "away": 0.304
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -6473,20 +6715,7 @@
     "overPrice": 1.93,
     "underPrice": 1.8
    },
-   "standings": {
-    "home": {
-     "position": 1,
-     "points": 0,
-     "playedGames": 0,
-     "goalDifference": 0
-    },
-    "away": {
-     "position": 1,
-     "points": 0,
-     "playedGames": 0,
-     "goalDifference": 0
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
     "0": 0.0743,
     "1": 0.1931,
@@ -6501,7 +6730,7 @@
     "10": 0.0001
    },
    "btts": 0.5165,
-   "analysis": "【排名】主队Bolton Wanderers排名第1（0分/0场），客队Preston North End排名第1（0分/0场），排名接近。\n【胜负】双方实力接近，主队Bolton Wanderers略占优（主胜 43% vs 客胜 29%）（赔率 2.165 / 3.3 / 3.2）。\n【让球】主队Bolton Wanderers让 0.5 球（盘口赔率 2.085 / 1.625）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（11%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%（赔率 大 1.93 / 小 1.8），倾向小球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 52%，倾向至少一方零封。\n【结论】综合赔率与消息，Bolton Wanderers不败概率更高，关注波胆 1-1 方向。",
+   "analysis": "【胜负】双方实力接近，主队Bolton Wanderers略占优（主胜 43% vs 客胜 29%）（赔率 2.165 / 3.3 / 3.2）。\n【让球】主队Bolton Wanderers让 0.5 球（盘口赔率 2.085 / 1.625）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（11%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%（赔率 大 1.93 / 小 1.8），倾向小球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 52%，倾向至少一方零封。\n【结论】综合赔率与消息，Bolton Wanderers不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
     "home": 0.49,
     "draw": 0.234,
@@ -6543,6 +6772,7 @@
     "away": 2.75
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.048,
     "draw": -0.03,
@@ -6564,8 +6794,8 @@
     "away": 0.276
    },
    "eloRatings": {
-    "home": 1800.0,
-    "away": 1800.0
+    "home": 1500.0,
+    "away": 1500.0
    },
    "modelProbs": {
     "home": 0.444,
@@ -6578,9 +6808,12 @@
      "label": "主胜",
      "modelProb": 0.49,
      "oddsProb": 0.38,
-     "edge": 0.111
+     "edge": 0.111,
+     "level": "watch",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "watch",
    "correctScores": [
     {
      "score": "1-1",
@@ -6614,20 +6847,7 @@
     "overPrice": 1.93,
     "underPrice": 1.82
    },
-   "standings": {
-    "home": {
-     "position": 1,
-     "points": 0,
-     "playedGames": 0,
-     "goalDifference": 0
-    },
-    "away": {
-     "position": 1,
-     "points": 0,
-     "playedGames": 0,
-     "goalDifference": 0
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
     "0": 0.0743,
     "1": 0.1931,
@@ -6642,7 +6862,7 @@
     "10": 0.0001
    },
    "btts": 0.5212,
-   "analysis": "【排名】主队Bristol City排名第1（0分/0场），客队Millwall排名第1（0分/0场），排名接近。\n【胜负】双方实力接近，主队Bristol City略占优（主胜 38% vs 客胜 34%）（赔率 2.45 / 3.3 / 2.75）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.845 / 1.96）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（11%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%（赔率 大 1.93 / 小 1.82），倾向小球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 52%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 38%（差 +11%），值得关注。\n【结论】综合赔率与消息，Bristol City不败概率更高，关注波胆 1-1 方向。",
+   "analysis": "【胜负】双方实力接近，主队Bristol City略占优（主胜 38% vs 客胜 34%）（赔率 2.45 / 3.3 / 2.75）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.845 / 1.96）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（11%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%（赔率 大 1.93 / 小 1.82），倾向小球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 52%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 38%（差 +11%），值得关注。\n【结论】综合赔率与消息，Bristol City不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
     "home": 0.49,
     "draw": 0.234,
@@ -6684,6 +6904,7 @@
     "away": 2.62
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.041,
     "draw": -0.029,
@@ -6705,8 +6926,8 @@
     "away": 0.276
    },
    "eloRatings": {
-    "home": 1800.0,
-    "away": 1800.0
+    "home": 1500.0,
+    "away": 1500.0
    },
    "modelProbs": {
     "home": 0.43,
@@ -6719,9 +6940,12 @@
      "label": "主胜",
      "modelProb": 0.49,
      "oddsProb": 0.356,
-     "edge": 0.134
+     "edge": 0.134,
+     "level": "watch",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "watch",
    "correctScores": [
     {
      "score": "1-1",
@@ -6755,20 +6979,7 @@
     "overPrice": 1.96,
     "underPrice": 1.76
    },
-   "standings": {
-    "home": {
-     "position": 1,
-     "points": 0,
-     "playedGames": 0,
-     "goalDifference": 0
-    },
-    "away": {
-     "position": 1,
-     "points": 0,
-     "playedGames": 0,
-     "goalDifference": 0
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
     "0": 0.0821,
     "1": 0.2052,
@@ -6783,7 +6994,7 @@
     "10": 0.0001
    },
    "btts": 0.5035,
-   "analysis": "【排名】主队Charlton Athletic排名第1（0分/0场），客队Derby County排名第1（0分/0场），排名接近。\n【胜负】双方实力接近，主队Charlton Athletic略占优（主胜 36% vs 客胜 36%）（赔率 2.62 / 3.25 / 2.62）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.87 / 1.87）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（11%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 47% / 小球 53%（赔率 大 1.96 / 小 1.76），倾向小球。\n【进球数】总进球概率：0球 8%、1球 21%、2球 26%、3球 21%、4球 13%。\n【双方进球】双方都进球概率 50%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 36%（差 +13%），值得关注。\n【结论】综合赔率与消息，Charlton Athletic不败概率更高，关注波胆 1-1 方向。",
+   "analysis": "【胜负】双方实力接近，主队Charlton Athletic略占优（主胜 36% vs 客胜 36%）（赔率 2.62 / 3.25 / 2.62）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.87 / 1.87）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（11%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 47% / 小球 53%（赔率 大 1.96 / 小 1.76），倾向小球。\n【进球数】总进球概率：0球 8%、1球 21%、2球 26%、3球 21%、4球 13%。\n【双方进球】双方都进球概率 50%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 36%（差 +13%），值得关注。\n【结论】综合赔率与消息，Charlton Athletic不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
     "home": 0.49,
     "draw": 0.234,
@@ -6825,6 +7036,7 @@
     "away": 8.5
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.266,
     "draw": -0.02,
@@ -6846,8 +7058,8 @@
     "away": 0.276
    },
    "eloRatings": {
-    "home": 1800.0,
-    "away": 1800.0
+    "home": 1500.0,
+    "away": 1500.0
    },
    "modelProbs": {
     "home": 0.641,
@@ -6856,13 +7068,25 @@
    },
    "valuePicks": [
     {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.49,
+     "oddsProb": 0.708,
+     "edge": -0.217,
+     "level": "gold",
+     "modelConf": 0.215
+    },
+    {
      "side": "away",
      "label": "客胜",
      "modelProb": 0.276,
      "oddsProb": 0.108,
-     "edge": 0.168
+     "edge": 0.168,
+     "level": "gold",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "2-0",
@@ -6896,20 +7120,7 @@
     "overPrice": 1.62,
     "underPrice": 2.1950000000000003
    },
-   "standings": {
-    "home": {
-     "position": 1,
-     "points": 0,
-     "playedGames": 0,
-     "goalDifference": 0
-    },
-    "away": {
-     "position": 1,
-     "points": 0,
-     "playedGames": 0,
-     "goalDifference": 0
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
     "0": 0.0498,
     "1": 0.1494,
@@ -6924,7 +7135,7 @@
     "10": 0.0001
    },
    "btts": 0.5171,
-   "analysis": "【排名】主队Middlesbrough排名第1（0分/0场），客队Lincoln City排名第1（0分/0场），排名接近。\n【胜负】市场高度看好主队Middlesbrough，主胜隐含概率 71%（赔率 1.3 / 5.0 / 8.5）。\n【让球】主队Middlesbrough让 1.5 球（盘口赔率 1.93 / 1.83）。\n【波胆】泊松模型推算最可能比分：2-0（11%）、1-0（10%）、2-1（10%）。\n【大小球】2.5 球盘口：大球 57% / 小球 42%（赔率 大 1.62 / 小 2.1950000000000003），倾向大球。\n【进球数】总进球概率：0球 5%、1球 15%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 52%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 28% vs 盘口 11%（差 +17%），值得关注。\n【结论】综合赔率与消息，Middlesbrough不败概率更高，关注波胆 2-0 方向。",
+   "analysis": "【胜负】市场高度看好主队Middlesbrough，主胜隐含概率 71%（赔率 1.3 / 5.0 / 8.5）。\n【让球】主队Middlesbrough让 1.5 球（盘口赔率 1.93 / 1.83）。\n【波胆】泊松模型推算最可能比分：2-0（11%）、1-0（10%）、2-1（10%）。\n【大小球】2.5 球盘口：大球 57% / 小球 42%（赔率 大 1.62 / 小 2.1950000000000003），倾向大球。\n【进球数】总进球概率：0球 5%、1球 15%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 52%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 71%（差 -22%），值得关注。\n【结论】综合赔率与消息，Middlesbrough不败概率更高，关注波胆 2-0 方向。",
    "eloProbs": {
     "home": 0.49,
     "draw": 0.234,
@@ -6946,7 +7157,7 @@
    "awayTeam": "West Bromwich Albion",
    "predictedScore": "1-1",
    "expectedGoals": {
-    "home": 1.53,
+    "home": 1.43,
     "away": 1.07
    },
    "probabilities": {
@@ -6968,6 +7179,7 @@
     "away": 3.5
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.074,
     "draw": -0.031,
@@ -6984,44 +7196,45 @@
     }
    },
    "eloProb": {
-    "home": 0.49,
-    "draw": 0.234,
-    "away": 0.276
+    "home": 0.427,
+    "draw": 0.262,
+    "away": 0.311
    },
    "eloRatings": {
-    "home": 1800.0,
-    "away": 1800.0
+    "home": 1500.0,
+    "away": 1545.0
    },
    "modelProbs": {
-    "home": 0.494,
-    "draw": 0.217,
-    "away": 0.289
+    "home": 0.468,
+    "draw": 0.228,
+    "away": 0.303
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
-     "prob": 0.1312
+     "prob": 0.1358
     },
     {
      "score": "1-0",
-     "prob": 0.1042
-    },
-    {
-     "score": "2-1",
-     "prob": 0.0932
-    },
-    {
-     "score": "2-0",
-     "prob": 0.0874
+     "prob": 0.1069
     },
     {
      "score": "0-0",
-     "prob": 0.084
+     "prob": 0.0922
+    },
+    {
+     "score": "2-1",
+     "prob": 0.0896
+    },
+    {
+     "score": "2-0",
+     "prob": 0.0834
     },
     {
      "score": "0-1",
-     "prob": 0.0695
+     "prob": 0.0782
     }
    ],
    "overUnder": {
@@ -7031,45 +7244,32 @@
     "overPrice": 1.88,
     "underPrice": 1.83
    },
-   "standings": {
-    "home": {
-     "position": 1,
-     "points": 0,
-     "playedGames": 0,
-     "goalDifference": 0
-    },
-    "away": {
-     "position": 1,
-     "points": 0,
-     "playedGames": 0,
-     "goalDifference": 0
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
-    "0": 0.0743,
-    "1": 0.1931,
-    "2": 0.251,
-    "3": 0.2176,
-    "4": 0.1414,
-    "5": 0.0735,
-    "6": 0.0304,
-    "7": 0.0099,
-    "8": 0.0025,
-    "9": 0.0005,
-    "10": 0.0001
+    "0": 0.0821,
+    "1": 0.2052,
+    "2": 0.2565,
+    "3": 0.2138,
+    "4": 0.1336,
+    "5": 0.0668,
+    "6": 0.0267,
+    "7": 0.0084,
+    "8": 0.0021,
+    "9": 0.0004,
+    "10": 0.0
    },
-   "btts": 0.5103,
-   "analysis": "【排名】主队Norwich City排名第1（0分/0场），客队West Bromwich Albion排名第1（0分/0场），排名接近。\n【胜负】比赛悬念较大，主胜 46% / 平 27% / 客胜 26%（赔率 2.0 / 3.4 / 3.5）。\n【让球】主队Norwich City让 0.5 球（盘口赔率 1.99 / 1.79）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（11%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 49% / 小球 51%（赔率 大 1.88 / 小 1.83），倾向小球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 51%，倾向至少一方零封。\n【结论】综合赔率与消息，Norwich City不败概率更高，关注波胆 1-1 方向。",
+   "btts": 0.4973,
+   "analysis": "【胜负】比赛悬念较大，主胜 46% / 平 27% / 客胜 26%（赔率 2.0 / 3.4 / 3.5）。\n【让球】主队Norwich City让 0.5 球（盘口赔率 1.99 / 1.79）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（12%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 49% / 小球 51%（赔率 大 1.88 / 小 1.83），倾向小球。\n【进球数】总进球概率：0球 8%、1球 21%、2球 26%、3球 21%、4球 13%。\n【双方进球】双方都进球概率 50%，倾向至少一方零封。\n【结论】综合赔率与消息，Norwich City不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
-    "home": 0.49,
-    "draw": 0.234,
-    "away": 0.276
+    "home": 0.427,
+    "draw": 0.262,
+    "away": 0.311
    },
    "valueMarks": {
     "edges": {
-     "home": -0.002,
-     "draw": 0.011,
-     "away": -0.009
+     "home": -0.028,
+     "draw": 0.022,
+     "away": 0.005
     },
     "picks": []
    }
@@ -7101,6 +7301,7 @@
     "away": 3.07
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.053,
     "draw": -0.027,
@@ -7122,8 +7323,8 @@
     "away": 0.276
    },
    "eloRatings": {
-    "home": 1800.0,
-    "away": 1800.0
+    "home": 1500.0,
+    "away": 1500.0
    },
    "modelProbs": {
     "home": 0.469,
@@ -7131,6 +7332,7 @@
     "away": 0.313
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -7164,20 +7366,7 @@
     "overPrice": 1.8,
     "underPrice": 1.93
    },
-   "standings": {
-    "home": {
-     "position": 1,
-     "points": 0,
-     "playedGames": 0,
-     "goalDifference": 0
-    },
-    "away": {
-     "position": 1,
-     "points": 0,
-     "playedGames": 0,
-     "goalDifference": 0
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
     "0": 0.0743,
     "1": 0.1931,
@@ -7192,7 +7381,7 @@
     "10": 0.0001
    },
    "btts": 0.5165,
-   "analysis": "【排名】主队Portsmouth排名第1（0分/0场），客队Queens Park Rangers排名第1（0分/0场），排名接近。\n【胜负】双方实力接近，主队Portsmouth略占优（主胜 42% vs 客胜 30%）（赔率 2.225 / 3.4 / 3.07）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.64 / 2.18）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（11%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 52% / 小球 48%（赔率 大 1.8 / 小 1.93），倾向大球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 52%，倾向至少一方零封。\n【结论】综合赔率与消息，Portsmouth不败概率更高，关注波胆 1-1 方向。",
+   "analysis": "【胜负】双方实力接近，主队Portsmouth略占优（主胜 42% vs 客胜 30%）（赔率 2.225 / 3.4 / 3.07）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.64 / 2.18）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（11%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 52% / 小球 48%（赔率 大 1.8 / 小 1.93），倾向大球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 52%，倾向至少一方零封。\n【结论】综合赔率与消息，Portsmouth不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
     "home": 0.49,
     "draw": 0.234,
@@ -7234,6 +7423,7 @@
     "away": 2.88
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.048,
     "draw": -0.03,
@@ -7255,8 +7445,8 @@
     "away": 0.276
    },
    "eloRatings": {
-    "home": 1800.0,
-    "away": 1800.0
+    "home": 1500.0,
+    "away": 1500.0
    },
    "modelProbs": {
     "home": 0.449,
@@ -7269,9 +7459,12 @@
      "label": "主胜",
      "modelProb": 0.49,
      "oddsProb": 0.389,
-     "edge": 0.102
+     "edge": 0.102,
+     "level": "watch",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "watch",
    "correctScores": [
     {
      "score": "1-1",
@@ -7305,20 +7498,7 @@
     "overPrice": 2.04,
     "underPrice": 1.71
    },
-   "standings": {
-    "home": {
-     "position": 1,
-     "points": 0,
-     "playedGames": 0,
-     "goalDifference": 0
-    },
-    "away": {
-     "position": 1,
-     "points": 0,
-     "playedGames": 0,
-     "goalDifference": 0
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
     "0": 0.0821,
     "1": 0.2052,
@@ -7333,7 +7513,7 @@
     "10": 0.0001
    },
    "btts": 0.5018,
-   "analysis": "【排名】主队Stoke City排名第1（0分/0场），客队Swansea City排名第1（0分/0场），排名接近。\n【胜负】双方实力接近，主队Stoke City略占优（主胜 39% vs 客胜 32%）（赔率 2.4 / 3.25 / 2.88）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.7 / 2.08）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（11%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 46% / 小球 54%（赔率 大 2.04 / 小 1.71），倾向小球。\n【进球数】总进球概率：0球 8%、1球 21%、2球 26%、3球 21%、4球 13%。\n【双方进球】双方都进球概率 50%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 39%（差 +10%），值得关注。\n【结论】综合赔率与消息，Stoke City不败概率更高，关注波胆 1-1 方向。",
+   "analysis": "【胜负】双方实力接近，主队Stoke City略占优（主胜 39% vs 客胜 32%）（赔率 2.4 / 3.25 / 2.88）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.7 / 2.08）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（11%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 46% / 小球 54%（赔率 大 2.04 / 小 1.71），倾向小球。\n【进球数】总进球概率：0球 8%、1球 21%、2球 26%、3球 21%、4球 13%。\n【双方进球】双方都进球概率 50%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 39%（差 +10%），值得关注。\n【结论】综合赔率与消息，Stoke City不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
     "home": 0.49,
     "draw": 0.234,
@@ -7375,6 +7555,7 @@
     "away": 2.8
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.045,
     "draw": -0.029,
@@ -7396,8 +7577,8 @@
     "away": 0.276
    },
    "eloRatings": {
-    "home": 1800.0,
-    "away": 1800.0
+    "home": 1500.0,
+    "away": 1500.0
    },
    "modelProbs": {
     "home": 0.443,
@@ -7410,9 +7591,12 @@
      "label": "主胜",
      "modelProb": 0.49,
      "oddsProb": 0.379,
-     "edge": 0.112
+     "edge": 0.112,
+     "level": "watch",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "watch",
    "correctScores": [
     {
      "score": "1-1",
@@ -7446,20 +7630,7 @@
     "overPrice": 1.97,
     "underPrice": 1.76
    },
-   "standings": {
-    "home": {
-     "position": 1,
-     "points": 0,
-     "playedGames": 0,
-     "goalDifference": 0
-    },
-    "away": {
-     "position": 1,
-     "points": 0,
-     "playedGames": 0,
-     "goalDifference": 0
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
     "0": 0.0821,
     "1": 0.2052,
@@ -7474,7 +7645,7 @@
     "10": 0.0001
    },
    "btts": 0.5018,
-   "analysis": "【排名】主队Sheffield United排名第1（0分/0场），客队Birmingham City排名第1（0分/0场），排名接近。\n【胜负】双方实力接近，主队Sheffield United略占优（主胜 38% vs 客胜 33%）（赔率 2.465 / 3.25 / 2.8）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.79 / 2.02）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（11%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 47% / 小球 53%（赔率 大 1.97 / 小 1.76），倾向小球。\n【进球数】总进球概率：0球 8%、1球 21%、2球 26%、3球 21%、4球 13%。\n【双方进球】双方都进球概率 50%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 38%（差 +11%），值得关注。\n【结论】综合赔率与消息，Sheffield United不败概率更高，关注波胆 1-1 方向。",
+   "analysis": "【胜负】双方实力接近，主队Sheffield United略占优（主胜 38% vs 客胜 33%）（赔率 2.465 / 3.25 / 2.8）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.79 / 2.02）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（11%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 47% / 小球 53%（赔率 大 1.97 / 小 1.76），倾向小球。\n【进球数】总进球概率：0球 8%、1球 21%、2球 26%、3球 21%、4球 13%。\n【双方进球】双方都进球概率 50%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 38%（差 +11%），值得关注。\n【结论】综合赔率与消息，Sheffield United不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
     "home": 0.49,
     "draw": 0.234,
@@ -7516,6 +7687,7 @@
     "away": 2.05
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.031,
     "draw": -0.028,
@@ -7537,8 +7709,8 @@
     "away": 0.276
    },
    "eloRatings": {
-    "home": 1800.0,
-    "away": 1800.0
+    "home": 1500.0,
+    "away": 1500.0
    },
    "modelProbs": {
     "home": 0.385,
@@ -7551,9 +7723,21 @@
      "label": "主胜",
      "modelProb": 0.49,
      "oddsProb": 0.281,
-     "edge": 0.209
+     "edge": 0.209,
+     "level": "gold",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.453,
+     "edge": -0.177,
+     "level": "gold",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -7587,20 +7771,7 @@
     "overPrice": 1.74,
     "underPrice": 2.0
    },
-   "standings": {
-    "home": {
-     "position": 1,
-     "points": 0,
-     "playedGames": 0,
-     "goalDifference": 0
-    },
-    "away": {
-     "position": 1,
-     "points": 0,
-     "playedGames": 0,
-     "goalDifference": 0
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
     "0": 0.0608,
     "1": 0.1703,
@@ -7615,7 +7786,7 @@
     "10": 0.0001
    },
    "btts": 0.5626,
-   "analysis": "【排名】主队Watford排名第1（0分/0场），客队Southampton排名第1（0分/0场），排名接近。\n【胜负】比赛悬念较大，主胜 28% / 平 27% / 客胜 45%（赔率 3.3 / 3.5 / 2.05）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 2.41 / 1.53）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、0-1（9%）、1-2（9%）。\n【大小球】2.5 球盘口：大球 54% / 小球 46%（赔率 大 1.74 / 小 2.0），倾向大球。\n【进球数】总进球概率：0球 6%、1球 17%、2球 24%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 56%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 28%（差 +21%），值得关注。\n【结论】综合赔率与消息，Southampton不败概率更高，关注波胆 1-1 方向。",
+   "analysis": "【胜负】比赛悬念较大，主胜 28% / 平 27% / 客胜 45%（赔率 3.3 / 3.5 / 2.05）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 2.41 / 1.53）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、0-1（9%）、1-2（9%）。\n【大小球】2.5 球盘口：大球 54% / 小球 46%（赔率 大 1.74 / 小 2.0），倾向大球。\n【进球数】总进球概率：0球 6%、1球 17%、2球 24%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 56%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 28%（差 +21%），值得关注。\n【结论】综合赔率与消息，Southampton不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
     "home": 0.49,
     "draw": 0.234,
@@ -7659,6 +7830,7 @@
     "away": 2.32
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.039,
     "draw": -0.028,
@@ -7694,9 +7866,21 @@
      "label": "主胜",
      "modelProb": 0.47,
      "oddsProb": 0.332,
-     "edge": 0.137
+     "edge": 0.137,
+     "level": "watch",
+     "modelConf": 0.182
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.288,
+     "oddsProb": 0.401,
+     "edge": -0.113,
+     "level": "watch",
+     "modelConf": 0.182
     }
    ],
+   "signalLevel": "watch",
    "correctScores": [
     {
      "score": "1-1",
@@ -7730,20 +7914,7 @@
     "overPrice": 1.7,
     "underPrice": 2.05
    },
-   "standings": {
-    "home": {
-     "position": 1,
-     "points": 0,
-     "playedGames": 0,
-     "goalDifference": 0
-    },
-    "away": {
-     "position": 1,
-     "points": 0,
-     "playedGames": 0,
-     "goalDifference": 0
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
     "0": 0.0672,
     "1": 0.1815,
@@ -7758,7 +7929,7 @@
     "10": 0.0001
    },
    "btts": 0.5446,
-   "analysis": "【排名】主队Burnley排名第1（0分/0场），客队West Ham United排名第1（0分/0场），排名接近。\n【胜负】比赛悬念较大，主胜 33% / 平 27% / 客胜 40%（赔率 2.8 / 3.4850000000000003 / 2.32）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 2.11 / 1.68）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（9%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%（赔率 大 1.7 / 小 2.05），倾向大球。\n【进球数】总进球概率：0球 7%、1球 18%、2球 24%、3球 22%、4球 15%。\n【双方进球】双方都进球概率 54%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 47% vs 盘口 33%（差 +14%），值得关注。\n【结论】综合赔率与消息，West Ham United不败概率更高，关注波胆 1-1 方向。",
+   "analysis": "【胜负】比赛悬念较大，主胜 33% / 平 27% / 客胜 40%（赔率 2.8 / 3.4850000000000003 / 2.32）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 2.11 / 1.68）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（9%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%（赔率 大 1.7 / 小 2.05），倾向大球。\n【进球数】总进球概率：0球 7%、1球 18%、2球 24%、3球 22%、4球 15%。\n【双方进球】双方都进球概率 54%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 47% vs 盘口 33%（差 +14%），值得关注。\n【结论】综合赔率与消息，West Ham United不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
     "home": 0.47,
     "draw": 0.243,
@@ -7800,6 +7971,7 @@
     "away": 2.755
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.059,
     "draw": -0.032,
@@ -7821,8 +7993,8 @@
     "away": 0.276
    },
    "eloRatings": {
-    "home": 1800.0,
-    "away": 1800.0
+    "home": 1500.0,
+    "away": 1500.0
    },
    "modelProbs": {
     "home": 0.455,
@@ -7830,6 +8002,7 @@
     "away": 0.331
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -7863,20 +8036,7 @@
     "overPrice": 1.7,
     "underPrice": 2.05
    },
-   "standings": {
-    "home": {
-     "position": 1,
-     "points": 0,
-     "playedGames": 0,
-     "goalDifference": 0
-    },
-    "away": {
-     "position": 1,
-     "points": 0,
-     "playedGames": 0,
-     "goalDifference": 0
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
     "0": 0.0608,
     "1": 0.1703,
@@ -7891,7 +8051,7 @@
     "10": 0.0001
    },
    "btts": 0.5577,
-   "analysis": "【排名】主队Cardiff City排名第1（0分/0场），客队Wrexham AFC排名第1（0分/0场），排名接近。\n【胜负】双方实力接近，主队Cardiff City略占优（主胜 40% vs 客胜 33%）（赔率 2.32 / 3.45 / 2.755）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.72 / 2.05）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（9%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%（赔率 大 1.7 / 小 2.05），倾向大球。\n【进球数】总进球概率：0球 6%、1球 17%、2球 24%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 56%，倾向双方有球。\n【结论】综合赔率与消息，Cardiff City不败概率更高，关注波胆 1-1 方向。",
+   "analysis": "【胜负】双方实力接近，主队Cardiff City略占优（主胜 40% vs 客胜 33%）（赔率 2.32 / 3.45 / 2.755）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.72 / 2.05）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（9%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%（赔率 大 1.7 / 小 2.05），倾向大球。\n【进球数】总进球概率：0球 6%、1球 17%、2球 24%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 56%，倾向双方有球。\n【结论】综合赔率与消息，Cardiff City不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
     "home": 0.49,
     "draw": 0.234,
@@ -7933,6 +8093,7 @@
     "away": 8.0
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.216,
     "draw": -0.013,
@@ -7964,13 +8125,25 @@
    },
    "valuePicks": [
     {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.552,
+     "oddsProb": 0.727,
+     "edge": -0.175,
+     "level": "gold",
+     "modelConf": 0.312
+    },
+    {
      "side": "away",
      "label": "客胜",
      "modelProb": 0.239,
      "oddsProb": 0.117,
-     "edge": 0.122
+     "edge": 0.122,
+     "level": "watch",
+     "modelConf": 0.312
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "2-0",
@@ -8032,7 +8205,7 @@
     "10": 0.0001
    },
    "btts": 0.5145,
-   "analysis": "【排名】主队Bayern Munich排名第1（89分/34场），客队VfB Stuttgart排名第4（62分/34场），主队排名领先 3 位。\n【胜负】市场高度看好主队Bayern Munich，主胜隐含概率 73%（赔率 1.29 / 6.0 / 8.0）。\n【让球】主队Bayern Munich让 1.5 球（盘口赔率 1.75 / 2.15）。\n【波胆】泊松模型推算最可能比分：2-0（11%）、2-1（10%）、1-0（9%）。\n【大小球】2.5 球盘口：大球 58% / 小球 42%（赔率 大 1.63 / 小 2.23），倾向大球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 51%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 24% vs 盘口 12%（差 +12%），值得关注。\n【结论】综合赔率与消息，Bayern Munich不败概率更高，关注波胆 2-0 方向。",
+   "analysis": "【排名】主队Bayern Munich排名第1（89分/34场），客队VfB Stuttgart排名第4（62分/34场），主队排名领先 3 位。\n【胜负】市场高度看好主队Bayern Munich，主胜隐含概率 73%（赔率 1.29 / 6.0 / 8.0）。\n【让球】主队Bayern Munich让 1.5 球（盘口赔率 1.75 / 2.15）。\n【波胆】泊松模型推算最可能比分：2-0（11%）、2-1（10%）、1-0（9%）。\n【大小球】2.5 球盘口：大球 58% / 小球 42%（赔率 大 1.63 / 小 2.23），倾向大球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 51%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 55% vs 盘口 73%（差 -18%），值得关注。\n【结论】综合赔率与消息，Bayern Munich不败概率更高，关注波胆 2-0 方向。",
    "eloProbs": {
     "home": 0.552,
     "draw": 0.209,
@@ -8074,6 +8247,7 @@
     "away": 2.28
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.036,
     "draw": -0.025,
@@ -8104,6 +8278,7 @@
     "away": 0.425
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -8207,6 +8382,7 @@
     "away": 1.53
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.016,
     "draw": -0.019,
@@ -8237,6 +8413,7 @@
     "away": 0.596
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -8327,6 +8504,7 @@
     "away": 5.1
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.127,
     "draw": -0.019,
@@ -8357,6 +8535,7 @@
     "away": 0.198
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "2-0",
@@ -8460,6 +8639,7 @@
     "away": 2.8
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.047,
     "draw": -0.026,
@@ -8491,13 +8671,25 @@
    },
    "valuePicks": [
     {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.28,
+     "oddsProb": 0.398,
+     "edge": -0.118,
+     "level": "watch",
+     "modelConf": 0.204
+    },
+    {
      "side": "away",
      "label": "客胜",
      "modelProb": 0.484,
      "oddsProb": 0.334,
-     "edge": 0.149
+     "edge": 0.149,
+     "level": "watch",
+     "modelConf": 0.204
     }
    ],
+   "signalLevel": "watch",
    "correctScores": [
     {
      "score": "1-1",
@@ -8559,7 +8751,7 @@
     "10": 0.0001
    },
    "btts": 0.562,
-   "analysis": "【排名】主队Union Berlin排名第11（39分/34场），客队Eintracht Frankfurt排名第8（44分/34场），客队排名领先 3 位。\n【胜负】双方实力接近，主队Union Berlin略占优（主胜 40% vs 客胜 33%）（赔率 2.35 / 3.5 / 2.8）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.775 / 2.1550000000000002）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、0-1（9%）、1-2（9%）。\n【大小球】2.5 球盘口：大球 56% / 小球 44%（赔率 大 1.69 / 小 2.1100000000000003），倾向大球。\n【进球数】总进球概率：0球 6%、1球 17%、2球 24%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 56%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 48% vs 盘口 33%（差 +15%），值得关注。\n【结论】综合赔率与消息，Union Berlin不败概率更高，关注波胆 1-1 方向。",
+   "analysis": "【排名】主队Union Berlin排名第11（39分/34场），客队Eintracht Frankfurt排名第8（44分/34场），客队排名领先 3 位。\n【胜负】双方实力接近，主队Union Berlin略占优（主胜 40% vs 客胜 33%）（赔率 2.35 / 3.5 / 2.8）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.775 / 2.1550000000000002）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、0-1（9%）、1-2（9%）。\n【大小球】2.5 球盘口：大球 56% / 小球 44%（赔率 大 1.69 / 小 2.1100000000000003），倾向大球。\n【进球数】总进球概率：0球 6%、1球 17%、2球 24%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 56%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 28% vs 盘口 40%（差 -12%），值得关注。\n【结论】综合赔率与消息，Union Berlin不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
     "home": 0.28,
     "draw": 0.237,
@@ -8601,6 +8793,7 @@
     "away": 4.5
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.103,
     "draw": -0.023,
@@ -8631,6 +8824,7 @@
     "away": 0.254
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -8721,6 +8915,7 @@
     "away": 8.2
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.204,
     "draw": -0.015,
@@ -8751,6 +8946,7 @@
     "away": 0.149
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "2-0",
@@ -8854,6 +9050,7 @@
     "away": 3.4
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.062,
     "draw": -0.024,
@@ -8889,9 +9086,30 @@
      "label": "主胜",
      "modelProb": 0.738,
      "oddsProb": 0.464,
-     "edge": 0.274
+     "edge": 0.274,
+     "level": "gold",
+     "modelConf": 0.6
+    },
+    {
+     "side": "draw",
+     "label": "平局",
+     "modelProb": 0.138,
+     "oddsProb": 0.26,
+     "edge": -0.122,
+     "level": "watch",
+     "modelConf": 0.6
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.124,
+     "oddsProb": 0.276,
+     "edge": -0.152,
+     "level": "gold",
+     "modelConf": 0.6
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -8984,6 +9202,7 @@
     "away": 3.1
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.059,
     "draw": -0.024,
@@ -9019,9 +9238,30 @@
      "label": "主胜",
      "modelProb": 0.71,
      "oddsProb": 0.445,
-     "edge": 0.264
+     "edge": 0.264,
+     "level": "gold",
+     "modelConf": 0.56
+    },
+    {
+     "side": "draw",
+     "label": "平局",
+     "modelProb": 0.149,
+     "oddsProb": 0.253,
+     "edge": -0.104,
+     "level": "watch",
+     "modelConf": 0.56
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.142,
+     "oddsProb": 0.302,
+     "edge": -0.16,
+     "level": "gold",
+     "modelConf": 0.56
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -9090,10 +9330,10 @@
   {
    "homeTeam": "FC Zwolle",
    "awayTeam": "Ajax",
-   "predictedScore": "0-1",
+   "predictedScore": "1-1",
    "expectedGoals": {
-    "home": 0.95,
-    "away": 1.25
+    "home": 1.01,
+    "away": 1.29
    },
    "probabilities": {
     "home": 0.198,
@@ -9114,6 +9354,7 @@
     "away": 1.75
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.017,
     "draw": -0.038,
@@ -9130,52 +9371,64 @@
     }
    },
    "eloProb": {
-    "home": 0.449,
-    "draw": 0.252,
-    "away": 0.3
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "eloRatings": {
     "home": 1500.0,
-    "away": 1530.0
+    "away": 1500.0
    },
    "modelProbs": {
-    "home": 0.298,
-    "draw": 0.245,
-    "away": 0.456
+    "home": 0.315,
+    "draw": 0.238,
+    "away": 0.447
    },
    "valuePicks": [
     {
      "side": "home",
      "label": "主胜",
-     "modelProb": 0.449,
+     "modelProb": 0.49,
      "oddsProb": 0.165,
-     "edge": 0.284
+     "edge": 0.326,
+     "level": "gold",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.527,
+     "edge": -0.252,
+     "level": "gold",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
-     "prob": 0.142
+     "prob": 0.1411
     },
     {
      "score": "0-1",
-     "prob": 0.1284
+     "prob": 0.1187
     },
     {
      "score": "0-0",
-     "prob": 0.1213
+     "prob": 0.1107
     },
     {
      "score": "1-0",
-     "prob": 0.0943
-    },
-    {
-     "score": "0-2",
-     "prob": 0.0871
+     "prob": 0.091
     },
     {
      "score": "1-2",
-     "prob": 0.0824
+     "prob": 0.0842
+    },
+    {
+     "score": "0-2",
+     "prob": 0.0832
     }
    ],
    "overUnder": {
@@ -9185,45 +9438,32 @@
     "overPrice": 1.65,
     "underPrice": 2.065
    },
-   "standings": {
-    "home": {
-     "position": 15,
-     "points": 0,
-     "playedGames": 1,
-     "goalDifference": -2
-    },
-    "away": {
-     "position": 3,
-     "points": 3,
-     "playedGames": 1,
-     "goalDifference": 2
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
-    "0": 0.1108,
-    "1": 0.2438,
-    "2": 0.2681,
-    "3": 0.1966,
-    "4": 0.1082,
-    "5": 0.0476,
-    "6": 0.0167,
-    "7": 0.0047,
-    "8": 0.001,
+    "0": 0.1003,
+    "1": 0.2306,
+    "2": 0.2652,
+    "3": 0.2033,
+    "4": 0.1169,
+    "5": 0.0538,
+    "6": 0.0198,
+    "7": 0.0058,
+    "8": 0.0013,
     "9": 0.0002,
     "10": 0.0
    },
-   "btts": 0.4357,
-   "analysis": "【排名】主队FC Zwolle排名第15（0分/1场），客队Ajax排名第3（3分/1场），客队排名领先 12 位。\n【胜负】比赛悬念较大，主胜 16% / 平 31% / 客胜 53%（赔率 5.6 / 3.0 / 1.75）。\n【让球】客队Ajax让 0.75 球（盘口赔率 1.79 / 2.09）。\n【波胆】泊松模型推算最可能比分：0-1（14%）、1-1（13%）、0-0（11%）。\n【大小球】2.5 球盘口：大球 56% / 小球 44%（赔率 大 1.65 / 小 2.065），倾向大球。\n【进球数】总进球概率：0球 11%、1球 24%、2球 27%、3球 20%、4球 11%。\n【双方进球】双方都进球概率 44%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 45% vs 盘口 16%（差 +28%），值得关注。\n【结论】综合赔率与消息，Ajax不败概率更高，关注波胆 0-1 方向。",
+   "btts": 0.4591,
+   "analysis": "【胜负】比赛悬念较大，主胜 16% / 平 31% / 客胜 53%（赔率 5.6 / 3.0 / 1.75）。\n【让球】客队Ajax让 0.75 球（盘口赔率 1.79 / 2.09）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、0-1（13%）、1-0（10%）。\n【大小球】2.5 球盘口：大球 56% / 小球 44%（赔率 大 1.65 / 小 2.065），倾向大球。\n【进球数】总进球概率：0球 10%、1球 23%、2球 27%、3球 20%、4球 12%。\n【双方进球】双方都进球概率 46%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 16%（差 +33%），值得关注。\n【结论】综合赔率与消息，Ajax不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
-    "home": 0.449,
-    "draw": 0.252,
-    "away": 0.3
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "valueMarks": {
     "edges": {
-     "home": 0.1,
-     "draw": 0.004,
-     "away": -0.105
+     "home": 0.117,
+     "draw": -0.003,
+     "away": -0.114
     },
     "picks": [
      "home"
@@ -9235,8 +9475,8 @@
    "awayTeam": "FC Utrecht",
    "predictedScore": "1-0",
    "expectedGoals": {
-    "home": 1.87,
-    "away": 0.73
+    "home": 1.7,
+    "away": 0.8
    },
    "probabilities": {
     "home": 0.674,
@@ -9257,6 +9497,7 @@
     "away": 8.0
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.194,
     "draw": -0.03,
@@ -9273,44 +9514,64 @@
     }
    },
    "eloProb": {
-    "home": 0.648,
-    "draw": 0.172,
-    "away": 0.18
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "eloRatings": {
-    "home": 1756.0,
-    "away": 1634.0
+    "home": 1500.0,
+    "away": 1500.0
    },
    "modelProbs": {
-    "home": 0.664,
-    "draw": 0.176,
-    "away": 0.161
+    "home": 0.601,
+    "draw": 0.2,
+    "away": 0.199
    },
-   "valuePicks": [],
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.49,
+     "oddsProb": 0.641,
+     "edge": -0.15,
+     "level": "gold",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.115,
+     "edge": 0.161,
+     "level": "gold",
+     "modelConf": 0.215
+    }
+   ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-0",
-     "prob": 0.131
-    },
-    {
-     "score": "2-0",
-     "prob": 0.1302
+     "prob": 0.1307
     },
     {
      "score": "1-1",
-     "prob": 0.1094
+     "prob": 0.1206
+    },
+    {
+     "score": "2-0",
+     "prob": 0.1187
     },
     {
      "score": "2-1",
-     "prob": 0.0948
+     "prob": 0.0949
     },
     {
      "score": "0-0",
-     "prob": 0.0824
+     "prob": 0.0911
     },
     {
      "score": "3-0",
-     "prob": 0.0813
+     "prob": 0.0672
     }
    ],
    "overUnder": {
@@ -9320,47 +9581,36 @@
     "overPrice": 1.9049999999999998,
     "underPrice": 1.76
    },
-   "standings": {
-    "home": {
-     "position": 5,
-     "points": 3,
-     "playedGames": 1,
-     "goalDifference": 1
-    },
-    "away": {
-     "position": 11,
-     "points": 0,
-     "playedGames": 1,
-     "goalDifference": -1
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
-    "0": 0.0743,
-    "1": 0.1931,
-    "2": 0.251,
-    "3": 0.2176,
-    "4": 0.1414,
-    "5": 0.0735,
-    "6": 0.0274,
-    "7": 0.0074,
+    "0": 0.0821,
+    "1": 0.2052,
+    "2": 0.2565,
+    "3": 0.2138,
+    "4": 0.1336,
+    "5": 0.0668,
+    "6": 0.0251,
+    "7": 0.007,
     "8": 0.0015,
     "9": 0.0002,
     "10": 0.0
    },
-   "btts": 0.4311,
-   "analysis": "【排名】主队Groningen排名第5（3分/1场），客队FC Utrecht排名第11（0分/1场），主队排名领先 6 位。\n【胜负】市场高度看好主队Groningen，主胜隐含概率 64%（赔率 1.43 / 3.75 / 8.0）。\n【让球】平手盘（主 0.0 / 客 -0.0，赔率 1.99 / 1.87）。\n【波胆】泊松模型推算最可能比分：1-0（14%）、2-0（13%）、1-1（10%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%（赔率 大 1.9049999999999998 / 小 1.76），倾向小球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 43%，倾向至少一方零封。\n【结论】综合赔率与消息，Groningen不败概率更高，关注波胆 1-0 方向。",
+   "btts": 0.4455,
+   "analysis": "【胜负】市场高度看好主队Groningen，主胜隐含概率 64%（赔率 1.43 / 3.75 / 8.0）。\n【让球】平手盘（主 0.0 / 客 -0.0，赔率 1.99 / 1.87）。\n【波胆】泊松模型推算最可能比分：1-0（14%）、2-0（12%）、1-1（11%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%（赔率 大 1.9049999999999998 / 小 1.76），倾向小球。\n【进球数】总进球概率：0球 8%、1球 21%、2球 26%、3球 21%、4球 13%。\n【双方进球】双方都进球概率 45%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 64%（差 -15%），值得关注。\n【结论】综合赔率与消息，Groningen不败概率更高，关注波胆 1-0 方向。",
    "eloProbs": {
-    "home": 0.648,
-    "draw": 0.172,
-    "away": 0.18
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "valueMarks": {
     "edges": {
-     "home": -0.01,
-     "draw": -0.002,
-     "away": 0.013
+     "home": -0.073,
+     "draw": 0.022,
+     "away": 0.051
     },
-    "picks": []
+    "picks": [
+     "away"
+    ]
    }
   },
   {
@@ -9368,8 +9618,8 @@
    "awayTeam": "FC Twente Enschede",
    "predictedScore": "1-1",
    "expectedGoals": {
-    "home": 1.76,
-    "away": 1.44
+    "home": 1.5,
+    "away": 1.5
    },
    "probabilities": {
     "home": 0.346,
@@ -9390,6 +9640,7 @@
     "away": 2.15
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.032,
     "draw": -0.023,
@@ -9406,52 +9657,64 @@
     }
    },
    "eloProb": {
-    "home": 0.648,
-    "draw": 0.172,
-    "away": 0.18
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "eloRatings": {
-    "home": 1726.0,
-    "away": 1604.0
+    "home": 1500.0,
+    "away": 1500.0
    },
    "modelProbs": {
-    "home": 0.467,
-    "draw": 0.18,
-    "away": 0.353
+    "home": 0.404,
+    "draw": 0.204,
+    "away": 0.392
    },
    "valuePicks": [
     {
      "side": "home",
      "label": "主胜",
-     "modelProb": 0.648,
+     "modelProb": 0.49,
      "oddsProb": 0.312,
-     "edge": 0.336
+     "edge": 0.178,
+     "level": "gold",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.436,
+     "edge": -0.16,
+     "level": "gold",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
-     "prob": 0.1116
-    },
-    {
-     "score": "2-1",
-     "prob": 0.091
+     "prob": 0.121
     },
     {
      "score": "1-2",
-     "prob": 0.0744
+     "prob": 0.084
     },
     {
-     "score": "2-2",
-     "prob": 0.0655
+     "score": "2-1",
+     "prob": 0.084
+    },
+    {
+     "score": "0-1",
+     "prob": 0.0657
     },
     {
      "score": "1-0",
-     "prob": 0.0635
+     "prob": 0.0657
     },
     {
-     "score": "2-0",
-     "prob": 0.0632
+     "score": "2-2",
+     "prob": 0.063
     }
    ],
    "overUnder": {
@@ -9461,45 +9724,32 @@
     "overPrice": 2.05,
     "underPrice": 1.71
    },
-   "standings": {
-    "home": {
-     "position": 7,
-     "points": 3,
-     "playedGames": 1,
-     "goalDifference": 1
-    },
-    "away": {
-     "position": 13,
-     "points": 0,
-     "playedGames": 1,
-     "goalDifference": -1
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
-    "0": 0.0408,
-    "1": 0.1304,
-    "2": 0.2087,
-    "3": 0.2226,
-    "4": 0.1781,
-    "5": 0.114,
-    "6": 0.0586,
-    "7": 0.024,
-    "8": 0.0077,
-    "9": 0.0019,
-    "10": 0.0003
+    "0": 0.0498,
+    "1": 0.1494,
+    "2": 0.224,
+    "3": 0.224,
+    "4": 0.168,
+    "5": 0.1008,
+    "6": 0.0488,
+    "7": 0.0189,
+    "8": 0.0058,
+    "9": 0.0013,
+    "10": 0.0002
    },
-   "btts": 0.6216,
-   "analysis": "【排名】主队Heerenveen排名第7（3分/1场），客队FC Twente Enschede排名第13（0分/1场），主队排名领先 6 位。\n【胜负】比赛悬念较大，主胜 31% / 平 25% / 客胜 44%（赔率 3.0 / 3.72 / 2.15）。\n【让球】客队FC Twente Enschede让 0.25 球（盘口赔率 1.955 / 1.935）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、2-1（9%）、1-2（7%）。\n【大小球】2.5 球盘口：大球 46% / 小球 55%（赔率 大 2.05 / 小 1.71），倾向小球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 62%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 65% vs 盘口 31%（差 +34%），值得关注。\n【结论】综合赔率与消息，FC Twente Enschede不败概率更高，关注波胆 1-1 方向。",
+   "btts": 0.5966,
+   "analysis": "【胜负】比赛悬念较大，主胜 31% / 平 25% / 客胜 44%（赔率 3.0 / 3.72 / 2.15）。\n【让球】客队FC Twente Enschede让 0.25 球（盘口赔率 1.955 / 1.935）。\n【波胆】泊松模型推算最可能比分：1-1（11%）、1-2（8%）、2-1（8%）。\n【大小球】2.5 球盘口：大球 46% / 小球 55%（赔率 大 2.05 / 小 1.71），倾向小球。\n【进球数】总进球概率：0球 5%、1球 15%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 60%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 31%（差 +18%），值得关注。\n【结论】综合赔率与消息，FC Twente Enschede不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
-    "home": 0.648,
-    "draw": 0.172,
-    "away": 0.18
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "valueMarks": {
     "edges": {
-     "home": 0.121,
-     "draw": -0.005,
-     "away": -0.116
+     "home": 0.058,
+     "draw": 0.019,
+     "away": -0.077
     },
     "picks": [
      "home"
@@ -9511,8 +9761,8 @@
    "awayTeam": "Sparta Rotterdam",
    "predictedScore": "1-1",
    "expectedGoals": {
-    "home": 1.89,
-    "away": 1.31
+    "home": 1.54,
+    "away": 1.26
    },
    "probabilities": {
     "home": 0.434,
@@ -9533,6 +9783,7 @@
     "away": 2.75
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.06,
     "draw": -0.031,
@@ -9549,52 +9800,45 @@
     }
    },
    "eloProb": {
-    "home": 0.663,
-    "draw": 0.166,
-    "away": 0.17
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "eloRatings": {
-    "home": 1748.0,
-    "away": 1612.0
+    "home": 1500.0,
+    "away": 1500.0
    },
    "modelProbs": {
-    "home": 0.526,
-    "draw": 0.185,
-    "away": 0.29
+    "home": 0.457,
+    "draw": 0.212,
+    "away": 0.332
    },
-   "valuePicks": [
-    {
-     "side": "home",
-     "label": "主胜",
-     "modelProb": 0.663,
-     "oddsProb": 0.401,
-     "edge": 0.262
-    }
-   ],
+   "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
-     "prob": 0.1091
+     "prob": 0.1275
     },
     {
      "score": "2-1",
-     "prob": 0.0954
-    },
-    {
-     "score": "2-0",
-     "prob": 0.0727
+     "prob": 0.0909
     },
     {
      "score": "1-0",
-     "prob": 0.0689
+     "prob": 0.0842
     },
     {
      "score": "1-2",
-     "prob": 0.0663
+     "prob": 0.0744
     },
     {
-     "score": "2-2",
-     "prob": 0.0626
+     "score": "2-0",
+     "prob": 0.0721
+    },
+    {
+     "score": "0-0",
+     "prob": 0.0703
     }
    ],
    "overUnder": {
@@ -9604,49 +9848,34 @@
     "overPrice": 1.65,
     "underPrice": 2.2
    },
-   "standings": {
-    "home": {
-     "position": 5,
-     "points": 3,
-     "playedGames": 1,
-     "goalDifference": 1
-    },
-    "away": {
-     "position": 13,
-     "points": 0,
-     "playedGames": 1,
-     "goalDifference": -1
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
-    "0": 0.0408,
-    "1": 0.1304,
-    "2": 0.2087,
-    "3": 0.2226,
-    "4": 0.1781,
-    "5": 0.114,
-    "6": 0.0579,
-    "7": 0.0231,
-    "8": 0.0072,
-    "9": 0.0017,
-    "10": 0.0003
+    "0": 0.0608,
+    "1": 0.1703,
+    "2": 0.2384,
+    "3": 0.2225,
+    "4": 0.1557,
+    "5": 0.0872,
+    "6": 0.0392,
+    "7": 0.014,
+    "8": 0.0039,
+    "9": 0.0008,
+    "10": 0.0001
    },
-   "btts": 0.6088,
-   "analysis": "【排名】主队SC Telstar排名第5（3分/1场），客队Sparta Rotterdam排名第13（0分/1场），主队排名领先 8 位。\n【胜负】双方实力接近，主队SC Telstar略占优（主胜 40% vs 客胜 34%）（赔率 2.3 / 3.5 / 2.75）。\n【让球】主队SC Telstar让 1.0 球（盘口赔率 3.8 / 1.26）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、2-1（10%）、1-0（8%）。\n【大小球】2.5 球盘口：大球 57% / 小球 43%（赔率 大 1.65 / 小 2.2），倾向大球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 61%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 66% vs 盘口 40%（差 +26%），值得关注。\n【结论】综合赔率与消息，SC Telstar不败概率更高，关注波胆 1-1 方向。",
+   "btts": 0.5577,
+   "analysis": "【胜负】双方实力接近，主队SC Telstar略占优（主胜 40% vs 客胜 34%）（赔率 2.3 / 3.5 / 2.75）。\n【让球】主队SC Telstar让 1.0 球（盘口赔率 3.8 / 1.26）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（9%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 57% / 小球 43%（赔率 大 1.65 / 小 2.2），倾向大球。\n【进球数】总进球概率：0球 6%、1球 17%、2球 24%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 56%，倾向双方有球。\n【结论】综合赔率与消息，SC Telstar不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
-    "home": 0.663,
-    "draw": 0.166,
-    "away": 0.17
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "valueMarks": {
     "edges": {
-     "home": 0.092,
-     "draw": -0.012,
-     "away": -0.079
+     "home": 0.023,
+     "draw": 0.015,
+     "away": -0.037
     },
-    "picks": [
-     "home"
-    ]
+    "picks": []
    }
   },
   {
@@ -9654,8 +9883,8 @@
    "awayTeam": "NEC Nijmegen",
    "predictedScore": "1-1",
    "expectedGoals": {
-    "home": 1.11,
-    "away": 1.59
+    "home": 1.41,
+    "away": 1.79
    },
    "probabilities": {
     "home": 0.232,
@@ -9676,6 +9905,7 @@
     "away": 1.54
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.03,
     "draw": -0.035,
@@ -9692,305 +9922,40 @@
     }
    },
    "eloProb": {
-    "home": 0.36,
-    "draw": 0.294,
-    "away": 0.345
-   },
-   "eloRatings": {
-    "home": 1550.0,
-    "away": 1642.0
-   },
-   "modelProbs": {
-    "home": 0.283,
-    "draw": 0.21,
-    "away": 0.506
-   },
-   "valuePicks": [
-    {
-     "side": "home",
-     "label": "主胜",
-     "modelProb": 0.36,
-     "oddsProb": 0.199,
-     "edge": 0.162
-    }
-   ],
-   "correctScores": [
-    {
-     "score": "1-1",
-     "prob": 0.128
-    },
-    {
-     "score": "0-1",
-     "prob": 0.0976
-    },
-    {
-     "score": "1-2",
-     "prob": 0.0944
-    },
-    {
-     "score": "0-2",
-     "prob": 0.0853
-    },
-    {
-     "score": "0-0",
-     "prob": 0.0767
-    },
-    {
-     "score": "2-1",
-     "prob": 0.0656
-    }
-   ],
-   "overUnder": {
-    "line": 2.5,
-    "over": 0.464,
-    "under": 0.536,
-    "overPrice": 2.03,
-    "underPrice": 1.755
-   },
-   "standings": {
-    "home": {
-     "position": 17,
-     "points": 0,
-     "playedGames": 1,
-     "goalDifference": -3
-    },
-    "away": {
-     "position": 11,
-     "points": 0,
-     "playedGames": 1,
-     "goalDifference": -1
-    }
-   },
-   "totalGoalsDist": {
-    "0": 0.0672,
-    "1": 0.1815,
-    "2": 0.245,
-    "3": 0.2205,
-    "4": 0.1488,
-    "5": 0.0804,
-    "6": 0.0345,
-    "7": 0.0116,
-    "8": 0.0031,
-    "9": 0.0006,
-    "10": 0.0001
-   },
-   "btts": 0.5286,
-   "analysis": "【排名】主队Willem II排名第17（0分/1场），客队NEC Nijmegen排名第11（0分/1场），客队排名领先 6 位。\n【胜负】市场明显看好客队NEC Nijmegen，客胜隐含概率 58%（赔率 4.5 / 4.05 / 1.54）。\n【让球】客队NEC Nijmegen让 1.0 球（盘口赔率 1.82 / 1.96）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、0-1（11%）、1-2（9%）。\n【大小球】2.5 球盘口：大球 46% / 小球 54%（赔率 大 2.03 / 小 1.755），倾向小球。\n【进球数】总进球概率：0球 7%、1球 18%、2球 24%、3球 22%、4球 15%。\n【双方进球】双方都进球概率 53%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 36% vs 盘口 20%（差 +16%），值得关注。\n【结论】综合赔率与消息，NEC Nijmegen不败概率更高，关注波胆 1-1 方向。",
-   "eloProbs": {
-    "home": 0.36,
-    "draw": 0.294,
-    "away": 0.345
-   },
-   "valueMarks": {
-    "edges": {
-     "home": 0.051,
-     "draw": 0.056,
-     "away": -0.108
-    },
-    "picks": [
-     "home",
-     "draw"
-    ]
-   }
-  },
-  {
-   "homeTeam": "FC Utrecht",
-   "awayTeam": "AZ Alkmaar",
-   "predictedScore": "1-1",
-   "expectedGoals": {
-    "home": 1.27,
-    "away": 1.43
-   },
-   "probabilities": {
-    "home": 0.383,
-    "draw": 0.188,
-    "away": 0.43
-   },
-   "confidence": 0.572,
-   "reasons": [
-    "赔率隐含概率: 主35% 平25% 客40%"
-   ],
-   "messageEvidence": [],
-   "league": "ED",
-   "kickoff": "2026-08-15T16:45:00Z",
-   "matchUrl": "",
-   "rawOdds": {
-    "home": 2.62,
-    "draw": 3.6,
-    "away": 2.31
-   },
-   "oddsChange": null,
-   "kelly": {
-    "home": -0.052,
-    "draw": -0.033,
-    "away": -0.065
-   },
-   "spreads": {
-    "home": {
-     "point": 1.0,
-     "price": 1.25
-    },
-    "away": {
-     "point": -1.0,
-     "price": 3.8
-    }
-   },
-   "eloProb": {
-    "home": 0.316,
-    "draw": 0.266,
-    "away": 0.418
-   },
-   "eloRatings": {
-    "home": 1634.0,
-    "away": 1782.0
-   },
-   "modelProbs": {
-    "home": 0.356,
-    "draw": 0.219,
-    "away": 0.425
-   },
-   "valuePicks": [],
-   "correctScores": [
-    {
-     "score": "1-1",
-     "prob": 0.1318
-    },
-    {
-     "score": "1-2",
-     "prob": 0.0873
-    },
-    {
-     "score": "0-1",
-     "prob": 0.0864
-    },
-    {
-     "score": "2-1",
-     "prob": 0.0774
-    },
-    {
-     "score": "0-0",
-     "prob": 0.077
-    },
-    {
-     "score": "1-0",
-     "prob": 0.0755
-    }
-   ],
-   "overUnder": {
-    "line": 2.5,
-    "over": 0.58,
-    "under": 0.42,
-    "overPrice": 1.61,
-    "underPrice": 2.22
-   },
-   "standings": {
-    "home": {
-     "position": 11,
-     "points": 0,
-     "playedGames": 1,
-     "goalDifference": -1
-    },
-    "away": {
-     "position": 3,
-     "points": 3,
-     "playedGames": 1,
-     "goalDifference": 2
-    }
-   },
-   "totalGoalsDist": {
-    "0": 0.0672,
-    "1": 0.1815,
-    "2": 0.245,
-    "3": 0.2205,
-    "4": 0.1488,
-    "5": 0.0804,
-    "6": 0.035,
-    "7": 0.0121,
-    "8": 0.0033,
-    "9": 0.0007,
-    "10": 0.0001
-   },
-   "btts": 0.543,
-   "analysis": "【排名】主队FC Utrecht排名第11（0分/1场），客队AZ Alkmaar排名第3（3分/1场），客队排名领先 8 位。\n【胜负】比赛悬念较大，主胜 35% / 平 25% / 客胜 40%（赔率 2.62 / 3.6 / 2.31）。\n【让球】客队AZ Alkmaar让 1.0 球（盘口赔率 1.25 / 3.8）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、0-1（10%）、1-2（9%）。\n【大小球】2.5 球盘口：大球 58% / 小球 42%（赔率 大 1.61 / 小 2.22），倾向大球。\n【进球数】总进球概率：0球 7%、1球 18%、2球 24%、3球 22%、4球 15%。\n【双方进球】双方都进球概率 54%，倾向至少一方零封。\n【结论】综合赔率与消息，AZ Alkmaar不败概率更高，关注波胆 1-1 方向。",
-   "eloProbs": {
-    "home": 0.316,
-    "draw": 0.266,
-    "away": 0.418
-   },
-   "valueMarks": {
-    "edges": {
-     "home": -0.027,
-     "draw": 0.031,
-     "away": -0.005
-    },
-    "picks": []
-   }
-  },
-  {
-   "homeTeam": "Excelsior",
-   "awayTeam": "PSV Eindhoven",
-   "predictedScore": "1-1",
-   "expectedGoals": {
-    "home": 1.41,
-    "away": 1.79
-   },
-   "probabilities": {
-    "home": 0.243,
-    "draw": 0.155,
-    "away": 0.602
-   },
-   "confidence": 0.641,
-   "reasons": [
-    "赔率隐含概率: 主21% 平22% 客57%"
-   ],
-   "messageEvidence": [],
-   "league": "ED",
-   "kickoff": "2026-08-15T18:00:00Z",
-   "matchUrl": "",
-   "rawOdds": {
-    "home": 4.4,
-    "draw": 4.16,
-    "away": 1.62
-   },
-   "oddsChange": null,
-   "kelly": {
-    "home": -0.023,
-    "draw": -0.025,
-    "away": -0.126
-   },
-   "spreads": {
-    "home": {
-     "point": 1.0,
-     "price": 1.78
-    },
-    "away": {
-     "point": -1.0,
-     "price": 2.01
-    }
-   },
-   "eloProb": {
-    "home": 0.455,
-    "draw": 0.249,
-    "away": 0.296
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "eloRatings": {
     "home": 1500.0,
-    "away": 1525.0
+    "away": 1500.0
    },
    "modelProbs": {
-    "home": 0.328,
-    "draw": 0.193,
-    "away": 0.48
+    "home": 0.335,
+    "draw": 0.186,
+    "away": 0.479
    },
    "valuePicks": [
     {
      "side": "home",
      "label": "主胜",
-     "modelProb": 0.455,
-     "oddsProb": 0.209,
-     "edge": 0.246
+     "modelProb": 0.49,
+     "oddsProb": 0.199,
+     "edge": 0.292,
+     "level": "gold",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.581,
+     "edge": -0.305,
+     "level": "gold",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -10019,25 +9984,12 @@
    ],
    "overUnder": {
     "line": 2.5,
-    "over": 0.508,
-    "under": 0.492,
-    "overPrice": 1.87,
-    "underPrice": 1.93
+    "over": 0.464,
+    "under": 0.536,
+    "overPrice": 2.03,
+    "underPrice": 1.755
    },
-   "standings": {
-    "home": {
-     "position": 1,
-     "points": 3,
-     "playedGames": 1,
-     "goalDifference": 4
-    },
-    "away": {
-     "position": 9,
-     "points": 1,
-     "playedGames": 1,
-     "goalDifference": 0
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
     "0": 0.0408,
     "1": 0.1304,
@@ -10052,17 +10004,301 @@
     "10": 0.0003
    },
    "btts": 0.6191,
-   "analysis": "【排名】主队Excelsior排名第1（3分/1场），客队PSV Eindhoven排名第9（1分/1场），主队排名领先 8 位。\n【胜负】市场明显看好客队PSV Eindhoven，客胜隐含概率 57%（赔率 4.4 / 4.16 / 1.62）。\n【让球】客队PSV Eindhoven让 1.0 球（盘口赔率 1.78 / 2.01）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、1-2（9%）、0-1（7%）。\n【大小球】2.5 球盘口：大球 51% / 小球 49%（赔率 大 1.87 / 小 1.93），倾向大球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 62%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 46% vs 盘口 21%（差 +25%），值得关注。\n【结论】综合赔率与消息，PSV Eindhoven不败概率更高，关注波胆 1-1 方向。",
+   "analysis": "【胜负】市场明显看好客队NEC Nijmegen，客胜隐含概率 58%（赔率 4.5 / 4.05 / 1.54）。\n【让球】客队NEC Nijmegen让 1.0 球（盘口赔率 1.82 / 1.96）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、1-2（9%）、0-1（7%）。\n【大小球】2.5 球盘口：大球 46% / 小球 54%（赔率 大 2.03 / 小 1.755），倾向小球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 62%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 20%（差 +29%），值得关注。\n【结论】综合赔率与消息，NEC Nijmegen不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
-    "home": 0.455,
-    "draw": 0.249,
-    "away": 0.296
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "valueMarks": {
     "edges": {
-     "home": 0.085,
-     "draw": 0.038,
-     "away": -0.122
+     "home": 0.103,
+     "draw": 0.032,
+     "away": -0.135
+    },
+    "picks": [
+     "home"
+    ]
+   }
+  },
+  {
+   "homeTeam": "FC Utrecht",
+   "awayTeam": "AZ Alkmaar",
+   "predictedScore": "1-1",
+   "expectedGoals": {
+    "home": 1.51,
+    "away": 1.39
+   },
+   "probabilities": {
+    "home": 0.383,
+    "draw": 0.188,
+    "away": 0.43
+   },
+   "confidence": 0.572,
+   "reasons": [
+    "赔率隐含概率: 主35% 平25% 客40%"
+   ],
+   "messageEvidence": [],
+   "league": "ED",
+   "kickoff": "2026-08-15T16:45:00Z",
+   "matchUrl": "",
+   "rawOdds": {
+    "home": 2.62,
+    "draw": 3.6,
+    "away": 2.31
+   },
+   "oddsChange": null,
+   "prevOdds": null,
+   "kelly": {
+    "home": -0.052,
+    "draw": -0.033,
+    "away": -0.065
+   },
+   "spreads": {
+    "home": {
+     "point": 1.0,
+     "price": 1.25
+    },
+    "away": {
+     "point": -1.0,
+     "price": 3.8
+    }
+   },
+   "eloProb": {
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
+   },
+   "eloRatings": {
+    "home": 1500.0,
+    "away": 1500.0
+   },
+   "modelProbs": {
+    "home": 0.426,
+    "draw": 0.206,
+    "away": 0.368
+   },
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.49,
+     "oddsProb": 0.349,
+     "edge": 0.141,
+     "level": "watch",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.396,
+     "edge": -0.12,
+     "level": "watch",
+     "modelConf": 0.215
+    }
+   ],
+   "signalLevel": "watch",
+   "correctScores": [
+    {
+     "score": "1-1",
+     "prob": 0.1248
+    },
+    {
+     "score": "2-1",
+     "prob": 0.0871
+    },
+    {
+     "score": "1-2",
+     "prob": 0.0804
+    },
+    {
+     "score": "1-0",
+     "prob": 0.0738
+    },
+    {
+     "score": "0-1",
+     "prob": 0.0674
+    },
+    {
+     "score": "0-0",
+     "prob": 0.0643
+    }
+   ],
+   "overUnder": {
+    "line": 2.5,
+    "over": 0.58,
+    "under": 0.42,
+    "overPrice": 1.61,
+    "underPrice": 2.22
+   },
+   "standings": null,
+   "totalGoalsDist": {
+    "0": 0.055,
+    "1": 0.1596,
+    "2": 0.2314,
+    "3": 0.2237,
+    "4": 0.1622,
+    "5": 0.094,
+    "6": 0.044,
+    "7": 0.0164,
+    "8": 0.0048,
+    "9": 0.0011,
+    "10": 0.0002
+   },
+   "btts": 0.5792,
+   "analysis": "【胜负】比赛悬念较大，主胜 35% / 平 25% / 客胜 40%（赔率 2.62 / 3.6 / 2.31）。\n【让球】客队AZ Alkmaar让 1.0 球（盘口赔率 1.25 / 3.8）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、2-1（9%）、1-0（8%）。\n【大小球】2.5 球盘口：大球 58% / 小球 42%（赔率 大 1.61 / 小 2.22），倾向大球。\n【进球数】总进球概率：0球 6%、1球 16%、2球 23%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 58%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 35%（差 +14%），值得关注。\n【结论】综合赔率与消息，AZ Alkmaar不败概率更高，关注波胆 1-1 方向。",
+   "eloProbs": {
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
+   },
+   "valueMarks": {
+    "edges": {
+     "home": 0.043,
+     "draw": 0.018,
+     "away": -0.062
+    },
+    "picks": []
+   }
+  },
+  {
+   "homeTeam": "Excelsior",
+   "awayTeam": "PSV Eindhoven",
+   "predictedScore": "1-1",
+   "expectedGoals": {
+    "home": 1.44,
+    "away": 1.76
+   },
+   "probabilities": {
+    "home": 0.243,
+    "draw": 0.155,
+    "away": 0.602
+   },
+   "confidence": 0.641,
+   "reasons": [
+    "赔率隐含概率: 主21% 平22% 客57%"
+   ],
+   "messageEvidence": [],
+   "league": "ED",
+   "kickoff": "2026-08-15T18:00:00Z",
+   "matchUrl": "",
+   "rawOdds": {
+    "home": 4.4,
+    "draw": 4.16,
+    "away": 1.62
+   },
+   "oddsChange": null,
+   "prevOdds": null,
+   "kelly": {
+    "home": -0.023,
+    "draw": -0.025,
+    "away": -0.126
+   },
+   "spreads": {
+    "home": {
+     "point": 1.0,
+     "price": 1.78
+    },
+    "away": {
+     "point": -1.0,
+     "price": 2.01
+    }
+   },
+   "eloProb": {
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
+   },
+   "eloRatings": {
+    "home": 1500.0,
+    "away": 1500.0
+   },
+   "modelProbs": {
+    "home": 0.342,
+    "draw": 0.186,
+    "away": 0.472
+   },
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.49,
+     "oddsProb": 0.209,
+     "edge": 0.281,
+     "level": "gold",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.569,
+     "edge": -0.293,
+     "level": "gold",
+     "modelConf": 0.215
+    }
+   ],
+   "signalLevel": "gold",
+   "correctScores": [
+    {
+     "score": "1-1",
+     "prob": 0.1116
+    },
+    {
+     "score": "1-2",
+     "prob": 0.091
+    },
+    {
+     "score": "2-1",
+     "prob": 0.0744
+    },
+    {
+     "score": "2-2",
+     "prob": 0.0655
+    },
+    {
+     "score": "0-1",
+     "prob": 0.0635
+    },
+    {
+     "score": "0-2",
+     "prob": 0.0632
+    }
+   ],
+   "overUnder": {
+    "line": 2.5,
+    "over": 0.508,
+    "under": 0.492,
+    "overPrice": 1.87,
+    "underPrice": 1.93
+   },
+   "standings": null,
+   "totalGoalsDist": {
+    "0": 0.0408,
+    "1": 0.1304,
+    "2": 0.2087,
+    "3": 0.2226,
+    "4": 0.1781,
+    "5": 0.114,
+    "6": 0.0586,
+    "7": 0.024,
+    "8": 0.0077,
+    "9": 0.0019,
+    "10": 0.0003
+   },
+   "btts": 0.6216,
+   "analysis": "【胜负】市场明显看好客队PSV Eindhoven，客胜隐含概率 57%（赔率 4.4 / 4.16 / 1.62）。\n【让球】客队PSV Eindhoven让 1.0 球（盘口赔率 1.78 / 2.01）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、1-2（9%）、2-1（7%）。\n【大小球】2.5 球盘口：大球 51% / 小球 49%（赔率 大 1.87 / 小 1.93），倾向大球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 62%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 21%（差 +28%），值得关注。\n【结论】综合赔率与消息，PSV Eindhoven不败概率更高，关注波胆 1-1 方向。",
+   "eloProbs": {
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
+   },
+   "valueMarks": {
+    "edges": {
+     "home": 0.099,
+     "draw": 0.031,
+     "away": -0.13
     },
     "picks": [
      "home"
@@ -10072,10 +10308,10 @@
   {
    "homeTeam": "Fortuna Sittard",
    "awayTeam": "SC Cambuur",
-   "predictedScore": "2-1",
+   "predictedScore": "1-1",
    "expectedGoals": {
-    "home": 2.08,
-    "away": 1.12
+    "home": 1.74,
+    "away": 1.16
    },
    "probabilities": {
     "home": 0.539,
@@ -10096,6 +10332,7 @@
     "away": 3.625
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.112,
     "draw": -0.032,
@@ -10112,52 +10349,45 @@
     }
    },
    "eloProb": {
-    "home": 0.699,
-    "draw": 0.153,
-    "away": 0.148
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "eloRatings": {
-    "home": 1670.0,
+    "home": 1500.0,
     "away": 1500.0
    },
    "modelProbs": {
-    "home": 0.603,
-    "draw": 0.167,
-    "away": 0.23
+    "home": 0.52,
+    "draw": 0.199,
+    "away": 0.281
    },
-   "valuePicks": [
-    {
-     "side": "home",
-     "label": "主胜",
-     "modelProb": 0.699,
-     "oddsProb": 0.506,
-     "edge": 0.193
-    }
-   ],
+   "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
-     "prob": 0.1027
+     "prob": 0.12
     },
     {
      "score": "2-1",
-     "prob": 0.0989
-    },
-    {
-     "score": "2-0",
-     "prob": 0.0883
+     "prob": 0.0967
     },
     {
      "score": "1-0",
-     "prob": 0.0773
+     "prob": 0.0869
     },
     {
-     "score": "3-1",
-     "prob": 0.0686
+     "score": "2-0",
+     "prob": 0.0833
     },
     {
-     "score": "3-0",
-     "prob": 0.0612
+     "score": "1-2",
+     "prob": 0.0644
+    },
+    {
+     "score": "0-0",
+     "prob": 0.0639
     }
    ],
    "overUnder": {
@@ -10167,49 +10397,34 @@
     "overPrice": 1.605,
     "underPrice": 2.24
    },
-   "standings": {
-    "home": {
-     "position": 9,
-     "points": 1,
-     "playedGames": 1,
-     "goalDifference": 0
-    },
-    "away": {
-     "position": 18,
-     "points": 0,
-     "playedGames": 1,
-     "goalDifference": -4
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
-    "0": 0.0408,
-    "1": 0.1304,
-    "2": 0.2087,
-    "3": 0.2226,
-    "4": 0.1781,
-    "5": 0.114,
-    "6": 0.0561,
-    "7": 0.021,
-    "8": 0.0061,
-    "9": 0.0013,
-    "10": 0.0002
+    "0": 0.055,
+    "1": 0.1596,
+    "2": 0.2314,
+    "3": 0.2237,
+    "4": 0.1622,
+    "5": 0.094,
+    "6": 0.0432,
+    "7": 0.0155,
+    "8": 0.0043,
+    "9": 0.0009,
+    "10": 0.0001
    },
-   "btts": 0.5754,
-   "analysis": "【排名】主队Fortuna Sittard排名第9（1分/1场），客队SC Cambuur排名第18（0分/1场），主队排名领先 9 位。\n【胜负】比赛悬念较大，主胜 51% / 平 24% / 客胜 25%（赔率 1.8 / 3.75 / 3.625）。\n【让球】主队Fortuna Sittard让 1.0 球（盘口赔率 2.49 / 1.52）。\n【波胆】泊松模型推算最可能比分：2-1（10%）、1-1（10%）、2-0（9%）。\n【大小球】2.5 球盘口：大球 58% / 小球 42%（赔率 大 1.605 / 小 2.24），倾向大球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 58%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 70% vs 盘口 51%（差 +19%），值得关注。\n【结论】综合赔率与消息，Fortuna Sittard不败概率更高，关注波胆 2-1 方向。",
+   "btts": 0.5589,
+   "analysis": "【胜负】比赛悬念较大，主胜 51% / 平 24% / 客胜 25%（赔率 1.8 / 3.75 / 3.625）。\n【让球】主队Fortuna Sittard让 1.0 球（盘口赔率 2.49 / 1.52）。\n【波胆】泊松模型推算最可能比分：1-1（11%）、2-1（10%）、1-0（10%）。\n【大小球】2.5 球盘口：大球 58% / 小球 42%（赔率 大 1.605 / 小 2.24），倾向大球。\n【进球数】总进球概率：0球 6%、1球 16%、2球 23%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 56%，倾向双方有球。\n【结论】综合赔率与消息，Fortuna Sittard不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
-    "home": 0.699,
-    "draw": 0.153,
-    "away": 0.148
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "valueMarks": {
     "edges": {
-     "home": 0.064,
-     "draw": -0.009,
-     "away": -0.055
+     "home": -0.019,
+     "draw": 0.023,
+     "away": -0.004
     },
-    "picks": [
-     "home"
-    ]
+    "picks": []
    }
   },
   {
@@ -10217,8 +10432,8 @@
    "awayTeam": "Groningen",
    "predictedScore": "1-1",
    "expectedGoals": {
-    "home": 1.29,
-    "away": 1.51
+    "home": 1.56,
+    "away": 1.44
    },
    "probabilities": {
     "home": 0.378,
@@ -10239,6 +10454,7 @@
     "away": 2.285
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.05,
     "draw": -0.032,
@@ -10255,44 +10471,64 @@
     }
    },
    "eloProb": {
-    "home": 0.293,
-    "draw": 0.246,
-    "away": 0.461
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "eloRatings": {
-    "home": 1578.0,
-    "away": 1756.0
+    "home": 1500.0,
+    "away": 1500.0
    },
    "modelProbs": {
-    "home": 0.344,
-    "draw": 0.211,
-    "away": 0.445
+    "home": 0.423,
+    "draw": 0.206,
+    "away": 0.371
    },
-   "valuePicks": [],
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.49,
+     "oddsProb": 0.344,
+     "edge": 0.146,
+     "level": "watch",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.401,
+     "edge": -0.125,
+     "level": "watch",
+     "modelConf": 0.215
+    }
+   ],
+   "signalLevel": "watch",
    "correctScores": [
     {
      "score": "1-1",
-     "prob": 0.1279
-    },
-    {
-     "score": "1-2",
-     "prob": 0.0896
-    },
-    {
-     "score": "0-1",
-     "prob": 0.0825
+     "prob": 0.1208
     },
     {
      "score": "2-1",
-     "prob": 0.0763
+     "prob": 0.0873
     },
     {
-     "score": "0-0",
-     "prob": 0.0703
+     "score": "1-2",
+     "prob": 0.0806
     },
     {
-     "score": "0-2",
-     "prob": 0.0695
+     "score": "1-0",
+     "prob": 0.0687
+    },
+    {
+     "score": "0-1",
+     "prob": 0.0628
+    },
+    {
+     "score": "2-2",
+     "prob": 0.0628
     }
    ],
    "overUnder": {
@@ -10302,45 +10538,32 @@
     "overPrice": 1.59,
     "underPrice": 2.275
    },
-   "standings": {
-    "home": {
-     "position": 15,
-     "points": 0,
-     "playedGames": 1,
-     "goalDifference": -2
-    },
-    "away": {
-     "position": 5,
-     "points": 3,
-     "playedGames": 1,
-     "goalDifference": 1
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
-    "0": 0.0608,
-    "1": 0.1703,
-    "2": 0.2384,
-    "3": 0.2225,
-    "4": 0.1557,
-    "5": 0.0872,
-    "6": 0.0393,
-    "7": 0.0141,
-    "8": 0.004,
-    "9": 0.0009,
-    "10": 0.0001
+    "0": 0.0498,
+    "1": 0.1494,
+    "2": 0.224,
+    "3": 0.224,
+    "4": 0.168,
+    "5": 0.1008,
+    "6": 0.0488,
+    "7": 0.0189,
+    "8": 0.0057,
+    "9": 0.0013,
+    "10": 0.0002
    },
-   "btts": 0.5595,
-   "analysis": "【排名】主队ADO Den Haag排名第15（0分/1场），客队Groningen排名第5（3分/1场），客队排名领先 10 位。\n【胜负】比赛悬念较大，主胜 34% / 平 25% / 客胜 40%（赔率 2.66 / 3.6 / 2.285）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 2.09 / 1.77）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、0-1（9%）、1-2（9%）。\n【大小球】2.5 球盘口：大球 59% / 小球 41%（赔率 大 1.59 / 小 2.275），倾向大球。\n【进球数】总进球概率：0球 6%、1球 17%、2球 24%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 56%，倾向双方有球。\n【结论】综合赔率与消息，Groningen不败概率更高，关注波胆 1-1 方向。",
+   "btts": 0.5958,
+   "analysis": "【胜负】比赛悬念较大，主胜 34% / 平 25% / 客胜 40%（赔率 2.66 / 3.6 / 2.285）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 2.09 / 1.77）。\n【波胆】泊松模型推算最可能比分：1-1（11%）、2-1（9%）、1-2（8%）。\n【大小球】2.5 球盘口：大球 59% / 小球 41%（赔率 大 1.59 / 小 2.275），倾向大球。\n【进球数】总进球概率：0球 5%、1球 15%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 60%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 34%（差 +15%），值得关注。\n【结论】综合赔率与消息，Groningen不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
-    "home": 0.293,
-    "draw": 0.246,
-    "away": 0.461
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "valueMarks": {
     "edges": {
-     "home": -0.034,
-     "draw": 0.023,
-     "away": 0.011
+     "home": 0.045,
+     "draw": 0.018,
+     "away": -0.063
     },
     "picks": []
    }
@@ -10350,8 +10573,8 @@
    "awayTeam": "FC Zwolle",
    "predictedScore": "2-0",
    "expectedGoals": {
-    "home": 2.37,
-    "away": 0.83
+    "home": 2.21,
+    "away": 0.99
    },
    "probabilities": {
     "home": 0.761,
@@ -10372,6 +10595,7 @@
     "away": 8.45
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.341,
     "draw": -0.019,
@@ -10388,44 +10612,64 @@
     }
    },
    "eloProb": {
-    "home": 0.626,
-    "draw": 0.18,
-    "away": 0.194
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "eloRatings": {
-    "home": 1604.0,
+    "home": 1500.0,
     "away": 1500.0
    },
    "modelProbs": {
-    "home": 0.707,
-    "draw": 0.131,
-    "away": 0.162
+    "home": 0.653,
+    "draw": 0.152,
+    "away": 0.195
    },
-   "valuePicks": [],
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.49,
+     "oddsProb": 0.727,
+     "edge": -0.237,
+     "level": "gold",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.108,
+     "edge": 0.168,
+     "level": "gold",
+     "modelConf": 0.215
+    }
+   ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "2-0",
-     "prob": 0.1146
+     "prob": 0.0996
     },
     {
      "score": "2-1",
-     "prob": 0.0954
-    },
-    {
-     "score": "3-0",
-     "prob": 0.0905
-    },
-    {
-     "score": "1-0",
-     "prob": 0.0904
+     "prob": 0.0988
     },
     {
      "score": "1-1",
-     "prob": 0.087
+     "prob": 0.0966
+    },
+    {
+     "score": "1-0",
+     "prob": 0.083
+    },
+    {
+     "score": "3-0",
+     "prob": 0.0733
     },
     {
      "score": "3-1",
-     "prob": 0.0753
+     "prob": 0.0727
     }
    ],
    "overUnder": {
@@ -10435,20 +10679,7 @@
     "overPrice": 1.85,
     "underPrice": 1.92
    },
-   "standings": {
-    "home": {
-     "position": 13,
-     "points": 0,
-     "playedGames": 1,
-     "goalDifference": -1
-    },
-    "away": {
-     "position": 15,
-     "points": 0,
-     "playedGames": 1,
-     "goalDifference": -2
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
     "0": 0.0408,
     "1": 0.1304,
@@ -10456,35 +10687,38 @@
     "3": 0.2226,
     "4": 0.1781,
     "5": 0.114,
-    "6": 0.0508,
-    "7": 0.0161,
-    "8": 0.0038,
-    "9": 0.0007,
+    "6": 0.0542,
+    "7": 0.0191,
+    "8": 0.0051,
+    "9": 0.001,
     "10": 0.0001
    },
-   "btts": 0.4926,
-   "analysis": "【排名】主队FC Twente Enschede排名第13（0分/1场），客队FC Zwolle排名第15（0分/1场），排名接近。\n【胜负】市场高度看好主队FC Twente Enschede，主胜隐含概率 73%（赔率 1.255 / 5.55 / 8.45）。\n【让球】主队FC Twente Enschede让 1.5 球（盘口赔率 1.755 / 2.08）。\n【波胆】泊松模型推算最可能比分：2-0（11%）、1-0（10%）、2-1（10%）。\n【大小球】2.5 球盘口：大球 51% / 小球 49%（赔率 大 1.85 / 小 1.92），倾向大球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 49%，倾向至少一方零封。\n【结论】综合赔率与消息，FC Twente Enschede不败概率更高，关注波胆 2-0 方向。",
+   "btts": 0.5436,
+   "analysis": "【胜负】市场高度看好主队FC Twente Enschede，主胜隐含概率 73%（赔率 1.255 / 5.55 / 8.45）。\n【让球】主队FC Twente Enschede让 1.5 球（盘口赔率 1.755 / 2.08）。\n【波胆】泊松模型推算最可能比分：2-0（10%）、2-1（10%）、1-0（9%）。\n【大小球】2.5 球盘口：大球 51% / 小球 49%（赔率 大 1.85 / 小 1.92），倾向大球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 54%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 73%（差 -24%），值得关注。\n【结论】综合赔率与消息，FC Twente Enschede不败概率更高，关注波胆 2-0 方向。",
    "eloProbs": {
-    "home": 0.626,
-    "draw": 0.18,
-    "away": 0.194
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "valueMarks": {
     "edges": {
-     "home": -0.054,
-     "draw": 0.033,
-     "away": 0.021
+     "home": -0.108,
+     "draw": 0.054,
+     "away": 0.054
     },
-    "picks": []
+    "picks": [
+     "draw",
+     "away"
+    ]
    }
   },
   {
    "homeTeam": "Feyenoord",
    "awayTeam": "Go Ahead Eagles",
-   "predictedScore": "1-1",
+   "predictedScore": "2-1",
    "expectedGoals": {
-    "home": 1.95,
-    "away": 1.15
+    "home": 2.11,
+    "away": 1.09
    },
    "probabilities": {
     "home": 0.701,
@@ -10505,6 +10739,7 @@
     "away": 6.0
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.257,
     "draw": -0.023,
@@ -10521,59 +10756,64 @@
     }
    },
    "eloProb": {
-    "home": 0.381,
-    "draw": 0.284,
-    "away": 0.335
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "eloRatings": {
-    "home": 1718.0,
-    "away": 1795.0
+    "home": 1500.0,
+    "away": 1500.0
    },
    "modelProbs": {
-    "home": 0.573,
-    "draw": 0.182,
-    "away": 0.245
+    "home": 0.617,
+    "draw": 0.162,
+    "away": 0.221
    },
    "valuePicks": [
     {
-     "side": "draw",
-     "label": "平局",
-     "modelProb": 0.284,
-     "oddsProb": 0.181,
-     "edge": 0.102
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.49,
+     "oddsProb": 0.667,
+     "edge": -0.177,
+     "level": "gold",
+     "modelConf": 0.215
     },
     {
      "side": "away",
      "label": "客胜",
-     "modelProb": 0.335,
+     "modelProb": 0.276,
      "oddsProb": 0.151,
-     "edge": 0.184
+     "edge": 0.125,
+     "level": "watch",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
-     "prob": 0.1091
+     "prob": 0.1013
     },
     {
      "score": "2-1",
-     "prob": 0.0986
+     "prob": 0.0991
     },
     {
      "score": "2-0",
-     "prob": 0.086
+     "prob": 0.0911
     },
     {
      "score": "1-0",
-     "prob": 0.08
+     "prob": 0.0787
     },
     {
      "score": "3-1",
-     "prob": 0.0642
+     "prob": 0.0697
     },
     {
-     "score": "1-2",
-     "prob": 0.0579
+     "score": "3-0",
+     "prob": 0.0641
     }
    ],
    "overUnder": {
@@ -10583,50 +10823,34 @@
     "overPrice": 1.89,
     "underPrice": 1.93
    },
-   "standings": {
-    "home": {
-     "position": 7,
-     "points": 3,
-     "playedGames": 1,
-     "goalDifference": 1
-    },
-    "away": {
-     "position": 2,
-     "points": 3,
-     "playedGames": 1,
-     "goalDifference": 3
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
-    "0": 0.045,
-    "1": 0.1397,
-    "2": 0.2165,
-    "3": 0.2237,
-    "4": 0.1733,
-    "5": 0.1075,
-    "6": 0.0519,
-    "7": 0.0193,
-    "8": 0.0056,
-    "9": 0.0012,
+    "0": 0.0408,
+    "1": 0.1304,
+    "2": 0.2087,
+    "3": 0.2226,
+    "4": 0.1781,
+    "5": 0.114,
+    "6": 0.0557,
+    "7": 0.0206,
+    "8": 0.0059,
+    "9": 0.0013,
     "10": 0.0002
    },
-   "btts": 0.5744,
-   "analysis": "【排名】主队Feyenoord排名第7（3分/1场），客队Go Ahead Eagles排名第2（3分/1场），客队排名领先 5 位。\n【胜负】市场高度看好主队Feyenoord，主胜隐含概率 67%（赔率 1.36 / 5.0 / 6.0）。\n【让球】主队Feyenoord让 1.5 球（盘口赔率 1.98 / 1.86）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、2-1（10%）、1-0（9%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%（赔率 大 1.89 / 小 1.93），倾向大球。\n【进球数】总进球概率：0球 4%、1球 14%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 57%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：平局 模型 28% vs 盘口 18%（差 +10%），值得关注。\n【结论】综合赔率与消息，Feyenoord不败概率更高，关注波胆 1-1 方向。",
+   "btts": 0.5682,
+   "analysis": "【胜负】市场高度看好主队Feyenoord，主胜隐含概率 67%（赔率 1.36 / 5.0 / 6.0）。\n【让球】主队Feyenoord让 1.5 球（盘口赔率 1.98 / 1.86）。\n【波胆】泊松模型推算最可能比分：2-1（10%）、1-1（9%）、2-0（9%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%（赔率 大 1.89 / 小 1.93），倾向大球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 57%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 67%（差 -18%），值得关注。\n【结论】综合赔率与消息，Feyenoord不败概率更高，关注波胆 2-1 方向。",
    "eloProbs": {
-    "home": 0.381,
-    "draw": 0.284,
-    "away": 0.335
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "valueMarks": {
     "edges": {
-     "home": -0.128,
-     "draw": 0.067,
-     "away": 0.06
+     "home": -0.084,
+     "draw": 0.047,
+     "away": 0.036
     },
-    "picks": [
-     "draw",
-     "away"
-    ]
+    "picks": []
    }
   },
   {
@@ -10634,8 +10858,8 @@
    "awayTeam": "Heerenveen",
    "predictedScore": "1-1",
    "expectedGoals": {
-    "home": 1.82,
-    "away": 1.38
+    "home": 1.92,
+    "away": 1.08
    },
    "probabilities": {
     "home": 0.636,
@@ -10656,6 +10880,7 @@
     "away": 5.0
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.184,
     "draw": -0.029,
@@ -10672,52 +10897,55 @@
     }
    },
    "eloProb": {
-    "home": 0.279,
-    "draw": 0.236,
-    "away": 0.486
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "eloRatings": {
-    "home": 1530.0,
-    "away": 1726.0
+    "home": 1500.0,
+    "away": 1500.0
    },
    "modelProbs": {
-    "home": 0.493,
-    "draw": 0.184,
-    "away": 0.323
+    "home": 0.578,
+    "draw": 0.183,
+    "away": 0.239
    },
    "valuePicks": [
     {
-     "side": "away",
-     "label": "客胜",
-     "modelProb": 0.486,
-     "oddsProb": 0.181,
-     "edge": 0.304
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.49,
+     "oddsProb": 0.603,
+     "edge": -0.112,
+     "level": "watch",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "watch",
    "correctScores": [
     {
      "score": "1-1",
-     "prob": 0.1106
+     "prob": 0.1116
     },
     {
      "score": "2-1",
-     "prob": 0.0934
-    },
-    {
-     "score": "1-2",
-     "prob": 0.0704
+     "prob": 0.0992
     },
     {
      "score": "2-0",
-     "prob": 0.0679
+     "prob": 0.0918
     },
     {
      "score": "1-0",
-     "prob": 0.0662
+     "prob": 0.0874
     },
     {
-     "score": "2-2",
-     "prob": 0.0642
+     "score": "3-1",
+     "prob": 0.0635
+    },
+    {
+     "score": "3-0",
+     "prob": 0.0588
     }
    ],
    "overUnder": {
@@ -10727,49 +10955,34 @@
     "overPrice": 1.9300000000000002,
     "underPrice": 1.9
    },
-   "standings": {
-    "home": {
-     "position": 3,
-     "points": 3,
-     "playedGames": 1,
-     "goalDifference": 2
-    },
-    "away": {
-     "position": 7,
-     "points": 3,
-     "playedGames": 1,
-     "goalDifference": 1
-    }
-   },
+   "standings": null,
    "totalGoalsDist": {
-    "0": 0.0408,
-    "1": 0.1304,
-    "2": 0.2087,
-    "3": 0.2226,
-    "4": 0.1781,
-    "5": 0.114,
-    "6": 0.0583,
-    "7": 0.0236,
-    "8": 0.0075,
-    "9": 0.0018,
-    "10": 0.0003
+    "0": 0.0498,
+    "1": 0.1494,
+    "2": 0.224,
+    "3": 0.224,
+    "4": 0.168,
+    "5": 0.1008,
+    "6": 0.0468,
+    "7": 0.0167,
+    "8": 0.0046,
+    "9": 0.001,
+    "10": 0.0001
    },
-   "btts": 0.6161,
-   "analysis": "【排名】主队Ajax排名第3（3分/1场），客队Heerenveen排名第7（3分/1场），主队排名领先 4 位。\n【胜负】市场高度看好主队Ajax，主胜隐含概率 60%（赔率 1.505 / 4.199999999999999 / 5.0）。\n【让球】主队Ajax让 1.5 球（盘口赔率 2.39 / 1.6）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、2-1（9%）、1-0（7%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%（赔率 大 1.9300000000000002 / 小 1.9），倾向小球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 62%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 49% vs 盘口 18%（差 +30%），值得关注。\n【结论】综合赔率与消息，Ajax不败概率更高，关注波胆 1-1 方向。",
+   "btts": 0.5537,
+   "analysis": "【胜负】市场高度看好主队Ajax，主胜隐含概率 60%（赔率 1.505 / 4.199999999999999 / 5.0）。\n【让球】主队Ajax让 1.5 球（盘口赔率 2.39 / 1.6）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、2-1（10%）、1-0（10%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%（赔率 大 1.9300000000000002 / 小 1.9），倾向小球。\n【进球数】总进球概率：0球 5%、1球 15%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 55%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 60%（差 -11%），值得关注。\n【结论】综合赔率与消息，Ajax不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
-    "home": 0.279,
-    "draw": 0.236,
-    "away": 0.486
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "valueMarks": {
     "edges": {
-     "home": -0.143,
-     "draw": 0.035,
-     "away": 0.108
+     "home": -0.058,
+     "draw": 0.034,
+     "away": 0.024
     },
-    "picks": [
-     "away"
-    ]
+    "picks": []
    }
   },
   {
@@ -10799,6 +11012,7 @@
     "away": 3.6
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.096,
     "draw": -0.026,
@@ -10829,6 +11043,7 @@
     "away": 0.284
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -10919,6 +11134,7 @@
     "away": 2.95
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.065,
     "draw": -0.031,
@@ -10949,6 +11165,7 @@
     "away": 0.318
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -11039,6 +11256,7 @@
     "away": 2.88
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.067,
     "draw": -0.032,
@@ -11069,6 +11287,7 @@
     "away": 0.322
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -11159,6 +11378,7 @@
     "away": 2.63
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.067,
     "draw": -0.027,
@@ -11189,6 +11409,7 @@
     "away": 0.34
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -11279,6 +11500,7 @@
     "away": 3.0
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.071,
     "draw": -0.032,
@@ -11309,6 +11531,7 @@
     "away": 0.314
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -11399,6 +11622,7 @@
     "away": 4.02
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.105,
     "draw": -0.026,
@@ -11429,6 +11653,7 @@
     "away": 0.268
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -11519,6 +11744,7 @@
     "away": 2.75
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.069,
     "draw": -0.031,
@@ -11549,6 +11775,7 @@
     "away": 0.331
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -11615,10 +11842,10 @@
   {
    "homeTeam": "Colorado Rapids",
    "awayTeam": "Sporting Kansas City",
-   "predictedScore": "1-1",
+   "predictedScore": "2-1",
    "expectedGoals": {
-    "home": 1.86,
-    "away": 1.34
+    "home": 2.02,
+    "away": 1.08
    },
    "probabilities": {
     "home": 0.667,
@@ -11639,6 +11866,7 @@
     "away": 5.6
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.198,
     "draw": -0.025,
@@ -11655,52 +11883,64 @@
     }
    },
    "eloProb": {
-    "home": 0.268,
-    "draw": 0.228,
-    "away": 0.504
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "eloRatings": {
     "home": 1500.0,
-    "away": 1710.0
+    "away": 1500.0
    },
    "modelProbs": {
-    "home": 0.507,
-    "draw": 0.173,
-    "away": 0.319
+    "home": 0.596,
+    "draw": 0.175,
+    "away": 0.228
    },
    "valuePicks": [
     {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.49,
+     "oddsProb": 0.634,
+     "edge": -0.144,
+     "level": "watch",
+     "modelConf": 0.215
+    },
+    {
      "side": "away",
      "label": "客胜",
-     "modelProb": 0.504,
+     "modelProb": 0.276,
      "oddsProb": 0.163,
-     "edge": 0.341
+     "edge": 0.113,
+     "level": "watch",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "watch",
    "correctScores": [
     {
      "score": "1-1",
-     "prob": 0.1099
+     "prob": 0.1065
     },
     {
      "score": "2-1",
-     "prob": 0.0944
+     "prob": 0.0993
     },
     {
      "score": "2-0",
-     "prob": 0.0703
-    },
-    {
-     "score": "1-2",
-     "prob": 0.0684
+     "prob": 0.0916
     },
     {
      "score": "1-0",
-     "prob": 0.0676
+     "prob": 0.083
     },
     {
-     "score": "2-2",
-     "prob": 0.0635
+     "score": "3-1",
+     "prob": 0.0667
+    },
+    {
+     "score": "3-0",
+     "prob": 0.0615
     }
    ],
    "overUnder": {
@@ -11712,34 +11952,32 @@
    },
    "standings": null,
    "totalGoalsDist": {
-    "0": 0.0408,
-    "1": 0.1304,
-    "2": 0.2087,
-    "3": 0.2226,
-    "4": 0.1781,
-    "5": 0.114,
-    "6": 0.0581,
-    "7": 0.0234,
-    "8": 0.0074,
-    "9": 0.0018,
-    "10": 0.0003
+    "0": 0.045,
+    "1": 0.1397,
+    "2": 0.2165,
+    "3": 0.2237,
+    "4": 0.1733,
+    "5": 0.1075,
+    "6": 0.0512,
+    "7": 0.0186,
+    "8": 0.0052,
+    "9": 0.0011,
+    "10": 0.0002
    },
-   "btts": 0.6127,
-   "analysis": "【胜负】市场高度看好主队Colorado Rapids，主胜隐含概率 63%（赔率 1.44 / 4.5 / 5.6）。\n【让球】主队Colorado Rapids让 1.0 球（盘口赔率 1.81 / 2.05）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、2-1（9%）、1-0（8%）。\n【大小球】2.5 球盘口：大球 46% / 小球 54%（赔率 大 2.0149999999999997 / 小 1.72），倾向小球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 61%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 50% vs 盘口 16%（差 +34%），值得关注。\n【结论】综合赔率与消息，Colorado Rapids不败概率更高，关注波胆 1-1 方向。",
+   "btts": 0.5617,
+   "analysis": "【胜负】市场高度看好主队Colorado Rapids，主胜隐含概率 63%（赔率 1.44 / 4.5 / 5.6）。\n【让球】主队Colorado Rapids让 1.0 球（盘口赔率 1.81 / 2.05）。\n【波胆】泊松模型推算最可能比分：2-1（10%）、1-1（10%）、2-0（9%）。\n【大小球】2.5 球盘口：大球 46% / 小球 54%（赔率 大 2.0149999999999997 / 小 1.72），倾向小球。\n【进球数】总进球概率：0球 4%、1球 14%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 56%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 63%（差 -14%），值得关注。\n【结论】综合赔率与消息，Colorado Rapids不败概率更高，关注波胆 2-1 方向。",
    "eloProbs": {
-    "home": 0.268,
-    "draw": 0.228,
-    "away": 0.504
+    "home": 0.49,
+    "draw": 0.234,
+    "away": 0.276
    },
    "valueMarks": {
     "edges": {
-     "home": -0.16,
-     "draw": 0.037,
-     "away": 0.123
+     "home": -0.071,
+     "draw": 0.039,
+     "away": 0.032
     },
-    "picks": [
-     "away"
-    ]
+    "picks": []
    }
   },
   {
@@ -11769,6 +12007,7 @@
     "away": 3.95
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.116,
     "draw": -0.032,
@@ -11804,9 +12043,30 @@
      "label": "主胜",
      "modelProb": 0.798,
      "oddsProb": 0.522,
-     "edge": 0.276
+     "edge": 0.276,
+     "level": "gold",
+     "modelConf": 0.684
+    },
+    {
+     "side": "draw",
+     "label": "平局",
+     "modelProb": 0.115,
+     "oddsProb": 0.247,
+     "edge": -0.132,
+     "level": "watch",
+     "modelConf": 0.684
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.087,
+     "oddsProb": 0.231,
+     "edge": -0.144,
+     "level": "watch",
+     "modelConf": 0.684
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "2-0",
@@ -11899,6 +12159,7 @@
     "away": 4.85
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.151,
     "draw": -0.024,
@@ -11928,7 +12189,18 @@
     "draw": 0.179,
     "away": 0.244
    },
-   "valuePicks": [],
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.49,
+     "oddsProb": 0.601,
+     "edge": -0.111,
+     "level": "watch",
+     "modelConf": 0.215
+    }
+   ],
+   "signalLevel": "watch",
    "correctScores": [
     {
      "score": "1-1",
@@ -11977,7 +12249,7 @@
     "10": 0.0002
    },
    "btts": 0.5744,
-   "analysis": "【胜负】市场高度看好主队Los Angeles FC，主胜隐含概率 60%（赔率 1.53 / 4.4 / 4.85）。\n【让球】主队Los Angeles FC让 1.0 球（盘口赔率 1.98 / 1.86）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、2-1（10%）、1-0（9%）。\n【大小球】2.5 球盘口：大球 46% / 小球 54%（赔率 大 1.995 / 小 1.7349999999999999），倾向小球。\n【进球数】总进球概率：0球 4%、1球 14%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 57%，倾向双方有球。\n【结论】综合赔率与消息，Los Angeles FC不败概率更高，关注波胆 1-1 方向。",
+   "analysis": "【胜负】市场高度看好主队Los Angeles FC，主胜隐含概率 60%（赔率 1.53 / 4.4 / 4.85）。\n【让球】主队Los Angeles FC让 1.0 球（盘口赔率 1.98 / 1.86）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、2-1（10%）、1-0（9%）。\n【大小球】2.5 球盘口：大球 46% / 小球 54%（赔率 大 1.995 / 小 1.7349999999999999），倾向小球。\n【进球数】总进球概率：0球 4%、1球 14%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 57%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 60%（差 -11%），值得关注。\n【结论】综合赔率与消息，Los Angeles FC不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
     "home": 0.49,
     "draw": 0.234,
@@ -12019,6 +12291,7 @@
     "away": 3.2
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.089,
     "draw": -0.031,
@@ -12049,6 +12322,7 @@
     "away": 0.317
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -12139,6 +12413,7 @@
     "away": 4.9
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.17,
     "draw": -0.024,
@@ -12168,7 +12443,18 @@
     "draw": 0.176,
     "away": 0.242
    },
-   "valuePicks": [],
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.49,
+     "oddsProb": 0.61,
+     "edge": -0.119,
+     "level": "watch",
+     "modelConf": 0.215
+    }
+   ],
+   "signalLevel": "watch",
    "correctScores": [
     {
      "score": "1-1",
@@ -12217,7 +12503,7 @@
     "10": 0.0002
    },
    "btts": 0.5683,
-   "analysis": "【胜负】市场高度看好主队Chicago Fire，主胜隐含概率 61%（赔率 1.5 / 4.5 / 4.9）。\n【让球】主队Chicago Fire让 1.0 球（盘口赔率 1.85 / 1.9649999999999999）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、2-1（10%）、1-0（9%）。\n【大小球】2.5 球盘口：大球 51% / 小球 49%（赔率 大 1.83 / 小 1.93），倾向大球。\n【进球数】总进球概率：0球 4%、1球 14%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 57%，倾向双方有球。\n【结论】综合赔率与消息，Chicago Fire不败概率更高，关注波胆 1-1 方向。",
+   "analysis": "【胜负】市场高度看好主队Chicago Fire，主胜隐含概率 61%（赔率 1.5 / 4.5 / 4.9）。\n【让球】主队Chicago Fire让 1.0 球（盘口赔率 1.85 / 1.9649999999999999）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、2-1（10%）、1-0（9%）。\n【大小球】2.5 球盘口：大球 51% / 小球 49%（赔率 大 1.83 / 小 1.93），倾向大球。\n【进球数】总进球概率：0球 4%、1球 14%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 57%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 61%（差 -12%），值得关注。\n【结论】综合赔率与消息，Chicago Fire不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
     "home": 0.49,
     "draw": 0.234,
@@ -12259,6 +12545,7 @@
     "away": 3.04
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.07,
     "draw": -0.029,
@@ -12289,6 +12576,7 @@
     "away": 0.313
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -12379,6 +12667,7 @@
     "away": 2.23
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.047,
     "draw": -0.033,
@@ -12414,9 +12703,21 @@
      "label": "主胜",
      "modelProb": 0.49,
      "oddsProb": 0.331,
-     "edge": 0.16
+     "edge": 0.16,
+     "level": "gold",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.411,
+     "edge": -0.135,
+     "level": "watch",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -12509,6 +12810,7 @@
     "away": 1.93
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.036,
     "draw": -0.031,
@@ -12544,9 +12846,21 @@
      "label": "主胜",
      "modelProb": 0.49,
      "oddsProb": 0.278,
-     "edge": 0.213
+     "edge": 0.213,
+     "level": "gold",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.475,
+     "edge": -0.199,
+     "level": "gold",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -12639,6 +12953,7 @@
     "away": 4.8
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.172,
     "draw": -0.028,
@@ -12668,7 +12983,18 @@
     "draw": 0.183,
     "away": 0.244
    },
-   "valuePicks": [],
+   "valuePicks": [
+    {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.49,
+     "oddsProb": 0.594,
+     "edge": -0.104,
+     "level": "watch",
+     "modelConf": 0.215
+    }
+   ],
+   "signalLevel": "watch",
    "correctScores": [
     {
      "score": "1-1",
@@ -12717,7 +13043,7 @@
     "10": 0.0001
    },
    "btts": 0.5597,
-   "analysis": "【胜负】市场高度看好主队Columbus Crew SC，主胜隐含概率 59%（赔率 1.53 / 4.2 / 4.8）。\n【让球】主队Columbus Crew SC让 1.5 球（盘口赔率 2.375 / 1.58）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、2-1（10%）、1-0（9%）。\n【大小球】2.5 球盘口：大球 52% / 小球 48%（赔率 大 1.8 / 小 1.98），倾向大球。\n【进球数】总进球概率：0球 5%、1球 15%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 56%，倾向双方有球。\n【结论】综合赔率与消息，Columbus Crew SC不败概率更高，关注波胆 1-1 方向。",
+   "analysis": "【胜负】市场高度看好主队Columbus Crew SC，主胜隐含概率 59%（赔率 1.53 / 4.2 / 4.8）。\n【让球】主队Columbus Crew SC让 1.5 球（盘口赔率 2.375 / 1.58）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、2-1（10%）、1-0（9%）。\n【大小球】2.5 球盘口：大球 52% / 小球 48%（赔率 大 1.8 / 小 1.98），倾向大球。\n【进球数】总进球概率：0球 5%、1球 15%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 56%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 59%（差 -10%），值得关注。\n【结论】综合赔率与消息，Columbus Crew SC不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
     "home": 0.49,
     "draw": 0.234,
@@ -12759,6 +13085,7 @@
     "away": 2.6
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.079,
     "draw": -0.039,
@@ -12789,6 +13116,7 @@
     "away": 0.338
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -12879,6 +13207,7 @@
     "away": 2.15
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.056,
     "draw": -0.032,
@@ -12914,9 +13243,21 @@
      "label": "主胜",
      "modelProb": 0.49,
      "oddsProb": 0.342,
-     "edge": 0.149
+     "edge": 0.149,
+     "level": "watch",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.422,
+     "edge": -0.146,
+     "level": "watch",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "watch",
    "correctScores": [
     {
      "score": "1-1",
@@ -13007,6 +13348,7 @@
     "away": 3.2
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.098,
     "draw": -0.036,
@@ -13037,6 +13379,7 @@
     "away": 0.301
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -13127,6 +13470,7 @@
     "away": 2.88
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.088,
     "draw": -0.032,
@@ -13157,6 +13501,7 @@
     "away": 0.32
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -13247,6 +13592,7 @@
     "away": 2.3
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.075,
     "draw": -0.037,
@@ -13282,9 +13628,21 @@
      "label": "主胜",
      "modelProb": 0.49,
      "oddsProb": 0.375,
-     "edge": 0.116
+     "edge": 0.116,
+     "level": "watch",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.389,
+     "edge": -0.114,
+     "level": "watch",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "watch",
    "correctScores": [
     {
      "score": "1-1",
@@ -13375,6 +13733,7 @@
     "away": 2.165
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.062,
     "draw": -0.037,
@@ -13410,9 +13769,21 @@
      "label": "主胜",
      "modelProb": 0.49,
      "oddsProb": 0.343,
-     "edge": 0.148
+     "edge": 0.148,
+     "level": "watch",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.416,
+     "edge": -0.14,
+     "level": "watch",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "watch",
    "correctScores": [
     {
      "score": "1-1",
@@ -13481,8 +13852,8 @@
    "awayTeam": "St. Louis City SC",
    "predictedScore": "1-1",
    "expectedGoals": {
-    "home": 1.76,
-    "away": 1.44
+    "home": 1.39,
+    "away": 1.51
    },
    "probabilities": {
     "home": 0.326,
@@ -13503,6 +13874,7 @@
     "away": 1.95
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.044,
     "draw": -0.034,
@@ -13519,52 +13891,64 @@
     }
    },
    "eloProb": {
-    "home": 0.694,
-    "draw": 0.155,
-    "away": 0.151
+    "home": 0.427,
+    "draw": 0.262,
+    "away": 0.311
    },
    "eloRatings": {
-    "home": 1710.0,
+    "home": 1500.0,
     "away": 1545.0
    },
    "modelProbs": {
-    "home": 0.473,
-    "draw": 0.167,
-    "away": 0.36
+    "home": 0.366,
+    "draw": 0.21,
+    "away": 0.424
    },
    "valuePicks": [
     {
      "side": "home",
      "label": "主胜",
-     "modelProb": 0.694,
+     "modelProb": 0.427,
      "oddsProb": 0.293,
-     "edge": 0.402
+     "edge": 0.134,
+     "level": "watch",
+     "modelConf": 0.116
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.311,
+     "oddsProb": 0.465,
+     "edge": -0.154,
+     "level": "watch",
+     "modelConf": 0.116
     }
    ],
+   "signalLevel": "watch",
    "correctScores": [
     {
      "score": "1-1",
-     "prob": 0.1116
-    },
-    {
-     "score": "2-1",
-     "prob": 0.091
+     "prob": 0.1248
     },
     {
      "score": "1-2",
-     "prob": 0.0744
+     "prob": 0.0871
     },
     {
-     "score": "2-2",
-     "prob": 0.0655
+     "score": "2-1",
+     "prob": 0.0804
+    },
+    {
+     "score": "0-1",
+     "prob": 0.0738
     },
     {
      "score": "1-0",
-     "prob": 0.0635
+     "prob": 0.0674
     },
     {
-     "score": "2-0",
-     "prob": 0.0632
+     "score": "0-0",
+     "prob": 0.0643
     }
    ],
    "overUnder": {
@@ -13576,34 +13960,32 @@
    },
    "standings": null,
    "totalGoalsDist": {
-    "0": 0.0408,
-    "1": 0.1304,
-    "2": 0.2087,
-    "3": 0.2226,
-    "4": 0.1781,
-    "5": 0.114,
-    "6": 0.0586,
-    "7": 0.024,
-    "8": 0.0077,
-    "9": 0.0019,
-    "10": 0.0003
+    "0": 0.055,
+    "1": 0.1596,
+    "2": 0.2314,
+    "3": 0.2237,
+    "4": 0.1622,
+    "5": 0.094,
+    "6": 0.044,
+    "7": 0.0164,
+    "8": 0.0048,
+    "9": 0.0011,
+    "10": 0.0002
    },
-   "btts": 0.6216,
-   "analysis": "【胜负】比赛悬念较大，主胜 29% / 平 24% / 客胜 47%（赔率 3.1 / 3.75 / 1.95）。\n【让球】客队St. Louis City SC让 1.0 球（盘口赔率 1.4 / 2.89）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、2-1（9%）、1-2（7%）。\n【大小球】2.5 球盘口：大球 46% / 小球 54%（赔率 大 2.05 / 小 1.72），倾向小球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 62%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 69% vs 盘口 29%（差 +40%），值得关注。\n【结论】综合赔率与消息，St. Louis City SC不败概率更高，关注波胆 1-1 方向。",
+   "btts": 0.5792,
+   "analysis": "【胜负】比赛悬念较大，主胜 29% / 平 24% / 客胜 47%（赔率 3.1 / 3.75 / 1.95）。\n【让球】客队St. Louis City SC让 1.0 球（盘口赔率 1.4 / 2.89）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-2（9%）、0-1（8%）。\n【大小球】2.5 球盘口：大球 46% / 小球 54%（赔率 大 2.05 / 小 1.72），倾向小球。\n【进球数】总进球概率：0球 6%、1球 16%、2球 23%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 58%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 43% vs 盘口 29%（差 +13%），值得关注。\n【结论】综合赔率与消息，St. Louis City SC不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
-    "home": 0.694,
-    "draw": 0.155,
-    "away": 0.151
+    "home": 0.427,
+    "draw": 0.262,
+    "away": 0.311
    },
    "valueMarks": {
     "edges": {
-     "home": 0.147,
-     "draw": -0.008,
-     "away": -0.139
+     "home": 0.04,
+     "draw": 0.035,
+     "away": -0.075
     },
-    "picks": [
-     "home"
-    ]
+    "picks": []
    }
   },
   {
@@ -13633,6 +14015,7 @@
     "away": 4.33
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.14,
     "draw": -0.033,
@@ -13663,6 +14046,7 @@
     "away": 0.256
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -13753,6 +14137,7 @@
     "away": 4.5
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.173,
     "draw": -0.033,
@@ -13783,6 +14168,7 @@
     "away": 0.251
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -13873,6 +14259,7 @@
     "away": 2.25
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.06,
     "draw": -0.037,
@@ -13908,9 +14295,21 @@
      "label": "主胜",
      "modelProb": 0.49,
      "oddsProb": 0.347,
-     "edge": 0.143
+     "edge": 0.143,
+     "level": "watch",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.402,
+     "edge": -0.126,
+     "level": "watch",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "watch",
    "correctScores": [
     {
      "score": "1-1",
@@ -14001,6 +14400,7 @@
     "away": 3.5
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.134,
     "draw": -0.036,
@@ -14036,9 +14436,30 @@
      "label": "主胜",
      "modelProb": 0.798,
      "oddsProb": 0.51,
-     "edge": 0.288
+     "edge": 0.288,
+     "level": "gold",
+     "modelConf": 0.684
+    },
+    {
+     "side": "draw",
+     "label": "平局",
+     "modelProb": 0.115,
+     "oddsProb": 0.233,
+     "edge": -0.119,
+     "level": "watch",
+     "modelConf": 0.684
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.087,
+     "oddsProb": 0.257,
+     "edge": -0.17,
+     "level": "gold",
+     "modelConf": 0.684
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "2-0",
@@ -14131,6 +14552,7 @@
     "away": 5.5
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.204,
     "draw": -0.026,
@@ -14162,13 +14584,25 @@
    },
    "valuePicks": [
     {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.49,
+     "oddsProb": 0.632,
+     "edge": -0.142,
+     "level": "watch",
+     "modelConf": 0.215
+    },
+    {
      "side": "away",
      "label": "客胜",
      "modelProb": 0.276,
      "oddsProb": 0.166,
-     "edge": 0.11
+     "edge": 0.11,
+     "level": "watch",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "watch",
    "correctScores": [
     {
      "score": "1-1",
@@ -14217,7 +14651,7 @@
     "10": 0.0002
    },
    "btts": 0.5617,
-   "analysis": "【胜负】市场高度看好主队Vancouver Whitecaps FC，主胜隐含概率 63%（赔率 1.44 / 4.5 / 5.5）。\n【让球】主队Vancouver Whitecaps FC让 1.5 球（盘口赔率 2.1900000000000004 / 1.67）。\n【波胆】泊松模型推算最可能比分：2-1（10%）、1-1（10%）、2-0（9%）。\n【大小球】2.5 球盘口：大球 46% / 小球 55%（赔率 大 2.05 / 小 1.71），倾向小球。\n【进球数】总进球概率：0球 4%、1球 14%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 56%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 28% vs 盘口 17%（差 +11%），值得关注。\n【结论】综合赔率与消息，Vancouver Whitecaps FC不败概率更高，关注波胆 2-1 方向。",
+   "analysis": "【胜负】市场高度看好主队Vancouver Whitecaps FC，主胜隐含概率 63%（赔率 1.44 / 4.5 / 5.5）。\n【让球】主队Vancouver Whitecaps FC让 1.5 球（盘口赔率 2.1900000000000004 / 1.67）。\n【波胆】泊松模型推算最可能比分：2-1（10%）、1-1（10%）、2-0（9%）。\n【大小球】2.5 球盘口：大球 46% / 小球 55%（赔率 大 2.05 / 小 1.71），倾向小球。\n【进球数】总进球概率：0球 4%、1球 14%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 56%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 63%（差 -14%），值得关注。\n【结论】综合赔率与消息，Vancouver Whitecaps FC不败概率更高，关注波胆 2-1 方向。",
    "eloProbs": {
     "home": 0.49,
     "draw": 0.234,
@@ -14259,6 +14693,7 @@
     "away": 2.425
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.079,
     "draw": -0.038,
@@ -14294,9 +14729,12 @@
      "label": "主胜",
      "modelProb": 0.49,
      "oddsProb": 0.39,
-     "edge": 0.101
+     "edge": 0.101,
+     "level": "watch",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "watch",
    "correctScores": [
     {
      "score": "1-1",
@@ -14387,6 +14825,7 @@
     "away": 3.0
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.106,
     "draw": -0.032,
@@ -14417,6 +14856,7 @@
     "away": 0.311
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -14507,6 +14947,7 @@
     "away": 4.4
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.095,
     "draw": -0.02,
@@ -14537,6 +14978,7 @@
     "away": 0.258
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -14640,6 +15082,7 @@
     "away": 5.0
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.115,
     "draw": -0.022,
@@ -14675,9 +15118,12 @@
      "label": "主胜",
      "modelProb": 0.751,
      "oddsProb": 0.586,
-     "edge": 0.165
+     "edge": 0.165,
+     "level": "gold",
+     "modelConf": 0.618
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "2-0",
@@ -14783,6 +15229,7 @@
     "away": 2.63
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.05,
     "draw": -0.03,
@@ -14818,9 +15265,30 @@
      "label": "主胜",
      "modelProb": 0.809,
      "oddsProb": 0.379,
-     "edge": 0.43
+     "edge": 0.43,
+     "level": "gold",
+     "modelConf": 0.698
+    },
+    {
+     "side": "draw",
+     "label": "平局",
+     "modelProb": 0.11,
+     "oddsProb": 0.269,
+     "edge": -0.158,
+     "level": "gold",
+     "modelConf": 0.698
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.081,
+     "oddsProb": 0.353,
+     "edge": -0.272,
+     "level": "gold",
+     "modelConf": 0.698
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -14926,6 +15394,7 @@
     "away": 3.1
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.059,
     "draw": -0.027,
@@ -14957,13 +15426,25 @@
    },
    "valuePicks": [
     {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.197,
+     "oddsProb": 0.433,
+     "edge": -0.237,
+     "level": "gold",
+     "modelConf": 0.425
+    },
+    {
      "side": "away",
      "label": "客胜",
      "modelProb": 0.622,
      "oddsProb": 0.301,
-     "edge": 0.321
+     "edge": 0.321,
+     "level": "gold",
+     "modelConf": 0.425
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -15025,7 +15506,7 @@
     "10": 0.0003
    },
    "btts": 0.6253,
-   "analysis": "【排名】主队Nice排名第1（0分/0场），客队Lorient排名第1（0分/0场），排名接近。\n【胜负】双方实力接近，主队Nice略占优（主胜 43% vs 客胜 30%）（赔率 2.15 / 3.5 / 3.1）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.67 / 2.4）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、1-2（9%）、2-1（8%）。\n【大小球】2.5 球盘口：大球 54% / 小球 46%（赔率 大 1.75 / 小 2.0549999999999997），倾向大球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 63%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 62% vs 盘口 30%（差 +32%），值得关注。\n【结论】综合赔率与消息，Nice不败概率更高，关注波胆 1-1 方向。",
+   "analysis": "【排名】主队Nice排名第1（0分/0场），客队Lorient排名第1（0分/0场），排名接近。\n【胜负】双方实力接近，主队Nice略占优（主胜 43% vs 客胜 30%）（赔率 2.15 / 3.5 / 3.1）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.67 / 2.4）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、1-2（9%）、2-1（8%）。\n【大小球】2.5 球盘口：大球 54% / 小球 46%（赔率 大 1.75 / 小 2.0549999999999997），倾向大球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 63%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 20% vs 盘口 43%（差 -24%），值得关注。\n【结论】综合赔率与消息，Nice不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
     "home": 0.197,
     "draw": 0.182,
@@ -15069,6 +15550,7 @@
     "away": 2.0
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.03,
     "draw": -0.027,
@@ -15104,9 +15586,30 @@
      "label": "主胜",
      "modelProb": 0.809,
      "oddsProb": 0.277,
-     "edge": 0.531
+     "edge": 0.531,
+     "level": "gold",
+     "modelConf": 0.698
+    },
+    {
+     "side": "draw",
+     "label": "平局",
+     "modelProb": 0.11,
+     "oddsProb": 0.258,
+     "edge": -0.148,
+     "level": "watch",
+     "modelConf": 0.698
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.081,
+     "oddsProb": 0.465,
+     "edge": -0.384,
+     "level": "gold",
+     "modelConf": 0.698
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -15199,6 +15702,7 @@
     "away": 2.4
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.04,
     "draw": -0.027,
@@ -15230,13 +15734,25 @@
    },
    "valuePicks": [
     {
+     "side": "home",
+     "label": "主胜",
+     "modelProb": 0.197,
+     "oddsProb": 0.345,
+     "edge": -0.149,
+     "level": "watch",
+     "modelConf": 0.425
+    },
+    {
      "side": "away",
      "label": "客胜",
      "modelProb": 0.622,
      "oddsProb": 0.388,
-     "edge": 0.233
+     "edge": 0.233,
+     "level": "gold",
+     "modelConf": 0.425
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -15298,7 +15814,7 @@
     "10": 0.0002
    },
    "btts": 0.5981,
-   "analysis": "【排名】主队Troyes排名第1（0分/0场），客队Paris FC排名第1（0分/0场），排名接近。\n【胜负】比赛悬念较大，主胜 35% / 平 27% / 客胜 39%（赔率 2.7 / 3.5 / 2.4）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 2.06 / 1.81）。\n【波胆】泊松模型推算最可能比分：1-1（11%）、1-2（9%）、0-1（8%）。\n【大小球】2.5 球盘口：大球 56% / 小球 44%（赔率 大 1.6749999999999998 / 小 2.15），倾向大球。\n【进球数】总进球概率：0球 4%、1球 14%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 60%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 62% vs 盘口 39%（差 +23%），值得关注。\n【结论】综合赔率与消息，Paris FC不败概率更高，关注波胆 1-1 方向。",
+   "analysis": "【排名】主队Troyes排名第1（0分/0场），客队Paris FC排名第1（0分/0场），排名接近。\n【胜负】比赛悬念较大，主胜 35% / 平 27% / 客胜 39%（赔率 2.7 / 3.5 / 2.4）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 2.06 / 1.81）。\n【波胆】泊松模型推算最可能比分：1-1（11%）、1-2（9%）、0-1（8%）。\n【大小球】2.5 球盘口：大球 56% / 小球 44%（赔率 大 1.6749999999999998 / 小 2.15），倾向大球。\n【进球数】总进球概率：0球 4%、1球 14%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 60%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 20% vs 盘口 34%（差 -15%），值得关注。\n【结论】综合赔率与消息，Paris FC不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
     "home": 0.197,
     "draw": 0.182,
@@ -15342,6 +15858,7 @@
     "away": 1.67
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.017,
     "draw": -0.025,
@@ -15377,9 +15894,21 @@
      "label": "主胜",
      "modelProb": 0.49,
      "oddsProb": 0.19,
-     "edge": 0.3
+     "edge": 0.3,
+     "level": "gold",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.558,
+     "edge": -0.282,
+     "level": "gold",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -15485,6 +16014,7 @@
     "away": 2.0
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.028,
     "draw": -0.024,
@@ -15520,9 +16050,21 @@
      "label": "主胜",
      "modelProb": 0.49,
      "oddsProb": 0.283,
-     "edge": 0.207
+     "edge": 0.207,
+     "level": "gold",
+     "modelConf": 0.215
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.276,
+     "oddsProb": 0.467,
+     "edge": -0.192,
+     "level": "gold",
+     "modelConf": 0.215
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -15628,6 +16170,7 @@
     "away": 6.5
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.17,
     "draw": -0.015,
@@ -15663,9 +16206,12 @@
      "label": "主胜",
      "modelProb": 0.809,
      "oddsProb": 0.678,
-     "edge": 0.131
+     "edge": 0.131,
+     "level": "watch",
+     "modelConf": 0.698
     }
    ],
+   "signalLevel": "watch",
    "correctScores": [
     {
      "score": "2-0",
@@ -15756,6 +16302,7 @@
     "away": 15.42
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.423,
     "draw": -0.01,
@@ -15786,6 +16333,7 @@
     "away": 0.089
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "2-0",
@@ -15834,7 +16382,7 @@
     "10": 0.0001
    },
    "btts": 0.4809,
-   "analysis": "【胜负】市场高度看好主队Arsenal，主胜隐含概率 81%（赔率 1.15 / 7.5 / 15.42）。\n【让球】主队Arsenal让 2.0 球（盘口赔率 1.9 / 1.95）。\n【波胆】泊松模型推算最可能比分：2-0（12%）、1-0（10%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%（赔率 大 1.93 / 小 1.93），倾向大球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 48%，倾向至少一方零封。\n【消息面】Arsenal信号 +0.00（1条提及）。\n【结论】综合赔率与消息，Arsenal不败概率更高，关注波胆 2-0 方向。",
+   "analysis": "【胜负】市场高度看好主队Arsenal，主胜隐含概率 81%（赔率 1.15 / 7.5 / 15.42）。\n【让球】主队Arsenal让 2.0 球（盘口赔率 1.9 / 1.95）。\n【波胆】泊松模型推算最可能比分：2-0（12%）、1-0（10%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%（赔率 大 1.93 / 小 1.93），倾向大球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 48%，倾向至少一方零封。\n【消息面】Arsenal信号 +0.00（2条提及）。\n【结论】综合赔率与消息，Arsenal不败概率更高，关注波胆 2-0 方向。",
    "eloProbs": {
     "home": 0.809,
     "draw": 0.11,
@@ -15876,6 +16424,7 @@
     "away": 1.43
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.01,
     "draw": -0.017,
@@ -15906,6 +16455,7 @@
     "away": 0.648
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -15996,6 +16546,7 @@
     "away": 3.4
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.055,
     "draw": -0.025,
@@ -16026,6 +16577,7 @@
     "away": 0.287
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -16129,6 +16681,7 @@
     "away": 2.55
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.036,
     "draw": -0.027,
@@ -16164,9 +16717,12 @@
      "label": "客胜",
      "modelProb": 0.504,
      "oddsProb": 0.368,
-     "edge": 0.136
+     "edge": 0.136,
+     "level": "watch",
+     "modelConf": 0.237
     }
    ],
+   "signalLevel": "watch",
    "correctScores": [
     {
      "score": "1-1",
@@ -16257,6 +16813,7 @@
     "away": 3.1
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.055,
     "draw": -0.028,
@@ -16287,6 +16844,7 @@
     "away": 0.32
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -16390,6 +16948,7 @@
     "away": 2.75
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.046,
     "draw": -0.025,
@@ -16425,9 +16984,21 @@
      "label": "主胜",
      "modelProb": 0.645,
      "oddsProb": 0.392,
-     "edge": 0.253
+     "edge": 0.253,
+     "level": "gold",
+     "modelConf": 0.463
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.182,
+     "oddsProb": 0.341,
+     "edge": -0.159,
+     "level": "gold",
+     "modelConf": 0.463
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -16533,6 +17104,7 @@
     "away": 2.88
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.05,
     "draw": -0.024,
@@ -16563,6 +17135,7 @@
     "away": 0.344
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -16666,6 +17239,7 @@
     "away": 6.0
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.139,
     "draw": -0.016,
@@ -16696,6 +17270,7 @@
     "away": 0.205
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "2-1",
@@ -16799,6 +17374,7 @@
     "away": 2.05
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.03,
     "draw": -0.023,
@@ -16829,6 +17405,7 @@
     "away": 0.437
    },
    "valuePicks": [],
+   "signalLevel": "none",
    "correctScores": [
     {
      "score": "1-1",
@@ -16932,6 +17509,7 @@
     "away": 2.15
    },
    "oddsChange": null,
+   "prevOdds": null,
    "kelly": {
     "home": -0.031,
     "draw": -0.024,
@@ -16967,9 +17545,21 @@
      "label": "主胜",
      "modelProb": 0.47,
      "oddsProb": 0.307,
-     "edge": 0.162
+     "edge": 0.162,
+     "level": "gold",
+     "modelConf": 0.182
+    },
+    {
+     "side": "away",
+     "label": "客胜",
+     "modelProb": 0.288,
+     "oddsProb": 0.436,
+     "edge": -0.148,
+     "level": "watch",
+     "modelConf": 0.182
     }
    ],
+   "signalLevel": "gold",
    "correctScores": [
     {
      "score": "1-1",
@@ -17052,14 +17642,14 @@
  "disclaimer": "本结果仅用于个人数据分析与研究, 不构成任何投注建议",
  "stats": {
   "total": 217,
-  "finished": 16,
+  "finished": 10,
   "exactHit": 1,
-  "exactRate": 0.0625,
-  "outcomeHit": 5,
-  "outcomeRate": 0.3125,
+  "exactRate": 0.1,
+  "outcomeHit": 3,
+  "outcomeRate": 0.3,
   "valueTotal": 0,
   "valueHit": 0,
   "valueRate": 0,
-  "updatedAt": "2026-08-10T14:41:44Z"
+  "updatedAt": "2026-08-10T15:21:01Z"
  }
 }
