@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T13:36:33Z",
+  "generatedAt": "2026-08-10T15:48:55Z",
   "league": "BL1",
   "matches": [
     {
@@ -10,7 +10,7 @@
       "markets": {
         "h2h": {
           "home": 1.29,
-          "draw": 6.0,
+          "draw": 6.4,
           "away": 8.0
         },
         "totals": {
@@ -32,7 +32,7 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 39
+      "bookmakers": 21
     },
     {
       "homeTeam": "1. FC Köln",
@@ -41,14 +41,14 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.8,
+          "home": 2.85,
           "draw": 3.65,
-          "away": 2.28
+          "away": 2.3
         },
         "totals": {
           "line": 2.5,
-          "over": 1.56,
-          "under": 2.29
+          "over": 1.57,
+          "under": 2.28
         },
         "spreads": {
           "home": {
@@ -64,7 +64,7 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 39
+      "bookmakers": 21
     },
     {
       "homeTeam": "Elversberg",
@@ -73,14 +73,14 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 5.1,
+          "home": 5.23,
           "draw": 4.5,
-          "away": 1.53
+          "away": 1.55
         },
         "totals": {
           "line": 2.5,
-          "over": 2.105,
-          "under": 1.68
+          "over": 2.06,
+          "under": 1.74
         },
         "spreads": {
           "home": {
@@ -96,7 +96,7 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 39
+      "bookmakers": 21
     },
     {
       "homeTeam": "RB Leipzig",
@@ -105,14 +105,14 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.53,
-          "draw": 4.5,
-          "away": 5.1
+          "home": 1.54,
+          "draw": 4.6,
+          "away": 5.3
         },
         "totals": {
           "line": 2.5,
           "over": 2.05,
-          "under": 1.71
+          "under": 1.72
         },
         "spreads": {
           "home": {
@@ -128,7 +128,7 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 39
+      "bookmakers": 21
     },
     {
       "homeTeam": "Union Berlin",
@@ -137,30 +137,30 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.35,
+          "home": 2.4,
           "draw": 3.5,
           "away": 2.8
         },
         "totals": {
           "line": 2.5,
-          "over": 1.69,
-          "under": 2.1100000000000003
+          "over": 1.72,
+          "under": 2.1
         },
         "spreads": {
           "home": {
             "point": 0.0,
-            "price": 1.775
+            "price": 1.82
           },
           "away": {
             "point": 0.0,
-            "price": 2.1550000000000002
+            "price": 2.1
           }
         }
       },
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 39
+      "bookmakers": 21
     },
     {
       "homeTeam": "FSV Mainz 05",
@@ -169,9 +169,9 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.67,
-          "draw": 3.95,
-          "away": 4.5
+          "home": 1.69,
+          "draw": 4.0,
+          "away": 4.6
         },
         "totals": {
           "line": 2.5,
@@ -192,7 +192,7 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 39
+      "bookmakers": 21
     },
     {
       "homeTeam": "Borussia Dortmund",
@@ -201,14 +201,14 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.32,
-          "draw": 5.25,
-          "away": 8.2
+          "home": 1.33,
+          "draw": 5.5,
+          "away": 8.19
         },
         "totals": {
           "line": 2.5,
           "over": 1.56,
-          "under": 2.315
+          "under": 2.25
         },
         "spreads": {
           "home": {
@@ -224,7 +224,7 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 39
+      "bookmakers": 21
     },
     {
       "homeTeam": "SC Freiburg",
@@ -233,14 +233,14 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.02,
-          "draw": 3.6,
-          "away": 3.4
+          "home": 2.03,
+          "draw": 3.5,
+          "away": 3.55
         },
         "totals": {
           "line": 2.5,
-          "over": 1.7149999999999999,
-          "under": 2.09
+          "over": 1.75,
+          "under": 2.05
         },
         "spreads": {
           "home": {
@@ -256,7 +256,7 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 36
+      "bookmakers": 20
     },
     {
       "homeTeam": "Augsburg",
@@ -267,12 +267,12 @@
         "h2h": {
           "home": 2.1,
           "draw": 3.7,
-          "away": 3.1
+          "away": 3.15
         },
         "totals": {
           "line": 2.5,
-          "over": 1.565,
-          "under": 2.325
+          "over": 1.6,
+          "under": 2.28
         },
         "spreads": {
           "home": {
@@ -288,7 +288,7 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 37
+      "bookmakers": 21
     }
   ]
 }

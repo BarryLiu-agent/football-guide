@@ -6,7 +6,7 @@
       "apiKeyEnv": "ODDS_API_KEY",
       "baseUrl": "https://api.the-odds-api.com/v4",
       "markets": ["h2h", "totals", "spreads"],
-      "regions": ["eu", "uk"]
+      "regions": ["eu"]
     }
   }
 }

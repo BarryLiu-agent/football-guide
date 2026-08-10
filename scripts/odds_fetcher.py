@@ -33,6 +33,16 @@ CONFIG_DIR = ROOT / "config"
 DATA_DIR = ROOT / "data"
 ODDS_DIR = DATA_DIR / "odds"
 
+# 加载 .env（不覆盖已存在的环境变量），避免每次会话手动 export
+_env_file = ROOT / ".env"
+if _env_file.exists():
+    for _line in _env_file.read_text(encoding="utf-8").splitlines():
+        _line = _line.strip()
+        if _line and not _line.startswith("#") and "=" in _line:
+            _k, _v = _line.split("=", 1)
+            if _k.strip() and _v.strip() and not os.environ.get(_k.strip()):
+                os.environ[_k.strip()] = _v.strip()
+
 
 # ── 抽象接口 ─────────────────────────────────────────────
 
@@ -59,7 +69,7 @@ class TheOddsApiSource(OddsSource):
     配额保护：剩余 < MIN_REMAINING 的 Key 自动跳过；401/403 时自动切换下一个。
     """
 
-    MIN_REMAINING = 5  # 剩余配额低于此值视为不可用
+    MIN_REMAINING = 1  # 剩余≥1 即可尝试（401 不扣配额，失败自动切换）
     _key_quota = {}  # key -> remaining（本次运行内缓存）
 
     LEAGUE_MAP = {
@@ -311,7 +321,7 @@ def aggregate(matches_by_source):
 def main():
     parser = argparse.ArgumentParser(description="博彩赔率抓取")
     parser.add_argument("--leagues", nargs="*",
-                        default=["PL", "PD", "SA", "BL1", "FL1", "CL", "CH", "ED", "BSA", "MLS"],
+                        default=["PL", "PD", "SA", "BL1", "FL1", "CL"],
                         help="要抓取的联赛代码")
     args = parser.parse_args()
 
