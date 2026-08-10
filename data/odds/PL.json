@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T13:36:25Z",
+  "generatedAt": "2026-08-10T06:21:49Z",
   "league": "PL",
   "matches": [
     {
@@ -11,7 +11,7 @@
         "h2h": {
           "home": 1.15,
           "draw": 7.5,
-          "away": 15.42
+          "away": 15.45
         },
         "totals": {
           "line": 2.5,
@@ -43,7 +43,7 @@
         "h2h": {
           "home": 7.0,
           "draw": 4.5,
-          "away": 1.43
+          "away": 1.42
         },
         "totals": {
           "line": 2.5,
@@ -53,11 +53,11 @@
         "spreads": {
           "home": {
             "point": 1.5,
-            "price": 1.6600000000000001
+            "price": 1.67
           },
           "away": {
             "point": -1.5,
-            "price": 2.255
+            "price": 2.24
           }
         }
       },
@@ -176,7 +176,7 @@
         "totals": {
           "line": 2.5,
           "over": 1.67,
-          "under": 2.2
+          "under": 2.19
         },
         "spreads": {
           "home": {
@@ -201,14 +201,14 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.26,
+          "home": 2.25,
           "draw": 3.6,
           "away": 2.88
         },
         "totals": {
           "line": 2.5,
-          "over": 1.62,
-          "under": 2.28
+          "over": 1.63,
+          "under": 2.25
         },
         "spreads": {
           "home": {
@@ -265,9 +265,9 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 3.15,
+          "home": 3.25,
           "draw": 3.8,
-          "away": 2.05
+          "away": 2.04
         },
         "totals": {
           "line": 2.5,
@@ -303,8 +303,8 @@
         },
         "totals": {
           "line": 2.5,
-          "over": 1.62,
-          "under": 2.28
+          "over": 1.61,
+          "under": 2.3
         },
         "spreads": {
           "home": {

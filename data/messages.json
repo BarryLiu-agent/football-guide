@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T05:09:36Z",
+  "generatedAt": "2026-08-10T06:21:57Z",
   "total": 20,
   "messages": [
     {
@@ -33,6 +33,17 @@
         "link": "https://www.skysports.com/football/news/12040/13571517/manchester-united-and-arsenal-among-several-clubs-chasing-club-brugge-left-back-joaquin-seys",
         "lang": "en",
         "summary": "The top stories and transfer rumours from Monday's newspapers..."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Golfer shoots 59 in final round en route to win on Korn Ferry Tour",
+      "timestamp": "Mon, 10 Aug 2026 06:45:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/golf/news/12040/13571538/frankie-harris-shoots-59-in-final-round-before-winning-korn-ferry-tours-pinnacle-bank-championship-in-play-off",
+        "lang": "en",
+        "summary": "Frankie Harris made an 18-foot birdie putt on the final hole as he shot a 12-under 59 before winning the Korn Ferry Tour's Pinnacle Bank Championship in a play-off."
       }
     },
     {
@@ -104,7 +115,7 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Hogh scores first half hat-trick as Celtic romp Kilmarnock",
+      "text": "Hogh scores first-half hat-trick in Celtic romp at Kilmarnock",
       "timestamp": "Sun, 09 Aug 2026 20:45:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/watch/video/13571399/kilmarnock-1-5-celtic-scottish-premiership-highlights",
@@ -209,17 +220,6 @@
         "link": "https://www.skysports.com/watch/video/13571375/kilmarnock-vs-celtic-hogh-running-rampant-with-first-half-hat-trick",
         "lang": "en",
         "summary": "Hogh runs rampant with first-half hat-trick for Celtic."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Five-time Super League winner Makinson to retire at end of 2026 campaign",
-      "timestamp": "Sun, 09 Aug 2026 12:43:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/rugby-league/news/12040/13571338/tommy-makinson-catalans-dragons-wing-and-former-st-helens-try-machine-announces-he-will-retire-at-end-of-2026-campaign",
-        "lang": "en",
-        "summary": "Tommy Makinson has announced he will retire from rugby league at the end of the current 2026 Super League campaign.&#160;"
       }
     }
   ]

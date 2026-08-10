@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T13:36:35Z",
+  "generatedAt": "2026-08-10T06:21:52Z",
   "league": "FL1",
   "matches": [
     {
@@ -11,11 +11,11 @@
         "h2h": {
           "home": 1.67,
           "draw": 4.13,
-          "away": 4.4
+          "away": 4.45
         },
         "totals": {
           "line": 2.5,
-          "over": 2.165,
+          "over": 2.205,
           "under": 1.635
         },
         "spreads": {
@@ -75,7 +75,7 @@
         "h2h": {
           "home": 2.45,
           "draw": 3.45,
-          "away": 2.63
+          "away": 2.65
         },
         "totals": {
           "line": 2.5,
@@ -171,7 +171,7 @@
         "h2h": {
           "home": 2.7,
           "draw": 3.5,
-          "away": 2.4
+          "away": 2.42
         },
         "totals": {
           "line": 2.5,
@@ -201,7 +201,7 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 4.9,
+          "home": 4.95,
           "draw": 3.7,
           "away": 1.67
         },
