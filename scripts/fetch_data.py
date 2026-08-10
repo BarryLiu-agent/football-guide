@@ -68,18 +68,30 @@ def get_date_range():
     date_to = (now + timedelta(days=35)).strftime("%Y-%m-%d")
     return date_from, date_to
 
-def fetch_competition(code, date_from, date_to):
-    """抓取单个联赛的比赛数据"""
+def fetch_competition(code, date_from, date_to, retry=2):
+    """抓取单个联赛的比赛数据（带异常保护与限流重试）"""
     url = f"{API_BASE}/competitions/{code}/matches"
     params = {"dateFrom": date_from, "dateTo": date_to}
-    r = requests.get(url, headers=HEADERS, params=params, timeout=30)
+    try:
+        r = requests.get(url, headers=HEADERS, params=params, timeout=30)
+    except Exception as e:
+        print(f"  ✗ {code}: 网络错误 {e}")
+        if retry > 0:
+            time.sleep(10)
+            return fetch_competition(code, date_from, date_to, retry - 1)
+        return []
     if r.status_code == 200:
-        data = r.json()
-        return data.get("matches", [])
+        try:
+            return r.json().get("matches", [])
+        except Exception:
+            return []
     elif r.status_code == 429:
-        print(f"  ⚠ {code}: 请求太频繁(429)，等待60秒后重试...")
-        time.sleep(60)
-        return fetch_competition(code, date_from, date_to)
+        if retry > 0:
+            print(f"  ⚠ {code}: 请求太频繁(429)，等待60秒后重试...")
+            time.sleep(60)
+            return fetch_competition(code, date_from, date_to, retry - 1)
+        print(f"  ✗ {code}: 429 重试耗尽")
+        return []
     else:
         print(f"  ✗ {code}: HTTP {r.status_code} - {r.text[:200]}")
         return []
