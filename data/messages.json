@@ -1,7 +1,18 @@
 {
-  "generatedAt": "2026-08-10T17:23:40Z",
+  "generatedAt": "2026-08-10T17:34:16Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Sciver-Brunt helps Trent Rockets Women into Hundred final",
+      "timestamp": "Mon, 10 Aug 2026 16:18:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/cricket/news/12040/13571706/the-hundred-nat-sciver-brunt-helps-trent-rockets-women-into-final-after-exciting-victory-over-southern-brave",
+        "lang": "en",
+        "summary": "England all-rounder Nat Sciver-Brunt timed her introduction to perfection as 32 off 19 balls batting down the order secured Trent Rockets' progress to the final of The Hundred with a seventh successive victory."
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -209,17 +220,6 @@
         "link": "https://www.skysports.com/golf/news/12040/13571521/wyndham-championship-michael-brennan-secures-fedex-playoffs-spot-with-victory",
         "lang": "en",
         "summary": "Michael Brennan secured his place in the FedExCup Playoffs as he won the Wyndham Championship by three strokes from Beau Hossler."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Why Munoz is a symbol of change for Iraola's new Liverpool",
-      "timestamp": "Mon, 10 Aug 2026 12:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13561572/victor-munoz-to-liverpool-spain-international-is-a-symbol-of-andoni-iraolas-plan-to-add-intensity-in-attack",
-        "lang": "en",
-        "summary": "Andoni Iraola could not have been clearer about how he plans to change Liverpool when speaking in his opening press conference. \"We have to be a team that works hard, intense and aggressive.&#8221; That shift in approach is embodied by Victor Munoz."
       }
     }
   ]

@@ -770,6 +770,12 @@ function renderCard(m) {
   // 模型分歧：Elo vs DC vs 市场方向不一致 → 提示不碰
   let divTag = '';
   if (pred && pred.diverge) divTag = '<span class="diff-tag warn" title="Elo/DC/市场方向不一致">⚠️分歧</span>';
+  // 反向信号：模型明显比市场更不看好某方向（负 edge）→ 提示不碰
+  let revTag = '';
+  if (pred && pred.reversePicks && pred.reversePicks.length) {
+    const rp = pred.reversePicks.map(r => r.label + ' 模型' + Math.round(r.modelProb * 100) + '%/盘口' + Math.round(r.oddsProb * 100) + '%').join('、');
+    revTag = '<span class="diff-tag warn" title="模型 vs 市场对立（' + rp + '）">⚠️反向</span>';
+  }
   // 赛程风险：周中 / 3 天内双赛
   let riskTags = '';
   try {
@@ -802,7 +808,7 @@ function renderCard(m) {
     ${(() => { const vp = (pred && pred.valuePicks && pred.valuePicks.length) ? pred.valuePicks[0] : null; return vp ? `<span class="val-tag" title="${vp.label}: 模型${Math.round(vp.modelProb*100)}% vs 盘口${Math.round(vp.oddsProb*100)}%">💰${vp.label} ${vp.edge > 0 ? '+' : ''}${Math.round(vp.edge*100)}%</span>` : ''; })()}
     ${(() => { const xm = findXgMatch(homeName, awayName); if (!xm || (xm.xgHome == null && xm.xgAway == null)) return ''; const xh = xm.xgHome ?? 0, xa = xm.xgAway ?? 0; const xt = xh > xa ? 'home' : xa > xh ? 'away' : 'draw'; let diverge = false; if (pred && pred.eloProb) { const et = pred.eloProb.home > pred.eloProb.away ? 'home' : pred.eloProb.away > pred.eloProb.home ? 'away' : 'draw'; diverge = xt !== 'draw' && et !== 'draw' && xt !== et; } return diverge ? '<span class="xg-tag diverging">🎯 ' + xh.toFixed(1) + '-' + xa.toFixed(1) + ' ⚠️背离</span>' : `<span class="xg-tag">🎯 ${xh.toFixed(1)}-${xa.toFixed(1)}</span>`; })()}
     ${pred && pred.signalLevel === 'gold' ? `<span class="val-tag gold">💰 ${pred.valuePicks.map(v => v.label).join('/')}</span>` : (pred && pred.signalLevel === 'watch' ? `<span class="val-tag watch">👀 关注</span>` : '')}
-    ${hot || diff || value || divTag || riskTags ? `<div style="display:flex;gap:4px;margin-top:6px;flex-wrap:wrap">${hot}${value}${diff}${divTag}${riskTags}</div>` : ''}
+    ${hot || diff || value || divTag || revTag || riskTags ? `<div style="display:flex;gap:4px;margin-top:6px;flex-wrap:wrap">${hot}${value}${diff}${divTag}${revTag}${riskTags}</div>` : ''}
   </div>`;
 }
 
