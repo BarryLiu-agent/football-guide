@@ -452,6 +452,7 @@ function normTeam(s) {
   let n = (s || '').toLowerCase()
     .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')  // ü->u, é->e
     .replace(/\b(fc|afc|cf|sc|ac)\b/g, '')
+    .replace(/[-\u2013\u2014]/g, ' ')   // 连字符变空格（saint-germain -> saint germain）
     .replace(/[^a-z0-9 ]/g, '')
     .trim().replace(/\s+/g, ' ');
   return TEAM_ALIAS[n] || n;

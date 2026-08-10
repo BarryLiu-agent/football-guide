@@ -1876,6 +1876,9 @@
   "exactRate": 0.1,
   "outcomeHit": 3,
   "outcomeRate": 0.3,
-  "updatedAt": "2026-08-10T14:22:53Z"
+  "valueTotal": 0,
+  "valueHit": 0,
+  "valueRate": 0,
+  "updatedAt": "2026-08-10T14:23:38Z"
  }
 }
