@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-10T20:10:38Z",
+ "generatedAt": "2026-08-10T22:21:26Z",
  "total": 58,
  "rulesVersion": "1.1",
  "modelInfo": {
@@ -216,6 +216,16 @@
    ],
    "messageEvidence": [
     {
+     "text": "Papers: Aston Villa interested in Endrick loan from Real Madrid",
+     "teams": [
+      "inter milan"
+     ],
+     "keywords": [
+      "rest"
+     ],
+     "score": -0.1
+    },
+    {
      "text": "Could Miller receive world title shot? 'Big Baby' interests WBA champion",
      "teams": [
       "inter milan"
@@ -394,7 +404,7 @@
     "kelly": 0.8
    },
    "btts": 0.5605,
-   "analysis": "【排名】主队Inter Milan排名第1（0分/0场），客队Monza排名第1（0分/0场），排名接近。\n【胜负】市场高度看好主队Inter Milan，主胜隐含概率 78%（赔率 1.22 / 6.5 / 12.15）。\n【让球】主队Inter Milan让 1.5 球（盘口赔率 1.75 / 2.19）。\n【波胆】泊松模型推算最可能比分：2-1（10%）、2-0（9%）、1-1（9%）。\n【大小球】2.5 球盘口：大球 57% / 小球 43%（赔率 大 1.65 / 小 2.21），倾向大球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 56%，倾向双方有球。\n【消息面】Inter Milan信号 -0.10（1条提及）。\n📰 Could Miller receive world title shot? 'Big Baby' interests WBA champion（rest）\n【价值】独立模型(Elo)与市场存在分歧：平局 模型 28% vs 盘口 15%（差 +14%），值得关注。\n【结论】综合赔率与消息，Inter Milan不败概率更高，关注波胆 2-1 方向。",
+   "analysis": "【排名】主队Inter Milan排名第1（0分/0场），客队Monza排名第1（0分/0场），排名接近。\n【胜负】市场高度看好主队Inter Milan，主胜隐含概率 78%（赔率 1.22 / 6.5 / 12.15）。\n【让球】主队Inter Milan让 1.5 球（盘口赔率 1.75 / 2.19）。\n【波胆】泊松模型推算最可能比分：2-1（10%）、2-0（9%）、1-1（9%）。\n【大小球】2.5 球盘口：大球 57% / 小球 43%（赔率 大 1.65 / 小 2.21），倾向大球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 56%，倾向双方有球。\n【消息面】Inter Milan信号 -0.10（2条提及）。\n📰 Papers: Aston Villa interested in Endrick loan from Real Madrid（rest）\n📰 Could Miller receive world title shot? 'Big Baby' interests WBA champion（rest）\n【价值】独立模型(Elo)与市场存在分歧：平局 模型 28% vs 盘口 15%（差 +14%），值得关注。\n【结论】综合赔率与消息，Inter Milan不败概率更高，关注波胆 2-1 方向。",
    "eloProbs": {
     "home": 0.197,
     "draw": 0.182,
@@ -3894,19 +3904,31 @@
    "awayTeam": "Real Madrid",
    "predictedScore": "1-1",
    "expectedGoals": {
-    "home": 1.02,
+    "home": 1.11,
     "away": 1.89
    },
    "probabilities": {
-    "home": 0.218,
+    "home": 0.223,
     "draw": 0.169,
-    "away": 0.613
+    "away": 0.608
    },
-   "confidence": 0.645,
+   "confidence": 0.658,
    "reasons": [
-    "赔率隐含概率: 主18% 平24% 客58%"
+    "赔率隐含概率: 主18% 平24% 客58%",
+    "消息信号: 主队+0.00 客队-0.10"
    ],
-   "messageEvidence": [],
+   "messageEvidence": [
+    {
+     "text": "Papers: Aston Villa interested in Endrick loan from Real Madrid",
+     "teams": [
+      "real madrid"
+     ],
+     "keywords": [
+      "rest"
+     ],
+     "score": -0.1
+    }
+   ],
    "league": "PD",
    "kickoff": "2026-08-22T19:30:00Z",
    "matchUrl": "",
@@ -3946,9 +3968,9 @@
     "away": 0.557
    },
    "dcProb": {
-    "home": 0.199,
-    "draw": 0.223,
-    "away": 0.564
+    "home": 0.22,
+    "draw": 0.224,
+    "away": 0.543
    },
    "diverge": false,
    "dirs": {
@@ -3965,9 +3987,9 @@
     "away": 1785.0
    },
    "modelProbs": {
-    "home": 0.214,
+    "home": 0.217,
     "draw": 0.177,
-    "away": 0.609
+    "away": 0.606
    },
    "valuePicks": [],
    "reversePicks": [],
@@ -3975,27 +3997,27 @@
    "correctScores": [
     {
      "score": "1-1",
-     "prob": 0.1138
+     "prob": 0.1129
     },
     {
      "score": "1-2",
-     "prob": 0.0993
+     "prob": 0.0988
     },
     {
      "score": "0-2",
-     "prob": 0.0978
+     "prob": 0.089
     },
     {
      "score": "0-1",
-     "prob": 0.0954
-    },
-    {
-     "score": "0-0",
-     "prob": 0.0635
+     "prob": 0.0858
     },
     {
      "score": "1-3",
-     "prob": 0.0624
+     "prob": 0.0622
+    },
+    {
+     "score": "0-0",
+     "prob": 0.0582
     }
    ],
    "overUnder": {
@@ -4020,35 +4042,35 @@
     }
    },
    "totalGoalsDist": {
-    "0": 0.055,
-    "1": 0.1596,
-    "2": 0.2314,
-    "3": 0.2237,
-    "4": 0.1622,
-    "5": 0.094,
-    "6": 0.0419,
-    "7": 0.0143,
-    "8": 0.0037,
-    "9": 0.0007,
+    "0": 0.0498,
+    "1": 0.1494,
+    "2": 0.224,
+    "3": 0.224,
+    "4": 0.168,
+    "5": 0.1008,
+    "6": 0.0471,
+    "7": 0.017,
+    "8": 0.0047,
+    "9": 0.001,
     "10": 0.0001
    },
    "ouModel": {
     "line": 2.5,
-    "over": 0.541,
-    "under": 0.459,
-    "edge": -0.013,
-    "kelly": -0.115
+    "over": 0.563,
+    "under": 0.437,
+    "edge": 0.009,
+    "kelly": -0.061
    },
    "spModel": {
     "point": 1.5,
-    "cover": 0.07,
+    "cover": 0.082,
     "price": 1.53,
     "implied": 0.654,
-    "edge": -0.584,
-    "kelly": -1.684
+    "edge": -0.572,
+    "kelly": -1.649
    },
-   "btts": 0.5321,
-   "analysis": "【排名】主队Espanyol排名第11（46分/38场），客队Real Madrid排名第2（86分/38场），客队排名领先 9 位。\n【胜负】市场明显看好客队Real Madrid，客胜隐含概率 58%（赔率 5.05 / 3.95 / 1.61）。\n【让球】客队Real Madrid让 1.5 球（盘口赔率 1.53 / 2.77）。\n【波胆】泊松模型推算最可能比分：1-1（11%）、0-1（10%）、1-2（10%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%（赔率 大 1.7 / 小 2.1100000000000003），倾向大球。\n【进球数】总进球概率：0球 6%、1球 16%、2球 23%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 53%，倾向至少一方零封。\n【结论】综合赔率与消息，Real Madrid不败概率更高，关注波胆 1-1 方向。",
+   "btts": 0.5597,
+   "analysis": "【排名】主队Espanyol排名第11（46分/38场），客队Real Madrid排名第2（86分/38场），客队排名领先 9 位。\n【胜负】市场明显看好客队Real Madrid，客胜隐含概率 58%（赔率 5.05 / 3.95 / 1.61）。\n【让球】客队Real Madrid让 1.5 球（盘口赔率 1.53 / 2.77）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、1-2（10%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%（赔率 大 1.7 / 小 2.1100000000000003），倾向大球。\n【进球数】总进球概率：0球 5%、1球 15%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 56%，倾向双方有球。\n【消息面】Real Madrid信号 -0.10（1条提及）。\n📰 Papers: Aston Villa interested in Endrick loan from Real Madrid（rest）\n【结论】综合赔率与消息，Real Madrid不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
     "home": 0.208,
     "draw": 0.189,
@@ -4056,9 +4078,9 @@
    },
    "valueMarks": {
     "edges": {
-     "home": -0.004,
+     "home": -0.006,
      "draw": 0.008,
-     "away": -0.004
+     "away": -0.002
     },
     "picks": []
    }
@@ -5131,15 +5153,27 @@
     "away": 0.8
    },
    "probabilities": {
-    "home": 0.708,
+    "home": 0.703,
     "draw": 0.124,
-    "away": 0.168
+    "away": 0.172
    },
-   "confidence": 0.683,
+   "confidence": 0.696,
    "reasons": [
-    "赔率隐含概率: 主67% 平19% 客13%"
+    "赔率隐含概率: 主67% 平19% 客13%",
+    "消息信号: 主队-0.10 客队+0.00"
    ],
-   "messageEvidence": [],
+   "messageEvidence": [
+    {
+     "text": "Papers: Aston Villa interested in Endrick loan from Real Madrid",
+     "teams": [
+      "real madrid"
+     ],
+     "keywords": [
+      "rest"
+     ],
+     "score": -0.1
+    }
+   ],
    "league": "PD",
    "kickoff": "2026-08-26T19:00:00Z",
    "matchUrl": "",
@@ -5198,9 +5232,9 @@
     "away": 1785.0
    },
    "modelProbs": {
-    "home": 0.621,
+    "home": 0.618,
     "draw": 0.168,
-    "away": 0.211
+    "away": 0.214
    },
    "valuePicks": [
     {
@@ -5291,7 +5325,7 @@
     "kelly": 0.877
    },
    "btts": 0.4809,
-   "analysis": "【排名】主队Real Madrid排名第2（86分/38场），客队Real Sociedad排名第10（46分/38场），主队排名领先 8 位。\n【胜负】市场高度看好主队Real Madrid，主胜隐含概率 67%（赔率 1.4 / 4.95 / 7.02）。\n【让球】主队Real Madrid让 1.5 球（盘口赔率 2.16 / 1.775）。\n【波胆】泊松模型推算最可能比分：2-0（12%）、1-0（10%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 42% / 小球 58%（赔率 大 2.225 / 小 1.625），倾向小球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 48%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 80% vs 盘口 68%（差 +13%），值得关注。\n【结论】综合赔率与消息，Real Madrid不败概率更高，关注波胆 2-0 方向。",
+   "analysis": "【排名】主队Real Madrid排名第2（86分/38场），客队Real Sociedad排名第10（46分/38场），主队排名领先 8 位。\n【胜负】市场高度看好主队Real Madrid，主胜隐含概率 67%（赔率 1.4 / 4.95 / 7.02）。\n【让球】主队Real Madrid让 1.5 球（盘口赔率 2.16 / 1.775）。\n【波胆】泊松模型推算最可能比分：2-0（12%）、1-0（10%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 42% / 小球 58%（赔率 大 2.225 / 小 1.625），倾向小球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 48%，倾向至少一方零封。\n【消息面】Real Madrid信号 -0.10（1条提及）。\n📰 Papers: Aston Villa interested in Endrick loan from Real Madrid（rest）\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 80% vs 盘口 68%（差 +13%），值得关注。\n【结论】综合赔率与消息，Real Madrid不败概率更高，关注波胆 2-0 方向。",
    "eloProbs": {
     "home": 0.49,
     "draw": 0.234,
@@ -5299,9 +5333,9 @@
    },
    "valueMarks": {
     "edges": {
-     "home": -0.087,
+     "home": -0.085,
      "draw": 0.044,
-     "away": 0.043
+     "away": 0.042
     },
     "picks": []
    }
@@ -8692,27 +8726,15 @@
     "away": 0.8
    },
    "probabilities": {
-    "home": 0.845,
+    "home": 0.847,
     "draw": 0.06,
-    "away": 0.095
+    "away": 0.093
    },
-   "confidence": 0.745,
+   "confidence": 0.739,
    "reasons": [
-    "赔率隐含概率: 主81% 平13% 客6%",
-    "消息信号: 主队-0.05 客队+0.00"
+    "赔率隐含概率: 主81% 平13% 客6%"
    ],
-   "messageEvidence": [
-    {
-     "text": "Osaka defeats local favourite to reach Canadian Open quarter-finals",
-     "teams": [
-      "arsenal"
-     ],
-     "keywords": [
-      "defeat"
-     ],
-     "score": -0.1
-    }
-   ],
+   "messageEvidence": [],
    "league": "PL",
    "kickoff": "2026-08-21T19:00:00Z",
    "matchUrl": "",
@@ -8771,9 +8793,9 @@
     "away": 1500.0
    },
    "modelProbs": {
-    "home": 0.831,
+    "home": 0.832,
     "draw": 0.08,
-    "away": 0.089
+    "away": 0.088
    },
    "valuePicks": [],
    "reversePicks": [],
@@ -8841,7 +8863,7 @@
     "kelly": 0.861
    },
    "btts": 0.4809,
-   "analysis": "【胜负】市场高度看好主队Arsenal，主胜隐含概率 81%（赔率 1.17 / 7.5 / 16.0）。\n【让球】主队Arsenal让 2.0 球（盘口赔率 1.9 / 1.95）。\n【波胆】泊松模型推算最可能比分：2-0（12%）、1-0（10%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%（赔率 大 1.93 / 小 1.93），倾向大球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 48%，倾向至少一方零封。\n【消息面】Arsenal信号 -0.05（2条提及）。\n📰 Osaka defeats local favourite to reach Canadian Open quarter-finals（defeat）\n【结论】综合赔率与消息，Arsenal不败概率更高，关注波胆 2-0 方向。",
+   "analysis": "【胜负】市场高度看好主队Arsenal，主胜隐含概率 81%（赔率 1.17 / 7.5 / 16.0）。\n【让球】主队Arsenal让 2.0 球（盘口赔率 1.9 / 1.95）。\n【波胆】泊松模型推算最可能比分：2-0（12%）、1-0（10%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%（赔率 大 1.93 / 小 1.93），倾向大球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 48%，倾向至少一方零封。\n【消息面】Arsenal信号 +0.00（1条提及）。\n【结论】综合赔率与消息，Arsenal不败概率更高，关注波胆 2-0 方向。",
    "eloProbs": {
     "home": 0.809,
     "draw": 0.11,
@@ -8849,9 +8871,9 @@
    },
    "valueMarks": {
     "edges": {
-     "home": -0.014,
+     "home": -0.015,
      "draw": 0.02,
-     "away": -0.006
+     "away": -0.005
     },
     "picks": []
    }
@@ -9186,7 +9208,7 @@
     "kelly": 0.474
    },
    "btts": 0.5136,
-   "analysis": "【排名】主队Everton排名第13（49分/38场），客队Crystal Palace排名第15（45分/38场），排名接近。\n【胜负】比赛悬念较大，主胜 44% / 平 28% / 客胜 28%（赔率 2.14 / 3.4 / 3.4）。\n【让球】主队Everton让 0.5 球（盘口赔率 2.13 / 1.71）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（11%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%（赔率 大 1.91 / 小 1.88），倾向小球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 51%，倾向至少一方零封。\n【消息面】Crystal Palace信号 +0.00（1条提及）。\n【结论】综合赔率与消息，Everton不败概率更高，关注波胆 1-1 方向。",
+   "analysis": "【排名】主队Everton排名第13（49分/38场），客队Crystal Palace排名第15（45分/38场），排名接近。\n【胜负】比赛悬念较大，主胜 44% / 平 28% / 客胜 28%（赔率 2.14 / 3.4 / 3.4）。\n【让球】主队Everton让 0.5 球（盘口赔率 2.13 / 1.71）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（11%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%（赔率 大 1.91 / 小 1.88），倾向小球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 51%，倾向至少一方零封。\n【消息面】Everton信号 +0.00（1条提及），Crystal Palace信号 +0.00（1条提及）。\n【结论】综合赔率与消息，Everton不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
     "home": 0.532,
     "draw": 0.217,
@@ -9735,19 +9757,31 @@
    "awayTeam": "Aston Villa",
    "predictedScore": "1-1",
    "expectedGoals": {
-    "home": 1.43,
-    "away": 1.17
+    "home": 1.46,
+    "away": 1.14
    },
    "probabilities": {
-    "home": 0.452,
+    "home": 0.456,
     "draw": 0.195,
-    "away": 0.354
+    "away": 0.349
    },
-   "confidence": 0.581,
+   "confidence": 0.597,
    "reasons": [
-    "赔率隐含概率: 主42% 平26% 客32%"
+    "赔率隐含概率: 主42% 平26% 客32%",
+    "消息信号: 主队+0.00 客队-0.10"
    ],
-   "messageEvidence": [],
+   "messageEvidence": [
+    {
+     "text": "Papers: Aston Villa interested in Endrick loan from Real Madrid",
+     "teams": [
+      "aston villa"
+     ],
+     "keywords": [
+      "rest"
+     ],
+     "score": -0.1
+    }
+   ],
    "league": "PL",
    "kickoff": "2026-08-23T13:00:00Z",
    "matchUrl": "",
@@ -9787,9 +9821,9 @@
     "away": 0.308
    },
    "dcProb": {
-    "home": 0.427,
-    "draw": 0.261,
-    "away": 0.307
+    "home": 0.439,
+    "draw": 0.26,
+    "away": 0.296
    },
    "diverge": false,
    "dirs": {
@@ -9806,9 +9840,9 @@
     "away": 1755.0
    },
    "modelProbs": {
-    "home": 0.434,
+    "home": 0.436,
     "draw": 0.226,
-    "away": 0.341
+    "away": 0.338
    },
    "valuePicks": [],
    "reversePicks": [],
@@ -9816,27 +9850,27 @@
    "correctScores": [
     {
      "score": "1-1",
-     "prob": 0.1342
+     "prob": 0.1336
     },
     {
      "score": "1-0",
-     "prob": 0.0963
+     "prob": 0.0983
     },
     {
      "score": "2-1",
-     "prob": 0.0889
+     "prob": 0.0901
     },
     {
      "score": "0-0",
      "prob": 0.0842
     },
     {
-     "score": "0-1",
-     "prob": 0.077
+     "score": "2-0",
+     "prob": 0.0787
     },
     {
-     "score": "2-0",
-     "prob": 0.076
+     "score": "0-1",
+     "prob": 0.0751
     }
    ],
    "overUnder": {
@@ -9868,28 +9902,28 @@
     "4": 0.1414,
     "5": 0.0735,
     "6": 0.0307,
-    "7": 0.0102,
-    "8": 0.0027,
+    "7": 0.0101,
+    "8": 0.0026,
     "9": 0.0005,
     "10": 0.0001
    },
    "ouModel": {
     "line": 2.5,
-    "over": 0.477,
-    "under": 0.523,
-    "edge": -0.108,
-    "kelly": -0.38
+    "over": 0.476,
+    "under": 0.524,
+    "edge": -0.109,
+    "kelly": -0.383
    },
    "spModel": {
     "point": -0.5,
-    "cover": 0.688,
+    "cover": 0.699,
     "price": 2.245,
     "implied": 0.445,
-    "edge": 0.243,
-    "kelly": 0.437
+    "edge": 0.254,
+    "kelly": 0.457
    },
-   "btts": 0.5212,
-   "analysis": "【排名】主队Brighton and Hove Albion排名第8（53分/38场），客队Aston Villa排名第4（65分/38场），客队排名领先 4 位。\n【胜负】双方实力接近，主队Brighton and Hove Albion略占优（主胜 42% vs 客胜 32%）（赔率 2.26 / 3.62 / 2.95）。\n【让球】主队Brighton and Hove Albion让 0.5 球（盘口赔率 2.245 / 1.645）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（11%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 58% / 小球 42%（赔率 大 1.61 / 小 2.2649999999999997），倾向大球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 52%，倾向至少一方零封。\n【结论】综合赔率与消息，Brighton and Hove Albion不败概率更高，关注波胆 1-1 方向。",
+   "btts": 0.519,
+   "analysis": "【排名】主队Brighton and Hove Albion排名第8（53分/38场），客队Aston Villa排名第4（65分/38场），客队排名领先 4 位。\n【胜负】双方实力接近，主队Brighton and Hove Albion略占优（主胜 42% vs 客胜 32%）（赔率 2.26 / 3.62 / 2.95）。\n【让球】主队Brighton and Hove Albion让 0.5 球（盘口赔率 2.245 / 1.645）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（11%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 58% / 小球 42%（赔率 大 1.61 / 小 2.2649999999999997），倾向大球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 52%，倾向至少一方零封。\n【消息面】Aston Villa信号 -0.10（1条提及）。\n📰 Papers: Aston Villa interested in Endrick loan from Real Madrid（rest）\n【结论】综合赔率与消息，Brighton and Hove Albion不败概率更高，关注波胆 1-1 方向。",
    "eloProbs": {
     "home": 0.406,
     "draw": 0.272,
@@ -9897,9 +9931,9 @@
    },
    "valueMarks": {
     "edges": {
-     "home": -0.018,
+     "home": -0.02,
      "draw": 0.031,
-     "away": -0.013
+     "away": -0.011
     },
     "picks": []
    }
@@ -10466,6 +10500,6 @@
   "valueTotal": 0,
   "valueHit": 0,
   "valueRate": 0,
-  "updatedAt": "2026-08-10T20:10:38Z"
+  "updatedAt": "2026-08-10T22:21:26Z"
  }
 }

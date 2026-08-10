@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T20:10:36Z",
+  "generatedAt": "2026-08-10T22:21:24Z",
   "dateRange": {
     "from": "2026-08-03",
     "to": "2026-09-14"
@@ -2862,7 +2862,7 @@
       "matchday": 1,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-10T08:25:07Z",
+      "lastUpdated": "2026-08-10T08:25:08Z",
       "homeTeam": {
         "id": 559,
         "name": "Sevilla FC",

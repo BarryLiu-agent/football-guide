@@ -1,7 +1,40 @@
 {
-  "generatedAt": "2026-08-10T20:10:38Z",
+  "generatedAt": "2026-08-10T22:21:25Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Rockets relying on others to avoid Eliminator after loss to Brave",
+      "timestamp": "Mon, 10 Aug 2026 16:20:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/cricket/news/12040/13571707/the-hundred-trent-rockets-relying-on-others-to-avoid-eliminator-after-loss-to-southern-brave",
+        "lang": "en",
+        "summary": "Trent Rockets are relying on a favour from Manchester Super Giants after a six-match winning run was ended by Southern Brave at Trent Bridge to deny them direct progress to Sunday's final."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Britain's Hunt claims European Championships 100m gold",
+      "timestamp": "Mon, 10 Aug 2026 08:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/live-blog/12040/13571552/european-athletics-championships-2026-updates-from-birmingham-as-keely-hodgkinson-dina-asher-smith-katarina-johnson-thompson-compete",
+        "lang": "en",
+        "summary": ""
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Papers: Aston Villa interested in Endrick loan from Real Madrid",
+      "timestamp": "Sun, 09 Aug 2026 23:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571792/aston-villa-keen-on-loan-deal-for-real-madrid-wonderkid-endrick-paper-talk",
+        "lang": "en",
+        "summary": "The top stories and transfer rumours from Tuesday's newspapers..."
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -11,6 +44,17 @@
         "link": "https://www.skysports.com/football/news/12040/13570899/ronald-araujo-transfer-news-liverpool-complete-deal-to-sign-barcelona-defender-on-loan-with-option-to-buy",
         "lang": "en",
         "summary": "Liverpool have confirmed the signing of defender Ronald Araujo from Barcelona."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Sky Sports Golf Podcast: Young talent shines again as PGA Tour playoffs loom",
+      "timestamp": "Mon, 10 Aug 2026 22:45:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/golf/news/12040/11933264/sky-sports-golf-podcast",
+        "lang": "en",
+        "summary": "The Sky Sports Golf Podcast delivers the latest news from the golfing world, expert analysis and big-name interviews."
       }
     },
     {
@@ -104,7 +148,7 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Crystal Palace latest: Could Munoz leave Eagles amid Khalaili move?",
+      "text": "Crystal Palace latest: Everton keen on Munoz",
       "timestamp": "Mon, 10 Aug 2026 14:00:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/football/live-blog/12040/13279298/crystal-palace-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights",
@@ -176,50 +220,6 @@
         "link": "https://www.skysports.com/football/live-blog/12040/13375102/sunderland-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts",
         "lang": "en",
         "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Hodgkinson: Home European gold would mean almost as much as Olympic title",
-      "timestamp": "Mon, 10 Aug 2026 08:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/live-blog/12040/13571552/european-athletics-championships-2026-updates-from-birmingham-as-keely-hodgkinson-dina-asher-smith-katarina-johnson-thompson-compete",
-        "lang": "en",
-        "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Osaka defeats local favourite to reach Canadian Open quarter-finals",
-      "timestamp": "Mon, 10 Aug 2026 06:58:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13571540/naomi-osaka-vs-leylah-fernandez-national-bank-open-highlights",
-        "lang": "en",
-        "summary": "Highlights of the Canadian Open match between Naomi Osaka and Leylah Fernandez."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Gauff breezes past Korneeva to reach Canadian Open quarters",
-      "timestamp": "Sun, 09 Aug 2026 22:29:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13571514/coco-gauff-vs-alina-korneeva-national-bank-open-highlights",
-        "lang": "en",
-        "summary": "Highlights of the Candian Open match between Coco Gauff and Alina Korneeva."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Today on Sky Sports Racing: Badri chases four-timer at Windsor",
-      "timestamp": "Mon, 10 Aug 2026 06:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/racing/news/12040/13571329/today-on-sky-sports-racing-flat-action-from-windsor-live-on-monday-evening-with-badri-chasing-a-four-timer",
-        "lang": "en",
-        "summary": "Windsor takes centre stage on Monday with a six-race Flat meeting live on Sky Sports Racing."
       }
     }
   ]
