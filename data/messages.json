@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T17:59:48Z",
+  "generatedAt": "2026-08-10T20:10:38Z",
   "total": 20,
   "messages": [
     {
@@ -38,6 +38,17 @@
     {
       "source": "skysports",
       "type": "news",
+      "text": "Chelsea get Luton as Spurs to host Charlton in Carabao Cup",
+      "timestamp": "Mon, 10 Aug 2026 12:36:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571634/carabao-cup-second-round-chelsea-vs-luton-tottenham-vs-charlton-and-newcastle-vs-west-brom-as-11-premier-league-sides-enter-draw",
+        "lang": "en",
+        "summary": "Chelsea will host Jack Wilshere's Luton Town in the Carabao Cup second round, while Tottenham Hotspur host Charlton Athletic in a London derby."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
       "text": "Man City in Bouaddi talks and Chelsea's Fernandez also an option",
       "timestamp": "Mon, 10 Aug 2026 17:39:00 BST",
       "metadata": {
@@ -60,17 +71,6 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "FREE STREAM: The Transfer Show on Sky Sports News",
-      "timestamp": "Mon, 10 Aug 2026 18:50:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13569345/free-stream-the-transfer-show-on-sky-sports-news-latest-football-transfer-news-updates-and-rumours",
-        "lang": "en",
-        "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
       "text": "Man City latest: Rodri to Barcelona talks currently inactive",
       "timestamp": "Mon, 10 Aug 2026 14:30:00 BST",
       "metadata": {
@@ -88,17 +88,6 @@
         "link": "https://www.skysports.com/boxing/news/12040/13571639/caroline-dubois-britains-lightweight-world-champion-has-ingredients-to-succeed-katie-taylor-as-face-of-boxing-says-nakisa-bidarian",
         "lang": "en",
         "summary": "Caroline Dubois \"has the ingredients\" to succeed Katie Taylor as one of the biggest stars in boxing, according to Most Valuable Promotions partner Nakisa Bidarian."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Carabao Cup second-round draw LIVE! Chelsea, Spurs, Newcastle discover opponents",
-      "timestamp": "Mon, 10 Aug 2026 13:45:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/live-blog/12040/13571626/carabao-cup-draw-chelsea-spurs-everton-newcastle-leeds-nottingham-forest-and-more-join-first-round-winners-in-second-round",
-        "lang": "en",
-        "summary": ""
       }
     },
     {
@@ -220,6 +209,17 @@
         "link": "https://www.skysports.com/watch/video/13571514/coco-gauff-vs-alina-korneeva-national-bank-open-highlights",
         "lang": "en",
         "summary": "Highlights of the Candian Open match between Coco Gauff and Alina Korneeva."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Today on Sky Sports Racing: Badri chases four-timer at Windsor",
+      "timestamp": "Mon, 10 Aug 2026 06:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/racing/news/12040/13571329/today-on-sky-sports-racing-flat-action-from-windsor-live-on-monday-evening-with-badri-chasing-a-four-timer",
+        "lang": "en",
+        "summary": "Windsor takes centre stage on Monday with a six-race Flat meeting live on Sky Sports Racing."
       }
     }
   ]
