@@ -190,7 +190,11 @@
    "kickoff": "2026-08-09T14:00:00Z",
    "predictedScore": "1-0",
    "confidence": 0.636,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "predictedAt": "2026-08-09T13:17:45Z",
+   "actualScore": "3-1",
+   "evaluatedAt": "2026-08-10T14:38:53Z",
+   "hitExact": false,
+   "hitOutcome": true
   },
   {
    "homeTeam": "Bahia",
@@ -198,7 +202,11 @@
    "kickoff": "2026-08-09T19:00:00Z",
    "predictedScore": "1-0",
    "confidence": 0.607,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "predictedAt": "2026-08-09T13:17:45Z",
+   "actualScore": "0-0",
+   "evaluatedAt": "2026-08-10T14:38:53Z",
+   "hitExact": false,
+   "hitOutcome": false
   },
   {
    "homeTeam": "Palmeiras",
@@ -206,7 +214,11 @@
    "kickoff": "2026-08-09T19:00:00Z",
    "predictedScore": "1-0",
    "confidence": 0.651,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "predictedAt": "2026-08-09T13:17:45Z",
+   "actualScore": "0-0",
+   "evaluatedAt": "2026-08-10T14:38:53Z",
+   "hitExact": false,
+   "hitOutcome": false
   },
   {
    "homeTeam": "Santos",
@@ -554,7 +566,11 @@
    "kickoff": "2026-08-09T12:30:00Z",
    "predictedScore": "1-2",
    "confidence": 0.667,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "predictedAt": "2026-08-09T13:17:45Z",
+   "actualScore": "0-2",
+   "evaluatedAt": "2026-08-10T14:38:53Z",
+   "hitExact": false,
+   "hitOutcome": true
   },
   {
    "homeTeam": "Groningen",
@@ -562,7 +578,11 @@
    "kickoff": "2026-08-09T12:30:00Z",
    "predictedScore": "1-1",
    "confidence": 0.575,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "predictedAt": "2026-08-09T13:17:45Z",
+   "actualScore": "2-1",
+   "evaluatedAt": "2026-08-10T14:38:53Z",
+   "hitExact": false,
+   "hitOutcome": false
   },
   {
    "homeTeam": "Heerenveen",
@@ -570,7 +590,11 @@
    "kickoff": "2026-08-09T14:45:00Z",
    "predictedScore": "1-1",
    "confidence": 0.586,
-   "predictedAt": "2026-08-09T13:17:45Z"
+   "predictedAt": "2026-08-09T13:17:45Z",
+   "actualScore": "1-0",
+   "evaluatedAt": "2026-08-10T14:38:53Z",
+   "hitExact": false,
+   "hitOutcome": false
   },
   {
    "homeTeam": "FC Utrecht",
@@ -1867,18 +1891,72 @@
    "actualScore": "2-2",
    "hitExact": false,
    "hitOutcome": false
+  },
+  {
+   "homeTeam": "Cruzeiro",
+   "awayTeam": "Mirassol",
+   "kickoff": "2026-08-09T14:00:00Z",
+   "predictedScore": "1-0",
+   "actualScore": "3-1",
+   "hitExact": false,
+   "hitOutcome": true
+  },
+  {
+   "homeTeam": "Bahia",
+   "awayTeam": "Vasco da Gama",
+   "kickoff": "2026-08-09T19:00:00Z",
+   "predictedScore": "1-0",
+   "actualScore": "0-0",
+   "hitExact": false,
+   "hitOutcome": false
+  },
+  {
+   "homeTeam": "Palmeiras",
+   "awayTeam": "Internacional",
+   "kickoff": "2026-08-09T19:00:00Z",
+   "predictedScore": "1-0",
+   "actualScore": "0-0",
+   "hitExact": false,
+   "hitOutcome": false
+  },
+  {
+   "homeTeam": "FC Zwolle",
+   "awayTeam": "Ajax",
+   "kickoff": "2026-08-09T12:30:00Z",
+   "predictedScore": "1-2",
+   "actualScore": "0-2",
+   "hitExact": false,
+   "hitOutcome": true
+  },
+  {
+   "homeTeam": "Groningen",
+   "awayTeam": "FC Utrecht",
+   "kickoff": "2026-08-09T12:30:00Z",
+   "predictedScore": "1-1",
+   "actualScore": "2-1",
+   "hitExact": false,
+   "hitOutcome": false
+  },
+  {
+   "homeTeam": "Heerenveen",
+   "awayTeam": "FC Twente Enschede",
+   "kickoff": "2026-08-09T14:45:00Z",
+   "predictedScore": "1-1",
+   "actualScore": "1-0",
+   "hitExact": false,
+   "hitOutcome": false
   }
  ],
  "stats": {
   "total": 217,
-  "finished": 10,
+  "finished": 16,
   "exactHit": 1,
-  "exactRate": 0.1,
-  "outcomeHit": 3,
-  "outcomeRate": 0.3,
+  "exactRate": 0.0625,
+  "outcomeHit": 5,
+  "outcomeRate": 0.3125,
   "valueTotal": 0,
   "valueHit": 0,
   "valueRate": 0,
-  "updatedAt": "2026-08-10T14:38:25Z"
+  "updatedAt": "2026-08-10T14:38:53Z"
  }
 }
