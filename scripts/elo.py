@@ -102,14 +102,35 @@ class EloModel:
         """返回 Elo 排行榜。"""
         return sorted(self.ratings.items(), key=lambda kv: -kv[1])[:top_n]
 
+    ALIASES = {
+        "inter milan": "inter", "internazionale": "inter", "inter milano": "inter",
+        "ac milan": "milan", "milan": "milan",
+        "atletico madrid": "atletico madrid", "atletico de madrid": "atletico madrid", "atleti": "atletico madrid",
+        "manchester united": "manchester united", "man united": "manchester united", "man utd": "manchester united",
+        "manchester city": "manchester city", "man city": "manchester city",
+        "bayern munich": "bayern munich", "bayern munchen": "bayern munich",
+        "paris saint germain": "psg", "paris saint-germain": "psg", "psg": "psg",
+        "bodo glimt": "bodoglimt", "bodo/glimt": "bodoglimt",
+        "red bull leipzig": "leipzig", "rb leipzig": "leipzig", "leipzig": "leipzig",
+        "borussia monchengladbach": "gladbach", "borussia mgladbach": "gladbach", "mgladbach": "gladbach",
+        "fc koln": "koln", "koln": "koln",
+        "bayer leverkusen": "leverkusen", "bayer 04 leverkusen": "leverkusen",
+        "porto": "porto", "fc porto": "porto",
+        "sporting lisbon": "sporting", "sporting cp": "sporting",
+        "benfica": "benfica", "sl benfica": "benfica",
+        "athletic bilbao": "athletic", "athletic club": "athletic",
+    }
+
     @staticmethod
     def _key(name: str) -> str:
         import re
         import unicodedata
-        s = re.sub(r"\b(fc|afc|cf|sc|ac)\b", "", (name or "").lower()).replace("&", "").strip()
-        # unicode 归一化: ü->u, é->e（"FC Bayern München" vs "Bayern Munich"）
-        s = unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode()
-        return re.sub(r"[^a-z0-9 ]", "", s)
+        raw = re.sub(r"(fc|afc|cf|sc|ac)", "", (name or "").lower()).replace("&", "").strip()
+        raw = unicodedata.normalize("NFKD", raw).encode("ascii", "ignore").decode()
+        s = re.sub(r"[^a-z0-9 ]", " ", raw)
+        s = re.sub(r"\s+", " ", s).strip()
+        return EloModel.ALIASES.get(s, s)
+
 
 
 # ── Dixon-Coles 低比分修正 ────────────────
