@@ -570,7 +570,7 @@ async function loadAll() {
     loadJson('data/fixtures.json').then(d => { state.fixtures = d.matches || []; state.loaded.fixtures = true; }).catch(() => {}),
     loadJson('data/predictions.json').then(d => { state.predictions = d.predictions || []; state.predictionsMeta = d; state.loaded.predictions = true; }).catch(() => {}),
     loadJson('data/standings.json').then(d => { state.standings = d.standings || {}; }).catch(() => {}),
-    loadJson('data/jingcai.json').then(d => { state.jingcai = d.matches || []; }).catch(() => {}),
+    loadJson('data/jingcai.json').then(d => { state.jingcai = d.matches || []; state.jingcaiGen = d.generatedAt || ''; }).catch(() => {}),
     loadJson('data/xg/matches.json').then(d => { state.xgMatches = d.matches || []; }).catch(() => {}),
     loadJson('data/prediction_history.json').then(d => { state.history = d; }).catch(() => {}),
     loadJson('data/calibration.json').then(d => { state.calibration = d; }).catch(() => {}),
@@ -588,6 +588,17 @@ async function loadAll() {
   const d = state.history?.stats;
   const gen = state.predictionsMeta?.generatedAt;
   if (gen) $('lastUpdated').textContent = '数据 ' + gen.slice(5, 16).replace('T', ' ');
+  // 竞彩新鲜度提示（本地每小时推送；>2 小时未更新 = 电脑未运行/脚本停了）
+  if (state.jingcaiGen) {
+    const jcAge = Date.now() - new Date(state.jingcaiGen).getTime();
+    if (jcAge > 2 * 3600000) {
+      const h = Math.floor(jcAge / 3600000);
+      const el = $('pageContent');
+      if (el && !el.querySelector('.jc-stale')) {
+        el.insertAdjacentHTML('afterbegin', '<div class="stale-banner jc-stale" style="background:rgba(59,130,246,.12);border-color:rgba(59,130,246,.35)">⚠️ 竞彩数据 ' + h + ' 小时前更新（本地电脑计划任务未运行，电脑关机？）。其余数据由云端自动更新不受影响。</div>');
+      }
+    }
+  }
   // 数据过期提示（>12 小时）
   if (gen) {
     const age = Date.now() - new Date(gen).getTime();
