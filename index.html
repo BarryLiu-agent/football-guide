@@ -181,6 +181,11 @@ img { display: block; }
 .no-signal .match-list.dim .match-card { box-shadow: none; border-color: var(--border); }
 
 /* 盘口走势（初盘→临场） */
+.calib-card {
+  padding: 12px 14px; border-radius: var(--radius); margin-bottom: 14px;
+  background: linear-gradient(180deg, rgba(240,185,11,.06), rgba(240,185,11,.02));
+  border: 1px solid rgba(240,185,11,.22);
+}
 .trend-row { display: flex; gap: 10px; flex-wrap: wrap; }
 .trend-box {
   flex: 1; min-width: 110px; padding: 8px 10px; border-radius: var(--radius);
@@ -468,6 +473,7 @@ let state = {
   xgMatches: [],      // 单场实时 xG
   history: null,      // 预测战绩
   teamNames: {},
+  calibration: null,  // 模型校准报告
   oddsByLeague: {},   // 赔率 {code: {matches, history}}
   loaded: { fixtures: false, predictions: false },
 };
@@ -567,6 +573,7 @@ async function loadAll() {
     loadJson('data/jingcai.json').then(d => { state.jingcai = d.matches || []; }).catch(() => {}),
     loadJson('data/xg/matches.json').then(d => { state.xgMatches = d.matches || []; }).catch(() => {}),
     loadJson('data/prediction_history.json').then(d => { state.history = d; }).catch(() => {}),
+    loadJson('data/calibration.json').then(d => { state.calibration = d; }).catch(() => {}),
     loadJson('data/team_names.json').then(d => { state.teamNames = d; }).catch(() => {}),
   ];
   // xG 逐个联赛加载（可能不存在）
@@ -872,9 +879,33 @@ function renderScorers() {
 }
 
 // ===== 预测战绩 =====
+function renderCalibration() {
+  // 校准报告：2025/26 赛季 Elo 滚动回测的分组命中率
+  const c = state.calibration;
+  if (!c || !c.buckets) return '';
+  const cls = b => b.bias > 0.01 ? 'up' : (b.bias < -0.01 ? 'down' : '');
+  const note = b => b.bias > 0.01 ? '低估' : (b.bias < -0.01 ? '偏乐观' : '校准良好');
+  return `<div class="calib-card">
+    <div class="section-title" style="margin-top:0">📐 模型校准（${c.source || '上赛季回测'} · ${c.total} 场）</div>
+    <div style="font-size:12px;color:var(--text-2);margin-bottom:8px">总命中率 <b style="color:var(--gold)">${(c.overall * 100).toFixed(1)}%</b>（胜负方向）· 方向分布 主胜${c.directionDist?.home || 0} / 客胜${c.directionDist?.away || 0}</div>
+    <div class="table-wrap"><table class="standings" style="min-width:420px">
+      <thead><tr><th>模型概率区间</th><th style="text-align:right">场次</th><th style="text-align:right">实际命中</th><th style="text-align:right">平均概率</th><th style="text-align:right">偏差</th><th>解读</th></tr></thead>
+      <tbody>${c.buckets.map(b => `<tr>
+        <td>${b.label}</td><td style="text-align:right">${b.n}</td>
+        <td style="text-align:right;font-weight:700">${(b.hitRate * 100).toFixed(1)}%</td>
+        <td style="text-align:right">${(b.avgProb * 100).toFixed(1)}%</td>
+        <td class="${cls(b)}" style="text-align:right">${b.bias > 0 ? '+' : ''}${(b.bias * 100).toFixed(1)}%</td>
+        <td style="font-size:11px;color:var(--muted)">${note(b)}</td>
+      </tr>`).join('')}</tbody>
+    </table></div>
+    <div style="font-size:11px;color:var(--muted);margin-top:8px">解读：命中率 ≈ 平均概率 = 校准良好；偏差为负表示模型偏乐观（高估），下注时建议对应降注。55-65% 区间最可信，≥65% 的"高置信"历史命中约 69%，凯利注码建议打 8 折。</div>
+  </div>`;
+}
+
 function renderRecord() {
   const h = state.history;
-  if (!h) return '<div class="empty-state"><div class="icon">📊</div>暂无战绩数据（预测结算后自动累积）</div>';
+  const calibHtml = renderCalibration();
+  if (!h) return calibHtml || '<div class="empty-state"><div class="icon">📊</div>暂无战绩数据（预测结算后自动累积）</div>';
   const s = h.stats || {};
   const pct = v => (v == null ? '—' : Math.round(v * 100) + '%');
   const cards = [
@@ -891,7 +922,8 @@ function renderRecord() {
       '<span style="color:var(--muted);font-size:11px">预测</span> <span class="pred">' + (r.predictedScore || '—') + '</span>' +
       '<span style="color:var(--muted);font-size:11px">实际</span> <span class="actual">' + (r.actualScore || '—') + '</span></div>';
   }).join('');
-  return '<div class="record-cards">' + cards.map(c =>
+  return renderCalibration() +
+  '<div class="record-cards">' + cards.map(c =>
     '<div class="rec-card"><div class="v ' + (c.cls || '') + '">' + c.v + '</div><div class="k">' + c.k + '</div></div>'
   ).join('') + '</div>' +
   '<div style="font-size:11px;color:var(--muted);margin-bottom:10px">命中判定基于预测时的胜负方向；价值标记命中 = 模型 vs 盘口差>5%的方向是否正确 · 样本越多越可信</div>' +

@@ -531,7 +531,7 @@ def load_form():
         for m in ms[:FORM_LAST]:
             for side, gf, ga in (("home", "homeGoals", "awayGoals"), ("away", "awayGoals", "homeGoals")):
                 pts = 3 if m[gf] > m[ga] else (1 if m[gf] == m[ga] else 0)
-                t = norm_team(m[side])
+                t = norm_team(m["homeTeam" if side == "home" else "awayTeam"])
                 acc = form.setdefault(t, [0.0, 0])
                 acc[0] += pts
                 acc[1] += 1
