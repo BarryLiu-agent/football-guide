@@ -1,300 +1,201 @@
 {
-  "generatedAt": "2026-08-08T01:35:27Z",
-  "total": 41,
+  "generatedAt": "2026-08-10T14:49:50Z",
+  "total": 35,
   "messages": [
     {
       "source": "espn",
       "type": "news",
-      "text": "The USMNT hasn't really gotten better under Poch: Will his new contract change that?",
-      "timestamp": "Fri, 7 Aug 2026 19:00:48 EST",
+      "text": "Will World Cup's top player Rodri join Barcelona or Real Madrid? Or stay at Man City?",
+      "timestamp": "Mon, 10 Aug 2026 09:05:59 EST",
       "metadata": {
-        "link": "https://www.espn.com/soccer/story/_/id/49546977/usmnt-not-improved-pochettino-new-contract-coach-extension-2026",
+        "link": "https://www.espn.com/soccer/story/_/id/49561129/rodri-transfer-saga-join-barcelona-real-madrid-stay-manchester-city",
         "lang": "en",
-        "summary": "The USMNT hasn't meaningfully improved since Pochettino was first hired as coach -- and he just got a contract extension. What now?"
+        "summary": "After Rodri led Spain to World Cup glory, it's no surprise that Barcelona and Real Madrid both want him. Will he move this summer or remain at Man City?"
       }
     },
     {
       "source": "espn",
       "type": "news",
-      "text": "USMNT transfer grades: Arfsten gets a B+ for Boro move",
-      "timestamp": "Fri, 7 Aug 2026 19:00:48 EST",
+      "text": "Iraola: Liverpool don't have energy for 90 mins",
+      "timestamp": "Mon, 10 Aug 2026 07:11:11 EST",
       "metadata": {
-        "link": "https://www.espn.com/soccer/story/_/id/49531065/usmnt-summer-transfers-grading-major-american-players-signings",
+        "link": "https://www.espn.com/soccer/story/_/id/49573365/andoni-iraola-liverpool-preseason-monaco-defeat-premier-league",
         "lang": "en",
-        "summary": "The 2026 summer transfer window is well underway, with several U.S. players finding new homes."
+        "summary": "Liverpool head coach Andoni Iraola has said that his side are struggling to sustain his desired level following a 3-2 defeat to Monaco in preseason."
       }
     },
     {
       "source": "espn",
       "type": "news",
-      "text": "Sources: Barça's Araújo set for Liverpool loan deal",
-      "timestamp": "Fri, 7 Aug 2026 19:59:20 EST",
+      "text": "Arteta 'trying' to add players after Vini Jr. blow",
+      "timestamp": "Mon, 10 Aug 2026 07:11:11 EST",
       "metadata": {
-        "link": "https://www.espn.com/soccer/story/_/id/49556442/liverpool-barcelona-transfer-ronald-araujo-loan",
+        "link": "https://www.espn.com/soccer/story/_/id/49572875/mikel-arteta-trying-arsenal-transfers-vinicius-jr-real-madrid-stay",
         "lang": "en",
-        "summary": "Liverpool are set to sign defender Ronald Araújo on a seasonlong loan deal from Barcelona, sources told ESPN."
+        "summary": "Mikel Arteta has said he is still \"trying\" to bring in players to make his Arsenal squad \"much better,\" after Vinícius Jr. opted to stay at Real Madrid."
       }
     },
     {
       "source": "espn",
       "type": "news",
-      "text": "Hayes says Poch stay can help 'raise' level in U.S.",
-      "timestamp": "Fri, 7 Aug 2026 19:59:20 EST",
+      "text": "Confederations slam FIFA, Infantino for 'deception'",
+      "timestamp": "Mon, 10 Aug 2026 07:11:11 EST",
       "metadata": {
-        "link": "https://www.espn.com/soccer/story/_/id/49548881/hayes-says-pochettino-stay-help-raise-level-us",
+        "link": "https://www.espn.com/soccer/story/_/id/49573256/uefa-concacaf-afc-accuse-fifa-breach-trust-deception-world-cup-plan",
         "lang": "en",
-        "summary": "U.S. women's coach Emma Hayes said she is \"delighted\" that Mauricio Pochettino has signed a new deal to remain the U.S. men's team coach for another four years."
+        "summary": "UEFA, Concacaf and the Asian Football Confederation (AFC) have accused FIFA of a \"fundamental breach of trust\" over its handling of plans to sell a stake in the World Cup."
       }
     },
     {
       "source": "espn",
       "type": "news",
-      "text": "Sources: Man City reject Barça's $58M Rodri offer",
-      "timestamp": "Fri, 7 Aug 2026 19:59:20 EST",
+      "text": "Mourinho had deal to succeed Sir Alex at United",
+      "timestamp": "Mon, 10 Aug 2026 07:11:11 EST",
       "metadata": {
-        "link": "https://www.espn.com/soccer/story/_/id/49553126/man-city-reject-barcelona-opening-50-million-rodri-offer-sources-transfer",
+        "link": "https://www.espn.com/soccer/story/_/id/49571327/jose-mourinho-turned-chance-replace-sir-alex-ferguson-man-united-netflix-documentary-reveals",
         "lang": "en",
-        "summary": "Man City have rejected Barcelona's opening offer for Rodri, although various sources have confirmed to ESPN that talks between the clubs will continue."
+        "summary": "José Mourinho was set to replace Sir Alex Ferguson as Manchester United boss in 2013 before changing his mind and rejoining Chelsea, a new Netflix docuseries on the Portuguese manager revealed."
       }
     },
     {
       "source": "espn",
       "type": "news",
-      "text": "Norway tells Infantino to quit amid Mexico backing",
-      "timestamp": "Fri, 7 Aug 2026 19:59:20 EST",
+      "text": "Mexico beats U.S. in U20 final after suspect red",
+      "timestamp": "Mon, 10 Aug 2026 07:11:11 EST",
       "metadata": {
-        "link": "https://www.espn.com/soccer/story/_/id/49551450/gianni-infantino-backed-argentina-fa-praised-owning-mistakes",
+        "link": "https://www.espn.com/soccer/story/_/id/49571657/mexico-beats-us-concacaf-u20-final",
         "lang": "en",
-        "summary": "Norway's soccer federation president has called on Gianni Infantino to resign, saying there is \"no trust\" in him now, while Mexico and Argentina have expressed their support for the embattled FIFA president."
+        "summary": "Mexico won its second Concacaf U20 championship in a row after beating the United States 2-0 at Estadio Azteca in the final on Sunday in Mexico City."
       }
     },
     {
       "source": "espn",
       "type": "news",
-      "text": "Berhalter helps Boro oust Wrexham from EFL Cup",
-      "timestamp": "Fri, 7 Aug 2026 19:59:20 EST",
+      "text": "Maresca expects Rodri City return 'at the moment'",
+      "timestamp": "Mon, 10 Aug 2026 07:11:11 EST",
       "metadata": {
-        "link": "https://www.espn.com/soccer/report/_/gameId/401881129",
+        "link": "https://www.espn.com/soccer/story/_/id/49570718/maresca-rodri-back-manchester-city-moment",
         "lang": "en",
-        "summary": "Will Lankshear's debut strike ensured Middlesbrough made a winning start to the season as they beat Wrexham 1-0 in the Carabao Cup first round."
+        "summary": "Enzo Maresca said Rodri is due back with Manchester City next week amid continuing speculation over the Spain midfielder's future."
       }
     },
     {
       "source": "espn",
       "type": "news",
-      "text": "San Jose hires ex-Portland executive Wilkinson",
-      "timestamp": "Fri, 7 Aug 2026 19:59:20 EST",
+      "text": "Source: McNeil, Johnson in Everton-Palace swap",
+      "timestamp": "Mon, 10 Aug 2026 07:11:11 EST",
       "metadata": {
-        "link": "https://www.espn.com/soccer/story/_/id/49555510/san-jose-earthquakes-gavin-wilkinson-portland-timbers-thorns",
+        "link": "https://www.espn.com/soccer/story/_/id/49573684/dwight-mcneil-brennan-johnson-agree-everton-crystal-palace-swap-source",
         "lang": "en",
-        "summary": "Gavin Wilkinson was fired by Portland in 2022 after the release of the Yates Report, which detailed systemic verbal, emotional and sexual abuse by multiple NWSL coaches."
+        "summary": "Everton and Crystal Palace have agreed a straight swap deal involving Dwight McNeil and Brennan Johnson, a source has told ESPN."
       }
     },
     {
       "source": "espn",
       "type": "news",
-      "text": "England's Toney charged with assault at nightclub",
-      "timestamp": "Fri, 7 Aug 2026 19:59:20 EST",
+      "text": "Nigeria out of WAFCON in shock loss to Cameroon",
+      "timestamp": "Mon, 10 Aug 2026 07:11:11 EST",
       "metadata": {
-        "link": "https://www.espn.com/soccer/story/_/id/49551656/england-ivan-toney-charged-assault-nightclub-incident",
+        "link": "https://www.espn.com/espn/story/_/id/49569051/nigeria-wafcon-shock-loss-cameroon-qualify-world-cup",
         "lang": "en",
-        "summary": "England striker Ivan Toney has been charged with assault after an incident at a London nightclub."
+        "summary": "Nigeria registered their worst-ever WAFCON performance after being defeated 1-0 by Cameroon in Sunday's quarterfinal in Casablanca, with the Indomitable Lionesses securing their berth at next year's FIFA Women's World Cup."
       }
     },
     {
       "source": "espn",
       "type": "news",
-      "text": "'Chucky' Lozano joins LA Galaxy on initial loan",
-      "timestamp": "Fri, 7 Aug 2026 19:59:20 EST",
+      "text": "🤣 Ronaldo laughs at false wedding reports",
+      "timestamp": "Mon, 10 Aug 2026 07:11:11 EST",
       "metadata": {
-        "link": "https://www.espn.com/soccer/story/_/id/49548687/lozano-joining-galaxy-season-long-loan",
+        "link": "https://www.espn.com/soccer/story/_/id/49566791/cristiano-ronaldo-wedding-reports-huge-crowd-fans-another-couples-big-day-portugal-madeira-funchal",
         "lang": "en",
-        "summary": "Former Mexico star Hirving \"Chucky\" Lozano has joined the LA Galaxy on an initial loan deal through the rest of the 2026 season from San Diego FC, the clubs announced Friday."
+        "summary": "With rumors circulating that Cristiano Ronaldo was set to marry partner Georgina Rodríguez in his hometown on Saturday, hundreds of fans flocked to the cathedral and saw the wedding of a different couple entirely."
       }
     },
     {
       "source": "espn",
       "type": "news",
-      "text": "🎉Salah, Vozinha's amazing transfer unveilings",
-      "timestamp": "Fri, 7 Aug 2026 19:59:20 EST",
+      "text": "Transfer rumors, news: Man United turn to youth in chase for Leicester, Club Brugge stars",
+      "timestamp": "Mon, 10 Aug 2026 09:33:11 EST",
       "metadata": {
-        "link": "https://www.espn.com/soccer/story/_/id/49551657/world-cup-stars-vozinha-salah-treated-mad-transfer-unveilings",
+        "link": "https://www.espn.com/soccer/story/_/id/49572938/transfer-rumors-news-manchester-united-turn-youth-chase-club-brugge-leicester-stars",
         "lang": "en",
-        "summary": "The World Cup may be over, but that hasn't quelled the stardom of its most-viral goalkeeper, Vozinha, or Africa's most storied player, Mohamed Salah."
+        "summary": "Manchester United are targeting two young players in the form of Club Brugge left back Joaquin Seys and Leicester City wonderkid Louis Page. Transfer Talk has the latest."
       }
     },
     {
       "source": "espn",
       "type": "news",
-      "text": "Transfer rumors, news: Arsenal, Man United eye Shakhtar's Elias",
-      "timestamp": "Fri, 7 Aug 2026 18:40:20 EST",
+      "text": "Two Premier League teams are swapping players; has it ever happened before?",
+      "timestamp": "Mon, 10 Aug 2026 09:31:43 EST",
       "metadata": {
-        "link": "https://www.espn.com/soccer/story/_/id/49551148/transfer-rumors-news-man-city-eye-enzo-fernandez-rodri-replacement",
+        "link": "https://www.espn.com/soccer/story/_/id/49574405/johnson-mcneil-swap-deal-two-clubs-ever-swapped-players-before",
         "lang": "en",
-        "summary": "Both Arsenal and Manchester United are reportedly looking to sign Shakhtar Donetsk forward Kauã Elias. Transfer Talk has the latest."
+        "summary": "Brennan Johnson and Dwight McNeil are swapping Premier League clubs. It's a rare transfer practice, but it's happened before with varying levels of success."
       }
     },
     {
       "source": "espn",
       "type": "news",
-      "text": "From Arsenal to Liverpool, which elite clubs are struggling with World Cup burnout?",
-      "timestamp": "Fri, 7 Aug 2026 13:36:10 EST",
+      "text": "How will Bruno Guimarães fit in Arsenal's midfield?",
+      "timestamp": "Mon, 10 Aug 2026 03:40:14 EST",
       "metadata": {
-        "link": "https://www.espn.com/soccer/story/_/id/49536934/world-cup-burnout-premier-league-laliga-liverpool-arsenal-barcelona-bayern-munich-man-united",
+        "link": "https://www.espn.com/soccer/story/_/id/49543427/how-bruno-guimaraes-fit-arsenals-midfield",
         "lang": "en",
-        "summary": "The World Cup was a great spectacle, but it was also hard work for the players, and as many of the game's stars return to their clubs to prepare for the 2026-27, which clubs are battling burnout the most?"
+        "summary": "Arsenal have spent £75 million to sign 28-year-old Bruno Guimarães from Newcastle United, but how will he fit in an already stacked midfield?"
       }
     },
     {
       "source": "espn",
       "type": "news",
-      "text": "Enjoyed the World Cup? Here's your 101 guide to the club game",
-      "timestamp": "Fri, 7 Aug 2026 13:36:10 EST",
+      "text": "Everything you need to know about 2027 Women's World Cup as four African teams qualify",
+      "timestamp": "Mon, 10 Aug 2026 06:30:25 EST",
       "metadata": {
-        "link": "https://www.espn.com/soccer/story/_/id/49523086/world-cup-love-premier-league-bundesliga-laliga-season-preview-liverpool-man-city-barcelona-bayern",
+        "link": "https://www.espn.com/soccer/story/_/id/48983407/everything-need-know-2027-womens-world-cup-format-qualified-more",
         "lang": "en",
-        "summary": "So, you're keen to extend your soccer love? Well, let Bill Connelly count 10 things you need to know."
+        "summary": "The 2027 FIFA Women's World Cup in Brazil is fast approaching, so here is everything you need to know about the format and teams."
       }
     },
     {
       "source": "espn",
       "type": "news",
-      "text": "Inside how Vinícius Júnior signed new Real Madrid contract",
-      "timestamp": "Fri, 7 Aug 2026 17:34:44 EST",
+      "text": "Premier League 2026-27 kits: Ranking every jersey released",
+      "timestamp": "Sat, 8 Aug 2026 21:44:53 EST",
       "metadata": {
-        "link": "https://www.espn.com/soccer/story/_/id/49552050/inside-how-vinicius-junior-signed-new-real-madrid-contract",
+        "link": "https://www.espn.com/soccer/story/_/id/49163915/premier-league-202627-kits-ranking-every-jersey-released-arsenal-chelsea-liverpool-man-city-man-united-tottenham",
         "lang": "en",
-        "summary": "Vinícius Júnior ended weeks of speculation of a blockbuster move to Arsenal by signing a new six-year Real Madrid contract. Here's how it played out."
-      }
-    },
-    {
-      "source": "espn",
-      "type": "news",
-      "text": "Why Real Madrid spent big to sign Yan Diomande, and how he'll fit into attack",
-      "timestamp": "Fri, 7 Aug 2026 17:34:45 EST",
-      "metadata": {
-        "link": "https://www.espn.com/soccer/story/_/id/49486961/why-real-madrid-signed-yan-diomande-how-fits-attack-kylian-mbappe-jude-bellingham-vinicius-junior",
-        "lang": "en",
-        "summary": "Why have Real Madrid added World Cup star Yan Diomande to a forward line that already features Kylian Mbappé, Jude Bellingham and Vinícius Júnior?"
-      }
-    },
-    {
-      "source": "espn",
-      "type": "news",
-      "text": "Why did Salah leave Liverpool for Türkiye's fourth-most popular club?",
-      "timestamp": "Fri, 7 Aug 2026 05:51:14 EST",
-      "metadata": {
-        "link": "https://www.espn.com/soccer/story/_/id/49537784/why-did-mohamed-salah-leave-liverpool-turkiyes-fourth-most-popular-club",
-        "lang": "en",
-        "summary": "Mohamed Salah decided to trade the Premier League for Turkish side Trabzonspor, but with time running out in the transfer window, where does his departure leave Liverpool?"
-      }
-    },
-    {
-      "source": "espn",
-      "type": "news",
-      "text": "Is there a way back for Rashford at Man United under Carrick this season?",
-      "timestamp": "Fri, 7 Aug 2026 03:12:30 EST",
-      "metadata": {
-        "link": "https://www.espn.com/soccer/story/_/id/49538943/marcus-rashford-return-manchester-united-brings-lot-questions",
-        "lang": "en",
-        "summary": "Marcus Rashford's future at Manchester United is at a crossroads, with Barcelona declining to execute a permanent transfer. Is there a place for him in Michael Carrick's plans this season?"
-      }
-    },
-    {
-      "source": "espn",
-      "type": "news",
-      "text": "As new 'Ted Lasso' season premieres, fans might recognize a real-life NWSL club on the show",
-      "timestamp": "Wed, 5 Aug 2026 10:05:46 EST",
-      "metadata": {
-        "link": "https://www.espn.com/soccer/story/_/id/49525710/new-ted-lasso-season-features-nwsl-kansas-city-current-plot-point",
-        "lang": "en",
-        "summary": "The new season of \"Ted Lasso\" was filmed in the U.S. at a real-life NWSL club for a cameo that serves as a key plot point of the show."
-      }
-    },
-    {
-      "source": "espn",
-      "type": "news",
-      "text": "Why Man United swapped Skinner for Olid, and where they go from here",
-      "timestamp": "Thu, 6 Aug 2026 09:58:55 EST",
-      "metadata": {
-        "link": "https://www.espn.com/soccer/story/_/id/49543275/why-marc-skinner-left-man-united-women-appointed-eva-olid",
-        "lang": "en",
-        "summary": "Less than a month out from the WSL season, Manchester United have appointed Eva Olid to take over as manager, but why have they changed direction?"
-      }
-    },
-    {
-      "source": "espn",
-      "type": "news",
-      "text": "One question each big WSL club should ask themselves",
-      "timestamp": "Thu, 6 Aug 2026 09:58:55 EST",
-      "metadata": {
-        "link": "https://www.espn.com/soccer/story/_/id/49535214/one-question-big-wsl-club-ask",
-        "lang": "en",
-        "summary": "Our writers look at each team's transfer business and propose a big question they should be asking themselves."
+        "summary": "The 2026-27 Premier League season is fast approaching, and every club has released at least one of their new jerseys. Here they all are -- ranked!"
       }
     },
     {
       "source": "skysports",
       "type": "news",
-      "text": "Araujo set for surprise Liverpool loan move",
-      "timestamp": "Fri, 07 Aug 2026 22:51:00 BST",
+      "text": "Rangers meeting Q&A: McInnes-Klopp compared, club failure admission & new signings update",
+      "timestamp": "Mon, 10 Aug 2026 15:00:00 BST",
       "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13570871/ronald-araujo-transfer-news-liverpool-agree-loan-deal-for-barcelona-defender-to-add-depth-at-centre-back",
+        "link": "https://www.skysports.com/football/news/12040/13571632/rangers-meeting-qa-derek-mcinnes-jurgen-klopp-comparison-club-became-used-to-finishing-second-admission-and-new-signings-update",
         "lang": "en",
-        "summary": "Liverpool have agreed a surprise deal for Barcelona defender Ronald Araujo to join on loan for the season."
+        "summary": "Rangers chairman Andrew Cavanagh believes the Ibrox side have become used to finishing second or worse over the last 15 years, and admits that failure had begun to \"seep through\" every corner of the club."
       }
     },
     {
       "source": "skysports",
       "type": "news",
-      "text": "Papers: Arsenal could hijack Liverpool's move for Barcola",
-      "timestamp": "Fri, 07 Aug 2026 23:30:00 BST",
+      "text": "Scotland, Netherlands criticise Cricket World Cup format changes",
+      "timestamp": "Mon, 10 Aug 2026 15:00:00 BST",
       "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13570879/bradley-barcola-transfer-news-arsenal-could-hijack-liverpools-move-for-psg-winger-paper-talk",
+        "link": "https://www.skysports.com/cricket/news/12040/13571677/cricket-world-cup-scotland-and-netherlands-criticise-format-changes-to-50-over-tournament-announced-by-icc",
         "lang": "en",
-        "summary": "The top stories and transfer rumours from Saturday's newspapers..."
+        "summary": "Scotland and the Netherlands have criticised the restructuring of next year's 50-over World Cup, saying the changes \"risk weakening the integrity and credibility of international cricket\"."
       }
     },
     {
       "source": "skysports",
       "type": "news",
-      "text": "Late winner sees Leeds edge Wakefield",
-      "timestamp": "Fri, 07 Aug 2026 22:00:00 BST",
+      "text": "Man City latest: Marmoush will decide Etihad future, says Maresca",
+      "timestamp": "Mon, 10 Aug 2026 14:30:00 BST",
       "metadata": {
-        "link": "https://www.skysports.com/watch/video/13570851/wakefield-trinity-22-24-leeds-rhinos-super-league-highlights",
-        "lang": "en",
-        "summary": "Highlights of Wakefield Trinity against Leeds Rhinos from the Super League."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Debut Lankshear goal sees Boro past Wrexham as Wolves & Stevenage progress",
-      "timestamp": "Fri, 07 Aug 2026 22:05:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13570859/carabao-cup-will-lankshear-strike-sees-middlesbrough-past-wrexham-as-wolves-beat-port-vale-and-stevenage-edge-wycombe",
-        "lang": "en",
-        "summary": "Will Lankshear's debut strike ensured Middlesbrough made a winning start to the season as they beat Wrexham 1-0 in the Carabao Cup first round."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "New Zealand begin South Africa tour with flattering win over Stormers",
-      "timestamp": "Fri, 07 Aug 2026 16:42:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/rugby-union/news/12040/13570742/new-zealands-tour-of-south-africa-all-blacks-pull-away-late-on-in-flattering-38-21-win-over-stormers",
-        "lang": "en",
-        "summary": "New Zealand's first full-scale tour of South Africa in 30 years began with an underwhelming 38-21 win over the Stormers."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Coventry latest: Ghana midfielder Yirenkyi joins in £26m deal",
-      "timestamp": "Fri, 07 Aug 2026 18:41:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/live-blog/12040/13541482/coventry-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights",
+        "link": "https://www.skysports.com/football/live-blog/12040/13025499/man-city-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts",
         "lang": "en",
         "summary": ""
       }
@@ -302,21 +203,21 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "UEFA aware of allegation it paid off Infantino's 'mistress' while he worked for them",
-      "timestamp": "Fri, 07 Aug 2026 22:16:00 BST",
+      "text": "'Dubois has ingredients to replace Taylor as face of boxing'",
+      "timestamp": "Mon, 10 Aug 2026 14:00:00 BST",
       "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13570861/gianni-infantino-uefa-aware-of-allegation-it-paid-off-an-alleged-mistress-of-fifa-president-while-he-worked-at-european-governing-body",
+        "link": "https://www.skysports.com/boxing/news/12040/13571639/caroline-dubois-britains-lightweight-world-champion-has-ingredients-to-succeed-katie-taylor-as-face-of-boxing-says-nakisa-bidarian",
         "lang": "en",
-        "summary": "UEFA has confirmed it is aware of an allegation that European football's governing body paid off an alleged mistress of Gianni Infantino. "
+        "summary": "Caroline Dubois \"has the ingredients\" to succeed Katie Taylor as one of the biggest stars in boxing, according to Most Valuable Promotions partner Nakisa Bidarian."
       }
     },
     {
       "source": "skysports",
       "type": "news",
-      "text": "West Ham latest: Sullivan likely to attend games despite advice",
-      "timestamp": "Thu, 06 Aug 2026 11:00:00 BST",
+      "text": "Carabao Cup second-round draw tonight as Chelsea, Spurs and Newcastle enter",
+      "timestamp": "Mon, 10 Aug 2026 13:45:00 BST",
       "metadata": {
-        "link": "https://www.skysports.com/football/live-blog/12040/13210475/west-ham-latest-news",
+        "link": "https://www.skysports.com/football/live-blog/12040/13571626/carabao-cup-draw-chelsea-spurs-everton-newcastle-leeds-nottingham-forest-and-more-join-first-round-winners-in-second-round",
         "lang": "en",
         "summary": ""
       }
@@ -324,65 +225,21 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Flintoff steps down as England Lions head coach",
-      "timestamp": "Fri, 07 Aug 2026 18:15:00 BST",
+      "text": "Stella issues rivals warning over McLaren 'momentum' in title battles",
+      "timestamp": "Mon, 10 Aug 2026 11:40:00 BST",
       "metadata": {
-        "link": "https://www.skysports.com/cricket/news/12040/13570774/andrew-flintoff-steps-down-as-england-lions-head-coach",
+        "link": "https://www.skysports.com/f1/news/12040/13571601/mclaren-boss-andrea-stella-issues-warning-to-rivals-over-momentum-in-f1-title-battle-following-lando-norris-win",
         "lang": "en",
-        "summary": "Andrew Flintoff has stepped down as head coach of the England Lions."
+        "summary": "McLaren boss Andrea Stella has issued a warning to his team's rivals for the remainder of the 2026 season as he expressed confidence in the Woking squad's ability to maintain momentum once it has been gained."
       }
     },
     {
       "source": "skysports",
       "type": "news",
-      "text": "Hull beats pro course record at Centurion! | Story of her round",
-      "timestamp": "Fri, 07 Aug 2026 18:12:00 BST",
+      "text": "Palace latest: Eagles in talks to sign Khalaili",
+      "timestamp": "Mon, 10 Aug 2026 14:00:00 BST",
       "metadata": {
-        "link": "https://www.skysports.com/watch/video/13570772/charley-hull-beats-pro-course-record-at-centurion-story-of-her-round",
-        "lang": "en",
-        "summary": "The story of Charley Hull's record-breaking second round at the PIF London Championship from the Centurion Club. "
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Leeds pull off comeback to beat Wakefield, KR and Leigh pick up crucial wins",
-      "timestamp": "Fri, 07 Aug 2026 23:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/rugby-league/news/12040/13570737/super-league-leeds-rhinos-secure-play-off-spot-with-comeback-win-over-wakefield-trinity-hull-kr-and-leigh-leopards-pick-up-crucial-victories",
-        "lang": "en",
-        "summary": "Leeds underlined their Super League title credentials as Chris Hankinson's converted try capped a thrilling comeback 24-22 win over Wakefield at a packed-out DIY Kitchens Stadium."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Liverpool Barcola deal difficult to complete after talks with PSG",
-      "timestamp": "Fri, 07 Aug 2026 18:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13570766/bradley-barcola-transfer-news-liverpool-deal-for-psg-winger-difficult-to-complete-after-talks",
-        "lang": "en",
-        "summary": "Liverpool have held preliminary talks with Paris Saint-Germain over the possibility of signing Bradley Barcola."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "White: I know where the Fury-AJ venue is - I did the deal!",
-      "timestamp": "Fri, 07 Aug 2026 16:11:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/boxing/news/12040/13570724/dana-white-i-know-where-the-tyson-fury-vs-anthony-joshua-venue-is-i-did-the-deal",
-        "lang": "en",
-        "summary": "The long-awaited heavyweight showdown between Tyson Fury and Anthony Joshua will take place \"where the money is\", says Dana White."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Fulham latest: Garcia and Palacios make losing debuts in loss to Palace",
-      "timestamp": "Fri, 07 Aug 2026 20:54:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/live-blog/12040/13279313/fulham-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights",
+        "link": "https://www.skysports.com/football/live-blog/12040/13279298/crystal-palace-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights",
         "lang": "en",
         "summary": ""
       }
@@ -390,67 +247,144 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "'What a run, what an impact!' | Faatili's moment of magic sets up Uele try",
-      "timestamp": "Fri, 07 Aug 2026 20:53:00 BST",
+      "text": "Amazon founder Bezos nears deal to buy stake in Liverpool",
+      "timestamp": "Mon, 10 Aug 2026 11:14:00 BST",
       "metadata": {
-        "link": "https://www.skysports.com/watch/video/13570819/super-league-caius-faatilis-moment-of-magic-sets-up-caleb-hamlin-uele-try",
+        "link": "https://www.skysports.com/football/news/12040/13571596/liverpool-amazon-founder-jeff-bezos-nears-deal-to-buy-stake-with-consortium-led-by-amit-bhatia",
         "lang": "en",
-        "summary": "Caius Faatili produced an incredible run as he set up Caleb Hamlin-Uele's try, extending Wakefield's lead over Leeds in the Super League."
+        "summary": "<em>Sky News</em> understands a consortium including the Amazon founder Jeff Bezos is closing in on a deal to buy a roughly one-third stake in Liverpool."
       }
     },
     {
       "source": "skysports",
       "type": "news",
-      "text": "Wilkin: Manner of defeat is alarming! | Tomkins: So much wrong at Saints",
-      "timestamp": "Thu, 06 Aug 2026 22:39:00 BST",
+      "text": "Super League's Final Charge: Play-off spots taking shape with five rounds left",
+      "timestamp": "Mon, 10 Aug 2026 10:00:00 BST",
       "metadata": {
-        "link": "https://www.skysports.com/watch/video/13570537/jon-wilkin-and-sam-tomkins-slam-st-helens-theres-so-many-things-wrong",
+        "link": "https://www.skysports.com/rugby-league/news/12040/13570739/super-leagues-final-charge-leeds-rhinos-wakefield-trinity-wigan-warriors-warrington-wolves-hull-kr-leigh-leopards-and-st-helens-in-contention",
         "lang": "en",
-        "summary": "Jon Wilkin and Sam Tomkins were shocked by the way St Helens lost to Hull FC and look at the massive decline of the club."
+        "summary": "There are just five rounds of Super League action remaining and, with it, a whole lot of drama as Super League's Final Charge ramps up."
       }
     },
     {
       "source": "skysports",
       "type": "news",
-      "text": "'His dad is so proud!' | Sinfield scores in front of famous father",
-      "timestamp": "Fri, 07 Aug 2026 21:12:00 BST",
+      "text": "Sunderland latest: Wrexham agree £8m deal to sign Black Cats 'keeper",
+      "timestamp": "Mon, 10 Aug 2026 10:25:00 BST",
       "metadata": {
-        "link": "https://www.skysports.com/watch/video/13570827/super-league-jack-sinfield-scores-in-front-of-famous-father-kevin",
+        "link": "https://www.skysports.com/football/live-blog/12040/13375102/sunderland-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts",
         "lang": "en",
-        "summary": "Jack Sinfield scored for Wakefield against his father's former side Leeds as rugby league legend Kevin watched on proudly."
+        "summary": ""
       }
     },
     {
       "source": "skysports",
       "type": "news",
-      "text": "'Would you believe it?!' | Leeds score late winning try to break Wakefield hearts",
-      "timestamp": "Fri, 07 Aug 2026 22:04:00 BST",
+      "text": "Hodgkinson: Home European gold would mean almost as much as Olympic title",
+      "timestamp": "Mon, 10 Aug 2026 08:00:00 BST",
       "metadata": {
-        "link": "https://www.skysports.com/watch/video/13570857/super-league-leeds-rhinos-score-late-winning-try-to-break-wakefield-trinity-hearts",
+        "link": "https://www.skysports.com/live-blog/12040/13571552/european-athletics-championships-2026-updates-from-birmingham-as-keely-hodgkinson-dina-asher-smith-katarina-johnson-thompson-compete",
         "lang": "en",
-        "summary": "Chris Hankinson's late try saw Leeds Rhinos complete a dramatic comeback as they beat title rivals Wakefield Trinity to remain top of the table."
+        "summary": ""
       }
     },
     {
       "source": "skysports",
       "type": "news",
-      "text": "Birmingham Phoenix knocked out by SunRisers Leeds",
-      "timestamp": "Fri, 07 Aug 2026 16:42:00 BST",
+      "text": "Osaka defeats local favourite to reach Canadian Open quarter-finals",
+      "timestamp": "Mon, 10 Aug 2026 06:58:00 BST",
       "metadata": {
-        "link": "https://www.skysports.com/cricket/news/12040/13570736/the-hundred-sunrisers-leeds-win-by-45-runs-to-eliminate-birmingham-phoenix",
+        "link": "https://www.skysports.com/watch/video/13571540/naomi-osaka-vs-leylah-fernandez-national-bank-open-highlights",
         "lang": "en",
-        "summary": "A win for SunRisers Leeds saw the elimination of Birmingham Phoenix from the men's competition, just as with their women's team earlier."
+        "summary": "Highlights of the Canadian Open match between Naomi Osaka and Leylah Fernandez."
       }
     },
     {
       "source": "skysports",
       "type": "news",
-      "text": "Shergar Cup Sprint tips: Kate, Sam and Jamie are taking on Ascot favourite",
-      "timestamp": "Fri, 07 Aug 2026 15:21:00 BST",
+      "text": "Gauff breezes past Korneeva to reach Canadian Open quarters",
+      "timestamp": "Sun, 09 Aug 2026 22:29:00 BST",
       "metadata": {
-        "link": "https://www.skysports.com/racing/news/12040/13570705/weekend-winners-kate-tracey-sam-boswell-and-jamie-lynch-have-their-say-on-saturdays-shergar-cup-sprint-at-ascot",
+        "link": "https://www.skysports.com/watch/video/13571514/coco-gauff-vs-alina-korneeva-national-bank-open-highlights",
         "lang": "en",
-        "summary": "Kate Tracey, Sam Boswell and Jamie Lynch reconvene to discuss the best betting angles for the Shergar Cup Sprint at Ascot on Saturday,<em> live on Sky Sports Racing.</em>"
+        "summary": "Highlights of the Candian Open match between Coco Gauff and Alina Korneeva."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Today on Sky Sports Racing: Badri chases four-timer at Windsor",
+      "timestamp": "Mon, 10 Aug 2026 06:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/racing/news/12040/13571329/today-on-sky-sports-racing-flat-action-from-windsor-live-on-monday-evening-with-badri-chasing-a-four-timer",
+        "lang": "en",
+        "summary": "Windsor takes centre stage on Monday with a six-race Flat meeting live on Sky Sports Racing."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Brennan secures FedEx Cup Playoffs spot with Wyndham Championship win",
+      "timestamp": "Sun, 09 Aug 2026 23:05:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/golf/news/12040/13571521/wyndham-championship-michael-brennan-secures-fedex-playoffs-spot-with-victory",
+        "lang": "en",
+        "summary": "Michael Brennan secured his place in the FedExCup Playoffs as he won the Wyndham Championship by three strokes from Beau Hossler."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Why Munoz is a symbol of change for Iraola's new Liverpool",
+      "timestamp": "Mon, 10 Aug 2026 12:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13561572/victor-munoz-to-liverpool-spain-international-is-a-symbol-of-andoni-iraolas-plan-to-add-intensity-in-attack",
+        "lang": "en",
+        "summary": "Andoni Iraola could not have been clearer about how he plans to change Liverpool when speaking in his opening press conference. \"We have to be a team that works hard, intense and aggressive.&#8221; That shift in approach is embodied by Victor Munoz."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Rangers frustrations, Celtic's Hogh silences critics, Hearts win under Vrancken",
+      "timestamp": "Mon, 10 Aug 2026 11:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571564/scottish-premiership-review-rangers-struggle-kasper-hogh-silences-celtic-critics-hearts-shine-in-another-dramatic-weekend",
+        "lang": "en",
+        "summary": "Rangers manager Derek McInnes is still waiting for his first win, but both Celtic striker Kasper Hogh and Hearts boss Wouter Vrancken answered some of their critics. "
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Papers: Man Utd and Arsenal chase Club Brugge full-back Seys",
+      "timestamp": "Sun, 09 Aug 2026 23:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571517/manchester-united-and-arsenal-among-several-clubs-chasing-club-brugge-left-back-joaquin-seys",
+        "lang": "en",
+        "summary": "The top stories and transfer rumours from Monday's newspapers..."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "UEFA signs joint letter slamming 'deception' as Infantino fallout continues",
+      "timestamp": "Mon, 10 Aug 2026 10:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571573/gianni-infantino-uefa-signs-joint-letter-slamming-deception-at-top-of-fifa-as-world-cup-stake-sale-fallout-continues",
+        "lang": "en",
+        "summary": "UEFA,  CONCACAF and AFC have hit out at \"deception\" and a \"fundamental breach of trust\" around Gianni Infantino's botched World Cup stake sale plans to further raise the pressure on the under-fire FIFA president."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Golfer shoots 59 in final round en route to win on Korn Ferry Tour",
+      "timestamp": "Mon, 10 Aug 2026 06:45:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/golf/news/12040/13571538/frankie-harris-shoots-59-in-final-round-before-winning-korn-ferry-tours-pinnacle-bank-championship-in-play-off",
+        "lang": "en",
+        "summary": "Frankie Harris made an 18-foot birdie putt on the final hole as he shot a 12-under 59 before winning the Korn Ferry Tour's Pinnacle Bank Championship in a play-off."
       }
     }
   ]
