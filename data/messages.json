@@ -1,7 +1,29 @@
 {
-  "generatedAt": "2026-08-11T11:33:11Z",
+  "generatedAt": "2026-08-11T15:31:11Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Chelsea make enquiry for Arsenal's Lewis-Skelly",
+      "timestamp": "Tue, 11 Aug 2026 16:05:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571919/myles-lewis-skelly-transfer-news-chelsea-make-enquiry-for-arsenal-teenager-amid-long-term-interest-from-blues-and-man-utd",
+        "lang": "en",
+        "summary": "Chelsea&#160;have made a new enquiry about signing&#160;Arsenal's Myles Lewis-Skelly.&#160;"
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Wrexham set to make club-record signing as Phillips returns to Blades",
+      "timestamp": "Tue, 11 Aug 2026 11:26:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/live-blog/12040/13163353/championship-news-transfer-latest-and-gossip-plus-efl-updates-from-league-one-and-league-two",
+        "lang": "en",
+        "summary": ""
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -11,6 +33,28 @@
         "link": "https://www.skysports.com/darts/news/12040/13571915/gian-van-veen-asks-for-help-ahead-of-new-zealand-darts-masters-with-bags-stuck-in-paris",
         "lang": "en",
         "summary": "Gian van Veen has taken to social media to ask for help with his bags stuck in Paris ahead of the New Zealand Darts Masters in Auckland this weekend."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "The F1 Show: What does a Formula 1 driver's manager do?",
+      "timestamp": "Tue, 11 Aug 2026 16:05:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/f1/news/27451/12822277/the-f1-show-podcast-sky-sports",
+        "lang": "en",
+        "summary": ""
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "'He believed in the journey' | Wakefield's Litten signing explained",
+      "timestamp": "Tue, 11 Aug 2026 12:24:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13571928/super-league-wakefield-trinity-director-of-rugby-ste-mills-explains-davy-litten-signing",
+        "lang": "en",
+        "summary": "Wakefield director of rugby Ste Mills has explained how the club were able to sign Hull FC's Davy Litten on a four-year contract."
       }
     },
     {
@@ -60,12 +104,67 @@
     {
       "source": "skysports",
       "type": "news",
+      "text": "How concerned should Liverpool be after another pre-season collapse?",
+      "timestamp": "Tue, 11 Aug 2026 13:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571608/should-liverpool-be-worried-pre-season-form-injuries-and-squad-depth-concerns-for-andoni-iraola-ahead-of-season-opener",
+        "lang": "en",
+        "summary": "How much does pre-season mean? It depends who you ask. "
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Flintoff hits 65-ball ton as Lancashire make mammoth One-Day Cup total",
+      "timestamp": "Tue, 11 Aug 2026 15:37:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/cricket/news/12040/13571995/one-day-cup-rocky-flintoffs-65-ball-century-helps-lancashire-make-third-highest-total-in-english-50-over-domestic-cricket",
+        "lang": "en",
+        "summary": "Rocky Flintoff's 123 off 76 balls led Lancashire to the third highest total in English domestic 50-over cricket as they made 443-6 against Somerset."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
       "text": "England's World Cup place guaranteed but West Indies need to qualify",
       "timestamp": "Tue, 11 Aug 2026 07:00:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/cricket/news/12040/13571828/england-guaranteed-place-in-2027-cricket-world-cup-but-west-indies-will-have-to-enter-qualifying-tournament-again",
         "lang": "en",
         "summary": "Panic over, England fans - your team will NOT have to qualify for the 2027 Cricket World Cup."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "'I want to get my revenge!' - White's message after Commonwealth final loss",
+      "timestamp": "Tue, 11 Aug 2026 14:32:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/boxing/news/12040/13571983/ruby-white-commonwealth-games-silver-medallist-sends-message-to-sakshi-chaudhary-after-final-defeat-in-glasgow",
+        "lang": "en",
+        "summary": "Teenage sensation Ruby White only joined the Great Britain Boxing academy in May - by August, she had taken the Commonwealth Games by storm."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "LeBron to make Sixers debut against Knicks on NBA opening night",
+      "timestamp": "Tue, 11 Aug 2026 13:43:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/nba/news/12040/13571957/lebron-james-faces-the-new-york-knicks-on-nba-opening-night-with-lakers-clash-on-christmas-day-as-signature-fixtures-announced",
+        "lang": "en",
+        "summary": "LeBron James will make his Philadelphia 76ers debut against defending NBA champions the New York Knicks at Madison Square Garden on the opening night of the season."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "PSG meet Villa again - what has changed since their last epic match?",
+      "timestamp": "Tue, 11 Aug 2026 09:22:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571861/super-cup-psg-and-aston-villa-meet-again-in-salzburg-as-unai-emery-enters-new-era-with-test-against-european-kingpins",
+        "lang": "en",
+        "summary": "\"We were really suffering. I do not think this team has been dominated in this way.\""
       }
     },
     {
@@ -82,144 +181,45 @@
     {
       "source": "skysports",
       "type": "news",
+      "text": "Rangers striker Chermiti out for 'significant period of time' with ACL injury",
+      "timestamp": "Tue, 11 Aug 2026 13:30:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571945/youssef-chermiti-rangers-reveal-acl-injury-suffered-in-hibernian-loss-that-rules-striker-out-for-significant-period-of-time",
+        "lang": "en",
+        "summary": "Rangers striker Youssef Chermiti will be out for \"a significant period of time\" after suffering an ACL injury in Sunday's defeat to Hibernian."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Forest owner Marinakis suing Palace for defamation",
+      "timestamp": "Tue, 11 Aug 2026 13:25:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571952/evangelos-marinakis-nottingham-forest-owner-suing-crystal-palace-for-defamation-after-banner-at-selhurst-park",
+        "lang": "en",
+        "summary": "Evangelos Marinakis is suing Crystal Palace for defamation, after a banner was unfurled at Selhurst Park last season showing the Nottingham Forest owner holding a gun to the head of Morgan Gibbs-White."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Man City have signed Anderson - why do they also want Bouaddi?",
+      "timestamp": "Tue, 11 Aug 2026 11:41:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571912/ayyoub-bouaddi-transfer-why-do-man-city-want-to-spend-big-on-another-midfielder-after-signing-elliot-anderson",
+        "lang": "en",
+        "summary": "Those who followed Morocco's recent World Cup campaign will recognise the name Ayyoub Bouaddi. Perhaps those who only took a passing glance will remember him, too. He tends to stand out. "
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
       "text": "Swiatek cruises into Canadian Open semis with 64-minute-win over Shnaider",
       "timestamp": "Tue, 11 Aug 2026 06:39:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/watch/video/13571824/diana-shnaider-vs-iga-swiatek-canadian-open-highlights",
         "lang": "en",
         "summary": "Highlights of the Canadian Open match between Diana Shnaider and Iga Swiatek. "
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "McKenna is 'locked in' on Walsh showdown after viral KO win",
-      "timestamp": "Tue, 11 Aug 2026 07:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/boxing/news/12040/13571739/stevie-mckenna-is-locked-in-on-all-irish-showdown-with-callum-walsh-after-viral-ko-win-says-manager-mike-borao",
-        "lang": "en",
-        "summary": "Stevie McKenna is 'locked in' on an all-Irish showdown with Callum Walsh after delivering a dramatic victory in Dublin, says his manager Mike Borao."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Rashford set for reintegration at Man Utd - but is it a good idea?",
-      "timestamp": "Tue, 11 Aug 2026 08:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13571617/marcus-rashford-what-are-manchester-uniteds-plans-to-reintegrate-the-england-forward-after-two-loan-spells",
-        "lang": "en",
-        "summary": "All eyes will be on Marcus Rashford this week. "
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "'I've never seen that before!' | Medvedev and Marozsan play rock, paper scissors on court!",
-      "timestamp": "Tue, 11 Aug 2026 06:48:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13571827/daniil-medvedev-and-fabian-marozsan-play-rock-paper-scissers-on-court",
-        "lang": "en",
-        "summary": "Daniil Medvedev and Fabian Marozsan play rock, paper, scissors to see who gets to receive the deciding point against Theo Arribage and Albano Olivetti."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "'Best out of three?' | Jordan's toe forces coin toss to be retaken!",
-      "timestamp": "Mon, 10 Aug 2026 18:05:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13571749/the-hundred-retaken-coin-toss-gives-southern-brave-the-advantage",
-        "lang": "en",
-        "summary": "In the coin toss for the match between Trent Rockets and Southern Brave, the coin hit Chris Jordan's shoe, forcing a retake."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Deedaydiva and She Commands look to bounce back at Lingfield Park",
-      "timestamp": "Tue, 11 Aug 2026 07:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/racing/news/12040/13571483/today-on-sky-sports-racing-all-weather-action-from-lingfield-park",
-        "lang": "en",
-        "summary": "We have a busy day&#8217;s racing on Tuesday with All-Weather action from Lingfield Park, live on Sky Sports Racing..."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Vasseur reveals 'most important' target for Ferrari after F1 summer break",
-      "timestamp": "Tue, 11 Aug 2026 07:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/f1/news/12040/13570144/ferrari-boss-fred-vasseur-pinpoints-areas-team-need-to-improve-in-to-keep-lewis-hamilton-in-f1-title-fight",
-        "lang": "en",
-        "summary": "Ferrari boss Frederic Vasseur has revealed the areas in which he believes the Italian team need to improve during the second half of the 2026 Formula 1 season as Lewis Hamilton attempts to stay in the title battle."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Why Dutchwoman Weber is ineligible for 'amazing' home Solheim Cup",
-      "timestamp": "Tue, 11 Aug 2026 06:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/golf/news/12040/13571590/solheim-cup-2026-why-dutchwoman-dewi-weber-was-ineligible-to-be-potential-team-europe-captains-pick-for-home-edition",
-        "lang": "en",
-        "summary": "Dewi Weber would relish the opportunity to be involved in a home Solheim Cup in any capacity after being ineligible to feature for Team Europe in the Netherlands. "
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Rockets relying on others to avoid eliminator after loss to Brave",
-      "timestamp": "Mon, 10 Aug 2026 16:20:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/cricket/news/12040/13571707/the-hundred-trent-rockets-relying-on-others-to-avoid-eliminator-after-loss-to-southern-brave",
-        "lang": "en",
-        "summary": "Trent Rockets are relying on a favour from Manchester Super Giants after a six-match winning run was ended by Southern Brave at Trent Bridge to deny them direct progress to Sunday's final."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Britain's Hunt claims European Championships 100m gold",
-      "timestamp": "Mon, 10 Aug 2026 08:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/live-blog/12040/13571552/european-athletics-championships-2026-updates-from-birmingham-as-keely-hodgkinson-dina-asher-smith-katarina-johnson-thompson-compete",
-        "lang": "en",
-        "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "How Liverpool signed Araujo - and why the deal works",
-      "timestamp": "Mon, 10 Aug 2026 18:30:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13570899/ronald-araujo-transfer-news-liverpool-complete-deal-to-sign-barcelona-defender-on-loan-with-option-to-buy",
-        "lang": "en",
-        "summary": "Liverpool have confirmed the signing of defender Ronald Araujo from Barcelona."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Papers: Aston Villa interested in Endrick loan from Real Madrid",
-      "timestamp": "Sun, 09 Aug 2026 23:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13571792/aston-villa-keen-on-loan-deal-for-real-madrid-wonderkid-endrick-paper-talk",
-        "lang": "en",
-        "summary": "The top stories and transfer rumours from Tuesday's newspapers..."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Dortmund scout behind Haaland and Bellingham moves wanted by PL clubs",
-      "timestamp": "Tue, 11 Aug 2026 09:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13571673/sebastian-krug-borussia-dortmund-scout-behind-erling-haaland-and-jude-bellingham-moves-wanted-by-premier-league-clubs",
-        "lang": "en",
-        "summary": "A number of clubs in the Premier League and Europe are exploring a deal to recruit Borussia Dortmund director of scouting and recruiting Sebastian Krug."
       }
     }
   ]
