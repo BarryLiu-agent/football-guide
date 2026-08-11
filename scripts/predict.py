@@ -914,7 +914,17 @@ def evaluate_predictions(predictions):
         seen.add((norm_team(p["homeTeam"]), norm_team(p["awayTeam"]), p.get("kickoff", "")[:10]))
     for p in predictions:
         key = (norm_team(p["homeTeam"]), norm_team(p["awayTeam"]), (p.get("kickoff") or "")[:10])
+        ai = p.get("aiJudge") or {}
         if key in seen:
+            # 已存档：若当时无 AI 研判而现在有 → 补写（便于结算 AI 命中）
+            old = next((q for q in hist["predictions"]
+                        if (norm_team(q["homeTeam"]), norm_team(q["awayTeam"]), q.get("kickoff", "")[:10]) == key
+                        and not q.get("aiPick") and not q.get("actualScore")), None)
+            if old and ai.get("pick"):
+                old["aiPick"] = ai.get("pick")
+                old["aiScore"] = ai.get("score")
+                old["aiConfidence"] = ai.get("confidence")
+                old["aiModel"] = ai.get("model")
             continue
         seen.add(key)
         hist["predictions"].append({
@@ -924,6 +934,10 @@ def evaluate_predictions(predictions):
             "confidence": p.get("confidence"),
             "valuePicks": p.get("valuePicks") or [],
             "signalLevel": p.get("signalLevel", "none"),
+            "aiPick": ai.get("pick"),
+            "aiScore": ai.get("score"),
+            "aiConfidence": ai.get("confidence"),
+            "aiModel": ai.get("model"),
             "predictedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         })
 
@@ -965,6 +979,9 @@ def evaluate_predictions(predictions):
     outcome_hit = 0
     value_total = 0
     value_hit = 0
+    ai_total = 0
+    ai_hit = 0
+    ai_exact = 0
     for p in hist["predictions"]:
         if p.get("actualScore"):
             evaluated += 1
@@ -972,6 +989,12 @@ def evaluate_predictions(predictions):
                 exact_hit += 1
             if p.get("hitOutcome"):
                 outcome_hit += 1
+            if p.get("aiHitOutcome") is not None:
+                ai_total += 1
+                if p.get("aiHitOutcome"):
+                    ai_hit += 1
+                if p.get("aiHitExact"):
+                    ai_exact += 1
             continue
         key = (norm_team(p["homeTeam"]), norm_team(p["awayTeam"]), p.get("kickoff", "")[:10])
         r = result_keys.get(key)
@@ -991,6 +1014,18 @@ def evaluate_predictions(predictions):
                 exact_hit += 1
             if p["hitOutcome"]:
                 outcome_hit += 1
+            # AI 研判命中（aiPick 非空且非 none 才统计）
+            p["aiHitOutcome"] = None
+            p["aiHitExact"] = False
+            if p.get("aiPick") and p["aiPick"] != "none":
+                actual_out = outcome_of(r["actualScore"])
+                p["aiHitOutcome"] = (p["aiPick"] == actual_out)
+                p["aiHitExact"] = bool(p.get("aiScore") and p["aiScore"] == r["actualScore"])
+                ai_total += 1
+                if p["aiHitOutcome"]:
+                    ai_hit += 1
+                if p["aiHitExact"]:
+                    ai_exact += 1
             # 价值标记方向命中（bestOutcome）
             vp = p.get("valuePicks") or []
             if vp:
@@ -1005,6 +1040,10 @@ def evaluate_predictions(predictions):
                 "actualScore": r["actualScore"],
                 "hitExact": p["hitExact"],
                 "hitOutcome": p["hitOutcome"],
+                "aiPick": p.get("aiPick"),
+                "aiScore": p.get("aiScore"),
+                "aiHitOutcome": p.get("aiHitOutcome"),
+                "aiHitExact": p.get("aiHitExact"),
             })
 
     # 4. 统计
@@ -1018,6 +1057,11 @@ def evaluate_predictions(predictions):
         "valueTotal": value_total,
         "valueHit": value_hit,
         "valueRate": round(value_hit / value_total, 4) if value_total else 0,
+        "aiTotal": ai_total,
+        "aiHit": ai_hit,
+        "aiRate": round(ai_hit / ai_total, 4) if ai_total else 0,
+        "aiExact": ai_exact,
+        "aiExactRate": round(ai_exact / ai_total, 4) if ai_total else 0,
         "updatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
     }
     hist["stats"] = stats

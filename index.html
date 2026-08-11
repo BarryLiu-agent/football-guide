@@ -950,18 +950,29 @@ function renderRecord() {
     { k: '胜负方向命中', v: pct(s.outcomeRate), cls: s.outcomeRate >= 0.5 ? 'green' : 'red' },
     { k: '价值标记命中', v: pct(s.valueRate), cls: s.valueRate >= 0.5 ? 'green' : '' },
   ];
+  // AI vs 统计模型方向命中对比（AI 研判有明确倾向的场次）
+  const aiRow = (s.aiTotal > 0) ? '<div class="record-cards" style="margin-top:8px">' +
+    '<div class="rec-card" style="border-color:var(--gold)"><div class="v gold">' + pct(s.aiRate) + '</div><div class="k">🤖 AI 方向命中（' + s.aiTotal + '场）</div></div>' +
+    '<div class="rec-card"><div class="v">' + pct(s.outcomeRate) + '</div><div class="k">📊 模型方向命中（' + (s.finished || 0) + '场）</div></div>' +
+    '<div class="rec-card"><div class="v">' + pct(s.aiExactRate) + '</div><div class="k">🤖 AI 比分精确</div></div>' +
+    '</div>' +
+    '<div style="font-size:11px;color:var(--muted);margin-bottom:4px">AI vs 模型同场对比：AI 有倾向场次方向命中 ' + pct(s.aiRate) + ' vs 全量模型 ' + pct(s.outcomeRate) + ' · 样本累积中，越多越可信</div>' : '';
   const rows = (h.results || []).slice().reverse().slice(0, 30).map(r => {
     const hit = r.hitOutcome;
+    const aiHit = r.aiPick && r.aiPick !== 'none' ? r.aiHitOutcome : null;
     return '<div class="record-row"><div class="res ' + (hit ? 'hit' : 'miss') + '">' + (hit ? '✓' : '✗') + '</div>' +
       '<span style="flex:1">' + cnTeam(r.homeTeam) + ' vs ' + cnTeam(r.awayTeam) + '</span>' +
       '<span style="color:var(--muted);font-size:11px">预测</span> <span class="pred">' + (r.predictedScore || '—') + '</span>' +
-      '<span style="color:var(--muted);font-size:11px">实际</span> <span class="actual">' + (r.actualScore || '—') + '</span></div>';
+      '<span style="color:var(--muted);font-size:11px">实际</span> <span class="actual">' + (r.actualScore || '—') + '</span>' +
+      (aiHit == null ? '' : '<span class="res ' + (aiHit ? 'hit' : 'miss') + '" style="margin-left:6px" title="AI 研判：' + (r.aiScore || '—') + '">🤖' + (aiHit ? '✓' : '✗') + '</span>') +
+      '</div>';
   }).join('');
   return calibHtml +
   '<div class="record-cards">' + cards.map(c =>
     '<div class="rec-card"><div class="v ' + (c.cls || '') + '">' + c.v + '</div><div class="k">' + c.k + '</div></div>'
   ).join('') + '</div>' +
-  '<div style="font-size:11px;color:var(--muted);margin-bottom:10px">命中判定基于预测时的胜负方向；价值标记命中 = 模型 vs 盘口差>5%的方向是否正确 · 样本越多越可信</div>' +
+  aiRow +
+  '<div style="font-size:11px;color:var(--muted);margin-bottom:10px">命中判定基于预测时的胜负方向；价值标记命中 = 模型 vs 盘口差>5%的方向是否正确 · 🤖 标记为 AI 研判同场命中 · 样本越多越可信</div>' +
   (rows || '<div class="empty-state">暂无结算记录</div>');
 }
 
