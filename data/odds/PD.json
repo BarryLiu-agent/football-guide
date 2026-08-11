@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T16:55:14Z",
+  "generatedAt": "2026-08-11T00:08:05Z",
   "league": "PD",
   "history": {
     "alavés|getafe": [
@@ -48,6 +48,29 @@
             "price": 2.4450000000000003
           }
         }
+      },
+      {
+        "ts": "2026-08-11T00:08:05Z",
+        "h2h": {
+          "home": 2.4,
+          "draw": 2.8099999999999996,
+          "away": 3.6
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.705,
+          "under": 2.14
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.625
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.455
+          }
+        }
       }
     ],
     "sevilla|rayo vallecano": [
@@ -90,6 +113,29 @@
           "home": {
             "point": -0.25,
             "price": 1.995
+          },
+          "away": {
+            "point": 0.25,
+            "price": 1.93
+          }
+        }
+      },
+      {
+        "ts": "2026-08-11T00:08:05Z",
+        "h2h": {
+          "home": 2.28,
+          "draw": 3.2,
+          "away": 3.365
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.22,
+          "under": 1.625
+        },
+        "spreads": {
+          "home": {
+            "point": -0.25,
+            "price": 2.005
           },
           "away": {
             "point": 0.25,
@@ -144,6 +190,29 @@
             "price": 2.025
           }
         }
+      },
+      {
+        "ts": "2026-08-11T00:08:05Z",
+        "h2h": {
+          "home": 3.05,
+          "draw": 3.5,
+          "away": 2.29
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.9,
+          "under": 1.875
+        },
+        "spreads": {
+          "home": {
+            "point": 0.25,
+            "price": 1.9249999999999998
+          },
+          "away": {
+            "point": -0.25,
+            "price": 2.01
+          }
+        }
       }
     ],
     "espanyol|levante": [
@@ -192,6 +261,29 @@
             "price": 1.83
           }
         }
+      },
+      {
+        "ts": "2026-08-11T00:08:05Z",
+        "h2h": {
+          "home": 2.05,
+          "draw": 3.3,
+          "away": 3.9
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.1900000000000004,
+          "under": 1.65
+        },
+        "spreads": {
+          "home": {
+            "point": -0.5,
+            "price": 2.09
+          },
+          "away": {
+            "point": 0.5,
+            "price": 1.83
+          }
+        }
       }
     ],
     "celta vigo|ca osasuna": [
@@ -224,6 +316,29 @@
           "home": 2.02,
           "draw": 3.4,
           "away": 3.775
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.09,
+          "under": 1.73
+        },
+        "spreads": {
+          "home": {
+            "point": -0.5,
+            "price": 2.06
+          },
+          "away": {
+            "point": 0.5,
+            "price": 1.85
+          }
+        }
+      },
+      {
+        "ts": "2026-08-11T00:08:05Z",
+        "h2h": {
+          "home": 2.01,
+          "draw": 3.4,
+          "away": 3.8
         },
         "totals": {
           "line": 2.5,
@@ -288,6 +403,29 @@
             "price": 2.2350000000000003
           }
         }
+      },
+      {
+        "ts": "2026-08-11T00:08:05Z",
+        "h2h": {
+          "home": 2.42,
+          "draw": 3.0,
+          "away": 3.24
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.25,
+          "under": 1.62
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.725
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.2350000000000003
+          }
+        }
       }
     ],
     "atlético madrid|málaga": [
@@ -336,6 +474,29 @@
             "price": 1.94
           }
         }
+      },
+      {
+        "ts": "2026-08-11T00:08:05Z",
+        "h2h": {
+          "home": 1.3,
+          "draw": 5.5,
+          "away": 10.485
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.73,
+          "under": 2.07
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 1.935
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.95
+          }
+        }
       }
     ],
     "rayo vallecano|alavés": [
@@ -364,6 +525,29 @@
       },
       {
         "ts": "2026-08-10T16:55:14Z",
+        "h2h": {
+          "home": 2.05,
+          "draw": 3.1,
+          "away": 3.8
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.1100000000000003,
+          "under": 1.9
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.44
+          },
+          "away": {
+            "point": 0.0,
+            "price": 3.1
+          }
+        }
+      },
+      {
+        "ts": "2026-08-11T00:08:05Z",
         "h2h": {
           "home": 2.05,
           "draw": 3.1,
@@ -432,6 +616,29 @@
             "price": 2.64
           }
         }
+      },
+      {
+        "ts": "2026-08-11T00:08:05Z",
+        "h2h": {
+          "home": 2.13,
+          "draw": 3.3,
+          "away": 3.45
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.12,
+          "under": 1.6749999999999998
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.57
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.64
+          }
+        }
       }
     ],
     "athletic bilbao|sevilla": [
@@ -460,6 +667,29 @@
       },
       {
         "ts": "2026-08-10T16:55:14Z",
+        "h2h": {
+          "home": 1.6,
+          "draw": 3.65,
+          "away": 5.5
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.165,
+          "under": 1.66
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 2.83
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.51
+          }
+        }
+      },
+      {
+        "ts": "2026-08-11T00:08:05Z",
         "h2h": {
           "home": 1.6,
           "draw": 3.65,
@@ -528,6 +758,29 @@
             "price": 2.3
           }
         }
+      },
+      {
+        "ts": "2026-08-11T00:08:05Z",
+        "h2h": {
+          "home": 2.35,
+          "draw": 3.2,
+          "away": 3.05
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.18,
+          "under": 1.65
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.72
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.3
+          }
+        }
       }
     ],
     "espanyol|real madrid": [
@@ -556,6 +809,29 @@
       },
       {
         "ts": "2026-08-10T16:55:14Z",
+        "h2h": {
+          "home": 5.05,
+          "draw": 3.95,
+          "away": 1.61
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.7,
+          "under": 2.1100000000000003
+        },
+        "spreads": {
+          "home": {
+            "point": 1.5,
+            "price": 1.53
+          },
+          "away": {
+            "point": -1.5,
+            "price": 2.77
+          }
+        }
+      },
+      {
+        "ts": "2026-08-11T00:08:05Z",
         "h2h": {
           "home": 5.05,
           "draw": 3.95,
@@ -624,6 +900,29 @@
             "price": 2.98
           }
         }
+      },
+      {
+        "ts": "2026-08-11T00:08:05Z",
+        "h2h": {
+          "home": 1.9,
+          "draw": 3.5,
+          "away": 3.96
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.95,
+          "under": 1.8250000000000002
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.47
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.98
+          }
+        }
       }
     ],
     "getafe|real racing club de santander": [
@@ -652,6 +951,29 @@
       },
       {
         "ts": "2026-08-10T16:55:14Z",
+        "h2h": {
+          "home": 1.88,
+          "draw": 3.0,
+          "away": 4.6
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.325,
+          "under": 1.75
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 3.89
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.32
+          }
+        }
+      },
+      {
+        "ts": "2026-08-11T00:08:05Z",
         "h2h": {
           "home": 1.88,
           "draw": 3.0,
@@ -720,6 +1042,29 @@
             "price": 1.96
           }
         }
+      },
+      {
+        "ts": "2026-08-11T00:08:05Z",
+        "h2h": {
+          "home": 8.2,
+          "draw": 5.2,
+          "away": 1.33
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.755,
+          "under": 2.215
+        },
+        "spreads": {
+          "home": {
+            "point": 1.5,
+            "price": 1.98
+          },
+          "away": {
+            "point": -1.5,
+            "price": 1.96
+          }
+        }
       }
     ],
     "ca osasuna|levante": [
@@ -748,6 +1093,29 @@
       },
       {
         "ts": "2026-08-10T16:55:14Z",
+        "h2h": {
+          "home": 1.7,
+          "draw": 3.65,
+          "away": 4.6
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.85,
+          "under": 1.9
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 2.88
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.5
+          }
+        }
+      },
+      {
+        "ts": "2026-08-11T00:08:05Z",
         "h2h": {
           "home": 1.7,
           "draw": 3.65,
@@ -816,6 +1184,29 @@
             "price": 2.17
           }
         }
+      },
+      {
+        "ts": "2026-08-11T00:08:05Z",
+        "h2h": {
+          "home": 2.4,
+          "draw": 3.0,
+          "away": 2.9
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.52,
+          "under": 1.5
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.81
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.17
+          }
+        }
       }
     ],
     "valencia|real betis": [
@@ -844,6 +1235,29 @@
       },
       {
         "ts": "2026-08-10T16:55:14Z",
+        "h2h": {
+          "home": 2.69,
+          "draw": 3.25,
+          "away": 2.7
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.9849999999999999,
+          "under": 1.795
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.93
+          },
+          "away": {
+            "point": 0.0,
+            "price": 1.93
+          }
+        }
+      },
+      {
+        "ts": "2026-08-11T00:08:05Z",
         "h2h": {
           "home": 2.69,
           "draw": 3.25,
@@ -912,6 +1326,29 @@
             "price": 1.775
           }
         }
+      },
+      {
+        "ts": "2026-08-11T00:08:05Z",
+        "h2h": {
+          "home": 1.39,
+          "draw": 5.115,
+          "away": 7.155
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.225,
+          "under": 1.625
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 2.16
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.775
+          }
+        }
       }
     ],
     "barcelona|athletic bilbao": [
@@ -960,6 +1397,29 @@
             "price": 1.7650000000000001
           }
         }
+      },
+      {
+        "ts": "2026-08-11T00:08:05Z",
+        "h2h": {
+          "home": 1.4049999999999998,
+          "draw": 5.0,
+          "away": 6.775
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 2.1950000000000003,
+          "under": 1.6349999999999998
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 2.165
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.77
+          }
+        }
       }
     ]
   },
@@ -972,22 +1432,22 @@
       "markets": {
         "h2h": {
           "home": 2.4,
-          "draw": 2.8,
+          "draw": 2.8099999999999996,
           "away": 3.6
         },
         "totals": {
           "line": 2.5,
-          "over": 1.71,
-          "under": 2.12
+          "over": 1.705,
+          "under": 2.14
         },
         "spreads": {
           "home": {
             "point": 0.0,
-            "price": 1.63
+            "price": 1.625
           },
           "away": {
             "point": 0.0,
-            "price": 2.4450000000000003
+            "price": 2.455
           }
         }
       },
@@ -1010,7 +1470,7 @@
         "h2h": {
           "home": 2.28,
           "draw": 3.2,
-          "away": 3.355
+          "away": 3.365
         },
         "totals": {
           "line": 2.5,
@@ -1020,7 +1480,7 @@
         "spreads": {
           "home": {
             "point": -0.25,
-            "price": 1.995
+            "price": 2.005
           },
           "away": {
             "point": 0.25,
@@ -1046,8 +1506,8 @@
       "markets": {
         "h2h": {
           "home": 3.05,
-          "draw": 3.475,
-          "away": 2.32
+          "draw": 3.5,
+          "away": 2.29
         },
         "totals": {
           "line": 2.5,
@@ -1057,11 +1517,11 @@
         "spreads": {
           "home": {
             "point": 0.25,
-            "price": 1.91
+            "price": 1.9249999999999998
           },
           "away": {
             "point": -0.25,
-            "price": 2.025
+            "price": 2.01
           }
         }
       },
@@ -1094,7 +1554,7 @@
         "spreads": {
           "home": {
             "point": -0.5,
-            "price": 2.08
+            "price": 2.09
           },
           "away": {
             "point": 0.5,
@@ -1119,9 +1579,9 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.02,
+          "home": 2.01,
           "draw": 3.4,
-          "away": 3.775
+          "away": 3.8
         },
         "totals": {
           "line": 2.5,
@@ -1158,12 +1618,12 @@
         "h2h": {
           "home": 2.42,
           "draw": 3.0,
-          "away": 3.22
+          "away": 3.24
         },
         "totals": {
           "line": 2.5,
-          "over": 2.24,
-          "under": 1.61
+          "over": 2.25,
+          "under": 1.62
         },
         "spreads": {
           "home": {
@@ -1179,7 +1639,7 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 16,
+      "bookmakers": 17,
       "prevH2h": {
         "home": 2.42,
         "draw": 3.0,
@@ -1195,7 +1655,7 @@
         "h2h": {
           "home": 1.3,
           "draw": 5.5,
-          "away": 10.45
+          "away": 10.485
         },
         "totals": {
           "line": 2.5,
@@ -1205,11 +1665,11 @@
         "spreads": {
           "home": {
             "point": -1.5,
-            "price": 1.9449999999999998
+            "price": 1.935
           },
           "away": {
             "point": 1.5,
-            "price": 1.94
+            "price": 1.95
           }
         }
       },
@@ -1416,8 +1876,8 @@
       "markets": {
         "h2h": {
           "home": 1.9,
-          "draw": 3.4850000000000003,
-          "away": 3.935
+          "draw": 3.5,
+          "away": 3.96
         },
         "totals": {
           "line": 2.5,
@@ -1489,9 +1949,9 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 8.4,
+          "home": 8.2,
           "draw": 5.2,
-          "away": 1.32
+          "away": 1.33
         },
         "totals": {
           "line": 2.5,
@@ -1637,9 +2097,9 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.4,
-          "draw": 4.95,
-          "away": 7.02
+          "home": 1.39,
+          "draw": 5.115,
+          "away": 7.155
         },
         "totals": {
           "line": 2.5,
@@ -1676,7 +2136,7 @@
         "h2h": {
           "home": 1.4049999999999998,
           "draw": 5.0,
-          "away": 6.75
+          "away": 6.775
         },
         "totals": {
           "line": 2.5,
@@ -1686,11 +2146,11 @@
         "spreads": {
           "home": {
             "point": -1.5,
-            "price": 2.175
+            "price": 2.165
           },
           "away": {
             "point": 1.5,
-            "price": 1.7650000000000001
+            "price": 1.77
           }
         }
       },
