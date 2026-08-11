@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T23:43:58Z",
+  "generatedAt": "2026-08-10T16:55:11Z",
   "league": "PL",
   "history": {
     "arsenal|coventry city": [
@@ -28,29 +28,6 @@
       },
       {
         "ts": "2026-08-10T16:55:11Z",
-        "h2h": {
-          "home": 1.17,
-          "draw": 7.5,
-          "away": 16.0
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 1.93,
-          "under": 1.93
-        },
-        "spreads": {
-          "home": {
-            "point": -2.0,
-            "price": 1.9
-          },
-          "away": {
-            "point": 2.0,
-            "price": 1.95
-          }
-        }
-      },
-      {
-        "ts": "2026-08-10T23:43:58Z",
         "h2h": {
           "home": 1.17,
           "draw": 7.5,
@@ -119,29 +96,6 @@
             "price": 2.265
           }
         }
-      },
-      {
-        "ts": "2026-08-10T23:43:58Z",
-        "h2h": {
-          "home": 7.25,
-          "draw": 4.4,
-          "away": 1.44
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 1.75,
-          "under": 2.05
-        },
-        "spreads": {
-          "home": {
-            "point": 1.5,
-            "price": 1.655
-          },
-          "away": {
-            "point": -1.5,
-            "price": 2.265
-          }
-        }
       }
     ],
     "everton|crystal palace": [
@@ -170,29 +124,6 @@
       },
       {
         "ts": "2026-08-10T16:55:11Z",
-        "h2h": {
-          "home": 2.14,
-          "draw": 3.4,
-          "away": 3.4
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 1.91,
-          "under": 1.88
-        },
-        "spreads": {
-          "home": {
-            "point": -0.5,
-            "price": 2.13
-          },
-          "away": {
-            "point": 0.5,
-            "price": 1.71
-          }
-        }
-      },
-      {
-        "ts": "2026-08-10T23:43:58Z",
         "h2h": {
           "home": 2.14,
           "draw": 3.4,
@@ -261,29 +192,6 @@
             "price": 1.88
           }
         }
-      },
-      {
-        "ts": "2026-08-10T23:43:58Z",
-        "h2h": {
-          "home": 2.74,
-          "draw": 3.3,
-          "away": 2.6
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 1.9449999999999998,
-          "under": 1.85
-        },
-        "spreads": {
-          "home": {
-            "point": 0.0,
-            "price": 1.97
-          },
-          "away": {
-            "point": -0.0,
-            "price": 1.88
-          }
-        }
       }
     ],
     "nottingham forest|leeds united": [
@@ -332,29 +240,6 @@
             "price": 1.6600000000000001
           }
         }
-      },
-      {
-        "ts": "2026-08-10T23:43:58Z",
-        "h2h": {
-          "home": 2.21,
-          "draw": 3.36,
-          "away": 3.18
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 1.88,
-          "under": 1.9
-        },
-        "spreads": {
-          "home": {
-            "point": -0.5,
-            "price": 2.205
-          },
-          "away": {
-            "point": 0.5,
-            "price": 1.6600000000000001
-          }
-        }
       }
     ],
     "brentford|tottenham hotspur": [
@@ -383,29 +268,6 @@
       },
       {
         "ts": "2026-08-10T16:55:11Z",
-        "h2h": {
-          "home": 2.4,
-          "draw": 3.6,
-          "away": 2.75
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 1.66,
-          "under": 2.1950000000000003
-        },
-        "spreads": {
-          "home": {
-            "point": 0.0,
-            "price": 1.8
-          },
-          "away": {
-            "point": -0.0,
-            "price": 2.09
-          }
-        }
-      },
-      {
-        "ts": "2026-08-10T23:43:58Z",
         "h2h": {
           "home": 2.4,
           "draw": 3.6,
@@ -474,29 +336,6 @@
             "price": 1.645
           }
         }
-      },
-      {
-        "ts": "2026-08-10T23:43:58Z",
-        "h2h": {
-          "home": 2.26,
-          "draw": 3.62,
-          "away": 2.95
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 1.61,
-          "under": 2.2649999999999997
-        },
-        "spreads": {
-          "home": {
-            "point": -0.5,
-            "price": 2.245
-          },
-          "away": {
-            "point": 0.5,
-            "price": 1.645
-          }
-        }
       }
     ],
     "manchester city|bournemouth": [
@@ -525,29 +364,6 @@
       },
       {
         "ts": "2026-08-10T16:55:11Z",
-        "h2h": {
-          "home": 1.44,
-          "draw": 5.0,
-          "away": 6.2
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 1.96,
-          "under": 1.79
-        },
-        "spreads": {
-          "home": {
-            "point": -1.5,
-            "price": 2.2
-          },
-          "away": {
-            "point": 1.5,
-            "price": 1.73
-          }
-        }
-      },
-      {
-        "ts": "2026-08-10T23:43:58Z",
         "h2h": {
           "home": 1.44,
           "draw": 5.0,
@@ -616,29 +432,6 @@
             "price": 2.035
           }
         }
-      },
-      {
-        "ts": "2026-08-10T23:43:58Z",
-        "h2h": {
-          "home": 3.25,
-          "draw": 3.83,
-          "away": 2.05
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 2.115,
-          "under": 1.69
-        },
-        "spreads": {
-          "home": {
-            "point": 0.5,
-            "price": 1.7650000000000001
-          },
-          "away": {
-            "point": -0.5,
-            "price": 2.035
-          }
-        }
       }
     ],
     "fulham|chelsea": [
@@ -667,29 +460,6 @@
       },
       {
         "ts": "2026-08-10T16:55:11Z",
-        "h2h": {
-          "home": 3.12,
-          "draw": 3.65,
-          "away": 2.15
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 1.62,
-          "under": 2.2649999999999997
-        },
-        "spreads": {
-          "home": {
-            "point": 0.5,
-            "price": 1.71
-          },
-          "away": {
-            "point": -0.5,
-            "price": 2.125
-          }
-        }
-      },
-      {
-        "ts": "2026-08-10T23:43:58Z",
         "h2h": {
           "home": 3.12,
           "draw": 3.65,
@@ -869,14 +639,14 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.21,
-          "draw": 3.36,
-          "away": 3.18
+          "home": 2.23,
+          "draw": 3.4,
+          "away": 3.2
         },
         "totals": {
           "line": 2.5,
-          "over": 1.88,
-          "under": 1.9
+          "over": 1.9,
+          "under": 1.89
         },
         "spreads": {
           "home": {
@@ -892,7 +662,7 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 19,
+      "bookmakers": 21,
       "prevH2h": {
         "home": 2.23,
         "draw": 3.4,
@@ -1018,7 +788,7 @@
       "markets": {
         "h2h": {
           "home": 3.25,
-          "draw": 3.83,
+          "draw": 3.8,
           "away": 2.05
         },
         "totals": {
