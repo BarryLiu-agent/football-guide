@@ -397,6 +397,41 @@ table.standings .down { color: var(--red); }
   .modal-header, .modal-body { padding: 14px 16px; }
   .odds-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
 }
+
+/* ── 移动端增强（<768px 平板 & <480px 手机）── */
+@media (max-width: 768px) {
+  .record-row { flex-wrap: wrap; gap: 4px 6px; font-size: 12px; padding: 8px 4px; }
+  .record-row span { flex: 1 1 auto; }
+  .record-row .res { flex: 0 0 auto; }
+  .mkt-tabs { overflow-x: auto; flex-wrap: nowrap; padding-bottom: 4px; -webkit-overflow-scrolling: touch; }
+  .mkt-tab { flex: 0 0 auto; white-space: nowrap; }
+  .trend-row { flex-wrap: wrap; }
+  .trend-box { flex: 1 1 40%; min-width: 120px; }
+  .calib-card { overflow-x: auto; }
+  .table-wrap { -webkit-overflow-scrolling: touch; }
+  .topbar-chips { flex-wrap: wrap; }
+  .odds-box .sub { font-size: 10px; }
+  .match-card { align-items: center; }
+}
+@media (max-width: 480px) {
+  .header-right .header-time { display: none; }
+  .league-nav, .sub-nav { font-size: 13px; }
+  .record-cards { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .rec-card .v { font-size: 18px; }
+  .odds-grid { grid-template-columns: repeat(3, 1fr); gap: 4px; }
+  .odds-box { padding: 8px 6px; }
+  .odds-box .value { font-size: 16px; }
+  .section-title { font-size: 14px; }
+  .modal-header { padding: 12px 14px; }
+  .modal-body { padding: 12px 14px; }
+  .mc-team .en { display: none; }
+  .mc-score .s { font-size: 15px; }
+  .tags, .diff-tag, .val-tag, .hot-tag, .xg-tag { font-size: 10px; padding: 1px 5px; }
+  .standings th, .standings td { padding: 7px 8px; font-size: 11.5px; }
+  .rec-chip { font-size: 10px; }
+  .empty-state { font-size: 13px; padding: 24px 12px; }
+  .record-row span[style*="flex:1"] { flex: 1 1 100%; order: -1; }
+}
 </style>
 </head>
 <body>
@@ -666,6 +701,7 @@ function renderTopBar(leagueCode) {
           '<div class="mc-team"><span class="cn">' + cnTeam(p.awayTeam) + '</span></div></div>' +
           (vp ? '<div class="val-tag">💰 ' + vp.label + ' 差' + (vp.edge > 0 ? '+' : '') + Math.round(vp.edge * 100) + '%</div>' : '') +
           '<div class="mc-pred"><div class="ps">' + p.predictedScore + '</div><div class="pc">' + Math.round((p.confidence || 0) * 100) + '%</div></div>' +
+      pnlTag +
           '</div>';
       }).join('') + '</div>';
   }
@@ -957,9 +993,20 @@ function renderRecord() {
     '<div class="rec-card"><div class="v">' + pct(s.aiExactRate) + '</div><div class="k">🤖 AI 比分精确</div></div>' +
     '</div>' +
     '<div style="font-size:11px;color:var(--muted);margin-bottom:4px">AI vs 模型同场对比：AI 有倾向场次方向命中 ' + pct(s.aiRate) + ' vs 全量模型 ' + pct(s.outcomeRate) + ' · 样本累积中，越多越可信</div>' : '';
+   // ROI 盈亏：按价值信号推荐（方向+当时欧赔+凯利注额，注额上限 5%）统一结算
+   const roiCls = s.betPnl > 0 ? 'green' : (s.betPnl < 0 ? 'red' : '');
+   const roiRow = (s.betSettled > 0) ? '<div class="record-cards" style="margin-top:8px;border:1px solid var(--border);border-radius:12px;padding:6px">' +
+     '<div class="rec-card"><div class="v ' + roiCls + '">' + (s.betPnl > 0 ? '+' : '') + (s.betPnl || 0).toFixed(2) + '</div><div class="k">💰 累计盈亏（基准注额）</div></div>' +
+     '<div class="rec-card"><div class="v ' + roiCls + '">' + (s.betROI > 0 ? '+' : '') + ((s.betROI || 0) * 100).toFixed(1) + '%</div><div class="k">📈 ROI（' + s.betSettled + '场）</div></div>' +
+     '<div class="rec-card"><div class="v ' + (s.betRate >= 0.5 ? 'green' : 'red') + '">' + pct(s.betRate) + '</div><div class="k">🎯 推荐方向胜率（' + s.betWon + '/' + s.betSettled + '）</div></div>' +
+     '<div class="rec-card"><div class="v">' + (s.betStakeTotal || 0).toFixed(2) + '</div><div class="k">累计注额（基准）</div></div>' +
+     '</div>' +
+     '<div style="font-size:11px;color:var(--muted);margin-bottom:4px">ROI 按推荐场次统一基准注额结算：盈 = 注额×(赔率-1)，亏 = 注额；注额 = 凯利分数（上限 5%）。ROI>0 = 按推荐下注有正期望</div>' : '';
   const rows = (h.results || []).slice().reverse().slice(0, 30).map(r => {
     const hit = r.hitOutcome;
     const aiHit = r.aiPick && r.aiPick !== 'none' ? r.aiHitOutcome : null;
+    const br = r.betRec;
+    const pnlTag = (br && br.pnl != null) ? '<span class="' + (br.pnl > 0 ? 'res hit' : 'res miss') + '" style="margin-left:6px" title="推荐 ' + (br.side === 'home' ? '主胜' : br.side === 'away' ? '客胜' : '平局') + ' @' + br.odds + ' 注额' + (br.stake * 100).toFixed(1) + '%">' + (br.pnl > 0 ? '+' : '') + (br.pnl * 100).toFixed(1) + '%</span>' : '';
     return '<div class="record-row"><div class="res ' + (hit ? 'hit' : 'miss') + '">' + (hit ? '✓' : '✗') + '</div>' +
       '<span style="flex:1">' + cnTeam(r.homeTeam) + ' vs ' + cnTeam(r.awayTeam) + '</span>' +
       '<span style="color:var(--muted);font-size:11px">预测</span> <span class="pred">' + (r.predictedScore || '—') + '</span>' +
@@ -972,7 +1019,8 @@ function renderRecord() {
     '<div class="rec-card"><div class="v ' + (c.cls || '') + '">' + c.v + '</div><div class="k">' + c.k + '</div></div>'
   ).join('') + '</div>' +
   aiRow +
-  '<div style="font-size:11px;color:var(--muted);margin-bottom:10px">命中判定基于预测时的胜负方向；价值标记命中 = 模型 vs 盘口差>5%的方向是否正确 · 🤖 标记为 AI 研判同场命中 · 样本越多越可信</div>' +
+  roiRow +
+  '<div style="font-size:11px;color:var(--muted);margin-bottom:10px">命中判定基于预测时的胜负方向；价值标记命中 = 模型 vs 盘口差>5%的方向是否正确 · 🤖 标记为 AI 研判同场命中 · 💰 标记为推荐投注盈亏（基准注额） · 样本越多越可信</div>' +
   (rows || '<div class="empty-state">暂无结算记录</div>');
 }
 
@@ -987,6 +1035,7 @@ function openDetail(homeName, awayName, league) {
     <button class="mkt-tab" data-mkt="jc" onclick="switchMkt('jc')">竞彩 SP</button>
     <button class="mkt-tab" data-mkt="ou" onclick="switchMkt('ou')">大小球</button>
     <button class="mkt-tab" data-mkt="sp" onclick="switchMkt('sp')">让球</button>
+    <button class="mkt-tab" data-mkt="ah" onclick="switchMkt('ah')">亚盘</button>
     <button class="mkt-tab" data-mkt="cs" onclick="switchMkt('cs')">波胆</button>`;
   $('analysisBox').textContent = currentPred?.analysis || (currentJc ? '竞彩比赛：赔率见上方，完整分析待赔率管道生成。' : '该场比赛暂无赔率与预测数据。');
   // 本赛季交锋记录
@@ -1178,6 +1227,22 @@ function switchMkt(mkt) {
       <div class="odds-box"><div class="label">解读</div><div class="value" style="font-size:13px">${sm.edge > 0.02 ? '模型认为主队赢盘被低估' : sm.edge < -0.02 ? '模型认为主队赢盘被高估' : '模型与盘口一致'}</div><div class="sub">主队让 ${sm.point} 球视角</div></div>
     </div>
     <div style="font-size:10px;color:var(--muted)">edge = 模型赢盘率 − 盘口隐含概率；正=让球方向有正期望</div>` : ''}`;
+  } else if (mkt === 'ah') {
+    if (!p || !p.asian || (!p.asian.home && !p.asian.away)) { el.innerHTML = '<div class="empty-state">暂无亚盘数据（当前赔率源未提供亚盘水位，后续接入亚盘源后显示）</div>'; return; }
+    const a = p.asian;
+    // 欧洲赔率 → 亚洲水位（含本金格式换算）：欧赔 1.85 ≈ 水位 0.85（含本金 1.85）
+    const toWater = (price) => price == null ? '—' : (price >= 2 ? '+' + (price - 1).toFixed(2) : (price - 1).toFixed(2));
+    const fmtPoint = (pt) => pt == null ? '—' : (pt > 0 ? '+' + pt : String(pt));
+    const homeHandicap = a.home?.point != null ? a.home.point : (a.away?.point != null ? -a.away.point : null);
+    const awayHandicap = homeHandicap != null ? -homeHandicap : null;
+    const homeWater = a.home?.price ?? a.away?.price != null ? (2 - a.away.price).toFixed(2) : null;
+    const interp = homeHandicap == null ? '数据不足' : (homeHandicap < 0 ? '主队让 ' + fmtPoint(-homeHandicap) + '（机构看好主队）' : homeHandicap > 0 ? '主队受让 ' + fmtPoint(homeHandicap) + '（机构看好客队）' : '平手盘（势均力敌）');
+    el.innerHTML = `<div class="odds-grid">
+      <div class="odds-box"><div class="label">主队 ${fmtPoint(homeHandicap)}</div><div class="value">${homeWater}</div><div class="sub">水位（欧赔 ${a.home?.price ?? '—'}）</div></div>
+      <div class="odds-box"><div class="label">客队 ${fmtPoint(awayHandicap)}</div><div class="value">${toWater(a.away?.price)}</div><div class="sub">水位（欧赔 ${a.away?.price ?? '—'}）</div></div>
+      <div class="odds-box"><div class="label">解读</div><div class="value" style="font-size:13px">${interp}</div></div>
+    </div>
+    <div style="font-size:10px;color:var(--muted);margin-top:6px">亚盘让球数：主队视角，负=让球 正=受让 · 水位 = 欧赔−1（含本金换算）· 数据来自赔率源的 Asian Handicap 市场</div>`;
   } else if (mkt === 'cs') {
     if (!p) { el.innerHTML = '<div class="empty-state">暂无波胆数据</div>'; return; }
     const cs = p.correctScores || [];

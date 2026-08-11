@@ -1539,6 +1539,12 @@
   "aiRate": 0,
   "aiExact": 0,
   "aiExactRate": 0,
-  "updatedAt": "2026-08-11T01:02:34Z"
+  "betSettled": 0,
+  "betWon": 0,
+  "betRate": 0,
+  "betStakeTotal": 0.0,
+  "betPnl": 0.0,
+  "betROI": 0,
+  "updatedAt": "2026-08-11T01:41:27Z"
  }
 }
