@@ -852,7 +852,8 @@ def main():
 
             # Dixon-Coles 波胆 + 大小球 + 分布
             pred["correctScores"] = score_model.dc_scores(6)
-            top_cs = score_model.correct_scores(1)
+            # 预测比分与波胆列表同口径（DC 修正），避免"预测 2-0 但波胆 top1 是 1-1"矛盾
+            top_cs = score_model.dc_scores(1)
             if top_cs:
                 pred["predictedScore"] = top_cs[0]["score"]
 

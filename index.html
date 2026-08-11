@@ -1329,7 +1329,11 @@ function switchMkt(mkt) {
   } else if (mkt === 'ah') {
     // 亚盘数据：football-data.co.uk 历史盘口（收盘），按队名匹配
     const od = (p && p.league) ? state.asianByLeague[p.league] : null;
+    // 赛季判定：8 月及以后属当年赛季，否则属上一赛季（亚盘/预测须同赛季才匹配，
+    // 避免未开赛的新赛季对阵捞到上赛季同名交锋的历史结算）
+    const seasonOf = (iso) => { const y = parseInt((iso || '').slice(0, 4), 10); const mo = parseInt((iso || '').slice(5, 7), 10); return (y && mo) ? (mo >= 8 ? y : y - 1) : 0; };
     const am = (od && od.matches) ? od.matches.find(x => {
+      if (seasonOf(x.kickoff) !== seasonOf(p.kickoff)) return false;
       const xh = normTeam(x.homeTeam), xa = normTeam(x.awayTeam);
       const h = normTeam(p.homeTeam), a = normTeam(p.awayTeam);
       return (xh === h && xa === a) || (xh.split(' ')[0] === h.split(' ')[0] && xa.split(' ')[0] === a.split(' ')[0]);

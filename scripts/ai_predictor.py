@@ -169,6 +169,10 @@ def ai_judge(pred: dict, timeout: int = DEFAULT_TIMEOUT) -> dict | None:
         score = str(data.get("score", "")).strip()
         conf = float(data.get("confidence", 0.5))
         conf = max(0.0, min(1.0, conf))
+        # 强制 ±0.15 约束（提示词只是建议，模型可能偏离；防止 AI 置信度与统计概率脱节）
+        base = (pred.get("modelProbs") or {}).get(pick, 0.5) if pick in ("home", "draw", "away") else 0.5
+        lo, hi = max(0.0, base - 0.15), min(1.0, base + 0.15)
+        conf = max(lo, min(hi, conf))
         return {
             "pick": pick,
             "score": score,
