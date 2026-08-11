@@ -1,7 +1,29 @@
 {
-  "generatedAt": "2026-08-11T19:46:32Z",
+  "generatedAt": "2026-08-11T22:23:43Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Super Giants rout SunRisers to move to cusp of Hundred eliminator",
+      "timestamp": "Tue, 11 Aug 2026 21:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/cricket/news/12040/13572032/the-hundred-manchester-super-giants-rout-sunrisers-leeds-to-move-to-cusp-of-eliminator-in-mens-tournament",
+        "lang": "en",
+        "summary": "Manchester Super Giants routed SunRisers Leeds to all but seal their place in The Hundred men's eliminator and leave their opponents at risk of being knocked out."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Sharks 0-54 New Zealand | Highlights",
+      "timestamp": "Tue, 11 Aug 2026 22:57:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13572095/durban-sharks-0-54-new-zealand-highlights",
+        "lang": "en",
+        "summary": "Highlights of the Greatest Rivalry tour match between the Sharks and New Zealand in Durban."
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -82,12 +104,23 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Wrexham make club-record signing as Phillips returns to Blades",
-      "timestamp": "Tue, 11 Aug 2026 11:26:00 BST",
+      "text": "Swansea's price tag for top-scorer Vipotnik revealed",
+      "timestamp": "Tue, 11 Aug 2026 22:24:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/football/live-blog/12040/13163353/championship-news-transfer-latest-and-gossip-plus-efl-updates-from-league-one-and-league-two",
         "lang": "en",
         "summary": ""
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Papers: Chelsea and Man Utd turn down Lewis-Skelly opportunity",
+      "timestamp": "Tue, 11 Aug 2026 22:30:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13572089/myles-lewis-skelly-transfer-news-chelsea-and-man-utd-turn-down-intermediary-offer-to-sign-arsenal-teenager-paper-talk",
+        "lang": "en",
+        "summary": "The top stories and transfer rumours from Wednesday's newspapers..."
       }
     },
     {
@@ -99,6 +132,17 @@
         "link": "https://www.skysports.com/darts/news/12040/13571915/gian-van-veen-asks-for-help-ahead-of-new-zealand-darts-masters-with-bags-stuck-in-paris",
         "lang": "en",
         "summary": "Gian van Veen has taken to social media to ask for help with his bags stuck in Paris ahead of the New Zealand Darts Masters in Auckland this weekend."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Ronaldo marries long-time girlfriend",
+      "timestamp": "Tue, 11 Aug 2026 21:09:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13572078/cristiano-ronaldo-marries-long-time-girlfriend-georgina-rodriguez-in-portugal",
+        "lang": "en",
+        "summary": "Cristiano Ronaldo has married his long-time girlfriend Georgina Rodriguez at a civil ceremony in Portugal."
       }
     },
     {
@@ -176,50 +220,6 @@
         "link": "https://www.skysports.com/football/news/12040/13571608/should-liverpool-be-worried-pre-season-form-injuries-and-squad-depth-concerns-for-andoni-iraola-ahead-of-season-opener",
         "lang": "en",
         "summary": "How much does pre-season mean? It depends who you ask. "
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Flintoff hits 65-ball ton as Lancashire set up quarter-final vs Stokes' Durham",
-      "timestamp": "Tue, 11 Aug 2026 20:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/cricket/news/12040/13571995/one-day-cup-rocky-flintoffs-65-ball-century-helps-lancashire-make-third-highest-total-in-english-50-over-domestic-cricket",
-        "lang": "en",
-        "summary": "Rocky Flintoff made his first Lancashire century in a One Day Cup thrashing of Somerset - and will now meet Ben Stokes and Durham in the quarter-finals."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "England's World Cup place guaranteed but West Indies need to qualify",
-      "timestamp": "Tue, 11 Aug 2026 07:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/cricket/news/12040/13571828/england-guaranteed-place-in-2027-cricket-world-cup-but-west-indies-will-have-to-enter-qualifying-tournament-again",
-        "lang": "en",
-        "summary": "Panic over, England fans - your team will NOT have to qualify for the 2027 Cricket World Cup."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "'I want to get my revenge!' - White's message after Commonwealth final loss",
-      "timestamp": "Tue, 11 Aug 2026 14:32:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/boxing/news/12040/13571983/ruby-white-commonwealth-games-silver-medallist-sends-message-to-sakshi-chaudhary-after-final-defeat-in-glasgow",
-        "lang": "en",
-        "summary": "Teenage sensation Ruby White only joined the Great Britain Boxing academy in May - by August, she had taken the Commonwealth Games by storm."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "LeBron to make Sixers debut against Knicks on NBA opening night",
-      "timestamp": "Tue, 11 Aug 2026 13:43:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/nba/news/12040/13571957/lebron-james-faces-the-new-york-knicks-on-nba-opening-night-with-lakers-clash-on-christmas-day-as-signature-fixtures-announced",
-        "lang": "en",
-        "summary": "LeBron James will make his Philadelphia 76ers debut against defending NBA champions the New York Knicks at Madison Square Garden on the opening night of the season."
       }
     }
   ]
