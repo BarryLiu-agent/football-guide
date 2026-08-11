@@ -823,6 +823,15 @@ def main():
                 "home": round(score_model.lam_h, 2), "away": round(score_model.lam_a, 2)
             }
             pred["analysis"] = AnalysisWriter.generate(home, away, odds_result, msg_result, score_model, ou, pred["spreads"], pred["standings"], {"valuePicks": value_picks})
+
+            # ── AI 最终研判（可选增强层）：失败返回 None，不影响统计预测 ──
+            try:
+                from ai_predictor import ai_judge
+                ai = ai_judge(pred)
+                if ai:
+                    pred["aiJudge"] = ai
+            except Exception as e:
+                print(f"  [predict] AI 研判失败(降级): {e}")
             predictions.append(pred)
     # 模型校准信息：赛季已进行轮次
     season_info = {"seasonStarted": False, "round": 0, "finishedMatches": 0}

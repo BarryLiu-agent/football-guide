@@ -1094,6 +1094,7 @@ function switchMkt(mkt) {
     </div>
     <div style="font-size:10px;color:var(--muted);margin-top:6px;text-align:center">↗ 较上次快照升（看淡）↘ 降（看好）· 凯利>0 有正期望 · 快照持续累积后将升级为走势曲线</div>
     ${oddsTrendBlock(p)}
+    ${p.aiJudge ? (function(a){ const cn = {home:'主胜',draw:'平局',away:'客胜',none:'不碰'}; const conf = a.confidence != null ? Math.round(a.confidence*100) : null; return `<div class="section-title" style="margin-top:10px">🤖 AI 研判<span style="font-size:10px;color:var(--muted);font-weight:400"> ${a.model || ''} · ${a.latency != null ? a.latency + 's' : ''}</span></div><div style="padding:10px 12px;border-radius:8px;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.25);font-size:12px;line-height:1.7"><div style="margin-bottom:4px"><b>${a.pick && a.pick !== 'none' ? cn[a.pick] : '无明显倾向'}</b>${a.score ? ' · 比分 ' + a.score : ''}${conf != null ? ' · 置信度 ' + conf + '%' : ''}</div>${a.reason ? '<div style="color:var(--text-2)">' + esc(a.reason) + '</div>' : ''}</div>`;})(p.aiJudge) : ''}
     ${p.eloProb ? `<div class="section-title" style="margin-top:10px">🤖 独立模型 (Elo+修正)</div>
     <div class="odds-grid">
       <div class="odds-box"><div class="label">主胜</div><div class="value">${pct(p.eloProb.home)}</div><div class="sub">盘口 ${pct(pr.home)}</div></div>
