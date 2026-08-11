@@ -513,6 +513,7 @@ let state = {
   calibration: null,  // 模型校准报告
   oddsByLeague: {},   // 赔率 {code: {matches, history}}
   teamStats: {},       // FBref 高级数据 {code: {shooting, goalkeeper, discipline}}
+  asianByLeague: {},   // 亚盘 {code: {matches: [...]}}
   loaded: { fixtures: false, predictions: false },
 };
 
@@ -626,6 +627,10 @@ async function loadAll() {
   // FBref 高级数据（射门/门将/纪律）逐个联赛加载
   for (const lg of LEAGUES) {
     jobs.push(loadJson(`data/advanced/${lg.code}.json`).then(d => { state.teamStats[lg.code] = d; }).catch(() => {}));
+  }
+  // 亚盘数据（football-data.co.uk，历史盘口）逐个联赛加载
+  for (const lg of LEAGUES) {
+    jobs.push(loadJson(`data/asian/${lg.code}.json`).then(d => { state.asianByLeague[lg.code] = d; }).catch(() => {}));
   }
   await Promise.all(jobs);
   const d = state.history?.stats;
@@ -1319,21 +1324,25 @@ function switchMkt(mkt) {
     </div>
     <div style="font-size:10px;color:var(--muted)">edge = 模型赢盘率 − 盘口隐含概率；正=让球方向有正期望</div>` : ''}`;
   } else if (mkt === 'ah') {
-    if (!p || !p.asian || (!p.asian.home && !p.asian.away)) { el.innerHTML = '<div class="empty-state">暂无亚盘数据（当前赔率源未提供亚盘水位，后续接入亚盘源后显示）</div>'; return; }
-    const a = p.asian;
-    // 欧洲赔率 → 亚洲水位（含本金格式换算）：欧赔 1.85 ≈ 水位 0.85（含本金 1.85）
-    const toWater = (price) => price == null ? '—' : (price >= 2 ? '+' + (price - 1).toFixed(2) : (price - 1).toFixed(2));
+    // 亚盘数据：football-data.co.uk 历史盘口（收盘），按队名匹配
+    const od = (p && p.league) ? state.asianByLeague[p.league] : null;
+    const am = (od && od.matches) ? od.matches.find(x => {
+      const xh = normTeam(x.homeTeam), xa = normTeam(x.awayTeam);
+      const h = normTeam(p.homeTeam), a = normTeam(p.awayTeam);
+      return (xh === h && xa === a) || (xh.split(' ')[0] === h.split(' ')[0] && xa.split(' ')[0] === a.split(' ')[0]);
+    }) : null;
+    if (!am) { el.innerHTML = '<div class="empty-state">暂无亚盘数据（历史亚盘来自 football-data.co.uk，每周更新；新赛季场次赛后才入库）</div>'; return; }
     const fmtPoint = (pt) => pt == null ? '—' : (pt > 0 ? '+' + pt : String(pt));
-    const homeHandicap = a.home?.point != null ? a.home.point : (a.away?.point != null ? -a.away.point : null);
-    const awayHandicap = homeHandicap != null ? -homeHandicap : null;
-    const homeWater = a.home?.price ?? a.away?.price != null ? (2 - a.away.price).toFixed(2) : null;
-    const interp = homeHandicap == null ? '数据不足' : (homeHandicap < 0 ? '主队让 ' + fmtPoint(-homeHandicap) + '（机构看好主队）' : homeHandicap > 0 ? '主队受让 ' + fmtPoint(homeHandicap) + '（机构看好客队）' : '平手盘（势均力敌）');
+    const settleTxt = { 'home': '主队赢盘', 'away': '客队赢盘', 'home_half': '主队赢半', 'away_half': '客队赢半', 'push': '走水' }[am.settle] || '未结算';
+    const settleCls = am.settle === 'home' || am.settle === 'home_half' ? 'var(--green)' : (am.settle === 'away' || am.settle === 'away_half') ? 'var(--red)' : 'var(--muted)';
+    const interp = am.line == null ? '数据不足' : (am.line < 0 ? '主队让 ' + fmtPoint(-am.line) + ' 球（机构看好主队）' : am.line > 0 ? '主队受让 ' + fmtPoint(am.line) + ' 球（机构看好客队）' : '平手盘（势均力敌）');
     el.innerHTML = `<div class="odds-grid">
-      <div class="odds-box"><div class="label">主队 ${fmtPoint(homeHandicap)}</div><div class="value">${homeWater}</div><div class="sub">水位（欧赔 ${a.home?.price ?? '—'}）</div></div>
-      <div class="odds-box"><div class="label">客队 ${fmtPoint(awayHandicap)}</div><div class="value">${toWater(a.away?.price)}</div><div class="sub">水位（欧赔 ${a.away?.price ?? '—'}）</div></div>
-      <div class="odds-box"><div class="label">解读</div><div class="value" style="font-size:13px">${interp}</div></div>
+      <div class="odds-box"><div class="label">主队 ${fmtPoint(am.line)}</div><div class="value">${am.homeOdds ?? '—'}</div><div class="sub">水位（让球方）</div></div>
+      <div class="odds-box"><div class="label">客队 ${fmtPoint(-am.line)}</div><div class="value">${am.awayOdds ?? '—'}</div><div class="sub">水位（受让方）</div></div>
+      <div class="odds-box"><div class="label">结算</div><div class="value" style="font-size:13px;color:${settleCls}">${am.result ? am.result + ' → ' + settleTxt : settleTxt}</div><div class="sub">${am.kickoff || ''}</div></div>
     </div>
-    <div style="font-size:10px;color:var(--muted);margin-top:6px">亚盘让球数：主队视角，负=让球 正=受让 · 水位 = 欧赔−1（含本金换算）· 数据来自赔率源的 Asian Handicap 市场</div>`;
+    <div class="odds-box" style="margin-top:8px"><div class="label">解读</div><div class="value" style="font-size:13px">${interp}</div></div>
+    <div style="font-size:10px;color:var(--muted);margin-top:6px">亚盘让球数：主队视角，负=让球 正=受让 · 水位为欧赔格式 · 数据源 football-data.co.uk（收盘盘口，每周更新）· 结算含 1/4 盘赢半/输半</div>`;
   } else if (mkt === 'cs') {
     if (!p) { el.innerHTML = '<div class="empty-state">暂无波胆数据</div>'; return; }
     const cs = p.correctScores || [];
