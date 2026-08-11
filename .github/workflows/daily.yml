@@ -39,6 +39,9 @@ jobs:
           ODDS_API_KEY_3: ${{ secrets.ODDS_API_KEY_3 }}
         run: python scripts/odds_fetcher.py --leagues PL PD SA BL1 FL1
 
+      - name: Fetch Asian handicap (football-data.co.uk)
+        run: python scripts/asian_fetch.py 2526
+
       - name: Fetch messages
         run: python scripts/messages_fetcher.py
 

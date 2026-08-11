@@ -19,3 +19,4 @@ _preview*.png
 
 # API keys (never commit)
 .env
+downloaded_files/__pycache__/
