@@ -123,9 +123,10 @@ class TheOddsApiSource(OddsSource):
             if self._key_quota.get(key, 999) < self.MIN_REMAINING:
                 continue
             params = dict(params_base, apiKey=key)
+            # 亚盘降级：部分 region 不支持 asian_handicap → 422 时去掉重试
+            retry_without_asian = False
             try:
                 r = requests.get(url, params=params, timeout=20)
-                # 记录剩余配额
                 try:
                     self._key_quota[key] = int(r.headers.get("x-requests-remaining", 999))
                 except (TypeError, ValueError):
@@ -134,18 +135,41 @@ class TheOddsApiSource(OddsSource):
                     tag = key[-4:]
                     print(f"      (key ...{tag}, 剩 {self._key_quota.get(key, '?')})")
                     return [self.normalize(x) for x in r.json()]
-                if r.status_code in (401, 403):
-                    # Key 无效/配额耗尽：跳过换下一个
+                if r.status_code == 422 and "asian_handicap" in params["markets"]:
+                    retry_without_asian = True
+                elif r.status_code in (401, 403):
                     self._key_quota[key] = 0
                     continue
-                if r.status_code == 429:
+                elif r.status_code == 429:
                     self._key_quota[key] = 0
                     continue
-                print(f"    - {league_code}: HTTP {r.status_code} (key ...{key[-4:]})")
-                return []
+                else:
+                    print(f"    - {league_code}: HTTP {r.status_code} (key ...{key[-4:]})")
+                    return []
             except Exception as e:
                 print(f"    - {league_code}: 请求失败 {e} (key ...{key[-4:]})")
                 return []
+            if retry_without_asian:
+                print(f"    - {league_code}: asian_handicap 不受支持，降级重试 (key ...{key[-4:]})")
+                params = dict(params_base, apiKey=key)
+                params["markets"] = ",".join(m for m in self.config.get("markets", ["h2h"]) if m != "asian_handicap")
+                try:
+                    r = requests.get(url, params=params, timeout=20)
+                    try:
+                        self._key_quota[key] = int(r.headers.get("x-requests-remaining", 999))
+                    except (TypeError, ValueError):
+                        pass
+                    if r.status_code == 200:
+                        print(f"      (key ...{key[-4:]}, 剩 {self._key_quota.get(key, '?')}, 无亚盘)")
+                        return [self.normalize(x) for x in r.json()]
+                    if r.status_code in (401, 403, 429):
+                        self._key_quota[key] = 0
+                        continue
+                    print(f"    - {league_code}: HTTP {r.status_code} (降级后, key ...{key[-4:]})")
+                    return []
+                except Exception as e:
+                    print(f"    - {league_code}: 降级请求失败 {e} (key ...{key[-4:]})")
+                    return []
         print(f"    - {league_code}: 所有 Key 配额不足或不可用")
         return []
 
@@ -155,6 +179,7 @@ class TheOddsApiSource(OddsSource):
         h2h = {"home": [], "draw": [], "away": []}
         totals = {"over": [], "under": []}
         spreads = {"home": [], "away": []}
+        asian = {"home": [], "away": []}
         for bm in raw.get("bookmakers", []):
             for market in bm.get("markets", []):
                 key = market["key"]
@@ -179,6 +204,16 @@ class TheOddsApiSource(OddsSource):
                             spreads["home"].append({"price": o["price"], "point": point})
                         elif o["name"] == away_name:
                             spreads["away"].append({"price": o["price"], "point": point})
+                elif key == "asian_handicap":
+                    # 亚盘: point 以主队视角（主队负=让球，正=受让），水位=欧式赔率
+                    for o in market["outcomes"]:
+                        point = o.get("point")
+                        if point is None:
+                            continue
+                        if o["name"] == home_name:
+                            asian["home"].append({"price": o["price"], "point": point})
+                        elif o["name"] == away_name:
+                            asian["away"].append({"price": o["price"], "point": point})
         med = lambda xs: statistics.median(xs) if xs else None
         # 让球盘: 取最常见点差(mode)，赔率取中位数
         def spread_agg(items):
@@ -201,6 +236,7 @@ class TheOddsApiSource(OddsSource):
                 "h2h": {"home": med(h2h["home"]), "draw": med(h2h["draw"]), "away": med(h2h["away"])},
                 "totals": {"over": med(totals["over"]), "under": med(totals["under"])},
                 "spreads": {"home": spread_agg(spreads["home"]), "away": spread_agg(spreads["away"])},
+                "asian": {"home": spread_agg(asian["home"]), "away": spread_agg(asian["away"])},
             },
             "bookmakers": len(raw.get("bookmakers", [])),
             "source": "theoddsapi",
@@ -302,6 +338,20 @@ def aggregate(matches_by_source):
             prices = [i["price"] for i in items if i["point"] == point]
             return {"point": point, "price": median_or_none(prices)}
 
+        # 亚盘聚合：同样取最常见盘口点差 + 水位中位数
+        def asian_val(side):
+            items = []
+            for m in ms:
+                s = (m.get("markets", {}).get("asian") or {}).get(side)
+                if s and s.get("point") is not None:
+                    items.append(s)
+            if not items:
+                return None
+            from collections import Counter
+            point = Counter(i["point"] for i in items).most_common(1)[0][0]
+            prices = [i["price"] for i in items if i["point"] == point]
+            return {"point": point, "price": median_or_none(prices)}
+
         results.append({
             "homeTeam": ms[0]["homeTeam"],
             "awayTeam": ms[0]["awayTeam"],
@@ -311,6 +361,7 @@ def aggregate(matches_by_source):
                 "h2h": {"home": h2h_val("home"), "draw": h2h_val("draw"), "away": h2h_val("away")},
                 "totals": totals_out,
                 "spreads": {"home": spread_val("home"), "away": spread_val("away")},
+                "asian": {"home": asian_val("home"), "away": asian_val("away")},
             },
             "sources": [m["source"] for m in ms],
             "bookmakers": sum(m.get("bookmakers", 0) for m in ms),
@@ -369,7 +420,8 @@ def main():
                 hk = f"{k[0]}|{k[1]}"
                 snap = {"ts": ts, "h2h": m.get("markets", {}).get("h2h"),
                         "totals": m.get("markets", {}).get("totals"),
-                        "spreads": m.get("markets", {}).get("spreads")}
+                        "spreads": m.get("markets", {}).get("spreads"),
+                        "asian": m.get("markets", {}).get("asian")}
                 hist = history.get(hk, [])
                 # 同一时间戳去重（重复抓取不叠加）
                 if not hist or hist[-1].get("ts") != ts:

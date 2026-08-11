@@ -722,6 +722,7 @@ def main():
                         kelly[k] = None
             pred["kelly"] = kelly
             pred["spreads"] = m.get("markets", {}).get("spreads")
+            pred["asian"] = m.get("markets", {}).get("asian")
 
             # ── Elo 输出 + 价值检测 ──
             pred["eloProb"] = {k: round(v, 3) for k, v in pred_elo.items()}
@@ -763,6 +764,31 @@ def main():
             pred["valuePicks"] = value_picks
             pred["reversePicks"] = reverse_picks
             pred["signalLevel"] = "gold" if any(v["level"] == "gold" for v in value_picks) else ("watch" if value_picks else "none")
+
+            # ── 推荐投注记录（ROI 结算用）：价值信号方向 + 当时欧赔 + 凯利注额 ──
+            # 只记有 edge 的场次（无价值信号 = 不推荐下注）；注额 = 凯利分数 clamped 到 0~5%
+            # 凯利用模型概率重算（旧 kelly 字段误用市场概率，恒≈0）
+            bet_rec = None
+            if value_picks:
+                best_vp = max(value_picks, key=lambda v: abs(v.get("edge", 0)))
+                o = raw_odds.get(best_vp["side"]) if raw_odds else None
+                if isinstance(o, (int, float)) and o > 1:
+                    mp = best_vp.get("modelProb")
+                    if mp:
+                        kl = (o * mp - 1) / (o - 1)
+                    else:
+                        kl = 0
+                    stake = round(max(0.0, min(0.05, kl)), 4)
+                    if stake <= 0:
+                        stake = 0.02  # 凯利为负/无 → 默认 2%（按 edge 判断仍值得小注）
+                    bet_rec = {
+                        "side": best_vp["side"],
+                        "odds": round(o, 2),
+                        "stake": stake,
+                        "source": "value:" + best_vp["level"],
+                        "edge": best_vp.get("edge"),
+                    }
+            pred["betRec"] = bet_rec
 
             # Dixon-Coles 波胆 + 大小球 + 分布
             pred["correctScores"] = score_model.dc_scores(6)
@@ -938,6 +964,7 @@ def evaluate_predictions(predictions):
             "aiScore": ai.get("score"),
             "aiConfidence": ai.get("confidence"),
             "aiModel": ai.get("model"),
+            "betRec": p.get("betRec"),
             "predictedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         })
 
@@ -982,6 +1009,10 @@ def evaluate_predictions(predictions):
     ai_total = 0
     ai_hit = 0
     ai_exact = 0
+    bet_stake_total = 0.0   # 累计下注额
+    bet_pnl = 0.0           # 累计盈亏
+    bet_won = 0             # 赢的场次数
+    bet_settled = 0         # 已结算推荐场次
     for p in hist["predictions"]:
         if p.get("actualScore"):
             evaluated += 1
@@ -995,6 +1026,18 @@ def evaluate_predictions(predictions):
                     ai_hit += 1
                 if p.get("aiHitExact"):
                     ai_exact += 1
+            # 已结算的历史记录：补算推荐投注盈亏（老数据无 pnl 字段）
+            br = p.get("betRec")
+            if br and br.get("pnl") is None and br.get("odds") and br.get("stake"):
+                ao = outcome_of(p["actualScore"])
+                br["pnl"] = round(br["stake"] * (br["odds"] - 1), 4) if br["side"] == ao else round(-br["stake"], 4)
+                br["actualOutcome"] = ao
+            if br and br.get("pnl") is not None:
+                bet_stake_total += br.get("stake", 0)
+                bet_pnl += br["pnl"]
+                bet_settled += 1
+                if br["pnl"] > 0:
+                    bet_won += 1
             continue
         key = (norm_team(p["homeTeam"]), norm_team(p["awayTeam"]), p.get("kickoff", "")[:10])
         r = result_keys.get(key)
@@ -1026,6 +1069,25 @@ def evaluate_predictions(predictions):
                     ai_hit += 1
                 if p["aiHitExact"]:
                     ai_exact += 1
+            # 推荐投注盈亏：老数据可能没存 betRec → 从 valuePicks 重建
+            if not p.get("betRec") and p.get("valuePicks"):
+                vp = max(p["valuePicks"], key=lambda v: abs(v.get("edge", 0)))
+                old_odds = p.get("rawOdds") or {}
+                o = old_odds.get(vp["side"])
+                if isinstance(o, (int, float)) and o > 1:
+                    p["betRec"] = {"side": vp["side"], "odds": round(o, 2),
+                                   "stake": 0.02, "source": "value:" + vp.get("level", "watch"),
+                                   "edge": vp.get("edge")}
+            br = p.get("betRec")
+            if br and br.get("odds") and br.get("stake"):
+                actual_out = outcome_of(r["actualScore"])
+                br["actualOutcome"] = actual_out
+                br["pnl"] = round(br["stake"] * (br["odds"] - 1), 4) if br["side"] == actual_out else round(-br["stake"], 4)
+                bet_stake_total += br["stake"]
+                bet_pnl += br["pnl"]
+                bet_settled += 1
+                if br["pnl"] > 0:
+                    bet_won += 1
             # 价值标记方向命中（bestOutcome）
             vp = p.get("valuePicks") or []
             if vp:
@@ -1044,6 +1106,7 @@ def evaluate_predictions(predictions):
                 "aiScore": p.get("aiScore"),
                 "aiHitOutcome": p.get("aiHitOutcome"),
                 "aiHitExact": p.get("aiHitExact"),
+                "betRec": p.get("betRec"),
             })
 
     # 4. 统计
@@ -1062,6 +1125,12 @@ def evaluate_predictions(predictions):
         "aiRate": round(ai_hit / ai_total, 4) if ai_total else 0,
         "aiExact": ai_exact,
         "aiExactRate": round(ai_exact / ai_total, 4) if ai_total else 0,
+        "betSettled": bet_settled,
+        "betWon": bet_won,
+        "betRate": round(bet_won / bet_settled, 4) if bet_settled else 0,
+        "betStakeTotal": round(bet_stake_total, 4),
+        "betPnl": round(bet_pnl, 4),
+        "betROI": round(bet_pnl / bet_stake_total, 4) if bet_stake_total else 0,
         "updatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
     }
     hist["stats"] = stats

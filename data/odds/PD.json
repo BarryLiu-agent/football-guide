@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T01:03:46Z",
+  "generatedAt": "2026-08-11T01:53:41Z",
   "league": "PD",
   "history": {
     "alavés|getafe": [
@@ -50,7 +50,7 @@
         }
       },
       {
-        "ts": "2026-08-11T01:03:46Z",
+        "ts": "2026-08-11T01:53:41Z",
         "h2h": {
           "home": 2.4,
           "draw": 2.8099999999999996,
@@ -70,6 +70,10 @@
             "point": 0.0,
             "price": 2.455
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       }
     ],
@@ -121,7 +125,7 @@
         }
       },
       {
-        "ts": "2026-08-11T01:03:46Z",
+        "ts": "2026-08-11T01:53:41Z",
         "h2h": {
           "home": 2.28,
           "draw": 3.2,
@@ -141,6 +145,10 @@
             "point": 0.25,
             "price": 1.93
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       }
     ],
@@ -192,7 +200,7 @@
         }
       },
       {
-        "ts": "2026-08-11T01:03:46Z",
+        "ts": "2026-08-11T01:53:41Z",
         "h2h": {
           "home": 3.05,
           "draw": 3.475,
@@ -212,6 +220,10 @@
             "point": -0.25,
             "price": 2.01
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       }
     ],
@@ -263,7 +275,7 @@
         }
       },
       {
-        "ts": "2026-08-11T01:03:46Z",
+        "ts": "2026-08-11T01:53:41Z",
         "h2h": {
           "home": 2.05,
           "draw": 3.3,
@@ -283,6 +295,10 @@
             "point": 0.5,
             "price": 1.83
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       }
     ],
@@ -334,7 +350,7 @@
         }
       },
       {
-        "ts": "2026-08-11T01:03:46Z",
+        "ts": "2026-08-11T01:53:41Z",
         "h2h": {
           "home": 2.01,
           "draw": 3.4,
@@ -354,6 +370,10 @@
             "point": 0.5,
             "price": 1.85
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       }
     ],
@@ -405,7 +425,7 @@
         }
       },
       {
-        "ts": "2026-08-11T01:03:46Z",
+        "ts": "2026-08-11T01:53:41Z",
         "h2h": {
           "home": 2.42,
           "draw": 3.0,
@@ -425,6 +445,10 @@
             "point": 0.0,
             "price": 2.2350000000000003
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       }
     ],
@@ -476,7 +500,7 @@
         }
       },
       {
-        "ts": "2026-08-11T01:03:46Z",
+        "ts": "2026-08-11T01:53:41Z",
         "h2h": {
           "home": 1.3,
           "draw": 5.5,
@@ -496,6 +520,10 @@
             "point": 1.5,
             "price": 1.95
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       }
     ],
@@ -547,7 +575,7 @@
         }
       },
       {
-        "ts": "2026-08-11T01:03:46Z",
+        "ts": "2026-08-11T01:53:41Z",
         "h2h": {
           "home": 2.05,
           "draw": 3.1,
@@ -567,6 +595,10 @@
             "point": 0.0,
             "price": 3.1
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       }
     ],
@@ -618,7 +650,7 @@
         }
       },
       {
-        "ts": "2026-08-11T01:03:46Z",
+        "ts": "2026-08-11T01:53:41Z",
         "h2h": {
           "home": 2.13,
           "draw": 3.3,
@@ -638,6 +670,10 @@
             "point": 0.0,
             "price": 2.64
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       }
     ],
@@ -689,7 +725,7 @@
         }
       },
       {
-        "ts": "2026-08-11T01:03:46Z",
+        "ts": "2026-08-11T01:53:41Z",
         "h2h": {
           "home": 1.6,
           "draw": 3.65,
@@ -709,6 +745,10 @@
             "point": 1.5,
             "price": 1.51
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       }
     ],
@@ -760,7 +800,7 @@
         }
       },
       {
-        "ts": "2026-08-11T01:03:46Z",
+        "ts": "2026-08-11T01:53:41Z",
         "h2h": {
           "home": 2.35,
           "draw": 3.2,
@@ -780,6 +820,10 @@
             "point": 0.0,
             "price": 2.3
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       }
     ],
@@ -831,10 +875,10 @@
         }
       },
       {
-        "ts": "2026-08-11T01:03:46Z",
+        "ts": "2026-08-11T01:53:41Z",
         "h2h": {
           "home": 5.05,
-          "draw": 3.98,
+          "draw": 3.95,
           "away": 1.61
         },
         "totals": {
@@ -851,6 +895,10 @@
             "point": -1.5,
             "price": 2.77
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       }
     ],
@@ -902,7 +950,7 @@
         }
       },
       {
-        "ts": "2026-08-11T01:03:46Z",
+        "ts": "2026-08-11T01:53:41Z",
         "h2h": {
           "home": 1.9,
           "draw": 3.5,
@@ -922,6 +970,10 @@
             "point": 0.0,
             "price": 2.98
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       }
     ],
@@ -973,7 +1025,7 @@
         }
       },
       {
-        "ts": "2026-08-11T01:03:46Z",
+        "ts": "2026-08-11T01:53:41Z",
         "h2h": {
           "home": 1.88,
           "draw": 3.0,
@@ -993,6 +1045,10 @@
             "point": 1.5,
             "price": 1.32
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       }
     ],
@@ -1044,11 +1100,11 @@
         }
       },
       {
-        "ts": "2026-08-11T01:03:46Z",
+        "ts": "2026-08-11T01:53:41Z",
         "h2h": {
-          "home": 8.2,
+          "home": 8.4,
           "draw": 5.2,
-          "away": 1.33
+          "away": 1.32
         },
         "totals": {
           "line": 2.5,
@@ -1064,6 +1120,10 @@
             "point": -1.5,
             "price": 1.96
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       }
     ],
@@ -1115,7 +1175,7 @@
         }
       },
       {
-        "ts": "2026-08-11T01:03:46Z",
+        "ts": "2026-08-11T01:53:41Z",
         "h2h": {
           "home": 1.7,
           "draw": 3.65,
@@ -1135,6 +1195,10 @@
             "point": 1.5,
             "price": 1.5
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       }
     ],
@@ -1186,7 +1250,7 @@
         }
       },
       {
-        "ts": "2026-08-11T01:03:46Z",
+        "ts": "2026-08-11T01:53:41Z",
         "h2h": {
           "home": 2.4,
           "draw": 3.0,
@@ -1206,6 +1270,10 @@
             "point": 0.0,
             "price": 2.17
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       }
     ],
@@ -1257,7 +1325,7 @@
         }
       },
       {
-        "ts": "2026-08-11T01:03:46Z",
+        "ts": "2026-08-11T01:53:41Z",
         "h2h": {
           "home": 2.69,
           "draw": 3.25,
@@ -1277,6 +1345,10 @@
             "point": 0.0,
             "price": 1.93
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       }
     ],
@@ -1328,9 +1400,9 @@
         }
       },
       {
-        "ts": "2026-08-11T01:03:46Z",
+        "ts": "2026-08-11T01:53:41Z",
         "h2h": {
-          "home": 1.39,
+          "home": 1.395,
           "draw": 5.115,
           "away": 7.155
         },
@@ -1342,12 +1414,16 @@
         "spreads": {
           "home": {
             "point": -1.5,
-            "price": 2.1500000000000004
+            "price": 2.16
           },
           "away": {
             "point": 1.5,
-            "price": 1.78
+            "price": 1.775
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       }
     ],
@@ -1399,7 +1475,7 @@
         }
       },
       {
-        "ts": "2026-08-11T01:03:46Z",
+        "ts": "2026-08-11T01:53:41Z",
         "h2h": {
           "home": 1.4049999999999998,
           "draw": 5.0,
@@ -1419,6 +1495,10 @@
             "point": 1.5,
             "price": 1.77
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       }
     ]
@@ -1449,6 +1529,10 @@
             "point": 0.0,
             "price": 2.455
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [
@@ -1486,6 +1570,10 @@
             "point": 0.25,
             "price": 1.93
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [
@@ -1523,6 +1611,10 @@
             "point": -0.25,
             "price": 2.01
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [
@@ -1560,6 +1652,10 @@
             "point": 0.5,
             "price": 1.83
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [
@@ -1597,6 +1693,10 @@
             "point": 0.5,
             "price": 1.85
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [
@@ -1634,6 +1734,10 @@
             "point": 0.0,
             "price": 2.2350000000000003
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [
@@ -1671,6 +1775,10 @@
             "point": 1.5,
             "price": 1.95
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [
@@ -1708,6 +1816,10 @@
             "point": 0.0,
             "price": 3.1
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [
@@ -1745,6 +1857,10 @@
             "point": 0.0,
             "price": 2.64
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [
@@ -1782,6 +1898,10 @@
             "point": 1.5,
             "price": 1.51
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [
@@ -1819,6 +1939,10 @@
             "point": 0.0,
             "price": 2.3
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [
@@ -1839,7 +1963,7 @@
       "markets": {
         "h2h": {
           "home": 5.05,
-          "draw": 3.98,
+          "draw": 3.95,
           "away": 1.61
         },
         "totals": {
@@ -1856,6 +1980,10 @@
             "point": -1.5,
             "price": 2.77
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [
@@ -1893,6 +2021,10 @@
             "point": 0.0,
             "price": 2.98
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [
@@ -1930,6 +2062,10 @@
             "point": 1.5,
             "price": 1.32
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [
@@ -1949,9 +2085,9 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 8.2,
+          "home": 8.4,
           "draw": 5.2,
-          "away": 1.33
+          "away": 1.32
         },
         "totals": {
           "line": 2.5,
@@ -1967,6 +2103,10 @@
             "point": -1.5,
             "price": 1.96
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [
@@ -2004,6 +2144,10 @@
             "point": 1.5,
             "price": 1.5
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [
@@ -2041,6 +2185,10 @@
             "point": 0.0,
             "price": 2.17
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [
@@ -2078,6 +2226,10 @@
             "point": 0.0,
             "price": 1.93
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [
@@ -2097,7 +2249,7 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.39,
+          "home": 1.395,
           "draw": 5.115,
           "away": 7.155
         },
@@ -2109,12 +2261,16 @@
         "spreads": {
           "home": {
             "point": -1.5,
-            "price": 2.1500000000000004
+            "price": 2.16
           },
           "away": {
             "point": 1.5,
-            "price": 1.78
+            "price": 1.775
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [
@@ -2152,6 +2308,10 @@
             "point": 1.5,
             "price": 1.77
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [
