@@ -36,9 +36,6 @@ jobs:
       - name: Run prediction engine (uses cached odds)
         run: python scripts/predict.py
 
-      - name: Post-process (Elo + value)
-        run: python scripts/postprocess.py
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:

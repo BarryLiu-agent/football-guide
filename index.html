@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="data:,">
 <title>赌狗赌到最后应有尽有</title>
 <style>
 /* ===== Design Tokens ===== */
@@ -682,15 +683,16 @@ function renderTopBar(leagueCode) {
 function renderFixtures() {
   const code = FD_CODE[state.league];
   let ms = state.fixtures.filter(m => m.competition?.code === code);
+  // 常规模式基准（展示模式分支也使用）
+  const t = todayBJ();
+  const maxD = fmtDate(new Date(Date.now() + 30 * 86400000).toISOString());
+  const now = Date.now();
   // 展示模式：已完赛倒序（最近在前），最多 120 场
   const finished = ms.filter(m => m.status === 'FINISHED');
   if (finished.length >= ms.length * 0.8) {
     ms = finished.sort((a, b) => b.utcDate.localeCompare(a.utcDate)).slice(0, 120);
   } else {
     // 常规模式：今天 + 未来 30 天
-    const t = todayBJ();
-    const maxD = fmtDate(new Date(Date.now() + 30 * 86400000).toISOString());
-    const now = Date.now();
     ms = ms.filter(m => {
       const d = fmtDate(m.utcDate);
       if (d < t || d > maxD) return false;
@@ -1044,8 +1046,9 @@ function oddsTrendBlock(p) {
   // 初盘→临场走势：读 odds 文件的 history 快照序列
   const od = (p && p.league) ? state.oddsByLeague[p.league] : null;
   if (!od || !od.history) return '';
+  // 后端 odds_fetcher.py 只用 .lower() 生成键，不用 TEAM_ALIAS；前端匹配时保持一致
   const h = normTeam(p.homeTeam), a = normTeam(p.awayTeam);
-  const hk = Object.keys(od.history).find(k => { const [x, y] = k.split('|'); return x === h && y === a; });
+  const hk = Object.keys(od.history).find(k => { const [x, y] = k.split('|'); return normTeam(x) === h && normTeam(y) === a; });
   if (!hk) return '';
   const snaps = od.history[hk];
   if (!snaps || snaps.length < 1) return '';

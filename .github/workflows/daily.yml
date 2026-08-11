@@ -48,8 +48,8 @@ jobs:
       - name: Model calibration backtest
         run: python scripts/backtest.py
 
-      - name: Post-process (Elo + value)
-        run: python scripts/postprocess.py
+      - name: Odds calibration backtest (OU/Asian)
+        run: python scripts/backtest_ou.py
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3

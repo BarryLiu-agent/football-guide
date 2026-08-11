@@ -565,16 +565,13 @@ def main():
     form = load_form()
     print(f"赔率联赛: {list(odds_by_league.keys())}, 消息: {len(messages)} 条, 积分榜联赛: {len(standings_by_league)}, 近5场form球队: {len(form)}")
 
-    # Elo 独立模型：积分榜初始化 + 本赛季赛果迭代
+    # Elo 独立模型：积分榜初始化 → 上赛季迭代 → 本赛季已完赛（时间正序，新赛季最后覆盖）
     elo = EloModel()
     elo.init_from_standings(standings_by_league)
     try:
-        with open(DATA_DIR / "fixtures.json", encoding="utf-8") as f:
-            fixtures_all = json.load(f).get("matches", [])
-        finished = [m for m in fixtures_all if m.get("status") == "FINISHED"]
-        elo.update(finished)
         # 上赛季 1752 场迭代（与回测同源）：消除 Football-Data 积分榜与赔率源
         # 球队构成不一致导致的无历史评级（国米/马竞/里昂等被误判为 1500 初始）
+        season_total = 0
         season_path = DATA_DIR / "season_2025.json"
         if season_path.exists():
             try:
@@ -585,7 +582,6 @@ def main():
                     if sm.get("homeGoals") is None or sm.get("awayGoals") is None:
                         continue
                     ms_by_lg.setdefault(sm["league"], []).append(sm)
-                season_total = 0
                 for lg_ms in ms_by_lg.values():
                     # 抓取顺序 = 从最新往回 → 反转即时间正序
                     elo.update([{
@@ -595,11 +591,14 @@ def main():
                         "score": {"fullTime": {"home": sm["homeGoals"], "away": sm["awayGoals"]}},
                     } for sm in reversed(lg_ms)])
                     season_total += len(lg_ms)
-                print(f"Elo: {len(elo.ratings)} 队, 已用 {len(finished)} 场本赛季 + {season_total} 场上赛季赛果迭代")
             except Exception as e:
                 print(f"Elo 上赛季迭代失败: {e}")
-        else:
-            print(f"Elo: {len(elo.ratings)} 队, 已用 {len(finished)} 场赛果迭代")
+        # 本赛季已完赛（开赛后逐步积累，最后迭代使其权重最高）
+        with open(DATA_DIR / "fixtures.json", encoding="utf-8") as f:
+            fixtures_all = json.load(f).get("matches", [])
+        finished = [m for m in fixtures_all if m.get("status") == "FINISHED"]
+        elo.update(finished)
+        print(f"Elo: {len(elo.ratings)} 队, 已用 {season_total} 场上赛季 + {len(finished)} 场本赛季赛果迭代")
     except Exception as e:
         print(f"Elo 赛果迭代跳过: {e}")
 
