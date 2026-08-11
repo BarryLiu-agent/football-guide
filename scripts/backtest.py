@@ -25,39 +25,59 @@ DATA_DIR = ROOT / "data"
 
 
 def main():
-    path = DATA_DIR / "season_2025.json"
-    if not path.exists():
-        print("缺少 data/season_2025.json，先运行 _run_seasons.py 抓取上赛季数据")
-        return 1
+    # 多赛季支持：读取 season_2021.json ~ season_2025.json
+    seasons = []
+    for year in range(2021, 2026):
+        path = DATA_DIR / f"season_{year}.json"
+        if path.exists():
+            seasons.append((year, path))
+    
+    if not seasons:
+        # 回退：只读 season_2025.json
+        path = DATA_DIR / "season_2025.json"
+        if path.exists():
+            seasons = [(2025, path)]
+        else:
+            print("缺少赛季数据，先运行 fbref_seasons.py 抓取多赛季")
+            return 1
 
-    with open(path, encoding="utf-8") as f:
-        data = json.load(f)
+    print(f'回测 {len(seasons)} 个赛季: {[y for y,_ in seasons]}')
 
-    per_league = {}
-    for m in data.get("matches", []):
-        if m.get("homeGoals") is None or m.get("awayGoals") is None:
-            continue
-        per_league.setdefault(m["league"], []).append(m)
+    # 每联赛维护一个跨赛季 Elo
+    per_league_matches = {}
+    for year, path in seasons:
+        with open(path, encoding='utf-8') as f:
+            data = json.load(f)
+        for m in data.get('matches', []):
+            if m.get('homeGoals') is None or m.get('awayGoals') is None:
+                continue
+            lg = m['league']
+            if lg not in per_league_matches:
+                per_league_matches[lg] = []
+            per_league_matches[lg].append(m)
 
     rows = []
-    for league, ms in per_league.items():
+    for league, ms in per_league_matches.items():
         elo = EloModel()
-        # 抓取顺序 = 从最新往回翻 → 反转即时间正序（赛前信息只能来自更早的比赛）
-        for m in reversed(ms):
-            home, away = m["homeTeam"], m["awayTeam"]
+        # 按日期排序（同一联赛内跨赛季按时间正序）
+        sorted_ms = sorted(ms, key=lambda m: m.get('utcDate', '') or '')
+        for m in sorted_ms:
+            home, away = m['homeTeam'], m['awayTeam']
             ph, pd, pa = elo.predict(home, away)
-            best = max([("home", ph), ("draw", pd), ("away", pa)], key=lambda x: x[1])
-            hg, ag = m["homeGoals"], m["awayGoals"]
-            actual = "home" if hg > ag else ("draw" if hg == ag else "away")
+            best = max([('home', ph), ('draw', pd), ('away', pa)], key=lambda x: x[1])
+            hg, ag = m['homeGoals'], m['awayGoals']
+            actual = 'home' if hg > ag else ('draw' if hg == ag else 'away')
+            season = m.get('season', '')
             rows.append({
-                "league": league, "prob": round(best[1], 4),
-                "dir": best[0], "hit": best[0] == actual,
+                'league': league, 'prob': round(best[1], 4),
+                'dir': best[0], 'hit': best[0] == actual,
+                'season': season,
             })
             elo.update([{
-                "utcDate": m.get("utcDate", ""),
-                "homeTeam": {"name": home},
-                "awayTeam": {"name": away},
-                "score": {"fullTime": {"home": hg, "away": ag}},
+                'utcDate': m.get('utcDate', ''),
+                'homeTeam': {'name': home},
+                'awayTeam': {'name': away},
+                'score': {'fullTime': {'home': hg, 'away': ag}},
             }])
 
     if not rows:
@@ -92,13 +112,24 @@ def main():
             "hitRate": round(sum(1 for r in rs if r["hit"]) / len(rs), 4),
         }
 
+    # 按赛季分组
+    by_season = {}
+    for s in sorted(set(r.get("season", "") for r in rows)):
+        rs = [r for r in rows if r.get("season") == s]
+        if rs:
+            by_season[s] = {
+                "n": len(rs),
+                "hitRate": round(sum(1 for r in rs if r["hit"]) / len(rs), 4),
+            }
+
     out = {
         "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "source": "2025/26 赛季回测（Elo 滚动预测）",
+        "source": f"{len(seasons)} 赛季回测（Elo 滚动预测，跨赛季 Elo 连续）",
         "total": len(rows),
         "overall": round(sum(1 for r in rows if r["hit"]) / len(rows), 4),
         "buckets": groups,
         "byLeague": by_league,
+        "bySeason": by_season,
         "directionDist": dict(Counter(r["dir"] for r in rows)),
     }
 
