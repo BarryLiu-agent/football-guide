@@ -1,11 +1,22 @@
 {
-  "generatedAt": "2026-08-11T04:53:13Z",
+  "generatedAt": "2026-08-11T05:40:27Z",
   "total": 20,
   "messages": [
     {
       "source": "skysports",
       "type": "news",
-      "text": "Rockets relying on others to avoid Eliminator after loss to Brave",
+      "text": "Why Dutchwoman Weber is ineligible for 'amazing' home Solheim Cup",
+      "timestamp": "Tue, 11 Aug 2026 06:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/golf/news/12040/13571590/solheim-cup-2026-why-dutchwoman-dewi-weber-was-ineligible-to-be-potential-team-europe-captains-pick-for-home-edition",
+        "lang": "en",
+        "summary": "Dewi Weber would relish the opportunity to be involved in a home Solheim Cup in any capacity after being ineligible to feature for Team Europe in the Netherlands. "
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Rockets relying on others to avoid eliminator after loss to Brave",
       "timestamp": "Mon, 10 Aug 2026 16:20:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/cricket/news/12040/13571707/the-hundred-trent-rockets-relying-on-others-to-avoid-eliminator-after-loss-to-southern-brave",
@@ -60,7 +71,7 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Sciver-Brunt helps Trent Rockets Women into Hundred final",
+      "text": "Sciver-Brunt helps Rockets Women into Hundred final",
       "timestamp": "Mon, 10 Aug 2026 16:18:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/cricket/news/12040/13571706/the-hundred-nat-sciver-brunt-helps-trent-rockets-women-into-final-after-exciting-victory-over-southern-brave",
@@ -88,6 +99,17 @@
         "link": "https://www.skysports.com/football/news/12040/13571634/carabao-cup-second-round-chelsea-vs-luton-tottenham-vs-charlton-and-newcastle-vs-west-brom-as-11-premier-league-sides-enter-draw",
         "lang": "en",
         "summary": "Chelsea will host Jack Wilshere's Luton Town in the Carabao Cup second round, while Tottenham Hotspur host Charlton Athletic in a London derby."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "One month until the Solheim Cup! Who features for Team Europe?",
+      "timestamp": "Tue, 11 Aug 2026 06:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/golf/news/12040/13571616/solheim-cup-2026-who-is-playing-for-team-europe-anna-nordqvists-line-up-to-face-team-usa-and-how-they-qualified",
+        "lang": "en",
+        "summary": "Team Europe look to regain the Solheim Cup in the Netherlands this September, live on Sky Sports, with Anna Nordqvist's side to take on Team USA offering a mix of experience and exciting young talent. "
       }
     },
     {
@@ -198,28 +220,6 @@
         "link": "https://www.skysports.com/football/news/12040/13571668/arsenal-have-looked-defensively-weak-in-pre-season-can-they-cope-without-william-saliba-as-premier-league-campaign-nears",
         "lang": "en",
         "summary": "Arsenal have been conceding goals at an alarming rate in pre-season. Seven across three games. Has their greatest strength, one that contributed hugely to their Premier League title success last season, become a surprise source of frailty on the eve of the next?"
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Super League's Final Charge: Play-off spots taking shape with five rounds left",
-      "timestamp": "Mon, 10 Aug 2026 10:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/rugby-league/news/12040/13570739/super-leagues-final-charge-leeds-rhinos-wakefield-trinity-wigan-warriors-warrington-wolves-hull-kr-leigh-leopards-and-st-helens-in-contention",
-        "lang": "en",
-        "summary": "There are just five rounds of Super League action remaining and, with it, a whole lot of drama as Super League's Final Charge ramps up."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Sunderland latest: Wrexham agree £8m deal to sign Black Cats 'keeper",
-      "timestamp": "Mon, 10 Aug 2026 10:25:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/live-blog/12040/13375102/sunderland-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts",
-        "lang": "en",
-        "summary": ""
       }
     }
   ]
