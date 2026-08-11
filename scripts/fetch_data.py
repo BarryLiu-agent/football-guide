@@ -115,6 +115,10 @@ def fetch_standings():
                     break
             if not table:
                 continue
+            # 季前占位积分榜（全部球队 0 场/0 分，position 全 1）无分析价值，跳过
+            if table and all((t.get("playedGames") or 0) == 0 for t in table):
+                print(f"  - {code} 积分榜为季前占位（0 场），跳过")
+                continue
             standings[code] = [{
                 "position": t.get("position"),
                 "team": (t.get("team") or {}).get("name", ""),
