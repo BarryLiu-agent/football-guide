@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T05:40:00Z",
+  "generatedAt": "2026-08-11T05:53:34Z",
   "dateRange": {
     "from": "2026-08-04",
     "to": "2026-09-15"
@@ -4916,7 +4916,7 @@
       "matchday": 4,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-10T08:25:08Z",
+      "lastUpdated": "2026-08-10T08:25:09Z",
       "homeTeam": {
         "id": 87,
         "name": "Rayo Vallecano de Madrid",
