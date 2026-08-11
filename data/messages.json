@@ -1,7 +1,128 @@
 {
-  "generatedAt": "2026-08-11T05:54:02Z",
+  "generatedAt": "2026-08-11T08:32:35Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Trump warns of 'terrible mistake' if FIFA replaces Infantino",
+      "timestamp": "Tue, 11 Aug 2026 07:04:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571834/gianni-infantino-donald-trump-warns-of-terrible-mistake-if-fifa-replaces-under-pressure-president",
+        "lang": "en",
+        "summary": "US President Donald Trump has warned FIFA would be making a \"terrible mistake\" if it got rid of Gianni Infantino as head of world football&#8217;s governing body."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Refreshed Rory returns for FedExCup Playoffs as he targets fourth title",
+      "timestamp": "Tue, 11 Aug 2026 09:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/golf/news/12040/13571841/rory-mcilroy-returns-to-action-for-first-fedexcup-playoff-event-as-he-targets-record-extending-fourth-title",
+        "lang": "en",
+        "summary": "Rory McIlroy returns to action at the FedEx St. Jude Championship this week, live on Sky Sports, with the world No 2 targeting a big finish to the PGA Tour season and a record-extending fourth FedExCup title."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "England's World Cup place guaranteed but West Indies need to qualify",
+      "timestamp": "Tue, 11 Aug 2026 07:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/cricket/news/12040/13571828/england-guaranteed-place-in-2027-cricket-world-cup-but-west-indies-will-have-to-enter-qualifying-tournament-again",
+        "lang": "en",
+        "summary": "Panic over, England fans - your team will NOT have to qualify for the 2027 Cricket World Cup."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Swiatek cruises into Canadian Open semis with 64-minute-win over Shnaider",
+      "timestamp": "Tue, 11 Aug 2026 06:39:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13571824/diana-shnaider-vs-iga-swiatek-canadian-open-highlights",
+        "lang": "en",
+        "summary": "Highlights of the Canadian Open match between Diana Shnaider and Iga Swiatek. "
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "FREE STREAM: The Transfer Show on Sky Sports News",
+      "timestamp": "Tue, 11 Aug 2026 08:50:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13569345/free-stream-the-transfer-show-on-sky-sports-news-latest-football-transfer-news-updates-and-rumours",
+        "lang": "en",
+        "summary": ""
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "McKenna is 'locked in' on Walsh showdown after viral KO win",
+      "timestamp": "Tue, 11 Aug 2026 07:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/boxing/news/12040/13571739/stevie-mckenna-is-locked-in-on-all-irish-showdown-with-callum-walsh-after-viral-ko-win-says-manager-mike-borao",
+        "lang": "en",
+        "summary": "Stevie McKenna is 'locked in' on an all-Irish showdown with Callum Walsh after delivering a dramatic victory in Dublin, says his manager Mike Borao."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Rashford set for reintegration at Man Utd - but is it a good idea?",
+      "timestamp": "Tue, 11 Aug 2026 08:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571617/marcus-rashford-what-are-manchester-uniteds-plans-to-reintegrate-the-england-forward-after-two-loan-spells",
+        "lang": "en",
+        "summary": "All eyes will be on Marcus Rashford this week. "
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "'I've never seen that before!' | Medvedev and Marozsan play rock, paper scissors on court!",
+      "timestamp": "Tue, 11 Aug 2026 06:48:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13571827/daniil-medvedev-and-fabian-marozsan-play-rock-paper-scissers-on-court",
+        "lang": "en",
+        "summary": "Daniil Medvedev and Fabian Marozsan play rock, paper, scissors to see who gets to receive the deciding point against Theo Arribage and Albano Olivetti."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "'Best out of three?' | Jordan's toe forces coin toss to be retaken!",
+      "timestamp": "Mon, 10 Aug 2026 18:05:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13571749/the-hundred-retaken-coin-toss-gives-southern-brave-the-advantage",
+        "lang": "en",
+        "summary": "In the coin toss for the match between Trent Rockets and Southern Brave, the coin hit Chris Jordan's shoe, forcing a retake."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Deedaydiva and She Commands look to bounce back at Lingfield Park",
+      "timestamp": "Tue, 11 Aug 2026 07:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/racing/news/12040/13571483/today-on-sky-sports-racing-all-weather-action-from-lingfield-park",
+        "lang": "en",
+        "summary": "We have a busy day&#8217;s racing on Tuesday with All-Weather action from Lingfield Park, live on Sky Sports Racing..."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Vasseur reveals 'most important' target for Ferrari after F1 summer break",
+      "timestamp": "Tue, 11 Aug 2026 07:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/f1/news/12040/13570144/ferrari-boss-fred-vasseur-pinpoints-areas-team-need-to-improve-in-to-keep-lewis-hamilton-in-f1-title-fight",
+        "lang": "en",
+        "summary": "Ferrari boss Frederic Vasseur has revealed the areas in which he believes the Italian team need to improve during the second half of the 2026 Formula 1 season as Lewis Hamilton attempts to stay in the title battle."
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -49,6 +170,17 @@
     {
       "source": "skysports",
       "type": "news",
+      "text": "Dortmund scout behind Haaland and Bellingham moves wanted by PL clubs",
+      "timestamp": "Tue, 11 Aug 2026 09:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571673/sebastian-krug-borussia-dortmund-scout-behind-erling-haaland-and-jude-bellingham-moves-wanted-by-premier-league-clubs",
+        "lang": "en",
+        "summary": "A number of clubs in the Premier League and Europe are exploring a deal to recruit Borussia Dortmund director of scouting and recruiting Sebastian Krug."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
       "text": "Liverpool sign Araujo from Barcelona",
       "timestamp": "Mon, 10 Aug 2026 18:30:00 BST",
       "metadata": {
@@ -88,138 +220,6 @@
         "link": "https://www.skysports.com/football/news/12040/13571632/rangers-meeting-qa-derek-mcinnes-jurgen-klopp-comparison-club-became-used-to-finishing-second-admission-and-new-signings-update",
         "lang": "en",
         "summary": "Rangers chairman Andrew Cavanagh believes the Ibrox side have become used to finishing second or worse over the last 15 years, and admits that failure had begun to \"seep through\" every corner of the club."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Chelsea get Luton as Spurs to host Charlton in Carabao Cup",
-      "timestamp": "Mon, 10 Aug 2026 12:36:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13571634/carabao-cup-second-round-chelsea-vs-luton-tottenham-vs-charlton-and-newcastle-vs-west-brom-as-11-premier-league-sides-enter-draw",
-        "lang": "en",
-        "summary": "Chelsea will host Jack Wilshere's Luton Town in the Carabao Cup second round, while Tottenham Hotspur host Charlton Athletic in a London derby."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "One month until the Solheim Cup! Who features for Team Europe?",
-      "timestamp": "Tue, 11 Aug 2026 06:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/golf/news/12040/13571616/solheim-cup-2026-who-is-playing-for-team-europe-anna-nordqvists-line-up-to-face-team-usa-and-how-they-qualified",
-        "lang": "en",
-        "summary": "Team Europe look to regain the Solheim Cup in the Netherlands this September, live on Sky Sports, with Anna Nordqvist's side to take on Team USA offering a mix of experience and exciting young talent. "
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Man City in Bouaddi talks and Chelsea's Fernandez also an option",
-      "timestamp": "Mon, 10 Aug 2026 17:39:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13571742/man-city-transfer-news-talks-ongoing-with-lilles-ayyoub-bouaddi-but-rodri-to-barcelona-talks-inactive-with-enzo-fernandez-also-an-option",
-        "lang": "en",
-        "summary": "Man City&#160;are in ongoing talks with&#160;Lille&#160;for Morocco midfielder&#160;Ayyoub Bouaddi."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Scotland, Netherlands criticise Cricket World Cup format changes",
-      "timestamp": "Mon, 10 Aug 2026 15:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/cricket/news/12040/13571677/cricket-world-cup-scotland-and-netherlands-criticise-format-changes-to-50-over-tournament-announced-by-icc",
-        "lang": "en",
-        "summary": "Scotland and the Netherlands have criticised the restructuring of next year's 50-over World Cup, saying the changes \"risk weakening the integrity and credibility of international cricket\"."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Man City latest: Rodri to Barcelona talks currently inactive",
-      "timestamp": "Mon, 10 Aug 2026 14:30:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/live-blog/12040/13025499/man-city-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts",
-        "lang": "en",
-        "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "'Dubois has ingredients to replace Taylor as face of boxing'",
-      "timestamp": "Mon, 10 Aug 2026 14:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/boxing/news/12040/13571639/caroline-dubois-britains-lightweight-world-champion-has-ingredients-to-succeed-katie-taylor-as-face-of-boxing-says-nakisa-bidarian",
-        "lang": "en",
-        "summary": "Caroline Dubois \"has the ingredients\" to succeed Katie Taylor as one of the biggest stars in boxing, according to Most Valuable Promotions partner Nakisa Bidarian."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Stella issues rivals warning over McLaren 'momentum' in title battles",
-      "timestamp": "Mon, 10 Aug 2026 11:40:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/f1/news/12040/13571601/mclaren-boss-andrea-stella-issues-warning-to-rivals-over-momentum-in-f1-title-battle-following-lando-norris-win",
-        "lang": "en",
-        "summary": "McLaren boss Andrea Stella has issued a warning to his team's rivals for the remainder of the 2026 season as he expressed confidence in the Woking squad's ability to maintain momentum once it has been gained."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Crystal Palace latest: Everton keen on Munoz",
-      "timestamp": "Mon, 10 Aug 2026 14:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/live-blog/12040/13279298/crystal-palace-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights",
-        "lang": "en",
-        "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Amazon founder Bezos nears deal to buy stake in Liverpool",
-      "timestamp": "Mon, 10 Aug 2026 11:14:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13571596/liverpool-amazon-founder-jeff-bezos-nears-deal-to-buy-stake-with-consortium-led-by-amit-bhatia",
-        "lang": "en",
-        "summary": "<em>Sky News</em> understands a consortium including the Amazon founder Jeff Bezos is closing in on a deal to buy a roughly one-third stake in Liverpool."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Nordqvist: Bring on the pairings 'puzzle' for Team Europe!",
-      "timestamp": "Mon, 10 Aug 2026 16:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/golf/news/12040/13571664/solheim-cup-anna-nordqvist-captains-column-team-europes-pairings-puzzle-and-why-aggressive-rookies-can-impress",
-        "lang": "en",
-        "summary": "Team Europe is finalised! "
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Could Miller receive world title shot? 'Big Baby' interests WBA champion",
-      "timestamp": "Mon, 10 Aug 2026 16:13:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/boxing/news/12040/13571708/jarrell-miller-could-receive-world-heavyweight-title-fight-as-murat-gassiev-is-interested-in-fighting-the-american",
-        "lang": "en",
-        "summary": "Jarrell Miller could receive a  a WBA world heavyweight title fight against Murat Gassiev."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Has Arsenal's indifferent pre-season revealed a surprise weakness?",
-      "timestamp": "Mon, 10 Aug 2026 14:29:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13571668/arsenal-have-looked-defensively-weak-in-pre-season-can-they-cope-without-william-saliba-as-premier-league-campaign-nears",
-        "lang": "en",
-        "summary": "Arsenal have been conceding goals at an alarming rate in pre-season. Seven across three games. Has their greatest strength, one that contributed hugely to their Premier League title success last season, become a surprise source of frailty on the eve of the next?"
       }
     }
   ]
