@@ -1,7 +1,62 @@
 {
-  "generatedAt": "2026-08-11T15:31:11Z",
+  "generatedAt": "2026-08-11T19:46:32Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "SunRisers beat Super Giants to reach Hundred eliminator",
+      "timestamp": "Tue, 11 Aug 2026 17:40:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/cricket/news/12040/13572031/the-hundred-sunrisers-leeds-beat-manchester-super-giants-in-decisive-game-to-set-up-eliminator-match-up-with-southern-brave",
+        "lang": "en",
+        "summary": "Reigning champions SunRisers Leeds snatched a spot in the women's Hundred eliminator by beating Manchester Super Giants by 41 runs in a winner-takes-all game at Old Trafford."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Levy goes up against Spurs owners to buy London's NBA Europe team",
+      "timestamp": "Tue, 11 Aug 2026 17:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/nba/news/12040/13572016/nba-europe-former-tottenham-chairman-daniel-levy-vying-with-spurs-owners-to-buy-london-based-team-in-new-basketball-league",
+        "lang": "en",
+        "summary": "Former Tottenham chairman Daniel Levy is vying with a consortium including current Spurs' owners, the Lewis family, to buy NBA Europe's London-based team."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Floodlights to be on throughout Hundred matches for solar eclipse",
+      "timestamp": "Tue, 11 Aug 2026 18:30:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/cricket/news/12040/13572042/solar-eclipse-floodlights-to-be-turned-on-during-uk-sports-events-including-the-hundred-and-kempton-racing",
+        "lang": "en",
+        "summary": "Floodlights will be turned on throughout games in The Hundred on Wednesday due to the solar eclipse."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Inter Milan in talks over Spurs and England defender Spence",
+      "timestamp": "Tue, 11 Aug 2026 17:59:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13572037/djed-spence-transfer-news-inter-milan-in-talks-to-sign-spurs-and-england-defender",
+        "lang": "en",
+        "summary": "Tottenham&#160;are in talks with&#160;Inter Milan&#160;over the sale of&#160;Djed Spence."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Unbeaten star Bow Echo in shock retirement after setback",
+      "timestamp": "Tue, 11 Aug 2026 16:50:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/racing/news/12040/13572012/bow-echo-george-bougheys-unbeaten-star-miler-in-shock-retirement-from-racing-after-setback",
+        "lang": "en",
+        "summary": "Bow Echo has been retired from racing after the shock news that George Boughey's unbeaten star has suffered a setback in training."
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -16,7 +71,18 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Wrexham set to make club-record signing as Phillips returns to Blades",
+      "text": "Arsenal to retain title? Liverpool above Man Utd? Sky Sports predicted table revealed",
+      "timestamp": "Tue, 11 Aug 2026 12:22:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571927/sky-sports-supercomputer-predicts-2026-27-premier-league-table-as-arsenal-retain-title-and-liverpool-jump-back-above-man-utd-between-the-lines",
+        "lang": "en",
+        "summary": "Will Arsenal retain the title? What's in store for Manchester City, Liverpool and Chelsea under their new managers? And which teams are going to be relegated?"
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Wrexham make club-record signing as Phillips returns to Blades",
       "timestamp": "Tue, 11 Aug 2026 11:26:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/football/live-blog/12040/13163353/championship-news-transfer-latest-and-gossip-plus-efl-updates-from-league-one-and-league-two",
@@ -115,12 +181,12 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Flintoff hits 65-ball ton as Lancashire make mammoth One-Day Cup total",
-      "timestamp": "Tue, 11 Aug 2026 15:37:00 BST",
+      "text": "Flintoff hits 65-ball ton as Lancashire set up quarter-final vs Stokes' Durham",
+      "timestamp": "Tue, 11 Aug 2026 20:00:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/cricket/news/12040/13571995/one-day-cup-rocky-flintoffs-65-ball-century-helps-lancashire-make-third-highest-total-in-english-50-over-domestic-cricket",
         "lang": "en",
-        "summary": "Rocky Flintoff's 123 off 76 balls led Lancashire to the third highest total in English domestic 50-over cricket as they made 443-6 against Somerset."
+        "summary": "Rocky Flintoff made his first Lancashire century in a One Day Cup thrashing of Somerset - and will now meet Ben Stokes and Durham in the quarter-finals."
       }
     },
     {
@@ -154,72 +220,6 @@
         "link": "https://www.skysports.com/nba/news/12040/13571957/lebron-james-faces-the-new-york-knicks-on-nba-opening-night-with-lakers-clash-on-christmas-day-as-signature-fixtures-announced",
         "lang": "en",
         "summary": "LeBron James will make his Philadelphia 76ers debut against defending NBA champions the New York Knicks at Madison Square Garden on the opening night of the season."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "PSG meet Villa again - what has changed since their last epic match?",
-      "timestamp": "Tue, 11 Aug 2026 09:22:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13571861/super-cup-psg-and-aston-villa-meet-again-in-salzburg-as-unai-emery-enters-new-era-with-test-against-european-kingpins",
-        "lang": "en",
-        "summary": "\"We were really suffering. I do not think this team has been dominated in this way.\""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Everton sign Johnson from Palace in transfer swap for McNeil",
-      "timestamp": "Tue, 11 Aug 2026 10:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13571877/everton-sign-brennan-johnson-from-crystal-palace-as-dwight-mcneil-moves-to-selhurst-park-in-transfer-swap-deal",
-        "lang": "en",
-        "summary": "Everton have signed winger Brennan Johnson from Crystal Palace in a transfer swap deal that sees Dwight McNeil move to Selhurst Park."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Rangers striker Chermiti out for 'significant period of time' with ACL injury",
-      "timestamp": "Tue, 11 Aug 2026 13:30:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13571945/youssef-chermiti-rangers-reveal-acl-injury-suffered-in-hibernian-loss-that-rules-striker-out-for-significant-period-of-time",
-        "lang": "en",
-        "summary": "Rangers striker Youssef Chermiti will be out for \"a significant period of time\" after suffering an ACL injury in Sunday's defeat to Hibernian."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Forest owner Marinakis suing Palace for defamation",
-      "timestamp": "Tue, 11 Aug 2026 13:25:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13571952/evangelos-marinakis-nottingham-forest-owner-suing-crystal-palace-for-defamation-after-banner-at-selhurst-park",
-        "lang": "en",
-        "summary": "Evangelos Marinakis is suing Crystal Palace for defamation, after a banner was unfurled at Selhurst Park last season showing the Nottingham Forest owner holding a gun to the head of Morgan Gibbs-White."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Man City have signed Anderson - why do they also want Bouaddi?",
-      "timestamp": "Tue, 11 Aug 2026 11:41:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13571912/ayyoub-bouaddi-transfer-why-do-man-city-want-to-spend-big-on-another-midfielder-after-signing-elliot-anderson",
-        "lang": "en",
-        "summary": "Those who followed Morocco's recent World Cup campaign will recognise the name Ayyoub Bouaddi. Perhaps those who only took a passing glance will remember him, too. He tends to stand out. "
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Swiatek cruises into Canadian Open semis with 64-minute-win over Shnaider",
-      "timestamp": "Tue, 11 Aug 2026 06:39:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13571824/diana-shnaider-vs-iga-swiatek-canadian-open-highlights",
-        "lang": "en",
-        "summary": "Highlights of the Canadian Open match between Diana Shnaider and Iga Swiatek. "
       }
     }
   ]
