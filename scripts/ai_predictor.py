@@ -73,8 +73,8 @@ def _call_llm(messages: list[dict], timeout: int = DEFAULT_TIMEOUT) -> str | Non
     api_key = os.environ.get("AI_API_KEY")
     if not api_key:
         return None
-    base = os.environ.get("AI_BASE_URL", DEFAULT_BASE_URL).rstrip("/")
-    model = os.environ.get("AI_MODEL", DEFAULT_MODEL)
+    base = (os.environ.get("AI_BASE_URL") or DEFAULT_BASE_URL).rstrip("/")
+    model = os.environ.get("AI_MODEL") or DEFAULT_MODEL
     body = json.dumps({
         "model": model,
         "messages": messages,
@@ -174,7 +174,7 @@ def ai_judge(pred: dict, timeout: int = DEFAULT_TIMEOUT) -> dict | None:
             "score": score,
             "confidence": round(conf, 3),
             "reason": str(data.get("reason", "")).strip(),
-            "model": os.environ.get("AI_MODEL", DEFAULT_MODEL),
+            "model": os.environ.get("AI_MODEL") or DEFAULT_MODEL,
             "latency": round(time.time() - t0, 1),
         }
     except Exception as e:
