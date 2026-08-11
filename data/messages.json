@@ -1,7 +1,18 @@
 {
-  "generatedAt": "2026-08-11T08:32:35Z",
+  "generatedAt": "2026-08-11T11:33:11Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Van Veen asks for help as bags stranded in Paris",
+      "timestamp": "Tue, 11 Aug 2026 11:46:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/darts/news/12040/13571915/gian-van-veen-asks-for-help-ahead-of-new-zealand-darts-masters-with-bags-stuck-in-paris",
+        "lang": "en",
+        "summary": "Gian van Veen has taken to social media to ask for help with his bags stuck in Paris ahead of the New Zealand Darts Masters in Auckland this weekend."
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -27,6 +38,28 @@
     {
       "source": "skysports",
       "type": "news",
+      "text": "Nottingham Forest sign defender Diomande in £34m deal",
+      "timestamp": "Tue, 11 Aug 2026 11:53:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571913/ousmane-diomande-nottingham-forest-sign-sporting-defender-for-34-3m-on-four-year-deal",
+        "lang": "en",
+        "summary": "Nottingham Forest have signed Ivory Coast defender Ousmane Diomande from Sporting on a four-year deal. "
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Crystal Palace latest: Parish clears air with McNeil and his partner",
+      "timestamp": "Tue, 11 Aug 2026 11:36:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/live-blog/12040/13279298/crystal-palace-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights",
+        "lang": "en",
+        "summary": ""
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
       "text": "England's World Cup place guaranteed but West Indies need to qualify",
       "timestamp": "Tue, 11 Aug 2026 07:00:00 BST",
       "metadata": {
@@ -38,23 +71,23 @@
     {
       "source": "skysports",
       "type": "news",
+      "text": "Everton sign Johnson from Palace in transfer swap for McNeil",
+      "timestamp": "Tue, 11 Aug 2026 10:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571877/everton-sign-brennan-johnson-from-crystal-palace-as-dwight-mcneil-moves-to-selhurst-park-in-transfer-swap-deal",
+        "lang": "en",
+        "summary": "Everton have signed winger Brennan Johnson from Crystal Palace in a transfer swap deal that sees Dwight McNeil move to Selhurst Park."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
       "text": "Swiatek cruises into Canadian Open semis with 64-minute-win over Shnaider",
       "timestamp": "Tue, 11 Aug 2026 06:39:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/watch/video/13571824/diana-shnaider-vs-iga-swiatek-canadian-open-highlights",
         "lang": "en",
         "summary": "Highlights of the Canadian Open match between Diana Shnaider and Iga Swiatek. "
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "FREE STREAM: The Transfer Show on Sky Sports News",
-      "timestamp": "Tue, 11 Aug 2026 08:50:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13569345/free-stream-the-transfer-show-on-sky-sports-news-latest-football-transfer-news-updates-and-rumours",
-        "lang": "en",
-        "summary": ""
       }
     },
     {
@@ -159,6 +192,17 @@
     {
       "source": "skysports",
       "type": "news",
+      "text": "How Liverpool signed Araujo - and why the deal works",
+      "timestamp": "Mon, 10 Aug 2026 18:30:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13570899/ronald-araujo-transfer-news-liverpool-complete-deal-to-sign-barcelona-defender-on-loan-with-option-to-buy",
+        "lang": "en",
+        "summary": "Liverpool have confirmed the signing of defender Ronald Araujo from Barcelona."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
       "text": "Papers: Aston Villa interested in Endrick loan from Real Madrid",
       "timestamp": "Sun, 09 Aug 2026 23:00:00 BST",
       "metadata": {
@@ -176,50 +220,6 @@
         "link": "https://www.skysports.com/football/news/12040/13571673/sebastian-krug-borussia-dortmund-scout-behind-erling-haaland-and-jude-bellingham-moves-wanted-by-premier-league-clubs",
         "lang": "en",
         "summary": "A number of clubs in the Premier League and Europe are exploring a deal to recruit Borussia Dortmund director of scouting and recruiting Sebastian Krug."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Liverpool sign Araujo from Barcelona",
-      "timestamp": "Mon, 10 Aug 2026 18:30:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13570899/ronald-araujo-transfer-news-liverpool-complete-deal-to-sign-barcelona-defender-on-loan-with-option-to-buy",
-        "lang": "en",
-        "summary": "Liverpool have confirmed the signing of defender Ronald Araujo from Barcelona."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Sky Sports Golf Podcast: Young talent shines again as PGA Tour playoffs loom",
-      "timestamp": "Mon, 10 Aug 2026 22:45:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/golf/news/12040/11933264/sky-sports-golf-podcast",
-        "lang": "en",
-        "summary": "The Sky Sports Golf Podcast delivers the latest news from the golfing world, expert analysis and big-name interviews."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Sciver-Brunt helps Rockets Women into Hundred final",
-      "timestamp": "Mon, 10 Aug 2026 16:18:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/cricket/news/12040/13571706/the-hundred-nat-sciver-brunt-helps-trent-rockets-women-into-final-after-exciting-victory-over-southern-brave",
-        "lang": "en",
-        "summary": "England all-rounder Nat Sciver-Brunt timed her introduction to perfection as 32 off 19 balls batting down the order secured Trent Rockets' progress to the final of The Hundred with a seventh successive victory."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Rangers meeting Q&A: McInnes-Klopp compared, club failure admission & new signings update",
-      "timestamp": "Mon, 10 Aug 2026 15:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13571632/rangers-meeting-qa-derek-mcinnes-jurgen-klopp-comparison-club-became-used-to-finishing-second-admission-and-new-signings-update",
-        "lang": "en",
-        "summary": "Rangers chairman Andrew Cavanagh believes the Ibrox side have become used to finishing second or worse over the last 15 years, and admits that failure had begun to \"seep through\" every corner of the club."
       }
     }
   ]

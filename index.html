@@ -775,7 +775,7 @@ function renderFixtures() {
     const cls = d === t2 ? 'is-today' : d === tm ? 'is-tomorrow' : '';
     // 出手建议：有价值信号/异动/高置信预测的优先展示，其余折叠降噪
     const hasSig = m => {
-      const p = m.pred || findPrediction(m.homeTeam?.name || m.homeTeam?.shortName, m.awayTeam?.name || m.awayTeam?.shortName);
+      const p = m.pred || findPrediction(m.homeTeam?.name || m.homeTeam?.shortName, m.awayTeam?.name || m.awayTeam?.shortName, m.competition?.code);
       if (p && p.valuePicks && p.valuePicks.length) return true;
       if (p && p.oddsChange && ['home','draw','away'].some(k => p.oddsChange[k] != null && Math.abs(p.oddsChange[k]) >= 0.2)) return true;
       if (p && p.confidence != null && p.confidence >= 0.55) return true;
@@ -793,7 +793,7 @@ function renderFixtures() {
 function renderCard(m) {
   const homeName = m.homeTeam?.name || m.homeTeam?.shortName || '?';
   const awayName = m.awayTeam?.name || m.awayTeam?.shortName || '?';
-  const pred = m.pred || findPrediction(homeName, awayName);
+  const pred = m.pred || findPrediction(homeName, awayName, m.competition?.code);
   const jc = findJingcai(homeName, awayName);
   const score = getScore(m);
   // 异动标红：赔率涨跌 >= 0.2
@@ -1267,7 +1267,7 @@ function switchMkt(mkt) {
     const hhad = jc.hhad || {};
     const ttg = jc.ttg || {};
     el.innerHTML = `
-      ${(function(){ const oh = jc.oddsHistory || []; if (!oh.length) return ''; const first = oh[0], last = oh[oh.length - 1]; const arrow = (a, b) => a && b ? (a === b ? '<span style="color:var(--muted)">平</span>' : (a > b ? '<span style="color:var(--red)">↗' + (a - b).toFixed(2) + '</span>' : '<span style="color:var(--green)">↘' + (b - a).toFixed(2) + '</span>')) : ''; return '<div style="font-size:10px;color:var(--muted);margin-bottom:8px">SP 走势：主胜 ' + (first.h || '—') + arrow(last.h, first.h) + ' · 平 ' + (first.d || '—') + arrow(last.d, first.d) + ' · 客 ' + (first.a || '—') + arrow(last.a, first.a) + '（' + oh.length + ' 次采样）</div>'; })()}
+      ${(function(){ const oh = (jc.oddsHistory || []).filter(o => o && (o.h || o.d || o.a)).slice().sort((a, b) => (a.time || '').localeCompare(b.time || '')); if (!oh.length) return ''; const first = oh[0], last = oh[oh.length - 1]; const arrow = (a, b) => a && b ? (a === b ? '<span style="color:var(--muted)">平</span>' : (a > b ? '<span style="color:var(--red)">↗' + (a - b).toFixed(2) + '</span>' : '<span style="color:var(--green)">↘' + (b - a).toFixed(2) + '</span>')) : ''; return '<div style="font-size:10px;color:var(--muted);margin-bottom:8px">SP 走势：主胜 ' + (first.h || '—') + arrow(last.h, first.h) + ' · 平 ' + (first.d || '—') + arrow(last.d, first.d) + ' · 客 ' + (first.a || '—') + arrow(last.a, first.a) + '（' + oh.length + ' 次采样）</div>'; })()}
       <div class="section-title" style="margin-top:0">胜平负 SP</div>
       <div class="odds-grid">
         <div class="odds-box"><div class="label">主胜</div><div class="value">${had.h ?? '—'}</div></div>
@@ -1318,7 +1318,7 @@ function switchMkt(mkt) {
     el.innerHTML = `<div class="odds-grid">
       <div class="odds-box"><div class="label">主队让球</div><div class="value">${s.home?.point ?? '—'}</div><div class="sub">赔率 ${s.home?.price ?? '—'}</div></div>
       <div class="odds-box"><div class="label">客队受让</div><div class="value">${s.away?.point ?? '—'}</div><div class="sub">赔率 ${s.away?.price ?? '—'}</div></div>
-      <div class="odds-box"><div class="label">解读</div><div class="value" style="font-size:13px">${s.home && s.home.point != null ? (s.home.point < 0 ? '机构看好主队' : '机构看好客队') : '数据不足'}</div></div>
+      <div class="odds-box"><div class="label">解读</div><div class="value" style="font-size:13px">${s.home && s.home.point != null ? (s.home.point < 0 ? '机构看好主队' : (s.home.point > 0 ? '机构看好客队' : '平手盘')) : '数据不足'}</div></div>
     </div>
     ${sm ? `<div class="section-title" style="margin-top:10px">🤖 模型 vs 盘口（让球）</div>
     <div class="odds-grid">
@@ -1329,7 +1329,11 @@ function switchMkt(mkt) {
   } else if (mkt === 'ah') {
     // 亚盘数据：football-data.co.uk 历史盘口（收盘），按队名匹配
     const od = (p && p.league) ? state.asianByLeague[p.league] : null;
+    // 赛季判定：8 月及以后属当年赛季，否则属上一赛季（亚盘/预测须同赛季才匹配，
+    // 避免未开赛的新赛季对阵捞到上赛季同名交锋的历史结算）
+    const seasonOf = (iso) => { const y = parseInt((iso || '').slice(0, 4), 10); const mo = parseInt((iso || '').slice(5, 7), 10); return (y && mo) ? (mo >= 8 ? y : y - 1) : 0; };
     const am = (od && od.matches) ? od.matches.find(x => {
+      if (seasonOf(x.kickoff) !== seasonOf(p.kickoff)) return false;
       const xh = normTeam(x.homeTeam), xa = normTeam(x.awayTeam);
       const h = normTeam(p.homeTeam), a = normTeam(p.awayTeam);
       return (xh === h && xa === a) || (xh.split(' ')[0] === h.split(' ')[0] && xa.split(' ')[0] === a.split(' ')[0]);

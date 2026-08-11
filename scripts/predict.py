@@ -288,9 +288,9 @@ class ScoreModel:
         if not p_home or not p_draw or not p_away:
             return self
         best_err, best = 1e9, (self.lam_h, self.lam_a)
-        # 网格搜索: 总进球 1.8~3.2, 主队份额 0.35~0.75
-        for total in [x * 0.1 for x in range(18, 33)]:
-            for share in [x * 0.01 for x in range(35, 76)]:
+        # 网格搜索: 总进球 1.4~3.6, 主队份额 0.25~0.80（覆盖强主队 0.8+ 胜率场景）
+        for total in [x * 0.1 for x in range(14, 37)]:
+            for share in [x * 0.01 for x in range(25, 81)]:
                 lh, la = total * share, total * (1 - share)
                 ph, pd, pa = self._probs(lh, la)
                 err = abs(ph - p_home) + abs(pd - p_draw) + abs(pa - p_away)
@@ -353,11 +353,15 @@ class ScoreModel:
 
     def cover_prob(self, point):
         """主队让球 point（负=让球）时的赢盘概率 P(主队进球差 > -point)。
-        用于让球盘模型价值判断：模型赢盘率 vs 盘口隐含概率。"""
+        整球盘（point 为整数）含走盘：返回 (win, push)，push=净胜恰等于 -point。"""
         n = self.MAX_GOALS
         m = [[self._poisson(i, self.lam_h) * self._poisson(j, self.lam_a) for j in range(n)] for i in range(n)]
-        s = sum(m[i][j] for i in range(n) for j in range(n) if i - j > -point)
-        return s
+        if point is not None and float(point).is_integer():
+            win = sum(m[i][j] for i in range(n) for j in range(n) if i - j > -point)
+            push = sum(m[i][j] for i in range(n) for j in range(n) if i - j == -point)
+            return win, push
+        win = sum(m[i][j] for i in range(n) for j in range(n) if i - j > -point)
+        return win, 0.0
 
     def btts_prob(self):
         """双方进球概率（BTTS）。"""
@@ -516,18 +520,33 @@ def load_standings():
         return json.load(f).get("standings", {})
 
 
+_TEAM_ALIAS = {
+    # The Odds API / FBref 队名 → Football-Data 积分榜队名（跨源统一）
+    "bayern munchen": "bayern munich",
+    "athletic club": "athletic bilbao",
+    "paris saint germain": "psg",
+    "fc bayern munchen": "bayern munich",
+}
+
+
 def norm_team(s):
-    """队名归一化（与前端一致）。"""
+    """队名归一化（与前端一致）。增强：去变音符/连字符/常见俱乐部后缀，别名统一。"""
     import re
-    return re.sub(r"\b(fc|afc|cf|sc)\b", "", (s or "").lower()).replace("&", "").strip()
+    import unicodedata
+    t = (s or "").lower()
+    t = unicodedata.normalize("NFKD", t).encode("ascii", "ignore").decode()
+    t = re.sub(r"[\-\.']", " ", t)
+    t = re.sub(r"\b(fc|afc|cf|sc|ac|cd|ud|fk|sv|st|os|sc)\b", "", t)
+    t = re.sub(r"\s+", " ", t).replace("&", " ").strip()
+    return _TEAM_ALIAS.get(t, t)
 
 
 FORM_LAST = 5  # 近 5 场状态
 
 
-def load_form():
-    """每队最近 N 场场均积分（0~3）。数据源 data/season_2025.json（上赛季末段状态，
-    赛季开打后由新赛果自然延续）。抓取顺序为从最新往回翻，故数组头部即最近场次。"""
+def load_form(min_kickoff=""):
+    """每队最近 N 场场均积分（0~3）。数据源 data/season_2025.json。
+    只使用早于预测窗口开赛日的赛果（防未来函数），并按时间排序取每队最近 FORM_LAST 场。"""
     path = DATA_DIR / "season_2025.json"
     if not path.exists():
         return {}
@@ -536,18 +555,21 @@ def load_form():
             data = json.load(f)
     except Exception:
         return {}
-    # 按队分组收集（出场按时间倒序排列），每队只取最近 FORM_LAST 场
-    # （旧实现取"每个联赛文件头 5 场"，只覆盖 10 支球队；改为按队取最近 N 场）
     team_matches = {}
     for m in data.get("matches", []):
         if m.get("homeGoals") is None or m.get("awayGoals") is None:
+            continue
+        # 未来赛果（>= 最早预测开赛日）不参与 form 计算
+        if min_kickoff and (m.get("utcDate") or "") >= min_kickoff:
             continue
         for side in ("home", "away"):
             t = norm_team(m[f"{side}Team"])
             team_matches.setdefault(t, []).append(m)
     form = {}
     for t, ms in team_matches.items():
-        ms = ms[:FORM_LAST]  # 数组头部即最近（抓取从最新往回翻）
+        ms = sorted(ms, key=lambda x: x.get("utcDate", ""))[-FORM_LAST:]
+        if not ms:
+            continue
         total = 0.0
         for m in ms:
             gf, ga = m["homeGoals"], m["awayGoals"]
@@ -573,7 +595,14 @@ def main():
     odds_by_league = load_odds()
     messages = load_messages()
     standings_by_league = load_standings()
-    form = load_form()
+
+    # 预测窗口最早开赛日：form / Elo 训练都只用早于该时刻的赛果（防未来函数）
+    min_kickoff = min(
+        (m.get("kickoff", "") for ms in odds_by_league.values() for m in ms if m.get("kickoff")),
+        default="",
+    )
+
+    form = load_form(min_kickoff)
     print(f"赔率联赛: {list(odds_by_league.keys())}, 消息: {len(messages)} 条, 积分榜联赛: {len(standings_by_league)}, 近5场form球队: {len(form)}")
 
     # Elo 独立模型：积分榜初始化 → 上赛季迭代 → 本赛季已完赛（时间正序，新赛季最后覆盖）
@@ -591,6 +620,9 @@ def main():
                 ms_by_lg = {}
                 for sm in season.get("matches", []):
                     if sm.get("homeGoals") is None or sm.get("awayGoals") is None:
+                        continue
+                    # 防未来函数：预测窗口之后的赛果（如 season 文件混入下赛季/未来赛果）不参与训练
+                    if min_kickoff and (sm.get("utcDate") or "") >= min_kickoff:
                         continue
                     ms_by_lg.setdefault(sm["league"], []).append(sm)
                 for lg_ms in ms_by_lg.values():
@@ -623,6 +655,9 @@ def main():
             return None
         n = norm_team(team_name)
         for row in table:
+            # 跳过季前占位行（0 场/0 分），避免生成"排名第1（0分/0场）"无意义文本
+            if (row.get("playedGames") or 0) <= 0:
+                continue
             if norm_team(row["team"]) == n or norm_team(row.get("shortName", "")) == n:
                 return {"position": row["position"], "points": row["points"],
                         "playedGames": row["playedGames"], "goalDifference": row["goalDifference"]}
@@ -631,6 +666,8 @@ def main():
         words = [w for w in n.split() if w]
         if len(words) >= 2:
             for row in table:
+                if (row.get("playedGames") or 0) <= 0:
+                    continue
                 rn = norm_team(row["team"])
                 if all(w in rn.split() for w in words):
                     return {"position": row["position"], "points": row["points"],
@@ -689,7 +726,8 @@ def main():
             score_model.fit(f_home, f_draw, f_away)
 
             # ── 多模型分歧：Elo vs Dixon-Coles vs 市场（方向不一致 = 不碰）──
-            dc_home, dc_draw, dc_away = score_model._probs()
+            # 用真正的 Dixon-Coles 修正概率（归一化、和=1），替代旧版普通泊松拟合（未归一化）
+            dc_home, dc_draw, dc_away = score_model.dc_1x2()
             dc12 = {"home": dc_home, "draw": dc_draw, "away": dc_away}
 
             def _dir(probs):
@@ -800,19 +838,22 @@ def main():
                         kl = 0
                     stake = round(max(0.0, min(0.05, kl)), 4)
                     if stake <= 0:
-                        stake = 0.02  # 凯利为负/无 → 默认 2%（按 edge 判断仍值得小注）
-                    bet_rec = {
-                        "side": best_vp["side"],
-                        "odds": round(o, 2),
-                        "stake": stake,
-                        "source": "value:" + best_vp["level"],
-                        "edge": best_vp.get("edge"),
-                    }
+                        # 凯利≤0 = 负期望：即使模型比市场更看好也不下注（避免必亏场次计入结算）
+                        bet_rec = None
+                    else:
+                        bet_rec = {
+                            "side": best_vp["side"],
+                            "odds": round(o, 2),
+                            "stake": stake,
+                            "source": "value:" + best_vp["level"],
+                            "edge": best_vp.get("edge"),
+                        }
             pred["betRec"] = bet_rec
 
             # Dixon-Coles 波胆 + 大小球 + 分布
             pred["correctScores"] = score_model.dc_scores(6)
-            top_cs = score_model.correct_scores(1)
+            # 预测比分与波胆列表同口径（DC 修正），避免"预测 2-0 但波胆 top1 是 1-1"矛盾
+            top_cs = score_model.dc_scores(1)
             if top_cs:
                 pred["predictedScore"] = top_cs[0]["score"]
 
@@ -855,14 +896,16 @@ def main():
             hp = (sp_mkt.get("home") or {}).get("point")
             if hp is not None:
                 # hp 为 The Odds API 主队让球点数（负=主让），cover_prob 同口径（负=让球）
-                cover = score_model.cover_prob(hp)
+                cover, push = score_model.cover_prob(hp)
                 price = (sp_mkt.get("home") or {}).get("price")
                 implied = round(1 / price, 3) if price and price > 1 else None
+                # 整球盘走盘退本金：赢盘按 win，走盘按 push 计 0.5（亚盘惯例折算）
+                eff = cover + 0.5 * push if push else cover
                 sp_model = {
-                    "point": hp, "cover": round(cover, 3), "price": price,
+                    "point": hp, "cover": round(eff, 3), "price": price,
                     "implied": implied,
-                    "edge": round(cover - implied, 3) if implied else None,
-                    "kelly": round((price * cover - 1) / (price - 1), 3) if price and price > 1 and cover else None,
+                    "edge": round(eff - implied, 3) if implied else None,
+                    "kelly": round((price * eff - 1) / (price - 1), 3) if price and price > 1 and eff else None,
                 }
             pred["spModel"] = sp_model
             pred["btts"] = score_model.btts_prob()
