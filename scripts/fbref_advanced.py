@@ -115,6 +115,10 @@ def fetch_all(season: int = None):
         season = datetime.now().year
 
     for i, code in enumerate(LEAGUE_MAP):
+        out_path = os.path.join(OUT_DIR, f'{code}.json')
+        if os.path.exists(out_path):
+            print(f'  [SKIP] {code}.json exists', flush=True)
+            continue
         if i > 0:
             delay = random.randint(30, 60)
             print(f'  等待 {delay}s 避免限流...', flush=True)
@@ -122,10 +126,6 @@ def fetch_all(season: int = None):
         try:
             stats = fetch_league_stats(code, season)
 
-            out_path = os.path.join(OUT_DIR, f'{code}.json')
-            if os.path.exists(out_path):
-                print(f'  [SKIP] {code}.json exists', flush=True)
-                continue
             output = {
                 'generatedAt': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
                 'league': code,

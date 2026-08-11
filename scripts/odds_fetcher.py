@@ -177,7 +177,7 @@ class TheOddsApiSource(OddsSource):
         home_name = raw.get("home_team", "")
         away_name = raw.get("away_team", "")
         h2h = {"home": [], "draw": [], "away": []}
-        totals = {"over": [], "under": []}
+        totals = {"over": [], "under": [], "line": []}
         spreads = {"home": [], "away": []}
         asian = {"home": [], "away": []}
         for bm in raw.get("bookmakers", []):
@@ -193,6 +193,8 @@ class TheOddsApiSource(OddsSource):
                             h2h["draw"].append(o["price"])
                 elif key == "totals":
                     for o in market["outcomes"]:
+                        if o.get("point") is not None:
+                            totals["line"].append(o["point"])
                         if o["name"].lower() == "over":
                             totals["over"].append(o["price"])
                         elif o["name"].lower() == "under":
@@ -234,7 +236,7 @@ class TheOddsApiSource(OddsSource):
             "matchUrl": "",
             "markets": {
                 "h2h": {"home": med(h2h["home"]), "draw": med(h2h["draw"]), "away": med(h2h["away"])},
-                "totals": {"over": med(totals["over"]), "under": med(totals["under"])},
+                "totals": {"over": med(totals["over"]), "under": med(totals["under"]), "line": med(totals["line"])},
                 "spreads": {"home": spread_agg(spreads["home"]), "away": spread_agg(spreads["away"])},
                 "asian": {"home": spread_agg(asian["home"]), "away": spread_agg(asian["away"])},
             },
@@ -274,9 +276,10 @@ def parse_totals(totals: dict) -> dict or None:
     兼容两种格式: {Over 2.5: 1.8, Under 2.5: 2.0} 或 {over: 1.94, under: 1.88}(隐含2.5盘)。"""
     if not totals:
         return None
-    # 已归一化格式
+    # 已归一化格式（含真实盘口线，不再硬编码 2.5）
     if "over" in totals and "under" in totals:
-        return {"line": 2.5, "over": totals["over"], "under": totals["under"]}
+        line = totals.get("line") or 2.5
+        return {"line": line, "over": totals["over"], "under": totals["under"]}
     import re
     over_prices, under_prices, lines = {}, {}, set()
     for name, price in totals.items():

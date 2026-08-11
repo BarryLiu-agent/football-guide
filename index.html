@@ -17,6 +17,7 @@
   --text: #e8ecf2;
   --text-2: #9aa5b5;
   --text-3: #6b7686;
+  --muted: #6b7686;
   --gold: #f0b90b;
   --gold-dim: #b8860b;
   --green: #16c784;
@@ -236,23 +237,6 @@ table.standings .down { color: var(--red); }
 .rec-chip.gold { color:#fbbf24; border-color:rgba(240,185,11,.4); }
 .stale-banner { padding:8px 14px; border-radius:8px; font-size:12px; margin-bottom:12px; background:rgba(234,57,67,.1); color:#f87171; border:1px solid rgba(234,57,67,.3); }
 
-.val-tag { font-size:10px; font-weight:800; padding:2px 8px; border-radius:10px; background:rgba(240,185,11,.15); color:var(--gold); border:1px solid rgba(240,185,11,.45); }
-
-/* ===== 异动/难度标签 ===== */
-.hot-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; background:rgba(239,68,68,.15); color:#f87171; border:1px solid rgba(239,68,68,.4); }
-.diff-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; }
-.diff-tag.hard { background:rgba(239,68,68,.12); color:#f87171; }
-.diff-tag.mid { background:rgba(245,158,11,.12); color:#fbbf24; }
-.diff-tag.easy { background:rgba(34,197,94,.12); color:#4ade80; }
-.diff-tag.warn { background:rgba(168,85,247,.14); color:#c084fc; }
-
-.xg-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; background:rgba(59,130,246,.15); color:#60a5fa; border:1px solid rgba(59,130,246,.35); }
-.val-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; display:inline-block; }
-.val-tag.gold { background:rgba(240,185,11,.15); color:#fbbf24; border:1px solid rgba(240,185,11,.5); }
-.val-tag.watch { background:rgba(148,163,184,.12); color:#94a3b8; border:1px solid rgba(148,163,184,.35); }
-.rec-chip { font-size:11px; padding:3px 10px; border-radius:12px; background:var(--surface); border:1px solid var(--border); color:var(--text-2); display:inline-flex; align-items:center; gap:4px; }
-.rec-chip.gold { color:#fbbf24; border-color:rgba(240,185,11,.4); }
-.stale-banner { padding:8px 14px; border-radius:8px; font-size:12px; margin-bottom:12px; background:rgba(234,57,67,.1); color:#f87171; border:1px solid rgba(234,57,67,.3); }
 
 /* ===== 异动/难度标签 ===== */
 .hot-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; background:rgba(239,68,68,.15); color:#f87171; border:1px solid rgba(239,68,68,.4); }
@@ -514,7 +498,6 @@ let state = {
   oddsByLeague: {},   // 赔率 {code: {matches, history}}
   teamStats: {},       // FBref 高级数据 {code: {shooting, goalkeeper, discipline}}
   asianByLeague: {},   // 亚盘 {code: {matches: [...]}}
-  loaded: { fixtures: false, predictions: false },
 };
 
 // ===== 工具 =====
@@ -545,17 +528,21 @@ function teamMatch(a, b) {
   if (!a || !b) return false;
   if (a === b) return true;
   if (a.includes(b) || b.includes(a)) return true;
-  const af = a.split(' '), bf = b.split(' ');
-  return af[af.length - 1] === bf[bf.length - 1];
+  // 全词包含：查询词全部出现在对方队名（防 Real Madrid ↔ Atlético Madrid 末词误配）
+  const wa = a.split(' ').filter(Boolean), wb = b.split(' ').filter(Boolean);
+  if (wa.length >= 2 && wa.every(w => wb.includes(w))) return true;
+  if (wb.length >= 2 && wb.every(w => wa.includes(w))) return true;
+  // 末词兜底：仅当双方词数>=2 且末词足够长（>=5），避免通用词误配
+  if (wa.length >= 2 && wb.length >= 2) {
+    const la = wa[wa.length - 1], lb = wb[wb.length - 1];
+    return la.length >= 5 && la === lb;
+  }
+  return false;
 }
 function cnTeam(name) {
   if (!name) return '?';
   const n = state.teamNames[name] || state.teamNames[name.replace(/\s+(FC|CF|SC|AFC)$/i, '')];
   return n || name;
-}
-function displayTeam(name) {
-  const cn = cnTeam(name);
-  return cn === name ? name : `${cn} <span class="en">${esc(name)}</span>`;
 }
 function fmtDate(utcStr) {
   const d = new Date(utcStr), bj = new Date(d.getTime() + 8 * 3600000);
@@ -580,22 +567,39 @@ function dateLabel(dateStr) {
 }
 function findPrediction(home, away, league) {
   const h = normTeam(home), a = normTeam(away);
-  return (state.predictions || []).find(p =>
+  // 日期过滤：优先匹配开赛日期±1天的场次（防同队两回合/多交手的旧预测串场）
+  const cands = (state.predictions || []).filter(p =>
     (!league || p.league === league) &&
     teamMatch(normTeam(p.homeTeam), h) && teamMatch(normTeam(p.awayTeam), a));
+  if (!cands.length) return null;
+  if (cands.length === 1) return cands[0];
+  const t = todayBJ(), tm = fmtDate(new Date(Date.now() + 86400000).toISOString());
+  for (const day of [t, tm]) {
+    const hit = cands.find(p => fmtDate(p.kickoff) === day);
+    if (hit) return hit;
+  }
+  return cands[0];
 }
 function findXgMatch(home, away) {
   const h = normTeam(home), a = normTeam(away);
-  return (state.xgMatches || []).find(m =>
-    (normTeam(m.homeTeam) === h && normTeam(m.awayTeam) === a) ||
-    (normTeam(m.homeTeam).split(' ')[0] === h.split(' ')[0] && normTeam(m.awayTeam).split(' ')[0] === a.split(' ')[0]));
+  if (!h || !a) return null;
+  return (state.xgMatches || []).find(m => {
+    const mh = normTeam(m.homeTeam), ma = normTeam(m.awayTeam);
+    if (!mh || !ma) return false;
+    return (mh === h && ma === a) ||
+      (mh.split(' ')[0] === h.split(' ')[0] && ma.split(' ')[0] === a.split(' ')[0]);
+  });
 }
 function findJingcai(home, away, league) {
   const h = normTeam(home), a = normTeam(away);
-  return (state.jingcai || []).find(m =>
-    (!league || !m.leagueName || LEAGUE_CN[league] === m.leagueName || (m.leagueName || '').includes(COMPETITIONS[league] || '')) &&
-    ((normTeam(m.homeTeam) === h && normTeam(m.awayTeam) === a) ||
-     (normTeam(m.homeTeam).split(' ')[0] === h.split(' ')[0] && normTeam(m.awayTeam).split(' ')[0] === a.split(' ')[0])));
+  if (!h || !a) return null;
+  return (state.jingcai || []).find(m => {
+    const mh = normTeam(m.homeTeam), ma = normTeam(m.awayTeam);
+    if (!mh || !ma) return false;
+    return (!league || !m.leagueName || LEAGUE_CN[league] === m.leagueName || (m.leagueName || '').includes(COMPETITIONS[league] || '')) &&
+      ((mh === h && ma === a) ||
+       (mh.split(' ')[0] === h.split(' ')[0] && ma.split(' ')[0] === a.split(' ')[0]));
+  });
 }
 
 // ===== 数据加载 =====
@@ -606,8 +610,8 @@ async function loadJson(url) {
 }
 async function loadAll() {
   const jobs = [
-    loadJson('data/fixtures.json').then(d => { state.fixtures = d.matches || []; state.loaded.fixtures = true; }).catch(() => {}),
-    loadJson('data/predictions.json').then(d => { state.predictions = d.predictions || []; state.predictionsMeta = d; state.loaded.predictions = true; }).catch(() => {}),
+    loadJson('data/fixtures.json').then(d => { state.fixtures = d.matches || []; }).catch(() => {}),
+    loadJson('data/predictions.json').then(d => { state.predictions = d.predictions || []; state.predictionsMeta = d; }).catch(() => {}),
     loadJson('data/standings.json').then(d => { state.standings = d.standings || {}; }).catch(() => {}),
     loadJson('data/jingcai.json').then(d => { state.jingcai = d.matches || []; state.jingcaiGen = d.generatedAt || ''; }).catch(() => {}),
     loadJson('data/xg/matches.json').then(d => { state.xgMatches = d.matches || []; }).catch(() => {}),
@@ -708,12 +712,11 @@ function renderTopBar(leagueCode) {
     picksHtml = '<div style="margin-bottom:12px"><div class="section-title" style="margin-bottom:8px">⭐ 今日精选</div>' +
       picks.map(p => {
         const vp = (p.valuePicks || [])[0];
-        return `<div class="match-card" onclick="openDetail('${esc(p.homeTeam)}','${esc(p.awayTeam)}')">` +
+        return `<div class="match-card" onclick="openDetail('${esc(p.homeTeam)}','${esc(p.awayTeam)}','${p.league}')">` +
           '<div class="mc-teams"><div class="mc-team"><span class="cn">' + cnTeam(p.homeTeam) + '</span></div>' +
           '<div class="mc-team"><span class="cn">' + cnTeam(p.awayTeam) + '</span></div></div>' +
           (vp ? '<div class="val-tag">💰 ' + vp.label + ' 差' + (vp.edge > 0 ? '+' : '') + Math.round(vp.edge * 100) + '%</div>' : '') +
           '<div class="mc-pred"><div class="ps">' + p.predictedScore + '</div><div class="pc">' + Math.round((p.confidence || 0) * 100) + '%</div></div>' +
-      pnlTag +
           '</div>';
       }).join('') + '</div>';
   }
@@ -858,7 +861,7 @@ function renderCard(m) {
     ${jc ? `<div class="mc-badge-jc">竞彩</div>` : ''}
     ${(() => { const vp = (pred && pred.valuePicks && pred.valuePicks.length) ? pred.valuePicks[0] : null; return vp ? `<span class="val-tag" title="${vp.label}: 模型${Math.round(vp.modelProb*100)}% vs 盘口${Math.round(vp.oddsProb*100)}%">💰${vp.label} ${vp.edge > 0 ? '+' : ''}${Math.round(vp.edge*100)}%</span>` : ''; })()}
     ${(() => { const xm = findXgMatch(homeName, awayName); if (!xm || (xm.xgHome == null && xm.xgAway == null)) return ''; const xh = xm.xgHome ?? 0, xa = xm.xgAway ?? 0; const xt = xh > xa ? 'home' : xa > xh ? 'away' : 'draw'; let diverge = false; if (pred && pred.eloProb) { const et = pred.eloProb.home > pred.eloProb.away ? 'home' : pred.eloProb.away > pred.eloProb.home ? 'away' : 'draw'; diverge = xt !== 'draw' && et !== 'draw' && xt !== et; } return diverge ? '<span class="xg-tag diverging">🎯 ' + xh.toFixed(1) + '-' + xa.toFixed(1) + ' ⚠️背离</span>' : `<span class="xg-tag">🎯 ${xh.toFixed(1)}-${xa.toFixed(1)}</span>`; })()}
-    ${pred && pred.signalLevel === 'gold' ? `<span class="val-tag gold">💰 ${pred.valuePicks.map(v => v.label).join('/')}</span>` : (pred && pred.signalLevel === 'watch' ? `<span class="val-tag watch">👀 关注</span>` : '')}
+    ${pred && pred.signalLevel === 'gold' && pred.valuePicks?.length ? `<span class="val-tag gold">💰 ${pred.valuePicks.map(v => v.label).join('/')}</span>` : (pred && pred.signalLevel === 'watch' ? `<span class="val-tag watch">👀 关注</span>` : '')}
     ${hot || diff || value || divTag || revTag || riskTags ? `<div style="display:flex;gap:4px;margin-top:6px;flex-wrap:wrap">${hot}${value}${diff}${divTag}${revTag}${riskTags}</div>` : ''}
   </div>`;
 }
@@ -1315,12 +1318,12 @@ function switchMkt(mkt) {
     el.innerHTML = `<div class="odds-grid">
       <div class="odds-box"><div class="label">主队让球</div><div class="value">${s.home?.point ?? '—'}</div><div class="sub">赔率 ${s.home?.price ?? '—'}</div></div>
       <div class="odds-box"><div class="label">客队受让</div><div class="value">${s.away?.point ?? '—'}</div><div class="sub">赔率 ${s.away?.price ?? '—'}</div></div>
-      <div class="odds-box"><div class="label">解读</div><div class="value" style="font-size:13px">${s.home?.point < 0 ? '机构看好主队' : '机构看好客队'}</div></div>
+      <div class="odds-box"><div class="label">解读</div><div class="value" style="font-size:13px">${s.home && s.home.point != null ? (s.home.point < 0 ? '机构看好主队' : '机构看好客队') : '数据不足'}</div></div>
     </div>
     ${sm ? `<div class="section-title" style="margin-top:10px">🤖 模型 vs 盘口（让球）</div>
     <div class="odds-grid">
       <div class="odds-box"><div class="label">模型赢盘率</div><div class="value">${pct(sm.cover)}</div><div class="sub" style="${eCls}">盘口隐含 ${pct(sm.implied)} · edge${sm.edge > 0 ? '+' : ''}${((sm.edge || 0) * 100).toFixed(0)}%</div>${sm.kelly != null ? `<div class="sub" style="${sm.kelly > 0 ? 'color:#22c55e' : 'color:#ef4444'}">凯利 ${sm.kelly > 0 ? '+' : ''}${sm.kelly.toFixed(2)}</div>` : ''}</div>
-      <div class="odds-box"><div class="label">解读</div><div class="value" style="font-size:13px">${sm.edge > 0.02 ? '模型认为主队赢盘被低估' : sm.edge < -0.02 ? '模型认为主队赢盘被高估' : '模型与盘口一致'}</div><div class="sub">主队让 ${sm.point} 球视角</div></div>
+      <div class="odds-box"><div class="label">解读</div><div class="value" style="font-size:13px">${sm.edge > 0.02 ? '模型认为主队赢盘被低估' : sm.edge < -0.02 ? '模型认为主队赢盘被高估' : '模型与盘口一致'}</div><div class="sub">主队让 ${sm.point != null ? sm.point : '—'} 球视角</div></div>
     </div>
     <div style="font-size:10px;color:var(--muted)">edge = 模型赢盘率 − 盘口隐含概率；正=让球方向有正期望</div>` : ''}`;
   } else if (mkt === 'ah') {

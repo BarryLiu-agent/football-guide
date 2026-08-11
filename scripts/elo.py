@@ -117,14 +117,15 @@ class EloModel:
         return self._find_rating(team)
 
     def _find_rating(self, team: str) -> float:
-        """精确匹配 → 首词匹配 → 默认 1500。"""
+        """精确匹配 → 全词包含匹配 → 默认 1500。"""
         k = norm_team(team)
         if k in self.ratings:
             return self.ratings[k]
-        first = k.split()[0] if k else ""
-        if first:
+        # 全词包含（防首词误配："real racing santander" 不命中 "real madrid"）
+        words = [w for w in k.split() if w]
+        if len(words) >= 2:
             for key, val in self.ratings.items():
-                if key.split()[0] == first:
+                if all(w in key.split() for w in words):
                     return val
         return INIT_ELO
 
