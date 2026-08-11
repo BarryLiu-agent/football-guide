@@ -187,6 +187,19 @@ def main():
     if args.limit:
         all_messages = all_messages[: args.limit]
 
+    # 抓取失败（所有源返回空）时保留旧文件，避免清空已有消息
+    if not all_messages:
+        old = DATA_DIR / "messages.json"
+        if old.exists():
+            try:
+                old_data = json.loads(old.read_text(encoding="utf-8"))
+                n_old = len(old_data.get("messages", []))
+                if n_old:
+                    print(f"    本次无新消息，保留旧数据 {n_old} 条")
+                    return 0
+            except Exception:
+                pass
+
     out = {
         "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "total": len(all_messages),

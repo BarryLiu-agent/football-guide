@@ -19,7 +19,7 @@ import io
 import json
 import sys
 import urllib.request
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -127,7 +127,7 @@ def main():
             "season": season,
             "league": league,
             "source": "football-data.co.uk",
-            "generatedAt": datetime.now().strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
             "matches": records,
         }
         path = ASIAN_DIR / f"{league}.json"

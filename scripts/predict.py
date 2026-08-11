@@ -220,7 +220,14 @@ class ScorePredictor:
 
         final_home = min(0.9, max(0.05, p_home * (1 - w_msg) + (p_home + adj) * w_msg + w_prior / 3))
         final_away = min(0.9, max(0.05, p_away * (1 - w_msg) + (p_away - adj) * w_msg + w_prior / 3))
-        final_draw = 1 - final_home - final_away
+        # 归一化：draw 为剩余概率（保证三者和=1 且 draw>=0，避免强信号下出现负数）
+        raw_draw = 1 - final_home - final_away
+        final_draw = max(0.0, raw_draw)
+        total_p = final_home + final_draw + final_away
+        if total_p > 0:
+            final_home /= total_p
+            final_draw /= total_p
+            final_away /= total_p
 
         # 预测比分: 期望总进球按概率份额分配
         total_goals = 2.5  # 足球比赛均值
@@ -529,21 +536,25 @@ def load_form():
             data = json.load(f)
     except Exception:
         return {}
-    form = {}
-    per_league = {}
+    # 按队分组收集（出场按时间倒序排列），每队只取最近 FORM_LAST 场
+    # （旧实现取"每个联赛文件头 5 场"，只覆盖 10 支球队；改为按队取最近 N 场）
+    team_matches = {}
     for m in data.get("matches", []):
         if m.get("homeGoals") is None or m.get("awayGoals") is None:
             continue
-        per_league.setdefault(m["league"], []).append(m)
-    for ms in per_league.values():
-        for m in ms[:FORM_LAST]:
-            for side, gf, ga in (("home", "homeGoals", "awayGoals"), ("away", "awayGoals", "homeGoals")):
-                pts = 3 if m[gf] > m[ga] else (1 if m[gf] == m[ga] else 0)
-                t = norm_team(m["homeTeam" if side == "home" else "awayTeam"])
-                acc = form.setdefault(t, [0.0, 0])
-                acc[0] += pts
-                acc[1] += 1
-    return {t: round(s / n, 3) for t, (s, n) in form.items() if n}
+        for side in ("home", "away"):
+            t = norm_team(m[f"{side}Team"])
+            team_matches.setdefault(t, []).append(m)
+    form = {}
+    for t, ms in team_matches.items():
+        ms = ms[:FORM_LAST]  # 数组头部即最近（抓取从最新往回翻）
+        total = 0.0
+        for m in ms:
+            gf, ga = m["homeGoals"], m["awayGoals"]
+            pts = 3 if gf > ga else (1 if gf == ga else 0)
+            total += pts
+        form[t] = round(total / len(ms), 3)
+    return form
 
 
 # The Odds API 联赛代码 → Football-Data.org 联赛代码（积分榜用）
@@ -615,12 +626,15 @@ def main():
             if norm_team(row["team"]) == n or norm_team(row.get("shortName", "")) == n:
                 return {"position": row["position"], "points": row["points"],
                         "playedGames": row["playedGames"], "goalDifference": row["goalDifference"]}
-        # 首词匹配
-        first = n.split()[0] if n else ""
-        for row in table:
-            if first and norm_team(row["team"]).startswith(first):
-                return {"position": row["position"], "points": row["points"],
-                        "playedGames": row["playedGames"], "goalDifference": row["goalDifference"]}
+        # 全词包含匹配（防首词前缀误配："real racing santander" 不再命中 "real madrid"）
+        # 要求：查询词全部出现在榜单队名中，且查询词数>=2（单词如 "real" 不降级）
+        words = [w for w in n.split() if w]
+        if len(words) >= 2:
+            for row in table:
+                rn = norm_team(row["team"])
+                if all(w in rn.split() for w in words):
+                    return {"position": row["position"], "points": row["points"],
+                            "playedGames": row["playedGames"], "goalDifference": row["goalDifference"]}
         return None
 
     for league, matches in odds_by_league.items():
@@ -711,13 +725,14 @@ def main():
             pred["prevOdds"] = prev_h2h if isinstance(prev_h2h, dict) else None
 
             kelly = None
-            if raw_odds and market_prob:
+            # 凯利用模型概率算（市场概率 ⇒ o×pp≈1 恒≈0/负，无法反映模型优势）
+            if raw_odds and pred_elo:
                 kelly = {}
                 for k in ("home", "draw", "away"):
                     o = raw_odds.get(k)
-                    pp = market_prob.get(k)
-                    if isinstance(o, (int, float)) and o > 1 and pp:
-                        kelly[k] = round((o * pp - 1) / (o - 1), 3)
+                    mp = pred_elo.get(k)
+                    if isinstance(o, (int, float)) and o > 1 and mp:
+                        kelly[k] = round((o * mp - 1) / (o - 1), 3)
                     else:
                         kelly[k] = None
             pred["kelly"] = kelly
@@ -735,6 +750,11 @@ def main():
                 "away": round(elo.get_rating(away), 0),
             }
             pred["modelProbs"] = {
+                "home": round(f_home, 3), "draw": round(f_draw, 3), "away": round(f_away, 3)
+            }
+            # 统一胜率：probabilities（前端 h2h 面板/AI 输入）复用融合概率，
+            # 避免 ScorePredictor 的"市场+消息"版本与下游模型不一致（Getafe 场曾出现 52/24/23 vs 39/27/34）
+            pred["probabilities"] = {
                 "home": round(f_home, 3), "draw": round(f_draw, 3), "away": round(f_away, 3)
             }
             value_picks = []
@@ -834,7 +854,8 @@ def main():
             sp_mkt = m.get("markets", {}).get("spreads") or {}
             hp = (sp_mkt.get("home") or {}).get("point")
             if hp is not None:
-                cover = score_model.cover_prob(-hp)
+                # hp 为 The Odds API 主队让球点数（负=主让），cover_prob 同口径（负=让球）
+                cover = score_model.cover_prob(hp)
                 price = (sp_mkt.get("home") or {}).get("price")
                 implied = round(1 / price, 3) if price and price > 1 else None
                 sp_model = {
@@ -994,7 +1015,11 @@ def evaluate_predictions(predictions):
             return False
         if a == b:
             return True
-        if a.split()[0] == b.split()[0]:
+        # 全词包含：查询词全部在对方队名中（"real betis" 不再命中 "real madrid"）
+        wa, wb = a.split(), b.split()
+        if len(wa) >= 2 and all(w in wb for w in wa):
+            return True
+        if len(wb) >= 2 and all(w in wa for w in wb):
             return True
         return a in b or b in a
 
