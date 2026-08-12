@@ -628,12 +628,14 @@ async function loadAll() {
   for (const lg of LEAGUES) {
     jobs.push(loadJson(`data/odds/${lg.code}.json`).then(d => { state.oddsByLeague[lg.code] = d; }).catch(() => {}));
   }
-  // FBref 高级数据（射门/门将/纪律）逐个联赛加载
+  // FBref 高级数据（射门/门将/纪律）逐个联赛加载（欧冠休赛期无数据，跳过）
   for (const lg of LEAGUES) {
+    if (lg.code === 'CL') continue;
     jobs.push(loadJson(`data/advanced/${lg.code}.json`).then(d => { state.teamStats[lg.code] = d; }).catch(() => {}));
   }
-  // 亚盘数据（football-data.co.uk，历史盘口）逐个联赛加载
+  // 亚盘数据（football-data.co.uk，历史盘口）逐个联赛加载（欧冠休赛期无数据，跳过）
   for (const lg of LEAGUES) {
+    if (lg.code === 'CL') continue;
     jobs.push(loadJson(`data/asian/${lg.code}.json`).then(d => { state.asianByLeague[lg.code] = d; }).catch(() => {}));
   }
   await Promise.all(jobs);

@@ -1,7 +1,18 @@
 {
-  "generatedAt": "2026-08-12T05:42:12Z",
+  "generatedAt": "2026-08-12T06:16:41Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Jodar on course for tennis history as Rybakina fights past Osaka",
+      "timestamp": "Wed, 12 Aug 2026 06:45:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/tennis/news/12040/13572099/canadian-open-rafael-jodar-on-course-for-mens-tennis-history-as-elena-rybakina-fights-back-to-beat-naomi-osaka",
+        "lang": "en",
+        "summary": "Spanish teenager Rafael Jodar is on course to break the record for the fastest rise into the top 10 of men's tennis after beating Arthur Filis in the quarter-finals of the Canadian Open."
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -209,17 +220,6 @@
         "link": "https://www.skysports.com/football/news/12040/13571834/gianni-infantino-donald-trump-warns-of-terrible-mistake-if-fifa-replaces-under-pressure-president",
         "lang": "en",
         "summary": "US President Donald Trump has warned FIFA would be making a \"terrible mistake\" if it got rid of Gianni Infantino as head of world football&#8217;s governing body."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Refreshed Rory returns for FedExCup Playoffs as he targets fourth title",
-      "timestamp": "Tue, 11 Aug 2026 09:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/golf/news/12040/13571841/rory-mcilroy-returns-to-action-for-first-fedexcup-playoff-event-as-he-targets-record-extending-fourth-title",
-        "lang": "en",
-        "summary": "Rory McIlroy returns to action at the FedEx St. Jude Championship this week, live on Sky Sports, with the world No 2 targeting a big finish to the PGA Tour season and a record-extending fourth FedExCup title."
       }
     }
   ]
