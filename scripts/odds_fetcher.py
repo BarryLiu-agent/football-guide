@@ -97,7 +97,7 @@ class TheOddsApiSource(OddsSource):
     def _get_keys(self):
         """按优先级收集所有可用 Key（去空/去重）。"""
         keys = []
-        for env_name in ["ODDS_API_KEY", "ODDS_API_KEY_2", "ODDS_API_KEY_3"]:
+        for env_name in ["ODDS_API_KEY", "ODDS_API_KEY_2", "ODDS_API_KEY_3", "ODDS_API_KEY_4"]:
             k = os.environ.get(env_name, "").strip()
             if k and k not in keys:
                 keys.append(k)
