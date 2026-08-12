@@ -84,6 +84,17 @@ img { display: block; }
 .lg-btn:hover { color: var(--text); background: var(--surface); }
 .lg-btn.active { background: var(--surface); color: var(--text); border-color: var(--border-light); }
 .lg-btn.active .lg-badge { box-shadow: 0 0 0 2px var(--gold-dim); }
+/* 全局功能入口（串关/战绩）：与联赛平级，金色描边区分 */
+.lg-btn.global {
+  border: 1px solid rgba(240,185,11,.35);
+  border-bottom: none;
+  color: var(--gold);
+}
+.lg-btn.global.active {
+  background: rgba(240,185,11,.1);
+  color: var(--gold);
+  border-color: rgba(240,185,11,.6);
+}
 
 /* ===== Sub Nav (4 sections) ===== */
 .sub-nav {
@@ -474,8 +485,6 @@ const SUBS = [
   { id: 'xg', name: '📈 xG 数据' },
   { id: 'teamStats', name: '📊 球队数据' },
   { id: 'scorers', name: '⚽ 射手榜' },
-  { id: 'parlay', name: '🎯 串关' },
-  { id: 'record', name: '📊 战绩' },
 ];
 // Football-Data 赛程代码 ↔ 展示代码
 const FD_CODE = { PL: 'PL', PD: 'PD', SA: 'SA', BL1: 'BL1', FL1: 'FL1', CL: 'CL' };
@@ -671,14 +680,19 @@ async function loadAll() {
 // ===== 导航渲染 =====
 function renderNav() {
   $('leagueNav').innerHTML = LEAGUES.map(l =>
-    `<button class="lg-btn ${state.league === l.code ? 'active' : ''}" onclick="selectLeague('${l.code}')">
+    `<button class="lg-btn ${state.league === l.code && state.sub !== 'parlay' && state.sub !== 'record' ? 'active' : ''}" onclick="selectLeague('${l.code}')">
        <span class="lg-badge" style="background:${l.color}">${l.abbr}</span>${l.name}
-     </button>`).join('');
+     </button>`).join('') +
+    // 全局功能入口：与联赛平级（不依赖当前联赛）
+    `<button class="lg-btn global ${state.sub === 'parlay' ? 'active' : ''}" onclick="selectGlobal('parlay')">🎯 串关</button>` +
+    `<button class="lg-btn global ${state.sub === 'record' ? 'active' : ''}" onclick="selectGlobal('record')">📊 战绩</button>`;
+  // 全局视图时子导航只显示占位（联赛功能页在全局视图下不展示）
   $('subNav').innerHTML = SUBS.map(s =>
     `<button class="sub-btn ${state.sub === s.id ? 'active' : ''}" onclick="selectSub('${s.id}')">${s.name}</button>`).join('');
 }
 function selectLeague(code) { state.league = code; state.sub = 'fixtures'; renderNav(); render(); }
 function selectSub(sub) { state.sub = sub; renderNav(); render(); }
+function selectGlobal(sub) { state.sub = sub; renderNav(); render(); }
 
 // ===== 渲染 =====
 function render() {
