@@ -265,6 +265,7 @@ class ScorePredictor:
             "confidence": round(confidence, 3),
             "reasons": reasons,
             "messageEvidence": msg_result.get("evidence", []) if msg_result else [],
+            "msgSignals": {"home": round(h_sig, 3), "away": round(a_sig, 3)},
         }
 
 
