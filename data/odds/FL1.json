@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T16:55:20Z",
+  "generatedAt": "2026-08-12T01:30:39Z",
   "league": "FL1",
   "history": {
     "marseille|strasbourg": [
@@ -47,6 +47,33 @@
             "point": 1.0,
             "price": 1.78
           }
+        }
+      },
+      {
+        "ts": "2026-08-12T01:30:39Z",
+        "h2h": {
+          "home": 1.72,
+          "draw": 4.1,
+          "away": 4.2
+        },
+        "totals": {
+          "line": 3.5,
+          "over": 2.1,
+          "under": 1.67
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 2.215
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.705
+          }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       }
     ],
@@ -96,6 +123,33 @@
             "price": 1.83
           }
         }
+      },
+      {
+        "ts": "2026-08-12T01:30:39Z",
+        "h2h": {
+          "home": 1.6,
+          "draw": 4.2,
+          "away": 5.12
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.62,
+          "under": 2.22
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 2.03
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.83
+          }
+        },
+        "asian": {
+          "home": null,
+          "away": null
+        }
       }
     ],
     "le mans fc|brest": [
@@ -143,6 +197,33 @@
             "point": 0.0,
             "price": 2.04
           }
+        }
+      },
+      {
+        "ts": "2026-08-12T01:30:39Z",
+        "h2h": {
+          "home": 2.48,
+          "draw": 3.45,
+          "away": 2.7
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.75,
+          "under": 2.02
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.82
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.04
+          }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       }
     ],
@@ -192,6 +273,33 @@
             "price": 2.4
           }
         }
+      },
+      {
+        "ts": "2026-08-12T01:30:39Z",
+        "h2h": {
+          "home": 2.18,
+          "draw": 3.45,
+          "away": 3.2
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.75,
+          "under": 2.05
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.67
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.4
+          }
+        },
+        "asian": {
+          "home": null,
+          "away": null
+        }
       }
     ],
     "toulouse|lyon": [
@@ -239,6 +347,33 @@
             "point": 0.0,
             "price": 1.58
           }
+        }
+      },
+      {
+        "ts": "2026-08-12T01:30:39Z",
+        "h2h": {
+          "home": 3.35,
+          "draw": 3.65,
+          "away": 2.03
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.72,
+          "under": 2.1
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 2.62
+          },
+          "away": {
+            "point": 0.0,
+            "price": 1.58
+          }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       }
     ],
@@ -288,6 +423,33 @@
             "price": 1.81
           }
         }
+      },
+      {
+        "ts": "2026-08-12T01:30:39Z",
+        "h2h": {
+          "home": 2.72,
+          "draw": 3.5,
+          "away": 2.46
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.68,
+          "under": 2.15
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 2.06
+          },
+          "away": {
+            "point": 0.0,
+            "price": 1.81
+          }
+        },
+        "asian": {
+          "home": null,
+          "away": null
+        }
       }
     ],
     "angers|lille": [
@@ -335,6 +497,33 @@
             "point": -1.5,
             "price": 3.35
           }
+        }
+      },
+      {
+        "ts": "2026-08-12T01:30:39Z",
+        "h2h": {
+          "home": 4.95,
+          "draw": 3.75,
+          "away": 1.67
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.94,
+          "under": 1.85
+        },
+        "spreads": {
+          "home": {
+            "point": 1.5,
+            "price": 1.4
+          },
+          "away": {
+            "point": -1.5,
+            "price": 3.35
+          }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       }
     ],
@@ -384,6 +573,33 @@
             "price": 1.98
           }
         }
+      },
+      {
+        "ts": "2026-08-12T01:30:39Z",
+        "h2h": {
+          "home": 3.5,
+          "draw": 3.9,
+          "away": 1.96
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.6,
+          "under": 2.28
+        },
+        "spreads": {
+          "home": {
+            "point": 0.5,
+            "price": 1.865
+          },
+          "away": {
+            "point": -0.5,
+            "price": 1.98
+          }
+        },
+        "asian": {
+          "home": null,
+          "away": null
+        }
       }
     ],
     "paris saint germain|rennes": [
@@ -432,6 +648,33 @@
             "price": 1.83
           }
         }
+      },
+      {
+        "ts": "2026-08-12T01:30:39Z",
+        "h2h": {
+          "home": 1.4,
+          "draw": 5.3,
+          "away": 6.5
+        },
+        "totals": {
+          "line": 3.5,
+          "over": 1.95,
+          "under": 1.84
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 2.08
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.83
+          }
+        },
+        "asian": {
+          "home": null,
+          "away": null
+        }
       }
     ]
   },
@@ -443,24 +686,28 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 1.67,
-          "draw": 4.13,
-          "away": 4.45
+          "home": 1.72,
+          "draw": 4.1,
+          "away": 4.2
         },
         "totals": {
-          "line": 2.5,
-          "over": 2.12,
-          "under": 1.68
+          "line": 3.5,
+          "over": 2.1,
+          "under": 1.67
         },
         "spreads": {
           "home": {
             "point": -1.0,
-            "price": 2.09
+            "price": 2.215
           },
           "away": {
             "point": 1.0,
-            "price": 1.78
+            "price": 1.705
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [
@@ -481,8 +728,8 @@
       "markets": {
         "h2h": {
           "home": 1.6,
-          "draw": 4.1,
-          "away": 5.1
+          "draw": 4.2,
+          "away": 5.12
         },
         "totals": {
           "line": 2.5,
@@ -498,6 +745,10 @@
             "point": 1.0,
             "price": 1.83
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [
@@ -518,7 +769,7 @@
       "markets": {
         "h2h": {
           "home": 2.48,
-          "draw": 3.49,
+          "draw": 3.45,
           "away": 2.7
         },
         "totals": {
@@ -535,6 +786,10 @@
             "point": 0.0,
             "price": 2.04
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [
@@ -555,8 +810,8 @@
       "markets": {
         "h2h": {
           "home": 2.18,
-          "draw": 3.4,
-          "away": 3.15
+          "draw": 3.45,
+          "away": 3.2
         },
         "totals": {
           "line": 2.5,
@@ -572,6 +827,10 @@
             "point": 0.0,
             "price": 2.4
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [
@@ -591,9 +850,9 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 3.4,
-          "draw": 3.64,
-          "away": 2.02
+          "home": 3.35,
+          "draw": 3.65,
+          "away": 2.03
         },
         "totals": {
           "line": 2.5,
@@ -609,6 +868,10 @@
             "point": 0.0,
             "price": 1.58
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [
@@ -629,7 +892,7 @@
       "markets": {
         "h2h": {
           "home": 2.72,
-          "draw": 3.48,
+          "draw": 3.5,
           "away": 2.46
         },
         "totals": {
@@ -646,6 +909,10 @@
             "point": 0.0,
             "price": 1.81
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [
@@ -667,7 +934,7 @@
         "h2h": {
           "home": 4.95,
           "draw": 3.75,
-          "away": 1.68
+          "away": 1.67
         },
         "totals": {
           "line": 2.5,
@@ -683,6 +950,10 @@
             "point": -1.5,
             "price": 3.35
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [
@@ -702,9 +973,9 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 3.45,
-          "draw": 3.8,
-          "away": 1.975
+          "home": 3.5,
+          "draw": 3.9,
+          "away": 1.96
         },
         "totals": {
           "line": 2.5,
@@ -720,6 +991,10 @@
             "point": -0.5,
             "price": 1.98
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [
@@ -740,11 +1015,11 @@
       "markets": {
         "h2h": {
           "home": 1.4,
-          "draw": 5.25,
+          "draw": 5.3,
           "away": 6.5
         },
         "totals": {
-          "line": 2.5,
+          "line": 3.5,
           "over": 1.95,
           "under": 1.84
         },
@@ -757,6 +1032,10 @@
             "point": 1.5,
             "price": 1.83
           }
+        },
+        "asian": {
+          "home": null,
+          "away": null
         }
       },
       "sources": [

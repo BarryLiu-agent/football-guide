@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-10T17:42:24Z",
+ "generatedAt": "2026-08-12T01:32:59Z",
  "source": "2025/26 赛季 Elo+泊松 盘口模型校准",
  "total": 1752,
  "ou25": {
@@ -21,17 +21,17 @@
    },
    {
     "label": "50-60%",
-    "n": 970,
-    "hitRate": 0.5474,
-    "avgProb": 0.563,
-    "bias": -0.0152
+    "n": 621,
+    "hitRate": 0.5056,
+    "avgProb": 0.546,
+    "bias": -0.04
    },
    {
     "label": "60-70%",
-    "n": 333,
-    "hitRate": 0.5015,
-    "avgProb": 0.603,
-    "bias": -0.1014
+    "n": 682,
+    "hitRate": 0.563,
+    "avgProb": 0.631,
+    "bias": -0.0676
    }
   ]
  },
@@ -42,29 +42,36 @@
     "label": "≤40%",
     "n": 435,
     "hitRate": 0.246,
-    "avgProb": 0.336,
-    "bias": -0.0899
+    "avgProb": 0.335,
+    "bias": -0.0894
    },
    {
     "label": "40-50%",
-    "n": 654,
-    "hitRate": 0.4159,
+    "n": 655,
+    "hitRate": 0.4153,
     "avgProb": 0.458,
-    "bias": -0.0418
+    "bias": -0.0426
    },
    {
     "label": "50-60%",
-    "n": 394,
-    "hitRate": 0.5457,
-    "avgProb": 0.544,
-    "bias": 0.0019
+    "n": 417,
+    "hitRate": 0.5468,
+    "avgProb": 0.545,
+    "bias": 0.0015
    },
    {
     "label": "60-70%",
-    "n": 269,
-    "hitRate": 0.658,
-    "avgProb": 0.652,
-    "bias": 0.0056
+    "n": 182,
+    "hitRate": 0.6209,
+    "avgProb": 0.644,
+    "bias": -0.023
+   },
+   {
+    "label": "≥70%",
+    "n": 63,
+    "hitRate": 0.8095,
+    "avgProb": 0.733,
+    "bias": 0.0766
    }
   ]
  },
@@ -73,17 +80,24 @@
   "buckets": [
    {
     "label": "≤40%",
-    "n": 1575,
-    "hitRate": 0.2019,
-    "avgProb": 0.237,
-    "bias": -0.035
+    "n": 1552,
+    "hitRate": 0.201,
+    "avgProb": 0.236,
+    "bias": -0.0348
    },
    {
     "label": "40-50%",
-    "n": 177,
-    "hitRate": 0.4181,
-    "avgProb": 0.445,
-    "bias": -0.0266
+    "n": 145,
+    "hitRate": 0.3517,
+    "avgProb": 0.44,
+    "bias": -0.0885
+   },
+   {
+    "label": "50-60%",
+    "n": 55,
+    "hitRate": 0.5273,
+    "avgProb": 0.53,
+    "bias": -0.0027
    }
   ]
  }

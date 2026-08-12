@@ -1,7 +1,18 @@
 {
-  "generatedAt": "2026-08-11T22:23:43Z",
+  "generatedAt": "2026-08-12T01:30:46Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Jets' Stiggers in hospital after collapsing during practice",
+      "timestamp": "Tue, 11 Aug 2026 23:10:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/nfl/news/12040/13572096/nfl-new-york-jets-cornerback-qwantez-stiggers-taking-to-hospital-after-collapsing-in-joint-practice-with-tampa-bay-buccaneers",
+        "lang": "en",
+        "summary": "New York Jets cornerback Qwan'tez Stiggers was taken to a hospital by ambulance after he briefly lost consciousness during a joint practice with the Tampa Bay Buccaneers on Tuesday."
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -209,17 +220,6 @@
         "link": "https://www.skysports.com/football/live-blog/12040/13279298/crystal-palace-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights",
         "lang": "en",
         "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "How concerned should Liverpool be after another pre-season collapse?",
-      "timestamp": "Tue, 11 Aug 2026 13:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13571608/should-liverpool-be-worried-pre-season-form-injuries-and-squad-depth-concerns-for-andoni-iraola-ahead-of-season-opener",
-        "lang": "en",
-        "summary": "How much does pre-season mean? It depends who you ask. "
       }
     }
   ]
