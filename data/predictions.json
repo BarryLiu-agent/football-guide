@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T04:08:53Z",
+  "generatedAt": "2026-08-12T04:15:09Z",
   "total": 58,
   "rulesVersion": "1.1",
   "modelInfo": {
@@ -67,6 +67,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.406,
         "draw": 0.281,
@@ -199,10 +200,10 @@
       "aiJudge": {
         "pick": "away",
         "score": "0-1",
-        "confidence": 0.55,
-        "reason": "客胜概率最高且欧赔支持客队，但模型分歧较大，谨慎选择。",
+        "confidence": 0.58,
+        "reason": "客胜概率与欧赔均指向客队，但模型波胆最高为1-1，故保守选择客胜小胜。",
         "model": "deepseek-chat",
-        "latency": 1.1
+        "latency": 1.4
       }
     },
     {
@@ -260,6 +261,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.583,
         "draw": 0.197,
@@ -385,7 +387,7 @@
         "pick": "home",
         "score": "2-0",
         "confidence": 0.7,
-        "reason": "主队胜率显著，欧赔和模型均支持主胜，比分预测2-0。",
+        "reason": "主队胜率显著占优，欧赔和模型均支持主胜，比分预测2-0。",
         "model": "deepseek-chat",
         "latency": 1.2
       }
@@ -445,6 +447,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.544,
         "draw": 0.212,
@@ -566,9 +569,9 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "统计模型和Elo均倾向主队，但平局概率不低，谨慎看好主胜。",
+        "reason": "统计模型和Elo均看好主队，但平局概率不低，谨慎选择主胜。",
         "model": "deepseek-chat",
-        "latency": 1.1
+        "latency": 1.3
       }
     },
     {
@@ -626,6 +629,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.374,
         "draw": 0.289,
@@ -758,10 +762,10 @@
       "aiJudge": {
         "pick": "away",
         "score": "0-1",
-        "confidence": 0.59,
-        "reason": "客胜概率最高且欧赔支持，但平局概率不低，谨慎看好客队小胜。",
+        "confidence": 0.55,
+        "reason": "客胜概率最高且欧赔支持客队，但平局概率接近，谨慎选择客胜。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.1
       }
     },
     {
@@ -819,6 +823,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.397,
         "draw": 0.276,
@@ -948,9 +953,9 @@
         "pick": "away",
         "score": "1-2",
         "confidence": 0.65,
-        "reason": "客胜概率显著高于主胜，欧赔支持客队，但模型平局概率不低，需谨慎。",
+        "reason": "客胜概率与欧赔一致，但Elo概率显示客队优势不大，模型波胆次选1-2，故保守选择客胜。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.4
       }
     },
     {
@@ -1008,6 +1013,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.546,
         "draw": 0.211,
@@ -1129,9 +1135,9 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "统计模型和Elo均倾向主队，欧赔主胜略低，但平局概率不低，谨慎看好主胜。",
+        "reason": "统计模型和Elo均显示主队略占优势，欧赔主胜较低，但平局概率不低，谨慎看好主队小胜。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.3
       }
     },
     {
@@ -1189,6 +1195,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.545,
         "draw": 0.211,
@@ -1322,9 +1329,9 @@
         "pick": "away",
         "score": "1-2",
         "confidence": 0.55,
-        "reason": "客胜概率最高且欧赔支持客队，但Elo概率偏向主队，综合后谨慎选择客胜。",
+        "reason": "欧赔客胜1.77明显低于主胜，统计模型客胜概率最高，但Elo概率主队占优，综合倾向客队小胜。",
         "model": "deepseek-chat",
-        "latency": 1.0
+        "latency": 1.4
       }
     },
     {
@@ -1382,6 +1389,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.542,
         "draw": 0.212,
@@ -1489,7 +1497,7 @@
         "confidence": 0.65,
         "reason": "主队胜率显著高于客队，欧赔和Elo均支持主胜，但平局概率不低，比分预测倾向2-1。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.4
       }
     },
     {
@@ -1547,6 +1555,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.495,
         "draw": 0.228,
@@ -1656,9 +1665,9 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "统计模型和Elo均显示主队略占优势，且欧赔主胜较低，但平局概率不低，谨慎看好主队小胜。",
+        "reason": "统计模型和Elo均显示主队胜率最高，欧赔也倾向主胜，但平局概率不低，故谨慎选择主胜。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.6
       }
     },
     {
@@ -1716,6 +1725,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.438,
         "draw": 0.257,
@@ -1844,8 +1854,8 @@
       "aiJudge": {
         "pick": "home",
         "score": "1-0",
-        "confidence": 0.6,
-        "reason": "统计模型和欧赔均倾向主胜，但Elo概率显示客队有一定竞争力，故谨慎看好罗马小胜。",
+        "confidence": 0.55,
+        "reason": "欧赔和统计模型均倾向主胜，但Elo概率显示客队有一定竞争力，故谨慎选择主胜。",
         "model": "deepseek-chat",
         "latency": 1.3
       }
@@ -1905,6 +1915,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.319,
         "draw": 0.278,
@@ -2045,7 +2056,7 @@
         "confidence": 0.5,
         "reason": "数据无明显倾向，模型概率接近，平局概率较高。",
         "model": "deepseek-chat",
-        "latency": 1.0
+        "latency": 1.3
       }
     },
     {
@@ -2103,6 +2114,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.419,
         "draw": 0.259,
@@ -2225,9 +2237,9 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队虽排名较低但主场优势及欧赔略倾向主胜，模型概率主队稍高，且波胆1-0概率较高。",
+        "reason": "主队虽排名较低但主场优势及欧赔略倾向主胜，模型概率接近但平局概率不低，谨慎选择主胜。",
         "model": "deepseek-chat",
-        "latency": 1.4
+        "latency": 1.3
       }
     },
     {
@@ -2285,6 +2297,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.27,
         "draw": 0.229,
@@ -2389,10 +2402,10 @@
       "aiJudge": {
         "pick": "away",
         "score": "1-2",
-        "confidence": 0.607,
-        "reason": "客队胜率显著占优，欧赔与Elo均支持客胜，但模型波胆显示1-1概率最高，故微调至客胜低分。",
+        "confidence": 0.6,
+        "reason": "客队胜率与欧赔一致，但模型波胆显示1-1概率最高，综合微调后倾向客胜但信心一般。",
         "model": "deepseek-chat",
-        "latency": 1.3
+        "latency": 1.2
       }
     },
     {
@@ -2450,6 +2463,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.344,
         "draw": 0.287,
@@ -2596,9 +2610,9 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队积分和排名占优，且欧赔主胜较低，但客队实力接近，平局概率不低，谨慎看好主胜。",
+        "reason": "主队积分和排名略优，且欧赔主胜较低，但客队实力接近，平局概率不低，谨慎看好主胜。",
         "model": "deepseek-chat",
-        "latency": 1.5
+        "latency": 1.2
       }
     },
     {
@@ -2656,6 +2670,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.419,
         "draw": 0.265,
@@ -2774,9 +2789,9 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队排名和状态占优，但客队防守稳固，模型概率接近，倾向主胜但信心一般。",
+        "reason": "主队排名和状态占优，但客队防守稳固，平局概率不低，谨慎看好主胜。",
         "model": "deepseek-chat",
-        "latency": 1.1
+        "latency": 1.5
       }
     },
     {
@@ -2834,6 +2849,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.34,
         "draw": 0.289,
@@ -2939,9 +2955,9 @@
         "pick": "none",
         "score": "0-0",
         "confidence": 0.5,
-        "reason": "数据无明显倾向，平局概率较高，但主客胜概率接近，建议观望。",
+        "reason": "数据无明显倾向，平局概率较高且比分预测为0-0。",
         "model": "deepseek-chat",
-        "latency": 1.0
+        "latency": 1.4
       }
     },
     {
@@ -2999,6 +3015,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.559,
         "draw": 0.206,
@@ -3128,9 +3145,9 @@
         "pick": "home",
         "score": "2-0",
         "confidence": 0.65,
-        "reason": "主队胜率与欧赔一致，模型预测2-0且波胆概率最高，但Elo概率略低，故微调至0.65。",
+        "reason": "主队胜率显著占优，欧赔和模型均支持主胜，比分预测2-0为最可能结果。",
         "model": "deepseek-chat",
-        "latency": 1.0
+        "latency": 1.2
       }
     },
     {
@@ -3188,6 +3205,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.582,
         "draw": 0.205,
@@ -3326,9 +3344,9 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队积分和Elo均占优，但客队防守稳固，小胜概率较高。",
+        "reason": "主队积分和Elo概率占优，但平局概率不低，谨慎看好小胜。",
         "model": "deepseek-chat",
-        "latency": 1.0
+        "latency": 1.2
       }
     },
     {
@@ -3386,6 +3404,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.531,
         "draw": 0.201,
@@ -3508,9 +3527,9 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队积分和排名占优，且模型概率和欧赔均倾向主胜，但平局概率不低，故谨慎选择主胜。",
+        "reason": "主队积分排名和Elo概率占优，但平局概率不低，谨慎看好主胜。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.1
       }
     },
     {
@@ -3568,6 +3587,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.486,
         "draw": 0.227,
@@ -3705,10 +3725,10 @@
       "aiJudge": {
         "pick": "home",
         "score": "1-0",
-        "confidence": 0.6,
-        "reason": "主队胜率与欧赔均占优，但平局概率不低，谨慎看好小胜。",
+        "confidence": 0.62,
+        "reason": "主队胜率与欧赔均占优，且模型波胆次选为1-0，但平局概率不低，故谨慎看好主胜。",
         "model": "deepseek-chat",
-        "latency": 1.0
+        "latency": 1.3
       }
     },
     {
@@ -3766,6 +3786,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.674,
         "draw": 0.171,
@@ -3918,8 +3939,8 @@
       "aiJudge": {
         "pick": "home",
         "score": "2-1",
-        "confidence": 0.55,
-        "reason": "主队胜率统计与Elo均占优，且欧赔略支持主胜，但客队排名更高，需谨慎。",
+        "confidence": 0.62,
+        "reason": "主队胜率统计模型与Elo均占优，且欧赔略倾向主胜，但客队排名更高，需谨慎。",
         "model": "deepseek-chat",
         "latency": 1.3
       }
@@ -3979,6 +4000,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.184,
         "draw": 0.187,
@@ -4101,9 +4123,9 @@
         "pick": "away",
         "score": "1-2",
         "confidence": 0.65,
-        "reason": "客队实力和状态明显占优，欧赔和Elo均支持客胜，但主队有保级动力，比分预测接近1-2。",
+        "reason": "客队实力和状态明显占优，但主队有保级动力，模型概率支持客胜但比分接近。",
         "model": "deepseek-chat",
-        "latency": 1.4
+        "latency": 1.3
       }
     },
     {
@@ -4161,6 +4183,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.325,
         "draw": 0.26,
@@ -4307,9 +4330,9 @@
         "pick": "none",
         "score": "1-1",
         "confidence": 0.5,
-        "reason": "数据信号矛盾，主客无明显倾向，建议观望。",
+        "reason": "数据信号矛盾，主客无明显倾向",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.1
       }
     },
     {
@@ -4367,6 +4390,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.695,
         "draw": 0.154,
@@ -4496,7 +4520,7 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.65,
-        "reason": "主队胜率与欧赔一致，且大小球倾向小球，模型波胆首选1-0。",
+        "reason": "主队胜率与欧赔一致，且大小球倾向小球，模型首选比分1-0。",
         "model": "deepseek-chat",
         "latency": 1.2
       }
@@ -4556,6 +4580,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.324,
         "draw": 0.225,
@@ -4702,9 +4727,9 @@
         "pick": "away",
         "score": "1-2",
         "confidence": 0.65,
-        "reason": "巴萨实力和状态远超对手，但主队有保级动力，客胜概率最高。",
+        "reason": "巴萨实力和状态远超对手，但主队有保级动力，客胜概率高但需防冷平。",
         "model": "deepseek-chat",
-        "latency": 1.1
+        "latency": 1.3
       }
     },
     {
@@ -4762,6 +4787,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.514,
         "draw": 0.224,
@@ -4880,9 +4906,9 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队积分相同但净胜球占优，且欧赔与统计模型均倾向主胜，但平局概率不低，故谨慎选择主胜。",
+        "reason": "主队积分相同但净胜球占优，且欧赔和统计模型均倾向主胜，但平局概率不低，故谨慎选择主胜。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.3
       }
     },
     {
@@ -4940,6 +4966,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.49,
         "draw": 0.234,
@@ -5057,7 +5084,7 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主胜概率最高且欧赔略支持，但平局概率不低，谨慎看好小胜。",
+        "reason": "主胜概率略高且欧赔支持，但平局概率不低，谨慎看好小胜。",
         "model": "deepseek-chat",
         "latency": 1.3
       }
@@ -5117,6 +5144,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.608,
         "draw": 0.183,
@@ -5268,11 +5296,11 @@
       "analysis": "【排名】主队Valencia排名第9（49分/38场），客队Real Betis排名第5（60分/38场），客队排名领先 4 位。\n【胜负】双方实力接近，主队Valencia略占优（主胜 36% vs 客胜 35%）（赔率 2.67 / 3.245 / 2.7）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.93 / 1.93）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（10%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 47% / 小球 53%（赔率 大 2.0 / 小 1.8），倾向小球。\n【进球数】总进球概率：0球 6%、1球 17%、2球 24%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 55%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 61% vs 盘口 36%（差 +25%），值得关注。\n【结论】综合赔率与消息，Valencia不败概率更高，关注波胆 1-1 方向。",
       "aiJudge": {
         "pick": "home",
-        "score": "2-1",
+        "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队Elo概率占优且模型波胆次选为2-1，但欧赔接近平手，信心有限。",
+        "reason": "主队Elo概率占优且模型波胆次选为2-1，但欧赔平局偏低，综合倾向主胜小胜。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.3
       }
     },
     {
@@ -5330,6 +5358,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.77,
         "draw": 0.118,
@@ -5452,7 +5481,7 @@
         "pick": "home",
         "score": "2-0",
         "confidence": 0.75,
-        "reason": "主队实力和状态明显占优，欧赔和Elo概率均支持主胜，模型预测2-0概率最高。",
+        "reason": "主队实力和状态明显占优，欧赔和Elo均支持主胜，模型预测2-0概率最高。",
         "model": "deepseek-chat",
         "latency": 1.1
       }
@@ -5512,6 +5541,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.789,
         "draw": 0.118,
@@ -5649,8 +5679,8 @@
       "aiJudge": {
         "pick": "home",
         "score": "2-0",
-        "confidence": 0.75,
-        "reason": "主队实力和状态远超客队，欧赔和Elo均支持主胜，模型预测2-0概率最高。",
+        "confidence": 0.72,
+        "reason": "主队实力和状态远超客队，模型和赔率均强烈支持主胜。",
         "model": "deepseek-chat",
         "latency": 1.0
       }
@@ -5710,6 +5740,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.681,
         "draw": 0.175,
@@ -5832,9 +5863,9 @@
         "pick": "home",
         "score": "2-0",
         "confidence": 0.75,
-        "reason": "主队实力和状态占优，模型与赔率均支持主胜，比分预测2-0。",
+        "reason": "主队拜仁实力和状态远超客队，模型与赔率均强烈支持主胜，比分预测首选2-0。",
         "model": "deepseek-chat",
-        "latency": 1.0
+        "latency": 1.3
       }
     },
     {
@@ -5892,6 +5923,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.326,
         "draw": 0.275,
@@ -6005,10 +6037,10 @@
       "aiJudge": {
         "pick": "away",
         "score": "1-2",
-        "confidence": 0.55,
-        "reason": "客队排名和实力占优，但主队主场有一定韧性，模型概率略偏向客胜。",
+        "confidence": 0.556,
+        "reason": "客队排名和实力占优，欧赔与Elo均支持客胜，模型波胆次选客胜1-2。",
         "model": "deepseek-chat",
-        "latency": 1.1
+        "latency": 1.2
       }
     },
     {
@@ -6066,6 +6098,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.27,
         "draw": 0.229,
@@ -6179,9 +6212,9 @@
         "pick": "away",
         "score": "1-2",
         "confidence": 0.62,
-        "reason": "客队实力与赔率明显占优，但主队有主场韧性，预测客胜但比分接近。",
+        "reason": "客队实力占优且欧赔支持，但主队有进球能力，预测客胜小胜。",
         "model": "deepseek-chat",
-        "latency": 1.3
+        "latency": 1.1
       }
     },
     {
@@ -6239,6 +6272,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.662,
         "draw": 0.167,
@@ -6353,9 +6387,9 @@
         "pick": "home",
         "score": "2-1",
         "confidence": 0.65,
-        "reason": "主队积分和状态占优，模型与赔率均支持主胜，但客队有一定韧性，比分预测2-1。",
+        "reason": "主队积分、排名和状态均占优，且统计模型和欧赔均支持主胜，但客队有一定防守能力，比分预测2-1。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.3
       }
     },
     {
@@ -6413,6 +6447,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.306,
         "draw": 0.262,
@@ -6535,9 +6570,9 @@
         "pick": "away",
         "score": "0-1",
         "confidence": 0.525,
-        "reason": "客队积分和Elo均占优，欧赔客胜略低，模型概率客胜最高，但差距不大，谨慎选择客胜。",
+        "reason": "客队积分和Elo均占优，但主队主场因素及平局概率较高，谨慎看好客队小胜。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.3
       }
     },
     {
@@ -6595,6 +6630,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.694,
         "draw": 0.155,
@@ -6712,9 +6748,9 @@
         "pick": "home",
         "score": "2-1",
         "confidence": 0.65,
-        "reason": "主队胜率显著占优，欧赔与Elo均支持主胜，但平局概率不低，谨慎看好小胜。",
+        "reason": "统计模型和Elo均看好主队，欧赔支持主胜，但平局概率不低，谨慎选择主胜。",
         "model": "deepseek-chat",
-        "latency": 1.1
+        "latency": 1.5
       }
     },
     {
@@ -6772,6 +6808,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.757,
         "draw": 0.142,
@@ -6893,10 +6930,10 @@
       "aiJudge": {
         "pick": "home",
         "score": "2-0",
-        "confidence": 0.75,
+        "confidence": 0.78,
         "reason": "主队实力和状态明显占优，欧赔和Elo均支持主胜，模型预测2-0概率最高。",
         "model": "deepseek-chat",
-        "latency": 1.3
+        "latency": 1.1
       }
     },
     {
@@ -6954,6 +6991,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.701,
         "draw": 0.147,
@@ -7106,10 +7144,10 @@
       "aiJudge": {
         "pick": "home",
         "score": "2-1",
-        "confidence": 0.65,
-        "reason": "主队排名和Elo概率占优，但客队保级战意强，模型预测平局概率较高，综合看好主胜但需防平。",
+        "confidence": 0.62,
+        "reason": "主队排名和Elo概率占优，但客队有一定抵抗力，预测主胜但比分接近。",
         "model": "deepseek-chat",
-        "latency": 1.5
+        "latency": 1.2
       }
     },
     {
@@ -7167,6 +7205,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.696,
         "draw": 0.154,
@@ -7296,9 +7335,9 @@
         "pick": "home",
         "score": "2-1",
         "confidence": 0.62,
-        "reason": "统计模型和Elo均看好主队，欧赔也倾向主胜，但平局概率不低，故选择主胜但信心适中。",
+        "reason": "统计模型和Elo均看好主胜，欧赔支持，但平局概率不低，谨慎选择主胜。",
         "model": "deepseek-chat",
-        "latency": 1.1
+        "latency": 1.5
       }
     },
     {
@@ -7356,6 +7395,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.455,
         "draw": 0.252,
@@ -7465,9 +7505,9 @@
         "pick": "home",
         "score": "2-1",
         "confidence": 0.55,
-        "reason": "统计模型和欧赔均倾向主胜，但Elo概率显示客队有一定竞争力，故谨慎选择主胜。",
+        "reason": "欧赔与统计模型均倾向主胜，但Elo概率显示客队有一定竞争力，故谨慎选择主胜。",
         "model": "deepseek-chat",
-        "latency": 1.5
+        "latency": 1.4
       }
     },
     {
@@ -7525,6 +7565,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.467,
         "draw": 0.244,
@@ -7654,9 +7695,9 @@
         "pick": "home",
         "score": "2-1",
         "confidence": 0.62,
-        "reason": "欧赔主胜1.6明显低于统计模型概率，且模型波胆次选2-1，主队胜面较大。",
+        "reason": "主胜概率与欧赔均支持主队，但模型平局概率较高，故谨慎看好主胜。",
         "model": "deepseek-chat",
-        "latency": 1.3
+        "latency": 1.4
       }
     },
     {
@@ -7714,6 +7755,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.531,
         "draw": 0.217,
@@ -7835,7 +7877,7 @@
         "pick": "home",
         "score": "2-1",
         "confidence": 0.55,
-        "reason": "统计模型和Elo均显示主队略占优势，且欧赔主胜较低，但平局概率不低，谨慎看好主胜。",
+        "reason": "统计模型和Elo均略倾向主队，且主胜赔率较低，但平局概率不低，谨慎看好主胜。",
         "model": "deepseek-chat",
         "latency": 1.4
       }
@@ -7895,6 +7937,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.368,
         "draw": 0.285,
@@ -8004,9 +8047,9 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "欧赔主胜略低且模型波胆次选为主胜，但平局概率较高，谨慎看好主队小胜。",
+        "reason": "欧赔主胜略低，统计模型主胜概率最高，但平局概率不低，谨慎看好主队小胜。",
         "model": "deepseek-chat",
-        "latency": 1.3
+        "latency": 1.2
       }
     },
     {
@@ -8064,6 +8107,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.359,
         "draw": 0.27,
@@ -8171,9 +8215,9 @@
       "analysis": "【胜负】比赛悬念较大，主胜 28% / 平 26% / 客胜 46%（赔率 3.35 / 3.65 / 2.03）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 2.62 / 1.58）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、0-1（11%）、1-2（9%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%（赔率 大 1.72 / 小 2.1），倾向大球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 52%，倾向至少一方零封。\n【结论】综合赔率与消息，Lyon不败概率更高，关注波胆 1-1 方向。",
       "aiJudge": {
         "pick": "away",
-        "score": "1-2",
-        "confidence": 0.576,
-        "reason": "客队胜率与赔率均占优，模型波胆次选客胜，但主队有平局可能，故谨慎选择客胜。",
+        "score": "0-1",
+        "confidence": 0.55,
+        "reason": "客胜概率最高且欧赔支持客队，但模型波胆显示平局概率略高，故谨慎选择客胜。",
         "model": "deepseek-chat",
         "latency": 1.2
       }
@@ -8233,6 +8277,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.45,
         "draw": 0.251,
@@ -8351,10 +8396,10 @@
       "btts": 0.5252,
       "analysis": "【胜负】比赛悬念较大，主胜 35% / 平 27% / 客胜 38%（赔率 2.72 / 3.5 / 2.46）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 2.06 / 1.81）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（10%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 56% / 小球 44%（赔率 大 1.68 / 小 2.15），倾向大球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 53%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 45% vs 盘口 35%（差 +10%），值得关注。\n【结论】综合赔率与消息，Paris FC不败概率更高，关注波胆 1-1 方向。",
       "aiJudge": {
-        "pick": "none",
+        "pick": "home",
         "score": "1-1",
         "confidence": 0.5,
-        "reason": "统计模型与欧赔均显示主客胜概率接近，无明显倾向，平局概率较低但比分预测首选1-1。",
+        "reason": "统计模型和欧赔显示客队略占优，但Elo概率主队稍高，无明显倾向，选择平局。",
         "model": "deepseek-chat",
         "latency": 1.2
       }
@@ -8414,6 +8459,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.361,
         "draw": 0.27,
@@ -8547,9 +8593,9 @@
         "pick": "away",
         "score": "0-2",
         "confidence": 0.62,
-        "reason": "客队胜率显著占优，欧赔与统计模型均支持客胜，但Elo概率接近，故信心适度。",
+        "reason": "客队胜率显著占优，欧赔支持客胜，但模型概率与Elo分歧较大，谨慎选择客胜。",
         "model": "deepseek-chat",
-        "latency": 1.5
+        "latency": 1.3
       }
     },
     {
@@ -8607,6 +8653,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.458,
         "draw": 0.247,
@@ -8736,9 +8783,9 @@
         "pick": "away",
         "score": "1-2",
         "confidence": 0.55,
-        "reason": "客胜概率最高且欧赔支持客队，但主队有一定竞争力，比分倾向1-2。",
+        "reason": "客队胜率统计模型与欧赔均占优，但主队有一定拉力，故谨慎选择客胜。",
         "model": "deepseek-chat",
-        "latency": 1.0
+        "latency": 1.4
       }
     },
     {
@@ -8796,6 +8843,7 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [],
       "eloProb": {
         "home": 0.498,
         "draw": 0.248,
@@ -8929,9 +8977,9 @@
         "pick": "home",
         "score": "2-1",
         "confidence": 0.65,
-        "reason": "主队胜率显著高于客队，欧赔支持主胜，但模型波胆显示1-1概率最高，故谨慎选择主胜小胜。",
+        "reason": "主队胜率显著占优，欧赔支持主胜，但平局概率不低，比分预测倾向2-1。",
         "model": "deepseek-chat",
-        "latency": 1.1
+        "latency": 1.4
       }
     },
     {
@@ -8989,6 +9037,176 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [
+        {
+          "name": "Pinnacle",
+          "h2h": {
+            "home": 1.17,
+            "away": 15.44,
+            "draw": 7.66
+          }
+        },
+        {
+          "name": "1xBet",
+          "h2h": {
+            "home": 1.2,
+            "away": 18.5,
+            "draw": 7.95
+          }
+        },
+        {
+          "name": "Betfair",
+          "h2h": {
+            "home": 1.18,
+            "away": 19.0,
+            "draw": 9.2
+          }
+        },
+        {
+          "name": "Codere (IT)",
+          "h2h": {
+            "home": 1.18,
+            "away": 16.0,
+            "draw": 7.2
+          }
+        },
+        {
+          "name": "Marathon Bet",
+          "h2h": {
+            "home": 1.18,
+            "away": 18.25,
+            "draw": 7.8
+          }
+        },
+        {
+          "name": "Unibet (FR)",
+          "h2h": {
+            "home": 1.14,
+            "away": 14.0,
+            "draw": 6.5
+          }
+        },
+        {
+          "name": "William Hill",
+          "h2h": {
+            "home": 1.17,
+            "away": 15.0,
+            "draw": 7.0
+          }
+        },
+        {
+          "name": "Betclic (FR)",
+          "h2h": {
+            "home": 1.15,
+            "away": 13.75,
+            "draw": 6.4
+          }
+        },
+        {
+          "name": "888sport",
+          "h2h": {
+            "home": 1.17,
+            "away": 15.0,
+            "draw": 7.0
+          }
+        },
+        {
+          "name": "Tipico",
+          "h2h": {
+            "home": 1.14,
+            "away": 15.0,
+            "draw": 8.5
+          }
+        },
+        {
+          "name": "Winamax (DE)",
+          "h2h": {
+            "home": 1.13,
+            "away": 13.5,
+            "draw": 7.75
+          }
+        },
+        {
+          "name": "Winamax (FR)",
+          "h2h": {
+            "home": 1.13,
+            "away": 13.0,
+            "draw": 7.5
+          }
+        },
+        {
+          "name": "Unibet (SE)",
+          "h2h": {
+            "home": 1.16,
+            "away": 21.0,
+            "draw": 8.5
+          }
+        },
+        {
+          "name": "LeoVegas (SE)",
+          "h2h": {
+            "home": 1.14,
+            "away": 19.0,
+            "draw": 8.0
+          }
+        },
+        {
+          "name": "Unibet (NL)",
+          "h2h": {
+            "home": 1.16,
+            "away": 21.0,
+            "draw": 8.5
+          }
+        },
+        {
+          "name": "Coolbet",
+          "h2h": {
+            "home": 1.17,
+            "away": 16.0,
+            "draw": 7.5
+          }
+        },
+        {
+          "name": "BetOnline.ag",
+          "h2h": {
+            "home": 1.18,
+            "away": 16.05,
+            "draw": 8.0
+          }
+        },
+        {
+          "name": "Nordic Bet",
+          "h2h": {
+            "home": 1.19,
+            "away": 19.0,
+            "draw": 6.5
+          }
+        },
+        {
+          "name": "Betsson",
+          "h2h": {
+            "home": 1.19,
+            "away": 19.0,
+            "draw": 6.5
+          }
+        },
+        {
+          "name": "PMU (FR)",
+          "h2h": {
+            "home": 1.12,
+            "away": 16.0,
+            "draw": 7.5
+          }
+        },
+        {
+          "name": "MyBookie.ag",
+          "h2h": {
+            "home": 1.17,
+            "away": 14.25,
+            "draw": 6.6
+          }
+        }
+      ],
       "eloProb": {
         "home": 0.82,
         "draw": 0.106,
@@ -9094,9 +9312,9 @@
         "pick": "home",
         "score": "2-0",
         "confidence": 0.82,
-        "reason": "主队胜率极高，欧赔和Elo均支持主胜，比分预测2-0为最可能结果。",
+        "reason": "主队胜率极高，欧赔与Elo均支持主胜，模型预测2-0最可能。",
         "model": "deepseek-chat",
-        "latency": 1.1
+        "latency": 1.0
       }
     },
     {
@@ -9154,6 +9372,176 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [
+        {
+          "name": "Pinnacle",
+          "h2h": {
+            "home": 7.64,
+            "away": 1.41,
+            "draw": 4.58
+          }
+        },
+        {
+          "name": "1xBet",
+          "h2h": {
+            "home": 8.2,
+            "away": 1.45,
+            "draw": 4.88
+          }
+        },
+        {
+          "name": "Betfair",
+          "h2h": {
+            "home": 8.6,
+            "away": 1.44,
+            "draw": 4.9
+          }
+        },
+        {
+          "name": "Codere (IT)",
+          "h2h": {
+            "home": 8.2,
+            "away": 1.37,
+            "draw": 5.0
+          }
+        },
+        {
+          "name": "Marathon Bet",
+          "h2h": {
+            "home": 8.1,
+            "away": 1.43,
+            "draw": 4.8
+          }
+        },
+        {
+          "name": "Unibet (FR)",
+          "h2h": {
+            "home": 7.6,
+            "away": 1.32,
+            "draw": 4.75
+          }
+        },
+        {
+          "name": "William Hill",
+          "h2h": {
+            "home": 7.0,
+            "away": 1.4,
+            "draw": 4.4
+          }
+        },
+        {
+          "name": "Betclic (FR)",
+          "h2h": {
+            "home": 7.5,
+            "away": 1.33,
+            "draw": 4.7
+          }
+        },
+        {
+          "name": "888sport",
+          "h2h": {
+            "home": 7.0,
+            "away": 1.4,
+            "draw": 4.4
+          }
+        },
+        {
+          "name": "Tipico",
+          "h2h": {
+            "home": 7.8,
+            "away": 1.4,
+            "draw": 4.6
+          }
+        },
+        {
+          "name": "Winamax (DE)",
+          "h2h": {
+            "home": 7.25,
+            "away": 1.34,
+            "draw": 5.0
+          }
+        },
+        {
+          "name": "Winamax (FR)",
+          "h2h": {
+            "home": 7.0,
+            "away": 1.33,
+            "draw": 4.9
+          }
+        },
+        {
+          "name": "Unibet (SE)",
+          "h2h": {
+            "home": 8.5,
+            "away": 1.43,
+            "draw": 4.7
+          }
+        },
+        {
+          "name": "LeoVegas (SE)",
+          "h2h": {
+            "home": 8.0,
+            "away": 1.41,
+            "draw": 4.5
+          }
+        },
+        {
+          "name": "Unibet (NL)",
+          "h2h": {
+            "home": 8.5,
+            "away": 1.43,
+            "draw": 4.7
+          }
+        },
+        {
+          "name": "Coolbet",
+          "h2h": {
+            "home": 7.25,
+            "away": 1.44,
+            "draw": 4.6
+          }
+        },
+        {
+          "name": "BetOnline.ag",
+          "h2h": {
+            "home": 7.7,
+            "away": 1.45,
+            "draw": 4.6
+          }
+        },
+        {
+          "name": "Nordic Bet",
+          "h2h": {
+            "home": 8.4,
+            "away": 1.43,
+            "draw": 4.4
+          }
+        },
+        {
+          "name": "Betsson",
+          "h2h": {
+            "home": 8.4,
+            "away": 1.43,
+            "draw": 4.4
+          }
+        },
+        {
+          "name": "PMU (FR)",
+          "h2h": {
+            "home": 7.0,
+            "away": 1.38,
+            "draw": 4.2
+          }
+        },
+        {
+          "name": "MyBookie.ag",
+          "h2h": {
+            "home": 7.7,
+            "away": 1.35,
+            "draw": 4.8
+          }
+        }
+      ],
       "eloProb": {
         "home": 0.2,
         "draw": 0.184,
@@ -9319,6 +9707,176 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [
+        {
+          "name": "Pinnacle",
+          "h2h": {
+            "away": 3.42,
+            "home": 2.15,
+            "draw": 3.41
+          }
+        },
+        {
+          "name": "1xBet",
+          "h2h": {
+            "away": 3.55,
+            "home": 2.21,
+            "draw": 3.55
+          }
+        },
+        {
+          "name": "Betfair",
+          "h2h": {
+            "away": 3.55,
+            "home": 2.22,
+            "draw": 3.55
+          }
+        },
+        {
+          "name": "Codere (IT)",
+          "h2h": {
+            "away": 3.4,
+            "home": 2.15,
+            "draw": 3.45
+          }
+        },
+        {
+          "name": "Marathon Bet",
+          "h2h": {
+            "away": 3.5,
+            "home": 2.18,
+            "draw": 3.5
+          }
+        },
+        {
+          "name": "Unibet (FR)",
+          "h2h": {
+            "away": 3.3,
+            "home": 2.05,
+            "draw": 3.3
+          }
+        },
+        {
+          "name": "William Hill",
+          "h2h": {
+            "away": 3.3,
+            "home": 2.15,
+            "draw": 3.25
+          }
+        },
+        {
+          "name": "Betclic (FR)",
+          "h2h": {
+            "away": 3.27,
+            "home": 2.05,
+            "draw": 3.28
+          }
+        },
+        {
+          "name": "888sport",
+          "h2h": {
+            "away": 3.3,
+            "home": 2.15,
+            "draw": 3.25
+          }
+        },
+        {
+          "name": "Tipico",
+          "h2h": {
+            "away": 3.5,
+            "home": 2.05,
+            "draw": 3.5
+          }
+        },
+        {
+          "name": "Winamax (DE)",
+          "h2h": {
+            "away": 3.2,
+            "home": 2.05,
+            "draw": 3.4
+          }
+        },
+        {
+          "name": "Winamax (FR)",
+          "h2h": {
+            "away": 3.2,
+            "home": 2.05,
+            "draw": 3.35
+          }
+        },
+        {
+          "name": "Unibet (SE)",
+          "h2h": {
+            "away": 3.8,
+            "home": 2.1,
+            "draw": 3.5
+          }
+        },
+        {
+          "name": "LeoVegas (SE)",
+          "h2h": {
+            "away": 3.7,
+            "home": 2.05,
+            "draw": 3.35
+          }
+        },
+        {
+          "name": "Unibet (NL)",
+          "h2h": {
+            "away": 3.8,
+            "home": 2.1,
+            "draw": 3.5
+          }
+        },
+        {
+          "name": "Coolbet",
+          "h2h": {
+            "away": 3.4,
+            "home": 2.14,
+            "draw": 3.5
+          }
+        },
+        {
+          "name": "BetOnline.ag",
+          "h2h": {
+            "away": 3.45,
+            "home": 2.2,
+            "draw": 3.45
+          }
+        },
+        {
+          "name": "Nordic Bet",
+          "h2h": {
+            "away": 3.4,
+            "home": 2.18,
+            "draw": 3.4
+          }
+        },
+        {
+          "name": "Betsson",
+          "h2h": {
+            "away": 3.4,
+            "home": 2.18,
+            "draw": 3.4
+          }
+        },
+        {
+          "name": "PMU (FR)",
+          "h2h": {
+            "away": 3.5,
+            "home": 1.97,
+            "draw": 3.2
+          }
+        },
+        {
+          "name": "MyBookie.ag",
+          "h2h": {
+            "away": 3.3,
+            "home": 2.1,
+            "draw": 3.32
+          }
+        }
+      ],
       "eloProb": {
         "home": 0.504,
         "draw": 0.232,
@@ -9441,9 +9999,9 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队积分和状态略优，且模型概率和Elo均倾向主队，但平局概率不低，谨慎看好小胜。",
+        "reason": "主队积分和状态略优，且模型概率和赔率均倾向主胜，但平局概率不低，谨慎看好。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.3
       }
     },
     {
@@ -9501,6 +10059,176 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [
+        {
+          "name": "Pinnacle",
+          "h2h": {
+            "home": 2.74,
+            "away": 2.62,
+            "draw": 3.3
+          }
+        },
+        {
+          "name": "1xBet",
+          "h2h": {
+            "home": 2.85,
+            "away": 2.69,
+            "draw": 3.42
+          }
+        },
+        {
+          "name": "Betfair",
+          "h2h": {
+            "home": 2.9,
+            "away": 2.68,
+            "draw": 3.3
+          }
+        },
+        {
+          "name": "Codere (IT)",
+          "h2h": {
+            "home": 2.7,
+            "away": 2.6,
+            "draw": 3.35
+          }
+        },
+        {
+          "name": "Marathon Bet",
+          "h2h": {
+            "home": 2.8,
+            "away": 2.65,
+            "draw": 3.36
+          }
+        },
+        {
+          "name": "Unibet (FR)",
+          "h2h": {
+            "home": 2.65,
+            "away": 2.45,
+            "draw": 3.2
+          }
+        },
+        {
+          "name": "William Hill",
+          "h2h": {
+            "home": 2.7,
+            "away": 2.5,
+            "draw": 3.2
+          }
+        },
+        {
+          "name": "Betclic (FR)",
+          "h2h": {
+            "home": 2.62,
+            "away": 2.47,
+            "draw": 3.2
+          }
+        },
+        {
+          "name": "888sport",
+          "h2h": {
+            "home": 2.7,
+            "away": 2.5,
+            "draw": 3.2
+          }
+        },
+        {
+          "name": "Tipico",
+          "h2h": {
+            "home": 2.75,
+            "away": 2.6,
+            "draw": 3.2
+          }
+        },
+        {
+          "name": "Winamax (DE)",
+          "h2h": {
+            "home": 2.6,
+            "away": 2.5,
+            "draw": 3.3
+          }
+        },
+        {
+          "name": "Winamax (FR)",
+          "h2h": {
+            "home": 2.55,
+            "away": 2.45,
+            "draw": 3.25
+          }
+        },
+        {
+          "name": "Unibet (SE)",
+          "h2h": {
+            "home": 2.8,
+            "away": 2.7,
+            "draw": 3.4
+          }
+        },
+        {
+          "name": "LeoVegas (SE)",
+          "h2h": {
+            "home": 2.7,
+            "away": 2.6,
+            "draw": 3.3
+          }
+        },
+        {
+          "name": "Unibet (NL)",
+          "h2h": {
+            "home": 2.8,
+            "away": 2.7,
+            "draw": 3.4
+          }
+        },
+        {
+          "name": "Coolbet",
+          "h2h": {
+            "home": 2.74,
+            "away": 2.6,
+            "draw": 3.34
+          }
+        },
+        {
+          "name": "BetOnline.ag",
+          "h2h": {
+            "home": 2.78,
+            "away": 2.65,
+            "draw": 3.36
+          }
+        },
+        {
+          "name": "Nordic Bet",
+          "h2h": {
+            "home": 2.75,
+            "away": 2.62,
+            "draw": 3.3
+          }
+        },
+        {
+          "name": "Betsson",
+          "h2h": {
+            "home": 2.75,
+            "away": 2.62,
+            "draw": 3.3
+          }
+        },
+        {
+          "name": "PMU (FR)",
+          "h2h": {
+            "home": 2.6,
+            "away": 2.5,
+            "draw": 3.1
+          }
+        },
+        {
+          "name": "MyBookie.ag",
+          "h2h": {
+            "home": 2.65,
+            "away": 2.55,
+            "draw": 3.22
+          }
+        }
+      ],
       "eloProb": {
         "home": 0.287,
         "draw": 0.242,
@@ -9622,9 +10350,9 @@
         "pick": "away",
         "score": "0-1",
         "confidence": 0.55,
-        "reason": "客队胜率在统计和Elo中均占优，欧赔也略倾向客队，但平局概率不低，故谨慎选择客胜。",
+        "reason": "客队胜率在统计模型和Elo中均占优，欧赔略倾向客队，但平局概率不低，故谨慎选择客胜。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.3
       }
     },
     {
@@ -9694,6 +10422,160 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [
+        {
+          "name": "Pinnacle",
+          "h2h": {
+            "away": 3.23,
+            "home": 2.26,
+            "draw": 3.36
+          }
+        },
+        {
+          "name": "1xBet",
+          "h2h": {
+            "away": 3.33,
+            "home": 2.33,
+            "draw": 3.5
+          }
+        },
+        {
+          "name": "Betfair",
+          "h2h": {
+            "away": 3.3,
+            "home": 2.3,
+            "draw": 3.55
+          }
+        },
+        {
+          "name": "Codere (IT)",
+          "h2h": {
+            "away": 3.2,
+            "home": 2.25,
+            "draw": 3.4
+          }
+        },
+        {
+          "name": "Marathon Bet",
+          "h2h": {
+            "away": 3.28,
+            "home": 2.29,
+            "draw": 3.44
+          }
+        },
+        {
+          "name": "Unibet (FR)",
+          "h2h": {
+            "away": 3.1,
+            "home": 2.1,
+            "draw": 3.3
+          }
+        },
+        {
+          "name": "William Hill",
+          "h2h": {
+            "away": 3.1,
+            "home": 2.2,
+            "draw": 3.25
+          }
+        },
+        {
+          "name": "Betclic (FR)",
+          "h2h": {
+            "away": 3.07,
+            "home": 2.13,
+            "draw": 3.27
+          }
+        },
+        {
+          "name": "888sport",
+          "h2h": {
+            "away": 3.1,
+            "home": 2.2,
+            "draw": 3.25
+          }
+        },
+        {
+          "name": "Tipico",
+          "h2h": {
+            "away": 3.3,
+            "home": 2.2,
+            "draw": 3.3
+          }
+        },
+        {
+          "name": "Winamax (DE)",
+          "h2h": {
+            "away": 3.1,
+            "home": 2.15,
+            "draw": 3.35
+          }
+        },
+        {
+          "name": "Winamax (FR)",
+          "h2h": {
+            "away": 3.05,
+            "home": 2.1,
+            "draw": 3.3
+          }
+        },
+        {
+          "name": "Unibet (SE)",
+          "h2h": {
+            "away": 3.3,
+            "home": 2.28,
+            "draw": 3.55
+          }
+        },
+        {
+          "name": "LeoVegas (SE)",
+          "h2h": {
+            "away": 3.2,
+            "home": 2.2,
+            "draw": 3.45
+          }
+        },
+        {
+          "name": "Unibet (NL)",
+          "h2h": {
+            "away": 3.3,
+            "home": 2.28,
+            "draw": 3.55
+          }
+        },
+        {
+          "name": "Coolbet",
+          "h2h": {
+            "away": 3.18,
+            "home": 2.21,
+            "draw": 3.54
+          }
+        },
+        {
+          "name": "BetOnline.ag",
+          "h2h": {
+            "away": 3.29,
+            "home": 2.26,
+            "draw": 3.46
+          }
+        },
+        {
+          "name": "PMU (FR)",
+          "h2h": {
+            "away": 3.05,
+            "home": 2.12,
+            "draw": 3.25
+          }
+        },
+        {
+          "name": "MyBookie.ag",
+          "h2h": {
+            "away": 3.1,
+            "home": 2.2,
+            "draw": 3.3
+          }
+        }
+      ],
       "eloProb": {
         "home": 0.51,
         "draw": 0.225,
@@ -9812,9 +10694,9 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队有引援消息且Elo概率略高，但模型平局概率不低，谨慎看好主胜。",
+        "reason": "主队虽排名略低但主场优势及Elo概率略高，且模型波胆中1-0概率较高，欧赔主胜稍低。",
         "model": "deepseek-chat",
-        "latency": 1.0
+        "latency": 1.3
       }
     },
     {
@@ -9872,6 +10754,176 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [
+        {
+          "name": "Pinnacle",
+          "h2h": {
+            "home": 2.4,
+            "away": 2.77,
+            "draw": 3.67
+          }
+        },
+        {
+          "name": "1xBet",
+          "h2h": {
+            "home": 2.49,
+            "away": 2.85,
+            "draw": 3.8
+          }
+        },
+        {
+          "name": "Betfair",
+          "h2h": {
+            "home": 2.56,
+            "away": 2.88,
+            "draw": 3.7
+          }
+        },
+        {
+          "name": "Codere (IT)",
+          "h2h": {
+            "home": 2.4,
+            "away": 2.8,
+            "draw": 3.6
+          }
+        },
+        {
+          "name": "Marathon Bet",
+          "h2h": {
+            "home": 2.45,
+            "away": 2.81,
+            "draw": 3.74
+          }
+        },
+        {
+          "name": "Unibet (FR)",
+          "h2h": {
+            "home": 2.25,
+            "away": 2.7,
+            "draw": 3.5
+          }
+        },
+        {
+          "name": "William Hill",
+          "h2h": {
+            "home": 2.38,
+            "away": 2.75,
+            "draw": 3.5
+          }
+        },
+        {
+          "name": "Betclic (FR)",
+          "h2h": {
+            "home": 2.27,
+            "away": 2.7,
+            "draw": 3.45
+          }
+        },
+        {
+          "name": "888sport",
+          "h2h": {
+            "home": 2.38,
+            "away": 2.75,
+            "draw": 3.5
+          }
+        },
+        {
+          "name": "Tipico",
+          "h2h": {
+            "home": 2.35,
+            "away": 2.8,
+            "draw": 3.6
+          }
+        },
+        {
+          "name": "Winamax (DE)",
+          "h2h": {
+            "home": 2.3,
+            "away": 2.65,
+            "draw": 3.6
+          }
+        },
+        {
+          "name": "Winamax (FR)",
+          "h2h": {
+            "home": 2.25,
+            "away": 2.65,
+            "draw": 3.55
+          }
+        },
+        {
+          "name": "Unibet (SE)",
+          "h2h": {
+            "home": 2.6,
+            "away": 2.75,
+            "draw": 3.6
+          }
+        },
+        {
+          "name": "LeoVegas (SE)",
+          "h2h": {
+            "home": 2.55,
+            "away": 2.65,
+            "draw": 3.5
+          }
+        },
+        {
+          "name": "Unibet (NL)",
+          "h2h": {
+            "home": 2.6,
+            "away": 2.75,
+            "draw": 3.6
+          }
+        },
+        {
+          "name": "Coolbet",
+          "h2h": {
+            "home": 2.38,
+            "away": 2.84,
+            "draw": 3.6
+          }
+        },
+        {
+          "name": "BetOnline.ag",
+          "h2h": {
+            "home": 2.45,
+            "away": 2.78,
+            "draw": 3.75
+          }
+        },
+        {
+          "name": "Nordic Bet",
+          "h2h": {
+            "home": 2.48,
+            "away": 2.75,
+            "draw": 3.6
+          }
+        },
+        {
+          "name": "Betsson",
+          "h2h": {
+            "home": 2.48,
+            "away": 2.75,
+            "draw": 3.6
+          }
+        },
+        {
+          "name": "PMU (FR)",
+          "h2h": {
+            "home": 2.43,
+            "away": 2.55,
+            "draw": 3.3
+          }
+        },
+        {
+          "name": "MyBookie.ag",
+          "h2h": {
+            "home": 2.34,
+            "away": 2.73,
+            "draw": 3.5
+          }
+        }
+      ],
       "eloProb": {
         "home": 0.6,
         "draw": 0.19,
@@ -10014,9 +11066,9 @@
         "pick": "home",
         "score": "2-1",
         "confidence": 0.55,
-        "reason": "主队积分和Elo概率占优，且模型波胆次选2-1，但客队有保级动力，需谨慎。",
+        "reason": "主队积分排名占优且Elo概率较高，但客队保级战意强，综合模型倾向主胜但信心有限。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.5
       }
     },
     {
@@ -10074,6 +11126,176 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [
+        {
+          "name": "Pinnacle",
+          "h2h": {
+            "away": 3.02,
+            "home": 2.26,
+            "draw": 3.62
+          }
+        },
+        {
+          "name": "1xBet",
+          "h2h": {
+            "away": 3.1,
+            "home": 2.35,
+            "draw": 3.74
+          }
+        },
+        {
+          "name": "Betfair",
+          "h2h": {
+            "away": 3.1,
+            "home": 2.36,
+            "draw": 3.8
+          }
+        },
+        {
+          "name": "Codere (IT)",
+          "h2h": {
+            "away": 2.95,
+            "home": 2.27,
+            "draw": 3.65
+          }
+        },
+        {
+          "name": "Marathon Bet",
+          "h2h": {
+            "away": 3.05,
+            "home": 2.31,
+            "draw": 3.68
+          }
+        },
+        {
+          "name": "Unibet (FR)",
+          "h2h": {
+            "away": 2.85,
+            "home": 2.15,
+            "draw": 3.55
+          }
+        },
+        {
+          "name": "William Hill",
+          "h2h": {
+            "away": 2.9,
+            "home": 2.25,
+            "draw": 3.5
+          }
+        },
+        {
+          "name": "Betclic (FR)",
+          "h2h": {
+            "away": 2.85,
+            "home": 2.15,
+            "draw": 3.5
+          }
+        },
+        {
+          "name": "888sport",
+          "h2h": {
+            "away": 2.9,
+            "home": 2.25,
+            "draw": 3.5
+          }
+        },
+        {
+          "name": "Tipico",
+          "h2h": {
+            "away": 3.0,
+            "home": 2.2,
+            "draw": 3.7
+          }
+        },
+        {
+          "name": "Winamax (DE)",
+          "h2h": {
+            "away": 2.8,
+            "home": 2.15,
+            "draw": 3.65
+          }
+        },
+        {
+          "name": "Winamax (FR)",
+          "h2h": {
+            "away": 2.8,
+            "home": 2.15,
+            "draw": 3.6
+          }
+        },
+        {
+          "name": "Unibet (SE)",
+          "h2h": {
+            "away": 3.0,
+            "home": 2.35,
+            "draw": 3.75
+          }
+        },
+        {
+          "name": "LeoVegas (SE)",
+          "h2h": {
+            "away": 2.9,
+            "home": 2.28,
+            "draw": 3.65
+          }
+        },
+        {
+          "name": "Unibet (NL)",
+          "h2h": {
+            "away": 3.0,
+            "home": 2.35,
+            "draw": 3.75
+          }
+        },
+        {
+          "name": "Coolbet",
+          "h2h": {
+            "away": 2.97,
+            "home": 2.25,
+            "draw": 3.72
+          }
+        },
+        {
+          "name": "BetOnline.ag",
+          "h2h": {
+            "away": 2.95,
+            "home": 2.37,
+            "draw": 3.65
+          }
+        },
+        {
+          "name": "Nordic Bet",
+          "h2h": {
+            "away": 2.95,
+            "home": 2.32,
+            "draw": 3.6
+          }
+        },
+        {
+          "name": "Betsson",
+          "h2h": {
+            "away": 2.95,
+            "home": 2.32,
+            "draw": 3.6
+          }
+        },
+        {
+          "name": "PMU (FR)",
+          "h2h": {
+            "away": 2.8,
+            "home": 2.2,
+            "draw": 3.45
+          }
+        },
+        {
+          "name": "MyBookie.ag",
+          "h2h": {
+            "away": 2.89,
+            "home": 2.21,
+            "draw": 3.55
+          }
+        }
+      ],
       "eloProb": {
         "home": 0.29,
         "draw": 0.244,
@@ -10203,7 +11425,7 @@
         "pick": "away",
         "score": "1-2",
         "confidence": 0.529,
-        "reason": "客队胜率在统计模型和Elo中均占优，且欧赔客胜赔率较低，但平局概率不低，故谨慎选择客胜。",
+        "reason": "客队胜率在统计和Elo中均占优，且欧赔客胜偏低，但主队有主场优势，故谨慎选择客胜。",
         "model": "deepseek-chat",
         "latency": 1.3
       }
@@ -10263,6 +11485,176 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [
+        {
+          "name": "Pinnacle",
+          "h2h": {
+            "away": 5.97,
+            "home": 1.45,
+            "draw": 5.05
+          }
+        },
+        {
+          "name": "1xBet",
+          "h2h": {
+            "away": 6.45,
+            "home": 1.49,
+            "draw": 5.23
+          }
+        },
+        {
+          "name": "Codere (IT)",
+          "h2h": {
+            "away": 5.8,
+            "home": 1.47,
+            "draw": 5.0
+          }
+        },
+        {
+          "name": "Betfair",
+          "h2h": {
+            "away": 7.0,
+            "home": 1.47,
+            "draw": 5.3
+          }
+        },
+        {
+          "name": "Marathon Bet",
+          "h2h": {
+            "away": 6.35,
+            "home": 1.47,
+            "draw": 5.15
+          }
+        },
+        {
+          "name": "Unibet (FR)",
+          "h2h": {
+            "away": 5.6,
+            "home": 1.4,
+            "draw": 4.8
+          }
+        },
+        {
+          "name": "William Hill",
+          "h2h": {
+            "away": 5.8,
+            "home": 1.44,
+            "draw": 4.75
+          }
+        },
+        {
+          "name": "Betclic (FR)",
+          "h2h": {
+            "away": 5.5,
+            "home": 1.41,
+            "draw": 4.75
+          }
+        },
+        {
+          "name": "888sport",
+          "h2h": {
+            "away": 5.75,
+            "home": 1.44,
+            "draw": 4.75
+          }
+        },
+        {
+          "name": "Tipico",
+          "h2h": {
+            "away": 6.5,
+            "home": 1.4,
+            "draw": 5.2
+          }
+        },
+        {
+          "name": "Winamax (DE)",
+          "h2h": {
+            "away": 5.7,
+            "home": 1.41,
+            "draw": 5.0
+          }
+        },
+        {
+          "name": "Winamax (FR)",
+          "h2h": {
+            "away": 5.6,
+            "home": 1.4,
+            "draw": 4.9
+          }
+        },
+        {
+          "name": "Unibet (SE)",
+          "h2h": {
+            "away": 6.75,
+            "home": 1.47,
+            "draw": 5.1
+          }
+        },
+        {
+          "name": "LeoVegas (SE)",
+          "h2h": {
+            "away": 6.4,
+            "home": 1.43,
+            "draw": 4.9
+          }
+        },
+        {
+          "name": "Unibet (NL)",
+          "h2h": {
+            "away": 6.75,
+            "home": 1.47,
+            "draw": 5.1
+          }
+        },
+        {
+          "name": "Coolbet",
+          "h2h": {
+            "away": 6.3,
+            "home": 1.44,
+            "draw": 5.1
+          }
+        },
+        {
+          "name": "BetOnline.ag",
+          "h2h": {
+            "away": 6.55,
+            "home": 1.44,
+            "draw": 5.25
+          }
+        },
+        {
+          "name": "Nordic Bet",
+          "h2h": {
+            "away": 6.7,
+            "home": 1.47,
+            "draw": 4.65
+          }
+        },
+        {
+          "name": "Betsson",
+          "h2h": {
+            "away": 6.7,
+            "home": 1.47,
+            "draw": 4.65
+          }
+        },
+        {
+          "name": "PMU (FR)",
+          "h2h": {
+            "away": 5.8,
+            "home": 1.41,
+            "draw": 4.5
+          }
+        },
+        {
+          "name": "MyBookie.ag",
+          "h2h": {
+            "away": 5.6,
+            "home": 1.44,
+            "draw": 4.8
+          }
+        }
+      ],
       "eloProb": {
         "home": 0.615,
         "draw": 0.192,
@@ -10385,9 +11777,9 @@
         "pick": "home",
         "score": "2-0",
         "confidence": 0.72,
-        "reason": "主队实力和状态占优，模型预测2-0，欧赔和Elo均支持主胜，但客队有一定防守能力，需谨慎。",
+        "reason": "主队实力与状态占优，且模型和赔率均支持主胜，但客队有一定防守能力，比分预测2-0。",
         "model": "deepseek-chat",
-        "latency": 1.1
+        "latency": 1.4
       }
     },
     {
@@ -10445,6 +11837,176 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [
+        {
+          "name": "Pinnacle",
+          "h2h": {
+            "away": 2.07,
+            "home": 3.26,
+            "draw": 3.84
+          }
+        },
+        {
+          "name": "1xBet",
+          "h2h": {
+            "away": 2.12,
+            "home": 3.38,
+            "draw": 4.03
+          }
+        },
+        {
+          "name": "Codere (IT)",
+          "h2h": {
+            "away": 2.09,
+            "home": 3.2,
+            "draw": 3.85
+          }
+        },
+        {
+          "name": "Betfair",
+          "h2h": {
+            "away": 2.08,
+            "home": 3.55,
+            "draw": 4.0
+          }
+        },
+        {
+          "name": "Marathon Bet",
+          "h2h": {
+            "away": 2.09,
+            "home": 3.32,
+            "draw": 3.96
+          }
+        },
+        {
+          "name": "Unibet (FR)",
+          "h2h": {
+            "away": 1.97,
+            "home": 3.1,
+            "draw": 3.7
+          }
+        },
+        {
+          "name": "William Hill",
+          "h2h": {
+            "away": 2.05,
+            "home": 3.1,
+            "draw": 3.7
+          }
+        },
+        {
+          "name": "Betclic (FR)",
+          "h2h": {
+            "away": 1.98,
+            "home": 3.08,
+            "draw": 3.68
+          }
+        },
+        {
+          "name": "888sport",
+          "h2h": {
+            "away": 2.05,
+            "home": 3.1,
+            "draw": 3.7
+          }
+        },
+        {
+          "name": "Tipico",
+          "h2h": {
+            "away": 2.0,
+            "home": 3.3,
+            "draw": 3.9
+          }
+        },
+        {
+          "name": "Winamax (DE)",
+          "h2h": {
+            "away": 2.0,
+            "home": 3.05,
+            "draw": 3.8
+          }
+        },
+        {
+          "name": "Winamax (FR)",
+          "h2h": {
+            "away": 2.0,
+            "home": 3.0,
+            "draw": 3.8
+          }
+        },
+        {
+          "name": "Unibet (SE)",
+          "h2h": {
+            "away": 2.04,
+            "home": 3.55,
+            "draw": 4.0
+          }
+        },
+        {
+          "name": "LeoVegas (SE)",
+          "h2h": {
+            "away": 1.97,
+            "home": 3.4,
+            "draw": 3.85
+          }
+        },
+        {
+          "name": "Unibet (NL)",
+          "h2h": {
+            "away": 2.04,
+            "home": 3.55,
+            "draw": 4.0
+          }
+        },
+        {
+          "name": "Coolbet",
+          "h2h": {
+            "away": 2.1,
+            "home": 3.15,
+            "draw": 3.9
+          }
+        },
+        {
+          "name": "BetOnline.ag",
+          "h2h": {
+            "away": 2.07,
+            "home": 3.44,
+            "draw": 3.83
+          }
+        },
+        {
+          "name": "Nordic Bet",
+          "h2h": {
+            "away": 2.1,
+            "home": 3.25,
+            "draw": 3.75
+          }
+        },
+        {
+          "name": "Betsson",
+          "h2h": {
+            "away": 2.1,
+            "home": 3.25,
+            "draw": 3.75
+          }
+        },
+        {
+          "name": "PMU (FR)",
+          "h2h": {
+            "away": 1.92,
+            "home": 3.25,
+            "draw": 3.65
+          }
+        },
+        {
+          "name": "MyBookie.ag",
+          "h2h": {
+            "away": 2.04,
+            "home": 3.12,
+            "draw": 3.7
+          }
+        }
+      ],
       "eloProb": {
         "home": 0.333,
         "draw": 0.298,
@@ -10567,9 +12129,9 @@
         "pick": "away",
         "score": "0-1",
         "confidence": 0.55,
-        "reason": "客队实力和状态占优，欧赔与统计模型均倾向客胜，但平局概率不低，谨慎选择客胜。",
+        "reason": "客队实力和状态占优，欧赔与统计模型均倾向客胜，但平局概率不低，故信心中等。",
         "model": "deepseek-chat",
-        "latency": 1.3
+        "latency": 1.5
       }
     },
     {
@@ -10627,6 +12189,176 @@
         "home": null,
         "away": null
       },
+      "bookmakerOdds": [
+        {
+          "name": "Pinnacle",
+          "h2h": {
+            "away": 2.06,
+            "home": 3.31,
+            "draw": 3.8
+          }
+        },
+        {
+          "name": "1xBet",
+          "h2h": {
+            "away": 2.16,
+            "home": 3.4,
+            "draw": 3.86
+          }
+        },
+        {
+          "name": "Codere (IT)",
+          "h2h": {
+            "away": 2.15,
+            "home": 3.2,
+            "draw": 3.65
+          }
+        },
+        {
+          "name": "Marathon Bet",
+          "h2h": {
+            "away": 2.13,
+            "home": 3.35,
+            "draw": 3.8
+          }
+        },
+        {
+          "name": "Unibet (FR)",
+          "h2h": {
+            "away": 2.0,
+            "home": 3.1,
+            "draw": 3.55
+          }
+        },
+        {
+          "name": "William Hill",
+          "h2h": {
+            "away": 2.1,
+            "home": 3.2,
+            "draw": 3.5
+          }
+        },
+        {
+          "name": "Betclic (FR)",
+          "h2h": {
+            "away": 2.05,
+            "home": 3.07,
+            "draw": 3.5
+          }
+        },
+        {
+          "name": "Betfair",
+          "h2h": {
+            "away": 2.2,
+            "home": 3.3,
+            "draw": 3.95
+          }
+        },
+        {
+          "name": "888sport",
+          "h2h": {
+            "away": 2.1,
+            "home": 3.2,
+            "draw": 3.5
+          }
+        },
+        {
+          "name": "Tipico",
+          "h2h": {
+            "away": 2.05,
+            "home": 3.4,
+            "draw": 3.6
+          }
+        },
+        {
+          "name": "Winamax (DE)",
+          "h2h": {
+            "away": 2.05,
+            "home": 3.05,
+            "draw": 3.65
+          }
+        },
+        {
+          "name": "Winamax (FR)",
+          "h2h": {
+            "away": 2.05,
+            "home": 3.0,
+            "draw": 3.6
+          }
+        },
+        {
+          "name": "Unibet (SE)",
+          "h2h": {
+            "away": 2.18,
+            "home": 3.3,
+            "draw": 3.8
+          }
+        },
+        {
+          "name": "LeoVegas (SE)",
+          "h2h": {
+            "away": 2.12,
+            "home": 3.2,
+            "draw": 3.65
+          }
+        },
+        {
+          "name": "Unibet (NL)",
+          "h2h": {
+            "away": 2.18,
+            "home": 3.3,
+            "draw": 3.8
+          }
+        },
+        {
+          "name": "Coolbet",
+          "h2h": {
+            "away": 2.2,
+            "home": 3.05,
+            "draw": 3.73
+          }
+        },
+        {
+          "name": "BetOnline.ag",
+          "h2h": {
+            "away": 2.14,
+            "home": 3.28,
+            "draw": 3.8
+          }
+        },
+        {
+          "name": "Nordic Bet",
+          "h2h": {
+            "away": 2.15,
+            "home": 3.25,
+            "draw": 3.7
+          }
+        },
+        {
+          "name": "Betsson",
+          "h2h": {
+            "away": 2.15,
+            "home": 3.25,
+            "draw": 3.7
+          }
+        },
+        {
+          "name": "PMU (FR)",
+          "h2h": {
+            "away": 2.05,
+            "home": 3.05,
+            "draw": 3.45
+          }
+        },
+        {
+          "name": "MyBookie.ag",
+          "h2h": {
+            "away": 2.1,
+            "home": 3.1,
+            "draw": 3.55
+          }
+        }
+      ],
       "eloProb": {
         "home": 0.604,
         "draw": 0.193,
@@ -10773,7 +12505,7 @@
         "pick": "none",
         "score": "1-1",
         "confidence": 0.5,
-        "reason": "统计模型与Elo概率分歧明显，欧赔倾向客队但积分榜接近，无明显倾向。",
+        "reason": "统计模型与欧赔倾向客队，但Elo和积分榜接近，无明显倾向。",
         "model": "deepseek-chat",
         "latency": 1.2
       }
@@ -10827,6 +12559,6 @@
         "avgConf": 0
       }
     },
-    "updatedAt": "2026-08-12T04:08:53Z"
+    "updatedAt": "2026-08-12T04:15:09Z"
   }
 }
