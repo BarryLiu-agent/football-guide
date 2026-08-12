@@ -241,6 +241,11 @@ class ScorePredictor:
         top = max(final_home, final_draw, final_away)
         msg_conf = abs(h_sig - a_sig)
         confidence = min(0.95, 0.4 + top * 0.4 + msg_conf * 0.15)
+        # 模型进化：若 calibrate 配置了高置信折扣（evolve.py 自适应），应用于置信度
+        disc = self.rules.get("confidenceDiscount") if isinstance(self.rules, dict) else None
+        if isinstance(disc, (int, float)) and 0.5 < disc < 1.0 and confidence >= 0.65:
+            confidence *= disc
+            confidence = round(confidence, 4)
 
         reasons = []
         if prob:
