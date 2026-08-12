@@ -386,6 +386,7 @@ def aggregate(matches_by_source):
             },
             "sources": [m["source"] for m in ms],
             "bookmakers": sum(m.get("bookmakers", 0) for m in ms),
+            "bookmakerOdds": ms[0].get("bookmakerOdds") or [],
         })
     return results
 
