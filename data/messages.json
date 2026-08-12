@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T07:06:16Z",
+  "generatedAt": "2026-08-12T07:42:25Z",
   "total": 20,
   "messages": [
     {
@@ -22,6 +22,17 @@
         "link": "https://www.skysports.com/racing/news/12040/13571636/today-on-sky-sports-racing-ffos-las-hosts-six-race-card-live-on-wednesday",
         "lang": "en",
         "summary": "Don't miss a moment from Ffos Las on Wednesday, with all six races live from 3.37pm on <em>Sky Sports Racing</em>."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Rybakina to meet Gauff in semis after Osaka fightback",
+      "timestamp": "Wed, 12 Aug 2026 07:28:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13572134/elena-rybakina-vs-naomi-osaka-canadian-open-highlights",
+        "lang": "en",
+        "summary": "Highlights of the Canadian Open match between Elena Rybakina and Naomi Osaka."
       }
     },
     {
@@ -209,17 +220,6 @@
         "link": "https://www.skysports.com/watch/video/13571928/super-league-wakefield-trinity-director-of-rugby-ste-mills-explains-davy-litten-signing",
         "lang": "en",
         "summary": "Wakefield director of rugby Ste Mills has explained how the club were able to sign Hull FC's Davy Litten on a four-year contract."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Trump warns of 'terrible mistake' if FIFA replaces Infantino",
-      "timestamp": "Tue, 11 Aug 2026 07:04:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13571834/gianni-infantino-donald-trump-warns-of-terrible-mistake-if-fifa-replaces-under-pressure-president",
-        "lang": "en",
-        "summary": "US President Donald Trump has warned FIFA would be making a \"terrible mistake\" if it got rid of Gianni Infantino as head of world football&#8217;s governing body."
       }
     }
   ]
