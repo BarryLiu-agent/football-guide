@@ -805,7 +805,13 @@ function renderCard(m) {
   }
   if (pred && pred.oddsChange) {
     const oc = pred.oddsChange;
-    if (['home','draw','away'].some(k => oc[k] != null && Math.abs(oc[k]) >= 0.2)) hot = '<span class="hot-tag">🔥异动</span>';
+    const chg = ['home','draw','away'].filter(k => oc[k] != null && Math.abs(oc[k]) >= 0.2)
+      .map(k => ({ k, d: oc[k] })).sort((a, b) => Math.abs(b.d) - Math.abs(a.d));
+    if (chg.length) {
+      const names = { home: '主', draw: '平', away: '客' };
+      const dir = chg[0].d > 0 ? '升' : '降';
+      hot = '<span class="hot-tag" title="' + chg.map(c => names[c.k] + '胜赔率' + (c.d > 0 ? '↑' : '↓') + Math.abs(c.d).toFixed(2)).join('、') + '">🔥' + names[chg[0].k] + '胜' + dir + Math.abs(chg[0].d).toFixed(2) + '</span>';
+    }
   }
   // 赛程难度评级：基于积分榜排名
   let diff = '';
@@ -1157,7 +1163,8 @@ function openDetail(homeName, awayName, league) {
     <button class="mkt-tab" data-mkt="ou" onclick="switchMkt('ou')">大小球</button>
     <button class="mkt-tab" data-mkt="sp" onclick="switchMkt('sp')">让球</button>
     <button class="mkt-tab" data-mkt="ah" onclick="switchMkt('ah')">亚盘</button>
-    <button class="mkt-tab" data-mkt="cs" onclick="switchMkt('cs')">波胆</button>`;
+    <button class="mkt-tab" data-mkt="cs" onclick="switchMkt('cs')">波胆</button>
+    <button class="mkt-tab" data-mkt="parlay" onclick="switchMkt('parlay')">串关</button>`;
   $('analysisBox').textContent = currentPred?.analysis || (currentJc ? '竞彩比赛：赔率见上方，完整分析待赔率管道生成。' : '该场比赛暂无赔率与预测数据。');
   // 本赛季交锋记录
   const n1 = normTeam(homeName), n2 = normTeam(awayName);
@@ -1389,6 +1396,66 @@ function switchMkt(mkt) {
     }).join('');
     el.innerHTML = `<div class="cs-grid">${items}</div>` +
       (hasCrs ? '<div style="font-size:10px;color:var(--muted);margin-top:6px">模型比分概率 vs 竞彩波胆赔率隐含概率：模型概率更高 = 该比分有价值（开赛后自动出现）</div>' : '<div style="font-size:10px;color:var(--muted);margin-top:6px">竞彩波胆未开售该场比赛，无法对比价值</div>');
+  } else if (mkt === 'parlay') {
+    // 串关：从价值信号（edge>0 且无分歧）自动组合推荐
+    const sigs = (state.predictions || []).filter(x =>
+      x.league && x.valuePicks && x.valuePicks.length && !x.diverge &&
+      (x.valuePicks.some(v => v.edge > 0.1)));
+    // 当前场也在信号里 → 高亮
+    const curHome = p ? normTeam(p.homeTeam) : '';
+    const combos = [];
+    // 生成 2 串 1 / 3 串 1 组合（限制数量）
+    const cands = sigs.slice(0, 8);
+    for (let i = 0; i < cands.length; i++) {
+      for (let j = i + 1; j < cands.length; j++) {
+        const v1 = cands[i].valuePicks.find(v => v.edge > 0.1), v2 = cands[j].valuePicks.find(v => v.edge > 0.1);
+        if (!v1 || !v2) continue;
+        const o1 = (cands[i].rawOdds || {})[v1.side], o2 = (cands[j].rawOdds || {})[v2.side];
+        if (!o1 || !o2) continue;
+        const odds = o1 * o2;
+        const prob = v1.modelProb * v2.modelProb;
+        const exp = odds * prob;
+        combos.push({
+          legs: [cands[i], cands[j]], picks: [v1, v2], odds: odds, prob: prob,
+          exp: exp, label: `${cnTeam(cands[i].homeTeam)}${v1.label}×${cnTeam(cands[j].homeTeam)}${v2.label}`,
+        });
+      }
+    }
+    // 3 串 1 前 3 个
+    for (let i = 0; i < Math.min(3, cands.length); i++) {
+      for (let j = i + 1; j < Math.min(4, cands.length); j++) {
+        for (let k = j + 1; k < Math.min(5, cands.length); k++) {
+          const a = cands[i], b = cands[j], c = cands[k];
+          const va = a.valuePicks.find(v => v.edge > 0.1), vb = b.valuePicks.find(v => v.edge > 0.1), vc = c.valuePicks.find(v => v.edge > 0.1);
+          if (!va || !vb || !vc) continue;
+          const oa = (a.rawOdds || {})[va.side], ob = (b.rawOdds || {})[vb.side], oc = (c.rawOdds || {})[vc.side];
+          if (!oa || !ob || !oc) continue;
+          const odds = oa * ob * oc;
+          const prob = va.modelProb * vb.modelProb * vc.modelProb;
+          combos.push({
+            legs: [a, b, c], picks: [va, vb, vc], odds: odds, prob: prob, exp: odds * prob,
+            label: `${cnTeam(a.homeTeam)}${va.label}×${cnTeam(b.homeTeam)}${vb.label}×${cnTeam(c.homeTeam)}${vc.label}`,
+          });
+        }
+      }
+    }
+    combos.sort((x, y) => y.exp - x.exp);
+    if (!combos.length) {
+      el.innerHTML = '<div class="empty-state">暂无串关候选（需要至少 2 场有价值信号且无分歧的比赛，开赛后自动出现）</div>';
+      return;
+    }
+    const curTag = (x) => normTeam(x.homeTeam) === curHome ? ' <span style="color:var(--gold)">← 当前场</span>' : '';
+    el.innerHTML = '<div class="section-title" style="margin-top:0">🎯 串关建议（价值信号 × 无分歧）</div>' +
+      '<div style="font-size:11px;color:var(--muted);margin-bottom:8px">按期望值排序：预期回报 = 组合赔率 × 各腿模型概率。串关高风险，仅建议小注娱乐。</div>' +
+      combos.slice(0, 8).map(c => {
+        const legsTxt = c.legs.map((l, i) => cnTeam(l.homeTeam) + ' vs ' + cnTeam(l.awayTeam) + ' → ' + c.picks[i].label).join('<br>');
+        return `<div style="padding:10px 12px;border-radius:10px;background:var(--bg-2);border:1px solid var(--border);margin-bottom:8px">
+          <div style="font-weight:700;font-size:12px">${c.label}${curTag(c.legs[0])}</div>
+          <div style="font-size:11px;color:var(--muted);margin:4px 0">${legsTxt}</div>
+          <div style="font-size:12px">组合赔率 <b style="color:var(--gold)">${c.odds.toFixed(2)}</b> · 估算概率 ${(c.prob * 100).toFixed(1)}% · 期望值 ${c.exp.toFixed(2)}${c.exp > 1.2 ? ' <span style="color:#22c55e;font-weight:700">值得</span>' : ''}</div>
+        </div>`;
+      }).join('') +
+      '<div style="font-size:10px;color:var(--muted);margin-top:8px">概率 = 各腿模型概率相乘（独立假设）；期望值 >1.2 才值得考虑。串关任一腿失败即全输，请谨慎。</div>';
   }
 }
 
