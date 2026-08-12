@@ -1,7 +1,29 @@
 {
-  "generatedAt": "2026-08-12T12:42:09Z",
+  "generatedAt": "2026-08-12T13:42:15Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Fery feels 'no added pressure' despite being British No 1 as he returns",
+      "timestamp": "Wed, 12 Aug 2026 14:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/tennis/news/12040/13572237/arthur-fery-feels-no-added-pressure-despite-being-british-no-1-as-he-returns-to-action-at-cincinnati-open",
+        "lang": "en",
+        "summary": "Arthur Fery insists he feels &#8220;no added pressure&#8221; as the new British No 1 prepares to return to action this weekend for the first time since his memorable run to the Wimbledon semi-finals."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Draper in line to meet Djokovic at Cincinnati Open",
+      "timestamp": "Wed, 12 Aug 2026 14:10:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/tennis/live-blog/12040/13523297/jack-draper-tennis-results-next-match-news-ranking-video-and-how-to-watch-on-sky-sports-tennis",
+        "lang": "en",
+        "summary": ""
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -82,6 +104,17 @@
     {
       "source": "skysports",
       "type": "news",
+      "text": "Coles and Opoku-Fordjour among 25 England players given enhanced contracts",
+      "timestamp": "Wed, 12 Aug 2026 14:30:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/rugby-union/news/12040/13572250/alex-coles-and-asher-opoku-fordjour-among-england-players-given-enhanced-contracts-by-rfu-for-2026-27-season",
+        "lang": "en",
+        "summary": "Alex Coles and Asher Opoku-Fordjour are among five England players to be awarded an enhanced contract by the RFU for the first time."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
       "text": "'Everyone can have an opinion' - F1 president responds to regulations criticism",
       "timestamp": "Wed, 12 Aug 2026 06:00:00 BST",
       "metadata": {
@@ -104,7 +137,7 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "'Be adults!' - Captain Root removes England curfew",
+      "text": "Root removes England curfew",
       "timestamp": "Wed, 12 Aug 2026 13:30:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/cricket/news/12040/13572211/joe-root-england-test-captain-removes-curfew-and-implores-his-players-to-be-adults-ahead-of-pakistan-series",
@@ -187,39 +220,6 @@
         "link": "https://www.skysports.com/football/news/12040/13572182/kick-it-out-sanjay-bhandari-to-step-down-as-chair-after-seven-years-in-role-at-the-end-of-the-season",
         "lang": "en",
         "summary": "Kick It Out chair Sanjay Bhandari will leave his role at the end of the 2026/27 season."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "SunRisers beat Super Giants to reach Hundred eliminator",
-      "timestamp": "Tue, 11 Aug 2026 17:40:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/cricket/news/12040/13572031/the-hundred-sunrisers-leeds-beat-manchester-super-giants-in-decisive-game-to-set-up-eliminator-match-up-with-southern-brave",
-        "lang": "en",
-        "summary": "Reigning champions SunRisers Leeds snatched a spot in the women's Hundred eliminator by beating Manchester Super Giants by 41 runs in a winner-takes-all game at Old Trafford."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Levy goes up against Spurs owners to buy London's NBA Europe team",
-      "timestamp": "Tue, 11 Aug 2026 17:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/nba/news/12040/13572016/nba-europe-former-tottenham-chairman-daniel-levy-vying-with-spurs-owners-to-buy-london-based-team-in-new-basketball-league",
-        "lang": "en",
-        "summary": "Former Tottenham chairman Daniel Levy is vying with a consortium including current Spurs' owners, the Lewis family, to buy NBA Europe's London-based team."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Floodlights to be on throughout Hundred matches for solar eclipse",
-      "timestamp": "Tue, 11 Aug 2026 18:30:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/cricket/news/12040/13572042/solar-eclipse-floodlights-to-be-turned-on-during-uk-sports-events-including-the-hundred-and-kempton-racing",
-        "lang": "en",
-        "summary": "Floodlights will be turned on throughout games in The Hundred on Wednesday due to the solar eclipse."
       }
     }
   ]
