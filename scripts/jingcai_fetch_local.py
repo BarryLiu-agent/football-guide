@@ -126,10 +126,10 @@ def git_push(message: str):
     git = "git"
     for attempt in range(3):
         for cmd in [["add", "-A"], ["commit", "-m", message]]:
-            subprocess.run([git, *cmd], cwd=ROOT, capture_output=True, text=True)
+            subprocess.run([git, *cmd], cwd=ROOT, capture_output=True, text=True, encoding='utf-8', errors='replace')
         subprocess.run([git, "pull", "--rebase", "--autostash", "origin", "main"],
-                       cwd=ROOT, capture_output=True, text=True)
-        r = subprocess.run([git, "push", "origin", "main"], cwd=ROOT, capture_output=True, text=True)
+                       cwd=ROOT, capture_output=True, text=True, encoding='utf-8', errors='replace')
+        r = subprocess.run([git, "push", "origin", "main"], cwd=ROOT, capture_output=True, text=True, encoding='utf-8', errors='replace')
         if r.returncode == 0:
             print("  git push: OK")
             return
