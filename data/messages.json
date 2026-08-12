@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T07:42:25Z",
+  "generatedAt": "2026-08-12T08:42:35Z",
   "total": 20,
   "messages": [
     {
@@ -49,12 +49,34 @@
     {
       "source": "skysports",
       "type": "news",
+      "text": "UEFA Super Cup preview: Why three Villa stars won't play vs PSG",
+      "timestamp": "Wed, 12 Aug 2026 09:02:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/paris-saint-germain-vs-aston-villa/live/556002",
+        "lang": "en",
+        "summary": ""
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
       "text": "Jets' Stiggers in hospital after collapsing during practice",
       "timestamp": "Tue, 11 Aug 2026 23:10:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/nfl/news/12040/13572096/nfl-new-york-jets-cornerback-qwantez-stiggers-taking-to-hospital-after-collapsing-in-joint-practice-with-tampa-bay-buccaneers",
         "lang": "en",
         "summary": "New York Jets cornerback Qwan'tez Stiggers was taken to a hospital by ambulance after he briefly lost consciousness during a joint practice with the Tampa Bay Buccaneers on Tuesday."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "FREE STREAM: Good Morning Transfers on Sky Sports News",
+      "timestamp": "Wed, 12 Aug 2026 08:50:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13569345/free-stream-the-transfer-show-on-sky-sports-news-latest-football-transfer-news-updates-and-rumours",
+        "lang": "en",
+        "summary": ""
       }
     },
     {
@@ -198,28 +220,6 @@
         "link": "https://www.skysports.com/football/news/12040/13572078/cristiano-ronaldo-marries-long-time-girlfriend-georgina-rodriguez-in-portugal",
         "lang": "en",
         "summary": "Cristiano Ronaldo has married his long-time girlfriend Georgina Rodriguez at a civil ceremony in Portugal."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "The F1 Show: What does a Formula 1 driver's manager do?",
-      "timestamp": "Tue, 11 Aug 2026 16:05:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/f1/news/27451/12822277/the-f1-show-podcast-sky-sports",
-        "lang": "en",
-        "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "'He believed in the journey' | Wakefield's Litten signing explained",
-      "timestamp": "Tue, 11 Aug 2026 12:24:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13571928/super-league-wakefield-trinity-director-of-rugby-ste-mills-explains-davy-litten-signing",
-        "lang": "en",
-        "summary": "Wakefield director of rugby Ste Mills has explained how the club were able to sign Hull FC's Davy Litten on a four-year contract."
       }
     }
   ]
