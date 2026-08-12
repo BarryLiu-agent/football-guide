@@ -65,7 +65,8 @@ def get_date_range():
     return date_from, date_to
 
 def fetch_competition(code, date_from, date_to, retry=2):
-    """抓取单个联赛的比赛数据（带异常保护与限流重试）"""
+    """抓取单个联赛的比赛数据（带异常保护与限流重试）。
+    返回 {"matches": [...], "error": str_or_None}，用于区分无比赛和真正失败。"""
     url = f"{API_BASE}/competitions/{code}/matches"
     params = {"dateFrom": date_from, "dateTo": date_to}
     try:
@@ -75,22 +76,23 @@ def fetch_competition(code, date_from, date_to, retry=2):
         if retry > 0:
             time.sleep(10)
             return fetch_competition(code, date_from, date_to, retry - 1)
-        return []
+        return {"matches": [], "error": f"网络错误: {e}"}
     if r.status_code == 200:
         try:
-            return r.json().get("matches", [])
-        except Exception:
-            return []
+            return {"matches": r.json().get("matches", []), "error": None}
+        except Exception as e:
+            return {"matches": [], "error": f"JSON 解析失败: {e}"}
     elif r.status_code == 429:
         if retry > 0:
             print(f"  ⚠ {code}: 请求太频繁(429)，等待60秒后重试...")
             time.sleep(60)
             return fetch_competition(code, date_from, date_to, retry - 1)
         print(f"  ✗ {code}: 429 重试耗尽")
-        return []
+        return {"matches": [], "error": "请求太频繁(429)"}
     else:
-        print(f"  ✗ {code}: HTTP {r.status_code} - {r.text[:200]}")
-        return []
+        err_text = r.text[:200]
+        print(f"  ✗ {code}: HTTP {r.status_code} - {err_text}")
+        return {"matches": [], "error": f"HTTP {r.status_code}: {err_text}"}
 
 
 def fetch_standings():
@@ -176,11 +178,17 @@ def main(no_filter=False, no_standings=False):
 
     for code, name in COMPETITIONS.items():
         print(f"   抓取 {name}({code})...", end=" ", flush=True)
-        matches = fetch_competition(code, date_from, date_to)
-        if matches:
+        result = fetch_competition(code, date_from, date_to)
+        matches = result["matches"]
+        error = result.get("error")
+        if error:
+            errors.append({"code": code, "name": name, "reason": error})
+            print(f"✗ {error}")
+        elif matches:
             print(f"✓ {len(matches)} 场比赛")
         else:
-            errors.append({"code": code, "name": name})
+            # 空数据≠错误；欧冠等赛事在休赛期/资格赛阶段会自然无比赛
+            print("○ 当前窗口无比赛")
         all_matches.extend(matches)
         # Football-Data 免费 10 req/min：11 联赛需间隔，防 429
         time.sleep(4)

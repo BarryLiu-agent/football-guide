@@ -3,7 +3,8 @@ name: Daily Data Fetch & Deploy
 on:
   schedule:
     # 每天一次 UTC 02:00（北京 10:00）→ 赔率走势曲线每天累积 1 个采样点。
-    # The Odds API 免费配额 500/月：5 联赛 × 3 markets = 15/天 ≈ 450/月（CL 休赛期不抓）
+    # The Odds API 免费配额 500/月：6 联赛 × 3 markets = 18/天 ≈ 540/月。
+    # 若配额紧张，可在欧冠休赛期临时去掉 CL；默认按“五大联赛+欧冠”目标范围抓取。
     - cron: '0 2 * * *'
   push:
     branches: [main]
@@ -37,7 +38,8 @@ jobs:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
           ODDS_API_KEY_2: ${{ secrets.ODDS_API_KEY_2 }}
           ODDS_API_KEY_3: ${{ secrets.ODDS_API_KEY_3 }}
-        run: python scripts/odds_fetcher.py --leagues PL PD SA BL1 FL1
+          ODDS_API_KEY_4: ${{ secrets.ODDS_API_KEY_4 }}
+        run: python scripts/odds_fetcher.py --leagues PL PD SA BL1 FL1 CL
 
       - name: Fetch Asian handicap (football-data.co.uk)
         run: python scripts/asian_fetch.py 2526

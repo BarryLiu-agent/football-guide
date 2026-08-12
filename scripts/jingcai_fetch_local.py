@@ -37,6 +37,18 @@ HEADERS = {
     "Referer": "https://www.sporttery.cn/",
 }
 
+# 本站仅覆盖五大联赛 + 欧冠；竞彩接口会同时售卖其他赛事，必须白名单过滤。
+LEAGUE_WHITELIST = {
+    # 五大联赛（竞彩中文全名/常见别名）
+    "英格兰超级联赛", "英超",
+    "西班牙甲级联赛", "西甲",
+    "意大利甲级联赛", "意甲",
+    "德国甲级联赛", "德甲",
+    "法国甲级联赛", "法甲",
+    # 欧冠
+    "欧洲冠军联赛", "欧冠",
+}
+
 
 def fetch(pool_code: str = "hhad,had,ttg,hafu,crs") -> dict:
     """抓取竞彩全部在售比赛与 SP。"""
@@ -56,6 +68,9 @@ def normalize(d: dict) -> dict:
     for day in value.get("matchInfoList", []):
         for m in day.get("subMatchList", []):
             if m.get("sellStatus") not in (1, 2):  # 在售/部分销售都保留
+                continue
+            league_name = m.get("leagueAllName", "")
+            if league_name not in LEAGUE_WHITELIST:
                 continue
             # 四种玩法 SP
             had = m.get("had") or {}

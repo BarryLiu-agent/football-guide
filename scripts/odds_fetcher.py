@@ -32,6 +32,7 @@ ROOT = Path(__file__).resolve().parent.parent
 CONFIG_DIR = ROOT / "config"
 DATA_DIR = ROOT / "data"
 ODDS_DIR = DATA_DIR / "odds"
+QUOTA_FILE = DATA_DIR / "odds_quota.json"
 
 # 加载 .env（不覆盖已存在的环境变量），避免每次会话手动 export
 _env_file = ROOT / ".env"
@@ -65,12 +66,75 @@ class OddsSource:
 
 class TheOddsApiSource(OddsSource):
     """The Odds API (https://the-odds-api.com)
-    支持多 API Key 轮换：ODDS_API_KEY(主) → ODDS_API_KEY_2(备) → ...
-    配额保护：剩余 < MIN_REMAINING 的 Key 自动跳过；401/403 时自动切换下一个。
+    支持多 API Key 智能轮换：按响应头 X-Requests-Remaining 优先使用剩余配额最多的 Key。
+    配额保护：剩余 < MIN_REMAINING 的 Key 自动跳过；401/403/429 时切换下一个。
+    配额状态持久化到 data/odds_quota.json，供跨运行监控与动态降频决策。
     """
 
-    MIN_REMAINING = 1  # 剩余≥1 即可尝试（401 不扣配额，失败自动切换）
-    _key_quota = {}  # key -> remaining（本次运行内缓存）
+    MIN_REMAINING = 1        # 剩余≥1 即可尝试（401 不扣配额，失败自动切换）
+    LOW_THRESHOLD = 50       # 总剩余低于此值时打印告警并考虑降频
+    WARN_THRESHOLD = 20      # 总剩余低于此值时强制跳过非核心联赛
+    _key_quota = {}          # key -> remaining（本次运行内缓存）
+
+    def __init__(self, config: dict):
+        super().__init__(config)
+        self._load_quota()
+
+    @staticmethod
+    def _mask_key(key: str) -> str:
+        """只保留 key 后 4 位，用于日志与状态文件，避免泄露完整 Key。"""
+        if not key:
+            return ""
+        return "*" * (len(key) - 4) + key[-4:] if len(key) > 4 else key
+
+    def _load_quota(self):
+        """加载上次运行保存的配额状态（作为初始参考）。"""
+        if QUOTA_FILE.exists():
+            try:
+                data = json.loads(QUOTA_FILE.read_text(encoding="utf-8"))
+                for item in data.get("keys", []):
+                    # 通过环境变量重新拿到真实 key；文件里只存掩码
+                    env_name = item.get("env")
+                    key = os.environ.get(env_name, "").strip()
+                    if key and item.get("remaining") is not None:
+                        self._key_quota[key] = int(item["remaining"])
+            except Exception:
+                pass
+
+    def _save_quota(self):
+        """把当前各 Key 剩余配额写入状态文件，供下次运行与前端监控。"""
+        keys_state = []
+        total = 0
+        for env_name in ["ODDS_API_KEY", "ODDS_API_KEY_2", "ODDS_API_KEY_3", "ODDS_API_KEY_4"]:
+            key = os.environ.get(env_name, "").strip()
+            remaining = self._key_quota.get(key)
+            if key:
+                keys_state.append({
+                    "env": env_name,
+                    "last4": key[-4:],
+                    "remaining": remaining,
+                    "masked": self._mask_key(key),
+                })
+                if remaining is not None:
+                    total += remaining
+        payload = {
+            "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "totalRemaining": total,
+            "keys": keys_state,
+        }
+        try:
+            DATA_DIR.mkdir(parents=True, exist_ok=True)
+            QUOTA_FILE.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        except Exception as e:
+            print(f"    - 配额状态保存失败: {e}")
+
+    @classmethod
+    def total_remaining(cls) -> int:
+        """返回所有 Key 的剩余配额总和（-1 表示未知）。"""
+        vals = [v for v in cls._key_quota.values() if v is not None]
+        if not vals:
+            return -1
+        return sum(vals)
 
     LEAGUE_MAP = {
         "PL": "soccer_epl",
@@ -95,64 +159,40 @@ class TheOddsApiSource(OddsSource):
     }
 
     def _get_keys(self):
-        """按优先级收集所有可用 Key（去空/去重）。"""
+        """收集所有可用 Key，并按上次已知剩余配额降序排列（优先用剩余最多的）。"""
         keys = []
         for env_name in ["ODDS_API_KEY", "ODDS_API_KEY_2", "ODDS_API_KEY_3", "ODDS_API_KEY_4"]:
             k = os.environ.get(env_name, "").strip()
             if k and k not in keys:
                 keys.append(k)
+        # 剩余未知时视为 0，确保新 key 也能参与排序
+        keys.sort(key=lambda k: self._key_quota.get(k, 0), reverse=True)
         return keys
 
     def fetch(self, league_code: str) -> list:
-        sport = self.LEAGUE_MAP.get(league_code)
-        if not sport:
-            return []
-        keys = self._get_keys()
-        if not keys:
-            print(f"    - {league_code}: 未配置 ODDS_API_KEY")
-            return []
-
-        params_base = {
-            "regions": ",".join(self.config.get("regions", ["eu"])),
-            "markets": ",".join(self.config.get("markets", ["h2h"])),
-        }
-        url = f"{self.config['baseUrl']}/sports/{sport}/odds"
-
-        for key in keys:
-            # 配额保护：本次运行内剩余不足则跳过
-            if self._key_quota.get(key, 999) < self.MIN_REMAINING:
-                continue
-            params = dict(params_base, apiKey=key)
-            # 亚盘降级：部分 region 不支持 asian_handicap → 422 时去掉重试
-            retry_without_asian = False
-            try:
-                r = requests.get(url, params=params, timeout=20)
-                try:
-                    self._key_quota[key] = int(r.headers.get("x-requests-remaining", 999))
-                except (TypeError, ValueError):
-                    pass
-                if r.status_code == 200:
-                    tag = key[-4:]
-                    print(f"      (key ...{tag}, 剩 {self._key_quota.get(key, '?')})")
-                    return [self.normalize(x) for x in r.json()]
-                if r.status_code == 422 and "asian_handicap" in params["markets"]:
-                    retry_without_asian = True
-                elif r.status_code in (401, 403):
-                    self._key_quota[key] = 0
-                    continue
-                elif r.status_code == 429:
-                    self._key_quota[key] = 0
-                    continue
-                else:
-                    print(f"    - {league_code}: HTTP {r.status_code} (key ...{key[-4:]})")
-                    return []
-            except Exception as e:
-                print(f"    - {league_code}: 请求失败 {e} (key ...{key[-4:]})")
+        """抓取单个联赛赔率；任何返回路径都会把最新配额状态写回文件。"""
+        try:
+            sport = self.LEAGUE_MAP.get(league_code)
+            if not sport:
                 return []
-            if retry_without_asian:
-                print(f"    - {league_code}: asian_handicap 不受支持，降级重试 (key ...{key[-4:]})")
+            keys = self._get_keys()
+            if not keys:
+                print(f"    - {league_code}: 未配置 ODDS_API_KEY")
+                return []
+
+            params_base = {
+                "regions": ",".join(self.config.get("regions", ["eu"])),
+                "markets": ",".join(self.config.get("markets", ["h2h"])),
+            }
+            url = f"{self.config['baseUrl']}/sports/{sport}/odds"
+
+            for key in keys:
+                # 配额保护：本次运行内剩余不足则跳过
+                if self._key_quota.get(key, 999) < self.MIN_REMAINING:
+                    continue
                 params = dict(params_base, apiKey=key)
-                params["markets"] = ",".join(m for m in self.config.get("markets", ["h2h"]) if m != "asian_handicap")
+                # 亚盘降级：部分 region 不支持 asian_handicap → 422 时去掉重试
+                retry_without_asian = False
                 try:
                     r = requests.get(url, params=params, timeout=20)
                     try:
@@ -160,18 +200,48 @@ class TheOddsApiSource(OddsSource):
                     except (TypeError, ValueError):
                         pass
                     if r.status_code == 200:
-                        print(f"      (key ...{key[-4:]}, 剩 {self._key_quota.get(key, '?')}, 无亚盘)")
+                        tag = key[-4:]
+                        print(f"      (key ...{tag}, 剩 {self._key_quota.get(key, '?')})")
                         return [self.normalize(x) for x in r.json()]
-                    if r.status_code in (401, 403, 429):
+                    if r.status_code == 422 and "asian_handicap" in params["markets"]:
+                        retry_without_asian = True
+                    elif r.status_code in (401, 403):
                         self._key_quota[key] = 0
                         continue
-                    print(f"    - {league_code}: HTTP {r.status_code} (降级后, key ...{key[-4:]})")
-                    return []
+                    elif r.status_code == 429:
+                        self._key_quota[key] = 0
+                        continue
+                    else:
+                        print(f"    - {league_code}: HTTP {r.status_code} (key ...{key[-4:]})")
+                        return []
                 except Exception as e:
-                    print(f"    - {league_code}: 降级请求失败 {e} (key ...{key[-4:]})")
+                    print(f"    - {league_code}: 请求失败 {e} (key ...{key[-4:]})")
                     return []
-        print(f"    - {league_code}: 所有 Key 配额不足或不可用")
-        return []
+                if retry_without_asian:
+                    print(f"    - {league_code}: asian_handicap 不受支持，降级重试 (key ...{key[-4:]})")
+                    params = dict(params_base, apiKey=key)
+                    params["markets"] = ",".join(m for m in self.config.get("markets", ["h2h"]) if m != "asian_handicap")
+                    try:
+                        r = requests.get(url, params=params, timeout=20)
+                        try:
+                            self._key_quota[key] = int(r.headers.get("x-requests-remaining", 999))
+                        except (TypeError, ValueError):
+                            pass
+                        if r.status_code == 200:
+                            print(f"      (key ...{key[-4:]}, 剩 {self._key_quota.get(key, '?')}, 无亚盘)")
+                            return [self.normalize(x) for x in r.json()]
+                        if r.status_code in (401, 403, 429):
+                            self._key_quota[key] = 0
+                            continue
+                        print(f"    - {league_code}: HTTP {r.status_code} (降级后, key ...{key[-4:]})")
+                        return []
+                    except Exception as e:
+                        print(f"    - {league_code}: 降级请求失败 {e} (key ...{key[-4:]})")
+                        return []
+            print(f"    - {league_code}: 所有 Key 配额不足或不可用")
+            return []
+        finally:
+            self._save_quota()
 
     def normalize(self, raw: dict) -> dict:
         home_name = raw.get("home_team", "")
@@ -389,10 +459,24 @@ def main():
 
     print(f"数据源: {[type(s).__name__ for s in sources]}")
 
+    # ── 配额监控与动态降频 ───────────────────────────────────
+    total_remaining = TheOddsApiSource.total_remaining()
+    print(f"\nThe Odds API 配额状态: 总剩余 {total_remaining if total_remaining >= 0 else '未知'} 次")
+    for item in TheOddsApiSource._key_quota.items():
+        print(f"  key ...{item[0][-4:]}: 剩 {item[1]}")
+
+    leagues_to_fetch = list(args.leagues)
+    if total_remaining >= 0 and total_remaining < TheOddsApiSource.WARN_THRESHOLD and "CL" in leagues_to_fetch:
+        # 配额极度紧张时，跳过非核心的欧冠以保五大联赛
+        print(f"⚠ 总剩余配额仅 {total_remaining} 次，低于 {TheOddsApiSource.WARN_THRESHOLD} 阈值，本次跳过欧冠(CL)")
+        leagues_to_fetch.remove("CL")
+    elif total_remaining >= 0 and total_remaining < TheOddsApiSource.LOW_THRESHOLD:
+        print(f"⚠ 总剩余配额仅 {total_remaining} 次，低于 {TheOddsApiSource.LOW_THRESHOLD} 阈值，建议关注或手动降频")
+
     ODDS_DIR.mkdir(parents=True, exist_ok=True)
     all_odds = []
     fetch_failed = False
-    for league in args.leagues:
+    for league in leagues_to_fetch:
         print(f"  {league}...")
         per_source = []
         for src in sources:
