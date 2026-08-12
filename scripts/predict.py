@@ -545,8 +545,10 @@ FORM_LAST = 5  # 近 5 场状态
 
 
 def load_form(min_kickoff=""):
-    """每队最近 N 场场均积分（0~3）。数据源 data/season_2025.json。
-    只使用早于预测窗口开赛日的赛果（防未来函数），并按时间排序取每队最近 FORM_LAST 场。"""
+    """每队最近 N 场场均积分（0~3），主/客场分开计算。
+    数据源 data/season_2025.json。
+    只使用早于预测窗口开赛日的赛果（防未来函数），并按时间排序取每队最近 FORM_LAST 场。
+    返回 { team: {"home": 场均主场积分, "away": 场均客场积分, "overall": 场均总积分} }"""
     path = DATA_DIR / "season_2025.json"
     if not path.exists():
         return {}
@@ -564,18 +566,32 @@ def load_form(min_kickoff=""):
             continue
         for side in ("home", "away"):
             t = norm_team(m[f"{side}Team"])
-            team_matches.setdefault(t, []).append(m)
+            team_matches.setdefault(t, []).append({"m": m, "side": side})
     form = {}
     for t, ms in team_matches.items():
-        ms = sorted(ms, key=lambda x: x.get("utcDate", ""))[-FORM_LAST:]
-        if not ms:
+        ms = sorted(ms, key=lambda x: x["m"].get("utcDate", ""))
+        # 最近 N 场总体
+        recent = ms[-FORM_LAST:]
+        if not recent:
             continue
-        total = 0.0
-        for m in ms:
-            gf, ga = m["homeGoals"], m["awayGoals"]
-            pts = 3 if gf > ga else (1 if gf == ga else 0)
-            total += pts
-        form[t] = round(total / len(ms), 3)
+        def avg_pts(items):
+            if not items:
+                return None
+            total = 0.0
+            for it in items:
+                m = it["m"]
+                gf, ga = m["homeGoals"], m["awayGoals"]
+                pts = 3 if gf > ga else (1 if gf == ga else 0)
+                total += pts
+            return round(total / len(items), 3)
+        # 主场只看主队身份的最近 N 场；客场只看客队身份
+        home_ms = [it for it in recent if it["side"] == "home"][-FORM_LAST:]
+        away_ms = [it for it in recent if it["side"] == "away"][-FORM_LAST:]
+        form[t] = {
+            "home": avg_pts(home_ms),
+            "away": avg_pts(away_ms),
+            "overall": avg_pts(recent),
+        }
     return form
 
 
@@ -690,11 +706,19 @@ def main():
             odds_result = results.get("odds")
             msg_result = results.get("message")
 
-            # ── Elo 独立概率（近 5 场 form 微调，幅度 ≤±5%）──
+            # ── Elo 独立概率（近 5 场 form 微调，主队用主场 form、客队用客场 form）──
             ep_home, ep_draw, ep_away = elo.predict(home, away)
-            fh, fa = form.get(norm_team(home)), form.get(norm_team(away))
-            if fh is not None and fa is not None:
-                adj = (fh - fa) * 0.02
+            fh = form.get(norm_team(home)) or {}
+            fa = form.get(norm_team(away)) or {}
+            # 主场龙/客场虫：主队取主场积分，客队取客场积分，缺失时回退 overall
+            fh_v = fh.get("home") if isinstance(fh, dict) else fh
+            fa_v = fa.get("away") if isinstance(fa, dict) else fa
+            if fh_v is None and isinstance(fh, dict):
+                fh_v = fh.get("overall")
+            if fa_v is None and isinstance(fa, dict):
+                fa_v = fa.get("overall")
+            if fh_v is not None and fa_v is not None:
+                adj = (fh_v - fa_v) * 0.02
                 ep_home += adj
                 ep_away -= adj
                 _s = ep_home + ep_draw + ep_away
