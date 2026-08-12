@@ -1092,6 +1092,26 @@ function renderRecord() {
     '<div class="rec-card"><div class="v">' + pct(s.aiExactRate) + '</div><div class="k">🤖 AI 比分精确</div></div>' +
     '</div>' +
     '<div style="font-size:11px;color:var(--muted);margin-bottom:4px">AI vs 模型同场对比：AI 有倾向场次方向命中 ' + pct(s.aiRate) + ' vs 全量模型 ' + pct(s.outcomeRate) + ' · 样本累积中，越多越可信</div>' : '';
+  // 按盘口类型统计（模型方向 vs 实际）
+  const mktRow = (s.ouTotal > 0 || s.spTotal > 0) ? '<div class="section-title" style="margin-top:14px">🎯 按盘口类型（模型方向 vs 实际）</div>' +
+    '<div class="table-wrap"><table class="standings" style="min-width:400px">' +
+    '<thead><tr><th>盘口类型</th><th style="text-align:right">场次</th><th style="text-align:right">命中</th><th style="text-align:right">命中率</th></tr></thead><tbody>' +
+    '<tr><td>胜平负（方向）</td><td style="text-align:right">' + (s.finished || 0) + '</td><td style="text-align:right">' + (s.outcomeHit || 0) + '</td><td style="text-align:right;font-weight:700" class="' + (s.outcomeRate >= 0.5 ? 'up' : 'down') + '">' + pct(s.outcomeRate) + '</td></tr>' +
+    '<tr><td>大小球（模型方向）</td><td style="text-align:right">' + (s.ouTotal || 0) + '</td><td style="text-align:right">' + (s.ouHit || 0) + '</td><td style="text-align:right;font-weight:700" class="' + ((s.ouRate || 0) >= 0.5 ? 'up' : 'down') + '">' + pct(s.ouRate) + '</td></tr>' +
+    '<tr><td>让球（模型方向）</td><td style="text-align:right">' + (s.spTotal || 0) + '</td><td style="text-align:right">' + (s.spHit || 0) + '</td><td style="text-align:right;font-weight:700" class="' + ((s.spRate || 0) >= 0.5 ? 'up' : 'down') + '">' + pct(s.spRate) + '</td></tr>' +
+    '</tbody></table></div>' +
+    '<div style="font-size:11px;color:var(--muted);margin-top:6px">大小球 = 模型大/小球方向 vs 实际总进球；让球 = 模型主队赢盘方向 vs 实际净胜</div>' : '';
+  // 按置信度区间统计（验证高置信是否真的更准）
+  const cb = s.confBuckets || {};
+  const cbRows = ['low', 'mid', 'high'].filter(k => cb[k] && cb[k].n > 0).map(k => {
+    const name = { low: '低置信 <50%', mid: '中置信 50-65%', high: '高置信 ≥65%' }[k];
+    const b = cb[k];
+    return '<tr><td>' + name + '</td><td style="text-align:right">' + b.n + '</td><td style="text-align:right">' + pct(b.rate) + '</td><td style="text-align:right">' + pct(b.avgConf) + '</td><td class="' + (b.rate >= b.avgConf - 0.02 ? 'up' : 'down') + '" style="text-align:right">' + (b.rate >= b.avgConf - 0.02 ? '符合预期' : '偏乐观') + '</td></tr>';
+  }).join('');
+  const confRow = (s.finished > 0 && cbRows) ? '<div class="section-title" style="margin-top:14px">📐 按置信度区间（验证校准）</div>' +
+    '<div class="table-wrap"><table class="standings" style="min-width:420px">' +
+    '<thead><tr><th>区间</th><th style="text-align:right">场次</th><th style="text-align:right">实际命中</th><th style="text-align:right">平均置信</th><th>校准判断</th></tr></thead><tbody>' + cbRows + '</tbody></table></div>' +
+    '<div style="font-size:11px;color:var(--muted);margin-top:6px">实际命中 ≥ 平均置信 = 校准良好；实际命中 < 平均置信 = 模型偏乐观（高置信该打折）</div>' : '';
    // ROI 盈亏：按价值信号推荐（方向+当时欧赔+凯利注额，注额上限 5%）统一结算
    const roiCls = s.betPnl > 0 ? 'green' : (s.betPnl < 0 ? 'red' : '');
    const roiRow = (s.betSettled > 0) ? '<div class="record-cards" style="margin-top:8px;border:1px solid var(--border);border-radius:12px;padding:6px">' +
@@ -1117,6 +1137,8 @@ function renderRecord() {
   '<div class="record-cards">' + cards.map(c =>
     '<div class="rec-card"><div class="v ' + (c.cls || '') + '">' + c.v + '</div><div class="k">' + c.k + '</div></div>'
   ).join('') + '</div>' +
+  mktRow +
+  confRow +
   aiRow +
   roiRow +
   '<div style="font-size:11px;color:var(--muted);margin-bottom:10px">命中判定基于预测时的胜负方向；价值标记命中 = 模型 vs 盘口差>5%的方向是否正确 · 🤖 标记为 AI 研判同场命中 · 💰 标记为推荐投注盈亏（基准注额） · 样本越多越可信</div>' +

@@ -998,7 +998,8 @@ def evaluate_predictions(predictions):
         except Exception:
             hist = {"predictions": [], "results": []}
 
-    # 1. 合并当前预测（去重：同队同日期只保留最早一条）
+    # 1. 合并当前预测（临场口径：同场已有预测时，赛前 24h 内的新预测覆盖旧预测，
+    #    取离开赛最近的一次；开赛前 >24h 的预测不覆盖已存档的）
     seen = set()
     for p in hist["predictions"]:
         seen.add((norm_team(p["homeTeam"]), norm_team(p["awayTeam"]), p.get("kickoff", "")[:10]))
@@ -1006,11 +1007,33 @@ def evaluate_predictions(predictions):
         key = (norm_team(p["homeTeam"]), norm_team(p["awayTeam"]), (p.get("kickoff") or "")[:10])
         ai = p.get("aiJudge") or {}
         if key in seen:
-            # 已存档：若当时无 AI 研判而现在有 → 补写（便于结算 AI 命中）
+            # 已存档：若本次预测距开赛 <24h（临场）→ 覆盖旧预测
+            try:
+                kickoff_ts = datetime.fromisoformat((p.get("kickoff") or "").replace("Z", "+00:00"))
+                hours_to_kickoff = (kickoff_ts - datetime.now(timezone.utc)).total_seconds() / 3600
+                is_late = 0 <= hours_to_kickoff < 24
+            except Exception:
+                is_late = False
             old = next((q for q in hist["predictions"]
-                        if (norm_team(q["homeTeam"]), norm_team(q["awayTeam"]), q.get("kickoff", "")[:10]) == key
-                        and not q.get("aiPick") and not q.get("actualScore")), None)
-            if old and ai.get("pick"):
+                        if (norm_team(q["homeTeam"]), norm_team(q["awayTeam"]), q.get("kickoff", "")[:10]) == key), None)
+            if old and is_late and not old.get("actualScore"):
+                # 覆盖为新预测（临场最新）
+                old["predictedScore"] = p["predictedScore"]
+                old["confidence"] = p.get("confidence")
+                old["valuePicks"] = p.get("valuePicks") or []
+                old["signalLevel"] = p.get("signalLevel", "none")
+                old["predictedAt"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+                old["ouModel"] = p.get("ouModel") or old.get("ouModel")
+                old["spModel"] = p.get("spModel") or old.get("spModel")
+                old["betRec"] = p.get("betRec") or old.get("betRec")
+                # AI 字段：新预测有则用新的，否则保留旧的
+                if ai.get("pick"):
+                    old["aiPick"] = ai.get("pick")
+                    old["aiScore"] = ai.get("score")
+                    old["aiConfidence"] = ai.get("confidence")
+                    old["aiModel"] = ai.get("model")
+            elif old and not old.get("aiPick") and ai.get("pick"):
+                # 非临场或已结算：仅补写 AI 研判
                 old["aiPick"] = ai.get("pick")
                 old["aiScore"] = ai.get("score")
                 old["aiConfidence"] = ai.get("confidence")
@@ -1029,6 +1052,9 @@ def evaluate_predictions(predictions):
             "aiConfidence": ai.get("confidence"),
             "aiModel": ai.get("model"),
             "betRec": p.get("betRec"),
+            # 盘口方向（用于按盘口类型统计）
+            "ouModel": p.get("ouModel"),
+            "spModel": p.get("spModel"),
             "predictedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         })
 
@@ -1077,6 +1103,13 @@ def evaluate_predictions(predictions):
     ai_total = 0
     ai_hit = 0
     ai_exact = 0
+    # 盘口类型统计（模型方向 vs 实际）
+    ou_total = 0
+    ou_hit = 0
+    sp_total = 0
+    sp_hit = 0
+    # 置信度区间统计
+    conf_buckets = {"low": [0, 0, 0.0], "mid": [0, 0, 0.0], "high": [0, 0, 0.0]}  # [n, hit, sum_conf]
     bet_stake_total = 0.0   # 累计下注额
     bet_pnl = 0.0           # 累计盈亏
     bet_won = 0             # 赢的场次数
@@ -1125,6 +1158,41 @@ def evaluate_predictions(predictions):
                 exact_hit += 1
             if p["hitOutcome"]:
                 outcome_hit += 1
+            # 盘口类型命中：模型方向 vs 实际赛果
+            actual_out = outcome_of(r["actualScore"])
+            hg, ag = (int(x) for x in r["actualScore"].split("-"))
+            # 大小球（ouModel：over≥0.5 → 大球方向）
+            om = p.get("ouModel") or {}
+            if om.get("over") is not None and om.get("line") is not None:
+                ou_total += 1
+                model_over = om["over"] >= 0.5
+                actual_over = (hg + ag) > om["line"]
+                hit_ou = model_over == actual_over
+                if hit_ou:
+                    ou_hit += 1
+                p["hitOu"] = hit_ou
+            # 让球（spModel：cover≥0.5 → 主队赢盘方向）
+            sm = p.get("spModel") or {}
+            if sm.get("cover") is not None and sm.get("point") is not None:
+                sp_total += 1
+                model_home_cover = sm["cover"] >= 0.5
+                actual_cover = (hg - ag) > -sm["point"]
+                hit_sp = model_home_cover == actual_cover
+                if hit_sp:
+                    sp_hit += 1
+                p["hitSp"] = hit_sp
+            # 置信度区间
+            conf = p.get("confidence") or 0
+            if conf < 0.5:
+                key_b = "low"
+            elif conf < 0.65:
+                key_b = "mid"
+            else:
+                key_b = "high"
+            conf_buckets[key_b][0] += 1
+            if p["hitOutcome"]:
+                conf_buckets[key_b][1] += 1
+            conf_buckets[key_b][2] += conf
             # AI 研判命中（aiPick 非空且非 none 才统计）
             p["aiHitOutcome"] = None
             p["aiHitExact"] = False
@@ -1199,6 +1267,20 @@ def evaluate_predictions(predictions):
         "betStakeTotal": round(bet_stake_total, 4),
         "betPnl": round(bet_pnl, 4),
         "betROI": round(bet_pnl / bet_stake_total, 4) if bet_stake_total else 0,
+        # 盘口类型统计
+        "ouTotal": ou_total,
+        "ouHit": ou_hit,
+        "ouRate": round(ou_hit / ou_total, 4) if ou_total else 0,
+        "spTotal": sp_total,
+        "spHit": sp_hit,
+        "spRate": round(sp_hit / sp_total, 4) if sp_total else 0,
+        # 置信度区间统计
+        "confBuckets": {
+            k: {"n": v[0], "hit": v[1],
+                "rate": round(v[1] / v[0], 4) if v[0] else 0,
+                "avgConf": round(v[2] / v[0], 4) if v[0] else 0}
+            for k, v in conf_buckets.items()
+        },
         "updatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
     }
     hist["stats"] = stats
