@@ -58,6 +58,9 @@ jobs:
       - name: Odds calibration backtest (OU/Asian)
         run: python scripts/backtest_ou.py
 
+      - name: Model evolution (weekly self-calibration)
+        run: python scripts/evolve.py --apply
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
