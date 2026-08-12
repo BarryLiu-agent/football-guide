@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T11:56:31Z",
+  "generatedAt": "2026-08-12T12:40:53Z",
   "total": 20,
   "messages": [
     {
@@ -88,6 +88,28 @@
         "link": "https://www.skysports.com/f1/news/12040/13569682/f1-2026-regulations-stefano-domenicali-responds-to-criticism-about-current-power-unit-regulations",
         "lang": "en",
         "summary": "Formula 1 president Stefano Domenicali says drivers \"can have their opinion\" and are not being stopped from criticising the sport's power unit regulations."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Dubois on collision course with Turkish rival? MVP announce Turhan signing",
+      "timestamp": "Wed, 12 Aug 2026 13:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/boxing/news/12040/13572018/caroline-dubois-could-face-elif-nur-turhan-after-rival-lightweight-world-champion-signed-for-most-valuable-promotions",
+        "lang": "en",
+        "summary": "Caroline Dubois could settle her rivalry with Elif Nur Turhan after the Turkish world champion signed for Most Valuable Promotions."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "'Be adults!' - Captain Root removes England curfew",
+      "timestamp": "Wed, 12 Aug 2026 13:30:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/cricket/news/12040/13572211/joe-root-england-test-captain-removes-curfew-and-implores-his-players-to-be-adults-ahead-of-pakistan-series",
+        "lang": "en",
+        "summary": "Joe Root has ruled out a curfew under his England Test captaincy and implored his players to behave like \"grown adults\" ahead of his first series back at the helm against Pakistan."
       }
     },
     {
@@ -198,28 +220,6 @@
         "link": "https://www.skysports.com/cricket/news/12040/13572042/solar-eclipse-floodlights-to-be-turned-on-during-uk-sports-events-including-the-hundred-and-kempton-racing",
         "lang": "en",
         "summary": "Floodlights will be turned on throughout games in The Hundred on Wednesday due to the solar eclipse."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Inter Milan in talks over Spurs and England defender Spence",
-      "timestamp": "Tue, 11 Aug 2026 17:59:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13572037/djed-spence-transfer-news-inter-milan-in-talks-to-sign-spurs-and-england-defender",
-        "lang": "en",
-        "summary": "Tottenham&#160;are in talks with&#160;Inter Milan&#160;over the sale of&#160;Djed Spence."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Unbeaten star Bow Echo in shock retirement after setback",
-      "timestamp": "Tue, 11 Aug 2026 16:50:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/racing/news/12040/13572012/bow-echo-george-bougheys-unbeaten-star-miler-in-shock-retirement-from-racing-after-setback",
-        "lang": "en",
-        "summary": "Bow Echo has been retired from racing after the shock news that George Boughey's unbeaten star has suffered a setback in training."
       }
     }
   ]

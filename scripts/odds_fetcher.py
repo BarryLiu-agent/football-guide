@@ -217,23 +217,6 @@ class TheOddsApiSource(OddsSource):
                         elif o["name"] == away_name:
                             asian["away"].append({"price": o["price"], "point": point})
         med = lambda xs: statistics.median(xs) if xs else None
-        # 每家公司的原始赔率（Best Price 对比用）：保留各公司 h2h 主/平/客
-        bookmaker_odds = []
-        for bm in raw.get("bookmakers", []):
-            bm_name = bm.get("title", "")
-            bm_h2h = {}
-            for market in bm.get("markets", []):
-                if market.get("key") != "h2h":
-                    continue
-                for o in market.get("outcomes", []):
-                    if o["name"] == home_name:
-                        bm_h2h["home"] = o["price"]
-                    elif o["name"] == away_name:
-                        bm_h2h["away"] = o["price"]
-                    elif o["name"].lower() == "draw":
-                        bm_h2h["draw"] = o["price"]
-            if bm_h2h:
-                bookmaker_odds.append({"name": bm_name, "h2h": bm_h2h})
         # 让球盘: 取最常见点差(mode)，赔率取中位数
         def spread_agg(items):
             if not items:
@@ -257,7 +240,6 @@ class TheOddsApiSource(OddsSource):
                 "spreads": {"home": spread_agg(spreads["home"]), "away": spread_agg(spreads["away"])},
                 "asian": {"home": spread_agg(asian["home"]), "away": spread_agg(asian["away"])},
             },
-            "bookmakerOdds": bookmaker_odds,
             "bookmakers": len(raw.get("bookmakers", [])),
             "source": "theoddsapi",
         }
@@ -386,7 +368,6 @@ def aggregate(matches_by_source):
             },
             "sources": [m["source"] for m in ms],
             "bookmakers": sum(m.get("bookmakers", 0) for m in ms),
-            "bookmakerOdds": ms[0].get("bookmakerOdds") or [],
         })
     return results
 
