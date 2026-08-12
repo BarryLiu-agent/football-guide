@@ -1,7 +1,40 @@
 {
-  "generatedAt": "2026-08-12T08:53:57Z",
+  "generatedAt": "2026-08-12T09:42:18Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "What next for Birmingham City? Why Davies is changing his approach",
+      "timestamp": "Wed, 12 Aug 2026 10:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13566218/chris-davies-interview-birmingham-city-managers-tactical-change-could-take-this-ambitious-club-up-from-the-championship",
+        "lang": "en",
+        "summary": "Birmingham City is a football club transformed. Over 20,000 season tickets have been sold for the forthcoming Championship season, with 14,000 more on the waiting list. Fan parks surround St Andrew's these days. The buzz around the place is palpable."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Championship play-off changes, new managers & star players - the EFL is BACK!",
+      "timestamp": "Wed, 12 Aug 2026 10:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571934/efl-2026-27-season-preview-championship-play-off-changes-new-managers-and-star-players",
+        "lang": "en",
+        "summary": "The 2026/27 EFL season is here!"
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Sky Sports agrees deal to show Laver Cup from London's O2 in September",
+      "timestamp": "Wed, 12 Aug 2026 10:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/tennis/news/12040/13571896/laver-cup-sky-sports-to-show-europe-vs-rest-of-the-world-from-londons-o2-in-september",
+        "lang": "en",
+        "summary": "<em>Sky Sports </em>has agreed a deal with Trident8 to show all three days of the Laver Cup from London's O2 arena this September, as 12 of the world's best men's players compete in the annual Europe vs 'Rest of the World' showdown."
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -71,17 +104,6 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "FREE STREAM: Good Morning Transfers on Sky Sports News",
-      "timestamp": "Wed, 12 Aug 2026 08:50:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13569345/free-stream-the-transfer-show-on-sky-sports-news-latest-football-transfer-news-updates-and-rumours",
-        "lang": "en",
-        "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
       "text": "Super Giants rout SunRisers to move to cusp of Hundred eliminator",
       "timestamp": "Tue, 11 Aug 2026 21:00:00 BST",
       "metadata": {
@@ -99,6 +121,17 @@
         "link": "https://www.skysports.com/watch/video/13572095/durban-sharks-0-54-new-zealand-highlights",
         "lang": "en",
         "summary": "Highlights of the Greatest Rivalry tour match between the Sharks and New Zealand in Durban."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Kick It Out chair to leave role at end of season",
+      "timestamp": "Wed, 12 Aug 2026 10:30:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13572182/kick-it-out-sanjay-bhandari-to-step-down-as-chair-after-seven-years-in-role-at-the-end-of-the-season",
+        "lang": "en",
+        "summary": "Kick It Out chair Sanjay Bhandari will leave his role at the end of the 2026/27 season."
       }
     },
     {
@@ -187,39 +220,6 @@
         "link": "https://www.skysports.com/football/live-blog/12040/13163353/championship-news-transfer-latest-and-gossip-plus-efl-updates-from-league-one-and-league-two",
         "lang": "en",
         "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Papers: Chelsea and Man Utd turn down Lewis-Skelly opportunity",
-      "timestamp": "Tue, 11 Aug 2026 22:30:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13572089/myles-lewis-skelly-transfer-news-chelsea-and-man-utd-turn-down-intermediary-offer-to-sign-arsenal-teenager-paper-talk",
-        "lang": "en",
-        "summary": "The top stories and transfer rumours from Wednesday's newspapers..."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Van Veen asks for help as bags stranded in Paris",
-      "timestamp": "Tue, 11 Aug 2026 11:46:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/darts/news/12040/13571915/gian-van-veen-asks-for-help-ahead-of-new-zealand-darts-masters-with-bags-stuck-in-paris",
-        "lang": "en",
-        "summary": "Gian van Veen has taken to social media to ask for help with his bags stuck in Paris ahead of the New Zealand Darts Masters in Auckland this weekend."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "'I Diuuuuu' - Ronaldo marries long-term partner",
-      "timestamp": "Tue, 11 Aug 2026 21:09:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13572078/cristiano-ronaldo-marries-long-time-girlfriend-georgina-rodriguez-in-portugal",
-        "lang": "en",
-        "summary": "Cristiano Ronaldo has married his long-time girlfriend Georgina Rodriguez at a civil ceremony in Portugal."
       }
     }
   ]
