@@ -1,7 +1,95 @@
 {
-  "generatedAt": "2026-08-12T19:50:05Z",
+  "generatedAt": "2026-08-12T22:23:48Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "MI London's Hundred title defence over despite narrow win over Phoenix",
+      "timestamp": "Wed, 12 Aug 2026 22:07:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/cricket/news/12040/13572322/the-hundred-mi-londons-title-defence-and-hopes-of-fourth-in-a-row-over-despite-narrow-win-over-birmingham-phoenix",
+        "lang": "en",
+        "summary": "MI London had the lights turned out on their hopes of claiming a fourth straight Hundred title despite beating bottom-placed Birmingham Phoenix in a nip-and-tuck final men's group match."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Rashford absent in Leeds friendly win but still part of Man Utd plans",
+      "timestamp": "Wed, 12 Aug 2026 21:48:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/manchester-united-vs-leeds-united/report/555721",
+        "lang": "en",
+        "summary": "Joshua Zirkzee and Brenden Aaronson scored as Manchester United and old foes Leeds played out an entertaining 1-1 friendly draw at the spiritual home of Irish sport in Dublin, before the concluding shoot-out was edged 5-4 by Michael Carrick's side."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Guimaraes makes bow and Lewis-Skelly scores as Arsenal held by Como",
+      "timestamp": "Wed, 12 Aug 2026 21:30:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/arsenal-vs-como/report/562442",
+        "lang": "en",
+        "summary": "Bruno Guimaraes made his first appearance and Myles Lewis-Skelly scored amid speculation about his future as Arsenal were held to a 1-1 draw by Como before winning 4-3 on penalties."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Arteta: There's more we want to do in the transfer market",
+      "timestamp": "Wed, 12 Aug 2026 23:10:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13572410/mikel-arteta-says-arsenal-are-actively-looking-for-signings-in-the-transfer-market-after-bruno-guimaraes-makes-bow-in-friendly-against-como",
+        "lang": "en",
+        "summary": "Mikel Arteta says Arsenal are actively looking for more new signings in the transfer market but admits there is only a small pool of available players who can take them to the next level."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Chelsea set Man City deadline to bid for Fernandez",
+      "timestamp": "Wed, 12 Aug 2026 21:49:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13572395/enzo-fernandez-transfer-news-chelsea-set-man-city-deadline-to-bid-for-midfielder",
+        "lang": "en",
+        "summary": "Chelsea have told Manchester City they have a deadline of 5pm this Friday to make an offer for Enzo Fernandez."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Atletico agree deal to sign Spurs captain Romero",
+      "timestamp": "Wed, 12 Aug 2026 21:30:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571751/cristian-romero-atletico-madrid-agree-deal-with-tottenham-to-sign-argentina-defender-after-long-term-interest",
+        "lang": "en",
+        "summary": "Atletico Madrid have agreed a deal in principle with Tottenham to sign Cristian Romero."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Doue silences Madjo-mania as PSG beat Villa to win Super Cup",
+      "timestamp": "Wed, 12 Aug 2026 22:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/paris-saint-germain-vs-aston-villa/report/556002",
+        "lang": "en",
+        "summary": "Desire Doue scored the winner as champions of Europe Paris Saint-Germain beat Aston Villa 2-1 to win the UEFA Super Cup."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Hudson-Smith clinches history-making third 400m European Championship gold",
+      "timestamp": "Tue, 11 Aug 2026 21:30:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/live-blog/12040/13571552/european-athletics-championships-2026-updates-from-birmingham-as-keely-hodgkinson-dina-asher-smith-katarina-johnson-thompson-compete",
+        "lang": "en",
+        "summary": ""
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -11,6 +99,17 @@
         "link": "https://www.skysports.com/cricket/news/12040/13572320/the-hundred-ellyse-perrys-half-century-sees-birmingham-phoenix-win-battle-to-avoid-wooden-spoon-vs-mi-london",
         "lang": "en",
         "summary": "Birmingham Phoenix prevailed in the battle to avoid the wooden spoon in The Hundred women's competition as Ellyse Perry's composed half-century condemned MI London to a sixth defeat of a chastening campaign."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Arsenal 1-1 Como commentary",
+      "timestamp": "Wed, 12 Aug 2026 18:10:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/arsenal-vs-como/live/562442",
+        "lang": "en",
+        "summary": ""
       }
     },
     {
@@ -27,10 +126,10 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Guimaraes on for Arsenal bow in Como friendly LIVE!",
-      "timestamp": "Wed, 12 Aug 2026 18:10:00 BST",
+      "text": "Everton 3-1 Newcastle commentary",
+      "timestamp": "Wed, 12 Aug 2026 16:30:00 BST",
       "metadata": {
-        "link": "https://www.skysports.com/football/arsenal-vs-como/live/562442",
+        "link": "https://www.skysports.com/football/newcastle-united-vs-everton/live/568648",
         "lang": "en",
         "summary": ""
       }
@@ -38,12 +137,12 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Everton 3-1 Newcastle commentary",
-      "timestamp": "Wed, 12 Aug 2026 16:30:00 BST",
+      "text": "'Nature of F1' | Cadillac CEO explains reasons behind Lowdon sacking",
+      "timestamp": "Wed, 12 Aug 2026 20:12:00 BST",
       "metadata": {
-        "link": "https://www.skysports.com/football/newcastle-united-vs-everton/live/568648",
+        "link": "https://www.skysports.com/watch/video/13572380/formula-1-cadillac-ceo-explains-reasons-behind-graeme-lowdon-sacking",
         "lang": "en",
-        "summary": ""
+        "summary": "Cadillac CEO Dan Towriss explains the reasons behind sacking Team Principal Graeme Lowdon."
       }
     },
     {
@@ -93,17 +192,6 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Man Utd pegged back as Aaronson cancels out early Zirkzee strike LIVE!",
-      "timestamp": "Tue, 11 Aug 2026 13:09:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/manchester-united-vs-leeds-united/live/555721",
-        "lang": "en",
-        "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
       "text": "McIlroy keen to asses his game during first FedExCup Playoffs event",
       "timestamp": "Wed, 12 Aug 2026 18:30:00 BST",
       "metadata": {
@@ -126,100 +214,12 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Vikings confirm Murray as starting QB",
-      "timestamp": "Wed, 12 Aug 2026 14:00:00 BST",
+      "text": "Celtic sign Egypt winger Hassan in time for key Champions League tie",
+      "timestamp": "Wed, 12 Aug 2026 22:50:00 BST",
       "metadata": {
-        "link": "https://www.skysports.com/nfl/live-blog/12040/13572233/nfl-news-trades-injuries-and-rumours-latest-updates-and-highlights-from-2026-pre-season-regular-season-playoffs-and-super-bowl",
+        "link": "https://www.skysports.com/football/news/12040/13570650/haissem-hassan-celtic-sign-egypt-winger-from-real-oviedo-on-four-year-deal-worth-9m",
         "lang": "en",
-        "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Draper in line to meet Djokovic at Cincinnati Open",
-      "timestamp": "Wed, 12 Aug 2026 14:10:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/tennis/live-blog/12040/13523297/jack-draper-tennis-results-next-match-news-ranking-video-and-how-to-watch-on-sky-sports-tennis",
-        "lang": "en",
-        "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Tielemans: I did not expect to leave Aston Villa for Man Utd this summer",
-      "timestamp": "Wed, 12 Aug 2026 12:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13572176/youri-tielemans-man-utd-midfield-on-joining-the-club-reuniting-with-marcus-rashford-and-jonny-evans-and-belgiums-world-cup-campaign",
-        "lang": "en",
-        "summary": "'Not really, no' - the perhaps surprising answer from Manchester United&#8217;s summer signing Youri Tielemans when asked whether he expected to leave his former club Aston Villa in this window."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "What next for Birmingham City? Why Davies is changing his approach",
-      "timestamp": "Wed, 12 Aug 2026 10:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13566218/chris-davies-interview-birmingham-city-managers-tactical-change-could-take-this-ambitious-club-up-from-the-championship",
-        "lang": "en",
-        "summary": "Birmingham City is a football club transformed. Over 20,000 season tickets have been sold for the forthcoming Championship season, with 14,000 more on the waiting list. Fan parks surround St Andrew's these days. The buzz around the place is palpable."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Championship play-off changes, new managers & star players - the EFL is BACK!",
-      "timestamp": "Wed, 12 Aug 2026 10:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13571934/efl-2026-27-season-preview-championship-play-off-changes-new-managers-and-star-players",
-        "lang": "en",
-        "summary": "The 2026/27 EFL season is here!"
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Sky Sports agrees deal to show Laver Cup from London's O2 in September",
-      "timestamp": "Wed, 12 Aug 2026 10:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/tennis/news/12040/13571896/laver-cup-sky-sports-to-show-europe-vs-rest-of-the-world-from-londons-o2-in-september",
-        "lang": "en",
-        "summary": "<em>Sky Sports </em>has agreed a deal with Trident8 to show all three days of the Laver Cup from London's O2 arena this September, as 12 of the world's best men's players compete in the annual Europe vs 'Rest of the World' showdown."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Lakers to be sold in record-breaking £9bn deal",
-      "timestamp": "Wed, 12 Aug 2026 15:32:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/nba/news/12040/13572287/los-angeles-lakers-sale-mark-walter-agrees-record-breaking-9bn-deal-to-sell-franchise-to-josh-kushner-and-bob-iger",
-        "lang": "en",
-        "summary": "The Los Angeles Lakers are set to be sold for a record-breaking $12.5bn (&#163;9.25bn) to Josh Kushner, the venture capitalist who was at the centre of FIFA's proposed new commercial structure."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Jodar on course for tennis history as Rybakina fights past Osaka",
-      "timestamp": "Wed, 12 Aug 2026 06:45:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/tennis/news/12040/13572099/canadian-open-rafael-jodar-on-course-for-mens-tennis-history-as-elena-rybakina-fights-back-to-beat-naomi-osaka",
-        "lang": "en",
-        "summary": "Spanish teenager Rafael Jodar is on course to break the record for the fastest rise into the top 10 of men's tennis after beating Arthur Filis in the quarter-finals of the Canadian Open."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Messi hints at retirement in tribute to late father",
-      "timestamp": "Wed, 12 Aug 2026 15:05:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13572274/lionel-messi-legendary-argentina-forward-hints-at-retirement-following-death-of-his-father-jorge",
-        "lang": "en",
-        "summary": "Lionel Messi has admitted he has doubts over whether he will continue his playing career following the death of his father, Jorge, saying, \"I don't know how to carry on.\""
+        "summary": "Celtic have announced the signing of winger Haissem Hassan from Real Oviedo in a potential &#163;9m move."
       }
     }
   ]
