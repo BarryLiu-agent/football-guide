@@ -1,12 +1,45 @@
 {
-  "generatedAt": "2026-08-12T15:30:58Z",
+  "generatedAt": "2026-08-12T19:50:05Z",
   "total": 20,
   "messages": [
     {
       "source": "skysports",
       "type": "news",
-      "text": "Pre-season: Newcastle vs Everton team news LIVE!",
-      "timestamp": "Tue, 11 Aug 2026 12:48:00 BST",
+      "text": "Birmingham Phoenix win battle to avoid Hundred wooden spoon vs MI London",
+      "timestamp": "Wed, 12 Aug 2026 18:38:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/cricket/news/12040/13572320/the-hundred-ellyse-perrys-half-century-sees-birmingham-phoenix-win-battle-to-avoid-wooden-spoon-vs-mi-london",
+        "lang": "en",
+        "summary": "Birmingham Phoenix prevailed in the battle to avoid the wooden spoon in The Hundred women's competition as Ellyse Perry's composed half-century condemned MI London to a sixth defeat of a chastening campaign."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Sports fans watch on as Britain experiences fullest solar eclipse since 1999",
+      "timestamp": "Wed, 12 Aug 2026 20:15:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/cricket/news/12040/13572383/solar-eclipse-fullest-above-british-skies-since-1999-as-spectators-take-it-in-at-sporting-events-across-europe",
+        "lang": "en",
+        "summary": "Cricket fans at Edgbaston were among sporting spectators given a stunning view of Wednesday evening's partial solar eclipse."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Guimaraes on for Arsenal bow in Como friendly LIVE!",
+      "timestamp": "Wed, 12 Aug 2026 18:10:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/arsenal-vs-como/live/562442",
+        "lang": "en",
+        "summary": ""
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Everton 3-1 Newcastle commentary",
+      "timestamp": "Wed, 12 Aug 2026 16:30:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/football/newcastle-united-vs-everton/live/568648",
         "lang": "en",
@@ -16,12 +49,34 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Cadillac sack team principal Lowdon as Budkowski takes charge",
-      "timestamp": "Wed, 12 Aug 2026 15:20:00 BST",
+      "text": "O'Sullivan's poor start to season continues with early China Open loss",
+      "timestamp": "Wed, 12 Aug 2026 16:20:00 BST",
       "metadata": {
-        "link": "https://www.skysports.com/f1/news/12040/13572275/cadillac-appoint-marcin-budkowski-as-team-principal-following-f1-2026-newcomers-sudden-sacking-of-graeme-lowdon",
+        "link": "https://www.skysports.com/snooker/news/12040/13572300/ronnie-osullivan-the-rockets-poor-start-to-snooker-season-continues-with-shock-early-china-open-loss-to-noppon-saengkham",
         "lang": "en",
-        "summary": "Cadillac have sacked team principal Graeme Lowdon and replaced him with Marcin Budkowski in what Formula 1's 2026 newcomers claim is a \"planned leadership transition\". "
+        "summary": "Ronnie O'Sullivan's poor start to the new season continued after he lost 6-4 to Noppon Saengkham in the second round of the China Open."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Everton breeze past lacklustre Newcastle in Murrayfield friendly",
+      "timestamp": "Wed, 12 Aug 2026 19:45:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/newcastle-united-vs-everton/report/568648",
+        "lang": "en",
+        "summary": "Matthias Jaissle was given a hint of the task in hand as Newcastle boss as Premier League rivals Everton strolled to a comfortable 3-1 win in a pre-season friendly at Murrayfield. "
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Chelsea stars for sale: The players who could leave - and what they'll cost",
+      "timestamp": "Wed, 12 Aug 2026 20:30:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13572382/chelsea-transfer-news-enzo-fernandez-nicolas-jackson-malo-gusto-and-more-in-spotlight-as-blues-look-to-player-sales",
+        "lang": "en",
+        "summary": "Chelsea are the Premier League's top spenders this summer with the bulk of their business done and attention is now turning to sales.&#160;"
       }
     },
     {
@@ -33,6 +88,39 @@
         "link": "https://www.skysports.com/tennis/news/12040/13572237/arthur-fery-feels-no-added-pressure-despite-being-british-no-1-as-he-returns-to-action-at-cincinnati-open",
         "lang": "en",
         "summary": "Arthur Fery insists he feels &#8220;no added pressure&#8221; as the new British No 1 prepares to return to action this weekend for the first time since his memorable run to the Wimbledon semi-finals."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Man Utd pegged back as Aaronson cancels out early Zirkzee strike LIVE!",
+      "timestamp": "Tue, 11 Aug 2026 13:09:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/manchester-united-vs-leeds-united/live/555721",
+        "lang": "en",
+        "summary": ""
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "McIlroy keen to asses his game during first FedExCup Playoffs event",
+      "timestamp": "Wed, 12 Aug 2026 18:30:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/golf/news/12040/13572212/rory-mcilroy-keen-to-see-where-his-game-is-as-he-returns-to-pga-tour-for-opening-fedexcup-playoffs-event",
+        "lang": "en",
+        "summary": "Rory McIlroy believes this week's FedEx St. Jude Championship will be a good chance for him to assess the current standard of his game, as the Northern Irishman returns to PGA Tour action for the first time since The Open."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Cadillac sack team principal Lowdon as Budkowski takes charge",
+      "timestamp": "Wed, 12 Aug 2026 15:20:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/f1/news/12040/13572275/cadillac-appoint-marcin-budkowski-as-team-principal-following-f1-2026-newcomers-sudden-sacking-of-graeme-lowdon",
+        "lang": "en",
+        "summary": "Cadillac have sacked team principal Graeme Lowdon and replaced him with Marcin Budkowski in what Formula 1's 2026 newcomers claim is a \"planned leadership transition\". "
       }
     },
     {
@@ -104,6 +192,17 @@
     {
       "source": "skysports",
       "type": "news",
+      "text": "Lakers to be sold in record-breaking £9bn deal",
+      "timestamp": "Wed, 12 Aug 2026 15:32:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/nba/news/12040/13572287/los-angeles-lakers-sale-mark-walter-agrees-record-breaking-9bn-deal-to-sell-franchise-to-josh-kushner-and-bob-iger",
+        "lang": "en",
+        "summary": "The Los Angeles Lakers are set to be sold for a record-breaking $12.5bn (&#163;9.25bn) to Josh Kushner, the venture capitalist who was at the centre of FIFA's proposed new commercial structure."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
       "text": "Jodar on course for tennis history as Rybakina fights past Osaka",
       "timestamp": "Wed, 12 Aug 2026 06:45:00 BST",
       "metadata": {
@@ -121,105 +220,6 @@
         "link": "https://www.skysports.com/football/news/12040/13572274/lionel-messi-legendary-argentina-forward-hints-at-retirement-following-death-of-his-father-jorge",
         "lang": "en",
         "summary": "Lionel Messi has admitted he has doubts over whether he will continue his playing career following the death of his father, Jorge, saying, \"I don't know how to carry on.\""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Today on Sky Sports Racing: Ffos Las hosts six-race card",
-      "timestamp": "Wed, 12 Aug 2026 06:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/racing/news/12040/13571636/today-on-sky-sports-racing-ffos-las-hosts-six-race-card-live-on-wednesday",
-        "lang": "en",
-        "summary": "Don't miss a moment from Ffos Las on Wednesday, with all six races live from 3.37pm on <em>Sky Sports Racing</em>."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Rangers 'playing with fire' over defensive options, says McInnes",
-      "timestamp": "Mon, 10 Aug 2026 15:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13572258/rangers-transfers-derek-mcinnes-makes-playing-with-fire-admission-as-club-chase-more-signings-amid-winless-start",
-        "lang": "en",
-        "summary": "Derek McInnes believes Rangers are \"playing with fire\" after being left with a shortage of options in defence."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Rybakina to meet Gauff in semis after Osaka fightback",
-      "timestamp": "Wed, 12 Aug 2026 07:28:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13572134/elena-rybakina-vs-naomi-osaka-canadian-open-highlights",
-        "lang": "en",
-        "summary": "Highlights of the Canadian Open match between Elena Rybakina and Naomi Osaka."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Coles and Opoku-Fordjour among 25 England players given enhanced contracts",
-      "timestamp": "Wed, 12 Aug 2026 14:30:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/rugby-union/news/12040/13572250/alex-coles-and-asher-opoku-fordjour-among-england-players-given-enhanced-contracts-by-rfu-for-2026-27-season",
-        "lang": "en",
-        "summary": "Alex Coles and Asher Opoku-Fordjour are among five England players to be awarded an enhanced contract by the RFU for the first time."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "'Everyone can have an opinion' - F1 president responds to regulations criticism",
-      "timestamp": "Wed, 12 Aug 2026 06:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/f1/news/12040/13569682/f1-2026-regulations-stefano-domenicali-responds-to-criticism-about-current-power-unit-regulations",
-        "lang": "en",
-        "summary": "Formula 1 president Stefano Domenicali says drivers \"can have their opinion\" and are not being stopped from criticising the sport's power unit regulations."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Dubois on collision course with Turkish rival? MVP announce Turhan signing",
-      "timestamp": "Wed, 12 Aug 2026 13:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/boxing/news/12040/13572018/caroline-dubois-could-face-elif-nur-turhan-after-rival-lightweight-world-champion-signed-for-most-valuable-promotions",
-        "lang": "en",
-        "summary": "Caroline Dubois could settle her rivalry with Elif Nur Turhan after the Turkish world champion signed for Most Valuable Promotions."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Root removes England curfew",
-      "timestamp": "Wed, 12 Aug 2026 13:30:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/cricket/news/12040/13572211/joe-root-england-test-captain-removes-curfew-and-implores-his-players-to-be-adults-ahead-of-pakistan-series",
-        "lang": "en",
-        "summary": "Joe Root has ruled out a curfew under his England Test captaincy and implored his players to behave like \"grown adults\" ahead of his first series back at the helm against Pakistan."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "UEFA Super Cup preview: Why three Villa stars won't play vs PSG",
-      "timestamp": "Wed, 12 Aug 2026 09:02:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/paris-saint-germain-vs-aston-villa/live/556002",
-        "lang": "en",
-        "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Jets' Stiggers in hospital after collapsing during practice",
-      "timestamp": "Tue, 11 Aug 2026 23:10:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/nfl/news/12040/13572096/nfl-new-york-jets-cornerback-qwantez-stiggers-taking-to-hospital-after-collapsing-in-joint-practice-with-tampa-bay-buccaneers",
-        "lang": "en",
-        "summary": "New York Jets cornerback Qwan'tez Stiggers was taken to a hospital by ambulance after he briefly lost consciousness during a joint practice with the Tampa Bay Buccaneers on Tuesday."
       }
     }
   ]
