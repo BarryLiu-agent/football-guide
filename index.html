@@ -169,7 +169,7 @@ img { display: block; }
 .date-label.is-tomorrow .dot { background: var(--blue); }
 .date-label .count { font-size: 10px; color: var(--text-3); font-weight: 400; }
 
-/* 无价值信号场次：默认折叠，减少无效出手干扰 */
+/* 无价值信号场次:默认折叠,减少无效出手干扰 */
 .no-signal { margin-top: 2px; }
 .no-signal summary {
   cursor: pointer; list-style: none; font-size: 11px; color: var(--text-3);
@@ -182,7 +182,7 @@ img { display: block; }
 .no-signal .match-list.dim { opacity: .55; filter: saturate(.6); }
 .no-signal .match-list.dim .match-card { box-shadow: none; border-color: var(--border); }
 
-/* 盘口走势（初盘→临场） */
+/* 盘口走势(初盘→临场) */
 .calib-card {
   padding: 12px 14px; border-radius: var(--radius); margin-bottom: 14px;
   background: linear-gradient(180deg, rgba(240,185,11,.06), rgba(240,185,11,.02));
@@ -382,7 +382,7 @@ table.standings .down { color: var(--red); }
   .odds-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
 }
 
-/* ── 移动端增强（<768px 平板 & <480px 手机）── */
+/* ── 移动端增强(<768px 平板 & <480px 手机)── */
 @media (max-width: 768px) {
   .record-row { flex-wrap: wrap; gap: 4px 6px; font-size: 12px; padding: 8px 4px; }
   .record-row span { flex: 1 1 auto; }
@@ -474,6 +474,7 @@ const SUBS = [
   { id: 'xg', name: '📈 xG 数据' },
   { id: 'teamStats', name: '📊 球队数据' },
   { id: 'scorers', name: '⚽ 射手榜' },
+  { id: 'parlay', name: '🎯 串关' },
   { id: 'record', name: '📊 战绩' },
 ];
 // Football-Data 赛程代码 ↔ 展示代码
@@ -503,7 +504,7 @@ let state = {
 // ===== 工具 =====
 const $ = id => document.getElementById(id);
 function esc(s) { return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
-// 译名别名归一化（不同英文写法指向同一队）
+// 译名别名归一化(不同英文写法指向同一队)
 const TEAM_ALIAS = {
   'bayern munchen': 'bayern', 'bayern munich': 'bayern',
   'internazionale milano': 'inter milan', 'inter milan': 'inter milan', 'inter': 'inter milan',
@@ -518,21 +519,21 @@ function normTeam(s) {
   let n = (s || '').toLowerCase()
     .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')  // ü->u, é->e
     .replace(/\b(fc|afc|cf|sc|ac)\b/g, '')
-    .replace(/[-\u2013\u2014]/g, ' ')   // 连字符变空格（saint-germain -> saint germain）
+    .replace(/[-\u2013\u2014]/g, ' ')   // 连字符变空格(saint-germain -> saint germain)
     .replace(/[^a-z0-9 ]/g, '')
     .trim().replace(/\s+/g, ' ');
   return TEAM_ALIAS[n] || n;
 }
-// 队名匹配：精确 → 包含 → 末尾词（SV 07 Elversberg vs Elversberg）
+// 队名匹配:精确 → 包含 → 末尾词(SV 07 Elversberg vs Elversberg)
 function teamMatch(a, b) {
   if (!a || !b) return false;
   if (a === b) return true;
   if (a.includes(b) || b.includes(a)) return true;
-  // 全词包含：查询词全部出现在对方队名（防 Real Madrid ↔ Atlético Madrid 末词误配）
+  // 全词包含:查询词全部出现在对方队名(防 Real Madrid ↔ Atlético Madrid 末词误配)
   const wa = a.split(' ').filter(Boolean), wb = b.split(' ').filter(Boolean);
   if (wa.length >= 2 && wa.every(w => wb.includes(w))) return true;
   if (wb.length >= 2 && wb.every(w => wa.includes(w))) return true;
-  // 末词兜底：仅当双方词数>=2 且末词足够长（>=5），避免通用词误配
+  // 末词兜底:仅当双方词数>=2 且末词足够长(>=5),避免通用词误配
   if (wa.length >= 2 && wb.length >= 2) {
     const la = wa[wa.length - 1], lb = wb[wb.length - 1];
     return la.length >= 5 && la === lb;
@@ -567,7 +568,7 @@ function dateLabel(dateStr) {
 }
 function findPrediction(home, away, league) {
   const h = normTeam(home), a = normTeam(away);
-  // 日期过滤：优先匹配开赛日期±1天的场次（防同队两回合/多交手的旧预测串场）
+  // 日期过滤:优先匹配开赛日期±1天的场次(防同队两回合/多交手的旧预测串场)
   const cands = (state.predictions || []).filter(p =>
     (!league || p.league === league) &&
     teamMatch(normTeam(p.homeTeam), h) && teamMatch(normTeam(p.awayTeam), a));
@@ -620,20 +621,20 @@ async function loadAll() {
     loadJson('data/calibration_ou.json').then(d => { state.calibOu = d; }).catch(() => {}),
     loadJson('data/team_names.json').then(d => { state.teamNames = d; }).catch(() => {}),
   ];
-  // xG 逐个联赛加载（可能不存在）
+  // xG 逐个联赛加载(可能不存在)
   for (const lg of LEAGUES) {
     jobs.push(loadJson(`data/xg/${lg.code}.json`).then(d => { state.xg[lg.code] = d; }).catch(() => {}));
   }
-  // 赔率快照（含初盘→临场 history）逐个联赛加载
+  // 赔率快照(含初盘→临场 history)逐个联赛加载
   for (const lg of LEAGUES) {
     jobs.push(loadJson(`data/odds/${lg.code}.json`).then(d => { state.oddsByLeague[lg.code] = d; }).catch(() => {}));
   }
-  // FBref 高级数据（射门/门将/纪律）逐个联赛加载（欧冠休赛期无数据，跳过）
+  // FBref 高级数据(射门/门将/纪律)逐个联赛加载(欧冠休赛期无数据,跳过)
   for (const lg of LEAGUES) {
     if (lg.code === 'CL') continue;
     jobs.push(loadJson(`data/advanced/${lg.code}.json`).then(d => { state.teamStats[lg.code] = d; }).catch(() => {}));
   }
-  // 亚盘数据（football-data.co.uk，历史盘口）逐个联赛加载（欧冠休赛期无数据，跳过）
+  // 亚盘数据(football-data.co.uk,历史盘口)逐个联赛加载(欧冠休赛期无数据,跳过)
   for (const lg of LEAGUES) {
     if (lg.code === 'CL') continue;
     jobs.push(loadJson(`data/asian/${lg.code}.json`).then(d => { state.asianByLeague[lg.code] = d; }).catch(() => {}));
@@ -642,24 +643,24 @@ async function loadAll() {
   const d = state.history?.stats;
   const gen = state.predictionsMeta?.generatedAt;
   if (gen) $('lastUpdated').textContent = '数据 ' + gen.slice(5, 16).replace('T', ' ');
-  // 竞彩新鲜度提示（本地每小时推送；>2 小时未更新 = 电脑未运行/脚本停了）
+  // 竞彩新鲜度提示(本地每小时推送;>2 小时未更新 = 电脑未运行/脚本停了)
   if (state.jingcaiGen) {
     const jcAge = Date.now() - new Date(state.jingcaiGen).getTime();
     if (jcAge > 2 * 3600000) {
       const h = Math.floor(jcAge / 3600000);
       const el = $('pageContent');
       if (el && !el.querySelector('.jc-stale')) {
-        el.insertAdjacentHTML('afterbegin', '<div class="stale-banner jc-stale" style="background:rgba(59,130,246,.12);border-color:rgba(59,130,246,.35)">⚠️ 竞彩数据 ' + h + ' 小时前更新（本地电脑计划任务未运行，电脑关机？）。其余数据由云端自动更新不受影响。</div>');
+        el.insertAdjacentHTML('afterbegin', '<div class="stale-banner jc-stale" style="background:rgba(59,130,246,.12);border-color:rgba(59,130,246,.35)">⚠️ 竞彩数据 ' + h + ' 小时前更新(本地电脑计划任务未运行,电脑关机?)。其余数据由云端自动更新不受影响。</div>');
       }
     }
   }
-  // 数据过期提示（>12 小时）
+  // 数据过期提示(>12 小时)
   if (gen) {
     const age = Date.now() - new Date(gen).getTime();
     if (age > 12 * 3600000) {
       const el = $('pageContent');
       if (el && !el.querySelector('.stale-banner')) {
-        el.insertAdjacentHTML('afterbegin', '<div class="stale-banner">⚠️ 数据已超过 12 小时未更新（' + gen.slice(0, 16).replace('T', ' ') + ' UTC）。每日 10:00 自动更新，也可点右上角刷新。</div>');
+        el.insertAdjacentHTML('afterbegin', '<div class="stale-banner">⚠️ 数据已超过 12 小时未更新(' + gen.slice(0, 16).replace('T', ' ') + ' UTC)。每日 10:00 自动更新,也可点右上角刷新。</div>');
       }
     }
   }
@@ -684,7 +685,12 @@ function render() {
   const el = $('pageContent');
   const lg = LEAGUES.find(l => l.code === state.league);
   if (!lg) return;
-  const header = `<div style="display:flex;align-items:baseline;gap:10px;margin-bottom:14px;">
+  // 全局页(串关/战绩):不随联赛切换,标题固定
+  const isGlobal = state.sub === 'parlay' || state.sub === 'record';
+  const header = isGlobal ? `<div style="display:flex;align-items:baseline;gap:10px;margin-bottom:14px;">
+    <h2 style="font-size:19px;">${state.sub === 'parlay' ? '🎯 串关推荐' : '📊 全局战绩'}</h2>
+    <span style="font-size:11px;color:var(--text-3);">${state.sub === 'parlay' ? '跨联赛价值信号组合' : '模型校准 + 预测结算统计'}</span>
+  </div>` : `<div style="display:flex;align-items:baseline;gap:10px;margin-bottom:14px;">
     <h2 style="font-size:19px;">${lg.name}</h2>
     <span style="font-size:11px;color:var(--text-3);">${lg.en}</span>
   </div>
@@ -693,18 +699,19 @@ function render() {
                state.sub === 'standings' ? renderStandings() :
                state.sub === 'xg' ? renderXg() :
                state.sub === 'teamStats' ? renderTeamStats() :
+               state.sub === 'parlay' ? renderParlay() :
                state.sub === 'record' ? renderRecord() : renderScorers();
   el.innerHTML = header + body;
 }
 
-// ===== 顶部信息栏：模型校准 + 今日精选 =====
+// ===== 顶部信息栏:模型校准 + 今日精选 =====
 function renderTopBar(leagueCode) {
   const mi = state.predictionsMeta || {};
   const stats = state.history?.stats;
   const calib = mi.modelInfo || {};
   const season = calib.season || {};
-  const started = season.seasonStarted ? '赛季第' + (season.round || '?') + '轮' : '休赛期（未校准）';
-  // 今日精选：黄金信号 + 今天/明天
+  const started = season.seasonStarted ? '赛季第' + (season.round || '?') + '轮' : '休赛期(未校准)';
+  // 今日精选:黄金信号 + 今天/明天
   const t = todayBJ(), tm = fmtDate(new Date(Date.now() + 86400000).toISOString());
   const picks = (state.predictions || []).filter(p =>
     p.league === leagueCode && p.signalLevel === 'gold' &&
@@ -722,8 +729,8 @@ function renderTopBar(leagueCode) {
           '</div>';
       }).join('') + '</div>';
   }
-  const statsHtml = stats ? '<span class="rec-chip">普通预测方向 ' + Math.round((stats.outcomeRate || 0) * 100) + '%（' + (stats.finished || 0) + '场）</span>' +
-    (stats.valueTotal ? '<span class="rec-chip gold">💰价值信号 ' + Math.round((stats.valueRate || 0) * 100) + '%（' + stats.valueTotal + '场）</span>' : '') : '';
+  const statsHtml = stats ? '<span class="rec-chip">普通预测方向 ' + Math.round((stats.outcomeRate || 0) * 100) + '%(' + (stats.finished || 0) + '场)</span>' +
+    (stats.valueTotal ? '<span class="rec-chip gold">💰价值信号 ' + Math.round((stats.valueRate || 0) * 100) + '%(' + stats.valueTotal + '场)</span>' : '') : '';
   return '<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px;font-size:11px;color:var(--text-3)">' +
     '<span class="rec-chip">🧠 ' + (calib.name || 'Elo 模型') + '</span>' +
     '<span class="rec-chip">📅 ' + started + '</span>' +
@@ -732,20 +739,81 @@ function renderTopBar(leagueCode) {
     '</div>' + picksHtml;
 }
 
+// ===== 串关推荐(全局页,跨联赛组合)=====
+function renderParlay() {
+  // 模型概率按校准打折 85%(模型偏乐观);组合赔率 >15 的搏冷组合过滤
+  const probDiscount = 0.85;
+  const MAX_ODDS = 15;
+  const sigs = (state.predictions || []).filter(x =>
+    x.league && x.valuePicks && x.valuePicks.length && !x.diverge &&
+    (x.valuePicks.some(v => v.edge > 0.1)));
+  const combos = [];
+  const cands = sigs.slice(0, 8);
+  for (let i = 0; i < cands.length; i++) {
+    for (let j = i + 1; j < cands.length; j++) {
+      const v1 = cands[i].valuePicks.find(v => v.edge > 0.1), v2 = cands[j].valuePicks.find(v => v.edge > 0.1);
+      if (!v1 || !v2) continue;
+      const o1 = (cands[i].rawOdds || {})[v1.side], o2 = (cands[j].rawOdds || {})[v2.side];
+      if (!o1 || !o2) continue;
+      const odds = o1 * o2;
+      if (odds > MAX_ODDS) continue;
+      const prob = v1.modelProb * v2.modelProb * probDiscount * probDiscount;
+      combos.push({
+        legs: [cands[i], cands[j]], picks: [v1, v2], odds: odds, prob: prob,
+        exp: odds * prob, label: `${cnTeam(cands[i].homeTeam)}${v1.label}×${cnTeam(cands[j].homeTeam)}${v2.label}`,
+      });
+    }
+  }
+  for (let i = 0; i < Math.min(3, cands.length); i++) {
+    for (let j = i + 1; j < Math.min(4, cands.length); j++) {
+      for (let k = j + 1; k < Math.min(5, cands.length); k++) {
+        const a = cands[i], b = cands[j], c = cands[k];
+        const va = a.valuePicks.find(v => v.edge > 0.1), vb = b.valuePicks.find(v => v.edge > 0.1), vc = c.valuePicks.find(v => v.edge > 0.1);
+        if (!va || !vb || !vc) continue;
+        const oa = (a.rawOdds || {})[va.side], ob = (b.rawOdds || {})[vb.side], oc = (c.rawOdds || {})[vc.side];
+        if (!oa || !ob || !oc) continue;
+        const odds = oa * ob * oc;
+        if (odds > MAX_ODDS) continue;
+        const prob = va.modelProb * vb.modelProb * vc.modelProb * Math.pow(probDiscount, 3);
+        combos.push({
+          legs: [a, b, c], picks: [va, vb, vc], odds: odds, prob: prob, exp: odds * prob,
+          label: `${cnTeam(a.homeTeam)}${va.label}×${cnTeam(b.homeTeam)}${vb.label}×${cnTeam(c.homeTeam)}${vc.label}`,
+        });
+      }
+    }
+  }
+  combos.sort((x, y) => (y.exp * y.prob) - (x.exp * x.prob));
+  if (!combos.length) {
+    return '<div class="empty-state"><div class="icon">🎯</div>暂无串关候选<div style="font-size:11px;margin-top:8px;color:var(--text-3)">需要至少 2 场有价值信号且无分歧的比赛,开赛后自动出现</div></div>';
+  }
+  const bestExp = combos[0]?.exp || 0;
+  return '<div class="section-title" style="margin-bottom:8px">🎯 串关建议(价值信号 × 无分歧)</div>' +
+    '<div style="font-size:11px;color:var(--muted);margin-bottom:8px">按综合评分排序:组合赔率 × 打折后概率。模型概率已按校准打折 85%(模型偏乐观),组合赔率 &gt;15 的搏冷组合已过滤。跨联赛组合,任一腿失败即全输。</div>' +
+    combos.slice(0, 8).map(c => {
+      const legsTxt = c.legs.map((l, i) => '<b>' + cnTeam(l.homeTeam) + ' vs ' + cnTeam(l.awayTeam) + '</b> → ' + c.picks[i].label + ' @' + ((l.rawOdds || {})[c.picks[i].side] || '-')).join('<br>');
+      return `<div style="padding:10px 12px;border-radius:10px;background:var(--bg-2);border:1px solid var(--border);margin-bottom:8px">
+        <div style="font-weight:700;font-size:12px">${c.label}</div>
+        <div style="font-size:11px;color:var(--muted);margin:4px 0">${legsTxt}</div>
+        <div style="font-size:12px">组合赔率 <b style="color:var(--gold)">${c.odds.toFixed(2)}</b> · 打折后概率 ${(c.prob * 100).toFixed(1)}% · 期望值 ${c.exp.toFixed(2)}${c.exp > 1.05 ? ' <span style="color:#22c55e;font-weight:700">值得</span>' : ''}${c.exp === bestExp ? ' <span style="color:var(--gold)">🏆 最优</span>' : ''}</div>
+      </div>`;
+    }).join('') +
+    '<div style="font-size:10px;color:var(--muted);margin-top:8px">概率 = 各腿模型概率相乘(独立假设)× 校准折扣 85%;期望值 &gt;1.05 才值得考虑。串关高风险,仅建议小注娱乐。</div>';
+}
+
 // ===== 赛程赛果 =====
 function renderFixtures() {
   const code = FD_CODE[state.league];
   let ms = state.fixtures.filter(m => m.competition?.code === code);
-  // 常规模式基准（展示模式分支也使用）
+  // 常规模式基准(展示模式分支也使用)
   const t = todayBJ();
   const maxD = fmtDate(new Date(Date.now() + 30 * 86400000).toISOString());
   const now = Date.now();
-  // 展示模式：已完赛倒序（最近在前），最多 120 场
+  // 展示模式:已完赛倒序(最近在前),最多 120 场
   const finished = ms.filter(m => m.status === 'FINISHED');
   if (finished.length >= ms.length * 0.8) {
     ms = finished.sort((a, b) => b.utcDate.localeCompare(a.utcDate)).slice(0, 120);
   } else {
-    // 常规模式：今天 + 未来 30 天
+    // 常规模式:今天 + 未来 30 天
     ms = ms.filter(m => {
       const d = fmtDate(m.utcDate);
       if (d < t || d > maxD) return false;
@@ -754,7 +822,7 @@ function renderFixtures() {
     }).sort((a, b) => a.utcDate.localeCompare(b.utcDate));
   }
 
-  // 赛程里没有的（如欧冠未开赛）→ 用预测补充（首词兜底匹配，避免重复显示）
+  // 赛程里没有的(如欧冠未开赛)→ 用预测补充(首词兜底匹配,避免重复显示)
   const hasFix = (h, a) => ms.some(m => {
     const mh = normTeam(m.homeTeam?.name || m.homeTeam?.shortName);
     const ma = normTeam(m.awayTeam?.name || m.awayTeam?.shortName);
@@ -768,14 +836,14 @@ function renderFixtures() {
 
   if (!ms.length) return `<div class="empty-state"><div class="icon">📭</div>该联赛暂无未来比赛安排</div>`;
 
-  // 分组（按日期从近到远升序）
+  // 分组(按日期从近到远升序)
   const groups = {};
   ms.forEach(m => { const d = fmtDate(m.utcDate); (groups[d] = groups[d] || []).push(m); });
   const groupOrder = Object.keys(groups).sort((a, b) => a.localeCompare(b));
   return groupOrder.map(d => { const list = groups[d];
     const t2 = todayBJ(), tm = fmtDate(new Date(Date.now() + 86400000).toISOString());
     const cls = d === t2 ? 'is-today' : d === tm ? 'is-tomorrow' : '';
-    // 出手建议：有价值信号/异动/高置信预测的优先展示，其余折叠降噪
+    // 出手建议:有价值信号/异动/高置信预测的优先展示,其余折叠降噪
     const hasSig = m => {
       const p = m.pred || findPrediction(m.homeTeam?.name || m.homeTeam?.shortName, m.awayTeam?.name || m.awayTeam?.shortName, m.competition?.code);
       if (p && p.valuePicks && p.valuePicks.length) return true;
@@ -787,7 +855,7 @@ function renderFixtures() {
     return `<div class="date-group">
       <div class="date-label ${cls}"><span class="dot"></span>${dateLabel(d)} <span class="count">${list.length} 场</span></div>
       ${sig.length ? `<div class="match-list">${sig.map(renderCard).join('')}</div>` : ''}
-      ${rest.length ? `<details class="no-signal"><summary>其他 ${rest.length} 场（无价值信号）</summary><div class="match-list dim">${rest.map(renderCard).join('')}</div></details>` : ''}
+      ${rest.length ? `<details class="no-signal"><summary>其他 ${rest.length} 场(无价值信号)</summary><div class="match-list dim">${rest.map(renderCard).join('')}</div></details>` : ''}
     </div>`;
   }).join('');
 }
@@ -798,9 +866,9 @@ function renderCard(m) {
   const pred = m.pred || findPrediction(homeName, awayName, m.competition?.code);
   const jc = findJingcai(homeName, awayName);
   const score = getScore(m);
-  // 异动标红：赔率涨跌 >= 0.2
+  // 异动标红:赔率涨跌 >= 0.2
   let hot = '';
-  // 模型价值标记（Elo 与市场差值 >= 10%）
+  // 模型价值标记(Elo 与市场差值 >= 10%)
   let value = '';
   if (pred && pred.valuePicks && pred.valuePicks.length) {
     value = '<span class="value-tag">💰 ' + pred.valuePicks.map(v => v.label).join('/') + '</span>';
@@ -815,7 +883,7 @@ function renderCard(m) {
       hot = '<span class="hot-tag" title="' + chg.map(c => names[c.k] + '胜赔率' + (c.d > 0 ? '↑' : '↓') + Math.abs(c.d).toFixed(2)).join('、') + '">🔥' + names[chg[0].k] + '胜' + dir + Math.abs(chg[0].d).toFixed(2) + '</span>';
     }
   }
-  // 赛程难度评级：基于积分榜排名
+  // 赛程难度评级:基于积分榜排名
   let diff = '';
   const st = state.standings?.[m.competition?.code];
   if (st && m.homeTeam?.name) {
@@ -829,25 +897,25 @@ function renderCard(m) {
       else if (opp >= 15) diff = '<span class="diff-tag easy">悬殊</span>';
     }
   }
-  // 模型分歧：Elo vs DC vs 市场方向不一致 → 提示不碰
+  // 模型分歧:Elo vs DC vs 市场方向不一致 → 提示不碰
   let divTag = '';
   if (pred && pred.diverge) divTag = '<span class="diff-tag warn" title="Elo/DC/市场方向不一致">⚠️分歧</span>';
-  // 反向信号：模型明显比市场更不看好某方向（负 edge）→ 提示不碰
+  // 反向信号:模型明显比市场更不看好某方向(负 edge)→ 提示不碰
   let revTag = '';
   if (pred && pred.reversePicks && pred.reversePicks.length) {
     const rp = pred.reversePicks.map(r => r.label + ' 模型' + Math.round(r.modelProb * 100) + '%/盘口' + Math.round(r.oddsProb * 100) + '%').join('、');
-    revTag = '<span class="diff-tag warn" title="模型 vs 市场对立（' + rp + '）">⚠️反向</span>';
+    revTag = '<span class="diff-tag warn" title="模型 vs 市场对立(' + rp + ')">⚠️反向</span>';
   }
-  // 临场情报：消息面核心缺阵预警（伤停/停赛信号强时）
+  // 临场情报:消息面核心缺阵预警(伤停/停赛信号强时)
   let injTag = '';
   if (pred && pred.msgSignals) {
     const ms = pred.msgSignals;
     const inj = [];
     if (ms.home != null && ms.home <= -0.15) inj.push(cnTeam(homeName) + '缺阵信号' + ms.home.toFixed(2));
     if (ms.away != null && ms.away <= -0.15) inj.push(cnTeam(awayName) + '缺阵信号' + ms.away.toFixed(2));
-    if (inj.length) injTag = '<span class="diff-tag warn" title="消息面伤停/停赛信号：' + inj.join('；') + '">⚠️核心缺阵</span>';
+    if (inj.length) injTag = '<span class="diff-tag warn" title="消息面伤停/停赛信号:' + inj.join(';') + '">⚠️核心缺阵</span>';
   }
-  // 赛程风险：周中 / 3 天内双赛
+  // 赛程风险:周中 / 3 天内双赛
   let riskTags = '';
   try {
     const bjDay = new Date(m.utcDate).getUTCDay();
@@ -900,7 +968,7 @@ function getScore(m) {
 // ===== 积分榜 =====
 function renderStandings() {
   const rows = state.standings[state.league];
-  if (!rows || !rows.length) return `<div class="empty-state"><div class="icon">🏆</div>暂无积分榜数据（赛季开赛后自动更新）</div>`;
+  if (!rows || !rows.length) return `<div class="empty-state"><div class="icon">🏆</div>暂无积分榜数据(赛季开赛后自动更新)</div>`;
   return `<div class="table-wrap"><table class="standings">
     <thead><tr><th>#</th><th>球队</th><th>赛</th><th>胜</th><th>平</th><th>负</th><th>进</th><th>失</th><th>净</th><th>积分</th></tr></thead>
     <tbody>${rows.map((r, i) => `<tr>
@@ -911,7 +979,7 @@ function renderStandings() {
       <td class="pts">${r.points}</td>
     </tr>`).join('')}</tbody>
   </table></div>
-  <div class="xg-note">数据来源：Football-Data.org 官方积分榜（每日更新）</div>`;
+  <div class="xg-note">数据来源:Football-Data.org 官方积分榜(每日更新)</div>`;
 }
 
 // ===== xG 数据 =====
@@ -920,11 +988,11 @@ function renderXg() {
   const teams = Object.values(xg?.data?.teams || xg?.teamsData || {});
   if (!teams.length) return `<div class="empty-state">
     <div class="icon">📈</div>
-    <div>该联赛暂无 xG 数据</div>
-    <div style="font-size:11px;margin-top:8px;color:var(--text-3)">请在本机运行：python scripts/xg_fetch_local.py --push</div>
+    <div>${state.league === 'CL' ? '欧冠休赛期,暂无 xG 数据' : '该联赛暂无 xG 数据'}</div>
+    <div style="font-size:11px;margin-top:8px;color:var(--text-3)">${state.league === 'CL' ? '9 月欧冠正赛开赛后自动显示' : '请在本机运行:python scripts/xg_fetch_local.py --push'}</div>
   </div>`;
   const rows = teams.sort((a, b) => (b.xG || 0) - (a.xG || 0));
-  // FBref 增强列（射门效率/防守）
+  // FBref 增强列(射门效率/防守)
   const adv = state.teamStats[state.league]?.data;
   const shootMap = {}, gkMap = {};
   if (adv) {
@@ -953,18 +1021,18 @@ function renderXg() {
       </tr>`;
     }).join('')}</tbody>
   </table></div>
-  <div class="xg-note">xG积分 = 按 xG 推算的期望积分${hasAdv ? ' · 射门/扑救数据来自 FBref' : ''}（超预期球队为"运气队"，低于预期球队后续大概率回暖）</div>`;
+  <div class="xg-note">xG积分 = 按 xG 推算的期望积分${hasAdv ? ' · 射门/扑救数据来自 FBref' : ''}(超预期球队为"运气队",低于预期球队后续大概率回暖)</div>`;
 }
 
-// ===== 球队数据（FBref 高阶） =====
+// ===== 球队数据(FBref 高阶) =====
 function renderTeamStats() {
   const adv = state.teamStats[state.league]?.data;
   if (!adv) return `<div class="empty-state">
     <div class="icon">📊</div>
     <div>该联赛暂无高级数据</div>
-    <div style="font-size:11px;margin-top:8px;color:var(--text-3)">请在本机运行：python scripts/fbref_advanced.py [赛季]</div>
+    <div style="font-size:11px;margin-top:8px;color:var(--text-3)">请在本机运行:python scripts/fbref_advanced.py [赛季]</div>
   </div>`;
-  
+
   const section = (title, rows, cols) => {
     if (!rows.length) return '';
     const maxVals = {};
@@ -989,7 +1057,7 @@ function renderTeamStats() {
       </tr>`).join('')}</tbody>
     </table></div>`;
   };
-  
+
   // 射门效率
   const shoot = [...(adv.shooting || [])].sort((a, b) => (b.goalPerShot || 0) - (a.goalPerShot || 0));
   const s1 = section('🎯 射门效率', shoot, [
@@ -1000,7 +1068,7 @@ function renderTeamStats() {
     { key: 'goalPerShot', label: '进球/射门', sort: true, fmt: v => v.toFixed(3) },
     { key: 'goalPerSot', label: '进球/射正', sort: true, fmt: v => v.toFixed(2) },
   ]);
-  
+
   // 门将
   const gk = [...(adv.goalkeeper || [])].sort((a, b) => (b.savePct || 0) - (a.savePct || 0));
   const s2 = section('🧤 门将防守', gk, [
@@ -1011,7 +1079,7 @@ function renderTeamStats() {
     { key: 'cleanSheets', label: '零封', sort: true, fmt: v => v },
     { key: 'csPct', label: '零封%', sort: true, fmt: v => v.toFixed(1) + '%' },
   ]);
-  
+
   // 纪律
   const disc = [...(adv.discipline || [])].sort((a, b) => (b.yellowCards || 0) - (a.yellowCards || 0));
   const s3 = section('🟨 纪律与对抗', disc, [
@@ -1022,10 +1090,10 @@ function renderTeamStats() {
     { key: 'interceptions', label: '拦截', sort: true, fmt: v => v },
     { key: 'tacklesWon', label: '抢断', sort: true, fmt: v => v },
   ]);
-  
+
   const season = state.teamStats[state.league]?.season || '';
   return `<div style="margin-top:8px">${s1}${s2}${s3}
-    <div class="xg-note" style="margin-top:8px">数据来源：FBref${season ? ' · 赛季 ' + season : ''} · 运行 python scripts/fbref_advanced.py [赛季] 更新</div></div>`;
+    <div class="xg-note" style="margin-top:8px">数据来源:FBref${season ? ' · 赛季 ' + season : ''} · 运行 python scripts/fbref_advanced.py [赛季] 更新</div></div>`;
 }
 
 // ===== 射手榜 =====
@@ -1035,7 +1103,7 @@ function renderScorers() {
   if (!players) return `<div class="empty-state">
     <div class="icon">⚽</div>
     <div>暂无射手数据</div>
-    <div style="font-size:11px;margin-top:8px;color:var(--text-3)">请在本机运行：python scripts/xg_fetch_local.py --push</div>
+    <div style="font-size:11px;margin-top:8px;color:var(--text-3)">请在本机运行:python scripts/xg_fetch_local.py --push</div>
   </div>`;
   const sorted = players.sort((a, b) => (b.goals || 0) - (a.goals || 0)).slice(0, 20);
   const max = sorted[0]?.goals || 1;
@@ -1052,14 +1120,14 @@ function renderScorers() {
 
 // ===== 预测战绩 =====
 function renderCalibration() {
-  // 校准报告：2025/26 赛季 Elo 滚动回测的分组命中率
+  // 校准报告:2025/26 赛季 Elo 滚动回测的分组命中率
   const c = state.calibration;
   if (!c || !c.buckets) return '';
   const cls = b => b.bias > 0.01 ? 'up' : (b.bias < -0.01 ? 'down' : '');
   const note = b => b.bias > 0.01 ? '低估' : (b.bias < -0.01 ? '偏乐观' : '校准良好');
   return `<div class="calib-card">
-    <div class="section-title" style="margin-top:0">📐 模型校准（${c.source || '上赛季回测'} · ${c.total} 场）</div>
-    <div style="font-size:12px;color:var(--text-2);margin-bottom:8px">总命中率 <b style="color:var(--gold)">${(c.overall * 100).toFixed(1)}%</b>（胜负方向）· 方向分布 主胜${c.directionDist?.home || 0} / 客胜${c.directionDist?.away || 0}</div>
+    <div class="section-title" style="margin-top:0">📐 模型校准(${c.source || '上赛季回测'} · ${c.total} 场)</div>
+    <div style="font-size:12px;color:var(--text-2);margin-bottom:8px">总命中率 <b style="color:var(--gold)">${(c.overall * 100).toFixed(1)}%</b>(胜负方向)· 方向分布 主胜${c.directionDist?.home || 0} / 客胜${c.directionDist?.away || 0}</div>
     <div class="table-wrap"><table class="standings" style="min-width:420px">
       <thead><tr><th>模型概率区间</th><th style="text-align:right">场次</th><th style="text-align:right">实际命中</th><th style="text-align:right">平均概率</th><th style="text-align:right">偏差</th><th>解读</th></tr></thead>
       <tbody>${c.buckets.map(b => `<tr>
@@ -1070,31 +1138,31 @@ function renderCalibration() {
         <td style="font-size:11px;color:var(--muted)">${note(b)}</td>
       </tr>`).join('')}</tbody>
     </table></div>
-    <div style="font-size:11px;color:var(--muted);margin-top:8px">解读：命中率 ≈ 平均概率 = 校准良好；偏差为负表示模型偏乐观（高估），下注时建议对应降注。55-65% 区间最可信，≥65% 的"高置信"历史命中约 69%，凯利注码建议打 8 折。</div>
+    <div style="font-size:11px;color:var(--muted);margin-top:8px">解读:命中率 ≈ 平均概率 = 校准良好;偏差为负表示模型偏乐观(高估),下注时建议对应降注。55-65% 区间最可信,≥65% 的"高置信"历史命中约 69%,凯利注码建议打 8 折。</div>
   </div>`;
 }
 
 function renderCalibOu() {
-  // 盘口模型校准：大球/让球概率分组命中率（验证 ou/sp edge 可信度）
+  // 盘口模型校准:大球/让球概率分组命中率(验证 ou/sp edge 可信度)
   const c = state.calibOu;
   if (!c) return '';
-  const secHtml = (sec, name) => `<div class="section-title" style="margin-top:12px">${name}（整体 ${(sec.overall * 100).toFixed(1)}%）</div>
+  const secHtml = (sec, name) => `<div class="section-title" style="margin-top:12px">${name}(整体 ${(sec.overall * 100).toFixed(1)}%)</div>
     <div class="table-wrap"><table class="standings" style="min-width:420px">
       <thead><tr><th>模型概率区间</th><th style="text-align:right">场次</th><th style="text-align:right">实际命中</th><th style="text-align:right">模型概率</th><th style="text-align:right">偏差</th><th>解读</th></tr></thead>
       <tbody>${sec.buckets.map(b => `<tr><td>${b.label}</td><td style="text-align:right">${b.n}</td><td style="text-align:right;font-weight:700">${(b.hitRate * 100).toFixed(1)}%</td><td style="text-align:right">${(b.avgProb * 100).toFixed(1)}%</td><td class="${b.bias > 0.01 ? 'up' : (b.bias < -0.01 ? 'down' : '')}" style="text-align:right">${b.bias > 0 ? '+' : ''}${(b.bias * 100).toFixed(1)}%</td><td style="font-size:11px;color:var(--muted)">${b.bias > 0.01 ? '低估' : (b.bias < -0.01 ? '高估' : '校准良好')}</td></tr>`).join('')}</tbody></table></div>`;
   return `<div class="calib-card" style="margin-top:14px">
-    <div class="section-title" style="margin-top:0">🎯 盘口模型校准（${c.source} · ${c.total} 场）</div>
+    <div class="section-title" style="margin-top:0">🎯 盘口模型校准(${c.source} · ${c.total} 场)</div>
     ${secHtml(c.ou25, '大球 >2.5 球')}${secHtml(c.ah05, '主队 -0.5 让球盘')}${secHtml(c.ah15, '主队 -1.5 让球盘')}
-    <div style="font-size:11px;color:var(--muted);margin-top:8px">解读：偏差为负 = 模型高估（该区间 edge 打 8 折）；偏差为正 = 模型低估。大球概率注意均值回归：模型 &gt;60% 时实际约 50%，模型 &lt;45% 时实际反而更高——大球 edge 只在 50-60% 区间可信。</div>
+    <div style="font-size:11px;color:var(--muted);margin-top:8px">解读:偏差为负 = 模型高估(该区间 edge 打 8 折);偏差为正 = 模型低估。大球概率注意均值回归:模型 &gt;60% 时实际约 50%,模型 &lt;45% 时实际反而更高--大球 edge 只在 50-60% 区间可信。</div>
   </div>`;
 }
 
 function renderRecord() {
   const h = state.history;
   const calibHtml = renderCalibration() + renderCalibOu();
-  if (!h) return calibHtml || '<div class="empty-state"><div class="icon">📊</div>暂无战绩数据（预测结算后自动累积）</div>';
+  if (!h) return calibHtml || '<div class="empty-state"><div class="icon">📊</div>暂无战绩数据(预测结算后自动累积)</div>';
   const s = h.stats || {};
-  const pct = v => (v == null ? '—' : Math.round(v * 100) + '%');
+  const pct = v => (v == null ? '-' : Math.round(v * 100) + '%');
   const cards = [
     { k: '累计预测', v: s.total ?? 0 },
     { k: '已结算', v: s.finished ?? 0 },
@@ -1102,42 +1170,42 @@ function renderRecord() {
     { k: '胜负方向命中', v: pct(s.outcomeRate), cls: s.outcomeRate >= 0.5 ? 'green' : 'red' },
     { k: '价值标记命中', v: pct(s.valueRate), cls: s.valueRate >= 0.5 ? 'green' : '' },
   ];
-  // AI vs 统计模型方向命中对比（AI 研判有明确倾向的场次）
+  // AI vs 统计模型方向命中对比(AI 研判有明确倾向的场次)
   const aiRow = (s.aiTotal > 0) ? '<div class="record-cards" style="margin-top:8px">' +
-    '<div class="rec-card" style="border-color:var(--gold)"><div class="v gold">' + pct(s.aiRate) + '</div><div class="k">🤖 AI 方向命中（' + s.aiTotal + '场）</div></div>' +
-    '<div class="rec-card"><div class="v">' + pct(s.outcomeRate) + '</div><div class="k">📊 模型方向命中（' + (s.finished || 0) + '场）</div></div>' +
+    '<div class="rec-card" style="border-color:var(--gold)"><div class="v gold">' + pct(s.aiRate) + '</div><div class="k">🤖 AI 方向命中(' + s.aiTotal + '场)</div></div>' +
+    '<div class="rec-card"><div class="v">' + pct(s.outcomeRate) + '</div><div class="k">📊 模型方向命中(' + (s.finished || 0) + '场)</div></div>' +
     '<div class="rec-card"><div class="v">' + pct(s.aiExactRate) + '</div><div class="k">🤖 AI 比分精确</div></div>' +
     '</div>' +
-    '<div style="font-size:11px;color:var(--muted);margin-bottom:4px">AI vs 模型同场对比：AI 有倾向场次方向命中 ' + pct(s.aiRate) + ' vs 全量模型 ' + pct(s.outcomeRate) + ' · 样本累积中，越多越可信</div>' : '';
-  // 按盘口类型统计（模型方向 vs 实际）
-  const mktRow = (s.ouTotal > 0 || s.spTotal > 0) ? '<div class="section-title" style="margin-top:14px">🎯 按盘口类型（模型方向 vs 实际）</div>' +
+    '<div style="font-size:11px;color:var(--muted);margin-bottom:4px">AI vs 模型同场对比:AI 有倾向场次方向命中 ' + pct(s.aiRate) + ' vs 全量模型 ' + pct(s.outcomeRate) + ' · 样本累积中,越多越可信</div>' : '';
+  // 按盘口类型统计(模型方向 vs 实际)
+  const mktRow = (s.ouTotal > 0 || s.spTotal > 0) ? '<div class="section-title" style="margin-top:14px">🎯 按盘口类型(模型方向 vs 实际)</div>' +
     '<div class="table-wrap"><table class="standings" style="min-width:400px">' +
     '<thead><tr><th>盘口类型</th><th style="text-align:right">场次</th><th style="text-align:right">命中</th><th style="text-align:right">命中率</th></tr></thead><tbody>' +
-    '<tr><td>胜平负（方向）</td><td style="text-align:right">' + (s.finished || 0) + '</td><td style="text-align:right">' + (s.outcomeHit || 0) + '</td><td style="text-align:right;font-weight:700" class="' + (s.outcomeRate >= 0.5 ? 'up' : 'down') + '">' + pct(s.outcomeRate) + '</td></tr>' +
-    '<tr><td>大小球（模型方向）</td><td style="text-align:right">' + (s.ouTotal || 0) + '</td><td style="text-align:right">' + (s.ouHit || 0) + '</td><td style="text-align:right;font-weight:700" class="' + ((s.ouRate || 0) >= 0.5 ? 'up' : 'down') + '">' + pct(s.ouRate) + '</td></tr>' +
-    '<tr><td>让球（模型方向）</td><td style="text-align:right">' + (s.spTotal || 0) + '</td><td style="text-align:right">' + (s.spHit || 0) + '</td><td style="text-align:right;font-weight:700" class="' + ((s.spRate || 0) >= 0.5 ? 'up' : 'down') + '">' + pct(s.spRate) + '</td></tr>' +
+    '<tr><td>胜平负(方向)</td><td style="text-align:right">' + (s.finished || 0) + '</td><td style="text-align:right">' + (s.outcomeHit || 0) + '</td><td style="text-align:right;font-weight:700" class="' + (s.outcomeRate >= 0.5 ? 'up' : 'down') + '">' + pct(s.outcomeRate) + '</td></tr>' +
+    '<tr><td>大小球(模型方向)</td><td style="text-align:right">' + (s.ouTotal || 0) + '</td><td style="text-align:right">' + (s.ouHit || 0) + '</td><td style="text-align:right;font-weight:700" class="' + ((s.ouRate || 0) >= 0.5 ? 'up' : 'down') + '">' + pct(s.ouRate) + '</td></tr>' +
+    '<tr><td>让球(模型方向)</td><td style="text-align:right">' + (s.spTotal || 0) + '</td><td style="text-align:right">' + (s.spHit || 0) + '</td><td style="text-align:right;font-weight:700" class="' + ((s.spRate || 0) >= 0.5 ? 'up' : 'down') + '">' + pct(s.spRate) + '</td></tr>' +
     '</tbody></table></div>' +
-    '<div style="font-size:11px;color:var(--muted);margin-top:6px">大小球 = 模型大/小球方向 vs 实际总进球；让球 = 模型主队赢盘方向 vs 实际净胜</div>' : '';
-  // 按置信度区间统计（验证高置信是否真的更准）
+    '<div style="font-size:11px;color:var(--muted);margin-top:6px">大小球 = 模型大/小球方向 vs 实际总进球;让球 = 模型主队赢盘方向 vs 实际净胜</div>' : '';
+  // 按置信度区间统计(验证高置信是否真的更准)
   const cb = s.confBuckets || {};
   const cbRows = ['low', 'mid', 'high'].filter(k => cb[k] && cb[k].n > 0).map(k => {
     const name = { low: '低置信 <50%', mid: '中置信 50-65%', high: '高置信 ≥65%' }[k];
     const b = cb[k];
     return '<tr><td>' + name + '</td><td style="text-align:right">' + b.n + '</td><td style="text-align:right">' + pct(b.rate) + '</td><td style="text-align:right">' + pct(b.avgConf) + '</td><td class="' + (b.rate >= b.avgConf - 0.02 ? 'up' : 'down') + '" style="text-align:right">' + (b.rate >= b.avgConf - 0.02 ? '符合预期' : '偏乐观') + '</td></tr>';
   }).join('');
-  const confRow = (s.finished > 0 && cbRows) ? '<div class="section-title" style="margin-top:14px">📐 按置信度区间（验证校准）</div>' +
+  const confRow = (s.finished > 0 && cbRows) ? '<div class="section-title" style="margin-top:14px">📐 按置信度区间(验证校准)</div>' +
     '<div class="table-wrap"><table class="standings" style="min-width:420px">' +
     '<thead><tr><th>区间</th><th style="text-align:right">场次</th><th style="text-align:right">实际命中</th><th style="text-align:right">平均置信</th><th>校准判断</th></tr></thead><tbody>' + cbRows + '</tbody></table></div>' +
-    '<div style="font-size:11px;color:var(--muted);margin-top:6px">实际命中 ≥ 平均置信 = 校准良好；实际命中 < 平均置信 = 模型偏乐观（高置信该打折）</div>' : '';
-   // ROI 盈亏：按价值信号推荐（方向+当时欧赔+凯利注额，注额上限 5%）统一结算
+    '<div style="font-size:11px;color:var(--muted);margin-top:6px">实际命中 ≥ 平均置信 = 校准良好;实际命中 < 平均置信 = 模型偏乐观(高置信该打折)</div>' : '';
+   // ROI 盈亏:按价值信号推荐(方向+当时欧赔+凯利注额,注额上限 5%)统一结算
    const roiCls = s.betPnl > 0 ? 'green' : (s.betPnl < 0 ? 'red' : '');
    const roiRow = (s.betSettled > 0) ? '<div class="record-cards" style="margin-top:8px;border:1px solid var(--border);border-radius:12px;padding:6px">' +
-     '<div class="rec-card"><div class="v ' + roiCls + '">' + (s.betPnl > 0 ? '+' : '') + (s.betPnl || 0).toFixed(2) + '</div><div class="k">💰 累计盈亏（基准注额）</div></div>' +
-     '<div class="rec-card"><div class="v ' + roiCls + '">' + (s.betROI > 0 ? '+' : '') + ((s.betROI || 0) * 100).toFixed(1) + '%</div><div class="k">📈 ROI（' + s.betSettled + '场）</div></div>' +
-     '<div class="rec-card"><div class="v ' + (s.betRate >= 0.5 ? 'green' : 'red') + '">' + pct(s.betRate) + '</div><div class="k">🎯 推荐方向胜率（' + s.betWon + '/' + s.betSettled + '）</div></div>' +
-     '<div class="rec-card"><div class="v">' + (s.betStakeTotal || 0).toFixed(2) + '</div><div class="k">累计注额（基准）</div></div>' +
+     '<div class="rec-card"><div class="v ' + roiCls + '">' + (s.betPnl > 0 ? '+' : '') + (s.betPnl || 0).toFixed(2) + '</div><div class="k">💰 累计盈亏(基准注额)</div></div>' +
+     '<div class="rec-card"><div class="v ' + roiCls + '">' + (s.betROI > 0 ? '+' : '') + ((s.betROI || 0) * 100).toFixed(1) + '%</div><div class="k">📈 ROI(' + s.betSettled + '场)</div></div>' +
+     '<div class="rec-card"><div class="v ' + (s.betRate >= 0.5 ? 'green' : 'red') + '">' + pct(s.betRate) + '</div><div class="k">🎯 推荐方向胜率(' + s.betWon + '/' + s.betSettled + ')</div></div>' +
+     '<div class="rec-card"><div class="v">' + (s.betStakeTotal || 0).toFixed(2) + '</div><div class="k">累计注额(基准)</div></div>' +
      '</div>' +
-     '<div style="font-size:11px;color:var(--muted);margin-bottom:4px">ROI 按推荐场次统一基准注额结算：盈 = 注额×(赔率-1)，亏 = 注额；注额 = 凯利分数（上限 5%）。ROI>0 = 按推荐下注有正期望</div>' : '';
+     '<div style="font-size:11px;color:var(--muted);margin-bottom:4px">ROI 按推荐场次统一基准注额结算:盈 = 注额×(赔率-1),亏 = 注额;注额 = 凯利分数(上限 5%)。ROI>0 = 按推荐下注有正期望</div>' : '';
   const rows = (h.results || []).slice().reverse().slice(0, 30).map(r => {
     const hit = r.hitOutcome;
     const aiHit = r.aiPick && r.aiPick !== 'none' ? r.aiHitOutcome : null;
@@ -1145,9 +1213,9 @@ function renderRecord() {
     const pnlTag = (br && br.pnl != null) ? '<span class="' + (br.pnl > 0 ? 'res hit' : 'res miss') + '" style="margin-left:6px" title="推荐 ' + (br.side === 'home' ? '主胜' : br.side === 'away' ? '客胜' : '平局') + ' @' + br.odds + ' 注额' + (br.stake * 100).toFixed(1) + '%">' + (br.pnl > 0 ? '+' : '') + (br.pnl * 100).toFixed(1) + '%</span>' : '';
     return '<div class="record-row"><div class="res ' + (hit ? 'hit' : 'miss') + '">' + (hit ? '✓' : '✗') + '</div>' +
       '<span style="flex:1">' + cnTeam(r.homeTeam) + ' vs ' + cnTeam(r.awayTeam) + '</span>' +
-      '<span style="color:var(--muted);font-size:11px">预测</span> <span class="pred">' + (r.predictedScore || '—') + '</span>' +
-      '<span style="color:var(--muted);font-size:11px">实际</span> <span class="actual">' + (r.actualScore || '—') + '</span>' +
-      (aiHit == null ? '' : '<span class="res ' + (aiHit ? 'hit' : 'miss') + '" style="margin-left:6px" title="AI 研判：' + (r.aiScore || '—') + '">🤖' + (aiHit ? '✓' : '✗') + '</span>') +
+      '<span style="color:var(--muted);font-size:11px">预测</span> <span class="pred">' + (r.predictedScore || '-') + '</span>' +
+      '<span style="color:var(--muted);font-size:11px">实际</span> <span class="actual">' + (r.actualScore || '-') + '</span>' +
+      (aiHit == null ? '' : '<span class="res ' + (aiHit ? 'hit' : 'miss') + '" style="margin-left:6px" title="AI 研判:' + (r.aiScore || '-') + '">🤖' + (aiHit ? '✓' : '✗') + '</span>') +
       '</div>';
   }).join('');
   return calibHtml +
@@ -1158,7 +1226,7 @@ function renderRecord() {
   confRow +
   aiRow +
   roiRow +
-  '<div style="font-size:11px;color:var(--muted);margin-bottom:10px">命中判定基于预测时的胜负方向；价值标记命中 = 模型 vs 盘口差>5%的方向是否正确 · 🤖 标记为 AI 研判同场命中 · 💰 标记为推荐投注盈亏（基准注额） · 样本越多越可信</div>' +
+  '<div style="font-size:11px;color:var(--muted);margin-bottom:10px">命中判定基于预测时的胜负方向;价值标记命中 = 模型 vs 盘口差>5%的方向是否正确 · 🤖 标记为 AI 研判同场命中 · 💰 标记为推荐投注盈亏(基准注额) · 样本越多越可信</div>' +
   (rows || '<div class="empty-state">暂无结算记录</div>');
 }
 
@@ -1174,9 +1242,8 @@ function openDetail(homeName, awayName, league) {
     <button class="mkt-tab" data-mkt="ou" onclick="switchMkt('ou')">大小球</button>
     <button class="mkt-tab" data-mkt="sp" onclick="switchMkt('sp')">让球</button>
     <button class="mkt-tab" data-mkt="ah" onclick="switchMkt('ah')">亚盘</button>
-    <button class="mkt-tab" data-mkt="cs" onclick="switchMkt('cs')">波胆</button>
-    <button class="mkt-tab" data-mkt="parlay" onclick="switchMkt('parlay')">串关</button>`;
-  $('analysisBox').textContent = currentPred?.analysis || (currentJc ? '竞彩比赛：赔率见上方，完整分析待赔率管道生成。' : '该场比赛暂无赔率与预测数据。');
+    <button class="mkt-tab" data-mkt="cs" onclick="switchMkt('cs')">波胆</button>`;
+  $('analysisBox').textContent = currentPred?.analysis || (currentJc ? '竞彩比赛:赔率见上方,完整分析待赔率管道生成。' : '该场比赛暂无赔率与预测数据。');
   // 本赛季交锋记录
   const n1 = normTeam(homeName), n2 = normTeam(awayName);
   const h2h = (state.fixtures || []).filter(f => f.status === 'FINISHED' && (
@@ -1190,23 +1257,23 @@ function openDetail(homeName, awayName, league) {
     const st = xm.status === 'finished' ? '已完赛' : (xm.minute ? '第' + xm.minute + '分钟' : '未开赛');
     const xgHome = xm.xgHome ?? 0, xgAway = xm.xgAway ?? 0;
     const xgTend = xgHome > xgAway ? 'home' : xgAway > xgHome ? 'away' : 'draw';
-    // 背离检测：xG 倾向 vs 盘口/模型倾向
+    // 背离检测:xG 倾向 vs 盘口/模型倾向
     let diverge = '';
     if (currentPred && currentPred.eloProb) {
       const eloTend = currentPred.eloProb.home > currentPred.eloProb.away ? 'home' : currentPred.eloProb.away > currentPred.eloProb.home ? 'away' : 'draw';
       if (xgTend !== 'draw' && eloTend !== 'draw' && xgTend !== eloTend) {
         const xgName = xgTend === 'home' ? cnTeam(xm.homeTeam) : cnTeam(xm.awayTeam);
-        diverge = '<div style="margin-top:8px;padding:8px 12px;border-radius:8px;background:rgba(234,57,67,.12);border:1px solid rgba(234,57,67,.35);font-size:11px;color:#f87171">⚠️ <b>xG 背离</b>：xG 数据倾向 ' + xgName + '，但模型/盘口更看好对家——实际表现与纸面预期出现偏差</div>';
+        diverge = '<div style="margin-top:8px;padding:8px 12px;border-radius:8px;background:rgba(234,57,67,.12);border:1px solid rgba(234,57,67,.35);font-size:11px;color:#f87171">⚠️ <b>xG 背离</b>:xG 数据倾向 ' + xgName + ',但模型/盘口更看好对家--实际表现与纸面预期出现偏差</div>';
       }
     }
-    xgBox.innerHTML = '<div class="section-title" style="margin-top:12px">🎯 本场 xG（实时）<span style="font-size:10px;color:var(--muted);font-weight:400">' + st + '</span></div>' +
+    xgBox.innerHTML = '<div class="section-title" style="margin-top:12px">🎯 本场 xG(实时)<span style="font-size:10px;color:var(--muted);font-weight:400">' + st + '</span></div>' +
       '<div class="odds-grid">' +
       '<div class="odds-box"><div class="label">主队</div><div class="value">' + xgHome.toFixed(2) + '</div><div class="sub">' + cnTeam(xm.homeTeam) + '</div></div>' +
       '<div class="odds-box"><div class="label">客队</div><div class="value">' + xgAway.toFixed(2) + '</div><div class="sub">' + cnTeam(xm.awayTeam) + '</div></div>' +
       '<div class="odds-box"><div class="label">倾向</div><div class="value" style="font-size:13px">' + (xgTend === 'home' ? '主队占优' : xgTend === 'away' ? '客队占优' : '势均力敌') + '</div><div class="sub">' + (xm.score ? '比分 ' + xm.score : '') + '</div></div>' +
       '</div>' + diverge;
   } else {
-    xgBox.innerHTML = '<div class="section-title" style="margin-top:12px">🎯 本场 xG</div><div style="font-size:12px;color:var(--muted);padding:6px 0">暂无本场 xG 数据（开赛后本地脚本每 15 分钟自动更新）</div>';
+    xgBox.innerHTML = '<div class="section-title" style="margin-top:12px">🎯 本场 xG</div><div style="font-size:12px;color:var(--muted);padding:6px 0">暂无本场 xG 数据(开赛后本地脚本每 15 分钟自动更新)</div>';
   }
   const h2hEl = $('h2hBox');
   if (h2h.length) {
@@ -1220,7 +1287,7 @@ function openDetail(homeName, awayName, league) {
         <span>${cnTeam(h)} <b>${hs ?? '-'}-${as ?? '-'}</b> ${cnTeam(a)}</span><span style="color:var(--muted)">${fmtDate(f.utcDate)}</span></div>`;
     }).join('');
   } else {
-    h2hEl.innerHTML = '<div class="section-title" style="margin-top:12px">🔄 本赛季交锋</div><div style="font-size:12px;color:var(--muted);padding:6px 0">本赛季暂无两队交锋记录（赛季开始后自动积累）</div>';
+    h2hEl.innerHTML = '<div class="section-title" style="margin-top:12px">🔄 本赛季交锋</div><div style="font-size:12px;color:var(--muted);padding:6px 0">本赛季暂无两队交锋记录(赛季开始后自动积累)</div>';
   }
   switchMkt('h2h');
   $('detailModal').classList.add('open');
@@ -1228,8 +1295,8 @@ function openDetail(homeName, awayName, league) {
 function closeDetail() {
   $('detailModal').classList.remove('open');
 }
-function pct(v) { return v == null ? '—' : Math.round(v * 100) + '%'; }
-// 迷你折线（赔率走势）：赔率降=资金看好（绿色），升=看淡（橙色）
+function pct(v) { return v == null ? '-' : Math.round(v * 100) + '%'; }
+// 迷你折线(赔率走势):赔率降=资金看好(绿色),升=看淡(橙色)
 function trendSpark(values) {
   const vs = (values || []).filter(v => v != null);
   if (vs.length < 2) return '<div style="font-size:10px;color:var(--muted)">采样不足</div>';
@@ -1242,10 +1309,10 @@ function trendSpark(values) {
   return `<svg width="${w}" height="${h}" style="display:block"><polyline points="${pts}" fill="none" stroke="${color}" stroke-width="1.5" opacity="0.85"/></svg>`;
 }
 function oddsTrendBlock(p) {
-  // 初盘→临场走势：读 odds 文件的 history 快照序列
+  // 初盘→临场走势:读 odds 文件的 history 快照序列
   const od = (p && p.league) ? state.oddsByLeague[p.league] : null;
   if (!od || !od.history) return '';
-  // 后端 odds_fetcher.py 只用 .lower() 生成键，不用 TEAM_ALIAS；前端匹配时保持一致
+  // 后端 odds_fetcher.py 只用 .lower() 生成键,不用 TEAM_ALIAS;前端匹配时保持一致
   const h = normTeam(p.homeTeam), a = normTeam(p.awayTeam);
   const hk = Object.keys(od.history).find(k => { const [x, y] = k.split('|'); return normTeam(x) === h && normTeam(y) === a; });
   if (!hk) return '';
@@ -1254,9 +1321,9 @@ function oddsTrendBlock(p) {
   const first = snaps[0], last = snaps[snaps.length - 1];
   const arrow = (x, y) => x != null && y != null ? (y > x ? '<span style="color:#f59e0b">↗' + (y - x).toFixed(2) + '</span>' : y < x ? '<span style="color:#22c55e">↘' + (x - y).toFixed(2) + '</span>' : '<span style="color:var(--muted)">平</span>') : '';
   const box = (k, label) => `<div class="trend-box"><div class="label">${label} ${arrow(first.h2h?.[k], last.h2h?.[k])}</div>${trendSpark(snaps.map(s => s.h2h?.[k]))}</div>`;
-  return `<div class="section-title" style="margin-top:10px">📈 盘口走势（初盘→临场，${snaps.length} 次采样）</div>
+  return `<div class="section-title" style="margin-top:10px">📈 盘口走势(初盘→临场,${snaps.length} 次采样)</div>
     <div class="trend-row">${box('home', '主胜')}${box('draw', '平局')}${box('away', '客胜')}</div>
-    <div style="font-size:10px;color:var(--muted);margin-top:4px">初盘 ${first.h2h?.home ?? '—'} / ${first.h2h?.draw ?? '—'} / ${first.h2h?.away ?? '—'} → 临场 ${last.h2h?.home ?? '—'} / ${last.h2h?.draw ?? '—'} / ${last.h2h?.away ?? '—'} · 赔率降 = 资金看好</div>`;
+    <div style="font-size:10px;color:var(--muted);margin-top:4px">初盘 ${first.h2h?.home ?? '-'} / ${first.h2h?.draw ?? '-'} / ${first.h2h?.away ?? '-'} → 临场 ${last.h2h?.home ?? '-'} / ${last.h2h?.draw ?? '-'} / ${last.h2h?.away ?? '-'} · 赔率降 = 资金看好</div>`;
 }
 function switchMkt(mkt) {
   document.querySelectorAll('.mkt-tab').forEach(b => b.classList.toggle('active', b.dataset.mkt === mkt));
@@ -1268,7 +1335,7 @@ function switchMkt(mkt) {
     const ro = p.rawOdds || {};
     const oc = p.oddsChange || {};
     const kl = p.kelly || {};
-    // 赔率走势：当前 vs 上次快照
+    // 赔率走势:当前 vs 上次快照
     const trend = (cur, prev) => {
       if (cur == null || prev == null) return '';
       const d = cur - prev;
@@ -1287,12 +1354,12 @@ function switchMkt(mkt) {
     const kellyTxt = (v) => v == null ? '' : `<div class="sub" style="color:${v > 0.05 ? '#22c55e' : (v < 0 ? '#ef4444' : '#9ca3af')}">凯利 ${v > 0 ? '+' : ''}${v.toFixed(2)}</div>`;
     el.innerHTML = `<div class="odds-grid">
 
-      <div class="odds-box"><div class="label">主胜 ${trend(ro.home, p.prevOdds?.home)}</div><div class="value">${ro.home ?? '—'}${chg(oc.home)}</div><div class="sub">${pct(pr.home)}</div>${kellyTxt(kl.home)}</div>
-      <div class="odds-box"><div class="label">平局 ${trend(ro.draw, p.prevOdds?.draw)}</div><div class="value">${ro.draw ?? '—'}${chg(oc.draw)}</div><div class="sub">${pct(pr.draw)}</div>${kellyTxt(kl.draw)}</div>
-      <div class="odds-box"><div class="label">客胜 ${trend(ro.away, p.prevOdds?.away)}</div><div class="value">${ro.away ?? '—'}${chg(oc.away)}</div><div class="sub">${pct(pr.away)}</div>${kellyTxt(kl.away)}</div>
+      <div class="odds-box"><div class="label">主胜 ${trend(ro.home, p.prevOdds?.home)}</div><div class="value">${ro.home ?? '-'}${chg(oc.home)}</div><div class="sub">${pct(pr.home)}</div>${kellyTxt(kl.home)}</div>
+      <div class="odds-box"><div class="label">平局 ${trend(ro.draw, p.prevOdds?.draw)}</div><div class="value">${ro.draw ?? '-'}${chg(oc.draw)}</div><div class="sub">${pct(pr.draw)}</div>${kellyTxt(kl.draw)}</div>
+      <div class="odds-box"><div class="label">客胜 ${trend(ro.away, p.prevOdds?.away)}</div><div class="value">${ro.away ?? '-'}${chg(oc.away)}</div><div class="sub">${pct(pr.away)}</div>${kellyTxt(kl.away)}</div>
     </div>
-    <div style="font-size:10px;color:var(--muted);margin-top:6px;text-align:center">↗ 较上次快照升（看淡）↘ 降（看好）· 凯利>0 有正期望 · 快照持续累积后将升级为走势曲线</div>
-    ${(() => { const bm = p.bookmakerOdds || []; if (!bm.length) return ''; const best = (side) => { const items = bm.filter(b => b.h2h && b.h2h[side]).sort((a, b) => b.h2h[side] - a.h2h[side]); return items.length ? items[0] : null; }; const bh = best('home'), bd = best('draw'), ba = best('away'); if (!bh && !bd && !ba) return ''; const cell = (label, cur, b) => { if (!b) return ''; const diff = b.h2h[label] - cur; return `<div class="odds-box" style="border-color:rgba(34,197,94,.4)"><div class="label">${label}最佳</div><div class="value" style="color:#22c55e">${b.h2h[label]}</div><div class="sub">${b.name}${diff > 0 ? ' · 比均值高' + diff.toFixed(2) : ''}</div></div>`; }; return `<div class="section-title" style="margin-top:10px">💰 Best Price（21 家对比）</div><div class="odds-grid">${cell('home', ro.home, bh)}${cell('draw', ro.draw, bd)}${cell('away', ro.away, ba)}</div><div style="font-size:10px;color:var(--muted);margin-top:4px">各方向取 21 家博彩公司最高赔率：同方向买最高价，长期能提升 ROI</div>`; })()}
+    <div style="font-size:10px;color:var(--muted);margin-top:6px;text-align:center">↗ 较上次快照升(看淡)↘ 降(看好)· 凯利>0 有正期望 · 快照持续累积后将升级为走势曲线</div>
+    ${(() => { const bm = p.bookmakerOdds || []; if (!bm.length) return ''; const best = (side) => { const items = bm.filter(b => b.h2h && b.h2h[side]).sort((a, b) => b.h2h[side] - a.h2h[side]); return items.length ? items[0] : null; }; const bh = best('home'), bd = best('draw'), ba = best('away'); if (!bh && !bd && !ba) return ''; const cell = (label, cur, b) => { if (!b) return ''; const diff = b.h2h[label] - cur; return `<div class="odds-box" style="border-color:rgba(34,197,94,.4)"><div class="label">${label}最佳</div><div class="value" style="color:#22c55e">${b.h2h[label]}</div><div class="sub">${b.name}${diff > 0 ? ' · 比均值高' + diff.toFixed(2) : ''}</div></div>`; }; return `<div class="section-title" style="margin-top:10px">💰 Best Price(21 家对比)</div><div class="odds-grid">${cell('home', ro.home, bh)}${cell('draw', ro.draw, bd)}${cell('away', ro.away, ba)}</div><div style="font-size:10px;color:var(--muted);margin-top:4px">各方向取 21 家博彩公司最高赔率:同方向买最高价,长期能提升 ROI</div>`; })()}
     ${oddsTrendBlock(p)}
     ${p.aiJudge ? (function(a){ const cn = {home:'主胜',draw:'平局',away:'客胜',none:'不碰'}; const conf = a.confidence != null ? Math.round(a.confidence*100) : null; return `<div class="section-title" style="margin-top:10px">🤖 AI 研判<span style="font-size:10px;color:var(--muted);font-weight:400"> ${a.model || ''} · ${a.latency != null ? a.latency + 's' : ''}</span></div><div style="padding:10px 12px;border-radius:8px;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.25);font-size:12px;line-height:1.7"><div style="margin-bottom:4px"><b>${a.pick && a.pick !== 'none' ? cn[a.pick] : '无明显倾向'}</b>${a.score ? ' · 比分 ' + a.score : ''}${conf != null ? ' · 置信度 ' + conf + '%' : ''}</div>${a.reason ? '<div style="color:var(--text-2)">' + esc(a.reason) + '</div>' : ''}</div>`;})(p.aiJudge) : ''}
     ${p.eloProb ? `<div class="section-title" style="margin-top:10px">🤖 独立模型 (Elo+修正)</div>
@@ -1301,42 +1368,42 @@ function switchMkt(mkt) {
       <div class="odds-box"><div class="label">平局</div><div class="value">${pct(p.eloProb.draw)}</div><div class="sub">盘口 ${pct(pr.draw)}</div></div>
       <div class="odds-box"><div class="label">客胜</div><div class="value">${pct(p.eloProb.away)}</div><div class="sub">盘口 ${pct(pr.away)}</div></div>
     </div>
-    ${(p.valuePicks || []).length ? `<div style="font-size:11px;padding:8px 10px;border-radius:8px;background:rgba(240,185,11,.1);border:1px solid rgba(240,185,11,.3);color:var(--gold);margin-top:8px">💰 价值信号：${(p.valuePicks||[]).map(v => v.label + ' 模型' + Math.round(v.modelProb*100) + '% vs 盘口' + Math.round(v.oddsProb*100) + '%').join('、')}</div>` : ''}` : ''}`;
+    ${(p.valuePicks || []).length ? `<div style="font-size:11px;padding:8px 10px;border-radius:8px;background:rgba(240,185,11,.1);border:1px solid rgba(240,185,11,.3);color:var(--gold);margin-top:8px">💰 价值信号:${(p.valuePicks||[]).map(v => v.label + ' 模型' + Math.round(v.modelProb*100) + '% vs 盘口' + Math.round(v.oddsProb*100) + '%').join('、')}</div>` : ''}` : ''}`;
   } else if (mkt === 'jc') {
-    if (!jc) { el.innerHTML = '<div class="empty-state">该场比赛未开售竞彩（或不在售）</div>'; return; }
+    if (!jc) { el.innerHTML = '<div class="empty-state">该场比赛未开售竞彩(或不在售)</div>'; return; }
     const had = jc.had || {};
     const hhad = jc.hhad || {};
     const ttg = jc.ttg || {};
     el.innerHTML = `
-      ${(function(){ const oh = (jc.oddsHistory || []).filter(o => o && (o.h || o.d || o.a)).slice().sort((a, b) => (a.time || '').localeCompare(b.time || '')); if (!oh.length) return ''; const first = oh[0], last = oh[oh.length - 1]; const arrow = (a, b) => a && b ? (a === b ? '<span style="color:var(--muted)">平</span>' : (a > b ? '<span style="color:var(--red)">↗' + (a - b).toFixed(2) + '</span>' : '<span style="color:var(--green)">↘' + (b - a).toFixed(2) + '</span>')) : ''; return '<div style="font-size:10px;color:var(--muted);margin-bottom:8px">SP 走势：主胜 ' + (first.h || '—') + arrow(last.h, first.h) + ' · 平 ' + (first.d || '—') + arrow(last.d, first.d) + ' · 客 ' + (first.a || '—') + arrow(last.a, first.a) + '（' + oh.length + ' 次采样）</div>'; })()}
+      ${(function(){ const oh = (jc.oddsHistory || []).filter(o => o && (o.h || o.d || o.a)).slice().sort((a, b) => (a.time || '').localeCompare(b.time || '')); if (!oh.length) return ''; const first = oh[0], last = oh[oh.length - 1]; const arrow = (a, b) => a && b ? (a === b ? '<span style="color:var(--muted)">平</span>' : (a > b ? '<span style="color:var(--red)">↗' + (a - b).toFixed(2) + '</span>' : '<span style="color:var(--green)">↘' + (b - a).toFixed(2) + '</span>')) : ''; return '<div style="font-size:10px;color:var(--muted);margin-bottom:8px">SP 走势:主胜 ' + (first.h || '-') + arrow(last.h, first.h) + ' · 平 ' + (first.d || '-') + arrow(last.d, first.d) + ' · 客 ' + (first.a || '-') + arrow(last.a, first.a) + '(' + oh.length + ' 次采样)</div>'; })()}
       <div class="section-title" style="margin-top:0">胜平负 SP</div>
       <div class="odds-grid">
-        <div class="odds-box"><div class="label">主胜</div><div class="value">${had.h ?? '—'}</div></div>
-        <div class="odds-box"><div class="label">平局</div><div class="value">${had.d ?? '—'}</div></div>
-        <div class="odds-box"><div class="label">客胜</div><div class="value">${had.a ?? '—'}</div></div>
+        <div class="odds-box"><div class="label">主胜</div><div class="value">${had.h ?? '-'}</div></div>
+        <div class="odds-box"><div class="label">平局</div><div class="value">${had.d ?? '-'}</div></div>
+        <div class="odds-box"><div class="label">客胜</div><div class="value">${had.a ?? '-'}</div></div>
       </div>
-      <div class="section-title">让球胜平负（${jc.hhad?.goalLine ? '让 ' + jc.hhad.goalLine + ' 球' : ''}）</div>
+      <div class="section-title">让球胜平负(${jc.hhad?.goalLine ? '让 ' + jc.hhad.goalLine + ' 球' : ''})</div>
       <div class="odds-grid">
-        <div class="odds-box"><div class="label">主胜</div><div class="value">${hhad.h ?? '—'}</div></div>
-        <div class="odds-box"><div class="label">平局</div><div class="value">${hhad.d ?? '—'}</div></div>
-        <div class="odds-box"><div class="label">客胜</div><div class="value">${hhad.a ?? '—'}</div></div>
+        <div class="odds-box"><div class="label">主胜</div><div class="value">${hhad.h ?? '-'}</div></div>
+        <div class="odds-box"><div class="label">平局</div><div class="value">${hhad.d ?? '-'}</div></div>
+        <div class="odds-box"><div class="label">客胜</div><div class="value">${hhad.a ?? '-'}</div></div>
       </div>
       <div class="section-title">总进球 SP</div>
       <div class="odds-grid" style="grid-template-columns:repeat(4,1fr)">
-        ${[0,1,2,3,4,5,6,7].map(i => `<div class="odds-box"><div class="label">${i === 7 ? '7+' : i + '球'}</div><div class="value" style="font-size:14px">${ttg[i] ?? '—'}</div></div>`).join('')}
+        ${[0,1,2,3,4,5,6,7].map(i => `<div class="odds-box"><div class="label">${i === 7 ? '7+' : i + '球'}</div><div class="value" style="font-size:14px">${ttg[i] ?? '-'}</div></div>`).join('')}
       </div>
-      ${(function(){ const crs = jc.crsOdds || {}; const entries = Object.entries(crs); if (!entries.length) return ''; const top = entries.sort((a,b) => parseFloat(a[1]) - parseFloat(b[1])).slice(0, 8); return '<div class="section-title">比分玩法 SP（波胆）</div><div class="cs-grid">' + top.map(([s, o]) => '<div class="cs-item"><div class="score">' + s + '</div><div class="p">' + o + '</div></div>').join('') + '</div>'; })()}
+      ${(function(){ const crs = jc.crsOdds || {}; const entries = Object.entries(crs); if (!entries.length) return ''; const top = entries.sort((a,b) => parseFloat(a[1]) - parseFloat(b[1])).slice(0, 8); return '<div class="section-title">比分玩法 SP(波胆)</div><div class="cs-grid">' + top.map(([s, o]) => '<div class="cs-item"><div class="score">' + s + '</div><div class="p">' + o + '</div></div>').join('') + '</div>'; })()}
       <div class="section-title">半全场 SP</div>
       <div class="odds-grid" style="grid-template-columns:repeat(3,1fr)">
         ${[['胜胜','hh'],['胜平','hd'],['胜负','ha'],['平胜','dh'],['平平','dd'],['平负','da'],['负胜','ah'],['负平','ad'],['负负','aa']].map(([cn, k]) =>
-          `<div class="odds-box"><div class="label">${cn}</div><div class="value" style="font-size:13px">${(jc.hafu || {})[cn] ?? '—'}</div></div>`).join('')}
+          `<div class="odds-box"><div class="label">${cn}</div><div class="value" style="font-size:13px">${(jc.hafu || {})[cn] ?? '-'}</div></div>`).join('')}
       </div>
-      <div class="xg-note">竞彩官方 SP（本地脚本定时抓取）· ${jc.matchNumStr || ''}</div>`;
+      <div class="xg-note">竞彩官方 SP(本地脚本定时抓取)· ${jc.matchNumStr || ''}</div>`;
   } else if (mkt === 'ou') {
     if (!p) { el.innerHTML = '<div class="empty-state">暂无大小球数据</div>'; return; }
     const ou = p.overUnder || {};
     const om = p.ouModel;
-    // 模型 vs 盘口对比（模型大球概率 vs 盘口隐含概率）
+    // 模型 vs 盘口对比(模型大球概率 vs 盘口隐含概率)
     const cmp = (label, modelV, mktV, edge, kl) => {
       if (modelV == null) return '';
       const eCls = edge > 0.02 ? 'color:#22c55e' : (edge < -0.02 ? 'color:#ef4444' : 'color:var(--muted)');
@@ -1348,30 +1415,30 @@ function switchMkt(mkt) {
       <div class="odds-box"><div class="label">小球 ${ou.line ?? 2.5}</div><div class="value">${pct(ou.under)}</div><div class="sub">${ou.underPrice ? '赔率 ' + ou.underPrice : ''}</div></div>
       <div class="odds-box"><div class="label">倾向</div><div class="value" style="font-size:15px">${(ou.over||0) >= 0.5 ? '大球' : '小球'}</div><div class="sub">盘口</div></div>
     </div>
-    ${om ? `<div class="section-title" style="margin-top:10px">🤖 模型 vs 盘口（大小球）</div>
+    ${om ? `<div class="section-title" style="margin-top:10px">🤖 模型 vs 盘口(大小球)</div>
     <div class="odds-grid">${cmp('模型大球', om.over, ou.over, om.edge, om.kelly)}<div class="odds-box"><div class="label">解读</div><div class="value" style="font-size:13px">${om.edge > 0.02 ? '模型认为大球有价值' : om.edge < -0.02 ? '模型认为小球有价值' : '模型与盘口一致'}</div><div class="sub">edge${om.edge > 0 ? '+' : ''}${((om.edge || 0) * 100).toFixed(0)}%</div></div></div>
-    <div style="font-size:10px;color:var(--muted)">edge = 模型大球概率 − 盘口隐含概率；正=大球方向有正期望</div>` : ''}`;
+    <div style="font-size:10px;color:var(--muted)">edge = 模型大球概率 - 盘口隐含概率;正=大球方向有正期望</div>` : ''}`;
   } else if (mkt === 'sp') {
     if (!p || !p.spreads) { el.innerHTML = '<div class="empty-state">暂无让球盘数据</div>'; return; }
     const s = p.spreads;
     const sm = p.spModel;
     const eCls = sm && sm.edge != null ? (sm.edge > 0.02 ? 'color:#22c55e' : (sm.edge < -0.02 ? 'color:#ef4444' : 'color:var(--muted)')) : '';
     el.innerHTML = `<div class="odds-grid">
-      <div class="odds-box"><div class="label">主队让球</div><div class="value">${s.home?.point ?? '—'}</div><div class="sub">赔率 ${s.home?.price ?? '—'}</div></div>
-      <div class="odds-box"><div class="label">客队受让</div><div class="value">${s.away?.point ?? '—'}</div><div class="sub">赔率 ${s.away?.price ?? '—'}</div></div>
+      <div class="odds-box"><div class="label">主队让球</div><div class="value">${s.home?.point ?? '-'}</div><div class="sub">赔率 ${s.home?.price ?? '-'}</div></div>
+      <div class="odds-box"><div class="label">客队受让</div><div class="value">${s.away?.point ?? '-'}</div><div class="sub">赔率 ${s.away?.price ?? '-'}</div></div>
       <div class="odds-box"><div class="label">解读</div><div class="value" style="font-size:13px">${s.home && s.home.point != null ? (s.home.point < 0 ? '机构看好主队' : (s.home.point > 0 ? '机构看好客队' : '平手盘')) : '数据不足'}</div></div>
     </div>
-    ${sm ? `<div class="section-title" style="margin-top:10px">🤖 模型 vs 盘口（让球）</div>
+    ${sm ? `<div class="section-title" style="margin-top:10px">🤖 模型 vs 盘口(让球)</div>
     <div class="odds-grid">
       <div class="odds-box"><div class="label">模型赢盘率</div><div class="value">${pct(sm.cover)}</div><div class="sub" style="${eCls}">盘口隐含 ${pct(sm.implied)} · edge${sm.edge > 0 ? '+' : ''}${((sm.edge || 0) * 100).toFixed(0)}%</div>${sm.kelly != null ? `<div class="sub" style="${sm.kelly > 0 ? 'color:#22c55e' : 'color:#ef4444'}">凯利 ${sm.kelly > 0 ? '+' : ''}${sm.kelly.toFixed(2)}</div>` : ''}</div>
-      <div class="odds-box"><div class="label">解读</div><div class="value" style="font-size:13px">${sm.edge > 0.02 ? '模型认为主队赢盘被低估' : sm.edge < -0.02 ? '模型认为主队赢盘被高估' : '模型与盘口一致'}</div><div class="sub">主队让 ${sm.point != null ? sm.point : '—'} 球视角</div></div>
+      <div class="odds-box"><div class="label">解读</div><div class="value" style="font-size:13px">${sm.edge > 0.02 ? '模型认为主队赢盘被低估' : sm.edge < -0.02 ? '模型认为主队赢盘被高估' : '模型与盘口一致'}</div><div class="sub">主队让 ${sm.point != null ? sm.point : '-'} 球视角</div></div>
     </div>
-    <div style="font-size:10px;color:var(--muted)">edge = 模型赢盘率 − 盘口隐含概率；正=让球方向有正期望</div>` : ''}`;
+    <div style="font-size:10px;color:var(--muted)">edge = 模型赢盘率 - 盘口隐含概率;正=让球方向有正期望</div>` : ''}`;
   } else if (mkt === 'ah') {
-    // 亚盘数据：football-data.co.uk 历史盘口（收盘），按队名匹配
+    // 亚盘数据:football-data.co.uk 历史盘口(收盘),按队名匹配
     const od = (p && p.league) ? state.asianByLeague[p.league] : null;
-    // 赛季判定：8 月及以后属当年赛季，否则属上一赛季（亚盘/预测须同赛季才匹配，
-    // 避免未开赛的新赛季对阵捞到上赛季同名交锋的历史结算）
+    // 赛季判定:8 月及以后属当年赛季,否则属上一赛季(亚盘/预测须同赛季才匹配,
+    // 避免未开赛的新赛季对阵捞到上赛季同名交锋的历史结算)
     const seasonOf = (iso) => { const y = parseInt((iso || '').slice(0, 4), 10); const mo = parseInt((iso || '').slice(5, 7), 10); return (y && mo) ? (mo >= 8 ? y : y - 1) : 0; };
     const am = (od && od.matches) ? od.matches.find(x => {
       if (seasonOf(x.kickoff) !== seasonOf(p.kickoff)) return false;
@@ -1379,18 +1446,18 @@ function switchMkt(mkt) {
       const h = normTeam(p.homeTeam), a = normTeam(p.awayTeam);
       return (xh === h && xa === a) || (xh.split(' ')[0] === h.split(' ')[0] && xa.split(' ')[0] === a.split(' ')[0]);
     }) : null;
-    if (!am) { el.innerHTML = '<div class="empty-state">暂无亚盘数据（历史亚盘来自 football-data.co.uk，每周更新；新赛季场次赛后才入库）</div>'; return; }
-    const fmtPoint = (pt) => pt == null ? '—' : (pt > 0 ? '+' + pt : String(pt));
+    if (!am) { el.innerHTML = '<div class="empty-state">暂无亚盘数据(历史亚盘来自 football-data.co.uk,每周更新;新赛季场次赛后才入库)</div>'; return; }
+    const fmtPoint = (pt) => pt == null ? '-' : (pt > 0 ? '+' + pt : String(pt));
     const settleTxt = { 'home': '主队赢盘', 'away': '客队赢盘', 'home_half': '主队赢半', 'away_half': '客队赢半', 'push': '走水' }[am.settle] || '未结算';
     const settleCls = am.settle === 'home' || am.settle === 'home_half' ? 'var(--green)' : (am.settle === 'away' || am.settle === 'away_half') ? 'var(--red)' : 'var(--muted)';
-    const interp = am.line == null ? '数据不足' : (am.line < 0 ? '主队让 ' + fmtPoint(-am.line) + ' 球（机构看好主队）' : am.line > 0 ? '主队受让 ' + fmtPoint(am.line) + ' 球（机构看好客队）' : '平手盘（势均力敌）');
+    const interp = am.line == null ? '数据不足' : (am.line < 0 ? '主队让 ' + fmtPoint(-am.line) + ' 球(机构看好主队)' : am.line > 0 ? '主队受让 ' + fmtPoint(am.line) + ' 球(机构看好客队)' : '平手盘(势均力敌)');
     el.innerHTML = `<div class="odds-grid">
-      <div class="odds-box"><div class="label">主队 ${fmtPoint(am.line)}</div><div class="value">${am.homeOdds ?? '—'}</div><div class="sub">水位（让球方）</div></div>
-      <div class="odds-box"><div class="label">客队 ${fmtPoint(-am.line)}</div><div class="value">${am.awayOdds ?? '—'}</div><div class="sub">水位（受让方）</div></div>
+      <div class="odds-box"><div class="label">主队 ${fmtPoint(am.line)}</div><div class="value">${am.homeOdds ?? '-'}</div><div class="sub">水位(让球方)</div></div>
+      <div class="odds-box"><div class="label">客队 ${fmtPoint(-am.line)}</div><div class="value">${am.awayOdds ?? '-'}</div><div class="sub">水位(受让方)</div></div>
       <div class="odds-box"><div class="label">结算</div><div class="value" style="font-size:13px;color:${settleCls}">${am.result ? am.result + ' → ' + settleTxt : settleTxt}</div><div class="sub">${am.kickoff || ''}</div></div>
     </div>
     <div class="odds-box" style="margin-top:8px"><div class="label">解读</div><div class="value" style="font-size:13px">${interp}</div></div>
-    <div style="font-size:10px;color:var(--muted);margin-top:6px">亚盘让球数：主队视角，负=让球 正=受让 · 水位为欧赔格式 · 数据源 football-data.co.uk（收盘盘口，每周更新）· 结算含 1/4 盘赢半/输半</div>`;
+    <div style="font-size:10px;color:var(--muted);margin-top:6px">亚盘让球数:主队视角,负=让球 正=受让 · 水位为欧赔格式 · 数据源 football-data.co.uk(收盘盘口,每周更新)· 结算含 1/4 盘赢半/输半</div>`;
   } else if (mkt === 'cs') {
     if (!p) { el.innerHTML = '<div class="empty-state">暂无波胆数据</div>'; return; }
     const cs = p.correctScores || [];
@@ -1408,97 +1475,30 @@ function switchMkt(mkt) {
     }).join('');
     el.innerHTML = `<div class="cs-grid">${items}</div>` +
       (hasCrs ? '<div style="font-size:10px;color:var(--muted);margin-top:6px">模型比分概率 vs 竞彩波胆赔率隐含概率：模型概率更高 = 该比分有价值（开赛后自动出现）</div>' : '<div style="font-size:10px;color:var(--muted);margin-top:6px">竞彩波胆未开售该场比赛，无法对比价值</div>');
-  } else if (mkt === 'parlay') {
-    // 串关：从价值信号（edge>0 且无分歧）自动组合推荐
-    // 模型概率按校准打折：≥65% 区间实际命中 68.8%（约 0.97 折）、55-65% 约 0.98 折——
-    // 统一按 0.85 保守折扣，避免期望值虚高（校准报告：模型整体偏乐观 2-3%）
-    const probDiscount = 0.85;
-    // 组合赔率上限：超过 15 倍基本是搏冷彩票，过滤掉
-    const MAX_ODDS = 15;
-    const sigs = (state.predictions || []).filter(x =>
-      x.league && x.valuePicks && x.valuePicks.length && !x.diverge &&
-      (x.valuePicks.some(v => v.edge > 0.1)));
-    const curHome = p ? normTeam(p.homeTeam) : '';
-    const combos = [];
-    const cands = sigs.slice(0, 8);
-    // 2 串 1
-    for (let i = 0; i < cands.length; i++) {
-      for (let j = i + 1; j < cands.length; j++) {
-        const v1 = cands[i].valuePicks.find(v => v.edge > 0.1), v2 = cands[j].valuePicks.find(v => v.edge > 0.1);
-        if (!v1 || !v2) continue;
-        const o1 = (cands[i].rawOdds || {})[v1.side], o2 = (cands[j].rawOdds || {})[v2.side];
-        if (!o1 || !o2) continue;
-        const odds = o1 * o2;
-        if (odds > MAX_ODDS) continue;  // 过滤高赔率搏冷组合
-        const prob = v1.modelProb * v2.modelProb * probDiscount * probDiscount;
-        const exp = odds * prob;
-        combos.push({
-          legs: [cands[i], cands[j]], picks: [v1, v2], odds: odds, prob: prob,
-          exp: exp, label: `${cnTeam(cands[i].homeTeam)}${v1.label}×${cnTeam(cands[j].homeTeam)}${v2.label}`,
-        });
-      }
-    }
-    // 3 串 1（限制数量）
-    for (let i = 0; i < Math.min(3, cands.length); i++) {
-      for (let j = i + 1; j < Math.min(4, cands.length); j++) {
-        for (let k = j + 1; k < Math.min(5, cands.length); k++) {
-          const a = cands[i], b = cands[j], c = cands[k];
-          const va = a.valuePicks.find(v => v.edge > 0.1), vb = b.valuePicks.find(v => v.edge > 0.1), vc = c.valuePicks.find(v => v.edge > 0.1);
-          if (!va || !vb || !vc) continue;
-          const oa = (a.rawOdds || {})[va.side], ob = (b.rawOdds || {})[vb.side], oc = (c.rawOdds || {})[vc.side];
-          if (!oa || !ob || !oc) continue;
-          const odds = oa * ob * oc;
-          if (odds > MAX_ODDS) continue;
-          const prob = va.modelProb * vb.modelProb * vc.modelProb * Math.pow(probDiscount, 3);
-          combos.push({
-            legs: [a, b, c], picks: [va, vb, vc], odds: odds, prob: prob, exp: odds * prob,
-            label: `${cnTeam(a.homeTeam)}${va.label}×${cnTeam(b.homeTeam)}${vb.label}×${cnTeam(c.homeTeam)}${vc.label}`,
-          });
-        }
-      }
-    }
-    // 排序：期望值 × 概率综合分（避免高赔率低概率搏冷霸榜），期望值优先
-    combos.sort((x, y) => (y.exp * y.prob) - (x.exp * x.prob));
-    if (!combos.length) {
-      el.innerHTML = '<div class="empty-state">暂无串关候选（需要至少 2 场有价值信号且无分歧的比赛，开赛后自动出现）</div>';
-      return;
-    }
-    const curTag = (x) => normTeam(x.homeTeam) === curHome ? ' <span style="color:var(--gold)">← 当前场</span>' : '';
-    el.innerHTML = '<div class="section-title" style="margin-top:0">🎯 串关建议（价值信号 × 无分歧）</div>' +
-      '<div style="font-size:11px;color:var(--muted);margin-bottom:8px">按综合评分排序：组合赔率 × 打折后概率。模型概率已按校准打折 85%（模型偏乐观），组合赔率 &gt;15 的搏冷组合已过滤。</div>' +
-      combos.slice(0, 8).map(c => {
-        const legsTxt = c.legs.map((l, i) => cnTeam(l.homeTeam) + ' vs ' + cnTeam(l.awayTeam) + ' → ' + c.picks[i].label).join('<br>');
-        return `<div style="padding:10px 12px;border-radius:10px;background:var(--bg-2);border:1px solid var(--border);margin-bottom:8px">
-          <div style="font-weight:700;font-size:12px">${c.label}${curTag(c.legs[0])}</div>
-          <div style="font-size:11px;color:var(--muted);margin:4px 0">${legsTxt}</div>
-          <div style="font-size:12px">组合赔率 <b style="color:var(--gold)">${c.odds.toFixed(2)}</b> · 打折后概率 ${(c.prob * 100).toFixed(1)}% · 期望值 ${c.exp.toFixed(2)}${c.exp > 1.05 ? ' <span style="color:#22c55e;font-weight:700">值得</span>' : ''}</div>
-        </div>`;
-      }).join('') +
-      '<div style="font-size:10px;color:var(--muted);margin-top:8px">概率 = 各腿模型概率相乘（独立假设）× 校准折扣 85%；期望值 &gt;1.05 才值得考虑。串关任一腿失败即全输，请谨慎。</div>';
   }
 }
 
 // ── 刷新（合并：右上角一键 = 本地重载 + 云端触发 + 自动轮询）──
-// 详情页原「刷新分析」已移除：云端刷新状态统一显示在右上角刷新按钮旁。
+// 详情页原「刷新分析」已移除:云端刷新状态统一显示在右上角刷新按钮旁。
 function refreshAll() {
   const status = $('refreshStatus');
   const pat = localStorage.getItem('gh_pat');
-  // ① 有 Token 则触发云端 Actions 重抓（不等待本地加载）
+  // 1 有 Token 则触发云端 Actions 重抓(不等待本地加载)
   if (pat) {
     fetch('https://api.github.com/repos/BarryLiu-agent/football-guide/actions/workflows/daily.yml/dispatches', {
       method: 'POST',
       headers: { 'Accept': 'application/vnd.github+json', 'Authorization': 'Bearer ' + pat, 'X-GitHub-Api-Version': '2022-11-28' },
       body: JSON.stringify({ ref: 'main' })
     }).then(r => {
-      if (r.ok) status.textContent = '云端刷新已触发，约 2-4 分钟自动更新…';
+      if (r.ok) status.textContent = '云端刷新已触发,约 2-4 分钟自动更新...';
       else if (r.status === 401 || r.status === 403) {
         localStorage.removeItem('gh_pat');
-        status.innerHTML = 'Token 无效，已清除 · <a href="#" onclick="event.preventDefault();configToken()" style="color:var(--gold)">重新配置</a>';
-      } else status.textContent = '触发失败（HTTP ' + r.status + '），30 分钟内自动更新。';
-    }).catch(() => status.textContent = '网络错误，30 分钟内自动更新。');
+        status.innerHTML = 'Token 无效,已清除 · <a href="#" onclick="event.preventDefault();configToken()" style="color:var(--gold)">重新配置</a>';
+      } else status.textContent = '触发失败(HTTP ' + r.status + '),30 分钟内自动更新。';
+    }).catch(() => status.textContent = '网络错误,30 分钟内自动更新。');
     startPoll();
   }
-  // ② 立即重载现有数据并渲染（本地 / GitHub Pages 都是重新拉取 data/*.json）
+  // 2 立即重载现有数据并渲染(本地 / GitHub Pages 都是重新拉取 data/*.json)
   loadAll().then(() => {
     render();
     lastGen = (state.predictionsMeta || {}).generatedAt || null;
@@ -1506,14 +1506,14 @@ function refreshAll() {
     if (!pat) {
       status.innerHTML = '已刷新 ' + new Date().toLocaleTimeString('zh-CN', { hour12: false }) + ' · <a href="#" onclick="event.preventDefault();configToken()" style="color:var(--gold)">配置云端 Token</a>';
     } else {
-      status.textContent = '已刷新 ' + new Date().toLocaleTimeString('zh-CN', { hour12: false }) + '（云端刷新中）';
+      status.textContent = '已刷新 ' + new Date().toLocaleTimeString('zh-CN', { hour12: false }) + '(云端刷新中)';
     }
   });
 }
 
 function configToken() {
   const status = $('refreshStatus');
-  status.innerHTML = '需 GitHub Token：<a href="https://github.com/settings/tokens/new?type=classic&description=kun-refresh&scopes=workflow" target="_blank" style="color:var(--gold)">点此创建</a> 后粘贴：';
+  status.innerHTML = '需 GitHub Token:<a href="https://github.com/settings/tokens/new?type=classic&description=kun-refresh&scopes=workflow" target="_blank" style="color:var(--gold)">点此创建</a> 后粘贴:';
   const input = document.createElement('input');
   input.type = 'password'; input.placeholder = 'ghp_...';
   input.style.cssText = 'width:150px;padding:4px 8px;border:1px solid var(--border);border-radius:6px;background:var(--bg-2);color:var(--text);font-size:11px;';
@@ -1524,7 +1524,7 @@ function configToken() {
 }
 
 function startPoll() {
-  // 轮询检测云端预测数据是否更新，更新后自动重载并同步详情；5 分钟无变化自动停止
+  // 轮询检测云端预测数据是否更新,更新后自动重载并同步详情;5 分钟无变化自动停止
   if (pollTimer) clearInterval(pollTimer);
   const start = Date.now();
   pollTimer = setInterval(async () => {
@@ -1538,7 +1538,7 @@ function startPoll() {
         lastGen = d.generatedAt;
       } else if (Date.now() - start > 5 * 60000) {
         clearInterval(pollTimer); pollTimer = null;
-        $('refreshStatus').textContent = '云端刷新完成（数据未变化）';
+        $('refreshStatus').textContent = '云端刷新完成(数据未变化)';
       }
     } catch (e) {}
   }, 20000);
