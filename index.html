@@ -490,6 +490,7 @@ const SUBS = [
 const FD_CODE = { PL: 'PL', PD: 'PD', SA: 'SA', BL1: 'BL1', FL1: 'FL1', CL: 'CL' };
 const COMPETITIONS = { PL: '英超', PD: '西甲', SA: '意甲', BL1: '德甲', FL1: '法甲', CL: '欧冠' };
 const LEAGUE_CN = { PL: '英格兰超级联赛', PD: '西班牙甲级联赛', SA: '意大利甲级联赛', BL1: '德国甲级联赛', FL1: '法国甲级联赛', CL: '欧洲冠军联赛' };
+const ODDS_MOVE_THRESHOLD = 0.2; // 赔率异动阈值(与列表页🔥标签、详情页箭头一致)
 
 // ===== 状态 =====
 let state = {
@@ -861,7 +862,7 @@ function renderFixtures() {
     const hasSig = m => {
       const p = m.pred || findPrediction(m.homeTeam?.name || m.homeTeam?.shortName, m.awayTeam?.name || m.awayTeam?.shortName, m.competition?.code);
       if (p && p.valuePicks && p.valuePicks.length) return true;
-      if (p && p.oddsChange && ['home','draw','away'].some(k => p.oddsChange[k] != null && Math.abs(p.oddsChange[k]) >= 0.2)) return true;
+      if (p && p.oddsChange && ['home','draw','away'].some(k => p.oddsChange[k] != null && Math.abs(p.oddsChange[k]) >= ODDS_MOVE_THRESHOLD)) return true;
       if (p && p.confidence != null && p.confidence >= 0.55) return true;
       return false;
     };
@@ -889,7 +890,7 @@ function renderCard(m) {
   }
   if (pred && pred.oddsChange) {
     const oc = pred.oddsChange;
-    const chg = ['home','draw','away'].filter(k => oc[k] != null && Math.abs(oc[k]) >= 0.2)
+    const chg = ['home','draw','away'].filter(k => oc[k] != null && Math.abs(oc[k]) >= ODDS_MOVE_THRESHOLD)
       .map(k => ({ k, d: oc[k] })).sort((a, b) => Math.abs(b.d) - Math.abs(a.d));
     if (chg.length) {
       const names = { home: '主', draw: '平', away: '客' };
@@ -1360,9 +1361,9 @@ function switchMkt(mkt) {
     };
     const chg = (v) => {
       if (v == null) return '';
-      const cls = v > 0.01 ? 'up' : (v < -0.01 ? 'down' : '');
-      const arrow = v > 0.01 ? '▲' : (v < -0.01 ? '▼' : '');
-      const color = v > 0.01 ? '#f59e0b' : (v < -0.01 ? '#22c55e' : '');
+      const cls = v > ODDS_MOVE_THRESHOLD ? 'up' : (v < -ODDS_MOVE_THRESHOLD ? 'down' : '');
+      const arrow = v > ODDS_MOVE_THRESHOLD ? '▲' : (v < -ODDS_MOVE_THRESHOLD ? '▼' : '');
+      const color = v > ODDS_MOVE_THRESHOLD ? '#f59e0b' : (v < -ODDS_MOVE_THRESHOLD ? '#22c55e' : '');
       return `<span style="color:${color};font-size:11px;margin-left:4px" title="较上次快照变化">${arrow}${v > 0 ? '+' : ''}${v.toFixed(2)}</span>`;
     };
     const kellyTxt = (v) => v == null ? '' : `<div class="sub" style="color:${v > 0.05 ? '#22c55e' : (v < 0 ? '#ef4444' : '#9ca3af')}">凯利 ${v > 0 ? '+' : ''}${v.toFixed(2)}</div>`;
@@ -1374,7 +1375,7 @@ function switchMkt(mkt) {
     </div>
     <div style="font-size:10px;color:var(--muted);margin-top:6px;text-align:center">↗ 较上次快照升(看淡)↘ 降(看好)· 凯利>0 有正期望 · 快照持续累积后将升级为走势曲线</div>
     ${oddsTrendBlock(p)}
-    ${p.aiJudge ? (function(a){ const cn = {home:'主胜',draw:'平局',away:'客胜',none:'不碰'}; const conf = a.confidence != null ? Math.round(a.confidence*100) : null; return `<div class="section-title" style="margin-top:10px">🤖 AI 研判<span style="font-size:10px;color:var(--muted);font-weight:400"> ${a.model || ''} · ${a.latency != null ? a.latency + 's' : ''}</span></div><div style="padding:10px 12px;border-radius:8px;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.25);font-size:12px;line-height:1.7"><div style="margin-bottom:4px"><b>${a.pick && a.pick !== 'none' ? cn[a.pick] : '无明显倾向'}</b>${a.score ? ' · 比分 ' + a.score : ''}${conf != null ? ' · 置信度 ' + conf + '%' : ''}</div>${a.reason ? '<div style="color:var(--text-2)">' + esc(a.reason) + '</div>' : ''}</div>`;})(p.aiJudge) : ''}
+    ${(function(a){ const aiBox = 'padding:10px 12px;border-radius:8px;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.25);font-size:12px;line-height:1.7'; if (!a) return `<div class="section-title" style="margin-top:10px">🤖 AI 研判</div><div style="${aiBox};color:var(--muted)">AI 研判未生成（未配置或调用失败），当前展示为纯统计模型输出。</div>`; const cn = {home:'主胜',draw:'平局',away:'客胜',none:'不碰'}; const conf = a.confidence != null ? Math.round(a.confidence*100) : null; return `<div class="section-title" style="margin-top:10px">🤖 AI 研判<span style="font-size:10px;color:var(--muted);font-weight:400"> ${a.model || ''} · ${a.latency != null ? a.latency + 's' : ''}</span></div><div style="${aiBox}"><div style="margin-bottom:4px"><b>${a.pick && a.pick !== 'none' ? cn[a.pick] : '无明显倾向'}</b>${a.score ? ' · 比分 ' + a.score : ''}${conf != null ? ' · 置信度 ' + conf + '%' : ''}</div>${a.reason ? '<div style="color:var(--text-2)">' + esc(a.reason) + '</div>' : ''}</div>`; })(p.aiJudge)}
     ${p.eloProb ? `<div class="section-title" style="margin-top:10px">🤖 独立模型 (Elo+修正)</div>
     <div class="odds-grid">
       <div class="odds-box"><div class="label">主胜</div><div class="value">${pct(p.eloProb.home)}</div><div class="sub">盘口 ${pct(pr.home)}</div></div>
@@ -1480,7 +1481,8 @@ function switchMkt(mkt) {
       const price = crs[c.score];
       let val = '';
       if (price) {
-        const implied = 1 / parseFloat(price);
+        const pval = parseFloat(price);
+        const implied = pval > 0 ? 1 / pval : 0;
         const edge = c.prob - implied;
         val = `<div class="sub" style="${edge > 0.02 ? 'color:#22c55e;font-weight:700' : 'color:var(--muted)'}">竞彩 ${price}${edge > 0.02 ? ' · 💰价值' : ''}</div>`;
       }

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T13:41:50Z",
+  "generatedAt": "2026-08-12T14:41:52Z",
   "dateRange": {
     "from": "2026-08-05",
     "to": "2026-09-16"
@@ -14,12 +14,7 @@
   },
   "totalMatches": 203,
   "notableMatches": 83,
-  "errors": [
-    {
-      "code": "CL",
-      "name": "欧冠"
-    }
-  ],
+  "errors": [],
   "matches": [
     {
       "area": {

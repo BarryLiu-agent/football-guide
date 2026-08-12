@@ -1,7 +1,18 @@
 {
-  "generatedAt": "2026-08-12T13:42:15Z",
+  "generatedAt": "2026-08-12T14:42:17Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Cadillac announce shock sacking of team principal Lowdon",
+      "timestamp": "Wed, 12 Aug 2026 15:20:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/f1/news/12040/13572275/cadillac-appoint-marcin-budkowski-as-team-principal-following-f1-2026-newcomers-sudden-sacking-of-graeme-lowdon",
+        "lang": "en",
+        "summary": "Cadillac have sacked team principal Graeme Lowdon and replaced him with Marcin Budkowski in what Formula 1's 2026 newcomers claim is a \"planned leadership transition\". "
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -11,6 +22,17 @@
         "link": "https://www.skysports.com/tennis/news/12040/13572237/arthur-fery-feels-no-added-pressure-despite-being-british-no-1-as-he-returns-to-action-at-cincinnati-open",
         "lang": "en",
         "summary": "Arthur Fery insists he feels &#8220;no added pressure&#8221; as the new British No 1 prepares to return to action this weekend for the first time since his memorable run to the Wimbledon semi-finals."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Vikings confirm Murray as starting QB",
+      "timestamp": "Wed, 12 Aug 2026 14:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/nfl/live-blog/12040/13572233/nfl-news-trades-injuries-and-rumours-latest-updates-and-highlights-from-2026-pre-season-regular-season-playoffs-and-super-bowl",
+        "lang": "en",
+        "summary": ""
       }
     },
     {
@@ -88,6 +110,17 @@
         "link": "https://www.skysports.com/racing/news/12040/13571636/today-on-sky-sports-racing-ffos-las-hosts-six-race-card-live-on-wednesday",
         "lang": "en",
         "summary": "Don't miss a moment from Ffos Las on Wednesday, with all six races live from 3.37pm on <em>Sky Sports Racing</em>."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Rangers 'playing with fire' over defensive options, says McInnes",
+      "timestamp": "Mon, 10 Aug 2026 15:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13572258/rangers-transfers-derek-mcinnes-makes-playing-with-fire-admission-as-club-chase-more-signings-amid-winless-start",
+        "lang": "en",
+        "summary": "Derek McInnes believes Rangers are \"playing with fire\" after being left with a shortage of options in defence."
       }
     },
     {
@@ -187,39 +220,6 @@
         "link": "https://www.skysports.com/football/news/12040/13572065/khvicha-kvaratskhelia-is-back-for-psg-in-the-uefa-super-cup-georgian-missed-the-world-cup-but-might-just-be-europes-best",
         "lang": "en",
         "summary": "It was heralded as the World Cup in which all the stars shone. But while the big names did indeed illuminate the summer, the return of the club game with the showpiece UEFA Super Cup in Salzburg is a chance for Khvicha Kvaratskhelia to reclaim his spotlight."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Super Giants rout SunRisers to move to cusp of Hundred eliminator",
-      "timestamp": "Tue, 11 Aug 2026 21:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/cricket/news/12040/13572032/the-hundred-manchester-super-giants-rout-sunrisers-leeds-to-move-to-cusp-of-eliminator-in-mens-tournament",
-        "lang": "en",
-        "summary": "Manchester Super Giants routed SunRisers Leeds to all but seal their place in The Hundred men's eliminator and leave their opponents at risk of being knocked out."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Sharks 0-54 New Zealand | Highlights",
-      "timestamp": "Tue, 11 Aug 2026 22:57:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13572095/durban-sharks-0-54-new-zealand-highlights",
-        "lang": "en",
-        "summary": "Highlights of the Greatest Rivalry tour match between the Sharks and New Zealand in Durban."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Kick It Out chair to leave role at end of season",
-      "timestamp": "Wed, 12 Aug 2026 10:30:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13572182/kick-it-out-sanjay-bhandari-to-step-down-as-chair-after-seven-years-in-role-at-the-end-of-the-season",
-        "lang": "en",
-        "summary": "Kick It Out chair Sanjay Bhandari will leave his role at the end of the 2026/27 season."
       }
     }
   ]

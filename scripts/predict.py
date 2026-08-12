@@ -825,14 +825,23 @@ def main():
             pred["probabilities"] = {
                 "home": round(f_home, 3), "draw": round(f_draw, 3), "away": round(f_away, 3)
             }
+            # confidence 与最终概率同源：基于融合概率集中度 + 消息信号
+            top_p = max(f_home, f_draw, f_away)
+            msg_conf = abs(h_sig - a_sig)
+            conf = min(0.95, 0.4 + top_p * 0.4 + msg_conf * 0.15)
+            disc = rules.get("confidenceDiscount") if isinstance(rules, dict) else None
+            if isinstance(disc, (int, float)) and 0.5 < disc < 1.0 and conf >= 0.65:
+                conf *= disc
+            pred["confidence"] = round(conf, 3)
             value_picks = []
             reverse_picks = []  # 模型 vs 市场对立（负 edge）：提示不碰，非价值
+            value_threshold = rules.get("valueThreshold", 0.1)
             if market_prob:
                 sorted_probs = sorted(pred_elo.values(), reverse=True)
                 model_conf = sorted_probs[0] - sorted_probs[1] if len(sorted_probs) > 1 else 0
                 for k, label in (("home", "主胜"), ("draw", "平局"), ("away", "客胜")):
                     diff = pred_elo[k] - market_prob[k]
-                    if diff >= 0.10:  # 正 edge：模型比市场更看好 = 价值信号
+                    if diff >= value_threshold:  # 正 edge：模型比市场更看好 = 价值信号
                         level = "gold" if diff >= 0.15 and model_conf >= 0.15 else "watch"
                         value_picks.append({
                             "side": k, "label": label,
@@ -842,7 +851,7 @@ def main():
                             "level": level,
                             "modelConf": round(model_conf, 3),
                         })
-                    elif diff <= -0.10:  # 负 edge：模型比市场更不看好 = 反向信号（提示不碰）
+                    elif diff <= -value_threshold:  # 负 edge：模型比市场更不看好 = 反向信号（提示不碰）
                         reverse_picks.append({
                             "side": k, "label": label,
                             "modelProb": round(pred_elo[k], 3),
