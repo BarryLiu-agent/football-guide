@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T02:55:47Z",
+  "generatedAt": "2026-08-11T01:47:21Z",
   "league": "PL",
   "history": {
     "arsenal|coventry city": [
@@ -60,33 +60,6 @@
           "line": 2.5,
           "over": 1.57,
           "under": 2.355
-        },
-        "spreads": {
-          "home": {
-            "point": -2.0,
-            "price": 1.9
-          },
-          "away": {
-            "point": 2.0,
-            "price": 1.95
-          }
-        },
-        "asian": {
-          "home": null,
-          "away": null
-        }
-      },
-      {
-        "ts": "2026-08-12T02:55:47Z",
-        "h2h": {
-          "home": 1.17,
-          "draw": 7.5,
-          "away": 16.0
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 1.565,
-          "under": 2.36
         },
         "spreads": {
           "home": {
@@ -177,33 +150,6 @@
           "home": null,
           "away": null
         }
-      },
-      {
-        "ts": "2026-08-12T02:55:47Z",
-        "h2h": {
-          "home": 7.7,
-          "draw": 4.7,
-          "away": 1.41
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 1.745,
-          "under": 2.08
-        },
-        "spreads": {
-          "home": {
-            "point": 1.5,
-            "price": 1.7349999999999999
-          },
-          "away": {
-            "point": -1.5,
-            "price": 2.125
-          }
-        },
-        "asian": {
-          "home": null,
-          "away": null
-        }
       }
     ],
     "everton|crystal palace": [
@@ -279,33 +225,6 @@
           "home": null,
           "away": null
         }
-      },
-      {
-        "ts": "2026-08-12T02:55:47Z",
-        "h2h": {
-          "home": 2.14,
-          "draw": 3.4,
-          "away": 3.4
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 1.9049999999999998,
-          "under": 1.8849999999999998
-        },
-        "spreads": {
-          "home": {
-            "point": -0.5,
-            "price": 2.13
-          },
-          "away": {
-            "point": 0.5,
-            "price": 1.71
-          }
-        },
-        "asian": {
-          "home": null,
-          "away": null
-        }
       }
     ],
     "ipswich town|sunderland": [
@@ -357,33 +276,6 @@
       },
       {
         "ts": "2026-08-11T01:47:21Z",
-        "h2h": {
-          "home": 2.74,
-          "draw": 3.3,
-          "away": 2.6
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 1.9449999999999998,
-          "under": 1.85
-        },
-        "spreads": {
-          "home": {
-            "point": 0.0,
-            "price": 1.97
-          },
-          "away": {
-            "point": -0.0,
-            "price": 1.88
-          }
-        },
-        "asian": {
-          "home": null,
-          "away": null
-        }
-      },
-      {
-        "ts": "2026-08-12T02:55:47Z",
         "h2h": {
           "home": 2.74,
           "draw": 3.3,
@@ -483,33 +375,6 @@
           "home": null,
           "away": null
         }
-      },
-      {
-        "ts": "2026-08-12T02:55:47Z",
-        "h2h": {
-          "home": 2.2,
-          "draw": 3.36,
-          "away": 3.2
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 1.87,
-          "under": 1.9
-        },
-        "spreads": {
-          "home": {
-            "point": -0.5,
-            "price": 2.205
-          },
-          "away": {
-            "point": 0.5,
-            "price": 1.6600000000000001
-          }
-        },
-        "asian": {
-          "home": null,
-          "away": null
-        }
       }
     ],
     "brentford|tottenham hotspur": [
@@ -561,33 +426,6 @@
       },
       {
         "ts": "2026-08-11T01:47:21Z",
-        "h2h": {
-          "home": 2.4,
-          "draw": 3.6,
-          "away": 2.75
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 1.66,
-          "under": 2.1950000000000003
-        },
-        "spreads": {
-          "home": {
-            "point": 0.0,
-            "price": 1.8
-          },
-          "away": {
-            "point": -0.0,
-            "price": 2.09
-          }
-        },
-        "asian": {
-          "home": null,
-          "away": null
-        }
-      },
-      {
-        "ts": "2026-08-12T02:55:47Z",
         "h2h": {
           "home": 2.4,
           "draw": 3.6,
@@ -687,33 +525,6 @@
           "home": null,
           "away": null
         }
-      },
-      {
-        "ts": "2026-08-12T02:55:47Z",
-        "h2h": {
-          "home": 2.26,
-          "draw": 3.65,
-          "away": 2.95
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 1.61,
-          "under": 2.2649999999999997
-        },
-        "spreads": {
-          "home": {
-            "point": -0.5,
-            "price": 2.235
-          },
-          "away": {
-            "point": 0.5,
-            "price": 1.65
-          }
-        },
-        "asian": {
-          "home": null,
-          "away": null
-        }
       }
     ],
     "manchester city|bournemouth": [
@@ -774,33 +585,6 @@
           "line": 2.5,
           "over": 1.96,
           "under": 1.79
-        },
-        "spreads": {
-          "home": {
-            "point": -1.5,
-            "price": 2.2
-          },
-          "away": {
-            "point": 1.5,
-            "price": 1.73
-          }
-        },
-        "asian": {
-          "home": null,
-          "away": null
-        }
-      },
-      {
-        "ts": "2026-08-12T02:55:47Z",
-        "h2h": {
-          "home": 1.44,
-          "draw": 5.0,
-          "away": 6.3
-        },
-        "totals": {
-          "line": 3.5,
-          "over": 1.97,
-          "under": 1.7850000000000001
         },
         "spreads": {
           "home": {
@@ -891,33 +675,6 @@
           "home": null,
           "away": null
         }
-      },
-      {
-        "ts": "2026-08-12T02:55:47Z",
-        "h2h": {
-          "home": 3.25,
-          "draw": 3.83,
-          "away": 2.05
-        },
-        "totals": {
-          "line": 3.5,
-          "over": 2.09,
-          "under": 1.7
-        },
-        "spreads": {
-          "home": {
-            "point": 0.5,
-            "price": 1.7650000000000001
-          },
-          "away": {
-            "point": -0.5,
-            "price": 2.035
-          }
-        },
-        "asian": {
-          "home": null,
-          "away": null
-        }
       }
     ],
     "fulham|chelsea": [
@@ -993,33 +750,6 @@
           "home": null,
           "away": null
         }
-      },
-      {
-        "ts": "2026-08-12T02:55:47Z",
-        "h2h": {
-          "home": 3.2,
-          "draw": 3.65,
-          "away": 2.12
-        },
-        "totals": {
-          "line": 2.5,
-          "over": 1.62,
-          "under": 2.275
-        },
-        "spreads": {
-          "home": {
-            "point": 0.5,
-            "price": 1.725
-          },
-          "away": {
-            "point": -0.5,
-            "price": 2.1
-          }
-        },
-        "asian": {
-          "home": null,
-          "away": null
-        }
       }
     ]
   },
@@ -1037,8 +767,8 @@
         },
         "totals": {
           "line": 2.5,
-          "over": 1.565,
-          "under": 2.36
+          "over": 1.57,
+          "under": 2.355
         },
         "spreads": {
           "home": {
@@ -1072,23 +802,23 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 7.7,
-          "draw": 4.7,
-          "away": 1.41
+          "home": 7.25,
+          "draw": 4.4,
+          "away": 1.44
         },
         "totals": {
           "line": 2.5,
-          "over": 1.745,
-          "under": 2.08
+          "over": 1.75,
+          "under": 2.05
         },
         "spreads": {
           "home": {
             "point": 1.5,
-            "price": 1.7349999999999999
+            "price": 1.655
           },
           "away": {
             "point": -1.5,
-            "price": 2.125
+            "price": 2.265
           }
         },
         "asian": {
@@ -1119,8 +849,8 @@
         },
         "totals": {
           "line": 2.5,
-          "over": 1.9049999999999998,
-          "under": 1.8849999999999998
+          "over": 1.91,
+          "under": 1.88
         },
         "spreads": {
           "home": {
@@ -1195,13 +925,13 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.2,
+          "home": 2.21,
           "draw": 3.36,
-          "away": 3.2
+          "away": 3.18
         },
         "totals": {
           "line": 2.5,
-          "over": 1.87,
+          "over": 1.88,
           "under": 1.9
         },
         "spreads": {
@@ -1224,9 +954,9 @@
       ],
       "bookmakers": 19,
       "prevH2h": {
-        "home": 2.21,
-        "draw": 3.36,
-        "away": 3.18
+        "home": 2.23,
+        "draw": 3.4,
+        "away": 3.2
       }
     },
     {
@@ -1278,7 +1008,7 @@
       "markets": {
         "h2h": {
           "home": 2.26,
-          "draw": 3.65,
+          "draw": 3.62,
           "away": 2.95
         },
         "totals": {
@@ -1289,11 +1019,11 @@
         "spreads": {
           "home": {
             "point": -0.5,
-            "price": 2.235
+            "price": 2.245
           },
           "away": {
             "point": 0.5,
-            "price": 1.65
+            "price": 1.645
           }
         },
         "asian": {
@@ -1320,12 +1050,12 @@
         "h2h": {
           "home": 1.44,
           "draw": 5.0,
-          "away": 6.3
+          "away": 6.2
         },
         "totals": {
-          "line": 3.5,
-          "over": 1.97,
-          "under": 1.7850000000000001
+          "line": 2.5,
+          "over": 1.96,
+          "under": 1.79
         },
         "spreads": {
           "home": {
@@ -1364,9 +1094,9 @@
           "away": 2.05
         },
         "totals": {
-          "line": 3.5,
-          "over": 2.09,
-          "under": 1.7
+          "line": 2.5,
+          "over": 2.115,
+          "under": 1.69
         },
         "spreads": {
           "home": {
@@ -1389,7 +1119,7 @@
       "bookmakers": 21,
       "prevH2h": {
         "home": 3.25,
-        "draw": 3.83,
+        "draw": 3.8,
         "away": 2.05
       }
     },
@@ -1400,23 +1130,23 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 3.2,
+          "home": 3.12,
           "draw": 3.65,
-          "away": 2.12
+          "away": 2.15
         },
         "totals": {
           "line": 2.5,
           "over": 1.62,
-          "under": 2.275
+          "under": 2.2649999999999997
         },
         "spreads": {
           "home": {
             "point": 0.5,
-            "price": 1.725
+            "price": 1.71
           },
           "away": {
             "point": -0.5,
-            "price": 2.1
+            "price": 2.125
           }
         },
         "asian": {
