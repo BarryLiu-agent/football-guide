@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-12T03:53:23Z",
+ "generatedAt": "2026-08-12T11:44:39Z",
  "modelVersion": 1,
  "settledSamples": 0,
  "calibration": [],
@@ -8,9 +8,7 @@
  "ouRate": 0,
  "spRate": 0,
  "recommendations": [
-  "样本不足 20 场，暂不调参，继续积累",
-  "大小球命中率 0.0% 偏低，检查大小球模型",
-  "让球命中率 0.0% 偏低，检查让球模型"
+  "样本不足 20 场，暂不调参，继续积累"
  ],
  "applied": false
 }
