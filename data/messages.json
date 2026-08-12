@@ -1,7 +1,18 @@
 {
-  "generatedAt": "2026-08-12T10:42:19Z",
+  "generatedAt": "2026-08-12T11:35:22Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Tielemans: I did not expect to leave Aston Villa for Man Utd this summer",
+      "timestamp": "Wed, 12 Aug 2026 12:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13572176/youri-tielemans-man-utd-midfield-on-joining-the-club-reuniting-with-marcus-rashford-and-jonny-evans-and-belgiums-world-cup-campaign",
+        "lang": "en",
+        "summary": "'Not really, no' - the perhaps surprising answer from Manchester United&#8217;s summer signing Youri Tielemans when asked whether he expected to leave his former club Aston Villa in this window."
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -209,17 +220,6 @@
         "link": "https://www.skysports.com/racing/news/12040/13572012/bow-echo-george-bougheys-unbeaten-star-miler-in-shock-retirement-from-racing-after-setback",
         "lang": "en",
         "summary": "Bow Echo has been retired from racing after the shock news that George Boughey's unbeaten star has suffered a setback in training."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Chelsea make enquiry for Arsenal's Lewis-Skelly",
-      "timestamp": "Tue, 11 Aug 2026 16:05:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13571919/myles-lewis-skelly-transfer-news-chelsea-make-enquiry-for-arsenal-teenager-amid-long-term-interest-from-blues-and-man-utd",
-        "lang": "en",
-        "summary": "Chelsea&#160;have made a new enquiry about signing&#160;Arsenal's Myles Lewis-Skelly.&#160;"
       }
     }
   ]
