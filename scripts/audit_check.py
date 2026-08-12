@@ -71,11 +71,11 @@ print(f"  pred internal issues: {len(issues)}")
 st = json.loads((ROOT / "standings.json").read_text(encoding="utf-8"))
 standings = st.get("standings", st) if isinstance(st, dict) else st
 for league, data in standings.items():
-    played = sum(1 for r in data if r.get("played", 0) > 0)
-    placeholder = sum(1 for r in data if r.get("played", 0) == 0)
+    played = sum(1 for r in data if r.get("playedGames", 0) > 0)
+    placeholder = sum(1 for r in data if r.get("playedGames", 0) == 0)
     print(f"standings [{league}]: {played} real / {placeholder} placeholder")
     for r in data:
-        if r.get("played", 0) > 0:
+        if r.get("playedGames", 0) > 0:
             pos = r.get("position", 0)
             if pos < 1 or pos > 20:
                 issues.append(f"[{league}] {r['team']}: position={pos}")
@@ -122,14 +122,14 @@ for fp in sorted((ROOT / "asian").glob("*.json")):
     n = len(ah) if isinstance(ah, list) else len(ah.get("matches", ah))
     print(f"asian/{fp.name}: {n} records")
 
-# ── 7. backtest ──
-bf = ROOT / "backtest_results.json"
-if bf.exists():
-    bt = json.loads(bf.read_text(encoding="utf-8"))
-    s_ = bt.get("summary", {})
-    print(f"backtest: {s_.get('total_matches','?')} matches, acc={s_.get('accuracy',0):.3f}, roi={s_.get('roi',0):.3f}")
-else:
-    issues.append("MISSING: backtest_results.json")
+# ── 7. backtest（产物名 calibration.json / calibration_ou.json）──
+for bname in ("calibration.json", "calibration_ou.json"):
+    bf = ROOT / bname
+    if bf.exists():
+        bt = json.loads(bf.read_text(encoding="utf-8"))
+        print(f"{bname}: total={bt.get('total', '?')}, overall={bt.get('overall', '?')}")
+    else:
+        issues.append(f"MISSING: {bname}")
 
 # ── 8. signals ──
 mf = ROOT / "message_signals.json"

@@ -853,7 +853,7 @@ function renderCard(m) {
   return `<div class="match-card" onclick="openDetail('${esc(homeName).replace(/'/g, '')}','${esc(awayName).replace(/'/g, '')}','${m.competition?.code || ''}')">
     <div class="mc-time"><div class="t">${score.text === 'VS' ? fmtTime(m.utcDate) : score.text}</div><div class="d">${score.statusText || (m.competition?.code === 'CL' ? '欧冠' : '')}</div></div>
     <div class="mc-teams">
-      <div class="mc-team">${m.homeTeam?.crest ? `<img src="${m.homeTeam.crest}" onerror="this.style.display='none'">` : ''}<span class="cn">${cnTeam(homeName)}</span>${cnTeam(homeName) !== homeName ? '' : ''}</div>
+      <div class="mc-team">${m.homeTeam?.crest ? `<img src="${m.homeTeam.crest}" onerror="this.style.display='none'">` : ''}<span class="cn">${cnTeam(homeName)}</span></div>
       <div class="mc-team">${m.awayTeam?.crest ? `<img src="${m.awayTeam.crest}" onerror="this.style.display='none'">` : ''}<span class="cn">${cnTeam(awayName)}</span></div>
     </div>
     <div class="mc-score ${score.cls}"><div class="s">${score.text === 'VS' ? 'VS' : score.text}</div>${score.statusText && score.statusText !== 'VS' ? `<div class="st">${score.statusText}</div>` : ''}</div>

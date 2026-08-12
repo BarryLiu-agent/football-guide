@@ -63,8 +63,11 @@ def main():
             ou_rows.append({"prob": round(min(over_p, 0.999), 3), "hit": total > 2.5})
 
             # 主队 -0.5 赢盘（净胜 ≥1）与 -1.5 赢盘（净胜 ≥2）
-            ah_rows.append({"prob": round(sm.cover_prob(-0.5), 3), "hit": diff >= 1})
-            ah2_rows.append({"prob": round(sm.cover_prob(-1.5), 3), "hit": diff >= 2})
+            # cover_prob 现在返回 (win, push) 元组（整球盘含走盘），只取 win 概率
+            cover05, _ = sm.cover_prob(-0.5)
+            cover15, _ = sm.cover_prob(-1.5)
+            ah_rows.append({"prob": round(cover05, 3), "hit": diff >= 1})
+            ah2_rows.append({"prob": round(cover15, 3), "hit": diff >= 2})
 
             elo.update([{
                 "utcDate": m.get("utcDate", ""),
