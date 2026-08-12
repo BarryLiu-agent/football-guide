@@ -1,7 +1,29 @@
 {
-  "generatedAt": "2026-08-12T04:42:36Z",
+  "generatedAt": "2026-08-12T05:42:12Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "'Everyone can have an opinion' - F1 president responds to regulations criticism",
+      "timestamp": "Wed, 12 Aug 2026 06:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/f1/news/12040/13569682/f1-2026-regulations-stefano-domenicali-responds-to-criticism-about-current-power-unit-regulations",
+        "lang": "en",
+        "summary": "Formula 1 president Stefano Domenicali says drivers \"can have their opinion\" and are not being stopped from criticising the sport's power unit regulations."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Today on Sky Sports Racing: Ffos Las hosts six-race card",
+      "timestamp": "Wed, 12 Aug 2026 06:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/racing/news/12040/13571636/today-on-sky-sports-racing-ffos-las-hosts-six-race-card-live-on-wednesday",
+        "lang": "en",
+        "summary": "Don't miss a moment from Ffos Las on Wednesday, with all six races live from 3.37pm on <em>Sky Sports Racing</em>."
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -198,28 +220,6 @@
         "link": "https://www.skysports.com/golf/news/12040/13571841/rory-mcilroy-returns-to-action-for-first-fedexcup-playoff-event-as-he-targets-record-extending-fourth-title",
         "lang": "en",
         "summary": "Rory McIlroy returns to action at the FedEx St. Jude Championship this week, live on Sky Sports, with the world No 2 targeting a big finish to the PGA Tour season and a record-extending fourth FedExCup title."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Nottingham Forest sign defender Diomande in £34m deal",
-      "timestamp": "Tue, 11 Aug 2026 11:53:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13571913/ousmane-diomande-nottingham-forest-sign-sporting-defender-for-34-3m-on-four-year-deal",
-        "lang": "en",
-        "summary": "Nottingham Forest have signed Ivory Coast defender Ousmane Diomande from Sporting on a four-year deal. "
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Crystal Palace latest: Parish clears air with McNeil and his partner",
-      "timestamp": "Tue, 11 Aug 2026 11:36:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/live-blog/12040/13279298/crystal-palace-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights",
-        "lang": "en",
-        "summary": ""
       }
     }
   ]
