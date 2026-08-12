@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T04:09:38Z",
+  "generatedAt": "2026-08-12T04:15:55Z",
   "total": 58,
   "rulesVersion": "1.1",
   "modelInfo": {
@@ -30,6 +30,10 @@
         "赔率隐含概率: 主73% 平15% 客12%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "BL1",
       "kickoff": "2026-08-28T18:30:00Z",
       "matchUrl": "",
@@ -190,7 +194,7 @@
         "pick": "home",
         "score": "2-0",
         "confidence": 0.75,
-        "reason": "主队实力和状态明显占优，模型和赔率均支持主胜，比分预测首选2-0。",
+        "reason": "主队实力和状态远超客队，且数据全面支持主胜。",
         "model": "deepseek-chat",
         "latency": 1.2
       }
@@ -213,6 +217,10 @@
         "赔率隐含概率: 主33% 平26% 客41%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "BL1",
       "kickoff": "2026-08-29T13:30:00Z",
       "matchUrl": "",
@@ -365,9 +373,9 @@
         "pick": "away",
         "score": "1-2",
         "confidence": 0.556,
-        "reason": "客队排名和实力占优，欧赔与模型均倾向客胜，但主队有保级动力，比分预测接近。",
+        "reason": "客队排名和实力占优，模型概率和欧赔均倾向客胜，但主队有保级动力，比分预测接近。",
         "model": "deepseek-chat",
-        "latency": 1.5
+        "latency": 1.0
       }
     },
     {
@@ -388,6 +396,10 @@
         "赔率隐含概率: 主18% 平21% 客61%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "BL1",
       "kickoff": "2026-08-29T13:30:00Z",
       "matchUrl": "",
@@ -538,10 +550,10 @@
       "aiJudge": {
         "pick": "away",
         "score": "1-2",
-        "confidence": 0.62,
-        "reason": "客队实力与欧赔明显占优，但主队有主场韧性，模型波胆次选1-2，综合倾向客胜但需防平。",
+        "confidence": 0.65,
+        "reason": "客队实力占优且欧赔与Elo均支持客胜，但主队有一定进球能力，预测客队小胜。",
         "model": "deepseek-chat",
-        "latency": 1.9
+        "latency": 1.0
       }
     },
     {
@@ -562,6 +574,10 @@
         "赔率隐含概率: 主62% 平21% 客18%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "BL1",
       "kickoff": "2026-08-29T13:30:00Z",
       "matchUrl": "",
@@ -714,7 +730,7 @@
         "pick": "home",
         "score": "2-1",
         "confidence": 0.65,
-        "reason": "主队积分、排名和状态均占优，且统计模型和欧赔均支持主胜，但客队有一定防守能力，比分预测为2-1。",
+        "reason": "主队积分、排名和状态均占优，且统计模型和欧赔均支持主胜，但客队有一定防守能力，比分预测2-1。",
         "model": "deepseek-chat",
         "latency": 1.0
       }
@@ -737,6 +753,10 @@
         "赔率隐含概率: 主39% 平27% 客34%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "BL1",
       "kickoff": "2026-08-29T13:30:00Z",
       "matchUrl": "",
@@ -897,9 +917,9 @@
         "pick": "away",
         "score": "0-1",
         "confidence": 0.525,
-        "reason": "客队积分和Elo概率占优，欧赔客胜略低，但模型概率接近，倾向客队小胜。",
+        "reason": "客队积分和Elo概率占优，但模型概率接近，平局概率不低，谨慎选择客胜。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.3
       }
     },
     {
@@ -920,6 +940,10 @@
         "赔率隐含概率: 主56% 平24% 客20%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "BL1",
       "kickoff": "2026-08-29T13:30:00Z",
       "matchUrl": "",
@@ -1075,9 +1099,9 @@
         "pick": "home",
         "score": "2-1",
         "confidence": 0.65,
-        "reason": "主队胜率显著占优，欧赔与Elo均支持主胜，但平局概率不低，比分预测倾向小胜。",
+        "reason": "统计模型和Elo均显示主队优势明显，欧赔支持主胜，但平局概率不低，故选择主胜但信心适中。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.9
       }
     },
     {
@@ -1098,6 +1122,10 @@
         "赔率隐含概率: 主71% 平17% 客11%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "BL1",
       "kickoff": "2026-08-29T16:30:00Z",
       "matchUrl": "",
@@ -1258,9 +1286,9 @@
         "pick": "home",
         "score": "2-0",
         "confidence": 0.75,
-        "reason": "主队实力和状态明显占优，模型及赔率均支持主胜，比分预测2-0。",
+        "reason": "主队实力和状态远胜客队，且主场优势明显，预测主胜概率高。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.3
       }
     },
     {
@@ -1281,6 +1309,10 @@
         "赔率隐含概率: 主47% 平27% 客27%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "BL1",
       "kickoff": "2026-08-30T13:30:00Z",
       "matchUrl": "",
@@ -1472,9 +1504,9 @@
         "pick": "home",
         "score": "2-1",
         "confidence": 0.65,
-        "reason": "主队积分和Elo优势明显，但客队保级战意强，模型概率支持主胜但平局概率不低，故谨慎选择主胜。",
+        "reason": "主队排名和Elo概率占优，但客队保级战意强，模型预测平局概率较高，综合倾向主胜但信心有限。",
         "model": "deepseek-chat",
-        "latency": 1.6
+        "latency": 1.1
       }
     },
     {
@@ -1495,6 +1527,10 @@
         "赔率隐含概率: 主45% 平25% 客30%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "BL1",
       "kickoff": "2026-08-30T15:30:00Z",
       "matchUrl": "",
@@ -1662,9 +1698,9 @@
         "pick": "home",
         "score": "2-1",
         "confidence": 0.62,
-        "reason": "统计模型和Elo均看好主胜，欧赔也倾向主队，但平局概率不低，故选择最可能的2-1。",
+        "reason": "统计模型和Elo均看好主队，欧赔支持主胜，但平局概率不低，比分倾向2-1。",
         "model": "deepseek-chat",
-        "latency": 0.9
+        "latency": 1.2
       }
     },
     {
@@ -1685,6 +1721,10 @@
         "赔率隐含概率: 主55% 平23% 客22%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "FL1",
       "kickoff": "2026-08-21T18:45:00Z",
       "matchUrl": "",
@@ -1832,9 +1872,9 @@
         "pick": "home",
         "score": "2-1",
         "confidence": 0.55,
-        "reason": "主胜概率最高且欧赔支持，但平局概率不低，谨慎看好主队小胜。",
+        "reason": "欧赔与统计模型均略倾向主胜，且主胜概率高于平局和客胜，但优势有限。",
         "model": "deepseek-chat",
-        "latency": 1.4
+        "latency": 1.2
       }
     },
     {
@@ -1855,6 +1895,10 @@
         "赔率隐含概率: 主59% 平22% 客18%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "FL1",
       "kickoff": "2026-08-22T15:15:00Z",
       "matchUrl": "",
@@ -2021,10 +2065,10 @@
       "aiJudge": {
         "pick": "home",
         "score": "2-1",
-        "confidence": 0.62,
-        "reason": "欧赔主胜1.6明显低于客胜，统计模型主胜概率最高，且波胆次选2-1，倾向主胜但平局概率不低。",
+        "confidence": 0.55,
+        "reason": "欧赔与统计模型均倾向主胜，但Elo概率显示客队有一定竞争力，故谨慎选择主胜。",
         "model": "deepseek-chat",
-        "latency": 1.6
+        "latency": 1.0
       }
     },
     {
@@ -2045,6 +2089,10 @@
         "赔率隐含概率: 主38% 平27% 客35%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "FL1",
       "kickoff": "2026-08-22T18:45:00Z",
       "matchUrl": "",
@@ -2219,9 +2267,9 @@
         "pick": "home",
         "score": "2-1",
         "confidence": 0.65,
-        "reason": "统计模型和Elo均看好主队，欧赔主胜较低，但平局概率不低，需谨慎。",
+        "reason": "统计模型和Elo均看好主队，欧赔主胜略低，但平局概率不低，谨慎选择主胜。",
         "model": "deepseek-chat",
-        "latency": 1.4
+        "latency": 1.0
       }
     },
     {
@@ -2242,6 +2290,10 @@
         "赔率隐含概率: 主43% 平27% 客29%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "FL1",
       "kickoff": "2026-08-22T18:45:00Z",
       "matchUrl": "",
@@ -2413,9 +2465,9 @@
         "pick": "away",
         "score": "1-2",
         "confidence": 0.55,
-        "reason": "客队胜率在统计模型和Elo中均占优，欧赔也支持客队不败，但主队有一定拉力，故谨慎选择客胜。",
+        "reason": "统计模型和Elo均倾向客队，欧赔客胜略低，但主队也有一定支持，综合选择客胜。",
         "model": "deepseek-chat",
-        "latency": 1.4
+        "latency": 1.1
       }
     },
     {
@@ -2436,6 +2488,10 @@
         "赔率隐含概率: 主28% 平26% 客46%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "FL1",
       "kickoff": "2026-08-22T18:45:00Z",
       "matchUrl": "",
@@ -2604,12 +2660,12 @@
       "btts": 0.6674,
       "analysis": "【胜负】比赛悬念较大，主胜 28% / 平 26% / 客胜 46%（赔率 3.35 / 3.65 / 2.03）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 2.62 / 1.58）。\n【波胆】泊松模型推算最可能比分：1-1（9%）、2-1（8%）、1-2（8%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%（赔率 大 1.72 / 小 2.1），倾向大球。\n【进球数】总进球概率：0球 3%、1球 11%、2球 18%、3球 22%、4球 19%。\n【双方进球】双方都进球概率 67%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 59% vs 盘口 28%（差 +31%），值得关注。\n【结论】综合赔率与消息，Lyon不败概率更高，关注波胆 1-1 方向。",
       "aiJudge": {
-        "pick": "home",
-        "score": "2-1",
-        "confidence": 0.55,
-        "reason": "统计模型和Elo均显示主队占优，且欧赔客胜偏低但主胜赔率合理，模型波胆中主胜比分概率较高。",
+        "pick": "none",
+        "score": "1-1",
+        "confidence": 0.5,
+        "reason": "统计模型与欧赔倾向客队，但Elo概率支持主队，信号矛盾，无明显倾向。",
         "model": "deepseek-chat",
-        "latency": 1.3
+        "latency": 1.0
       }
     },
     {
@@ -2630,6 +2686,10 @@
         "赔率隐含概率: 主35% 平27% 客38%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "FL1",
       "kickoff": "2026-08-22T18:45:00Z",
       "matchUrl": "",
@@ -2797,9 +2857,9 @@
         "pick": "away",
         "score": "1-2",
         "confidence": 0.599,
-        "reason": "客队胜率显著占优，欧赔与Elo均支持客胜，模型波胆次选1-2。",
+        "reason": "客队胜率与Elo概率均占优，欧赔支持客队，模型波胆次选为1-2。",
         "model": "deepseek-chat",
-        "latency": 1.1
+        "latency": 1.0
       }
     },
     {
@@ -2832,6 +2892,10 @@
           "score": 0.0
         }
       ],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "FL1",
       "kickoff": "2026-08-23T13:00:00Z",
       "matchUrl": "",
@@ -3001,11 +3065,11 @@
       "analysis": "【胜负】市场明显看好客队Lille，客胜隐含概率 56%（赔率 4.95 / 3.75 / 1.67）。\n【让球】客队Lille让 1.5 球（盘口赔率 1.4 / 3.35）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、0-1（12%）、1-2（9%）。\n【大小球】2.5 球盘口：大球 49% / 小球 51%（赔率 大 1.94 / 小 1.85），倾向小球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 51%，倾向至少一方零封。\n【消息面】Angers信号 +0.00（2条提及）。\n📰 Rangers meeting Q&A: McInnes-Klopp compared, club failure admission & new signings update（miss、signing）\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 36% vs 盘口 19%（差 +17%），值得关注。\n【结论】综合赔率与消息，Lille不败概率更高，关注波胆 1-1 方向。",
       "aiJudge": {
         "pick": "away",
-        "score": "0-1",
-        "confidence": 0.55,
-        "reason": "客队胜率较高且欧赔支持客胜，但平局概率不低，谨慎选择客胜。",
+        "score": "1-2",
+        "confidence": 0.62,
+        "reason": "客队胜率显著占优，欧赔与统计模型均支持客胜，但平局概率不低，故信心适中。",
         "model": "deepseek-chat",
-        "latency": 1.3
+        "latency": 1.0
       }
     },
     {
@@ -3026,6 +3090,10 @@
         "赔率隐含概率: 主27% 平25% 客48%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "FL1",
       "kickoff": "2026-08-23T15:15:00Z",
       "matchUrl": "",
@@ -3177,9 +3245,9 @@
         "pick": "away",
         "score": "0-1",
         "confidence": 0.55,
-        "reason": "客胜概率最高且欧赔支持，但平局概率不低，谨慎看好客队小胜。",
+        "reason": "客胜概率最高且欧赔支持客队，但平局概率不低，谨慎选择客胜。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.1
       }
     },
     {
@@ -3200,6 +3268,10 @@
         "赔率隐含概率: 主68% 平18% 客15%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "FL1",
       "kickoff": "2026-08-23T18:45:00Z",
       "matchUrl": "",
@@ -3347,9 +3419,9 @@
         "pick": "home",
         "score": "2-0",
         "confidence": 0.72,
-        "reason": "主队胜率极高，欧赔与Elo均支持主胜，模型预测2-0最可能。",
+        "reason": "主队胜率极高且欧赔支持，模型预测2-0，信心充足。",
         "model": "deepseek-chat",
-        "latency": 1.5
+        "latency": 0.9
       }
     },
     {
@@ -3370,6 +3442,10 @@
         "赔率隐含概率: 主40% 平34% 客26%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "PD",
       "kickoff": "2026-08-15T17:30:00Z",
       "matchUrl": "",
@@ -3546,9 +3622,9 @@
         "pick": "none",
         "score": "0-0",
         "confidence": 0.5,
-        "reason": "双方实力接近且数据无明显倾向，模型预测平局概率较高。",
+        "reason": "双方实力接近，模型概率分散，无明显倾向。",
         "model": "deepseek-chat",
-        "latency": 1.0
+        "latency": 0.9
       }
     },
     {
@@ -3569,6 +3645,10 @@
         "赔率隐含概率: 主42% 平30% 客29%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "PD",
       "kickoff": "2026-08-15T19:30:00Z",
       "matchUrl": "",
@@ -3729,7 +3809,7 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队虽排名较低但主场优势及欧赔略支持，模型概率主胜稍高，且波胆1-0概率较高。",
+        "reason": "主队虽排名较低但主场优势及欧赔略倾向主胜，模型概率主队稍高，且波胆1-0概率较高。",
         "model": "deepseek-chat",
         "latency": 1.1
       }
@@ -3752,6 +3832,10 @@
         "赔率隐含概率: 主30% 平27% 客43%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "PD",
       "kickoff": "2026-08-16T15:00:00Z",
       "matchUrl": "",
@@ -3895,9 +3979,9 @@
         "pick": "away",
         "score": "1-2",
         "confidence": 0.6,
-        "reason": "客队实力占优且赔率支持，但主队有进球能力，预测客胜小比分。",
+        "reason": "客队胜率与欧赔一致，模型波胆次选客胜，但主队有平局可能，故谨慎选择客胜。",
         "model": "deepseek-chat",
-        "latency": 1.6
+        "latency": 1.3
       }
     },
     {
@@ -3918,6 +4002,10 @@
         "赔率隐含概率: 主46% 平29% 客25%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "PD",
       "kickoff": "2026-08-16T17:00:00Z",
       "matchUrl": "",
@@ -4104,7 +4192,7 @@
         "confidence": 0.55,
         "reason": "主队积分和排名占优，且模型波胆次选为主胜，但客队保级战意强，平局概率不低，故谨慎看好主队小胜。",
         "model": "deepseek-chat",
-        "latency": 1.5
+        "latency": 1.1
       }
     },
     {
@@ -4125,6 +4213,10 @@
         "赔率隐含概率: 主46% 平28% 客25%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "PD",
       "kickoff": "2026-08-16T19:30:00Z",
       "matchUrl": "",
@@ -4283,7 +4375,7 @@
         "confidence": 0.55,
         "reason": "主队排名和状态占优，但客队防守稳固，小胜概率较高。",
         "model": "deepseek-chat",
-        "latency": 1.5
+        "latency": 1.0
       }
     },
     {
@@ -4304,6 +4396,10 @@
         "赔率隐含概率: 主39% 平32% 客29%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "PD",
       "kickoff": "2026-08-17T19:00:00Z",
       "matchUrl": "",
@@ -4444,10 +4540,10 @@
       "btts": 0.3982,
       "analysis": "【胜负】双方实力接近，主队Deportivo La Coruña略占优（主胜 39% vs 客胜 29%）（赔率 2.42 / 3.0 / 3.26）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.69 / 2.315）。\n【波胆】泊松模型推算最可能比分：1-0（14%）、0-0（14%）、1-1（14%）。\n【大小球】2.5 球盘口：大球 42% / 小球 58%（赔率 大 2.25 / 小 1.62），倾向小球。\n【进球数】总进球概率：0球 14%、1球 27%、2球 27%、3球 18%、4球 9%。\n【双方进球】双方都进球概率 40%，倾向至少一方零封。\n【结论】综合赔率与消息，Deportivo La Coruña不败概率更高，关注波胆 1-0 方向。",
       "aiJudge": {
-        "pick": "none",
-        "score": "0-0",
-        "confidence": 0.5,
-        "reason": "数据无明显倾向，平局概率较高且比分预测为0-0。",
+        "pick": "home",
+        "score": "1-0",
+        "confidence": 0.45,
+        "reason": "主队胜率略高且欧赔支持，但平局概率不低，谨慎看好小胜。",
         "model": "deepseek-chat",
         "latency": 1.1
       }
@@ -4470,6 +4566,10 @@
         "赔率隐含概率: 主74% 平17% 客9%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "PD",
       "kickoff": "2026-08-19T19:00:00Z",
       "matchUrl": "",
@@ -4637,9 +4737,9 @@
         "pick": "home",
         "score": "2-0",
         "confidence": 0.65,
-        "reason": "主队胜率显著占优，欧赔与模型均支持主胜，比分预测2-0为最可能结果。",
+        "reason": "主队胜率显著占优，欧赔和模型均支持主胜，预测比分2-0为最可能结果。",
         "model": "deepseek-chat",
-        "latency": 1.3
+        "latency": 1.0
       }
     },
     {
@@ -4660,6 +4760,10 @@
         "赔率隐含概率: 主45% 平30% 客25%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "PD",
       "kickoff": "2026-08-20T19:00:00Z",
       "matchUrl": "",
@@ -4835,10 +4939,10 @@
       "aiJudge": {
         "pick": "home",
         "score": "1-0",
-        "confidence": 0.6,
-        "reason": "主队积分和Elo概率占优，但大小球倾向小球，模型首选平局，综合微调为主胜小胜。",
+        "confidence": 0.55,
+        "reason": "主队积分和状态占优，但平局概率不低，谨慎看好小胜。",
         "model": "deepseek-chat",
-        "latency": 1.1
+        "latency": 1.0
       }
     },
     {
@@ -4859,6 +4963,10 @@
         "赔率隐含概率: 主44% 平29% 客27%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "PD",
       "kickoff": "2026-08-21T19:00:00Z",
       "matchUrl": "",
@@ -5019,9 +5127,9 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队积分排名和Elo概率占优，但平局概率不低，谨慎看好主胜。",
+        "reason": "主队积分和排名占优，且模型胜率与赔率均倾向主胜，但平局概率不低，故谨慎选择主胜。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.0
       }
     },
     {
@@ -5042,6 +5150,10 @@
         "赔率隐含概率: 主57% 平26% 客17%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "PD",
       "kickoff": "2026-08-22T15:00:00Z",
       "matchUrl": "",
@@ -5217,8 +5329,8 @@
       "aiJudge": {
         "pick": "home",
         "score": "1-0",
-        "confidence": 0.55,
-        "reason": "主队胜率与欧赔均占优，但平局概率不低，谨慎看好小胜。",
+        "confidence": 0.62,
+        "reason": "主队胜率统计占优，欧赔支持主胜，但平局概率不低，谨慎看好小胜。",
         "model": "deepseek-chat",
         "latency": 0.9
       }
@@ -5241,6 +5353,10 @@
         "赔率隐含概率: 主40% 平29% 客31%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "PD",
       "kickoff": "2026-08-22T17:30:00Z",
       "matchUrl": "",
@@ -5432,7 +5548,7 @@
         "pick": "home",
         "score": "2-1",
         "confidence": 0.6,
-        "reason": "主队胜率统计与Elo均占优，且欧赔略支持主胜，但客队排名更高，需谨慎。",
+        "reason": "主队胜率统计与Elo均占优，且欧赔略支持主胜，但平局概率不低，故谨慎选择主胜。",
         "model": "deepseek-chat",
         "latency": 1.1
       }
@@ -5467,6 +5583,10 @@
           "score": -0.2
         }
       ],
+      "msgSignals": {
+        "home": 0.0,
+        "away": -0.1
+      },
       "league": "PD",
       "kickoff": "2026-08-22T19:30:00Z",
       "matchUrl": "",
@@ -5627,9 +5747,9 @@
         "pick": "away",
         "score": "1-2",
         "confidence": 0.65,
-        "reason": "客队实力和状态占优，但主队有主场优势且模型预测比分接近，客胜概率较高。",
+        "reason": "客队实力和状态占优，但主队有一定进球能力，预测客胜小胜。",
         "model": "deepseek-chat",
-        "latency": 1.9
+        "latency": 1.1
       }
     },
     {
@@ -5650,6 +5770,10 @@
         "赔率隐含概率: 主49% 平27% 客24%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "PD",
       "kickoff": "2026-08-23T15:00:00Z",
       "matchUrl": "",
@@ -5834,9 +5958,9 @@
         "pick": "none",
         "score": "1-1",
         "confidence": 0.5,
-        "reason": "数据矛盾，主客倾向不明显，平局概率较高。",
+        "reason": "统计模型与欧赔倾向主队，但Elo概率倾向客队，数据矛盾，无明显倾向。",
         "model": "deepseek-chat",
-        "latency": 1.0
+        "latency": 0.8
       }
     },
     {
@@ -5857,6 +5981,10 @@
         "赔率隐含概率: 主49% 平31% 客20%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "PD",
       "kickoff": "2026-08-23T17:30:00Z",
       "matchUrl": "",
@@ -6023,10 +6151,10 @@
       "aiJudge": {
         "pick": "home",
         "score": "1-0",
-        "confidence": 0.65,
+        "confidence": 0.62,
         "reason": "主队胜率与欧赔一致，且大小球倾向小球，模型波胆首选1-0。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.1
       }
     },
     {
@@ -6047,6 +6175,10 @@
         "赔率隐含概率: 主12% 平18% 客71%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "PD",
       "kickoff": "2026-08-23T19:30:00Z",
       "matchUrl": "",
@@ -6231,9 +6363,9 @@
         "pick": "away",
         "score": "1-2",
         "confidence": 0.75,
-        "reason": "巴萨整体实力和状态远胜对手，且统计模型和欧赔均强烈支持客胜。",
+        "reason": "巴萨实力和状态远胜，统计模型和欧赔均支持客胜，但主队有保级动力，比分预测为1-2。",
         "model": "deepseek-chat",
-        "latency": 1.1
+        "latency": 1.3
       }
     },
     {
@@ -6254,6 +6386,10 @@
         "赔率隐含概率: 主54% 平25% 客20%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "PD",
       "kickoff": "2026-08-24T17:30:00Z",
       "matchUrl": "",
@@ -6410,7 +6546,7 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队积分相同但净胜球占优，且欧赔和统计模型均倾向主胜，但平局概率不低，故谨慎选择主胜。",
+        "reason": "主队积分相同但净胜球占优，且欧赔与统计模型均倾向主胜，但平局概率不低，故谨慎选择主胜。",
         "model": "deepseek-chat",
         "latency": 1.1
       }
@@ -6433,6 +6569,10 @@
         "赔率隐含概率: 主39% 平30% 客31%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "PD",
       "kickoff": "2026-08-24T19:30:00Z",
       "matchUrl": "",
@@ -6587,10 +6727,10 @@
       "aiJudge": {
         "pick": "home",
         "score": "1-0",
-        "confidence": 0.55,
-        "reason": "主队胜率略高且欧赔支持，但平局概率不低，谨慎看好小胜。",
+        "confidence": 0.5,
+        "reason": "主队胜率略高且欧赔支持，但平局概率不低，谨慎选择小胜。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.1
       }
     },
     {
@@ -6611,6 +6751,10 @@
         "赔率隐含概率: 主36% 平29% 客35%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "PD",
       "kickoff": "2026-08-25T19:00:00Z",
       "matchUrl": "",
@@ -6800,11 +6944,11 @@
       "analysis": "【排名】主队Valencia排名第9（49分/38场），客队Real Betis排名第5（60分/38场），客队排名领先 4 位。\n【胜负】双方实力接近，主队Valencia略占优（主胜 36% vs 客胜 35%）（赔率 2.67 / 3.245 / 2.7）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.93 / 1.93）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（10%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 47% / 小球 53%（赔率 大 2.0 / 小 1.8），倾向小球。\n【进球数】总进球概率：0球 6%、1球 17%、2球 24%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 55%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 61% vs 盘口 36%（差 +25%），值得关注。\n【结论】综合赔率与消息，Valencia不败概率更高，关注波胆 1-1 方向。",
       "aiJudge": {
         "pick": "home",
-        "score": "2-1",
+        "score": "1-0",
         "confidence": 0.55,
-        "reason": "Elo概率显著偏向主队，且主胜赔率略低，模型波胆次选为主胜，但平局概率不低，谨慎看好主队小胜。",
+        "reason": "主队Elo概率占优且主场作战，但欧赔接近，模型概率略高，倾向主胜但信心有限。",
         "model": "deepseek-chat",
-        "latency": 1.3
+        "latency": 1.0
       }
     },
     {
@@ -6837,6 +6981,10 @@
           "score": -0.2
         }
       ],
+      "msgSignals": {
+        "home": -0.1,
+        "away": 0.0
+      },
       "league": "PD",
       "kickoff": "2026-08-26T19:00:00Z",
       "matchUrl": "",
@@ -6996,10 +7144,10 @@
       "aiJudge": {
         "pick": "home",
         "score": "2-0",
-        "confidence": 0.75,
-        "reason": "主队实力和状态占优，模型和赔率均支持主胜，但需注意主队可能受关键球员缺阵影响。",
+        "confidence": 0.72,
+        "reason": "主队实力和状态明显占优，模型和赔率均支持主胜，但需注意消息面提及的负面信号。",
         "model": "deepseek-chat",
-        "latency": 1.3
+        "latency": 1.0
       }
     },
     {
@@ -7020,6 +7168,10 @@
         "赔率隐含概率: 主67% 平19% 客14%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "PD",
       "kickoff": "2026-08-27T19:00:00Z",
       "matchUrl": "",
@@ -7198,7 +7350,7 @@
         "confidence": 0.72,
         "reason": "主队实力和状态远超客队，欧赔和Elo均支持主胜，模型预测2-0概率最高。",
         "model": "deepseek-chat",
-        "latency": 0.9
+        "latency": 1.1
       }
     },
     {
@@ -7231,6 +7383,10 @@
           "score": -0.1
         }
       ],
+      "msgSignals": {
+        "home": -0.033,
+        "away": 0.0
+      },
       "league": "PL",
       "kickoff": "2026-08-21T19:00:00Z",
       "matchUrl": "",
@@ -7543,7 +7699,7 @@
         "pick": "home",
         "score": "2-0",
         "confidence": 0.8,
-        "reason": "主队胜率极高，模型和欧赔均强烈支持，比分预测2-0。",
+        "reason": "主队胜率极高，欧赔和Elo均支持主胜，比分预测2-0最可能。",
         "model": "deepseek-chat",
         "latency": 0.9
       }
@@ -7566,6 +7722,10 @@
         "赔率隐含概率: 主12% 平20% 客67%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "PL",
       "kickoff": "2026-08-22T11:30:00Z",
       "matchUrl": "",
@@ -7878,9 +8038,9 @@
         "pick": "away",
         "score": "0-2",
         "confidence": 0.65,
-        "reason": "客队胜率显著占优，欧赔与Elo均支持客胜，模型预测0-2概率最高。",
+        "reason": "客队胜率显著占优，欧赔与Elo均支持客胜，比分预测为0-2。",
         "model": "deepseek-chat",
-        "latency": 1.1
+        "latency": 1.0
       }
     },
     {
@@ -7901,6 +8061,10 @@
         "赔率隐含概率: 主44% 平28% 客28%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "PL",
       "kickoff": "2026-08-22T14:00:00Z",
       "matchUrl": "",
@@ -8230,7 +8394,7 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队积分和Elo概率略占优，欧赔主胜较低，但平局概率不低，谨慎看好主胜。",
+        "reason": "主队积分和状态略优，且模型和赔率均倾向主队不败，但平局概率不低，谨慎选择主胜。",
         "model": "deepseek-chat",
         "latency": 1.1
       }
@@ -8253,6 +8417,10 @@
         "赔率隐含概率: 主35% 平29% 客37%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "PL",
       "kickoff": "2026-08-22T14:00:00Z",
       "matchUrl": "",
@@ -8581,7 +8749,7 @@
         "pick": "away",
         "score": "0-1",
         "confidence": 0.55,
-        "reason": "客队胜率在统计模型和Elo中均占优，欧赔客胜略低，但平局概率不低，谨慎选择客胜。",
+        "reason": "客队胜率在统计模型和Elo中均占优，欧赔也略倾向客队，但平局概率不低，故谨慎选择客胜。",
         "model": "deepseek-chat",
         "latency": 1.0
       }
@@ -8604,6 +8772,10 @@
         "赔率隐含概率: 主43% 平28% 客29%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "PL",
       "kickoff": "2026-08-22T14:00:00Z",
       "matchUrl": "",
@@ -8913,9 +9085,9 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队虽排名略低但主场优势及Elo概率略高，模型波胆次选1-0，欧赔主胜稍低，倾向主队小胜。",
+        "reason": "主队主场优势及Elo概率略高，但平局概率不低，谨慎看好小胜。",
         "model": "deepseek-chat",
-        "latency": 1.8
+        "latency": 0.9
       }
     },
     {
@@ -8936,6 +9108,10 @@
         "赔率隐含概率: 主39% 平26% 客34%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "PL",
       "kickoff": "2026-08-22T16:30:00Z",
       "matchUrl": "",
@@ -9285,9 +9461,9 @@
         "pick": "home",
         "score": "2-1",
         "confidence": 0.55,
-        "reason": "主队积分排名和Elo概率占优，且模型波胆次选为2-1，但客队有保级动力，平局概率不低，故谨慎看好主胜。",
+        "reason": "主队积分和Elo均占优，且模型波胆次选为2-1，但客队有保级动力，需谨慎。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.1
       }
     },
     {
@@ -9308,6 +9484,10 @@
         "赔率隐含概率: 主42% 平26% 客32%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "PL",
       "kickoff": "2026-08-23T13:00:00Z",
       "matchUrl": "",
@@ -9644,7 +9824,7 @@
         "pick": "away",
         "score": "1-2",
         "confidence": 0.529,
-        "reason": "客队胜率在统计模型和Elo中均占优，且欧赔客胜略低，但主队有一定竞争力，故谨慎选择客胜。",
+        "reason": "客队胜率在统计模型和Elo中均占优，且欧赔客胜偏低，但平局概率不低，故谨慎选择客胜。",
         "model": "deepseek-chat",
         "latency": 1.1
       }
@@ -9679,6 +9859,10 @@
           "score": 0.2
         }
       ],
+      "msgSignals": {
+        "home": 0.1,
+        "away": 0.0
+      },
       "league": "PL",
       "kickoff": "2026-08-23T13:00:00Z",
       "matchUrl": "",
@@ -10008,9 +10192,9 @@
         "pick": "home",
         "score": "2-0",
         "confidence": 0.72,
-        "reason": "曼城主场优势明显，统计模型和欧赔均支持主胜，且消息信号显示罗德里可能回归增强实力。",
+        "reason": "曼城主场优势明显，统计模型和欧赔均支持主胜，且波胆预测2-0概率最高。",
         "model": "deepseek-chat",
-        "latency": 1.4
+        "latency": 0.8
       }
     },
     {
@@ -10031,6 +10215,10 @@
         "赔率隐含概率: 主29% 平25% 客46%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "PL",
       "kickoff": "2026-08-23T15:30:00Z",
       "matchUrl": "",
@@ -10360,9 +10548,9 @@
         "pick": "away",
         "score": "0-1",
         "confidence": 0.55,
-        "reason": "客队实力和状态占优，欧赔与统计模型均倾向客胜，但平局概率不低，谨慎选择客胜。",
+        "reason": "客队实力和状态占优，欧赔与统计模型均支持客胜，但平局概率不低，故信心中等。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.1
       }
     },
     {
@@ -10383,6 +10571,10 @@
         "赔率隐含概率: 主30% 平26% 客45%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "PL",
       "kickoff": "2026-08-24T19:00:00Z",
       "matchUrl": "",
@@ -10736,7 +10928,7 @@
         "pick": "none",
         "score": "1-1",
         "confidence": 0.5,
-        "reason": "统计模型与欧赔倾向客队，但Elo模型倾向主队，数据矛盾，无明显倾向。",
+        "reason": "两队积分相同，统计模型与Elo概率分歧明显，欧赔略倾向客队但无显著优势，建议观望。",
         "model": "deepseek-chat",
         "latency": 1.2
       }
@@ -10759,6 +10951,10 @@
         "赔率隐含概率: 主21% 平27% 客52%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "SA",
       "kickoff": "2026-08-22T16:30:00Z",
       "matchUrl": "",
@@ -10930,9 +11126,9 @@
         "pick": "away",
         "score": "0-1",
         "confidence": 0.58,
-        "reason": "客胜概率与欧赔均显著倾向客队，但模型波胆显示平局可能，故谨慎选择客胜。",
+        "reason": "客胜概率与欧赔均指向客队，但模型波胆最高为1-1，故谨慎选择客胜。",
         "model": "deepseek-chat",
-        "latency": 1.7
+        "latency": 1.0
       }
     },
     {
@@ -10965,6 +11161,10 @@
           "score": -0.1
         }
       ],
+      "msgSignals": {
+        "home": -0.1,
+        "away": 0.0
+      },
       "league": "SA",
       "kickoff": "2026-08-22T16:30:00Z",
       "matchUrl": "",
@@ -11128,9 +11328,9 @@
         "pick": "home",
         "score": "2-1",
         "confidence": 0.65,
-        "reason": "欧赔与统计模型均看好主胜，但Elo概率显示客队有竞争力，故适度下调信心。",
+        "reason": "欧赔和统计模型均看好主胜，但Elo概率显示客队有竞争力，故信心适中。",
         "model": "deepseek-chat",
-        "latency": 1.9
+        "latency": 0.9
       }
     },
     {
@@ -11151,6 +11351,10 @@
         "赔率隐含概率: 主36% 平31% 客33%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "SA",
       "kickoff": "2026-08-22T18:45:00Z",
       "matchUrl": "",
@@ -11310,9 +11514,9 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "统计模型和Elo均略倾向主队，且欧赔主胜稍低，但平局概率不低，谨慎看好主队小胜。",
+        "reason": "统计模型和Elo均略倾向主队，欧赔主胜稍低，但平局概率不低，谨慎看好主胜。",
         "model": "deepseek-chat",
-        "latency": 1.3
+        "latency": 1.0
       }
     },
     {
@@ -11333,6 +11537,10 @@
         "赔率隐含概率: 主20% 平29% 客51%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "SA",
       "kickoff": "2026-08-22T18:45:00Z",
       "matchUrl": "",
@@ -11504,9 +11712,9 @@
         "pick": "away",
         "score": "0-1",
         "confidence": 0.594,
-        "reason": "客胜概率最高且欧赔支持，但平局概率不低，谨慎选择客胜。",
+        "reason": "客胜概率最高且欧赔支持，但平局概率不低，谨慎看好客队小胜。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.0
       }
     },
     {
@@ -11527,6 +11735,10 @@
         "赔率隐含概率: 主14% 平21% 客65%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "SA",
       "kickoff": "2026-08-23T16:30:00Z",
       "matchUrl": "",
@@ -11670,9 +11882,9 @@
         "pick": "away",
         "score": "0-2",
         "confidence": 0.75,
-        "reason": "客队尤文图斯实力和状态明显占优，统计模型和欧赔均强烈支持客胜，比分预测0-2。",
+        "reason": "客队尤文图斯实力和状态占优，统计模型和欧赔均强烈支持客胜，预测比分0-2。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.0
       }
     },
     {
@@ -11693,6 +11905,10 @@
         "赔率隐含概率: 主40% 平30% 客30%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "SA",
       "kickoff": "2026-08-23T16:30:00Z",
       "matchUrl": "",
@@ -11866,10 +12082,10 @@
       "aiJudge": {
         "pick": "home",
         "score": "2-1",
-        "confidence": 0.65,
-        "reason": "统计模型和Elo均看好主队，但欧赔平局偏低，需防平，故选择主胜但信心适中。",
+        "confidence": 0.62,
+        "reason": "统计模型和Elo均看好主队，欧赔也倾向主胜，但平局概率不低，故选择主胜但信心中等。",
         "model": "deepseek-chat",
-        "latency": 1.3
+        "latency": 1.2
       }
     },
     {
@@ -11890,6 +12106,10 @@
         "赔率隐含概率: 主21% 平26% 客53%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "SA",
       "kickoff": "2026-08-23T18:45:00Z",
       "matchUrl": "",
@@ -12060,10 +12280,10 @@
       "aiJudge": {
         "pick": "away",
         "score": "1-2",
-        "confidence": 0.55,
-        "reason": "欧赔客胜1.77明显低于主胜和平局，统计模型客胜概率最高，但Elo概率支持主队，综合倾向客胜但信心一般。",
+        "confidence": 0.566,
+        "reason": "欧赔客胜1.77明显低于主胜，统计模型客胜概率最高，虽Elo倾向主队但综合盘口和赔率更看好客队。",
         "model": "deepseek-chat",
-        "latency": 1.3
+        "latency": 1.1
       }
     },
     {
@@ -12084,6 +12304,10 @@
         "赔率隐含概率: 主62% 平22% 客16%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "SA",
       "kickoff": "2026-08-23T18:45:00Z",
       "matchUrl": "",
@@ -12251,9 +12475,9 @@
         "pick": "home",
         "score": "2-0",
         "confidence": 0.75,
-        "reason": "主队胜率极高，欧赔与Elo均支持主胜，模型预测2-0概率最高。",
+        "reason": "主队胜率极高，欧赔和Elo均支持主胜，模型预测2-0，信心充足。",
         "model": "deepseek-chat",
-        "latency": 1.1
+        "latency": 0.9
       }
     },
     {
@@ -12274,6 +12498,10 @@
         "赔率隐含概率: 主44% 平29% 客27%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "SA",
       "kickoff": "2026-08-24T16:30:00Z",
       "matchUrl": "",
@@ -12421,9 +12649,9 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主胜概率最高且欧赔支持，但平局概率不低，谨慎看好小胜。",
+        "reason": "统计模型和Elo均略倾向主胜，欧赔主胜较低，但平局概率不低，谨慎选择主胜。",
         "model": "deepseek-chat",
-        "latency": 1.1
+        "latency": 1.0
       }
     },
     {
@@ -12444,6 +12672,10 @@
         "赔率隐含概率: 主60% 平23% 客16%"
       ],
       "messageEvidence": [],
+      "msgSignals": {
+        "home": 0.0,
+        "away": 0.0
+      },
       "league": "SA",
       "kickoff": "2026-08-24T18:45:00Z",
       "matchUrl": "",
@@ -12610,10 +12842,10 @@
       "aiJudge": {
         "pick": "home",
         "score": "2-0",
-        "confidence": 0.72,
-        "reason": "主队胜率极高，欧赔和Elo均支持主胜，模型预测2-0，信心充足。",
+        "confidence": 0.7,
+        "reason": "主队胜率极高，欧赔和Elo均支持主胜，比分预测2-0为最可能结果。",
         "model": "deepseek-chat",
-        "latency": 1.4
+        "latency": 1.2
       }
     }
   ],
@@ -12665,6 +12897,6 @@
         "avgConf": 0
       }
     },
-    "updatedAt": "2026-08-12T04:09:38Z"
+    "updatedAt": "2026-08-12T04:15:55Z"
   }
 }

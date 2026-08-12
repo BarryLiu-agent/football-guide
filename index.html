@@ -836,6 +836,15 @@ function renderCard(m) {
     const rp = pred.reversePicks.map(r => r.label + ' 模型' + Math.round(r.modelProb * 100) + '%/盘口' + Math.round(r.oddsProb * 100) + '%').join('、');
     revTag = '<span class="diff-tag warn" title="模型 vs 市场对立（' + rp + '）">⚠️反向</span>';
   }
+  // 临场情报：消息面核心缺阵预警（伤停/停赛信号强时）
+  let injTag = '';
+  if (pred && pred.msgSignals) {
+    const ms = pred.msgSignals;
+    const inj = [];
+    if (ms.home != null && ms.home <= -0.15) inj.push(cnTeam(homeName) + '缺阵信号' + ms.home.toFixed(2));
+    if (ms.away != null && ms.away <= -0.15) inj.push(cnTeam(awayName) + '缺阵信号' + ms.away.toFixed(2));
+    if (inj.length) injTag = '<span class="diff-tag warn" title="消息面伤停/停赛信号：' + inj.join('；') + '">⚠️核心缺阵</span>';
+  }
   // 赛程风险：周中 / 3 天内双赛
   let riskTags = '';
   try {
@@ -868,7 +877,7 @@ function renderCard(m) {
     ${(() => { const vp = (pred && pred.valuePicks && pred.valuePicks.length) ? pred.valuePicks[0] : null; return vp ? `<span class="val-tag" title="${vp.label}: 模型${Math.round(vp.modelProb*100)}% vs 盘口${Math.round(vp.oddsProb*100)}%">💰${vp.label} ${vp.edge > 0 ? '+' : ''}${Math.round(vp.edge*100)}%</span>` : ''; })()}
     ${(() => { const xm = findXgMatch(homeName, awayName); if (!xm || (xm.xgHome == null && xm.xgAway == null)) return ''; const xh = xm.xgHome ?? 0, xa = xm.xgAway ?? 0; const xt = xh > xa ? 'home' : xa > xh ? 'away' : 'draw'; let diverge = false; if (pred && pred.eloProb) { const et = pred.eloProb.home > pred.eloProb.away ? 'home' : pred.eloProb.away > pred.eloProb.home ? 'away' : 'draw'; diverge = xt !== 'draw' && et !== 'draw' && xt !== et; } return diverge ? '<span class="xg-tag diverging">🎯 ' + xh.toFixed(1) + '-' + xa.toFixed(1) + ' ⚠️背离</span>' : `<span class="xg-tag">🎯 ${xh.toFixed(1)}-${xa.toFixed(1)}</span>`; })()}
     ${pred && pred.signalLevel === 'gold' && pred.valuePicks?.length ? `<span class="val-tag gold">💰 ${pred.valuePicks.map(v => v.label).join('/')}</span>` : (pred && pred.signalLevel === 'watch' ? `<span class="val-tag watch">👀 关注</span>` : '')}
-    ${hot || diff || value || divTag || revTag || riskTags ? `<div style="display:flex;gap:4px;margin-top:6px;flex-wrap:wrap">${hot}${value}${diff}${divTag}${revTag}${riskTags}</div>` : ''}
+    ${hot || diff || value || divTag || revTag || injTag || riskTags ? `<div style="display:flex;gap:4px;margin-top:6px;flex-wrap:wrap">${hot}${value}${diff}${divTag}${revTag}${injTag}${riskTags}</div>` : ''}
   </div>`;
 }
 
