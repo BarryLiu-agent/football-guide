@@ -620,16 +620,18 @@ async function loadJson(url) {
   return r.json();
 }
 async function loadAll() {
+  const failed = [];
+  const track = (name, p) => p.catch(() => { failed.push(name); });
   const jobs = [
-    loadJson('data/fixtures.json').then(d => { state.fixtures = d.matches || []; }).catch(() => {}),
-    loadJson('data/predictions.json').then(d => { state.predictions = d.predictions || []; state.predictionsMeta = d; }).catch(() => {}),
-    loadJson('data/standings.json').then(d => { state.standings = d.standings || {}; }).catch(() => {}),
-    loadJson('data/jingcai.json').then(d => { state.jingcai = d.matches || []; state.jingcaiGen = d.generatedAt || ''; }).catch(() => {}),
-    loadJson('data/xg/matches.json').then(d => { state.xgMatches = d.matches || []; }).catch(() => {}),
-    loadJson('data/prediction_history.json').then(d => { state.history = d; }).catch(() => {}),
-    loadJson('data/calibration.json').then(d => { state.calibration = d; }).catch(() => {}),
-    loadJson('data/calibration_ou.json').then(d => { state.calibOu = d; }).catch(() => {}),
-    loadJson('data/team_names.json').then(d => { state.teamNames = d; }).catch(() => {}),
+    track('fixtures.json', loadJson('data/fixtures.json').then(d => { state.fixtures = d.matches || []; })),
+    track('predictions.json', loadJson('data/predictions.json').then(d => { state.predictions = d.predictions || []; state.predictionsMeta = d; })),
+    track('standings.json', loadJson('data/standings.json').then(d => { state.standings = d.standings || {}; })),
+    track('jingcai.json', loadJson('data/jingcai.json').then(d => { state.jingcai = d.matches || []; state.jingcaiGen = d.generatedAt || ''; })),
+    track('xg/matches.json', loadJson('data/xg/matches.json').then(d => { state.xgMatches = d.matches || []; })),
+    track('prediction_history.json', loadJson('data/prediction_history.json').then(d => { state.history = d; })),
+    track('calibration.json', loadJson('data/calibration.json').then(d => { state.calibration = d; })),
+    track('calibration_ou.json', loadJson('data/calibration_ou.json').then(d => { state.calibOu = d; })),
+    track('team_names.json', loadJson('data/team_names.json').then(d => { state.teamNames = d; })),
   ];
   // xG 逐个联赛加载(可能不存在)
   for (const lg of LEAGUES) {
@@ -650,6 +652,13 @@ async function loadAll() {
     jobs.push(loadJson(`data/asian/${lg.code}.json`).then(d => { state.asianByLeague[lg.code] = d; }).catch(() => {}));
   }
   await Promise.all(jobs);
+  // 加载失败提示：file:// 直开或部署缺文件时不再白屏无解释
+  if (failed.length) {
+    const el = $('pageContent');
+    if (el && !el.querySelector('.load-error')) {
+      el.insertAdjacentHTML('afterbegin', '<div class="stale-banner load-error" style="background:rgba(239,68,68,.12);border-color:rgba(239,68,68,.4)">⚠️ 数据加载失败: ' + failed.join(', ') + '。若你是直接双击打开 index.html，请改用 GitHub Pages 地址或本地服务器(如 python -m http.server)。</div>');
+    }
+  }
   const d = state.history?.stats;
   const gen = state.predictionsMeta?.generatedAt;
   if (gen) $('lastUpdated').textContent = '数据 ' + gen.slice(5, 16).replace('T', ' ');
@@ -879,7 +888,7 @@ function renderCard(m) {
   const homeName = m.homeTeam?.name || m.homeTeam?.shortName || '?';
   const awayName = m.awayTeam?.name || m.awayTeam?.shortName || '?';
   const pred = m.pred || findPrediction(homeName, awayName, m.competition?.code);
-  const jc = findJingcai(homeName, awayName);
+  const jc = findJingcai(homeName, awayName, m.competition?.code);
   const score = getScore(m);
   // 异动标红:赔率涨跌 >= 0.2
   let hot = '';

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-12T14:42:10Z",
-  "totalRemaining": 0,
+  "generatedAt": "2026-08-12T15:23:25Z",
+  "totalRemaining": 437,
   "keys": [
     {
       "env": "ODDS_API_KEY",
@@ -19,6 +19,12 @@
       "last4": "4d2f",
       "remaining": 0,
       "masked": "****************************4d2f"
+    },
+    {
+      "env": "ODDS_API_KEY_4",
+      "last4": "f9ea",
+      "remaining": 437,
+      "masked": "****************************f9ea"
     }
   ]
 }

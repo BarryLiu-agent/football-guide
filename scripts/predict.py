@@ -201,9 +201,7 @@ class ScorePredictor:
 
     def predict(self, home, away, odds_result, msg_result):
         fusion = self.rules.get("fusion", {})
-        w_odds = fusion.get("oddsWeight", 0.6)
-        w_msg = fusion.get("messageWeight", 0.3)
-        w_prior = fusion.get("priorWeight", 0.1)
+        msg_conf_w = fusion.get("messageConfWeight", 0.1)
 
         prob = odds_result.get("prob") if odds_result else None
         signals = msg_result.get("signals", {}) if msg_result else {}
@@ -213,34 +211,24 @@ class ScorePredictor:
         if prob:
             p_home, p_draw, p_away = prob["home"], prob["draw"], prob["away"]
 
-        # 消息信号调整
+        # 消息信号不直接改概率（量小滞后，加减概率只会引入噪声），
+        # 仅作为置信度参考与展示字段；融合主锚是去水后的市场概率。
         h_sig = signals.get(home.lower(), {}).get("score", 0)
         a_sig = signals.get(away.lower(), {}).get("score", 0)
-        adj = w_msg * (h_sig - a_sig) / 2  # 信号差映射到概率增量
-
-        final_home = min(0.9, max(0.05, p_home * (1 - w_msg) + (p_home + adj) * w_msg + w_prior / 3))
-        final_away = min(0.9, max(0.05, p_away * (1 - w_msg) + (p_away - adj) * w_msg + w_prior / 3))
-        # 归一化：draw 为剩余概率（保证三者和=1 且 draw>=0，避免强信号下出现负数）
-        raw_draw = 1 - final_home - final_away
-        final_draw = max(0.0, raw_draw)
-        total_p = final_home + final_draw + final_away
-        if total_p > 0:
-            final_home /= total_p
-            final_draw /= total_p
-            final_away /= total_p
+        final_home, final_draw, final_away = p_home, p_draw, p_away
 
         # 预测比分: 期望总进球按概率份额分配
         total_goals = 2.5  # 足球比赛均值
         share_home = final_home / max(0.01, final_home + final_away)
         share_away = 1 - share_home
-        exp_home = total_goals * share_home + adj * 0.8
-        exp_away = total_goals * share_away - adj * 0.8
+        exp_home = total_goals * share_home
+        exp_away = total_goals * share_away
         pred_score = f"{max(0, round(exp_home))}-{max(0, round(exp_away))}"
 
-        # 置信度: 概率集中度 + 消息一致性
+        # 置信度: 概率集中度 + 消息一致性（消息只影响置信度，权重低）
         top = max(final_home, final_draw, final_away)
         msg_conf = abs(h_sig - a_sig)
-        confidence = min(0.95, 0.4 + top * 0.4 + msg_conf * 0.15)
+        confidence = min(0.95, 0.4 + top * 0.4 + msg_conf * msg_conf_w)
         # 模型进化：若 calibrate 配置了高置信折扣（evolve.py 自适应），应用于置信度
         disc = self.rules.get("confidenceDiscount") if isinstance(self.rules, dict) else None
         if isinstance(disc, (int, float)) and 0.5 < disc < 1.0 and confidence >= 0.65:
@@ -308,6 +296,10 @@ class ScoreModel:
     def _poisson(self, k, lam):
         return math.exp(-lam) * lam ** k / math.factorial(k)
 
+    def _cdf(self, k, lam):
+        """泊松累积分布 P(X <= k)。"""
+        return sum(self._poisson(i, lam) for i in range(k + 1))
+
     def _probs(self, lh=None, la=None):
         lh, la = lh or self.lam_h, la or self.lam_a
         # 网格计算 P(i,j) = Poisson(i;lh) × Poisson(j;la)
@@ -316,6 +308,15 @@ class ScoreModel:
         p_home = sum(m[i][j] for i in range(n) for j in range(n) if i > j)
         p_draw = sum(m[i][i] for i in range(n))
         p_away = sum(m[i][j] for i in range(n) for j in range(n) if i < j)
+        # 补尾概率（任一队 ≥ n 球）：主队≥n 且客队<n → 必主胜；反之必客胜；
+        # 双方都≥n 的平局概率可忽略，按 λ 比例分摊给主/客胜。
+        cdf_h, cdf_a = self._cdf(n - 1, lh), self._cdf(n - 1, la)
+        tail_home = (1 - cdf_h) * cdf_a
+        tail_away = cdf_h * (1 - cdf_a)
+        tail_both = (1 - cdf_h) * (1 - cdf_a)
+        share_h = lh / (lh + la)
+        p_home += tail_home + tail_both * share_h
+        p_away += tail_away + tail_both * (1 - share_h)
         return p_home, p_draw, p_away
 
     def correct_scores(self, top_n=6):
@@ -339,7 +340,9 @@ class ScoreModel:
         return round(p_home, 4), round(p_draw, 4), round(p_away, 4)
 
     def over_under(self, line=2.5):
-        """大小球: 返回 {over, under} 概率。"""
+        """大小球: 返回 {over, under} 概率。
+        有意用普通泊松而非 DC 修正：DC 只调整 0-0/1-0/0-1/1-1 低比分相关性，
+        对大小球边际概率影响 <1%，保持普通泊松避免过度拟合。"""
         n = self.MAX_GOALS
         m = [[self._poisson(i, self.lam_h) * self._poisson(j, self.lam_a) for j in range(n)] for i in range(n)]
         p_over = sum(m[i][j] for i in range(n) for j in range(n) if i + j > line)
@@ -359,7 +362,8 @@ class ScoreModel:
 
     def cover_prob(self, point):
         """主队让球 point（负=让球）时的赢盘概率 P(主队进球差 > -point)。
-        整球盘（point 为整数）含走盘：返回 (win, push)，push=净胜恰等于 -point。"""
+        整球盘（point 为整数）含走盘：返回 (win, push)，push=净胜恰等于 -point。
+        与 over_under 同理，有意用普通泊松（DC 对让球边际影响 <1%）。"""
         n = self.MAX_GOALS
         m = [[self._poisson(i, self.lam_h) * self._poisson(j, self.lam_a) for j in range(n)] for i in range(n)]
         if point is not None and float(point).is_integer():
@@ -370,7 +374,8 @@ class ScoreModel:
         return win, 0.0
 
     def btts_prob(self):
-        """双方进球概率（BTTS）。"""
+        """双方进球概率（BTTS）。
+        与 over_under 同理，有意用普通泊松（DC 对 BTTS 边际影响 <1%）。"""
         n = self.MAX_GOALS
         both = sum(self._poisson(i, self.lam_h) * self._poisson(j, self.lam_a)
                    for i in range(1, n) for j in range(1, n))
@@ -734,23 +739,23 @@ def main():
             if odds_result and odds_result.get("prob"):
                 market_prob = odds_result["prob"]
 
-            # ── 融合概率：60% 市场 + 40% Elo + 消息信号（供波胆/大小球/让球等全部下游模型）──
+            # ── 融合概率：市场为主锚(去水后隐含概率) + Elo 修正（供波胆/大小球/让球等全部下游模型）──
+            # 消息信号不直接加减概率（量小滞后，避免噪声），只参与置信度与分歧展示。
+            fusion = rules.get("fusion", {})
+            w_mkt = fusion.get("marketWeight", 0.6)
+            w_elo = fusion.get("eloWeight", 0.4)
             h_sig = msg_result.get("signals", {}).get(home.lower(), {}).get("score", 0) if msg_result else 0
             a_sig = msg_result.get("signals", {}).get(away.lower(), {}).get("score", 0) if msg_result else 0
-            w_msg = rules.get("fusion", {}).get("messageWeight", 0.3)
-            adj = w_msg * (h_sig - a_sig) / 2  # 与 ScorePredictor 同口径
+            msg_diff = (h_sig - a_sig) / 2  # 仅展示与置信度用，不参与概率融合
             if market_prob:
-                f_home = 0.6 * market_prob["home"] + 0.4 * ep_home + adj
-                f_draw = 0.6 * market_prob["draw"] + 0.4 * ep_draw
-                f_away = 0.6 * market_prob["away"] + 0.4 * ep_away - adj
+                f_home = w_mkt * market_prob["home"] + w_elo * ep_home
+                f_draw = w_mkt * market_prob["draw"] + w_elo * ep_draw
+                f_away = w_mkt * market_prob["away"] + w_elo * ep_away
                 _s = f_home + f_draw + f_away
                 if _s > 0:
                     f_home, f_draw, f_away = f_home / _s, f_draw / _s, f_away / _s
             else:
-                f_home, f_draw, f_away = ep_home + adj, ep_draw, ep_away - adj
-                _s = f_home + f_draw + f_away
-                if _s > 0:
-                    f_home, f_draw, f_away = f_home / _s, f_draw / _s, f_away / _s
+                f_home, f_draw, f_away = ep_home, ep_draw, ep_away
 
             score_model = ScoreModel()
             score_model.fit(f_home, f_draw, f_away)
@@ -825,10 +830,12 @@ def main():
             pred["probabilities"] = {
                 "home": round(f_home, 3), "draw": round(f_draw, 3), "away": round(f_away, 3)
             }
-            # confidence 与最终概率同源：基于融合概率集中度 + 消息信号
+            # confidence 与最终概率同源：概率集中度 + 消息一致性(低权重) - 模型分歧折价
             top_p = max(f_home, f_draw, f_away)
             msg_conf = abs(h_sig - a_sig)
-            conf = min(0.95, 0.4 + top_p * 0.4 + msg_conf * 0.15)
+            conf = min(0.95, 0.4 + top_p * 0.4 + msg_conf * fusion.get("messageConfWeight", 0.1))
+            if diverge:
+                conf *= 0.85  # Elo/DC/市场方向分歧 → 不确定性上升，置信度折价
             disc = rules.get("confidenceDiscount") if isinstance(rules, dict) else None
             if isinstance(disc, (int, float)) and 0.5 < disc < 1.0 and conf >= 0.65:
                 conf *= disc
@@ -890,11 +897,23 @@ def main():
             pred["betRec"] = bet_rec
 
             # Dixon-Coles 波胆 + 大小球 + 分布
-            pred["correctScores"] = score_model.dc_scores(6)
-            # 预测比分与波胆列表同口径（DC 修正），避免"预测 2-0 但波胆 top1 是 1-1"矛盾
-            top_cs = score_model.dc_scores(1)
-            if top_cs:
-                pred["predictedScore"] = top_cs[0]["score"]
+            dc_all = score_model.dc_scores(6)
+            pred["correctScores"] = dc_all
+            # 预测比分与波胆列表同口径（DC 修正），且与 probabilities 方向一致：
+            # 全局波胆 Top1 常是 1-1（联合分布众数），会与边际 1X2 方向矛盾（如概率指向客胜却预测 1-1），
+            # 因此从 DC 波胆中取与 probabilities 方向相同的最高概率比分。
+            prob_dir = max(pred.get("probabilities", {}), key=lambda k: pred.get("probabilities", {}).get(k, 0))
+            dir_map = {"home": "H", "draw": "D", "away": "A"}
+
+            def _outcome(score):
+                h, a = map(int, score.split("-"))
+                return "H" if h > a else ("D" if h == a else "A")
+
+            same_dir = [s for s in dc_all if _outcome(s["score"]) == dir_map.get(prob_dir)]
+            if same_dir:
+                pred["predictedScore"] = same_dir[0]["score"]
+            elif dc_all:
+                pred["predictedScore"] = dc_all[0]["score"]
 
             ou = None
             totals_mkt = m.get("markets", {}).get("totals")

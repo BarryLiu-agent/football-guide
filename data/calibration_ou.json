@@ -1,103 +1,89 @@
 {
- "generatedAt": "2026-08-12T14:44:00Z",
+ "generatedAt": "2026-08-12T15:25:16Z",
  "source": "2025/26 赛季 Elo+泊松 盘口模型校准",
- "total": 840,
+ "total": 485,
  "ou25": {
-  "overall": 0.5476,
+  "overall": 0.5361,
   "buckets": [
    {
     "label": "≤40%",
-    "n": 61,
-    "hitRate": 0.623,
-    "avgProb": 0.363,
-    "bias": 0.2595
+    "n": 12,
+    "hitRate": 0.5,
+    "avgProb": 0.364,
+    "bias": 0.1358
    },
    {
     "label": "40-50%",
-    "n": 131,
-    "hitRate": 0.5725,
-    "avgProb": 0.439,
-    "bias": 0.1339
+    "n": 82,
+    "hitRate": 0.6098,
+    "avgProb": 0.446,
+    "bias": 0.1633
    },
    {
     "label": "50-60%",
-    "n": 341,
-    "hitRate": 0.5132,
-    "avgProb": 0.547,
-    "bias": -0.0339
+    "n": 260,
+    "hitRate": 0.5077,
+    "avgProb": 0.549,
+    "bias": -0.0416
    },
    {
     "label": "60-70%",
-    "n": 307,
-    "hitRate": 0.5603,
-    "avgProb": 0.627,
-    "bias": -0.0667
+    "n": 131,
+    "hitRate": 0.5496,
+    "avgProb": 0.635,
+    "bias": -0.0856
    }
   ]
  },
  "ah05": {
-  "overall": 0.4321,
+  "overall": 0.4247,
   "buckets": [
    {
     "label": "≤40%",
-    "n": 151,
-    "hitRate": 0.2649,
-    "avgProb": 0.358,
-    "bias": -0.0931
+    "n": 46,
+    "hitRate": 0.2609,
+    "avgProb": 0.377,
+    "bias": -0.1157
    },
    {
     "label": "40-50%",
-    "n": 386,
-    "hitRate": 0.4197,
+    "n": 323,
+    "hitRate": 0.4211,
     "avgProb": 0.461,
-    "bias": -0.0411
+    "bias": -0.04
    },
    {
     "label": "50-60%",
-    "n": 249,
-    "hitRate": 0.502,
-    "avgProb": 0.54,
-    "bias": -0.0382
+    "n": 109,
+    "hitRate": 0.4954,
+    "avgProb": 0.529,
+    "bias": -0.0338
    },
    {
     "label": "60-70%",
-    "n": 47,
-    "hitRate": 0.6809,
-    "avgProb": 0.637,
-    "bias": 0.0439
-   },
-   {
-    "label": "≥70%",
     "n": 7,
     "hitRate": 0.5714,
-    "avgProb": 0.725,
-    "bias": -0.1533
+    "avgProb": 0.618,
+    "bias": -0.0469
    }
   ]
  },
  "ah15": {
-  "overall": 0.2131,
+  "overall": 0.2103,
   "buckets": [
    {
     "label": "≤40%",
-    "n": 804,
-    "hitRate": 0.2052,
-    "avgProb": 0.249,
-    "bias": -0.044
+    "n": 481,
+    "hitRate": 0.21,
+    "avgProb": 0.248,
+    "bias": -0.038
    },
    {
     "label": "40-50%",
-    "n": 31,
-    "hitRate": 0.3871,
-    "avgProb": 0.439,
-    "bias": -0.0515
-   },
-   {
-    "label": "50-60%",
-    "n": 5,
-    "hitRate": 0.4,
-    "avgProb": 0.522,
-    "bias": -0.1218
+    "n": 4,
+    "hitRate": 0.25,
+    "avgProb": 0.408,
+    "bias": -0.1585
    }
   ]
  }

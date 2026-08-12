@@ -144,9 +144,9 @@
   "negative": -0.15
  },
  "fusion": {
-  "oddsWeight": 0.6,
-  "messageWeight": 0.3,
-  "priorWeight": 0.1
+  "marketWeight": 0.6,
+  "eloWeight": 0.4,
+  "messageConfWeight": 0.1
  },
  "scorePrior": {
   "1-0": 0.1,

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T04:06:14Z",
+  "generatedAt": "2026-08-12T15:23:22Z",
   "league": "PL",
   "history": {
     "arsenal|coventry city": [
@@ -105,6 +105,33 @@
       },
       {
         "ts": "2026-08-12T04:06:14Z",
+        "h2h": {
+          "home": 1.17,
+          "draw": 7.5,
+          "away": 16.0
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.565,
+          "under": 2.36
+        },
+        "spreads": {
+          "home": {
+            "point": -2.0,
+            "price": 1.9
+          },
+          "away": {
+            "point": 2.0,
+            "price": 1.95
+          }
+        },
+        "asian": {
+          "home": null,
+          "away": null
+        }
+      },
+      {
+        "ts": "2026-08-12T15:23:22Z",
         "h2h": {
           "home": 1.17,
           "draw": 7.5,
@@ -258,6 +285,33 @@
           "home": null,
           "away": null
         }
+      },
+      {
+        "ts": "2026-08-12T15:23:22Z",
+        "h2h": {
+          "home": 7.64,
+          "draw": 4.65,
+          "away": 1.41
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.745,
+          "under": 2.08
+        },
+        "spreads": {
+          "home": {
+            "point": 1.5,
+            "price": 1.75
+          },
+          "away": {
+            "point": -1.5,
+            "price": 2.14
+          }
+        },
+        "asian": {
+          "home": null,
+          "away": null
+        }
       }
     ],
     "everton|crystal palace": [
@@ -363,6 +417,33 @@
       },
       {
         "ts": "2026-08-12T04:06:14Z",
+        "h2h": {
+          "home": 2.14,
+          "draw": 3.4,
+          "away": 3.4
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.9049999999999998,
+          "under": 1.8849999999999998
+        },
+        "spreads": {
+          "home": {
+            "point": -0.5,
+            "price": 2.13
+          },
+          "away": {
+            "point": 0.5,
+            "price": 1.71
+          }
+        },
+        "asian": {
+          "home": null,
+          "away": null
+        }
+      },
+      {
+        "ts": "2026-08-12T15:23:22Z",
         "h2h": {
           "home": 2.14,
           "draw": 3.4,
@@ -516,6 +597,33 @@
           "home": null,
           "away": null
         }
+      },
+      {
+        "ts": "2026-08-12T15:23:22Z",
+        "h2h": {
+          "home": 2.74,
+          "draw": 3.3,
+          "away": 2.6
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.9449999999999998,
+          "under": 1.85
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.97
+          },
+          "away": {
+            "point": -0.0,
+            "price": 1.88
+          }
+        },
+        "asian": {
+          "home": null,
+          "away": null
+        }
       }
     ],
     "nottingham forest|leeds united": [
@@ -645,6 +753,33 @@
           "home": null,
           "away": null
         }
+      },
+      {
+        "ts": "2026-08-12T15:23:22Z",
+        "h2h": {
+          "home": 2.21,
+          "draw": 3.4,
+          "away": 3.2
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.875,
+          "under": 1.9
+        },
+        "spreads": {
+          "home": {
+            "point": -0.5,
+            "price": 2.205
+          },
+          "away": {
+            "point": 0.5,
+            "price": 1.6600000000000001
+          }
+        },
+        "asian": {
+          "home": null,
+          "away": null
+        }
       }
     ],
     "brentford|tottenham hotspur": [
@@ -750,6 +885,33 @@
       },
       {
         "ts": "2026-08-12T04:06:14Z",
+        "h2h": {
+          "home": 2.4,
+          "draw": 3.6,
+          "away": 2.75
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.66,
+          "under": 2.1950000000000003
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.8
+          },
+          "away": {
+            "point": -0.0,
+            "price": 2.09
+          }
+        },
+        "asian": {
+          "home": null,
+          "away": null
+        }
+      },
+      {
+        "ts": "2026-08-12T15:23:22Z",
         "h2h": {
           "home": 2.4,
           "draw": 3.6,
@@ -903,6 +1065,33 @@
           "home": null,
           "away": null
         }
+      },
+      {
+        "ts": "2026-08-12T15:23:22Z",
+        "h2h": {
+          "home": 2.26,
+          "draw": 3.65,
+          "away": 2.95
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.61,
+          "under": 2.2649999999999997
+        },
+        "spreads": {
+          "home": {
+            "point": -0.5,
+            "price": 2.235
+          },
+          "away": {
+            "point": 0.5,
+            "price": 1.65
+          }
+        },
+        "asian": {
+          "home": null,
+          "away": null
+        }
       }
     ],
     "manchester city|bournemouth": [
@@ -1008,6 +1197,33 @@
       },
       {
         "ts": "2026-08-12T04:06:14Z",
+        "h2h": {
+          "home": 1.44,
+          "draw": 5.0,
+          "away": 6.3
+        },
+        "totals": {
+          "line": 3.5,
+          "over": 1.97,
+          "under": 1.7850000000000001
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 2.2
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.73
+          }
+        },
+        "asian": {
+          "home": null,
+          "away": null
+        }
+      },
+      {
+        "ts": "2026-08-12T15:23:22Z",
         "h2h": {
           "home": 1.44,
           "draw": 5.0,
@@ -1161,6 +1377,33 @@
           "home": null,
           "away": null
         }
+      },
+      {
+        "ts": "2026-08-12T15:23:22Z",
+        "h2h": {
+          "home": 3.4,
+          "draw": 3.83,
+          "away": 2.02
+        },
+        "totals": {
+          "line": 3.5,
+          "over": 2.09,
+          "under": 1.705
+        },
+        "spreads": {
+          "home": {
+            "point": 0.5,
+            "price": 1.81
+          },
+          "away": {
+            "point": -0.5,
+            "price": 2.0
+          }
+        },
+        "asian": {
+          "home": null,
+          "away": null
+        }
       }
     ],
     "fulham|chelsea": [
@@ -1290,6 +1533,33 @@
           "home": null,
           "away": null
         }
+      },
+      {
+        "ts": "2026-08-12T15:23:22Z",
+        "h2h": {
+          "home": 3.2,
+          "draw": 3.65,
+          "away": 2.1
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.6150000000000002,
+          "under": 2.275
+        },
+        "spreads": {
+          "home": {
+            "point": 0.5,
+            "price": 1.725
+          },
+          "away": {
+            "point": -0.5,
+            "price": 2.1
+          }
+        },
+        "asian": {
+          "home": null,
+          "away": null
+        }
       }
     ]
   },
@@ -1329,176 +1599,6 @@
         "theoddsapi"
       ],
       "bookmakers": 21,
-      "bookmakerOdds": [
-        {
-          "name": "Pinnacle",
-          "h2h": {
-            "home": 1.17,
-            "away": 15.44,
-            "draw": 7.66
-          }
-        },
-        {
-          "name": "1xBet",
-          "h2h": {
-            "home": 1.2,
-            "away": 18.5,
-            "draw": 7.95
-          }
-        },
-        {
-          "name": "Betfair",
-          "h2h": {
-            "home": 1.18,
-            "away": 19.0,
-            "draw": 9.2
-          }
-        },
-        {
-          "name": "Codere (IT)",
-          "h2h": {
-            "home": 1.18,
-            "away": 16.0,
-            "draw": 7.2
-          }
-        },
-        {
-          "name": "Marathon Bet",
-          "h2h": {
-            "home": 1.18,
-            "away": 18.25,
-            "draw": 7.8
-          }
-        },
-        {
-          "name": "Unibet (FR)",
-          "h2h": {
-            "home": 1.14,
-            "away": 14.0,
-            "draw": 6.5
-          }
-        },
-        {
-          "name": "William Hill",
-          "h2h": {
-            "home": 1.17,
-            "away": 15.0,
-            "draw": 7.0
-          }
-        },
-        {
-          "name": "Betclic (FR)",
-          "h2h": {
-            "home": 1.15,
-            "away": 13.75,
-            "draw": 6.4
-          }
-        },
-        {
-          "name": "888sport",
-          "h2h": {
-            "home": 1.17,
-            "away": 15.0,
-            "draw": 7.0
-          }
-        },
-        {
-          "name": "Tipico",
-          "h2h": {
-            "home": 1.14,
-            "away": 15.0,
-            "draw": 8.5
-          }
-        },
-        {
-          "name": "Winamax (DE)",
-          "h2h": {
-            "home": 1.13,
-            "away": 13.5,
-            "draw": 7.75
-          }
-        },
-        {
-          "name": "Winamax (FR)",
-          "h2h": {
-            "home": 1.13,
-            "away": 13.0,
-            "draw": 7.5
-          }
-        },
-        {
-          "name": "Unibet (SE)",
-          "h2h": {
-            "home": 1.16,
-            "away": 21.0,
-            "draw": 8.5
-          }
-        },
-        {
-          "name": "LeoVegas (SE)",
-          "h2h": {
-            "home": 1.14,
-            "away": 19.0,
-            "draw": 8.0
-          }
-        },
-        {
-          "name": "Unibet (NL)",
-          "h2h": {
-            "home": 1.16,
-            "away": 21.0,
-            "draw": 8.5
-          }
-        },
-        {
-          "name": "Coolbet",
-          "h2h": {
-            "home": 1.17,
-            "away": 16.0,
-            "draw": 7.5
-          }
-        },
-        {
-          "name": "BetOnline.ag",
-          "h2h": {
-            "home": 1.18,
-            "away": 16.05,
-            "draw": 8.0
-          }
-        },
-        {
-          "name": "Nordic Bet",
-          "h2h": {
-            "home": 1.19,
-            "away": 19.0,
-            "draw": 6.5
-          }
-        },
-        {
-          "name": "Betsson",
-          "h2h": {
-            "home": 1.19,
-            "away": 19.0,
-            "draw": 6.5
-          }
-        },
-        {
-          "name": "PMU (FR)",
-          "h2h": {
-            "home": 1.12,
-            "away": 16.0,
-            "draw": 7.5
-          }
-        },
-        {
-          "name": "MyBookie.ag",
-          "h2h": {
-            "home": 1.17,
-            "away": 14.25,
-            "draw": 6.6
-          }
-        }
-      ],
       "prevH2h": {
         "home": 1.17,
         "draw": 7.5,
@@ -1512,8 +1612,8 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 7.7,
-          "draw": 4.7,
+          "home": 7.64,
+          "draw": 4.65,
           "away": 1.41
         },
         "totals": {
@@ -1524,11 +1624,11 @@
         "spreads": {
           "home": {
             "point": 1.5,
-            "price": 1.7349999999999999
+            "price": 1.75
           },
           "away": {
             "point": -1.5,
-            "price": 2.125
+            "price": 2.14
           }
         },
         "asian": {
@@ -1540,176 +1640,6 @@
         "theoddsapi"
       ],
       "bookmakers": 21,
-      "bookmakerOdds": [
-        {
-          "name": "Pinnacle",
-          "h2h": {
-            "home": 7.64,
-            "away": 1.41,
-            "draw": 4.58
-          }
-        },
-        {
-          "name": "1xBet",
-          "h2h": {
-            "home": 8.2,
-            "away": 1.45,
-            "draw": 4.88
-          }
-        },
-        {
-          "name": "Betfair",
-          "h2h": {
-            "home": 8.6,
-            "away": 1.44,
-            "draw": 4.9
-          }
-        },
-        {
-          "name": "Codere (IT)",
-          "h2h": {
-            "home": 8.2,
-            "away": 1.37,
-            "draw": 5.0
-          }
-        },
-        {
-          "name": "Marathon Bet",
-          "h2h": {
-            "home": 8.1,
-            "away": 1.43,
-            "draw": 4.8
-          }
-        },
-        {
-          "name": "Unibet (FR)",
-          "h2h": {
-            "home": 7.6,
-            "away": 1.32,
-            "draw": 4.75
-          }
-        },
-        {
-          "name": "William Hill",
-          "h2h": {
-            "home": 7.0,
-            "away": 1.4,
-            "draw": 4.4
-          }
-        },
-        {
-          "name": "Betclic (FR)",
-          "h2h": {
-            "home": 7.5,
-            "away": 1.33,
-            "draw": 4.7
-          }
-        },
-        {
-          "name": "888sport",
-          "h2h": {
-            "home": 7.0,
-            "away": 1.4,
-            "draw": 4.4
-          }
-        },
-        {
-          "name": "Tipico",
-          "h2h": {
-            "home": 7.8,
-            "away": 1.4,
-            "draw": 4.6
-          }
-        },
-        {
-          "name": "Winamax (DE)",
-          "h2h": {
-            "home": 7.25,
-            "away": 1.34,
-            "draw": 5.0
-          }
-        },
-        {
-          "name": "Winamax (FR)",
-          "h2h": {
-            "home": 7.0,
-            "away": 1.33,
-            "draw": 4.9
-          }
-        },
-        {
-          "name": "Unibet (SE)",
-          "h2h": {
-            "home": 8.5,
-            "away": 1.43,
-            "draw": 4.7
-          }
-        },
-        {
-          "name": "LeoVegas (SE)",
-          "h2h": {
-            "home": 8.0,
-            "away": 1.41,
-            "draw": 4.5
-          }
-        },
-        {
-          "name": "Unibet (NL)",
-          "h2h": {
-            "home": 8.5,
-            "away": 1.43,
-            "draw": 4.7
-          }
-        },
-        {
-          "name": "Coolbet",
-          "h2h": {
-            "home": 7.25,
-            "away": 1.44,
-            "draw": 4.6
-          }
-        },
-        {
-          "name": "BetOnline.ag",
-          "h2h": {
-            "home": 7.7,
-            "away": 1.45,
-            "draw": 4.6
-          }
-        },
-        {
-          "name": "Nordic Bet",
-          "h2h": {
-            "home": 8.4,
-            "away": 1.43,
-            "draw": 4.4
-          }
-        },
-        {
-          "name": "Betsson",
-          "h2h": {
-            "home": 8.4,
-            "away": 1.43,
-            "draw": 4.4
-          }
-        },
-        {
-          "name": "PMU (FR)",
-          "h2h": {
-            "home": 7.0,
-            "away": 1.38,
-            "draw": 4.2
-          }
-        },
-        {
-          "name": "MyBookie.ag",
-          "h2h": {
-            "home": 7.7,
-            "away": 1.35,
-            "draw": 4.8
-          }
-        }
-      ],
       "prevH2h": {
         "home": 7.7,
         "draw": 4.7,
@@ -1751,176 +1681,6 @@
         "theoddsapi"
       ],
       "bookmakers": 21,
-      "bookmakerOdds": [
-        {
-          "name": "Pinnacle",
-          "h2h": {
-            "away": 3.42,
-            "home": 2.15,
-            "draw": 3.41
-          }
-        },
-        {
-          "name": "1xBet",
-          "h2h": {
-            "away": 3.55,
-            "home": 2.21,
-            "draw": 3.55
-          }
-        },
-        {
-          "name": "Betfair",
-          "h2h": {
-            "away": 3.55,
-            "home": 2.22,
-            "draw": 3.55
-          }
-        },
-        {
-          "name": "Codere (IT)",
-          "h2h": {
-            "away": 3.4,
-            "home": 2.15,
-            "draw": 3.45
-          }
-        },
-        {
-          "name": "Marathon Bet",
-          "h2h": {
-            "away": 3.5,
-            "home": 2.18,
-            "draw": 3.5
-          }
-        },
-        {
-          "name": "Unibet (FR)",
-          "h2h": {
-            "away": 3.3,
-            "home": 2.05,
-            "draw": 3.3
-          }
-        },
-        {
-          "name": "William Hill",
-          "h2h": {
-            "away": 3.3,
-            "home": 2.15,
-            "draw": 3.25
-          }
-        },
-        {
-          "name": "Betclic (FR)",
-          "h2h": {
-            "away": 3.27,
-            "home": 2.05,
-            "draw": 3.28
-          }
-        },
-        {
-          "name": "888sport",
-          "h2h": {
-            "away": 3.3,
-            "home": 2.15,
-            "draw": 3.25
-          }
-        },
-        {
-          "name": "Tipico",
-          "h2h": {
-            "away": 3.5,
-            "home": 2.05,
-            "draw": 3.5
-          }
-        },
-        {
-          "name": "Winamax (DE)",
-          "h2h": {
-            "away": 3.2,
-            "home": 2.05,
-            "draw": 3.4
-          }
-        },
-        {
-          "name": "Winamax (FR)",
-          "h2h": {
-            "away": 3.2,
-            "home": 2.05,
-            "draw": 3.35
-          }
-        },
-        {
-          "name": "Unibet (SE)",
-          "h2h": {
-            "away": 3.8,
-            "home": 2.1,
-            "draw": 3.5
-          }
-        },
-        {
-          "name": "LeoVegas (SE)",
-          "h2h": {
-            "away": 3.7,
-            "home": 2.05,
-            "draw": 3.35
-          }
-        },
-        {
-          "name": "Unibet (NL)",
-          "h2h": {
-            "away": 3.8,
-            "home": 2.1,
-            "draw": 3.5
-          }
-        },
-        {
-          "name": "Coolbet",
-          "h2h": {
-            "away": 3.4,
-            "home": 2.14,
-            "draw": 3.5
-          }
-        },
-        {
-          "name": "BetOnline.ag",
-          "h2h": {
-            "away": 3.45,
-            "home": 2.2,
-            "draw": 3.45
-          }
-        },
-        {
-          "name": "Nordic Bet",
-          "h2h": {
-            "away": 3.4,
-            "home": 2.18,
-            "draw": 3.4
-          }
-        },
-        {
-          "name": "Betsson",
-          "h2h": {
-            "away": 3.4,
-            "home": 2.18,
-            "draw": 3.4
-          }
-        },
-        {
-          "name": "PMU (FR)",
-          "h2h": {
-            "away": 3.5,
-            "home": 1.97,
-            "draw": 3.2
-          }
-        },
-        {
-          "name": "MyBookie.ag",
-          "h2h": {
-            "away": 3.3,
-            "home": 2.1,
-            "draw": 3.32
-          }
-        }
-      ],
       "prevH2h": {
         "home": 2.14,
         "draw": 3.4,
@@ -1962,176 +1722,6 @@
         "theoddsapi"
       ],
       "bookmakers": 21,
-      "bookmakerOdds": [
-        {
-          "name": "Pinnacle",
-          "h2h": {
-            "home": 2.74,
-            "away": 2.62,
-            "draw": 3.3
-          }
-        },
-        {
-          "name": "1xBet",
-          "h2h": {
-            "home": 2.85,
-            "away": 2.69,
-            "draw": 3.42
-          }
-        },
-        {
-          "name": "Betfair",
-          "h2h": {
-            "home": 2.9,
-            "away": 2.68,
-            "draw": 3.3
-          }
-        },
-        {
-          "name": "Codere (IT)",
-          "h2h": {
-            "home": 2.7,
-            "away": 2.6,
-            "draw": 3.35
-          }
-        },
-        {
-          "name": "Marathon Bet",
-          "h2h": {
-            "home": 2.8,
-            "away": 2.65,
-            "draw": 3.36
-          }
-        },
-        {
-          "name": "Unibet (FR)",
-          "h2h": {
-            "home": 2.65,
-            "away": 2.45,
-            "draw": 3.2
-          }
-        },
-        {
-          "name": "William Hill",
-          "h2h": {
-            "home": 2.7,
-            "away": 2.5,
-            "draw": 3.2
-          }
-        },
-        {
-          "name": "Betclic (FR)",
-          "h2h": {
-            "home": 2.62,
-            "away": 2.47,
-            "draw": 3.2
-          }
-        },
-        {
-          "name": "888sport",
-          "h2h": {
-            "home": 2.7,
-            "away": 2.5,
-            "draw": 3.2
-          }
-        },
-        {
-          "name": "Tipico",
-          "h2h": {
-            "home": 2.75,
-            "away": 2.6,
-            "draw": 3.2
-          }
-        },
-        {
-          "name": "Winamax (DE)",
-          "h2h": {
-            "home": 2.6,
-            "away": 2.5,
-            "draw": 3.3
-          }
-        },
-        {
-          "name": "Winamax (FR)",
-          "h2h": {
-            "home": 2.55,
-            "away": 2.45,
-            "draw": 3.25
-          }
-        },
-        {
-          "name": "Unibet (SE)",
-          "h2h": {
-            "home": 2.8,
-            "away": 2.7,
-            "draw": 3.4
-          }
-        },
-        {
-          "name": "LeoVegas (SE)",
-          "h2h": {
-            "home": 2.7,
-            "away": 2.6,
-            "draw": 3.3
-          }
-        },
-        {
-          "name": "Unibet (NL)",
-          "h2h": {
-            "home": 2.8,
-            "away": 2.7,
-            "draw": 3.4
-          }
-        },
-        {
-          "name": "Coolbet",
-          "h2h": {
-            "home": 2.74,
-            "away": 2.6,
-            "draw": 3.34
-          }
-        },
-        {
-          "name": "BetOnline.ag",
-          "h2h": {
-            "home": 2.78,
-            "away": 2.65,
-            "draw": 3.36
-          }
-        },
-        {
-          "name": "Nordic Bet",
-          "h2h": {
-            "home": 2.75,
-            "away": 2.62,
-            "draw": 3.3
-          }
-        },
-        {
-          "name": "Betsson",
-          "h2h": {
-            "home": 2.75,
-            "away": 2.62,
-            "draw": 3.3
-          }
-        },
-        {
-          "name": "PMU (FR)",
-          "h2h": {
-            "home": 2.6,
-            "away": 2.5,
-            "draw": 3.1
-          }
-        },
-        {
-          "name": "MyBookie.ag",
-          "h2h": {
-            "home": 2.65,
-            "away": 2.55,
-            "draw": 3.22
-          }
-        }
-      ],
       "prevH2h": {
         "home": 2.74,
         "draw": 3.3,
@@ -2145,13 +1735,13 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.2,
-          "draw": 3.36,
+          "home": 2.21,
+          "draw": 3.4,
           "away": 3.2
         },
         "totals": {
           "line": 2.5,
-          "over": 1.87,
+          "over": 1.875,
           "under": 1.9
         },
         "spreads": {
@@ -2172,161 +1762,7 @@
       "sources": [
         "theoddsapi"
       ],
-      "bookmakers": 19,
-      "bookmakerOdds": [
-        {
-          "name": "Pinnacle",
-          "h2h": {
-            "away": 3.23,
-            "home": 2.26,
-            "draw": 3.36
-          }
-        },
-        {
-          "name": "1xBet",
-          "h2h": {
-            "away": 3.33,
-            "home": 2.33,
-            "draw": 3.5
-          }
-        },
-        {
-          "name": "Betfair",
-          "h2h": {
-            "away": 3.3,
-            "home": 2.3,
-            "draw": 3.55
-          }
-        },
-        {
-          "name": "Codere (IT)",
-          "h2h": {
-            "away": 3.2,
-            "home": 2.25,
-            "draw": 3.4
-          }
-        },
-        {
-          "name": "Marathon Bet",
-          "h2h": {
-            "away": 3.28,
-            "home": 2.29,
-            "draw": 3.44
-          }
-        },
-        {
-          "name": "Unibet (FR)",
-          "h2h": {
-            "away": 3.1,
-            "home": 2.1,
-            "draw": 3.3
-          }
-        },
-        {
-          "name": "William Hill",
-          "h2h": {
-            "away": 3.1,
-            "home": 2.2,
-            "draw": 3.25
-          }
-        },
-        {
-          "name": "Betclic (FR)",
-          "h2h": {
-            "away": 3.07,
-            "home": 2.13,
-            "draw": 3.27
-          }
-        },
-        {
-          "name": "888sport",
-          "h2h": {
-            "away": 3.1,
-            "home": 2.2,
-            "draw": 3.25
-          }
-        },
-        {
-          "name": "Tipico",
-          "h2h": {
-            "away": 3.3,
-            "home": 2.2,
-            "draw": 3.3
-          }
-        },
-        {
-          "name": "Winamax (DE)",
-          "h2h": {
-            "away": 3.1,
-            "home": 2.15,
-            "draw": 3.35
-          }
-        },
-        {
-          "name": "Winamax (FR)",
-          "h2h": {
-            "away": 3.05,
-            "home": 2.1,
-            "draw": 3.3
-          }
-        },
-        {
-          "name": "Unibet (SE)",
-          "h2h": {
-            "away": 3.3,
-            "home": 2.28,
-            "draw": 3.55
-          }
-        },
-        {
-          "name": "LeoVegas (SE)",
-          "h2h": {
-            "away": 3.2,
-            "home": 2.2,
-            "draw": 3.45
-          }
-        },
-        {
-          "name": "Unibet (NL)",
-          "h2h": {
-            "away": 3.3,
-            "home": 2.28,
-            "draw": 3.55
-          }
-        },
-        {
-          "name": "Coolbet",
-          "h2h": {
-            "away": 3.18,
-            "home": 2.21,
-            "draw": 3.54
-          }
-        },
-        {
-          "name": "BetOnline.ag",
-          "h2h": {
-            "away": 3.29,
-            "home": 2.26,
-            "draw": 3.46
-          }
-        },
-        {
-          "name": "PMU (FR)",
-          "h2h": {
-            "away": 3.05,
-            "home": 2.12,
-            "draw": 3.25
-          }
-        },
-        {
-          "name": "MyBookie.ag",
-          "h2h": {
-            "away": 3.1,
-            "home": 2.2,
-            "draw": 3.3
-          }
-        }
-      ],
+      "bookmakers": 21,
       "prevH2h": {
         "home": 2.2,
         "draw": 3.36,
@@ -2368,176 +1804,6 @@
         "theoddsapi"
       ],
       "bookmakers": 21,
-      "bookmakerOdds": [
-        {
-          "name": "Pinnacle",
-          "h2h": {
-            "home": 2.4,
-            "away": 2.77,
-            "draw": 3.67
-          }
-        },
-        {
-          "name": "1xBet",
-          "h2h": {
-            "home": 2.49,
-            "away": 2.85,
-            "draw": 3.8
-          }
-        },
-        {
-          "name": "Betfair",
-          "h2h": {
-            "home": 2.56,
-            "away": 2.88,
-            "draw": 3.7
-          }
-        },
-        {
-          "name": "Codere (IT)",
-          "h2h": {
-            "home": 2.4,
-            "away": 2.8,
-            "draw": 3.6
-          }
-        },
-        {
-          "name": "Marathon Bet",
-          "h2h": {
-            "home": 2.45,
-            "away": 2.81,
-            "draw": 3.74
-          }
-        },
-        {
-          "name": "Unibet (FR)",
-          "h2h": {
-            "home": 2.25,
-            "away": 2.7,
-            "draw": 3.5
-          }
-        },
-        {
-          "name": "William Hill",
-          "h2h": {
-            "home": 2.38,
-            "away": 2.75,
-            "draw": 3.5
-          }
-        },
-        {
-          "name": "Betclic (FR)",
-          "h2h": {
-            "home": 2.27,
-            "away": 2.7,
-            "draw": 3.45
-          }
-        },
-        {
-          "name": "888sport",
-          "h2h": {
-            "home": 2.38,
-            "away": 2.75,
-            "draw": 3.5
-          }
-        },
-        {
-          "name": "Tipico",
-          "h2h": {
-            "home": 2.35,
-            "away": 2.8,
-            "draw": 3.6
-          }
-        },
-        {
-          "name": "Winamax (DE)",
-          "h2h": {
-            "home": 2.3,
-            "away": 2.65,
-            "draw": 3.6
-          }
-        },
-        {
-          "name": "Winamax (FR)",
-          "h2h": {
-            "home": 2.25,
-            "away": 2.65,
-            "draw": 3.55
-          }
-        },
-        {
-          "name": "Unibet (SE)",
-          "h2h": {
-            "home": 2.6,
-            "away": 2.75,
-            "draw": 3.6
-          }
-        },
-        {
-          "name": "LeoVegas (SE)",
-          "h2h": {
-            "home": 2.55,
-            "away": 2.65,
-            "draw": 3.5
-          }
-        },
-        {
-          "name": "Unibet (NL)",
-          "h2h": {
-            "home": 2.6,
-            "away": 2.75,
-            "draw": 3.6
-          }
-        },
-        {
-          "name": "Coolbet",
-          "h2h": {
-            "home": 2.38,
-            "away": 2.84,
-            "draw": 3.6
-          }
-        },
-        {
-          "name": "BetOnline.ag",
-          "h2h": {
-            "home": 2.45,
-            "away": 2.78,
-            "draw": 3.75
-          }
-        },
-        {
-          "name": "Nordic Bet",
-          "h2h": {
-            "home": 2.48,
-            "away": 2.75,
-            "draw": 3.6
-          }
-        },
-        {
-          "name": "Betsson",
-          "h2h": {
-            "home": 2.48,
-            "away": 2.75,
-            "draw": 3.6
-          }
-        },
-        {
-          "name": "PMU (FR)",
-          "h2h": {
-            "home": 2.43,
-            "away": 2.55,
-            "draw": 3.3
-          }
-        },
-        {
-          "name": "MyBookie.ag",
-          "h2h": {
-            "home": 2.34,
-            "away": 2.73,
-            "draw": 3.5
-          }
-        }
-      ],
       "prevH2h": {
         "home": 2.4,
         "draw": 3.6,
@@ -2579,176 +1845,6 @@
         "theoddsapi"
       ],
       "bookmakers": 21,
-      "bookmakerOdds": [
-        {
-          "name": "Pinnacle",
-          "h2h": {
-            "away": 3.02,
-            "home": 2.26,
-            "draw": 3.62
-          }
-        },
-        {
-          "name": "1xBet",
-          "h2h": {
-            "away": 3.1,
-            "home": 2.35,
-            "draw": 3.74
-          }
-        },
-        {
-          "name": "Betfair",
-          "h2h": {
-            "away": 3.1,
-            "home": 2.36,
-            "draw": 3.8
-          }
-        },
-        {
-          "name": "Codere (IT)",
-          "h2h": {
-            "away": 2.95,
-            "home": 2.27,
-            "draw": 3.65
-          }
-        },
-        {
-          "name": "Marathon Bet",
-          "h2h": {
-            "away": 3.05,
-            "home": 2.31,
-            "draw": 3.68
-          }
-        },
-        {
-          "name": "Unibet (FR)",
-          "h2h": {
-            "away": 2.85,
-            "home": 2.15,
-            "draw": 3.55
-          }
-        },
-        {
-          "name": "William Hill",
-          "h2h": {
-            "away": 2.9,
-            "home": 2.25,
-            "draw": 3.5
-          }
-        },
-        {
-          "name": "Betclic (FR)",
-          "h2h": {
-            "away": 2.85,
-            "home": 2.15,
-            "draw": 3.5
-          }
-        },
-        {
-          "name": "888sport",
-          "h2h": {
-            "away": 2.9,
-            "home": 2.25,
-            "draw": 3.5
-          }
-        },
-        {
-          "name": "Tipico",
-          "h2h": {
-            "away": 3.0,
-            "home": 2.2,
-            "draw": 3.7
-          }
-        },
-        {
-          "name": "Winamax (DE)",
-          "h2h": {
-            "away": 2.8,
-            "home": 2.15,
-            "draw": 3.65
-          }
-        },
-        {
-          "name": "Winamax (FR)",
-          "h2h": {
-            "away": 2.8,
-            "home": 2.15,
-            "draw": 3.6
-          }
-        },
-        {
-          "name": "Unibet (SE)",
-          "h2h": {
-            "away": 3.0,
-            "home": 2.35,
-            "draw": 3.75
-          }
-        },
-        {
-          "name": "LeoVegas (SE)",
-          "h2h": {
-            "away": 2.9,
-            "home": 2.28,
-            "draw": 3.65
-          }
-        },
-        {
-          "name": "Unibet (NL)",
-          "h2h": {
-            "away": 3.0,
-            "home": 2.35,
-            "draw": 3.75
-          }
-        },
-        {
-          "name": "Coolbet",
-          "h2h": {
-            "away": 2.97,
-            "home": 2.25,
-            "draw": 3.72
-          }
-        },
-        {
-          "name": "BetOnline.ag",
-          "h2h": {
-            "away": 2.95,
-            "home": 2.37,
-            "draw": 3.65
-          }
-        },
-        {
-          "name": "Nordic Bet",
-          "h2h": {
-            "away": 2.95,
-            "home": 2.32,
-            "draw": 3.6
-          }
-        },
-        {
-          "name": "Betsson",
-          "h2h": {
-            "away": 2.95,
-            "home": 2.32,
-            "draw": 3.6
-          }
-        },
-        {
-          "name": "PMU (FR)",
-          "h2h": {
-            "away": 2.8,
-            "home": 2.2,
-            "draw": 3.45
-          }
-        },
-        {
-          "name": "MyBookie.ag",
-          "h2h": {
-            "away": 2.89,
-            "home": 2.21,
-            "draw": 3.55
-          }
-        }
-      ],
       "prevH2h": {
         "home": 2.26,
         "draw": 3.65,
@@ -2790,176 +1886,6 @@
         "theoddsapi"
       ],
       "bookmakers": 21,
-      "bookmakerOdds": [
-        {
-          "name": "Pinnacle",
-          "h2h": {
-            "away": 5.97,
-            "home": 1.45,
-            "draw": 5.05
-          }
-        },
-        {
-          "name": "1xBet",
-          "h2h": {
-            "away": 6.45,
-            "home": 1.49,
-            "draw": 5.23
-          }
-        },
-        {
-          "name": "Codere (IT)",
-          "h2h": {
-            "away": 5.8,
-            "home": 1.47,
-            "draw": 5.0
-          }
-        },
-        {
-          "name": "Betfair",
-          "h2h": {
-            "away": 7.0,
-            "home": 1.47,
-            "draw": 5.3
-          }
-        },
-        {
-          "name": "Marathon Bet",
-          "h2h": {
-            "away": 6.35,
-            "home": 1.47,
-            "draw": 5.15
-          }
-        },
-        {
-          "name": "Unibet (FR)",
-          "h2h": {
-            "away": 5.6,
-            "home": 1.4,
-            "draw": 4.8
-          }
-        },
-        {
-          "name": "William Hill",
-          "h2h": {
-            "away": 5.8,
-            "home": 1.44,
-            "draw": 4.75
-          }
-        },
-        {
-          "name": "Betclic (FR)",
-          "h2h": {
-            "away": 5.5,
-            "home": 1.41,
-            "draw": 4.75
-          }
-        },
-        {
-          "name": "888sport",
-          "h2h": {
-            "away": 5.75,
-            "home": 1.44,
-            "draw": 4.75
-          }
-        },
-        {
-          "name": "Tipico",
-          "h2h": {
-            "away": 6.5,
-            "home": 1.4,
-            "draw": 5.2
-          }
-        },
-        {
-          "name": "Winamax (DE)",
-          "h2h": {
-            "away": 5.7,
-            "home": 1.41,
-            "draw": 5.0
-          }
-        },
-        {
-          "name": "Winamax (FR)",
-          "h2h": {
-            "away": 5.6,
-            "home": 1.4,
-            "draw": 4.9
-          }
-        },
-        {
-          "name": "Unibet (SE)",
-          "h2h": {
-            "away": 6.75,
-            "home": 1.47,
-            "draw": 5.1
-          }
-        },
-        {
-          "name": "LeoVegas (SE)",
-          "h2h": {
-            "away": 6.4,
-            "home": 1.43,
-            "draw": 4.9
-          }
-        },
-        {
-          "name": "Unibet (NL)",
-          "h2h": {
-            "away": 6.75,
-            "home": 1.47,
-            "draw": 5.1
-          }
-        },
-        {
-          "name": "Coolbet",
-          "h2h": {
-            "away": 6.3,
-            "home": 1.44,
-            "draw": 5.1
-          }
-        },
-        {
-          "name": "BetOnline.ag",
-          "h2h": {
-            "away": 6.55,
-            "home": 1.44,
-            "draw": 5.25
-          }
-        },
-        {
-          "name": "Nordic Bet",
-          "h2h": {
-            "away": 6.7,
-            "home": 1.47,
-            "draw": 4.65
-          }
-        },
-        {
-          "name": "Betsson",
-          "h2h": {
-            "away": 6.7,
-            "home": 1.47,
-            "draw": 4.65
-          }
-        },
-        {
-          "name": "PMU (FR)",
-          "h2h": {
-            "away": 5.8,
-            "home": 1.41,
-            "draw": 4.5
-          }
-        },
-        {
-          "name": "MyBookie.ag",
-          "h2h": {
-            "away": 5.6,
-            "home": 1.44,
-            "draw": 4.8
-          }
-        }
-      ],
       "prevH2h": {
         "home": 1.44,
         "draw": 5.0,
@@ -2973,23 +1899,23 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 3.25,
+          "home": 3.4,
           "draw": 3.83,
-          "away": 2.05
+          "away": 2.02
         },
         "totals": {
           "line": 3.5,
           "over": 2.09,
-          "under": 1.7
+          "under": 1.705
         },
         "spreads": {
           "home": {
             "point": 0.5,
-            "price": 1.7650000000000001
+            "price": 1.81
           },
           "away": {
             "point": -0.5,
-            "price": 2.035
+            "price": 2.0
           }
         },
         "asian": {
@@ -3001,176 +1927,6 @@
         "theoddsapi"
       ],
       "bookmakers": 21,
-      "bookmakerOdds": [
-        {
-          "name": "Pinnacle",
-          "h2h": {
-            "away": 2.07,
-            "home": 3.26,
-            "draw": 3.84
-          }
-        },
-        {
-          "name": "1xBet",
-          "h2h": {
-            "away": 2.12,
-            "home": 3.38,
-            "draw": 4.03
-          }
-        },
-        {
-          "name": "Codere (IT)",
-          "h2h": {
-            "away": 2.09,
-            "home": 3.2,
-            "draw": 3.85
-          }
-        },
-        {
-          "name": "Betfair",
-          "h2h": {
-            "away": 2.08,
-            "home": 3.55,
-            "draw": 4.0
-          }
-        },
-        {
-          "name": "Marathon Bet",
-          "h2h": {
-            "away": 2.09,
-            "home": 3.32,
-            "draw": 3.96
-          }
-        },
-        {
-          "name": "Unibet (FR)",
-          "h2h": {
-            "away": 1.97,
-            "home": 3.1,
-            "draw": 3.7
-          }
-        },
-        {
-          "name": "William Hill",
-          "h2h": {
-            "away": 2.05,
-            "home": 3.1,
-            "draw": 3.7
-          }
-        },
-        {
-          "name": "Betclic (FR)",
-          "h2h": {
-            "away": 1.98,
-            "home": 3.08,
-            "draw": 3.68
-          }
-        },
-        {
-          "name": "888sport",
-          "h2h": {
-            "away": 2.05,
-            "home": 3.1,
-            "draw": 3.7
-          }
-        },
-        {
-          "name": "Tipico",
-          "h2h": {
-            "away": 2.0,
-            "home": 3.3,
-            "draw": 3.9
-          }
-        },
-        {
-          "name": "Winamax (DE)",
-          "h2h": {
-            "away": 2.0,
-            "home": 3.05,
-            "draw": 3.8
-          }
-        },
-        {
-          "name": "Winamax (FR)",
-          "h2h": {
-            "away": 2.0,
-            "home": 3.0,
-            "draw": 3.8
-          }
-        },
-        {
-          "name": "Unibet (SE)",
-          "h2h": {
-            "away": 2.04,
-            "home": 3.55,
-            "draw": 4.0
-          }
-        },
-        {
-          "name": "LeoVegas (SE)",
-          "h2h": {
-            "away": 1.97,
-            "home": 3.4,
-            "draw": 3.85
-          }
-        },
-        {
-          "name": "Unibet (NL)",
-          "h2h": {
-            "away": 2.04,
-            "home": 3.55,
-            "draw": 4.0
-          }
-        },
-        {
-          "name": "Coolbet",
-          "h2h": {
-            "away": 2.1,
-            "home": 3.15,
-            "draw": 3.9
-          }
-        },
-        {
-          "name": "BetOnline.ag",
-          "h2h": {
-            "away": 2.07,
-            "home": 3.44,
-            "draw": 3.83
-          }
-        },
-        {
-          "name": "Nordic Bet",
-          "h2h": {
-            "away": 2.1,
-            "home": 3.25,
-            "draw": 3.75
-          }
-        },
-        {
-          "name": "Betsson",
-          "h2h": {
-            "away": 2.1,
-            "home": 3.25,
-            "draw": 3.75
-          }
-        },
-        {
-          "name": "PMU (FR)",
-          "h2h": {
-            "away": 1.92,
-            "home": 3.25,
-            "draw": 3.65
-          }
-        },
-        {
-          "name": "MyBookie.ag",
-          "h2h": {
-            "away": 2.04,
-            "home": 3.12,
-            "draw": 3.7
-          }
-        }
-      ],
       "prevH2h": {
         "home": 3.25,
         "draw": 3.83,
@@ -3186,11 +1942,11 @@
         "h2h": {
           "home": 3.2,
           "draw": 3.65,
-          "away": 2.12
+          "away": 2.1
         },
         "totals": {
           "line": 2.5,
-          "over": 1.62,
+          "over": 1.6150000000000002,
           "under": 2.275
         },
         "spreads": {
@@ -3212,176 +1968,6 @@
         "theoddsapi"
       ],
       "bookmakers": 21,
-      "bookmakerOdds": [
-        {
-          "name": "Pinnacle",
-          "h2h": {
-            "away": 2.06,
-            "home": 3.31,
-            "draw": 3.8
-          }
-        },
-        {
-          "name": "1xBet",
-          "h2h": {
-            "away": 2.16,
-            "home": 3.4,
-            "draw": 3.86
-          }
-        },
-        {
-          "name": "Codere (IT)",
-          "h2h": {
-            "away": 2.15,
-            "home": 3.2,
-            "draw": 3.65
-          }
-        },
-        {
-          "name": "Marathon Bet",
-          "h2h": {
-            "away": 2.13,
-            "home": 3.35,
-            "draw": 3.8
-          }
-        },
-        {
-          "name": "Unibet (FR)",
-          "h2h": {
-            "away": 2.0,
-            "home": 3.1,
-            "draw": 3.55
-          }
-        },
-        {
-          "name": "William Hill",
-          "h2h": {
-            "away": 2.1,
-            "home": 3.2,
-            "draw": 3.5
-          }
-        },
-        {
-          "name": "Betclic (FR)",
-          "h2h": {
-            "away": 2.05,
-            "home": 3.07,
-            "draw": 3.5
-          }
-        },
-        {
-          "name": "Betfair",
-          "h2h": {
-            "away": 2.2,
-            "home": 3.3,
-            "draw": 3.95
-          }
-        },
-        {
-          "name": "888sport",
-          "h2h": {
-            "away": 2.1,
-            "home": 3.2,
-            "draw": 3.5
-          }
-        },
-        {
-          "name": "Tipico",
-          "h2h": {
-            "away": 2.05,
-            "home": 3.4,
-            "draw": 3.6
-          }
-        },
-        {
-          "name": "Winamax (DE)",
-          "h2h": {
-            "away": 2.05,
-            "home": 3.05,
-            "draw": 3.65
-          }
-        },
-        {
-          "name": "Winamax (FR)",
-          "h2h": {
-            "away": 2.05,
-            "home": 3.0,
-            "draw": 3.6
-          }
-        },
-        {
-          "name": "Unibet (SE)",
-          "h2h": {
-            "away": 2.18,
-            "home": 3.3,
-            "draw": 3.8
-          }
-        },
-        {
-          "name": "LeoVegas (SE)",
-          "h2h": {
-            "away": 2.12,
-            "home": 3.2,
-            "draw": 3.65
-          }
-        },
-        {
-          "name": "Unibet (NL)",
-          "h2h": {
-            "away": 2.18,
-            "home": 3.3,
-            "draw": 3.8
-          }
-        },
-        {
-          "name": "Coolbet",
-          "h2h": {
-            "away": 2.2,
-            "home": 3.05,
-            "draw": 3.73
-          }
-        },
-        {
-          "name": "BetOnline.ag",
-          "h2h": {
-            "away": 2.14,
-            "home": 3.28,
-            "draw": 3.8
-          }
-        },
-        {
-          "name": "Nordic Bet",
-          "h2h": {
-            "away": 2.15,
-            "home": 3.25,
-            "draw": 3.7
-          }
-        },
-        {
-          "name": "Betsson",
-          "h2h": {
-            "away": 2.15,
-            "home": 3.25,
-            "draw": 3.7
-          }
-        },
-        {
-          "name": "PMU (FR)",
-          "h2h": {
-            "away": 2.05,
-            "home": 3.05,
-            "draw": 3.45
-          }
-        },
-        {
-          "name": "MyBookie.ag",
-          "h2h": {
-            "away": 2.1,
-            "home": 3.1,
-            "draw": 3.55
-          }
-        }
-      ],
       "prevH2h": {
         "home": 3.2,
         "draw": 3.65,
