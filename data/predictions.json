@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T03:49:16Z",
+  "generatedAt": "2026-08-12T03:52:24Z",
   "total": 58,
   "rulesVersion": "1.1",
   "modelInfo": {
@@ -17,13 +17,13 @@
       "awayTeam": "Como",
       "predictedScore": "1-1",
       "expectedGoals": {
-        "home": 0.97,
-        "away": 1.33
+        "home": 0.99,
+        "away": 1.31
       },
       "probabilities": {
-        "home": 0.276,
+        "home": 0.288,
         "draw": 0.274,
-        "away": 0.45
+        "away": 0.438
       },
       "confidence": 0.622,
       "reasons": [
@@ -49,9 +49,9 @@
         "away": 1.81
       },
       "kelly": {
-        "home": 0.196,
+        "home": 0.237,
         "draw": -0.007,
-        "away": -0.465
+        "away": -0.536
       },
       "spreads": {
         "home": {
@@ -65,14 +65,14 @@
       },
       "asian": null,
       "eloProb": {
-        "home": 0.374,
+        "home": 0.406,
         "draw": 0.281,
-        "away": 0.345
+        "away": 0.313
       },
       "dcProb": {
-        "home": 0.26,
-        "draw": 0.298,
-        "away": 0.441
+        "home": 0.271,
+        "draw": 0.3,
+        "away": 0.429
       },
       "diverge": true,
       "dirs": {
@@ -81,36 +81,44 @@
         "market": "away"
       },
       "form": {
-        "home": 1.4,
-        "away": 2.0
+        "home": {
+          "home": 1.5,
+          "away": 1.333,
+          "overall": 1.4
+        },
+        "away": {
+          "home": 3.0,
+          "away": 0.5,
+          "overall": 2.0
+        }
       },
       "eloRatings": {
         "home": 1500.0,
         "away": 1574.0
       },
       "modelProbs": {
-        "home": 0.276,
+        "home": 0.288,
         "draw": 0.274,
-        "away": 0.45
+        "away": 0.438
       },
       "valuePicks": [
         {
           "side": "home",
           "label": "主胜",
-          "modelProb": 0.374,
+          "modelProb": 0.406,
           "oddsProb": 0.21,
-          "edge": 0.165,
+          "edge": 0.197,
           "level": "watch",
-          "modelConf": 0.03
+          "modelConf": 0.094
         }
       ],
       "reversePicks": [
         {
           "side": "away",
           "label": "客胜",
-          "modelProb": 0.345,
+          "modelProb": 0.313,
           "oddsProb": 0.521,
-          "edge": -0.176
+          "edge": -0.208
         }
       ],
       "signalLevel": "watch",
@@ -119,32 +127,32 @@
         "odds": 4.5,
         "stake": 0.05,
         "source": "value:watch",
-        "edge": 0.165
+        "edge": 0.197
       },
       "correctScores": [
         {
           "score": "1-1",
-          "prob": 0.1395
+          "prob": 0.1404
         },
         {
           "score": "0-1",
-          "prob": 0.1234
+          "prob": 0.121
         },
         {
           "score": "0-0",
-          "prob": 0.1106
-        },
-        {
-          "score": "0-2",
-          "prob": 0.0892
+          "prob": 0.1107
         },
         {
           "score": "1-0",
-          "prob": 0.0865
+          "prob": 0.0888
+        },
+        {
+          "score": "0-2",
+          "prob": 0.0862
         },
         {
           "score": "1-2",
-          "prob": 0.0862
+          "prob": 0.0852
         }
       ],
       "overUnder": {
@@ -162,8 +170,8 @@
         "3": 0.2033,
         "4": 0.1169,
         "5": 0.0538,
-        "6": 0.0197,
-        "7": 0.0057,
+        "6": 0.0198,
+        "7": 0.0058,
         "8": 0.0013,
         "9": 0.0002,
         "10": 0.0
@@ -177,21 +185,21 @@
       },
       "spModel": {
         "point": 0.5,
-        "cover": 0.548,
+        "cover": 0.56,
         "price": 1.98,
         "implied": 0.505,
-        "edge": 0.043,
-        "kelly": 0.087
+        "edge": 0.055,
+        "kelly": 0.111
       },
-      "btts": 0.4543,
-      "analysis": "【胜负】比赛悬念较大，主胜 21% / 平 27% / 客胜 52%（赔率 4.5 / 3.5 / 1.81）。\n【让球】客队Como让 0.5 球（盘口赔率 1.98 / 1.85）。\n【波胆】泊松模型推算最可能比分：0-1（13%）、1-1（13%）、0-0（10%）。\n【大小球】2.5 球盘口：大球 45% / 小球 55%（赔率 大 2.12 / 小 1.705），倾向小球。\n【进球数】总进球概率：0球 10%、1球 23%、2球 27%、3球 20%、4球 12%。\n【双方进球】双方都进球概率 45%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 37% vs 盘口 21%（差 +16%），值得关注。\n【结论】综合赔率与消息，Como不败概率更高，关注波胆 0-1 方向。",
+      "btts": 0.4569,
+      "analysis": "【胜负】比赛悬念较大，主胜 21% / 平 27% / 客胜 52%（赔率 4.5 / 3.5 / 1.81）。\n【让球】客队Como让 0.5 球（盘口赔率 1.98 / 1.85）。\n【波胆】泊松模型推算最可能比分：0-1（13%）、1-1（13%）、0-0（10%）。\n【大小球】2.5 球盘口：大球 45% / 小球 55%（赔率 大 2.12 / 小 1.705），倾向小球。\n【进球数】总进球概率：0球 10%、1球 23%、2球 27%、3球 20%、4球 12%。\n【双方进球】双方都进球概率 46%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 41% vs 盘口 21%（差 +20%），值得关注。\n【结论】综合赔率与消息，Como不败概率更高，关注波胆 0-1 方向。",
       "aiJudge": {
         "pick": "away",
         "score": "0-1",
-        "confidence": 0.6,
-        "reason": "客胜概率最高且欧赔支持客队，但平局概率接近，谨慎选择客胜。",
+        "confidence": 0.588,
+        "reason": "客胜概率最高且欧赔支持客队，但模型分歧较大，信心适中。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.5
       }
     },
     {
@@ -263,8 +271,8 @@
         "market": "home"
       },
       "form": {
-        "home": null,
-        "away": null
+        "home": {},
+        "away": {}
       },
       "eloRatings": {
         "home": 1569.0,
@@ -371,9 +379,9 @@
         "pick": "home",
         "score": "2-0",
         "confidence": 0.75,
-        "reason": "主队胜率极高且欧赔支持，模型预测2-0，信心充足。",
+        "reason": "主队胜率与欧赔均显著占优，模型预测2-0且波胆概率最高，但Elo概率稍低，故微调至0.75。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.4
       }
     },
     {
@@ -445,8 +453,12 @@
         "market": "home"
       },
       "form": {
-        "home": null,
-        "away": 1.4
+        "home": {},
+        "away": {
+          "home": 0.0,
+          "away": 2.333,
+          "overall": 1.4
+        }
       },
       "eloRatings": {
         "home": 1500.0,
@@ -555,21 +567,21 @@
         "confidence": 0.55,
         "reason": "统计模型和Elo均显示主队略占优势，且欧赔主胜较低，但平局概率不低，谨慎看好主胜。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.3
       }
     },
     {
       "homeTeam": "Genoa",
       "awayTeam": "Napoli",
-      "predictedScore": "0-1",
+      "predictedScore": "1-1",
       "expectedGoals": {
-        "home": 0.86,
-        "away": 1.24
+        "home": 0.92,
+        "away": 1.28
       },
       "probabilities": {
-        "home": 0.26,
+        "home": 0.27,
         "draw": 0.29,
-        "away": 0.451
+        "away": 0.44
       },
       "confidence": 0.617,
       "reasons": [
@@ -595,9 +607,9 @@
         "away": 1.85
       },
       "kelly": {
-        "home": 0.172,
+        "home": 0.205,
         "draw": -0.027,
-        "away": -0.388
+        "away": -0.443
       },
       "spreads": {
         "home": {
@@ -611,52 +623,60 @@
       },
       "asian": null,
       "eloProb": {
-        "home": 0.348,
+        "home": 0.374,
         "draw": 0.289,
-        "away": 0.362
+        "away": 0.337
       },
       "dcProb": {
-        "home": 0.247,
-        "draw": 0.313,
-        "away": 0.44
+        "home": 0.259,
+        "draw": 0.306,
+        "away": 0.435
       },
-      "diverge": false,
+      "diverge": true,
       "dirs": {
-        "elo": "away",
+        "elo": "home",
         "dc": "away",
         "market": "away"
       },
       "form": {
-        "home": 1.8,
-        "away": 1.4
+        "home": {
+          "home": 2.0,
+          "away": 1.5,
+          "overall": 1.8
+        },
+        "away": {
+          "home": 3.0,
+          "away": 0.333,
+          "overall": 1.4
+        }
       },
       "eloRatings": {
         "home": 1473.0,
         "away": 1587.0
       },
       "modelProbs": {
-        "home": 0.26,
+        "home": 0.27,
         "draw": 0.29,
-        "away": 0.451
+        "away": 0.44
       },
       "valuePicks": [
         {
           "side": "home",
           "label": "主胜",
-          "modelProb": 0.348,
+          "modelProb": 0.374,
           "oddsProb": 0.201,
-          "edge": 0.148,
+          "edge": 0.173,
           "level": "watch",
-          "modelConf": 0.014
+          "modelConf": 0.037
         }
       ],
       "reversePicks": [
         {
           "side": "away",
           "label": "客胜",
-          "modelProb": 0.362,
+          "modelProb": 0.337,
           "oddsProb": 0.509,
-          "edge": -0.147
+          "edge": -0.173
         }
       ],
       "signalLevel": "watch",
@@ -665,32 +685,32 @@
         "odds": 4.7,
         "stake": 0.05,
         "source": "value:watch",
-        "edge": 0.148
+        "edge": 0.173
       },
       "correctScores": [
-        {
-          "score": "0-1",
-          "prob": 0.1413
-        },
         {
           "score": "1-1",
           "prob": 0.1411
         },
         {
+          "score": "0-1",
+          "prob": 0.1309
+        },
+        {
           "score": "0-0",
-          "prob": 0.1329
+          "prob": 0.1213
         },
         {
           "score": "1-0",
-          "prob": 0.095
+          "prob": 0.0919
         },
         {
           "score": "0-2",
-          "prob": 0.094
+          "prob": 0.0902
         },
         {
           "score": "1-2",
-          "prob": 0.0809
+          "prob": 0.0834
         }
       ],
       "overUnder": {
@@ -702,42 +722,42 @@
       },
       "standings": null,
       "totalGoalsDist": {
-        "0": 0.1225,
-        "1": 0.2572,
-        "2": 0.27,
-        "3": 0.189,
-        "4": 0.0992,
-        "5": 0.0417,
-        "6": 0.0139,
-        "7": 0.0036,
-        "8": 0.0007,
-        "9": 0.0001,
+        "0": 0.1108,
+        "1": 0.2438,
+        "2": 0.2681,
+        "3": 0.1966,
+        "4": 0.1082,
+        "5": 0.0476,
+        "6": 0.0167,
+        "7": 0.0046,
+        "8": 0.001,
+        "9": 0.0002,
         "10": 0.0
       },
       "ouModel": {
         "line": 2.5,
-        "over": 0.348,
-        "under": 0.652,
-        "edge": -0.088,
-        "kelly": -0.212
+        "over": 0.375,
+        "under": 0.625,
+        "edge": -0.061,
+        "kelly": -0.161
       },
       "spModel": {
         "point": 0.5,
-        "cover": 0.55,
+        "cover": 0.554,
         "price": 1.95,
         "implied": 0.513,
-        "edge": 0.037,
-        "kelly": 0.075
+        "edge": 0.041,
+        "kelly": 0.085
       },
-      "btts": 0.4088,
-      "analysis": "【胜负】比赛悬念较大，主胜 20% / 平 29% / 客胜 51%（赔率 4.7 / 3.25 / 1.85）。\n【让球】客队Napoli让 0.5 球（盘口赔率 1.95 / 1.87）。\n【波胆】泊松模型推算最可能比分：0-1（15%）、1-1（13%）、0-0（12%）。\n【大小球】2.5 球盘口：大球 44% / 小球 56%（赔率 大 2.165 / 小 1.6749999999999998），倾向小球。\n【进球数】总进球概率：0球 12%、1球 26%、2球 27%、3球 19%、4球 10%。\n【双方进球】双方都进球概率 41%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 35% vs 盘口 20%（差 +15%），值得关注。\n【结论】综合赔率与消息，Napoli不败概率更高，关注波胆 0-1 方向。",
+      "btts": 0.4332,
+      "analysis": "【胜负】比赛悬念较大，主胜 20% / 平 29% / 客胜 51%（赔率 4.7 / 3.25 / 1.85）。\n【让球】客队Napoli让 0.5 球（盘口赔率 1.95 / 1.87）。\n【波胆】泊松模型推算最可能比分：0-1（14%）、1-1（13%）、0-0（11%）。\n【大小球】2.5 球盘口：大球 44% / 小球 56%（赔率 大 2.165 / 小 1.6749999999999998），倾向小球。\n【进球数】总进球概率：0球 11%、1球 24%、2球 27%、3球 20%、4球 11%。\n【双方进球】双方都进球概率 43%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 37% vs 盘口 20%（差 +17%），值得关注。\n【结论】综合赔率与消息，Napoli不败概率更高，关注波胆 0-1 方向。",
       "aiJudge": {
         "pick": "away",
         "score": "0-1",
-        "confidence": 0.6,
-        "reason": "客胜概率最高且欧赔支持，但Elo概率接近，信心适中。",
+        "confidence": 0.55,
+        "reason": "客胜概率最高且欧赔支持，但平局概率接近，谨慎看好客队小胜。",
         "model": "deepseek-chat",
-        "latency": 1.3
+        "latency": 1.5
       }
     },
     {
@@ -809,8 +829,12 @@
         "market": "away"
       },
       "form": {
-        "home": null,
-        "away": 1.0
+        "home": {},
+        "away": {
+          "home": 2.0,
+          "away": 0.333,
+          "overall": 1.0
+        }
       },
       "eloRatings": {
         "home": 1500.0,
@@ -916,10 +940,10 @@
       "aiJudge": {
         "pick": "away",
         "score": "1-2",
-        "confidence": 0.62,
-        "reason": "客胜概率显著高于主队，且欧赔支持客胜，但统计模型平局概率不低，需谨慎。",
+        "confidence": 0.65,
+        "reason": "客胜概率显著高于主胜，欧赔支持客队，但模型平局概率不低，需谨慎。",
         "model": "deepseek-chat",
-        "latency": 1.1
+        "latency": 1.3
       }
     },
     {
@@ -991,8 +1015,12 @@
         "market": "home"
       },
       "form": {
-        "home": null,
-        "away": 2.4
+        "home": {},
+        "away": {
+          "home": 1.5,
+          "away": 3.0,
+          "overall": 2.4
+        }
       },
       "eloRatings": {
         "home": 1500.0,
@@ -1091,9 +1119,9 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "统计模型和Elo均略倾向主胜，欧赔主胜赔率较低，但平局概率不低，谨慎看好主队小胜。",
+        "reason": "统计模型和Elo均倾向主队，欧赔主胜略低，但平局概率不低，谨慎看好主胜。",
         "model": "deepseek-chat",
-        "latency": 1.3
+        "latency": 1.2
       }
     },
     {
@@ -1101,13 +1129,13 @@
       "awayTeam": "AC Milan",
       "predictedScore": "1-1",
       "expectedGoals": {
-        "home": 1.49,
-        "away": 1.61
+        "home": 1.46,
+        "away": 1.64
       },
       "probabilities": {
-        "home": 0.353,
+        "home": 0.344,
         "draw": 0.237,
-        "away": 0.409
+        "away": 0.419
       },
       "confidence": 0.628,
       "reasons": [
@@ -1133,9 +1161,9 @@
         "away": 1.76
       },
       "kelly": {
-        "home": 0.446,
+        "home": 0.415,
         "draw": -0.081,
-        "away": -0.808
+        "away": -0.752
       },
       "spreads": {
         "home": {
@@ -1149,14 +1177,14 @@
       },
       "asian": null,
       "eloProb": {
-        "home": 0.569,
+        "home": 0.545,
         "draw": 0.211,
-        "away": 0.219
+        "away": 0.243
       },
       "dcProb": {
-        "home": 0.345,
+        "home": 0.332,
         "draw": 0.255,
-        "away": 0.399
+        "away": 0.413
       },
       "diverge": true,
       "dirs": {
@@ -1165,36 +1193,44 @@
         "market": "away"
       },
       "form": {
-        "home": 3.0,
-        "away": 1.8
+        "home": {
+          "home": 3.0,
+          "away": 3.0,
+          "overall": 3.0
+        },
+        "away": {
+          "home": 1.5,
+          "away": 3.0,
+          "overall": 1.8
+        }
       },
       "eloRatings": {
         "home": 1512.0,
         "away": 1471.0
       },
       "modelProbs": {
-        "home": 0.353,
+        "home": 0.344,
         "draw": 0.237,
-        "away": 0.409
+        "away": 0.419
       },
       "valuePicks": [
         {
           "side": "home",
           "label": "主胜",
-          "modelProb": 0.569,
+          "modelProb": 0.545,
           "oddsProb": 0.21,
-          "edge": 0.36,
+          "edge": 0.336,
           "level": "gold",
-          "modelConf": 0.35
+          "modelConf": 0.302
         }
       ],
       "reversePicks": [
         {
           "side": "away",
           "label": "客胜",
-          "modelProb": 0.219,
+          "modelProb": 0.243,
           "oddsProb": 0.536,
-          "edge": -0.316
+          "edge": -0.292
         }
       ],
       "signalLevel": "gold",
@@ -1203,32 +1239,32 @@
         "odds": 4.5,
         "stake": 0.05,
         "source": "value:gold",
-        "edge": 0.36
+        "edge": 0.336
       },
       "correctScores": [
         {
           "score": "1-1",
-          "prob": 0.1168
+          "prob": 0.1165
         },
         {
           "score": "1-2",
-          "prob": 0.0871
+          "prob": 0.0886
         },
         {
           "score": "2-1",
-          "prob": 0.0804
-        },
-        {
-          "score": "2-2",
-          "prob": 0.0648
+          "prob": 0.0786
         },
         {
           "score": "0-1",
-          "prob": 0.064
+          "prob": 0.0654
+        },
+        {
+          "score": "2-2",
+          "prob": 0.0646
         },
         {
           "score": "0-2",
-          "prob": 0.0586
+          "prob": 0.0608
         }
       ],
       "overUnder": {
@@ -1246,8 +1282,8 @@
         "3": 0.2237,
         "4": 0.1733,
         "5": 0.1075,
-        "6": 0.0538,
-        "7": 0.0215,
+        "6": 0.0537,
+        "7": 0.0214,
         "8": 0.0067,
         "9": 0.0016,
         "10": 0.0002
@@ -1261,21 +1297,21 @@
       },
       "spModel": {
         "point": 0.5,
-        "cover": 0.588,
+        "cover": 0.575,
         "price": 2.06,
         "implied": 0.485,
-        "edge": 0.103,
-        "kelly": 0.199
+        "edge": 0.09,
+        "kelly": 0.173
       },
-      "btts": 0.6115,
-      "analysis": "【胜负】比赛悬念较大，主胜 21% / 平 25% / 客胜 54%（赔率 4.5 / 3.7 / 1.76）。\n【让球】客队AC Milan让 0.5 球（盘口赔率 2.06 / 1.79）。\n【波胆】泊松模型推算最可能比分：1-1（11%）、1-2（9%）、2-1（8%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%（赔率 大 1.9 / 小 1.91），倾向大球。\n【进球数】总进球概率：0球 4%、1球 14%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 61%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 57% vs 盘口 21%（差 +36%），值得关注。\n【结论】综合赔率与消息，AC Milan不败概率更高，关注波胆 1-1 方向。",
+      "btts": 0.6104,
+      "analysis": "【胜负】比赛悬念较大，主胜 21% / 平 25% / 客胜 54%（赔率 4.5 / 3.7 / 1.76）。\n【让球】客队AC Milan让 0.5 球（盘口赔率 2.06 / 1.79）。\n【波胆】泊松模型推算最可能比分：1-1（11%）、1-2（9%）、2-1（8%）。\n【大小球】2.5 球盘口：大球 50% / 小球 50%（赔率 大 1.9 / 小 1.91），倾向大球。\n【进球数】总进球概率：0球 4%、1球 14%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 61%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 55% vs 盘口 21%（差 +34%），值得关注。\n【结论】综合赔率与消息，AC Milan不败概率更高，关注波胆 1-1 方向。",
       "aiJudge": {
         "pick": "away",
         "score": "1-2",
-        "confidence": 0.559,
-        "reason": "客胜概率最高且欧赔支持，但模型平局概率不低，谨慎看好客胜。",
+        "confidence": 0.569,
+        "reason": "客胜概率最高且欧赔支持客队，但Elo概率偏向主队，综合谨慎选择客胜。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.6
       }
     },
     {
@@ -1347,8 +1383,12 @@
         "market": "home"
       },
       "form": {
-        "home": null,
-        "away": 2.0
+        "home": {},
+        "away": {
+          "home": 1.5,
+          "away": 2.333,
+          "overall": 2.0
+        }
       },
       "eloRatings": {
         "home": 1500.0,
@@ -1431,9 +1471,9 @@
         "pick": "home",
         "score": "2-1",
         "confidence": 0.65,
-        "reason": "主队胜率显著高于客队，欧赔与Elo均支持主胜，但平局概率不低，故选择主胜但比分保守。",
+        "reason": "主队胜率显著高于客队，欧赔和Elo均支持主胜，模型预测比分接近但主队优势明显。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.5
       }
     },
     {
@@ -1441,13 +1481,13 @@
       "awayTeam": "Lazio",
       "predictedScore": "1-1",
       "expectedGoals": {
-        "home": 1.39,
-        "away": 1.01
+        "home": 1.45,
+        "away": 1.05
       },
       "probabilities": {
-        "home": 0.455,
+        "home": 0.462,
         "draw": 0.267,
-        "away": 0.278
+        "away": 0.271
       },
       "confidence": 0.589,
       "reasons": [
@@ -1473,9 +1513,9 @@
         "away": 3.55
       },
       "kelly": {
-        "home": 0.022,
+        "home": 0.056,
         "draw": -0.119,
-        "away": 0.019
+        "away": -0.006
       },
       "spreads": {
         "home": {
@@ -1489,14 +1529,14 @@
       },
       "asian": null,
       "eloProb": {
-        "home": 0.477,
+        "home": 0.495,
         "draw": 0.228,
-        "away": 0.295
+        "away": 0.277
       },
       "dcProb": {
-        "home": 0.447,
-        "draw": 0.291,
-        "away": 0.262
+        "home": 0.453,
+        "draw": 0.283,
+        "away": 0.264
       },
       "diverge": false,
       "dirs": {
@@ -1505,17 +1545,25 @@
         "market": "home"
       },
       "form": {
-        "home": 0.6,
-        "away": 2.0
+        "home": {
+          "home": 1.0,
+          "away": 0.0,
+          "overall": 0.6
+        },
+        "away": {
+          "home": 2.333,
+          "away": 1.5,
+          "overall": 2.0
+        }
       },
       "eloRatings": {
         "home": 1539.0,
         "away": 1529.0
       },
       "modelProbs": {
-        "home": 0.455,
+        "home": 0.462,
         "draw": 0.267,
-        "away": 0.278
+        "away": 0.271
       },
       "valuePicks": [],
       "reversePicks": [],
@@ -1524,27 +1572,27 @@
       "correctScores": [
         {
           "score": "1-1",
-          "prob": 0.1375
+          "prob": 0.135
         },
         {
           "score": "1-0",
-          "prob": 0.1161
+          "prob": 0.109
         },
         {
           "score": "0-0",
-          "prob": 0.1009
+          "prob": 0.0921
         },
         {
           "score": "2-1",
-          "prob": 0.0886
+          "prob": 0.0906
         },
         {
           "score": "2-0",
-          "prob": 0.0879
+          "prob": 0.0863
         },
         {
           "score": "0-1",
-          "prob": 0.0813
+          "prob": 0.0762
         }
       ],
       "overUnder": {
@@ -1556,42 +1604,42 @@
       },
       "standings": null,
       "totalGoalsDist": {
-        "0": 0.0907,
-        "1": 0.2177,
-        "2": 0.2613,
-        "3": 0.209,
-        "4": 0.1254,
-        "5": 0.0602,
-        "6": 0.023,
-        "7": 0.0069,
-        "8": 0.0016,
-        "9": 0.0003,
+        "0": 0.0821,
+        "1": 0.2052,
+        "2": 0.2565,
+        "3": 0.2138,
+        "4": 0.1336,
+        "5": 0.0668,
+        "6": 0.0266,
+        "7": 0.0084,
+        "8": 0.0021,
+        "9": 0.0004,
         "10": 0.0
       },
       "ouModel": {
         "line": 2.5,
-        "over": 0.426,
-        "under": 0.574,
-        "edge": -0.009,
-        "kelly": -0.06
+        "over": 0.452,
+        "under": 0.548,
+        "edge": 0.017,
+        "kelly": -0.012
       },
       "spModel": {
         "point": -0.5,
-        "cover": 0.454,
+        "cover": 0.459,
         "price": 2.15,
         "implied": 0.465,
-        "edge": -0.011,
-        "kelly": -0.02
+        "edge": -0.006,
+        "kelly": -0.011
       },
-      "btts": 0.4748,
-      "analysis": "【胜负】比赛悬念较大，主胜 44% / 平 29% / 客胜 27%（赔率 2.15 / 3.23 / 3.55）。\n【让球】主队Bologna让 0.5 球（盘口赔率 2.15 / 1.74）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（13%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 44% / 小球 56%（赔率 大 2.18 / 小 1.6749999999999998），倾向小球。\n【进球数】总进球概率：0球 9%、1球 22%、2球 26%、3球 21%、4球 13%。\n【双方进球】双方都进球概率 47%，倾向至少一方零封。\n【结论】综合赔率与消息，Bologna不败概率更高，关注波胆 1-1 方向。",
+      "btts": 0.4945,
+      "analysis": "【胜负】比赛悬念较大，主胜 44% / 平 29% / 客胜 27%（赔率 2.15 / 3.23 / 3.55）。\n【让球】主队Bologna让 0.5 球（盘口赔率 2.15 / 1.74）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（12%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 44% / 小球 56%（赔率 大 2.18 / 小 1.6749999999999998），倾向小球。\n【进球数】总进球概率：0球 8%、1球 21%、2球 26%、3球 21%、4球 13%。\n【双方进球】双方都进球概率 49%，倾向至少一方零封。\n【结论】综合赔率与消息，Bologna不败概率更高，关注波胆 1-1 方向。",
       "aiJudge": {
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主胜概率最高且欧赔支持，但平局概率不低，谨慎看好小胜。",
+        "reason": "统计模型和Elo均显示主队略占优势，欧赔也倾向主胜，但平局概率不低，故谨慎选择主胜。",
         "model": "deepseek-chat",
-        "latency": 1.3
+        "latency": 1.8
       }
     },
     {
@@ -1663,8 +1711,12 @@
         "market": "home"
       },
       "form": {
-        "home": null,
-        "away": 1.6
+        "home": {},
+        "away": {
+          "home": 1.667,
+          "away": 1.5,
+          "overall": 1.6
+        }
       },
       "eloRatings": {
         "home": 1500.0,
@@ -1771,9 +1823,9 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.62,
-        "reason": "欧赔主胜低至1.55，统计模型主胜概率最高，但Elo概率显示客队有一定竞争力，综合看好主胜但需防平。",
+        "reason": "统计模型和欧赔均倾向主胜，但Elo概率显示客队有一定竞争力，故选择主胜但降低信心。",
         "model": "deepseek-chat",
-        "latency": 1.5
+        "latency": 1.2
       }
     },
     {
@@ -1813,9 +1865,9 @@
         "away": 3.6
       },
       "kelly": {
-        "home": -0.171,
+        "home": -0.167,
         "draw": -0.123,
-        "away": 0.176
+        "away": 0.173
       },
       "spreads": {
         "home": {
@@ -1829,9 +1881,9 @@
       },
       "asian": null,
       "eloProb": {
-        "home": 0.317,
+        "home": 0.319,
         "draw": 0.278,
-        "away": 0.405
+        "away": 0.403
       },
       "dcProb": {
         "home": 0.35,
@@ -1845,8 +1897,16 @@
         "market": "home"
       },
       "form": {
-        "home": 1.2,
-        "away": 1.8
+        "home": {
+          "home": 1.0,
+          "away": 1.333,
+          "overall": 1.2
+        },
+        "away": {
+          "home": 3.0,
+          "away": 1.5,
+          "overall": 1.8
+        }
       },
       "eloRatings": {
         "home": 1535.0,
@@ -1861,11 +1921,11 @@
         {
           "side": "away",
           "label": "客胜",
-          "modelProb": 0.405,
+          "modelProb": 0.403,
           "oddsProb": 0.264,
-          "edge": 0.141,
+          "edge": 0.139,
           "level": "watch",
-          "modelConf": 0.088
+          "modelConf": 0.084
         }
       ],
       "reversePicks": [],
@@ -1875,7 +1935,7 @@
         "odds": 3.6,
         "stake": 0.05,
         "source": "value:watch",
-        "edge": 0.141
+        "edge": 0.139
       },
       "correctScores": [
         {
@@ -1958,9 +2018,9 @@
         "pick": "none",
         "score": "0-0",
         "confidence": 0.5,
-        "reason": "数据无明显倾向，平局概率较高且模型预测0-0。",
+        "reason": "双方实力接近，模型概率分散，无明显倾向。",
         "model": "deepseek-chat",
-        "latency": 1.3
+        "latency": 1.0
       }
     },
     {
@@ -1972,7 +2032,7 @@
         "away": 1.03
       },
       "probabilities": {
-        "home": 0.419,
+        "home": 0.418,
         "draw": 0.282,
         "away": 0.299
       },
@@ -2000,9 +2060,9 @@
         "away": 3.355
       },
       "kelly": {
-        "home": -0.033,
+        "home": -0.035,
         "draw": -0.078,
-        "away": 0.032
+        "away": 0.034
       },
       "spreads": {
         "home": {
@@ -2016,9 +2076,9 @@
       },
       "asian": null,
       "eloProb": {
-        "home": 0.42,
+        "home": 0.419,
         "draw": 0.259,
-        "away": 0.321
+        "away": 0.322
       },
       "dcProb": {
         "home": 0.405,
@@ -2032,15 +2092,23 @@
         "market": "home"
       },
       "form": {
-        "home": 1.6,
-        "away": 2.2
+        "home": {
+          "home": 1.333,
+          "away": 2.0,
+          "overall": 1.6
+        },
+        "away": {
+          "home": 2.333,
+          "away": 2.0,
+          "overall": 2.2
+        }
       },
       "eloRatings": {
         "home": 1546.0,
         "away": 1587.0
       },
       "modelProbs": {
-        "home": 0.419,
+        "home": 0.418,
         "draw": 0.282,
         "away": 0.299
       },
@@ -2129,9 +2197,9 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队虽排名较低但主场优势及欧赔略倾向主胜，模型概率主队最高，且波胆1-0概率较高。",
+        "reason": "主队虽排名较低但主场优势及欧赔略倾向主胜，模型概率主队略高，小比分可能性大。",
         "model": "deepseek-chat",
-        "latency": 1.4
+        "latency": 1.2
       }
     },
     {
@@ -2203,8 +2271,12 @@
         "market": "away"
       },
       "form": {
-        "home": null,
-        "away": 1.6
+        "home": {},
+        "away": {
+          "home": 3.0,
+          "away": 1.25,
+          "overall": 1.6
+        }
       },
       "eloRatings": {
         "home": 1500.0,
@@ -2289,7 +2361,7 @@
         "confidence": 0.598,
         "reason": "客队胜率与欧赔一致，模型波胆次选客胜，但平局概率不低，谨慎看好客队小胜。",
         "model": "deepseek-chat",
-        "latency": 1.4
+        "latency": 1.2
       }
     },
     {
@@ -2301,9 +2373,9 @@
         "away": 0.97
       },
       "probabilities": {
-        "home": 0.424,
+        "home": 0.417,
         "draw": 0.289,
-        "away": 0.287
+        "away": 0.294
       },
       "confidence": 0.6,
       "reasons": [
@@ -2329,9 +2401,9 @@
         "away": 3.9
       },
       "kelly": {
-        "home": -0.246,
+        "home": -0.281,
         "draw": -0.022,
-        "away": 0.127
+        "away": 0.151
       },
       "spreads": {
         "home": {
@@ -2345,52 +2417,60 @@
       },
       "asian": null,
       "eloProb": {
-        "home": 0.362,
+        "home": 0.344,
         "draw": 0.287,
-        "away": 0.351
+        "away": 0.369
       },
       "dcProb": {
         "home": 0.411,
         "draw": 0.309,
         "away": 0.279
       },
-      "diverge": false,
+      "diverge": true,
       "dirs": {
-        "elo": "home",
+        "elo": "away",
         "dc": "home",
         "market": "home"
       },
       "form": {
-        "home": 1.6,
-        "away": 2.2
+        "home": {
+          "home": 0.5,
+          "away": 2.333,
+          "overall": 1.6
+        },
+        "away": {
+          "home": 2.333,
+          "away": 2.0,
+          "overall": 2.2
+        }
       },
       "eloRatings": {
         "home": 1475.0,
         "away": 1558.0
       },
       "modelProbs": {
-        "home": 0.424,
+        "home": 0.417,
         "draw": 0.289,
-        "away": 0.287
+        "away": 0.294
       },
       "valuePicks": [
         {
           "side": "away",
           "label": "客胜",
-          "modelProb": 0.351,
+          "modelProb": 0.369,
           "oddsProb": 0.245,
-          "edge": 0.106,
+          "edge": 0.124,
           "level": "watch",
-          "modelConf": 0.011
+          "modelConf": 0.025
         }
       ],
       "reversePicks": [
         {
           "side": "home",
           "label": "主胜",
-          "modelProb": 0.362,
+          "modelProb": 0.344,
           "oddsProb": 0.466,
-          "edge": -0.104
+          "edge": -0.122
         }
       ],
       "signalLevel": "watch",
@@ -2399,7 +2479,7 @@
         "odds": 3.9,
         "stake": 0.05,
         "source": "value:watch",
-        "edge": 0.106
+        "edge": 0.124
       },
       "correctScores": [
         {
@@ -2477,14 +2557,14 @@
         "kelly": -0.116
       },
       "btts": 0.4378,
-      "analysis": "【排名】主队Espanyol排名第11（46分/38场），客队Levante排名第18（42分/38场），主队排名领先 7 位。\n【胜负】比赛悬念较大，主胜 47% / 平 29% / 客胜 24%（赔率 2.05 / 3.3 / 3.9）。\n【让球】主队Espanyol让 0.5 球（盘口赔率 2.08 / 1.83）。\n【波胆】泊松模型推算最可能比分：1-0（14%）、1-1（13%）、0-0（11%）。\n【大小球】2.5 球盘口：大球 43% / 小球 57%（赔率 大 2.1900000000000004 / 小 1.65），倾向小球。\n【进球数】总进球概率：0球 11%、1球 24%、2球 27%、3球 20%、4球 11%。\n【双方进球】双方都进球概率 44%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 35% vs 盘口 24%（差 +11%），值得关注。\n【结论】综合赔率与消息，Espanyol不败概率更高，关注波胆 1-0 方向。",
+      "analysis": "【排名】主队Espanyol排名第11（46分/38场），客队Levante排名第18（42分/38场），主队排名领先 7 位。\n【胜负】比赛悬念较大，主胜 47% / 平 29% / 客胜 24%（赔率 2.05 / 3.3 / 3.9）。\n【让球】主队Espanyol让 0.5 球（盘口赔率 2.08 / 1.83）。\n【波胆】泊松模型推算最可能比分：1-0（14%）、1-1（13%）、0-0（11%）。\n【大小球】2.5 球盘口：大球 43% / 小球 57%（赔率 大 2.1900000000000004 / 小 1.65），倾向小球。\n【进球数】总进球概率：0球 11%、1球 24%、2球 27%、3球 20%、4球 11%。\n【双方进球】双方都进球概率 44%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 37% vs 盘口 24%（差 +12%），值得关注。\n【结论】综合赔率与消息，Espanyol不败概率更高，关注波胆 1-0 方向。",
       "aiJudge": {
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队积分和排名占优，且欧赔主胜较低，但客队保级战意强，平局概率不低，谨慎看好主胜。",
+        "reason": "主队积分和排名占优，欧赔支持主胜，但客队实力接近，平局概率不低，谨慎看好主队小胜。",
         "model": "deepseek-chat",
-        "latency": 1.5
+        "latency": 1.2
       }
     },
     {
@@ -2556,8 +2636,12 @@
         "market": "home"
       },
       "form": {
-        "home": 0.2,
-        "away": null
+        "home": {
+          "home": 0.0,
+          "away": 0.333,
+          "overall": 0.2
+        },
+        "away": {}
       },
       "eloRatings": {
         "home": 1524.0,
@@ -2727,8 +2811,12 @@
         "market": "home"
       },
       "form": {
-        "home": null,
-        "away": 2.4
+        "home": {},
+        "away": {
+          "home": 3.0,
+          "away": 2.0,
+          "overall": 2.4
+        }
       },
       "eloRatings": {
         "home": 1500.0,
@@ -2811,9 +2899,9 @@
         "pick": "none",
         "score": "0-0",
         "confidence": 0.5,
-        "reason": "数据无明显倾向，平局概率较高且比分预测为0-0。",
+        "reason": "数据无明显倾向，平局概率较高且模型预测0-0。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 0.9
       }
     },
     {
@@ -2885,8 +2973,12 @@
         "market": "home"
       },
       "form": {
-        "home": 2.4,
-        "away": null
+        "home": {
+          "home": 2.0,
+          "away": 3.0,
+          "overall": 2.4
+        },
+        "away": {}
       },
       "eloRatings": {
         "home": 1551.0,
@@ -2992,10 +3084,10 @@
       "aiJudge": {
         "pick": "home",
         "score": "2-0",
-        "confidence": 0.7,
+        "confidence": 0.72,
         "reason": "主队胜率显著占优，欧赔和模型均支持主胜，比分预测2-0。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.1
       }
     },
     {
@@ -3067,8 +3159,16 @@
         "market": "home"
       },
       "form": {
-        "home": 2.2,
-        "away": 1.2
+        "home": {
+          "home": 2.333,
+          "away": 2.0,
+          "overall": 2.2
+        },
+        "away": {
+          "home": 1.0,
+          "away": 1.333,
+          "overall": 1.2
+        }
       },
       "eloRatings": {
         "home": 1587.0,
@@ -3179,10 +3279,10 @@
       "aiJudge": {
         "pick": "home",
         "score": "1-0",
-        "confidence": 0.58,
-        "reason": "主队积分和Elo均占优，欧赔支持主胜，但平局概率不低，谨慎看好小胜。",
+        "confidence": 0.55,
+        "reason": "主队积分和Elo概率占优，但平局概率不低，谨慎看好小胜。",
         "model": "deepseek-chat",
-        "latency": 1.6
+        "latency": 1.1
       }
     },
     {
@@ -3194,9 +3294,9 @@
         "away": 1.11
       },
       "probabilities": {
-        "home": 0.484,
+        "home": 0.478,
         "draw": 0.252,
-        "away": 0.264
+        "away": 0.271
       },
       "confidence": 0.59,
       "reasons": [
@@ -3222,9 +3322,9 @@
         "away": 3.45
       },
       "kelly": {
-        "home": 0.147,
+        "home": 0.117,
         "draw": -0.146,
-        "away": -0.054
+        "away": -0.031
       },
       "spreads": {
         "home": {
@@ -3238,9 +3338,9 @@
       },
       "asian": null,
       "eloProb": {
-        "home": 0.547,
+        "home": 0.531,
         "draw": 0.201,
-        "away": 0.252
+        "away": 0.268
       },
       "dcProb": {
         "home": 0.476,
@@ -3254,38 +3354,30 @@
         "market": "home"
       },
       "form": {
-        "home": 1.4,
-        "away": 2.6
+        "home": {
+          "home": 1.0,
+          "away": 2.0,
+          "overall": 1.4
+        },
+        "away": {
+          "home": 2.333,
+          "away": 3.0,
+          "overall": 2.6
+        }
       },
       "eloRatings": {
         "home": 1552.0,
         "away": 1492.0
       },
       "modelProbs": {
-        "home": 0.484,
+        "home": 0.478,
         "draw": 0.252,
-        "away": 0.264
+        "away": 0.271
       },
-      "valuePicks": [
-        {
-          "side": "home",
-          "label": "主胜",
-          "modelProb": 0.547,
-          "oddsProb": 0.442,
-          "edge": 0.105,
-          "level": "watch",
-          "modelConf": 0.296
-        }
-      ],
+      "valuePicks": [],
       "reversePicks": [],
-      "signalLevel": "watch",
-      "betRec": {
-        "side": "home",
-        "odds": 2.13,
-        "stake": 0.05,
-        "source": "value:watch",
-        "edge": 0.105
-      },
+      "signalLevel": "none",
+      "betRec": null,
       "correctScores": [
         {
           "score": "1-1",
@@ -3362,14 +3454,14 @@
         "kelly": -0.088
       },
       "btts": 0.5286,
-      "analysis": "【排名】主队Real Betis排名第5（60分/38场），客队Real Sociedad排名第10（46分/38场），主队排名领先 5 位。\n【胜负】比赛悬念较大，主胜 44% / 平 29% / 客胜 27%（赔率 2.13 / 3.3 / 3.45）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.57 / 2.64）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（11%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 44% / 小球 56%（赔率 大 2.12 / 小 1.6749999999999998），倾向小球。\n【进球数】总进球概率：0球 7%、1球 18%、2球 24%、3球 22%、4球 15%。\n【双方进球】双方都进球概率 53%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 55% vs 盘口 44%（差 +10%），值得关注。\n【结论】综合赔率与消息，Real Betis不败概率更高，关注波胆 1-1 方向。",
+      "analysis": "【排名】主队Real Betis排名第5（60分/38场），客队Real Sociedad排名第10（46分/38场），主队排名领先 5 位。\n【胜负】比赛悬念较大，主胜 44% / 平 29% / 客胜 27%（赔率 2.13 / 3.3 / 3.45）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.57 / 2.64）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（11%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 44% / 小球 56%（赔率 大 2.12 / 小 1.6749999999999998），倾向小球。\n【进球数】总进球概率：0球 7%、1球 18%、2球 24%、3球 22%、4球 15%。\n【双方进球】双方都进球概率 53%，倾向至少一方零封。\n【结论】综合赔率与消息，Real Betis不败概率更高，关注波胆 1-1 方向。",
       "aiJudge": {
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队积分和Elo概率占优，但平局概率不低，谨慎看好小胜。",
+        "reason": "主队积分排名和Elo概率占优，但平局概率不低，谨慎看好主胜。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.1
       }
     },
     {
@@ -3377,13 +3469,13 @@
       "awayTeam": "Sevilla",
       "predictedScore": "1-1",
       "expectedGoals": {
-        "home": 1.69,
-        "away": 0.91
+        "home": 1.66,
+        "away": 0.94
       },
       "probabilities": {
-        "home": 0.551,
+        "home": 0.541,
         "draw": 0.243,
-        "away": 0.206
+        "away": 0.216
       },
       "confidence": 0.645,
       "reasons": [
@@ -3409,9 +3501,9 @@
         "away": 5.5
       },
       "kelly": {
-        "home": -0.306,
+        "home": -0.37,
         "draw": -0.065,
-        "away": 0.099
+        "away": 0.128
       },
       "spreads": {
         "home": {
@@ -3425,14 +3517,14 @@
       },
       "asian": null,
       "eloProb": {
-        "home": 0.51,
+        "home": 0.486,
         "draw": 0.227,
-        "away": 0.263
+        "away": 0.287
       },
       "dcProb": {
-        "home": 0.548,
-        "draw": 0.259,
-        "away": 0.193
+        "home": 0.536,
+        "draw": 0.262,
+        "away": 0.202
       },
       "diverge": false,
       "dirs": {
@@ -3441,46 +3533,70 @@
         "market": "home"
       },
       "form": {
-        "home": 1.8,
-        "away": 1.6
+        "home": {
+          "home": 1.0,
+          "away": 3.0,
+          "overall": 1.8
+        },
+        "away": {
+          "home": 1.333,
+          "away": 2.0,
+          "overall": 1.6
+        }
       },
       "eloRatings": {
         "home": 1557.0,
         "away": 1546.0
       },
       "modelProbs": {
-        "home": 0.551,
+        "home": 0.541,
         "draw": 0.243,
-        "away": 0.206
+        "away": 0.216
       },
-      "valuePicks": [],
+      "valuePicks": [
+        {
+          "side": "away",
+          "label": "客胜",
+          "modelProb": 0.287,
+          "oddsProb": 0.168,
+          "edge": 0.118,
+          "level": "watch",
+          "modelConf": 0.2
+        }
+      ],
       "reversePicks": [],
-      "signalLevel": "none",
-      "betRec": null,
+      "signalLevel": "watch",
+      "betRec": {
+        "side": "away",
+        "odds": 5.5,
+        "stake": 0.05,
+        "source": "value:watch",
+        "edge": 0.118
+      },
       "correctScores": [
         {
           "score": "1-1",
-          "prob": 0.1234
+          "prob": 0.125
         },
         {
           "score": "1-0",
-          "prob": 0.1164
+          "prob": 0.1144
         },
         {
           "score": "2-0",
-          "prob": 0.1061
+          "prob": 0.1029
         },
         {
           "score": "2-1",
-          "prob": 0.0966
+          "prob": 0.0963
         },
         {
           "score": "0-0",
-          "prob": 0.0834
+          "prob": 0.0836
         },
         {
-          "score": "3-0",
-          "prob": 0.0598
+          "score": "0-1",
+          "prob": 0.0603
         }
       ],
       "overUnder": {
@@ -3511,36 +3627,36 @@
         "3": 0.2176,
         "4": 0.1414,
         "5": 0.0735,
-        "6": 0.0294,
-        "7": 0.009,
-        "8": 0.0021,
+        "6": 0.0296,
+        "7": 0.0091,
+        "8": 0.0022,
         "9": 0.0004,
         "10": 0.0
       },
       "ouModel": {
         "line": 2.5,
-        "over": 0.473,
-        "under": 0.527,
-        "edge": 0.039,
-        "kelly": 0.021
+        "over": 0.474,
+        "under": 0.526,
+        "edge": 0.04,
+        "kelly": 0.022
       },
       "spModel": {
         "point": -1.5,
-        "cover": 0.3,
+        "cover": 0.289,
         "price": 2.83,
         "implied": 0.353,
-        "edge": -0.053,
-        "kelly": -0.083
+        "edge": -0.064,
+        "kelly": -0.099
       },
-      "btts": 0.4823,
-      "analysis": "【排名】主队Athletic Bilbao排名第12（45分/38场），客队Sevilla排名第15（43分/38场），主队排名领先 3 位。\n【胜负】市场高度看好主队Athletic Bilbao，主胜隐含概率 58%（赔率 1.6 / 3.65 / 5.5）。\n【让球】主队Athletic Bilbao让 1.5 球（盘口赔率 2.83 / 1.51）。\n【波胆】泊松模型推算最可能比分：1-0（13%）、1-1（11%）、2-0（11%）。\n【大小球】2.5 球盘口：大球 43% / 小球 57%（赔率 大 2.165 / 小 1.66），倾向小球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 48%，倾向至少一方零封。\n【结论】综合赔率与消息，Athletic Bilbao不败概率更高，关注波胆 1-0 方向。",
+      "btts": 0.488,
+      "analysis": "【排名】主队Athletic Bilbao排名第12（45分/38场），客队Sevilla排名第15（43分/38场），主队排名领先 3 位。\n【胜负】市场高度看好主队Athletic Bilbao，主胜隐含概率 58%（赔率 1.6 / 3.65 / 5.5）。\n【让球】主队Athletic Bilbao让 1.5 球（盘口赔率 2.83 / 1.51）。\n【波胆】泊松模型推算最可能比分：1-0（12%）、1-1（12%）、2-0（10%）。\n【大小球】2.5 球盘口：大球 43% / 小球 57%（赔率 大 2.165 / 小 1.66），倾向小球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 49%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 29% vs 盘口 17%（差 +12%），值得关注。\n【结论】综合赔率与消息，Athletic Bilbao不败概率更高，关注波胆 1-0 方向。",
       "aiJudge": {
         "pick": "home",
         "score": "1-0",
-        "confidence": 0.62,
-        "reason": "主队胜率与欧赔均支持主胜，但平局概率不低，谨慎看好小胜。",
+        "confidence": 0.6,
+        "reason": "主队胜率与欧赔均占优，但平局概率不低，谨慎看好小胜。",
         "model": "deepseek-chat",
-        "latency": 1.3
+        "latency": 1.2
       }
     },
     {
@@ -3548,13 +3664,13 @@
       "awayTeam": "Celta Vigo",
       "predictedScore": "1-1",
       "expectedGoals": {
-        "home": 1.71,
-        "away": 1.09
+        "home": 1.65,
+        "away": 1.05
       },
       "probabilities": {
-        "home": 0.513,
+        "home": 0.509,
         "draw": 0.244,
-        "away": 0.243
+        "away": 0.247
       },
       "confidence": 0.573,
       "reasons": [
@@ -3580,9 +3696,9 @@
         "away": 3.05
       },
       "kelly": {
-        "home": 0.448,
+        "home": 0.433,
         "draw": -0.206,
-        "away": -0.27
+        "away": -0.257
       },
       "spreads": {
         "home": {
@@ -3596,14 +3712,14 @@
       },
       "asian": null,
       "eloProb": {
-        "home": 0.683,
+        "home": 0.674,
         "draw": 0.171,
-        "away": 0.146
+        "away": 0.155
       },
       "dcProb": {
-        "home": 0.509,
-        "draw": 0.258,
-        "away": 0.234
+        "home": 0.503,
+        "draw": 0.264,
+        "away": 0.233
       },
       "diverge": false,
       "dirs": {
@@ -3612,27 +3728,35 @@
         "market": "home"
       },
       "form": {
-        "home": 1.8,
-        "away": 0.2
+        "home": {
+          "home": 1.5,
+          "away": 2.0,
+          "overall": 1.8
+        },
+        "away": {
+          "home": 0.0,
+          "away": 0.333,
+          "overall": 0.2
+        }
       },
       "eloRatings": {
         "home": 1649.0,
         "away": 1524.0
       },
       "modelProbs": {
-        "home": 0.513,
+        "home": 0.509,
         "draw": 0.244,
-        "away": 0.243
+        "away": 0.247
       },
       "valuePicks": [
         {
           "side": "home",
           "label": "主胜",
-          "modelProb": 0.683,
+          "modelProb": 0.674,
           "oddsProb": 0.399,
-          "edge": 0.284,
+          "edge": 0.275,
           "level": "gold",
-          "modelConf": 0.512
+          "modelConf": 0.503
         }
       ],
       "reversePicks": [
@@ -3646,9 +3770,9 @@
         {
           "side": "away",
           "label": "客胜",
-          "modelProb": 0.146,
+          "modelProb": 0.155,
           "oddsProb": 0.308,
-          "edge": -0.161
+          "edge": -0.153
         }
       ],
       "signalLevel": "gold",
@@ -3657,32 +3781,32 @@
         "odds": 2.35,
         "stake": 0.05,
         "source": "value:gold",
-        "edge": 0.284
+        "edge": 0.275
       },
       "correctScores": [
         {
           "score": "1-1",
-          "prob": 0.1225
-        },
-        {
-          "score": "2-1",
-          "prob": 0.0969
+          "prob": 0.1259
         },
         {
           "score": "1-0",
-          "prob": 0.0948
+          "prob": 0.1014
+        },
+        {
+          "score": "2-1",
+          "prob": 0.096
         },
         {
           "score": "2-0",
-          "prob": 0.0887
+          "prob": 0.0912
         },
         {
           "score": "0-0",
-          "prob": 0.0699
+          "prob": 0.0766
         },
         {
-          "score": "1-2",
-          "prob": 0.062
+          "score": "0-1",
+          "prob": 0.0615
         }
       ],
       "overUnder": {
@@ -3707,42 +3831,42 @@
         }
       },
       "totalGoalsDist": {
-        "0": 0.0608,
-        "1": 0.1703,
-        "2": 0.2384,
-        "3": 0.2225,
-        "4": 0.1557,
-        "5": 0.0872,
-        "6": 0.0385,
-        "7": 0.0132,
-        "8": 0.0035,
-        "9": 0.0007,
+        "0": 0.0672,
+        "1": 0.1815,
+        "2": 0.245,
+        "3": 0.2205,
+        "4": 0.1488,
+        "5": 0.0804,
+        "6": 0.0342,
+        "7": 0.0113,
+        "8": 0.0029,
+        "9": 0.0006,
         "10": 0.0001
       },
       "ouModel": {
         "line": 2.5,
-        "over": 0.521,
-        "under": 0.479,
-        "edge": 0.09,
-        "kelly": 0.115
+        "over": 0.499,
+        "under": 0.501,
+        "edge": 0.068,
+        "kelly": 0.074
       },
       "spModel": {
         "point": 0.0,
-        "cover": 0.629,
+        "cover": 0.628,
         "price": 1.72,
         "implied": 0.581,
-        "edge": 0.048,
-        "kelly": 0.115
+        "edge": 0.047,
+        "kelly": 0.111
       },
-      "btts": 0.5379,
-      "analysis": "【排名】主队Valencia排名第9（49分/38场），客队Celta Vigo排名第6（54分/38场），客队排名领先 3 位。\n【胜负】双方实力接近，主队Valencia略占优（主胜 40% vs 客胜 31%）（赔率 2.35 / 3.2 / 3.05）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.72 / 2.3）。\n【波胆】泊松模型推算最可能比分：1-1（11%）、1-0（10%）、2-1（10%）。\n【大小球】2.5 球盘口：大球 43% / 小球 57%（赔率 大 2.18 / 小 1.65），倾向小球。\n【进球数】总进球概率：0球 6%、1球 17%、2球 24%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 54%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 68% vs 盘口 40%（差 +28%），值得关注。\n【结论】综合赔率与消息，Valencia不败概率更高，关注波胆 1-1 方向。",
+      "btts": 0.5206,
+      "analysis": "【排名】主队Valencia排名第9（49分/38场），客队Celta Vigo排名第6（54分/38场），客队排名领先 3 位。\n【胜负】双方实力接近，主队Valencia略占优（主胜 40% vs 客胜 31%）（赔率 2.35 / 3.2 / 3.05）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.72 / 2.3）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（11%）、2-1（10%）。\n【大小球】2.5 球盘口：大球 43% / 小球 57%（赔率 大 2.18 / 小 1.65），倾向小球。\n【进球数】总进球概率：0球 7%、1球 18%、2球 24%、3球 22%、4球 15%。\n【双方进球】双方都进球概率 52%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 67% vs 盘口 40%（差 +28%），值得关注。\n【结论】综合赔率与消息，Valencia不败概率更高，关注波胆 1-1 方向。",
       "aiJudge": {
         "pick": "home",
-        "score": "2-1",
+        "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队胜率略高且Elo优势明显，但客队排名更优，综合模型概率微调倾向主胜。",
+        "reason": "主队胜率统计与Elo均占优，但客队排名更高且大小球倾向小，谨慎看好主胜。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.4
       }
     },
     {
@@ -3754,9 +3878,9 @@
         "away": 1.94
       },
       "probabilities": {
-        "home": 0.191,
+        "home": 0.184,
         "draw": 0.216,
-        "away": 0.593
+        "away": 0.599
       },
       "confidence": 0.645,
       "reasons": [
@@ -3782,9 +3906,9 @@
         "away": 1.61
       },
       "kelly": {
-        "home": 0.003,
+        "home": -0.017,
         "draw": -0.089,
-        "away": -0.021
+        "away": 0.022
       },
       "spreads": {
         "home": {
@@ -3798,9 +3922,9 @@
       },
       "asian": null,
       "eloProb": {
-        "home": 0.2,
+        "home": 0.184,
         "draw": 0.187,
-        "away": 0.613
+        "away": 0.629
       },
       "dcProb": {
         "home": 0.172,
@@ -3814,17 +3938,25 @@
         "market": "away"
       },
       "form": {
-        "home": 1.6,
-        "away": 1.8
+        "home": {
+          "home": 0.5,
+          "away": 2.333,
+          "overall": 1.6
+        },
+        "away": {
+          "home": 2.0,
+          "away": 1.5,
+          "overall": 1.8
+        }
       },
       "eloRatings": {
         "home": 1475.0,
         "away": 1765.0
       },
       "modelProbs": {
-        "home": 0.191,
+        "home": 0.184,
         "draw": 0.216,
-        "away": 0.593
+        "away": 0.599
       },
       "valuePicks": [],
       "reversePicks": [],
@@ -3910,10 +4042,10 @@
       "aiJudge": {
         "pick": "away",
         "score": "1-2",
-        "confidence": 0.62,
-        "reason": "客队实力和状态明显占优，但主队有保级动力，模型概率支持客胜但比分接近。",
+        "confidence": 0.65,
+        "reason": "客队实力和状态明显占优，但主队有保级动力，可能制造麻烦，客胜概率最高。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.3
       }
     },
     {
@@ -3927,7 +4059,7 @@
       "probabilities": {
         "home": 0.426,
         "draw": 0.265,
-        "away": 0.308
+        "away": 0.309
       },
       "confidence": 0.611,
       "reasons": [
@@ -3953,9 +4085,9 @@
         "away": 3.935
       },
       "kelly": {
-        "home": -0.423,
+        "home": -0.425,
         "draw": -0.038,
-        "away": 0.214
+        "away": 0.216
       },
       "spreads": {
         "home": {
@@ -3969,9 +4101,9 @@
       },
       "asian": null,
       "eloProb": {
-        "home": 0.326,
+        "home": 0.325,
         "draw": 0.26,
-        "away": 0.414
+        "away": 0.415
       },
       "dcProb": {
         "home": 0.42,
@@ -3985,8 +4117,16 @@
         "market": "home"
       },
       "form": {
-        "home": 2.4,
-        "away": 1.6
+        "home": {
+          "home": 2.0,
+          "away": 3.0,
+          "overall": 2.4
+        },
+        "away": {
+          "home": 3.0,
+          "away": 1.25,
+          "overall": 1.6
+        }
       },
       "eloRatings": {
         "home": 1551.0,
@@ -3995,26 +4135,26 @@
       "modelProbs": {
         "home": 0.426,
         "draw": 0.265,
-        "away": 0.308
+        "away": 0.309
       },
       "valuePicks": [
         {
           "side": "away",
           "label": "客胜",
-          "modelProb": 0.414,
+          "modelProb": 0.415,
           "oddsProb": 0.238,
-          "edge": 0.176,
+          "edge": 0.177,
           "level": "watch",
-          "modelConf": 0.088
+          "modelConf": 0.09
         }
       ],
       "reversePicks": [
         {
           "side": "home",
           "label": "主胜",
-          "modelProb": 0.326,
+          "modelProb": 0.325,
           "oddsProb": 0.493,
-          "edge": -0.167
+          "edge": -0.168
         }
       ],
       "signalLevel": "watch",
@@ -4023,7 +4163,7 @@
         "odds": 3.94,
         "stake": 0.05,
         "source": "value:watch",
-        "edge": 0.176
+        "edge": 0.177
       },
       "correctScores": [
         {
@@ -4101,14 +4241,14 @@
         "kelly": -0.385
       },
       "btts": 0.5212,
-      "analysis": "【排名】主队Atlético Madrid排名第4（69分/38场），客队Villarreal排名第3（72分/38场），排名接近。\n【胜负】比赛悬念较大，主胜 49% / 平 27% / 客胜 24%（赔率 1.9 / 3.4850000000000003 / 3.935）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.47 / 2.98）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（11%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%（赔率 大 1.95 / 小 1.8250000000000002），倾向小球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 52%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 41% vs 盘口 24%（差 +18%），值得关注。\n【结论】综合赔率与消息，Atlético Madrid不败概率更高，关注波胆 1-1 方向。",
+      "analysis": "【排名】主队Atlético Madrid排名第4（69分/38场），客队Villarreal排名第3（72分/38场），排名接近。\n【胜负】比赛悬念较大，主胜 49% / 平 27% / 客胜 24%（赔率 1.9 / 3.4850000000000003 / 3.935）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.47 / 2.98）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（11%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%（赔率 大 1.95 / 小 1.8250000000000002），倾向小球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 52%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 42% vs 盘口 24%（差 +18%），值得关注。\n【结论】综合赔率与消息，Atlético Madrid不败概率更高，关注波胆 1-1 方向。",
       "aiJudge": {
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队主场优势及欧赔支持，但客队排名更高，模型概率接近，谨慎看好主胜。",
+        "reason": "主队主场优势及欧赔略倾向主胜，但客队排名更高且模型平局概率不低，谨慎看好小胜。",
         "model": "deepseek-chat",
-        "latency": 1.1
+        "latency": 1.2
       }
     },
     {
@@ -4180,8 +4320,12 @@
         "market": "home"
       },
       "form": {
-        "home": 1.8,
-        "away": null
+        "home": {
+          "home": 3.0,
+          "away": 1.5,
+          "overall": 1.8
+        },
+        "away": {}
       },
       "eloRatings": {
         "home": 1665.0,
@@ -4287,24 +4431,24 @@
       "aiJudge": {
         "pick": "home",
         "score": "1-0",
-        "confidence": 0.65,
-        "reason": "主队胜率与欧赔一致，模型波胆首选1-0，且大小球倾向小球。",
+        "confidence": 0.62,
+        "reason": "主队胜率与欧赔一致，模型预测1-0概率最高，且大小球倾向小球。",
         "model": "deepseek-chat",
-        "latency": 1.5
+        "latency": 1.2
       }
     },
     {
       "homeTeam": "Elche CF",
       "awayTeam": "Barcelona",
-      "predictedScore": "0-2",
+      "predictedScore": "1-2",
       "expectedGoals": {
-        "home": 0.96,
-        "away": 2.14
+        "home": 1.09,
+        "away": 2.21
       },
       "probabilities": {
-        "home": 0.177,
+        "home": 0.196,
         "draw": 0.198,
-        "away": 0.625
+        "away": 0.605
       },
       "confidence": 0.697,
       "reasons": [
@@ -4330,9 +4474,9 @@
         "away": 1.32
       },
       "kelly": {
-        "home": 0.178,
+        "home": 0.233,
         "draw": 0.041,
-        "away": -1.068
+        "away": -1.266
       },
       "spreads": {
         "home": {
@@ -4346,14 +4490,14 @@
       },
       "asian": null,
       "eloProb": {
-        "home": 0.276,
+        "home": 0.324,
         "draw": 0.225,
-        "away": 0.499
+        "away": 0.451
       },
       "dcProb": {
-        "home": 0.152,
-        "draw": 0.213,
-        "away": 0.635
+        "home": 0.17,
+        "draw": 0.21,
+        "away": 0.62
       },
       "diverge": false,
       "dirs": {
@@ -4362,70 +4506,78 @@
         "market": "away"
       },
       "form": {
-        "home": 2.4,
-        "away": 1.8
+        "home": {
+          "home": 3.0,
+          "away": 2.0,
+          "overall": 2.4
+        },
+        "away": {
+          "home": 3.0,
+          "away": 0.0,
+          "overall": 1.8
+        }
       },
       "eloRatings": {
         "home": 1615.0,
         "away": 1830.0
       },
       "modelProbs": {
-        "home": 0.177,
+        "home": 0.196,
         "draw": 0.198,
-        "away": 0.625
+        "away": 0.605
       },
       "valuePicks": [
         {
           "side": "home",
           "label": "主胜",
-          "modelProb": 0.276,
+          "modelProb": 0.324,
           "oddsProb": 0.111,
-          "edge": 0.165,
-          "level": "gold",
-          "modelConf": 0.223
+          "edge": 0.213,
+          "level": "watch",
+          "modelConf": 0.127
         }
       ],
       "reversePicks": [
         {
           "side": "away",
           "label": "客胜",
-          "modelProb": 0.499,
+          "modelProb": 0.451,
           "oddsProb": 0.709,
-          "edge": -0.21
+          "edge": -0.258
         }
       ],
-      "signalLevel": "gold",
+      "signalLevel": "watch",
       "betRec": {
         "side": "home",
         "odds": 8.4,
         "stake": 0.05,
-        "source": "value:gold",
-        "edge": 0.165
+        "source": "value:watch",
+        "edge": 0.213
       },
       "correctScores": [
         {
-          "score": "0-2",
-          "prob": 0.1032
+          "score": "1-2",
+          "prob": 0.0984
         },
         {
           "score": "1-1",
-          "prob": 0.1002
+          "prob": 0.0961
         },
         {
-          "score": "1-2",
-          "prob": 0.0992
+          "score": "0-2",
+          "prob": 0.0903
         },
         {
           "score": "0-1",
-          "prob": 0.0891
-        },
-        {
-          "score": "0-3",
-          "prob": 0.0736
+          "prob": 0.0746
         },
         {
           "score": "1-3",
-          "prob": 0.0707
+          "prob": 0.0725
+        },
+        {
+          "score": "0-3",
+          "prob": 0.0666
         }
       ],
       "overUnder": {
@@ -4450,42 +4602,42 @@
         }
       },
       "totalGoalsDist": {
-        "0": 0.045,
-        "1": 0.1397,
-        "2": 0.2165,
-        "3": 0.2237,
-        "4": 0.1733,
-        "5": 0.1075,
-        "6": 0.0495,
-        "7": 0.0169,
-        "8": 0.0044,
-        "9": 0.0009,
-        "10": 0.0001
+        "0": 0.0369,
+        "1": 0.1217,
+        "2": 0.2008,
+        "3": 0.2209,
+        "4": 0.1823,
+        "5": 0.1203,
+        "6": 0.0601,
+        "7": 0.0226,
+        "8": 0.0065,
+        "9": 0.0014,
+        "10": 0.0002
       },
       "ouModel": {
         "line": 2.5,
-        "over": 0.576,
-        "under": 0.424,
-        "edge": 0.018,
-        "kelly": 0.014
+        "over": 0.614,
+        "under": 0.386,
+        "edge": 0.056,
+        "kelly": 0.103
       },
       "spModel": {
         "point": 1.5,
-        "cover": 0.592,
+        "cover": 0.599,
         "price": 1.98,
         "implied": 0.505,
-        "edge": 0.087,
-        "kelly": 0.175
+        "edge": 0.094,
+        "kelly": 0.19
       },
-      "btts": 0.5307,
-      "analysis": "【排名】主队Elche CF排名第13（43分/38场），客队Barcelona排名第1（94分/38场），客队排名领先 12 位。\n【胜负】市场明显看好客队Barcelona，客胜隐含概率 71%（赔率 8.4 / 5.2 / 1.32）。\n【让球】客队Barcelona让 1.5 球（盘口赔率 1.98 / 1.96）。\n【波胆】泊松模型推算最可能比分：0-2（10%）、1-2（10%）、0-1（10%）。\n【大小球】2.5 球盘口：大球 56% / 小球 44%（赔率 大 1.755 / 小 2.215），倾向大球。\n【进球数】总进球概率：0球 4%、1球 14%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 53%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 28% vs 盘口 11%（差 +16%），值得关注。\n【结论】综合赔率与消息，Barcelona不败概率更高，关注波胆 0-2 方向。",
+      "btts": 0.5731,
+      "analysis": "【排名】主队Elche CF排名第13（43分/38场），客队Barcelona排名第1（94分/38场），客队排名领先 12 位。\n【胜负】市场明显看好客队Barcelona，客胜隐含概率 71%（赔率 8.4 / 5.2 / 1.32）。\n【让球】客队Barcelona让 1.5 球（盘口赔率 1.98 / 1.96）。\n【波胆】泊松模型推算最可能比分：1-2（10%）、0-2（9%）、1-1（9%）。\n【大小球】2.5 球盘口：大球 56% / 小球 44%（赔率 大 1.755 / 小 2.215），倾向大球。\n【进球数】总进球概率：0球 4%、1球 12%、2球 20%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 57%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 32% vs 盘口 11%（差 +21%），值得关注。\n【结论】综合赔率与消息，Barcelona不败概率更高，关注波胆 1-2 方向。",
       "aiJudge": {
         "pick": "away",
-        "score": "0-2",
-        "confidence": 0.7,
-        "reason": "巴萨实力和状态远超对手，客胜概率高，模型预测0-2。",
+        "score": "1-2",
+        "confidence": 0.65,
+        "reason": "巴萨整体实力和状态远超对手，统计模型和欧赔均强烈支持客胜，但Elo概率稍低，故微调至0.65。",
         "model": "deepseek-chat",
-        "latency": 1.1
+        "latency": 1.4
       }
     },
     {
@@ -4557,8 +4709,12 @@
         "market": "home"
       },
       "form": {
-        "home": null,
-        "away": 2.2
+        "home": {},
+        "away": {
+          "home": 2.333,
+          "away": 2.0,
+          "overall": 2.2
+        }
       },
       "eloRatings": {
         "home": 1575.0,
@@ -4654,9 +4810,9 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队积分相同但净胜球占优，且欧赔和统计模型均倾向主胜，但平局概率不低，故谨慎选择主胜。",
+        "reason": "主队积分相同但净胜球占优，且欧赔和模型概率均倾向主胜，但平局概率不低，谨慎看好小胜。",
         "model": "deepseek-chat",
-        "latency": 1.5
+        "latency": 1.3
       }
     },
     {
@@ -4728,8 +4884,8 @@
         "market": "home"
       },
       "form": {
-        "home": null,
-        "away": null
+        "home": {},
+        "away": {}
       },
       "eloRatings": {
         "home": 1500.0,
@@ -4827,10 +4983,10 @@
       "aiJudge": {
         "pick": "home",
         "score": "1-0",
-        "confidence": 0.55,
-        "reason": "主队胜率略高且欧赔支持，但平局概率不低，谨慎看好小胜。",
+        "confidence": 0.5,
+        "reason": "统计模型和欧赔均略倾向主胜，但平局概率不低，谨慎选择主胜。",
         "model": "deepseek-chat",
-        "latency": 1.1
+        "latency": 1.3
       }
     },
     {
@@ -4838,13 +4994,13 @@
       "awayTeam": "Real Betis",
       "predictedScore": "1-1",
       "expectedGoals": {
-        "home": 1.6,
-        "away": 1.2
+        "home": 1.57,
+        "away": 1.23
       },
       "probabilities": {
-        "home": 0.463,
+        "home": 0.456,
         "draw": 0.249,
-        "away": 0.288
+        "away": 0.295
       },
       "confidence": 0.555,
       "reasons": [
@@ -4870,9 +5026,9 @@
         "away": 2.7
       },
       "kelly": {
-        "home": 0.405,
+        "home": 0.376,
         "draw": -0.18,
-        "away": -0.285
+        "away": -0.257
       },
       "spreads": {
         "home": {
@@ -4886,14 +5042,14 @@
       },
       "asian": null,
       "eloProb": {
-        "home": 0.626,
+        "home": 0.608,
         "draw": 0.183,
-        "away": 0.191
+        "away": 0.209
       },
       "dcProb": {
-        "home": 0.455,
-        "draw": 0.266,
-        "away": 0.279
+        "home": 0.442,
+        "draw": 0.268,
+        "away": 0.291
       },
       "diverge": false,
       "dirs": {
@@ -4902,27 +5058,35 @@
         "market": "home"
       },
       "form": {
-        "home": 1.8,
-        "away": 1.4
+        "home": {
+          "home": 1.5,
+          "away": 2.0,
+          "overall": 1.8
+        },
+        "away": {
+          "home": 1.0,
+          "away": 2.0,
+          "overall": 1.4
+        }
       },
       "eloRatings": {
         "home": 1649.0,
         "away": 1552.0
       },
       "modelProbs": {
-        "home": 0.463,
+        "home": 0.456,
         "draw": 0.249,
-        "away": 0.288
+        "away": 0.295
       },
       "valuePicks": [
         {
           "side": "home",
           "label": "主胜",
-          "modelProb": 0.626,
+          "modelProb": 0.608,
           "oddsProb": 0.354,
-          "edge": 0.272,
+          "edge": 0.254,
           "level": "gold",
-          "modelConf": 0.435
+          "modelConf": 0.399
         }
       ],
       "reversePicks": [
@@ -4936,9 +5100,9 @@
         {
           "side": "away",
           "label": "客胜",
-          "modelProb": 0.191,
+          "modelProb": 0.209,
           "oddsProb": 0.353,
-          "edge": -0.162
+          "edge": -0.144
         }
       ],
       "signalLevel": "gold",
@@ -4947,28 +5111,28 @@
         "odds": 2.69,
         "stake": 0.05,
         "source": "value:gold",
-        "edge": 0.272
+        "edge": 0.254
       },
       "correctScores": [
         {
           "score": "1-1",
-          "prob": 0.1262
+          "prob": 0.1269
         },
         {
           "score": "2-1",
-          "prob": 0.0933
+          "prob": 0.0921
         },
         {
           "score": "1-0",
-          "prob": 0.0877
+          "prob": 0.086
         },
         {
           "score": "2-0",
-          "prob": 0.0775
+          "prob": 0.0748
         },
         {
           "score": "1-2",
-          "prob": 0.0704
+          "prob": 0.0724
         },
         {
           "score": "0-0",
@@ -5003,9 +5167,9 @@
         "3": 0.2225,
         "4": 0.1557,
         "5": 0.0872,
-        "6": 0.039,
-        "7": 0.0138,
-        "8": 0.0038,
+        "6": 0.0391,
+        "7": 0.0139,
+        "8": 0.0039,
         "9": 0.0008,
         "10": 0.0001
       },
@@ -5018,21 +5182,21 @@
       },
       "spModel": {
         "point": 0.0,
-        "cover": 0.582,
+        "cover": 0.57,
         "price": 1.93,
         "implied": 0.518,
-        "edge": 0.064,
-        "kelly": 0.133
+        "edge": 0.052,
+        "kelly": 0.108
       },
-      "btts": 0.5527,
-      "analysis": "【排名】主队Valencia排名第9（49分/38场），客队Real Betis排名第5（60分/38场），客队排名领先 4 位。\n【胜负】双方实力接近，主队Valencia略占优（主胜 35% vs 客胜 35%）（赔率 2.69 / 3.25 / 2.7）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.93 / 1.93）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（10%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%（赔率 大 1.9849999999999999 / 小 1.795），倾向小球。\n【进球数】总进球概率：0球 6%、1球 17%、2球 24%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 55%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 63% vs 盘口 35%（差 +27%），值得关注。\n【结论】综合赔率与消息，Valencia不败概率更高，关注波胆 1-1 方向。",
+      "btts": 0.5554,
+      "analysis": "【排名】主队Valencia排名第9（49分/38场），客队Real Betis排名第5（60分/38场），客队排名领先 4 位。\n【胜负】双方实力接近，主队Valencia略占优（主胜 35% vs 客胜 35%）（赔率 2.69 / 3.25 / 2.7）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.93 / 1.93）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（10%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%（赔率 大 1.9849999999999999 / 小 1.795），倾向小球。\n【进球数】总进球概率：0球 6%、1球 17%、2球 24%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 56%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 61% vs 盘口 35%（差 +25%），值得关注。\n【结论】综合赔率与消息，Valencia不败概率更高，关注波胆 1-1 方向。",
       "aiJudge": {
         "pick": "home",
-        "score": "1-1",
+        "score": "1-0",
         "confidence": 0.55,
-        "reason": "统计模型和欧赔显示主队略占优，但平局概率不低，综合推荐主队不败。",
+        "reason": "Elo概率显著倾向主队，且主胜赔率略低，模型波胆中1-0概率较高，但统计模型平局概率不低，故谨慎选择主胜。",
         "model": "deepseek-chat",
-        "latency": 1.1
+        "latency": 1.2
       }
     },
     {
@@ -5044,9 +5208,9 @@
         "away": 0.71
       },
       "probabilities": {
-        "home": 0.714,
+        "home": 0.713,
         "draw": 0.162,
-        "away": 0.124
+        "away": 0.126
       },
       "confidence": 0.683,
       "reasons": [
@@ -5072,9 +5236,9 @@
         "away": 7.02
       },
       "kelly": {
-        "home": 0.209,
+        "home": 0.195,
         "draw": -0.105,
-        "away": -0.04
+        "away": -0.035
       },
       "spreads": {
         "home": {
@@ -5088,9 +5252,9 @@
       },
       "asian": null,
       "eloProb": {
-        "home": 0.774,
+        "home": 0.77,
         "draw": 0.118,
-        "away": 0.108
+        "away": 0.112
       },
       "dcProb": {
         "home": 0.739,
@@ -5104,17 +5268,25 @@
         "market": "home"
       },
       "form": {
-        "home": 1.8,
-        "away": 2.6
+        "home": {
+          "home": 2.0,
+          "away": 1.5,
+          "overall": 1.8
+        },
+        "away": {
+          "home": 2.333,
+          "away": 3.0,
+          "overall": 2.6
+        }
       },
       "eloRatings": {
         "home": 1765.0,
         "away": 1492.0
       },
       "modelProbs": {
-        "home": 0.714,
+        "home": 0.713,
         "draw": 0.162,
-        "away": 0.124
+        "away": 0.126
       },
       "valuePicks": [],
       "reversePicks": [],
@@ -5203,7 +5375,7 @@
         "confidence": 0.75,
         "reason": "主队实力和状态明显占优，欧赔和Elo均支持主胜，模型预测2-0概率最高。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.6
       }
     },
     {
@@ -5275,8 +5447,16 @@
         "market": "home"
       },
       "form": {
-        "home": 1.8,
-        "away": 1.8
+        "home": {
+          "home": 3.0,
+          "away": 0.0,
+          "overall": 1.8
+        },
+        "away": {
+          "home": 1.0,
+          "away": 3.0,
+          "overall": 1.8
+        }
       },
       "eloRatings": {
         "home": 1830.0,
@@ -5388,9 +5568,9 @@
         "pick": "home",
         "score": "2-0",
         "confidence": 0.75,
-        "reason": "主队实力和状态远超客队，模型与赔率均强烈支持主胜。",
+        "reason": "主队实力和状态远超客队，且模型和赔率均强烈支持主胜。",
         "model": "deepseek-chat",
-        "latency": 1.1
+        "latency": 1.2
       }
     },
     {
@@ -5398,13 +5578,13 @@
       "awayTeam": "VfB Stuttgart",
       "predictedScore": "2-0",
       "expectedGoals": {
-        "home": 2.48,
-        "away": 0.83
+        "home": 2.39,
+        "away": 0.71
       },
       "probabilities": {
-        "home": 0.693,
+        "home": 0.713,
         "draw": 0.159,
-        "away": 0.148
+        "away": 0.129
       },
       "confidence": 0.707,
       "reasons": [
@@ -5430,9 +5610,9 @@
         "away": 8.0
       },
       "kelly": {
-        "home": -0.634,
+        "home": -0.42,
         "draw": 0.022,
-        "away": 0.077
+        "away": 0.022
       },
       "spreads": {
         "home": {
@@ -5446,14 +5626,14 @@
       },
       "asian": null,
       "eloProb": {
-        "home": 0.633,
+        "home": 0.681,
         "draw": 0.175,
-        "away": 0.193
+        "away": 0.145
       },
       "dcProb": {
-        "home": 0.728,
-        "draw": 0.173,
-        "away": 0.099
+        "home": 0.739,
+        "draw": 0.174,
+        "away": 0.087
       },
       "diverge": false,
       "dirs": {
@@ -5462,54 +5642,54 @@
         "market": "home"
       },
       "form": {
-        "home": 1.8,
-        "away": 2.2
+        "home": {
+          "home": 3.0,
+          "away": 0.0,
+          "overall": 1.8
+        },
+        "away": {
+          "home": 3.0,
+          "away": 1.0,
+          "overall": 2.2
+        }
       },
       "eloRatings": {
         "home": 1867.0,
         "away": 1751.0
       },
       "modelProbs": {
-        "home": 0.693,
+        "home": 0.713,
         "draw": 0.159,
-        "away": 0.148
+        "away": 0.129
       },
       "valuePicks": [],
-      "reversePicks": [
-        {
-          "side": "home",
-          "label": "主胜",
-          "modelProb": 0.633,
-          "oddsProb": 0.734,
-          "edge": -0.101
-        }
-      ],
+      "reversePicks": [],
       "signalLevel": "none",
       "betRec": null,
       "correctScores": [
         {
           "score": "2-0",
-          "prob": 0.1134
-        },
-        {
-          "score": "2-1",
-          "prob": 0.0936
+          "prob": 0.1288
         },
         {
           "score": "3-0",
-          "prob": 0.0936
+          "prob": 0.1024
         },
         {
           "score": "1-0",
-          "prob": 0.0856
+          "prob": 0.1017
+        },
+        {
+          "score": "2-1",
+          "prob": 0.0918
         },
         {
           "score": "1-1",
-          "prob": 0.0817
+          "prob": 0.0831
         },
         {
           "score": "3-1",
-          "prob": 0.0772
+          "prob": 0.073
         }
       ],
       "overUnder": {
@@ -5534,42 +5714,42 @@
         }
       },
       "totalGoalsDist": {
-        "0": 0.0369,
-        "1": 0.1217,
-        "2": 0.2008,
-        "3": 0.2209,
-        "4": 0.1823,
-        "5": 0.1203,
-        "6": 0.0544,
-        "7": 0.0173,
-        "8": 0.0041,
-        "9": 0.0007,
-        "10": 0.0001
+        "0": 0.045,
+        "1": 0.1397,
+        "2": 0.2165,
+        "3": 0.2237,
+        "4": 0.1733,
+        "5": 0.1075,
+        "6": 0.0439,
+        "7": 0.0124,
+        "8": 0.0026,
+        "9": 0.0004,
+        "10": 0.0
       },
       "ouModel": {
         "line": 2.5,
-        "over": 0.6,
-        "under": 0.4,
-        "edge": 0.022,
-        "kelly": -0.035
+        "over": 0.564,
+        "under": 0.436,
+        "edge": -0.014,
+        "kelly": -0.128
       },
       "spModel": {
         "point": -1.5,
-        "cover": 0.472,
+        "cover": 0.482,
         "price": 1.75,
         "implied": 0.571,
-        "edge": -0.099,
-        "kelly": -0.231
+        "edge": -0.089,
+        "kelly": -0.208
       },
-      "btts": 0.4916,
-      "analysis": "【排名】主队Bayern Munich排名第1（89分/34场），客队VfB Stuttgart排名第4（62分/34场），主队排名领先 3 位。\n【胜负】市场高度看好主队Bayern Munich，主胜隐含概率 73%（赔率 1.29 / 6.4 / 8.0）。\n【让球】主队Bayern Munich让 1.5 球（盘口赔率 1.75 / 2.15）。\n【波胆】泊松模型推算最可能比分：2-0（11%）、2-1（9%）、3-0（9%）。\n【大小球】2.5 球盘口：大球 58% / 小球 42%（赔率 大 1.63 / 小 2.23），倾向大球。\n【进球数】总进球概率：0球 4%、1球 12%、2球 20%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 49%，倾向至少一方零封。\n【结论】综合赔率与消息，Bayern Munich不败概率更高，关注波胆 2-0 方向。",
+      "btts": 0.4451,
+      "analysis": "【排名】主队Bayern Munich排名第1（89分/34场），客队VfB Stuttgart排名第4（62分/34场），主队排名领先 3 位。\n【胜负】市场高度看好主队Bayern Munich，主胜隐含概率 73%（赔率 1.29 / 6.4 / 8.0）。\n【让球】主队Bayern Munich让 1.5 球（盘口赔率 1.75 / 2.15）。\n【波胆】泊松模型推算最可能比分：2-0（13%）、1-0（11%）、3-0（10%）。\n【大小球】2.5 球盘口：大球 58% / 小球 42%（赔率 大 1.63 / 小 2.23），倾向大球。\n【进球数】总进球概率：0球 4%、1球 14%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 45%，倾向至少一方零封。\n【结论】综合赔率与消息，Bayern Munich不败概率更高，关注波胆 2-0 方向。",
       "aiJudge": {
         "pick": "home",
         "score": "2-0",
         "confidence": 0.75,
-        "reason": "主队拜仁慕尼黑实力和状态占优，且主场作战，统计模型和欧赔均强烈支持主胜。",
+        "reason": "主队拜仁实力和状态远超客队，且主场优势明显，模型和赔率均强烈支持主胜。",
         "model": "deepseek-chat",
-        "latency": 1.1
+        "latency": 1.3
       }
     },
     {
@@ -5641,8 +5821,8 @@
         "market": "away"
       },
       "form": {
-        "home": null,
-        "away": null
+        "home": {},
+        "away": {}
       },
       "eloRatings": {
         "home": 1605.0,
@@ -5737,10 +5917,10 @@
       "aiJudge": {
         "pick": "away",
         "score": "1-2",
-        "confidence": 0.556,
-        "reason": "客队排名和实力占优，欧赔与Elo均支持客胜，模型概率客胜最高。",
+        "confidence": 0.55,
+        "reason": "客队排名和实力占优，欧赔与概率均支持客胜，但主队有保级动力，比分接近。",
         "model": "deepseek-chat",
-        "latency": 1.4
+        "latency": 1.2
       }
     },
     {
@@ -5812,8 +5992,12 @@
         "market": "away"
       },
       "form": {
-        "home": null,
-        "away": 1.6
+        "home": {},
+        "away": {
+          "home": 2.0,
+          "away": 1.333,
+          "overall": 1.6
+        }
       },
       "eloRatings": {
         "home": 1500.0,
@@ -5903,7 +6087,7 @@
       "aiJudge": {
         "pick": "away",
         "score": "1-2",
-        "confidence": 0.6,
+        "confidence": 0.62,
         "reason": "客队实力和赔率明显占优，但主队有一定进球能力，预测客胜但比分接近。",
         "model": "deepseek-chat",
         "latency": 1.2
@@ -5978,8 +6162,8 @@
         "market": "home"
       },
       "form": {
-        "home": null,
-        "away": null
+        "home": {},
+        "away": {}
       },
       "eloRatings": {
         "home": 1770.0,
@@ -6075,7 +6259,7 @@
         "pick": "home",
         "score": "2-1",
         "confidence": 0.65,
-        "reason": "主队排名和状态占优，统计模型和欧赔均支持主胜，但客队有一定防守韧性，比分预测2-1。",
+        "reason": "主队排名和状态占优，模型及欧赔均支持主胜，但客队有一定防守韧性，比分预测为2-1。",
         "model": "deepseek-chat",
         "latency": 1.2
       }
@@ -6085,13 +6269,13 @@
       "awayTeam": "Eintracht Frankfurt",
       "predictedScore": "1-1",
       "expectedGoals": {
-        "home": 1.23,
-        "away": 1.27
+        "home": 1.27,
+        "away": 1.33
       },
       "probabilities": {
-        "home": 0.359,
+        "home": 0.358,
         "draw": 0.267,
-        "away": 0.374
+        "away": 0.375
       },
       "confidence": 0.571,
       "reasons": [
@@ -6117,9 +6301,9 @@
         "away": 2.8
       },
       "kelly": {
-        "home": -0.186,
+        "home": -0.191,
         "draw": -0.033,
-        "away": 0.113
+        "away": 0.117
       },
       "spreads": {
         "home": {
@@ -6133,14 +6317,14 @@
       },
       "asian": null,
       "eloProb": {
-        "home": 0.308,
+        "home": 0.306,
         "draw": 0.262,
-        "away": 0.43
+        "away": 0.432
       },
       "dcProb": {
-        "home": 0.343,
-        "draw": 0.291,
-        "away": 0.367
+        "home": 0.346,
+        "draw": 0.284,
+        "away": 0.37
       },
       "diverge": true,
       "dirs": {
@@ -6149,17 +6333,25 @@
         "market": "home"
       },
       "form": {
-        "home": 2.0,
-        "away": 2.2
+        "home": {
+          "home": 1.333,
+          "away": 3.0,
+          "overall": 2.0
+        },
+        "away": {
+          "home": 3.0,
+          "away": 1.667,
+          "overall": 2.2
+        }
       },
       "eloRatings": {
         "home": 1493.0,
         "away": 1647.0
       },
       "modelProbs": {
-        "home": 0.359,
+        "home": 0.358,
         "draw": 0.267,
-        "away": 0.374
+        "away": 0.375
       },
       "valuePicks": [],
       "reversePicks": [],
@@ -6168,27 +6360,27 @@
       "correctScores": [
         {
           "score": "1-1",
-          "prob": 0.1385
+          "prob": 0.1355
         },
         {
           "score": "0-1",
-          "prob": 0.0944
-        },
-        {
-          "score": "0-0",
-          "prob": 0.0924
+          "prob": 0.0885
         },
         {
           "score": "1-0",
-          "prob": 0.0903
+          "prob": 0.0846
+        },
+        {
+          "score": "0-0",
+          "prob": 0.0843
         },
         {
           "score": "1-2",
-          "prob": 0.0817
+          "prob": 0.0832
         },
         {
           "score": "2-1",
-          "prob": 0.0785
+          "prob": 0.0799
         }
       ],
       "overUnder": {
@@ -6213,24 +6405,24 @@
         }
       },
       "totalGoalsDist": {
-        "0": 0.0821,
-        "1": 0.2052,
-        "2": 0.2565,
-        "3": 0.2138,
-        "4": 0.1336,
-        "5": 0.0668,
-        "6": 0.027,
-        "7": 0.0087,
-        "8": 0.0022,
-        "9": 0.0004,
+        "0": 0.0743,
+        "1": 0.1931,
+        "2": 0.251,
+        "3": 0.2176,
+        "4": 0.1414,
+        "5": 0.0735,
+        "6": 0.0309,
+        "7": 0.0104,
+        "8": 0.0027,
+        "9": 0.0005,
         "10": 0.0001
       },
       "ouModel": {
         "line": 2.5,
-        "over": 0.453,
-        "under": 0.547,
-        "edge": -0.097,
-        "kelly": -0.307
+        "over": 0.477,
+        "under": 0.523,
+        "edge": -0.073,
+        "kelly": -0.249
       },
       "spModel": {
         "point": 0.0,
@@ -6238,17 +6430,17 @@
         "price": 1.82,
         "implied": 0.549,
         "edge": -0.063,
-        "kelly": -0.14
+        "kelly": -0.141
       },
-      "btts": 0.5063,
-      "analysis": "【排名】主队Union Berlin排名第11（39分/34场），客队Eintracht Frankfurt排名第8（44分/34场），客队排名领先 3 位。\n【胜负】双方实力接近，主队Union Berlin略占优（主胜 39% vs 客胜 34%）（赔率 2.4 / 3.5 / 2.8）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.82 / 2.1）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、0-1（10%）、1-0（10%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%（赔率 大 1.72 / 小 2.1），倾向大球。\n【进球数】总进球概率：0球 8%、1球 21%、2球 26%、3球 21%、4球 13%。\n【双方进球】双方都进球概率 51%，倾向至少一方零封。\n【结论】综合赔率与消息，Union Berlin不败概率更高，关注波胆 1-1 方向。",
+      "btts": 0.5258,
+      "analysis": "【排名】主队Union Berlin排名第11（39分/34场），客队Eintracht Frankfurt排名第8（44分/34场），客队排名领先 3 位。\n【胜负】双方实力接近，主队Union Berlin略占优（主胜 39% vs 客胜 34%）（赔率 2.4 / 3.5 / 2.8）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.82 / 2.1）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、0-1（10%）、1-0（9%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%（赔率 大 1.72 / 小 2.1），倾向大球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 53%，倾向至少一方零封。\n【结论】综合赔率与消息，Union Berlin不败概率更高，关注波胆 1-1 方向。",
       "aiJudge": {
         "pick": "away",
         "score": "0-1",
-        "confidence": 0.524,
-        "reason": "客队积分和Elo概率占优，但主队主场因素和模型平局概率较高，倾向客队小胜。",
+        "confidence": 0.525,
+        "reason": "客队Elo概率和欧赔均占优，且模型波胆次选为客胜，但主队主场因素使差距不大。",
         "model": "deepseek-chat",
-        "latency": 1.3
+        "latency": 1.5
       }
     },
     {
@@ -6320,8 +6512,8 @@
         "market": "home"
       },
       "form": {
-        "home": null,
-        "away": null
+        "home": {},
+        "away": {}
       },
       "eloRatings": {
         "home": 1665.0,
@@ -6420,9 +6612,9 @@
         "pick": "home",
         "score": "2-1",
         "confidence": 0.65,
-        "reason": "统计模型和Elo均看好主胜，欧赔支持，但平局概率不低，比分预测倾向2-1。",
+        "reason": "主队胜率显著占优，欧赔和Elo均支持主胜，但平局概率不低，谨慎看好小胜。",
         "model": "deepseek-chat",
-        "latency": 1.5
+        "latency": 5.9
       }
     },
     {
@@ -6430,13 +6622,13 @@
       "awayTeam": "Hamburger SV",
       "predictedScore": "2-0",
       "expectedGoals": {
-        "home": 2.34,
-        "away": 0.66
+        "home": 2.37,
+        "away": 0.63
       },
       "probabilities": {
-        "home": 0.724,
+        "home": 0.731,
         "draw": 0.161,
-        "away": 0.115
+        "away": 0.108
       },
       "confidence": 0.699,
       "reasons": [
@@ -6462,9 +6654,9 @@
         "away": 8.4
       },
       "kelly": {
-        "home": -0.054,
+        "home": 0.019,
         "draw": -0.048,
-        "away": -0.0
+        "away": -0.021
       },
       "spreads": {
         "home": {
@@ -6478,14 +6670,14 @@
       },
       "asian": null,
       "eloProb": {
-        "home": 0.739,
+        "home": 0.757,
         "draw": 0.142,
-        "away": 0.119
+        "away": 0.101
       },
       "dcProb": {
-        "home": 0.744,
-        "draw": 0.175,
-        "away": 0.081
+        "home": 0.756,
+        "draw": 0.169,
+        "away": 0.075
       },
       "diverge": false,
       "dirs": {
@@ -6494,17 +6686,25 @@
         "market": "home"
       },
       "form": {
-        "home": 1.4,
-        "away": 0.8
+        "home": {
+          "home": 2.0,
+          "away": 0.5,
+          "overall": 1.4
+        },
+        "away": {
+          "home": 1.0,
+          "away": 0.5,
+          "overall": 0.8
+        }
       },
       "eloRatings": {
         "home": 1792.0,
         "away": 1595.0
       },
       "modelProbs": {
-        "home": 0.724,
+        "home": 0.731,
         "draw": 0.161,
-        "away": 0.115
+        "away": 0.108
       },
       "valuePicks": [],
       "reversePicks": [],
@@ -6513,27 +6713,27 @@
       "correctScores": [
         {
           "score": "2-0",
-          "prob": 0.1367
+          "prob": 0.1403
         },
         {
           "score": "1-0",
-          "prob": 0.1107
+          "prob": 0.1124
         },
         {
           "score": "3-0",
-          "prob": 0.1066
+          "prob": 0.1108
         },
         {
           "score": "2-1",
-          "prob": 0.0902
+          "prob": 0.0884
         },
         {
           "score": "1-1",
-          "prob": 0.0833
+          "prob": 0.0805
         },
         {
           "score": "3-1",
-          "prob": 0.0704
+          "prob": 0.0698
         }
       ],
       "overUnder": {
@@ -6564,34 +6764,34 @@
         "3": 0.224,
         "4": 0.168,
         "5": 0.1008,
-        "6": 0.0391,
-        "7": 0.0103,
-        "8": 0.002,
+        "6": 0.0382,
+        "7": 0.0097,
+        "8": 0.0018,
         "9": 0.0003,
         "10": 0.0
       },
       "ouModel": {
         "line": 2.5,
-        "over": 0.544,
-        "under": 0.456,
-        "edge": -0.047,
-        "kelly": -0.27
+        "over": 0.543,
+        "under": 0.457,
+        "edge": -0.048,
+        "kelly": -0.273
       },
       "spModel": {
         "point": -1.5,
-        "cover": 0.486,
+        "cover": 0.498,
         "price": 1.955,
         "implied": 0.512,
-        "edge": -0.026,
-        "kelly": -0.053
+        "edge": -0.014,
+        "kelly": -0.029
       },
-      "btts": 0.421,
-      "analysis": "【排名】主队Borussia Dortmund排名第2（73分/34场），客队Hamburger SV排名第13（38分/34场），主队排名领先 11 位。\n【胜负】市场高度看好主队Borussia Dortmund，主胜隐含概率 71%（赔率 1.33 / 5.5 / 8.4）。\n【让球】主队Borussia Dortmund让 1.5 球（盘口赔率 1.955 / 1.9）。\n【波胆】泊松模型推算最可能比分：2-0（14%）、1-0（12%）、3-0（11%）。\n【大小球】2.5 球盘口：大球 59% / 小球 41%（赔率 大 1.56 / 小 2.25），倾向大球。\n【进球数】总进球概率：0球 5%、1球 15%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 42%，倾向至少一方零封。\n【结论】综合赔率与消息，Borussia Dortmund不败概率更高，关注波胆 2-0 方向。",
+      "btts": 0.4078,
+      "analysis": "【排名】主队Borussia Dortmund排名第2（73分/34场），客队Hamburger SV排名第13（38分/34场），主队排名领先 11 位。\n【胜负】市场高度看好主队Borussia Dortmund，主胜隐含概率 71%（赔率 1.33 / 5.5 / 8.4）。\n【让球】主队Borussia Dortmund让 1.5 球（盘口赔率 1.955 / 1.9）。\n【波胆】泊松模型推算最可能比分：2-0（14%）、1-0（12%）、3-0（11%）。\n【大小球】2.5 球盘口：大球 59% / 小球 41%（赔率 大 1.56 / 小 2.25），倾向大球。\n【进球数】总进球概率：0球 5%、1球 15%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 41%，倾向至少一方零封。\n【结论】综合赔率与消息，Borussia Dortmund不败概率更高，关注波胆 2-0 方向。",
       "aiJudge": {
         "pick": "home",
         "score": "2-0",
-        "confidence": 0.72,
-        "reason": "主队实力和状态远胜客队，且主场优势明显，模型和赔率均强烈支持主胜。",
+        "confidence": 0.75,
+        "reason": "主队实力和状态远胜客队，欧赔和Elo均支持主胜，模型预测2-0概率最高。",
         "model": "deepseek-chat",
         "latency": 1.3
       }
@@ -6601,13 +6801,13 @@
       "awayTeam": "Werder Bremen",
       "predictedScore": "1-1",
       "expectedGoals": {
-        "home": 1.95,
-        "away": 1.05
+        "home": 1.92,
+        "away": 1.08
       },
       "probabilities": {
-        "home": 0.571,
+        "home": 0.559,
         "draw": 0.221,
-        "away": 0.208
+        "away": 0.22
       },
       "confidence": 0.599,
       "reasons": [
@@ -6633,9 +6833,9 @@
         "away": 3.55
       },
       "kelly": {
-        "home": 0.469,
+        "home": 0.412,
         "draw": -0.194,
-        "away": -0.222
+        "away": -0.181
       },
       "spreads": {
         "home": {
@@ -6649,14 +6849,14 @@
       },
       "asian": null,
       "eloProb": {
-        "home": 0.731,
+        "home": 0.701,
         "draw": 0.147,
-        "away": 0.122
+        "away": 0.152
       },
       "dcProb": {
-        "home": 0.575,
-        "draw": 0.234,
-        "away": 0.191
+        "home": 0.561,
+        "draw": 0.237,
+        "away": 0.202
       },
       "diverge": false,
       "dirs": {
@@ -6665,27 +6865,35 @@
         "market": "home"
       },
       "form": {
-        "home": 2.6,
-        "away": 1.8
+        "home": {
+          "home": 2.333,
+          "away": 3.0,
+          "overall": 2.6
+        },
+        "away": {
+          "home": 1.0,
+          "away": 3.0,
+          "overall": 1.8
+        }
       },
       "eloRatings": {
         "home": 1660.0,
         "away": 1474.0
       },
       "modelProbs": {
-        "home": 0.571,
+        "home": 0.559,
         "draw": 0.221,
-        "away": 0.208
+        "away": 0.22
       },
       "valuePicks": [
         {
           "side": "home",
           "label": "主胜",
-          "modelProb": 0.731,
+          "modelProb": 0.701,
           "oddsProb": 0.465,
-          "edge": 0.266,
+          "edge": 0.237,
           "level": "gold",
-          "modelConf": 0.584
+          "modelConf": 0.55
         }
       ],
       "reversePicks": [
@@ -6699,9 +6907,9 @@
         {
           "side": "away",
           "label": "客胜",
-          "modelProb": 0.122,
+          "modelProb": 0.152,
           "oddsProb": 0.266,
-          "edge": -0.144
+          "edge": -0.114
         }
       ],
       "signalLevel": "gold",
@@ -6710,32 +6918,32 @@
         "odds": 2.03,
         "stake": 0.05,
         "source": "value:gold",
-        "edge": 0.266
+        "edge": 0.237
       },
       "correctScores": [
         {
           "score": "1-1",
-          "prob": 0.1102
+          "prob": 0.1116
         },
         {
           "score": "2-1",
-          "prob": 0.0995
+          "prob": 0.0992
         },
         {
           "score": "2-0",
-          "prob": 0.0947
+          "prob": 0.0918
         },
         {
           "score": "1-0",
-          "prob": 0.089
+          "prob": 0.0874
         },
         {
           "score": "3-1",
-          "prob": 0.0647
+          "prob": 0.0635
         },
         {
           "score": "3-0",
-          "prob": 0.0616
+          "prob": 0.0588
         }
       ],
       "overUnder": {
@@ -6766,36 +6974,36 @@
         "3": 0.224,
         "4": 0.168,
         "5": 0.1008,
-        "6": 0.0465,
-        "7": 0.0164,
-        "8": 0.0044,
-        "9": 0.0009,
+        "6": 0.0468,
+        "7": 0.0167,
+        "8": 0.0046,
+        "9": 0.001,
         "10": 0.0001
       },
       "ouModel": {
         "line": 2.5,
-        "over": 0.561,
-        "under": 0.439,
-        "edge": 0.022,
-        "kelly": -0.024
+        "over": 0.562,
+        "under": 0.438,
+        "edge": 0.023,
+        "kelly": -0.022
       },
       "spModel": {
         "point": -0.5,
-        "cover": 0.568,
+        "cover": 0.556,
         "price": 2.0199999999999996,
         "implied": 0.495,
-        "edge": 0.073,
-        "kelly": 0.145
+        "edge": 0.061,
+        "kelly": 0.12
       },
-      "btts": 0.5473,
-      "analysis": "【排名】主队SC Freiburg排名第7（47分/34场），客队Werder Bremen排名第15（32分/34场），主队排名领先 8 位。\n【胜负】比赛悬念较大，主胜 46% / 平 27% / 客胜 27%（赔率 2.03 / 3.5 / 3.55）。\n【让球】主队SC Freiburg让 0.5 球（盘口赔率 2.0199999999999996 / 1.83）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、2-1（10%）、1-0（10%）。\n【大小球】2.5 球盘口：大球 54% / 小球 46%（赔率 大 1.75 / 小 2.05），倾向大球。\n【进球数】总进球概率：0球 5%、1球 15%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 55%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 73% vs 盘口 46%（差 +27%），值得关注。\n【结论】综合赔率与消息，SC Freiburg不败概率更高，关注波胆 1-1 方向。",
+      "btts": 0.5537,
+      "analysis": "【排名】主队SC Freiburg排名第7（47分/34场），客队Werder Bremen排名第15（32分/34场），主队排名领先 8 位。\n【胜负】比赛悬念较大，主胜 46% / 平 27% / 客胜 27%（赔率 2.03 / 3.5 / 3.55）。\n【让球】主队SC Freiburg让 0.5 球（盘口赔率 2.0199999999999996 / 1.83）。\n【波胆】泊松模型推算最可能比分：1-1（10%）、2-1（10%）、1-0（10%）。\n【大小球】2.5 球盘口：大球 54% / 小球 46%（赔率 大 1.75 / 小 2.05），倾向大球。\n【进球数】总进球概率：0球 5%、1球 15%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 55%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 70% vs 盘口 46%（差 +24%），值得关注。\n【结论】综合赔率与消息，SC Freiburg不败概率更高，关注波胆 1-1 方向。",
       "aiJudge": {
         "pick": "home",
         "score": "2-1",
-        "confidence": 0.62,
-        "reason": "主队积分排名和Elo概率占优，但客队有保级动力，模型预测平局概率不低，谨慎看好主胜。",
+        "confidence": 0.65,
+        "reason": "主队积分排名和Elo概率均占优，欧赔也倾向主胜，但平局概率不低，需谨慎。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.3
       }
     },
     {
@@ -6867,8 +7075,12 @@
         "market": "home"
       },
       "form": {
-        "home": 2.4,
-        "away": null
+        "home": {
+          "home": 3.0,
+          "away": 2.0,
+          "overall": 2.4
+        },
+        "away": {}
       },
       "eloRatings": {
         "home": 1667.0,
@@ -6975,9 +7187,9 @@
         "pick": "home",
         "score": "2-1",
         "confidence": 0.62,
-        "reason": "统计模型和Elo均看好主队，欧赔支持主胜，但平局概率不低，比分预测接近，故谨慎选择主胜。",
+        "reason": "统计模型和Elo均看好主队，欧赔主胜较低，但平局概率不低，故选择主胜但信心适中。",
         "model": "deepseek-chat",
-        "latency": 1.1
+        "latency": 1.4
       }
     },
     {
@@ -6989,9 +7201,9 @@
         "away": 1.13
       },
       "probabilities": {
-        "home": 0.518,
+        "home": 0.519,
         "draw": 0.237,
-        "away": 0.245
+        "away": 0.244
       },
       "confidence": 0.638,
       "reasons": [
@@ -7017,9 +7229,9 @@
         "away": 4.45
       },
       "kelly": {
-        "home": -0.364,
+        "home": -0.358,
         "draw": 0.013,
-        "away": 0.091
+        "away": 0.088
       },
       "spreads": {
         "home": {
@@ -7033,9 +7245,9 @@
       },
       "asian": null,
       "eloProb": {
-        "home": 0.453,
+        "home": 0.455,
         "draw": 0.252,
-        "away": 0.296
+        "away": 0.293
       },
       "dcProb": {
         "home": 0.514,
@@ -7049,26 +7261,34 @@
         "market": "home"
       },
       "form": {
-        "home": 2.0,
-        "away": 1.8
+        "home": {
+          "home": 2.0,
+          "away": 2.0,
+          "overall": 2.0
+        },
+        "away": {
+          "home": 2.0,
+          "away": 1.667,
+          "overall": 1.8
+        }
       },
       "eloRatings": {
         "home": 1499.0,
         "away": 1529.0
       },
       "modelProbs": {
-        "home": 0.518,
+        "home": 0.519,
         "draw": 0.237,
-        "away": 0.245
+        "away": 0.244
       },
       "valuePicks": [],
       "reversePicks": [
         {
           "side": "home",
           "label": "主胜",
-          "modelProb": 0.453,
+          "modelProb": 0.455,
           "oddsProb": 0.562,
-          "edge": -0.109
+          "edge": -0.107
         }
       ],
       "signalLevel": "none",
@@ -7141,9 +7361,9 @@
         "pick": "home",
         "score": "2-1",
         "confidence": 0.55,
-        "reason": "欧赔主胜1.67明显低于平局和客胜，统计模型主胜概率最高，虽平局概率不低但主队占优。",
+        "reason": "欧赔主胜较低且统计模型主胜概率最高，但Elo概率显示客队有一定竞争力，故谨慎看好主胜。",
         "model": "deepseek-chat",
-        "latency": 1.3
+        "latency": 1.9
       }
     },
     {
@@ -7215,8 +7435,12 @@
         "market": "home"
       },
       "form": {
-        "home": null,
-        "away": 0.6
+        "home": {},
+        "away": {
+          "home": 0.667,
+          "away": 0.5,
+          "overall": 0.6
+        }
       },
       "eloRatings": {
         "home": 1500.0,
@@ -7322,10 +7546,10 @@
       "aiJudge": {
         "pick": "home",
         "score": "1-0",
-        "confidence": 0.6,
-        "reason": "欧赔主胜低至1.6，统计模型主胜概率最高，虽模型比分预测1-1但波胆次高为1-0，倾向主胜小胜。",
+        "confidence": 0.55,
+        "reason": "欧赔与Elo均支持主队，但模型概率接近，平局概率不低，谨慎看好主胜。",
         "model": "deepseek-chat",
-        "latency": 1.5
+        "latency": 1.2
       }
     },
     {
@@ -7397,8 +7621,12 @@
         "market": "home"
       },
       "form": {
-        "home": null,
-        "away": 2.0
+        "home": {},
+        "away": {
+          "home": 3.0,
+          "away": 1.333,
+          "overall": 2.0
+        }
       },
       "eloRatings": {
         "home": 1500.0,
@@ -7497,9 +7725,9 @@
         "pick": "home",
         "score": "2-1",
         "confidence": 0.55,
-        "reason": "统计模型和Elo均略倾向主队，且主胜赔率较低，但平局概率不低，谨慎看好主胜。",
+        "reason": "统计模型和Elo均显示主队略占优势，且欧赔主胜赔率较低，但平局概率不低，谨慎看好主胜。",
         "model": "deepseek-chat",
-        "latency": 1.4
+        "latency": 1.2
       }
     },
     {
@@ -7511,9 +7739,9 @@
         "away": 1.1
       },
       "probabilities": {
-        "home": 0.405,
+        "home": 0.404,
         "draw": 0.279,
-        "away": 0.316
+        "away": 0.317
       },
       "confidence": 0.585,
       "reasons": [
@@ -7539,9 +7767,9 @@
         "away": 3.15
       },
       "kelly": {
-        "home": -0.164,
+        "home": -0.168,
         "draw": -0.012,
-        "away": 0.04
+        "away": 0.043
       },
       "spreads": {
         "home": {
@@ -7555,9 +7783,9 @@
       },
       "asian": null,
       "eloProb": {
-        "home": 0.37,
+        "home": 0.368,
         "draw": 0.285,
-        "away": 0.345
+        "away": 0.347
       },
       "dcProb": {
         "home": 0.399,
@@ -7571,17 +7799,25 @@
         "market": "home"
       },
       "form": {
-        "home": 1.4,
-        "away": 1.8
+        "home": {
+          "home": 0.5,
+          "away": 2.0,
+          "overall": 1.4
+        },
+        "away": {
+          "home": 2.333,
+          "away": 1.0,
+          "overall": 1.8
+        }
       },
       "eloRatings": {
         "home": 1434.0,
         "away": 1514.0
       },
       "modelProbs": {
-        "home": 0.405,
+        "home": 0.404,
         "draw": 0.279,
-        "away": 0.316
+        "away": 0.317
       },
       "valuePicks": [],
       "reversePicks": [],
@@ -7654,8 +7890,8 @@
       "aiJudge": {
         "pick": "home",
         "score": "1-0",
-        "confidence": 0.55,
-        "reason": "欧赔主胜略低且模型波胆次选为主胜，但平局概率不低，倾向主队小胜。",
+        "confidence": 0.45,
+        "reason": "欧赔主胜略低且模型波胆次选1-0，但平局概率不低，谨慎看好主队小胜。",
         "model": "deepseek-chat",
         "latency": 1.4
       }
@@ -7665,13 +7901,13 @@
       "awayTeam": "Lyon",
       "predictedScore": "1-1",
       "expectedGoals": {
-        "home": 1.22,
-        "away": 1.38
+        "home": 1.17,
+        "away": 1.43
       },
       "probabilities": {
-        "home": 0.329,
+        "home": 0.309,
         "draw": 0.263,
-        "away": 0.408
+        "away": 0.428
       },
       "confidence": 0.599,
       "reasons": [
@@ -7697,9 +7933,9 @@
         "away": 2.02
       },
       "kelly": {
-        "home": 0.163,
+        "home": 0.092,
         "draw": -0.007,
-        "away": -0.345
+        "away": -0.246
       },
       "spreads": {
         "home": {
@@ -7713,86 +7949,70 @@
       },
       "asian": null,
       "eloProb": {
-        "home": 0.409,
+        "home": 0.359,
         "draw": 0.27,
-        "away": 0.321
+        "away": 0.371
       },
       "dcProb": {
-        "home": 0.322,
-        "draw": 0.283,
-        "away": 0.395
+        "home": 0.299,
+        "draw": 0.281,
+        "away": 0.42
       },
-      "diverge": true,
+      "diverge": false,
       "dirs": {
-        "elo": "home",
+        "elo": "away",
         "dc": "away",
         "market": "away"
       },
       "form": {
-        "home": 2.0,
-        "away": 2.0
+        "home": {
+          "home": 0.5,
+          "away": 3.0,
+          "overall": 2.0
+        },
+        "away": {
+          "home": 1.333,
+          "away": 3.0,
+          "overall": 2.0
+        }
       },
       "eloRatings": {
         "home": 1443.0,
         "away": 1501.0
       },
       "modelProbs": {
-        "home": 0.329,
+        "home": 0.309,
         "draw": 0.263,
-        "away": 0.408
+        "away": 0.428
       },
-      "valuePicks": [
-        {
-          "side": "home",
-          "label": "主胜",
-          "modelProb": 0.409,
-          "oddsProb": 0.276,
-          "edge": 0.133,
-          "level": "watch",
-          "modelConf": 0.088
-        }
-      ],
-      "reversePicks": [
-        {
-          "side": "away",
-          "label": "客胜",
-          "modelProb": 0.321,
-          "oddsProb": 0.465,
-          "edge": -0.144
-        }
-      ],
-      "signalLevel": "watch",
-      "betRec": {
-        "side": "home",
-        "odds": 3.4,
-        "stake": 0.05,
-        "source": "value:watch",
-        "edge": 0.133
-      },
+      "valuePicks": [],
+      "reversePicks": [],
+      "signalLevel": "none",
+      "betRec": null,
       "correctScores": [
         {
           "score": "1-1",
-          "prob": 0.1351
+          "prob": 0.1342
         },
         {
           "score": "0-1",
-          "prob": 0.0924
+          "prob": 0.0963
         },
         {
           "score": "1-2",
-          "prob": 0.0862
+          "prob": 0.0889
         },
         {
           "score": "0-0",
-          "prob": 0.0843
+          "prob": 0.0842
         },
         {
           "score": "1-0",
-          "prob": 0.0808
+          "prob": 0.077
         },
         {
-          "score": "2-1",
-          "prob": 0.0764
+          "score": "0-2",
+          "prob": 0.076
         }
       ],
       "overUnder": {
@@ -7810,8 +8030,8 @@
         "3": 0.2176,
         "4": 0.1414,
         "5": 0.0735,
-        "6": 0.0308,
-        "7": 0.0103,
+        "6": 0.0307,
+        "7": 0.0102,
         "8": 0.0027,
         "9": 0.0005,
         "10": 0.0001
@@ -7825,21 +8045,21 @@
       },
       "spModel": {
         "point": 0.0,
-        "cover": 0.462,
+        "cover": 0.438,
         "price": 2.62,
         "implied": 0.382,
-        "edge": 0.08,
-        "kelly": 0.13
+        "edge": 0.056,
+        "kelly": 0.091
       },
-      "btts": 0.5242,
-      "analysis": "【胜负】比赛悬念较大，主胜 28% / 平 26% / 客胜 47%（赔率 3.4 / 3.64 / 2.02）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 2.62 / 1.58）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、0-1（10%）、1-0（9%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%（赔率 大 1.72 / 小 2.1），倾向大球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 52%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 41% vs 盘口 28%（差 +13%），值得关注。\n【结论】综合赔率与消息，Lyon不败概率更高，关注波胆 1-1 方向。",
+      "btts": 0.5212,
+      "analysis": "【胜负】比赛悬念较大，主胜 28% / 平 26% / 客胜 47%（赔率 3.4 / 3.64 / 2.02）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 2.62 / 1.58）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、0-1（11%）、1-2（9%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%（赔率 大 1.72 / 小 2.1），倾向大球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 52%，倾向至少一方零封。\n【结论】综合赔率与消息，Lyon不败概率更高，关注波胆 1-1 方向。",
       "aiJudge": {
         "pick": "away",
         "score": "1-2",
-        "confidence": 0.55,
-        "reason": "客胜概率最高且欧赔支持客队，但模型分歧较大，信心有限。",
+        "confidence": 0.578,
+        "reason": "客胜概率最高且欧赔支持，但平局概率不低，谨慎看好里昂小胜。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 2.4
       }
     },
     {
@@ -7911,8 +8131,12 @@
         "market": "away"
       },
       "form": {
-        "home": null,
-        "away": 1.2
+        "home": {},
+        "away": {
+          "home": 1.5,
+          "away": 1.0,
+          "overall": 1.2
+        }
       },
       "eloRatings": {
         "home": 1500.0,
@@ -8011,9 +8235,9 @@
         "pick": "home",
         "score": "1-1",
         "confidence": 0.5,
-        "reason": "统计模型和Elo均显示主队略占优势，但欧赔客胜较低，平局概率较高，无明显倾向。",
+        "reason": "统计模型和Elo均显示主队略占优势，但欧赔客胜较低，无明显倾向，选择平局。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.6
       }
     },
     {
@@ -8021,13 +8245,13 @@
       "awayTeam": "Lille",
       "predictedScore": "1-1",
       "expectedGoals": {
-        "home": 1.04,
-        "away": 1.56
+        "home": 1.0,
+        "away": 1.5
       },
       "probabilities": {
-        "home": 0.254,
+        "home": 0.258,
         "draw": 0.259,
-        "away": 0.488
+        "away": 0.483
       },
       "confidence": 0.637,
       "reasons": [
@@ -8053,9 +8277,9 @@
         "away": 1.68
       },
       "kelly": {
-        "home": 0.185,
+        "home": 0.2,
         "draw": 0.005,
-        "away": -0.531
+        "away": -0.561
       },
       "spreads": {
         "home": {
@@ -8069,14 +8293,14 @@
       },
       "asian": null,
       "eloProb": {
-        "home": 0.349,
+        "home": 0.361,
         "draw": 0.27,
-        "away": 0.38
+        "away": 0.368
       },
       "dcProb": {
-        "home": 0.243,
-        "draw": 0.273,
-        "away": 0.484
+        "home": 0.242,
+        "draw": 0.28,
+        "away": 0.478
       },
       "diverge": false,
       "dirs": {
@@ -8085,36 +8309,44 @@
         "market": "away"
       },
       "form": {
-        "home": 2.4,
-        "away": 1.0
+        "home": {
+          "home": 2.0,
+          "away": 3.0,
+          "overall": 2.4
+        },
+        "away": {
+          "home": 1.667,
+          "away": 0.0,
+          "overall": 1.0
+        }
       },
       "eloRatings": {
         "home": 1450.0,
         "away": 1591.0
       },
       "modelProbs": {
-        "home": 0.254,
+        "home": 0.258,
         "draw": 0.259,
-        "away": 0.488
+        "away": 0.483
       },
       "valuePicks": [
         {
           "side": "home",
           "label": "主胜",
-          "modelProb": 0.349,
+          "modelProb": 0.361,
           "oddsProb": 0.19,
-          "edge": 0.159,
+          "edge": 0.171,
           "level": "watch",
-          "modelConf": 0.031
+          "modelConf": 0.007
         }
       ],
       "reversePicks": [
         {
           "side": "away",
           "label": "客胜",
-          "modelProb": 0.38,
+          "modelProb": 0.368,
           "oddsProb": 0.559,
-          "edge": -0.179
+          "edge": -0.191
         }
       ],
       "signalLevel": "watch",
@@ -8123,32 +8355,32 @@
         "odds": 4.95,
         "stake": 0.05,
         "source": "value:watch",
-        "edge": 0.159
+        "edge": 0.171
       },
       "correctScores": [
         {
           "score": "1-1",
-          "prob": 0.1302
+          "prob": 0.133
         },
         {
           "score": "0-1",
-          "prob": 0.1063
-        },
-        {
-          "score": "1-2",
-          "prob": 0.094
+          "prob": 0.1133
         },
         {
           "score": "0-2",
-          "prob": 0.0904
+          "prob": 0.0924
+        },
+        {
+          "score": "1-2",
+          "prob": 0.0924
         },
         {
           "score": "0-0",
-          "prob": 0.0839
+          "prob": 0.092
         },
         {
           "score": "1-0",
-          "prob": 0.0676
+          "prob": 0.0722
         }
       ],
       "overUnder": {
@@ -8160,40 +8392,40 @@
       },
       "standings": null,
       "totalGoalsDist": {
-        "0": 0.0743,
-        "1": 0.1931,
-        "2": 0.251,
-        "3": 0.2176,
-        "4": 0.1414,
-        "5": 0.0735,
-        "6": 0.0302,
-        "7": 0.0097,
-        "8": 0.0024,
-        "9": 0.0005,
-        "10": 0.0001
+        "0": 0.0821,
+        "1": 0.2052,
+        "2": 0.2565,
+        "3": 0.2138,
+        "4": 0.1336,
+        "5": 0.0668,
+        "6": 0.0264,
+        "7": 0.0082,
+        "8": 0.002,
+        "9": 0.0004,
+        "10": 0.0
       },
       "ouModel": {
         "line": 2.5,
-        "over": 0.475,
-        "under": 0.525,
-        "edge": -0.013,
-        "kelly": -0.084
+        "over": 0.451,
+        "under": 0.549,
+        "edge": -0.037,
+        "kelly": -0.133
       },
       "spModel": {
         "point": 1.5,
-        "cover": 0.745,
+        "cover": 0.753,
         "price": 1.4,
         "implied": 0.714,
-        "edge": 0.031,
-        "kelly": 0.106
+        "edge": 0.039,
+        "kelly": 0.136
       },
-      "btts": 0.5066,
-      "analysis": "【胜负】市场明显看好客队Lille，客胜隐含概率 56%（赔率 4.95 / 3.75 / 1.68）。\n【让球】客队Lille让 1.5 球（盘口赔率 1.4 / 3.35）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、0-1（12%）、1-2（9%）。\n【大小球】2.5 球盘口：大球 49% / 小球 51%（赔率 大 1.94 / 小 1.85），倾向小球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 51%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 35% vs 盘口 19%（差 +16%），值得关注。\n【结论】综合赔率与消息，Lille不败概率更高，关注波胆 1-1 方向。",
+      "btts": 0.4878,
+      "analysis": "【胜负】市场明显看好客队Lille，客胜隐含概率 56%（赔率 4.95 / 3.75 / 1.68）。\n【让球】客队Lille让 1.5 球（盘口赔率 1.4 / 3.35）。\n【波胆】泊松模型推算最可能比分：0-1（12%）、1-1（12%）、0-2（9%）。\n【大小球】2.5 球盘口：大球 49% / 小球 51%（赔率 大 1.94 / 小 1.85），倾向小球。\n【进球数】总进球概率：0球 8%、1球 21%、2球 26%、3球 21%、4球 13%。\n【双方进球】双方都进球概率 49%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 36% vs 盘口 19%（差 +17%），值得关注。\n【结论】综合赔率与消息，Lille不败概率更高，关注波胆 0-1 方向。",
       "aiJudge": {
         "pick": "away",
         "score": "0-2",
         "confidence": 0.62,
-        "reason": "客队胜率显著占优，欧赔与统计模型均支持客胜，但Elo概率接近，故适度调整。",
+        "reason": "客队胜率显著占优且欧赔支持，但平局概率不低，需谨慎。",
         "model": "deepseek-chat",
         "latency": 1.4
       }
@@ -8267,8 +8499,12 @@
         "market": "away"
       },
       "form": {
-        "home": 2.4,
-        "away": null
+        "home": {
+          "home": 2.0,
+          "away": 3.0,
+          "overall": 2.4
+        },
+        "away": {}
       },
       "eloRatings": {
         "home": 1477.0,
@@ -8375,9 +8611,9 @@
         "pick": "away",
         "score": "1-2",
         "confidence": 0.55,
-        "reason": "客队胜率在统计模型和欧赔中均占优，但Elo概率偏向主队，综合后谨慎看好客胜。",
+        "reason": "客队胜率与欧赔均占优，但主队有抢分可能，故谨慎选择客胜。",
         "model": "deepseek-chat",
-        "latency": 1.4
+        "latency": 1.3
       }
     },
     {
@@ -8385,13 +8621,13 @@
       "awayTeam": "Rennes",
       "predictedScore": "1-1",
       "expectedGoals": {
-        "home": 2.11,
-        "away": 1.09
+        "home": 2.08,
+        "away": 1.02
       },
       "probabilities": {
-        "home": 0.593,
+        "home": 0.604,
         "draw": 0.207,
-        "away": 0.2
+        "away": 0.189
       },
       "confidence": 0.683,
       "reasons": [
@@ -8417,9 +8653,9 @@
         "away": 6.5
       },
       "kelly": {
-        "home": -0.855,
+        "home": -0.757,
         "draw": 0.071,
-        "away": 0.152
+        "away": 0.119
       },
       "spreads": {
         "home": {
@@ -8433,14 +8669,14 @@
       },
       "asian": null,
       "eloProb": {
-        "home": 0.47,
+        "home": 0.498,
         "draw": 0.248,
-        "away": 0.282
+        "away": 0.254
       },
       "dcProb": {
-        "home": 0.6,
-        "draw": 0.22,
-        "away": 0.18
+        "home": 0.608,
+        "draw": 0.221,
+        "away": 0.171
       },
       "diverge": false,
       "dirs": {
@@ -8449,36 +8685,44 @@
         "market": "home"
       },
       "form": {
-        "home": 1.8,
-        "away": 1.2
+        "home": {
+          "home": 2.0,
+          "away": 1.5,
+          "overall": 1.8
+        },
+        "away": {
+          "home": 2.0,
+          "away": 0.0,
+          "overall": 1.2
+        }
       },
       "eloRatings": {
         "home": 1566.0,
         "away": 1589.0
       },
       "modelProbs": {
-        "home": 0.593,
+        "home": 0.604,
         "draw": 0.207,
-        "away": 0.2
+        "away": 0.189
       },
       "valuePicks": [
         {
           "side": "away",
           "label": "客胜",
-          "modelProb": 0.282,
+          "modelProb": 0.254,
           "oddsProb": 0.145,
-          "edge": 0.137,
+          "edge": 0.109,
           "level": "watch",
-          "modelConf": 0.188
+          "modelConf": 0.244
         }
       ],
       "reversePicks": [
         {
           "side": "home",
           "label": "主胜",
-          "modelProb": 0.47,
+          "modelProb": 0.498,
           "oddsProb": 0.675,
-          "edge": -0.205
+          "edge": -0.177
         }
       ],
       "signalLevel": "watch",
@@ -8487,32 +8731,32 @@
         "odds": 6.5,
         "stake": 0.05,
         "source": "value:watch",
-        "edge": 0.137
+        "edge": 0.109
       },
       "correctScores": [
         {
           "score": "1-1",
-          "prob": 0.1013
+          "prob": 0.1035
         },
         {
           "score": "2-1",
-          "prob": 0.0991
+          "prob": 0.0995
         },
         {
           "score": "2-0",
-          "prob": 0.0911
+          "prob": 0.0973
         },
         {
           "score": "1-0",
-          "prob": 0.0787
+          "prob": 0.086
         },
         {
           "score": "3-1",
-          "prob": 0.0697
+          "prob": 0.0689
         },
         {
           "score": "3-0",
-          "prob": 0.0641
+          "prob": 0.0674
         }
       ],
       "overUnder": {
@@ -8524,42 +8768,42 @@
       },
       "standings": null,
       "totalGoalsDist": {
-        "0": 0.0408,
-        "1": 0.1304,
-        "2": 0.2087,
-        "3": 0.2226,
-        "4": 0.1781,
-        "5": 0.114,
-        "6": 0.0557,
-        "7": 0.0206,
-        "8": 0.0059,
-        "9": 0.0013,
-        "10": 0.0002
+        "0": 0.045,
+        "1": 0.1397,
+        "2": 0.2165,
+        "3": 0.2237,
+        "4": 0.1733,
+        "5": 0.1075,
+        "6": 0.0504,
+        "7": 0.0178,
+        "8": 0.0048,
+        "9": 0.001,
+        "10": 0.0001
       },
       "ouModel": {
         "line": 2.5,
-        "over": 0.598,
-        "under": 0.402,
-        "edge": 0.113,
-        "kelly": 0.175
+        "over": 0.579,
+        "under": 0.421,
+        "edge": 0.094,
+        "kelly": 0.136
       },
       "spModel": {
         "point": -1.5,
-        "cover": 0.356,
+        "cover": 0.362,
         "price": 2.08,
         "implied": 0.481,
-        "edge": -0.125,
-        "kelly": -0.239
+        "edge": -0.119,
+        "kelly": -0.229
       },
-      "btts": 0.5682,
-      "analysis": "【胜负】市场高度看好主队Paris Saint Germain，主胜隐含概率 67%（赔率 1.4 / 5.25 / 6.5）。\n【让球】主队Paris Saint Germain让 1.5 球（盘口赔率 2.08 / 1.83）。\n【波胆】泊松模型推算最可能比分：2-1（10%）、1-1（9%）、2-0（9%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%（赔率 大 1.95 / 小 1.84），倾向小球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 57%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 28% vs 盘口 14%（差 +14%），值得关注。\n【结论】综合赔率与消息，Paris Saint Germain不败概率更高，关注波胆 2-1 方向。",
+      "btts": 0.5472,
+      "analysis": "【胜负】市场高度看好主队Paris Saint Germain，主胜隐含概率 67%（赔率 1.4 / 5.25 / 6.5）。\n【让球】主队Paris Saint Germain让 1.5 球（盘口赔率 2.08 / 1.83）。\n【波胆】泊松模型推算最可能比分：2-1（10%）、2-0（10%）、1-1（10%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%（赔率 大 1.95 / 小 1.84），倾向小球。\n【进球数】总进球概率：0球 4%、1球 14%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 55%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 25% vs 盘口 14%（差 +11%），值得关注。\n【结论】综合赔率与消息，Paris Saint Germain不败概率更高，关注波胆 2-1 方向。",
       "aiJudge": {
         "pick": "home",
         "score": "2-1",
         "confidence": 0.65,
-        "reason": "统计模型和欧赔均看好主胜，但Elo概率显示客队有一定竞争力，比分预测接近，故谨慎选择主胜。",
+        "reason": "主队胜率显著占优且欧赔支持，但平局概率不低，谨慎看好小胜。",
         "model": "deepseek-chat",
-        "latency": 1.3
+        "latency": 1.6
       }
     },
     {
@@ -8634,8 +8878,12 @@
         "market": "home"
       },
       "form": {
-        "home": 1.4,
-        "away": null
+        "home": {
+          "home": 3.0,
+          "away": 0.333,
+          "overall": 1.4
+        },
+        "away": {}
       },
       "eloRatings": {
         "home": 1817.0,
@@ -8720,7 +8968,7 @@
         "confidence": 0.82,
         "reason": "主队胜率极高，欧赔和Elo均支持主胜，比分预测2-0为最可能结果。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.3
       }
     },
     {
@@ -8795,8 +9043,12 @@
         "market": "away"
       },
       "form": {
-        "home": null,
-        "away": 2.0
+        "home": {},
+        "away": {
+          "home": 3.0,
+          "away": 1.333,
+          "overall": 2.0
+        }
       },
       "eloRatings": {
         "home": 1500.0,
@@ -8881,7 +9133,7 @@
         "confidence": 0.64,
         "reason": "客队胜率显著占优，模型与欧赔一致支持客胜。",
         "model": "deepseek-chat",
-        "latency": 1.3
+        "latency": 1.2
       }
     },
     {
@@ -8893,9 +9145,9 @@
         "away": 1.09
       },
       "probabilities": {
-        "home": 0.462,
+        "home": 0.467,
         "draw": 0.26,
-        "away": 0.278
+        "away": 0.273
       },
       "confidence": 0.59,
       "reasons": [
@@ -8921,9 +9173,9 @@
         "away": 3.4
       },
       "kelly": {
-        "home": 0.043,
+        "home": 0.069,
         "draw": -0.088,
-        "away": -0.023
+        "away": -0.043
       },
       "spreads": {
         "home": {
@@ -8940,9 +9192,9 @@
         "away": null
       },
       "eloProb": {
-        "home": 0.49,
+        "home": 0.504,
         "draw": 0.232,
-        "away": 0.278
+        "away": 0.264
       },
       "dcProb": {
         "home": 0.458,
@@ -8956,17 +9208,25 @@
         "market": "home"
       },
       "form": {
-        "home": 1.8,
-        "away": 2.0
+        "home": {
+          "home": 2.0,
+          "away": 1.5,
+          "overall": 1.8
+        },
+        "away": {
+          "home": 2.333,
+          "away": 1.5,
+          "overall": 2.0
+        }
       },
       "eloRatings": {
         "home": 1599.0,
         "away": 1596.0
       },
       "modelProbs": {
-        "home": 0.462,
+        "home": 0.467,
         "draw": 0.26,
-        "away": 0.278
+        "away": 0.273
       },
       "valuePicks": [],
       "reversePicks": [],
@@ -9053,7 +9313,7 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队积分和状态略优，且模型和赔率均倾向主胜，但平局概率不低，故谨慎选择。",
+        "reason": "主队积分和状态略优，且模型概率和Elo均倾向主队，但平局概率不低，故谨慎选择主胜。",
         "model": "deepseek-chat",
         "latency": 1.4
       }
@@ -9130,8 +9390,12 @@
         "market": "away"
       },
       "form": {
-        "home": null,
-        "away": 0.2
+        "home": {},
+        "away": {
+          "home": 0.0,
+          "away": 0.333,
+          "overall": 0.2
+        }
       },
       "eloRatings": {
         "home": 1500.0,
@@ -9230,9 +9494,9 @@
         "pick": "away",
         "score": "0-1",
         "confidence": 0.55,
-        "reason": "客队胜率在统计和Elo中均占优，欧赔也略倾向客队，但平局概率不低，故谨慎选择客胜。",
+        "reason": "客队胜率在统计模型和Elo中均占优，欧赔客胜略低，但平局概率不低，谨慎选择客胜。",
         "model": "deepseek-chat",
-        "latency": 1.4
+        "latency": 1.3
       }
     },
     {
@@ -9319,8 +9583,12 @@
         "market": "home"
       },
       "form": {
-        "home": 1.0,
-        "away": null
+        "home": {
+          "home": 0.5,
+          "away": 1.333,
+          "overall": 1.0
+        },
+        "away": {}
       },
       "eloRatings": {
         "home": 1619.0,
@@ -9416,9 +9684,9 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队主场优势且Elo概率略高，但平局概率不低，谨慎看好小胜。",
+        "reason": "主队主场优势且欧赔略低，模型概率主胜最高，但平局概率不低，谨慎看好小胜。",
         "model": "deepseek-chat",
-        "latency": 1.3
+        "latency": 1.4
       }
     },
     {
@@ -9493,8 +9761,12 @@
         "market": "home"
       },
       "form": {
-        "home": 0.6,
-        "away": null
+        "home": {
+          "home": 0.5,
+          "away": 0.667,
+          "overall": 0.6
+        },
+        "away": {}
       },
       "eloRatings": {
         "home": 1643.0,
@@ -9614,9 +9886,9 @@
         "pick": "home",
         "score": "2-1",
         "confidence": 0.55,
-        "reason": "主队积分和Elo概率占优，且模型波胆次选为2-1，但客队有保级动力，需谨慎。",
+        "reason": "主队积分和Elo概率占优，且模型波胆次选为2-1，但客队有保级动力，谨慎看好主胜。",
         "model": "deepseek-chat",
-        "latency": 1.6
+        "latency": 1.3
       }
     },
     {
@@ -9691,8 +9963,12 @@
         "market": "home"
       },
       "form": {
-        "home": null,
-        "away": 2.0
+        "home": {},
+        "away": {
+          "home": 1.333,
+          "away": 3.0,
+          "overall": 2.0
+        }
       },
       "eloRatings": {
         "home": 1500.0,
@@ -9799,7 +10075,7 @@
         "pick": "away",
         "score": "1-2",
         "confidence": 0.529,
-        "reason": "客队Elo概率和统计模型均略占优，且欧赔客胜较低，但差距不大，谨慎选择客胜。",
+        "reason": "客队胜率在统计模型和Elo中均占优，欧赔客胜略低，但平局概率不低，谨慎看好客胜。",
         "model": "deepseek-chat",
         "latency": 1.1
       }
@@ -9807,15 +10083,15 @@
     {
       "homeTeam": "Manchester City",
       "awayTeam": "Bournemouth",
-      "predictedScore": "2-1",
+      "predictedScore": "2-0",
       "expectedGoals": {
-        "home": 2.28,
-        "away": 1.02
+        "home": 2.24,
+        "away": 0.96
       },
       "probabilities": {
-        "home": 0.633,
+        "home": 0.641,
         "draw": 0.191,
-        "away": 0.177
+        "away": 0.169
       },
       "confidence": 0.676,
       "reasons": [
@@ -9841,9 +10117,9 @@
         "away": 6.2
       },
       "kelly": {
-        "home": -0.326,
+        "home": -0.261,
         "draw": -0.01,
-        "away": 0.062
+        "away": 0.038
       },
       "spreads": {
         "home": {
@@ -9860,14 +10136,14 @@
         "away": null
       },
       "eloProb": {
-        "home": 0.595,
+        "home": 0.615,
         "draw": 0.192,
-        "away": 0.213
+        "away": 0.193
       },
       "dcProb": {
-        "home": 0.648,
-        "draw": 0.202,
-        "away": 0.15
+        "home": 0.655,
+        "draw": 0.203,
+        "away": 0.141
       },
       "diverge": false,
       "dirs": {
@@ -9876,17 +10152,25 @@
         "market": "home"
       },
       "form": {
-        "home": 1.0,
-        "away": 1.0
+        "home": {
+          "home": 2.0,
+          "away": 0.333,
+          "overall": 1.0
+        },
+        "away": {
+          "home": 1.0,
+          "away": 1.0,
+          "overall": 1.0
+        }
       },
       "eloRatings": {
         "home": 1823.0,
         "away": 1744.0
       },
       "modelProbs": {
-        "home": 0.633,
+        "home": 0.641,
         "draw": 0.191,
-        "away": 0.177
+        "away": 0.169
       },
       "valuePicks": [],
       "reversePicks": [],
@@ -9894,28 +10178,28 @@
       "betRec": null,
       "correctScores": [
         {
-          "score": "2-1",
-          "prob": 0.0981
+          "score": "2-0",
+          "prob": 0.1025
         },
         {
-          "score": "2-0",
-          "prob": 0.0958
+          "score": "2-1",
+          "prob": 0.0984
         },
         {
           "score": "1-1",
-          "prob": 0.093
+          "prob": 0.0949
         },
         {
           "score": "1-0",
-          "prob": 0.0773
-        },
-        {
-          "score": "3-1",
-          "prob": 0.0744
+          "prob": 0.0845
         },
         {
           "score": "3-0",
-          "prob": 0.0727
+          "prob": 0.0765
+        },
+        {
+          "score": "3-1",
+          "prob": 0.0735
         }
       ],
       "overUnder": {
@@ -9940,42 +10224,42 @@
         }
       },
       "totalGoalsDist": {
-        "0": 0.0369,
-        "1": 0.1217,
-        "2": 0.2008,
-        "3": 0.2209,
-        "4": 0.1823,
-        "5": 0.1203,
-        "6": 0.059,
-        "7": 0.0214,
-        "8": 0.0059,
-        "9": 0.0012,
-        "10": 0.0002
+        "0": 0.0408,
+        "1": 0.1304,
+        "2": 0.2087,
+        "3": 0.2226,
+        "4": 0.1781,
+        "5": 0.114,
+        "6": 0.0536,
+        "7": 0.0185,
+        "8": 0.0049,
+        "9": 0.001,
+        "10": 0.0001
       },
       "ouModel": {
         "line": 2.5,
-        "over": 0.611,
-        "under": 0.389,
-        "edge": 0.134,
-        "kelly": 0.206
+        "over": 0.593,
+        "under": 0.407,
+        "edge": 0.116,
+        "kelly": 0.169
       },
       "spModel": {
         "point": -1.5,
-        "cover": 0.399,
+        "cover": 0.405,
         "price": 2.2,
         "implied": 0.455,
-        "edge": -0.056,
-        "kelly": -0.102
+        "edge": -0.05,
+        "kelly": -0.091
       },
-      "btts": 0.5558,
-      "analysis": "【排名】主队Manchester City排名第2（78分/38场），客队Bournemouth排名第6（57分/38场），主队排名领先 4 位。\n【胜负】市场高度看好主队Manchester City，主胜隐含概率 66%（赔率 1.44 / 5.0 / 6.2）。\n【让球】主队Manchester City让 1.5 球（盘口赔率 2.2 / 1.73）。\n【波胆】泊松模型推算最可能比分：2-1（10%）、2-0（10%）、1-1（9%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%（赔率 大 1.96 / 小 1.79），倾向小球。\n【进球数】总进球概率：0球 4%、1球 12%、2球 20%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 56%，倾向双方有球。\n【结论】综合赔率与消息，Manchester City不败概率更高，关注波胆 2-1 方向。",
+      "btts": 0.5344,
+      "analysis": "【排名】主队Manchester City排名第2（78分/38场），客队Bournemouth排名第6（57分/38场），主队排名领先 4 位。\n【胜负】市场高度看好主队Manchester City，主胜隐含概率 66%（赔率 1.44 / 5.0 / 6.2）。\n【让球】主队Manchester City让 1.5 球（盘口赔率 2.2 / 1.73）。\n【波胆】泊松模型推算最可能比分：2-0（10%）、2-1（10%）、1-0（9%）。\n【大小球】2.5 球盘口：大球 48% / 小球 52%（赔率 大 1.96 / 小 1.79），倾向小球。\n【进球数】总进球概率：0球 4%、1球 13%、2球 21%、3球 22%、4球 18%。\n【双方进球】双方都进球概率 53%，倾向至少一方零封。\n【结论】综合赔率与消息，Manchester City不败概率更高，关注波胆 2-0 方向。",
       "aiJudge": {
         "pick": "home",
-        "score": "2-1",
-        "confidence": 0.65,
-        "reason": "主队实力和状态占优，但客队有一定韧性，预测小胜。",
+        "score": "2-0",
+        "confidence": 0.75,
+        "reason": "主队实力和状态占优，模型与赔率均支持主胜，但客队有一定防守能力，比分预测2-0。",
         "model": "deepseek-chat",
-        "latency": 1.5
+        "latency": 1.7
       }
     },
     {
@@ -9987,9 +10271,9 @@
         "away": 1.38
       },
       "probabilities": {
-        "home": 0.311,
+        "home": 0.308,
         "draw": 0.268,
-        "away": 0.421
+        "away": 0.424
       },
       "confidence": 0.598,
       "reasons": [
@@ -10015,9 +10299,9 @@
         "away": 2.05
       },
       "kelly": {
-        "home": 0.048,
+        "home": 0.037,
         "draw": 0.05,
-        "away": -0.249
+        "away": -0.233
       },
       "spreads": {
         "home": {
@@ -10034,9 +10318,9 @@
         "away": null
       },
       "eloProb": {
-        "home": 0.341,
+        "home": 0.333,
         "draw": 0.298,
-        "away": 0.36
+        "away": 0.368
       },
       "dcProb": {
         "home": 0.297,
@@ -10050,28 +10334,28 @@
         "market": "away"
       },
       "form": {
-        "home": 1.2,
-        "away": 1.8
+        "home": {
+          "home": 1.0,
+          "away": 1.5,
+          "overall": 1.2
+        },
+        "away": {
+          "home": 1.5,
+          "away": 2.0,
+          "overall": 1.8
+        }
       },
       "eloRatings": {
         "home": 1601.0,
         "away": 1699.0
       },
       "modelProbs": {
-        "home": 0.311,
+        "home": 0.308,
         "draw": 0.268,
-        "away": 0.421
+        "away": 0.424
       },
       "valuePicks": [],
-      "reversePicks": [
-        {
-          "side": "away",
-          "label": "客胜",
-          "modelProb": 0.36,
-          "oddsProb": 0.462,
-          "edge": -0.101
-        }
-      ],
+      "reversePicks": [],
       "signalLevel": "none",
       "betRec": null,
       "correctScores": [
@@ -10155,9 +10439,9 @@
         "pick": "away",
         "score": "0-1",
         "confidence": 0.55,
-        "reason": "客队实力和状态占优，欧赔与统计模型均倾向客胜，但平局概率不低，需谨慎。",
+        "reason": "客队实力和状态占优，欧赔与统计模型均倾向客胜，但平局概率不低，谨慎看好。",
         "model": "deepseek-chat",
-        "latency": 1.5
+        "latency": 1.2
       }
     },
     {
@@ -10169,9 +10453,9 @@
         "away": 1.55
       },
       "probabilities": {
-        "home": 0.422,
+        "home": 0.423,
         "draw": 0.232,
-        "away": 0.346
+        "away": 0.345
       },
       "confidence": 0.589,
       "reasons": [
@@ -10197,9 +10481,9 @@
         "away": 2.15
       },
       "kelly": {
-        "home": 0.414,
+        "home": 0.417,
         "draw": -0.112,
-        "away": -0.485
+        "away": -0.489
       },
       "spreads": {
         "home": {
@@ -10216,9 +10500,9 @@
         "away": null
       },
       "eloProb": {
-        "home": 0.602,
+        "home": 0.604,
         "draw": 0.193,
-        "away": 0.206
+        "away": 0.204
       },
       "dcProb": {
         "home": 0.419,
@@ -10232,36 +10516,44 @@
         "market": "away"
       },
       "form": {
-        "home": 1.4,
-        "away": 1.0
+        "home": {
+          "home": 2.0,
+          "away": 0.5,
+          "overall": 1.4
+        },
+        "away": {
+          "home": 0.667,
+          "away": 1.5,
+          "overall": 1.0
+        }
       },
       "eloRatings": {
         "home": 1662.0,
         "away": 1584.0
       },
       "modelProbs": {
-        "home": 0.422,
+        "home": 0.423,
         "draw": 0.232,
-        "away": 0.346
+        "away": 0.345
       },
       "valuePicks": [
         {
           "side": "home",
           "label": "主胜",
-          "modelProb": 0.602,
+          "modelProb": 0.604,
           "oddsProb": 0.302,
-          "edge": 0.299,
+          "edge": 0.301,
           "level": "gold",
-          "modelConf": 0.396
+          "modelConf": 0.4
         }
       ],
       "reversePicks": [
         {
           "side": "away",
           "label": "客胜",
-          "modelProb": 0.206,
+          "modelProb": 0.204,
           "oddsProb": 0.439,
-          "edge": -0.233
+          "edge": -0.235
         }
       ],
       "signalLevel": "gold",
@@ -10270,7 +10562,7 @@
         "odds": 3.12,
         "stake": 0.05,
         "source": "value:gold",
-        "edge": 0.299
+        "edge": 0.301
       },
       "correctScores": [
         {
@@ -10353,9 +10645,9 @@
         "pick": "none",
         "score": "1-1",
         "confidence": 0.5,
-        "reason": "数据矛盾，主客胜概率接近，无显著倾向。",
+        "reason": "两队积分相同且排名接近，统计模型与Elo概率分歧明显，无明显倾向。",
         "model": "deepseek-chat",
-        "latency": 1.2
+        "latency": 1.4
       }
     }
   ],
@@ -10407,6 +10699,6 @@
         "avgConf": 0
       }
     },
-    "updatedAt": "2026-08-12T03:49:16Z"
+    "updatedAt": "2026-08-12T03:52:24Z"
   }
 }
