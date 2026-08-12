@@ -1,7 +1,18 @@
 {
-  "generatedAt": "2026-08-12T15:23:33Z",
+  "generatedAt": "2026-08-12T15:30:58Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Pre-season: Newcastle vs Everton team news LIVE!",
+      "timestamp": "Tue, 11 Aug 2026 12:48:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/newcastle-united-vs-everton/live/568648",
+        "lang": "en",
+        "summary": ""
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -209,17 +220,6 @@
         "link": "https://www.skysports.com/nfl/news/12040/13572096/nfl-new-york-jets-cornerback-qwantez-stiggers-taking-to-hospital-after-collapsing-in-joint-practice-with-tampa-bay-buccaneers",
         "lang": "en",
         "summary": "New York Jets cornerback Qwan'tez Stiggers was taken to a hospital by ambulance after he briefly lost consciousness during a joint practice with the Tampa Bay Buccaneers on Tuesday."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "NRL legend Cherry-Evans reportedly in advanced talks to sign for Hull FC",
-      "timestamp": "Wed, 12 Aug 2026 10:23:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/rugby-league/news/12040/13572194/daly-cherry-evans-former-kangaroos-half-back-reportedly-in-advanced-talks-to-sign-for-hull-fc-for-2027-super-league-season",
-        "lang": "en",
-        "summary": "Daly Cherry-Evans is reportedly in advanced talks to sign for Hull FC in what would be a shock switch to Super League for the 2027 season. "
       }
     }
   ]
