@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T06:16:41Z",
+  "generatedAt": "2026-08-12T06:33:43Z",
   "total": 20,
   "messages": [
     {
@@ -16,23 +16,23 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "'Everyone can have an opinion' - F1 president responds to regulations criticism",
-      "timestamp": "Wed, 12 Aug 2026 06:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/f1/news/12040/13569682/f1-2026-regulations-stefano-domenicali-responds-to-criticism-about-current-power-unit-regulations",
-        "lang": "en",
-        "summary": "Formula 1 president Stefano Domenicali says drivers \"can have their opinion\" and are not being stopped from criticising the sport's power unit regulations."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
       "text": "Today on Sky Sports Racing: Ffos Las hosts six-race card",
       "timestamp": "Wed, 12 Aug 2026 06:00:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/racing/news/12040/13571636/today-on-sky-sports-racing-ffos-las-hosts-six-race-card-live-on-wednesday",
         "lang": "en",
         "summary": "Don't miss a moment from Ffos Las on Wednesday, with all six races live from 3.37pm on <em>Sky Sports Racing</em>."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "'Everyone can have an opinion' - F1 president responds to regulations criticism",
+      "timestamp": "Wed, 12 Aug 2026 06:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/f1/news/12040/13569682/f1-2026-regulations-stefano-domenicali-responds-to-criticism-about-current-power-unit-regulations",
+        "lang": "en",
+        "summary": "Formula 1 president Stefano Domenicali says drivers \"can have their opinion\" and are not being stopped from criticising the sport's power unit regulations."
       }
     },
     {
