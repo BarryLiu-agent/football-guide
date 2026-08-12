@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-12T09:42:18Z",
+  "generatedAt": "2026-08-12T10:42:19Z",
   "total": 20,
   "messages": [
     {
@@ -104,6 +104,28 @@
     {
       "source": "skysports",
       "type": "news",
+      "text": "NRL legend Cherry-Evans reportedly in advanced talks to sign for Hull FC",
+      "timestamp": "Wed, 12 Aug 2026 10:23:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/rugby-league/news/12040/13572194/daly-cherry-evans-former-kangaroos-half-back-reportedly-in-advanced-talks-to-sign-for-hull-fc-for-2027-super-league-season",
+        "lang": "en",
+        "summary": "Daly Cherry-Evans is reportedly in advanced talks to sign for Hull FC in what would be a shock switch to Super League for the 2027 season. "
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Reminder that Kvaratskhelia was the best player in Europe last season",
+      "timestamp": "Wed, 12 Aug 2026 10:45:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13572065/khvicha-kvaratskhelia-is-back-for-psg-in-the-uefa-super-cup-georgian-missed-the-world-cup-but-might-just-be-europes-best",
+        "lang": "en",
+        "summary": "It was heralded as the World Cup in which all the stars shone. But while the big names did indeed illuminate the summer, the return of the club game with the showpiece UEFA Super Cup in Salzburg is a chance for Khvicha Kvaratskhelia to reclaim his spotlight."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
       "text": "Super Giants rout SunRisers to move to cusp of Hundred eliminator",
       "timestamp": "Tue, 11 Aug 2026 21:00:00 BST",
       "metadata": {
@@ -198,28 +220,6 @@
         "link": "https://www.skysports.com/football/news/12040/13571919/myles-lewis-skelly-transfer-news-chelsea-make-enquiry-for-arsenal-teenager-amid-long-term-interest-from-blues-and-man-utd",
         "lang": "en",
         "summary": "Chelsea&#160;have made a new enquiry about signing&#160;Arsenal's Myles Lewis-Skelly.&#160;"
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Arsenal to retain title? Liverpool above Man Utd? Sky Sports predicted table revealed",
-      "timestamp": "Tue, 11 Aug 2026 12:22:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13571927/sky-sports-supercomputer-predicts-2026-27-premier-league-table-as-arsenal-retain-title-and-liverpool-jump-back-above-man-utd-between-the-lines",
-        "lang": "en",
-        "summary": "Will Arsenal retain the title? What's in store for Manchester City, Liverpool and Chelsea under their new managers? And which teams are going to be relegated?"
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Swansea's price tag for top-scorer Vipotnik revealed",
-      "timestamp": "Tue, 11 Aug 2026 22:24:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/live-blog/12040/13163353/championship-news-transfer-latest-and-gossip-plus-efl-updates-from-league-one-and-league-two",
-        "lang": "en",
-        "summary": ""
       }
     }
   ]
