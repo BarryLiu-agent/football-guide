@@ -11,6 +11,7 @@ predict.py - 比分预测引擎
   新分析器: 继承 Analyzer, 在 ANALYSIS_REGISTRY 注册即可, 主流程不改
 """
 
+import argparse
 import io
 import json
 import math
@@ -613,6 +614,11 @@ LEAGUE_ALIAS = {
 
 
 def main():
+    parser = argparse.ArgumentParser(description="比分预测引擎")
+    parser.add_argument("--skip-ai", action="store_true",
+                        help="跳过 AI 研判（高频刷新时省 AI 额度，仅输出统计模型）")
+    args = parser.parse_args()
+
     with open(CONFIG_DIR / "prediction_rules.json", "r", encoding="utf-8") as f:
         rules = json.load(f)
 
@@ -973,13 +979,14 @@ def main():
             pred["analysis"] = AnalysisWriter.generate(home, away, odds_result, msg_result, score_model, ou, pred["spreads"], pred["standings"], {"valuePicks": value_picks})
 
             # ── AI 最终研判（可选增强层）：失败返回 None，不影响统计预测 ──
-            try:
-                from ai_predictor import ai_judge
-                ai = ai_judge(pred)
-                if ai:
-                    pred["aiJudge"] = ai
-            except Exception as e:
-                print(f"  [predict] AI 研判失败(降级): {e}")
+            if not args.skip_ai:
+                try:
+                    from ai_predictor import ai_judge
+                    ai = ai_judge(pred)
+                    if ai:
+                        pred["aiJudge"] = ai
+                except Exception as e:
+                    print(f"  [predict] AI 研判失败(降级): {e}")
             predictions.append(pred)
     # 模型校准信息：赛季已进行轮次
     season_info = {"seasonStarted": False, "round": 0, "finishedMatches": 0}
@@ -1008,6 +1015,24 @@ def main():
         "predictions": predictions,
         "disclaimer": "本结果仅用于个人数据分析与研究, 不构成任何投注建议",
     }
+
+    # ── AI 研判保留：--skip-ai 模式下沿用上次已生成的研判（省额度，避免高频刷新清空 AI 区块）──
+    if args.skip_ai:
+        try:
+            old_path = DATA_DIR / "predictions.json"
+            if old_path.exists():
+                old = json.loads(old_path.read_text(encoding="utf-8"))
+                by_key = {}
+                for op in old.get("predictions", []):
+                    if op.get("aiJudge"):
+                        by_key[(op.get("league"), op.get("homeTeam", "").lower(), op.get("awayTeam", "").lower())] = op["aiJudge"]
+                for p in predictions:
+                    k = (p.get("league"), p.get("homeTeam", "").lower(), p.get("awayTeam", "").lower())
+                    if k in by_key and not p.get("aiJudge"):
+                        p["aiJudge"] = by_key[k]
+                        p["aiJudgeStale"] = True  # 基于上次数据，供前端提示
+        except Exception:
+            pass
 
     # ── 预测战绩：存档 + 赛果对比 + 成功率统计 ──
     stats = evaluate_predictions(predictions)
