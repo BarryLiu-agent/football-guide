@@ -1,7 +1,51 @@
 {
-  "generatedAt": "2026-08-13T10:47:06Z",
+  "generatedAt": "2026-08-13T11:42:11Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Australia exposed by Bangladesh in stunning start to first Test",
+      "timestamp": "Thu, 13 Aug 2026 11:24:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/cricket/news/12040/13572532/australia-vs-bangladesh-hosts-humbled-on-first-day-of-test-skittled-for-198-as-hasan-mahmud-takes-six-first-innings-wickets",
+        "lang": "en",
+        "summary": "Bangladesh's bowlers overshadowed Australia's Big Four getting back together on day one of the first Test as the host was dismissed for 198 and Hasan Mahmud took a career-best 6-55."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Could UK diaspora players represent India? | Bhatia closes in on Liverpool stake",
+      "timestamp": "Wed, 12 Aug 2026 12:15:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13570292/devs-digest-will-british-indians-represent-india-national-team-amit-bhatia-closes-in-on-liverpool-stake-yan-dhandas-debut-revisited",
+        "lang": "en",
+        "summary": "Welcome to Dev's Digest, a regular Sky Sports column in which Asian Football Award winner Dev Trehan delivers exclusive news and reflects on some of the key developments for British South Asians in Football."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Spurs latest: PODCAST - A big summer for... Tottenham Hotspur",
+      "timestamp": "Thu, 13 Aug 2026 12:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/live-blog/12040/13025489/tottenham-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts",
+        "lang": "en",
+        "summary": ""
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "O'Hara: Spurs should sign Rashford with De Zerbi 'perfect' for him",
+      "timestamp": "Thu, 13 Aug 2026 12:05:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13572329/marcus-rashford-transfer-news-tottenham-should-sign-man-utd-forward-says-ex-spurs-midfielder-jamie-ohara",
+        "lang": "en",
+        "summary": "Former Tottenham midfielder Jamie O'Hara wants Spurs to sign Manchester United forward Marcus Rashford."
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -66,6 +110,17 @@
         "link": "https://www.skysports.com/football/news/12040/13567985/rodri-transfer-news-man-city-reject-55m-bid-from-barcelona-for-world-cup-winning-midfielder",
         "lang": "en",
         "summary": "Manchester City have rejected a new &#163;55m bid from Barcelona for Rodri. "
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "The Hundred Eliminators and Finals: All you need to know",
+      "timestamp": "Thu, 13 Aug 2026 12:21:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/cricket/news/12040/13572516/the-hundred-teams-venues-timings-for-eliminators-and-finals-with-trent-rockets-waiting-to-find-out-their-opponents",
+        "lang": "en",
+        "summary": "The Hundred 2026 is reaching its dramatic climax and we have the Eliminators then the Finals still to come your way..."
       }
     },
     {
@@ -165,61 +220,6 @@
         "link": "https://www.skysports.com/football/news/12040/13572410/mikel-arteta-says-arsenal-are-actively-looking-for-signings-in-the-transfer-market-after-bruno-guimaraes-makes-bow-in-friendly-against-como",
         "lang": "en",
         "summary": "Mikel Arteta says Arsenal are actively looking for more new signings in the transfer market but admits there is only a small pool of available players who can take them to the next level."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Chelsea set Man City deadline to bid for Fernandez",
-      "timestamp": "Wed, 12 Aug 2026 21:49:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13572395/enzo-fernandez-transfer-news-chelsea-set-man-city-deadline-to-bid-for-midfielder",
-        "lang": "en",
-        "summary": "Chelsea have told Manchester City they have a deadline of 5pm this Friday to make an offer for Enzo Fernandez."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Marauding Madjo! How 'new' Villa showed their teeth against PSG",
-      "timestamp": "Thu, 13 Aug 2026 06:30:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13571624/brian-madjos-super-cup-performance-against-psg-shows-why-unai-emery-believes-new-aston-villa-can-keep-growing",
-        "lang": "en",
-        "summary": "This was the night that Aston Villa lost a game but found two players. Their 2-1 defeat to Paris Saint-Germain in the UEFA Super Cup featured breakout performances by 17-year-old striker Brian Madjo striker on debut and 19-year-old winger George Hemmings."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Atletico agree deal to sign Spurs captain Romero",
-      "timestamp": "Wed, 12 Aug 2026 21:30:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13571751/cristian-romero-atletico-madrid-agree-deal-with-tottenham-to-sign-argentina-defender-after-long-term-interest",
-        "lang": "en",
-        "summary": "Atletico Madrid have agreed a deal in principle with Tottenham to sign Cristian Romero."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Doue silences Madjo-mania as PSG beat Villa to win Super Cup",
-      "timestamp": "Wed, 12 Aug 2026 22:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/paris-saint-germain-vs-aston-villa/report/556002",
-        "lang": "en",
-        "summary": "Desire Doue scored the winner as champions of Europe Paris Saint-Germain beat Aston Villa 2-1 to win the UEFA Super Cup."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Hudson-Smith clinches history-making third 400m European Championship gold",
-      "timestamp": "Tue, 11 Aug 2026 21:30:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/live-blog/12040/13571552/european-athletics-championships-2026-updates-from-birmingham-as-keely-hodgkinson-dina-asher-smith-katarina-johnson-thompson-compete",
-        "lang": "en",
-        "summary": ""
       }
     }
   ]
