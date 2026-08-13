@@ -148,31 +148,47 @@ def fetch_league(league_code: str, understat_path: str) -> dict:
     return {"teams": teams, "players": players}
 
 
-def fetch_matches() -> list:
-    """单场比赛实时 xG：遍历五大联赛页拿比赛链接 → 比赛页提取 xG。"""
+def fetch_matches(season=None) -> list:
+    """单场比赛实时 xG：遍历五大联赛页拿比赛链接 → 比赛页提取 xG。
+    season=None 时自动从今年开始往前尝试（跨年时优先找到当前赛季页）。"""
+    if season is None:
+        year = datetime.now().year
+        season_candidates = [year, year - 1, year - 2]
+    else:
+        season_candidates = [season]
     results = []
+    seen = set()
     for code, path in LEAGUES.items():
-        try:
-            links = _get_match_links(path)
-            if not links:
-                print(f"  {code}: 无比赛链接（休赛期或未开赛）")
-                continue
-            for mid in links:
-                try:
-                    info = _get_match_info(mid)
-                    if info:
-                        info["league"] = code
-                        results.append(info)
-                except Exception as e:
-                    print(f"  {code} match {mid}: {e}")
-        except Exception as e:
-            print(f"  {code}: {e}")
+        got = False
+        for s in season_candidates:
+            if got:
+                break
+            try:
+                links = _get_match_links(path, s)
+                if not links:
+                    continue
+                got = True
+                for mid in links:
+                    if mid in seen:
+                        continue
+                    seen.add(mid)
+                    try:
+                        info = _get_match_info(mid)
+                        if info:
+                            info["league"] = code
+                            results.append(info)
+                    except Exception as e:
+                        print(f"  {code} match {mid}: {e}")
+            except Exception as e:
+                print(f"  {code} ({s}): {e}")
+        if not got:
+            print(f"  {code}: 无比赛链接（休赛期或未开赛）")
     return results
 
 
-def _get_match_links(understat_path: str) -> list:
+def _get_match_links(understat_path: str, season: int) -> list:
     """从联赛页提取比赛链接（历史赛季页有最近比赛）。"""
-    url = f"https://understat.com/league/{understat_path}/2025"
+    url = f"https://understat.com/league/{understat_path}/{season}"
     p, browser, ctx = _browser()
     page = ctx.new_page()
     page.goto(url, timeout=60000, wait_until="domcontentloaded")
@@ -227,6 +243,7 @@ def main():
     import argparse
     parser = argparse.ArgumentParser(description="Understat xG 本地抓取")
     parser.add_argument("--matches", action="store_true", help="抓取单场比赛实时 xG")
+    parser.add_argument("--season", type=int, default=None, help="Understat 赛季标签（如 2026 = 2026/27 赛季）")
     parser.add_argument("--leagues", nargs="*", default=list(LEAGUES.keys()))
     parser.add_argument("--push", action="store_true", help="抓取后自动 git push")
     args = parser.parse_args()
@@ -236,7 +253,7 @@ def main():
 
     if args.matches:
         print("抓取单场比赛 xG...")
-        matches = fetch_matches()
+        matches = fetch_matches(args.season)
         out = {
             "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
             "total": len(matches),
