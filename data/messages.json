@@ -1,7 +1,29 @@
 {
-  "generatedAt": "2026-08-13T04:43:25Z",
+  "generatedAt": "2026-08-13T05:42:13Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Today on Sky Sports Racing: Windsor and Lingfield feature on Thursday",
+      "timestamp": "Thu, 13 Aug 2026 06:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/racing/news/12040/13571992/today-on-sky-sports-racing-windsor-and-lingfield-feature-live-on-thursday",
+        "lang": "en",
+        "summary": "Windsor and Lingfield play host to Thursday evening's action - live on Sky Sports Racing."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Where would Antonelli rank among surprise F1 title winners?",
+      "timestamp": "Thu, 13 Aug 2026 06:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/f1/news/12040/13571878/kimi-antonelli-where-would-mercedes-driver-rank-among-surprise-f1-title-winners-in-recent-history",
+        "lang": "en",
+        "summary": "Kimi Antonelli is on course to become Formula 1&#8217;s youngest-ever world champion, but where would the Mercedes driver&#8217;s triumph rank among the sport&#8217;s biggest surprise title wins in recent history?"
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -198,28 +220,6 @@
         "link": "https://www.skysports.com/tennis/news/12040/13572237/arthur-fery-feels-no-added-pressure-despite-being-british-no-1-as-he-returns-to-action-at-cincinnati-open",
         "lang": "en",
         "summary": "Arthur Fery insists he feels &#8220;no added pressure&#8221; as the new British No 1 prepares to return to action this weekend for the first time since his memorable run to the Wimbledon semi-finals."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "McIlroy keen to asses his game during first FedExCup Playoffs event",
-      "timestamp": "Wed, 12 Aug 2026 18:30:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/golf/news/12040/13572212/rory-mcilroy-keen-to-see-where-his-game-is-as-he-returns-to-pga-tour-for-opening-fedexcup-playoffs-event",
-        "lang": "en",
-        "summary": "Rory McIlroy believes this week's FedEx St. Jude Championship will be a good chance for him to assess the current standard of his game, as the Northern Irishman returns to PGA Tour action for the first time since The Open."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Cadillac sack team principal Lowdon as Budkowski takes charge",
-      "timestamp": "Wed, 12 Aug 2026 15:20:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/f1/news/12040/13572275/cadillac-appoint-marcin-budkowski-as-team-principal-following-f1-2026-newcomers-sudden-sacking-of-graeme-lowdon",
-        "lang": "en",
-        "summary": "Cadillac have sacked team principal Graeme Lowdon and replaced him with Marcin Budkowski in what Formula 1's 2026 newcomers claim is a \"planned leadership transition\". "
       }
     }
   ]
