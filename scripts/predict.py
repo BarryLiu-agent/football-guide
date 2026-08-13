@@ -11,6 +11,7 @@ predict.py - 比分预测引擎
   新分析器: 继承 Analyzer, 在 ANALYSIS_REGISTRY 注册即可, 主流程不改
 """
 
+import argparse
 import io
 import json
 import math
@@ -613,6 +614,11 @@ LEAGUE_ALIAS = {
 
 
 def main():
+    parser = argparse.ArgumentParser(description="比分预测引擎")
+    parser.add_argument("--skip-ai", action="store_true",
+                        help="跳过 AI 研判（高频刷新时省 AI 额度，仅输出统计模型）")
+    args = parser.parse_args()
+
     with open(CONFIG_DIR / "prediction_rules.json", "r", encoding="utf-8") as f:
         rules = json.load(f)
 
@@ -973,13 +979,14 @@ def main():
             pred["analysis"] = AnalysisWriter.generate(home, away, odds_result, msg_result, score_model, ou, pred["spreads"], pred["standings"], {"valuePicks": value_picks})
 
             # ── AI 最终研判（可选增强层）：失败返回 None，不影响统计预测 ──
-            try:
-                from ai_predictor import ai_judge
-                ai = ai_judge(pred)
-                if ai:
-                    pred["aiJudge"] = ai
-            except Exception as e:
-                print(f"  [predict] AI 研判失败(降级): {e}")
+            if not args.skip_ai:
+                try:
+                    from ai_predictor import ai_judge
+                    ai = ai_judge(pred)
+                    if ai:
+                        pred["aiJudge"] = ai
+                except Exception as e:
+                    print(f"  [predict] AI 研判失败(降级): {e}")
             predictions.append(pred)
     # 模型校准信息：赛季已进行轮次
     season_info = {"seasonStarted": False, "round": 0, "finishedMatches": 0}

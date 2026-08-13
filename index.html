@@ -858,7 +858,7 @@ function renderFixtures() {
     .map(p => ({ synthetic: true, homeTeam: { name: p.homeTeam }, awayTeam: { name: p.awayTeam }, utcDate: p.kickoff, competition: { code: p.league }, pred: p }));
   ms = ms.concat(extras).sort((a, b) => a.utcDate.localeCompare(b.utcDate));
 
-  if (!ms.length) return `<div class="empty-state"><div class="icon">📭</div>该联赛暂无未来比赛安排</div>`;
+  if (!ms.length) return `<div class="empty-state"><div class="icon">📭</div>${state.league === 'CL' ? '欧冠正赛 9 月中旬开赛，暂无可抓数据（资格赛/附加赛不收录）' : '该联赛暂无未来比赛安排'}</div>`;
 
   // 分组(按日期从近到远升序)
   const groups = {};
@@ -1384,7 +1384,7 @@ function switchMkt(mkt) {
     </div>
     <div style="font-size:10px;color:var(--muted);margin-top:6px;text-align:center">↗ 较上次快照升(看淡)↘ 降(看好)· 凯利>0 有正期望 · 快照持续累积后将升级为走势曲线</div>
     ${oddsTrendBlock(p)}
-    ${(function(a){ const aiBox = 'padding:10px 12px;border-radius:8px;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.25);font-size:12px;line-height:1.7'; if (!a) return `<div class="section-title" style="margin-top:10px">🤖 AI 研判</div><div style="${aiBox};color:var(--muted)">AI 研判未生成（未配置或调用失败），当前展示为纯统计模型输出。</div>`; const cn = {home:'主胜',draw:'平局',away:'客胜',none:'不碰'}; const conf = a.confidence != null ? Math.round(a.confidence*100) : null; return `<div class="section-title" style="margin-top:10px">🤖 AI 研判<span style="font-size:10px;color:var(--muted);font-weight:400"> ${a.model || ''} · ${a.latency != null ? a.latency + 's' : ''}</span></div><div style="${aiBox}"><div style="margin-bottom:4px"><b>${a.pick && a.pick !== 'none' ? cn[a.pick] : '无明显倾向'}</b>${a.score ? ' · 比分 ' + a.score : ''}${conf != null ? ' · 置信度 ' + conf + '%' : ''}</div>${a.reason ? '<div style="color:var(--text-2)">' + esc(a.reason) + '</div>' : ''}</div>`; })(p.aiJudge)}
+    ${(function(a){ const aiBox = 'padding:10px 12px;border-radius:8px;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.25);font-size:12px;line-height:1.7'; const note = '<div style="font-size:10px;color:var(--muted);margin-top:6px">⚠️ AI 研判仅供参考，方向受统计模型约束（置信度已钳制在模型概率附近）</div>'; if (!a) return `<div class="section-title" style="margin-top:10px">🤖 AI 研判</div><div style="${aiBox};color:var(--muted)">AI 研判未生成（未配置或调用失败），当前展示为纯统计模型输出。${note}</div>`; const cn = {home:'主胜',draw:'平局',away:'客胜',none:'不碰'}; const conf = a.confidence != null ? Math.round(a.confidence*100) : null; const diffScore = a.score && p.predictedScore && a.score !== p.predictedScore ? ' <span style="color:var(--gold)">(模型预测 ' + p.predictedScore + ')</span>' : ''; return `<div class="section-title" style="margin-top:10px">🤖 AI 研判<span style="font-size:10px;color:var(--muted);font-weight:400"> ${a.model || ''} · ${a.latency != null ? a.latency + 's' : ''} · 仅供参考</span></div><div style="${aiBox}"><div style="margin-bottom:4px"><b>${a.pick && a.pick !== 'none' ? cn[a.pick] : '无明显倾向'}</b>${a.score ? ' · 比分 ' + a.score : ''}${diffScore}${conf != null ? ' · 置信度 ' + conf + '%' : ''}</div>${a.reason ? '<div style="color:var(--text-2)">' + esc(a.reason) + '</div>' : ''}${note}</div>`; })(p.aiJudge)}
     ${p.eloProb ? `<div class="section-title" style="margin-top:10px">🤖 独立模型 (Elo+修正)</div>
     <div class="odds-grid">
       <div class="odds-box"><div class="label">主胜</div><div class="value">${pct(p.eloProb.home)}</div><div class="sub">盘口 ${pct(pr.home)}</div></div>

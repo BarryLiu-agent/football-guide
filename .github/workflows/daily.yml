@@ -33,7 +33,8 @@ jobs:
           FOOTBALL_API_KEY: ${{ secrets.FOOTBALL_API_KEY }}
         run: python scripts/fetch_data.py
 
-      - name: Fetch odds
+      - name: Fetch odds (仅定时/手动，push 不抓以省配额)
+        if: github.event_name != 'push'
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
           ODDS_API_KEY_2: ${{ secrets.ODDS_API_KEY_2 }}
@@ -47,7 +48,12 @@ jobs:
       - name: Fetch messages
         run: python scripts/messages_fetcher.py
 
-      - name: Run prediction engine
+      - name: Run prediction engine (push: 仅统计模型，省 AI 额度)
+        if: github.event_name == 'push'
+        run: python scripts/predict.py --skip-ai
+
+      - name: Run prediction engine (定时/手动: 含 AI 研判)
+        if: github.event_name != 'push'
         env:
           AI_API_KEY: ${{ secrets.AI_API_KEY }}
           AI_BASE_URL: ${{ secrets.AI_BASE_URL }}
