@@ -1388,12 +1388,18 @@ function switchMkt(mkt) {
     <div style="font-size:10px;color:var(--muted);margin-top:6px;text-align:center">↗ 较上次快照升(看淡)↘ 降(看好)· 凯利>0 有正期望 · 快照持续累积后将升级为走势曲线</div>
     ${oddsTrendBlock(p)}
     ${(function(a){ const aiBox = 'padding:10px 12px;border-radius:8px;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.25);font-size:12px;line-height:1.7'; const note = '<div style="font-size:10px;color:var(--muted);margin-top:6px">⚠️ AI 研判仅供参考，方向受统计模型约束（置信度已钳制在模型概率附近）</div>'; if (!a) return `<div class="section-title" style="margin-top:10px">🤖 AI 研判</div><div style="${aiBox};color:var(--muted)">AI 研判未生成（未配置或调用失败），当前展示为纯统计模型输出。${note}</div>`; const cn = {home:'主胜',draw:'平局',away:'客胜',none:'不碰'}; const conf = a.confidence != null ? Math.round(a.confidence*100) : null; const diffScore = a.score && p.predictedScore && a.score !== p.predictedScore ? ' <span style="color:var(--gold)">(模型预测 ' + p.predictedScore + ')</span>' : ''; const staleTag = p.aiJudgeStale ? ' · 基于上次数据' : ''; return `<div class="section-title" style="margin-top:10px">🤖 AI 研判<span style="font-size:10px;color:var(--muted);font-weight:400"> ${a.model || ''} · ${a.latency != null ? a.latency + 's' : ''}${staleTag} · 仅供参考</span></div><div style="${aiBox}"><div style="margin-bottom:4px"><b>${a.pick && a.pick !== 'none' ? cn[a.pick] : '无明显倾向'}</b>${a.score ? ' · 比分 ' + a.score : ''}${diffScore}${conf != null ? ' · 置信度 ' + conf + '%' : ''}</div>${a.reason ? '<div style="color:var(--text-2)">' + esc(a.reason) + '</div>' : ''}${note}</div>`; })(p.aiJudge)}
-    ${p.eloProb ? `<div class="section-title" style="margin-top:10px">🤖 独立模型 (Elo+修正)</div>
+    ${p.eloProb ? `<div class="section-title" style="margin-top:10px">🤖 独立模型 (Elo+xG+DC)</div>
     <div class="odds-grid">
       <div class="odds-box"><div class="label">主胜</div><div class="value">${pct(p.eloProb.home)}</div><div class="sub">盘口 ${pct(pr.home)}</div></div>
       <div class="odds-box"><div class="label">平局</div><div class="value">${pct(p.eloProb.draw)}</div><div class="sub">盘口 ${pct(pr.draw)}</div></div>
       <div class="odds-box"><div class="label">客胜</div><div class="value">${pct(p.eloProb.away)}</div><div class="sub">盘口 ${pct(pr.away)}</div></div>
     </div>
+    ${p.xgProb ? `<div style="font-size:11px;color:var(--muted);margin-top:6px">xG攻防模型: 主 ${pct(p.xgProb.home)} / 平 ${pct(p.xgProb.draw)} / 客 ${pct(p.xgProb.away)}</div>` : ''}
+    ${p.lineup && (p.lineup.homeLineup.length || p.lineup.awayLineup.length) ? `<div class="section-title" style="margin-top:10px">📋 首发名单<span style="font-size:10px;color:var(--muted);font-weight:400"> ${p.lineup.source || ''}</span></div>
+    <div style="font-size:11px;line-height:1.8;color:var(--text-2);padding:8px 10px;border-radius:8px;background:var(--surface-2);border:1px solid var(--border)">
+      <b>${esc(p.homeTeam)}:</b> ${p.lineup.homeLineup.slice(0, 11).map(esc).join('、') || '未公布'}<br>
+      <b>${esc(p.awayTeam)}:</b> ${p.lineup.awayLineup.slice(0, 11).map(esc).join('、') || '未公布'}
+    </div>` : ''}
     ${(p.valuePicks || []).length ? `<div style="font-size:11px;padding:8px 10px;border-radius:8px;background:rgba(240,185,11,.1);border:1px solid rgba(240,185,11,.3);color:var(--gold);margin-top:8px">💰 价值信号:${(p.valuePicks||[]).map(v => v.label + ' 模型' + Math.round(v.modelProb*100) + '% vs 盘口' + Math.round(v.oddsProb*100) + '%').join('、')}</div>` : ''}` : ''}`;
   } else if (mkt === 'jc') {
     if (!jc) { el.innerHTML = '<div class="empty-state">该场比赛未开售竞彩(或不在售)</div>'; return; }

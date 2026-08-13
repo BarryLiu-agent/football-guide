@@ -121,6 +121,8 @@ def _build_context(pred: dict) -> str:
     top3 = cs[:3]
     ou = pred.get("overUnder") or {}
     elo = pred.get("eloProb") or {}
+    xg = pred.get("xgProb") or {}
+    lu = pred.get("lineup") or {}
     st = pred.get("standings") or {}
     msg = pred.get("messageEvidence") or []
     lines = [
@@ -129,9 +131,17 @@ def _build_context(pred: dict) -> str:
         f"统计模型胜负概率: 主{probs.get('home')} 平{probs.get('draw')} 客{probs.get('away')}",
         f"欧赔: 主{raw.get('home')} 平{raw.get('draw')} 客{raw.get('away')}",
         f"Elo概率: 主{elo.get('home')} 平{elo.get('draw')} 客{elo.get('away')}",
+        f"xG攻防模型概率: 主{xg.get('home')} 平{xg.get('draw')} 客{xg.get('away')}",
         f"大小球: {ou.get('line')} 大{ou.get('over')} 小{ou.get('under')}",
         f"积分榜: 主{st.get('home')} 客{st.get('away')}",
     ]
+    # 首发名单（赛前 1 小时左右公布，最重要的一次性赛前信息）
+    if lu.get("homeLineup") or lu.get("awayLineup"):
+        lines.append(f"首发名单[{lu.get('source')}] 主队: {', '.join(lu.get('homeLineup', [])[:18])}")
+        lines.append(f"首发名单[{lu.get('source')}] 客队: {', '.join(lu.get('awayLineup', [])[:18])}")
+    inj = lu.get("injuries") or {}
+    if inj.get("home") or inj.get("away"):
+        lines.append(f"伤停: 主队 {inj.get('home', [])} 客队 {inj.get('away', [])}")
     if top3:
         lines.append("模型波胆Top3: " + ", ".join(f"{c['score']}({c.get('prob')})" for c in top3))
     if msg:
