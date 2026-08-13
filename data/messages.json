@@ -1,7 +1,18 @@
 {
-  "generatedAt": "2026-08-13T12:42:18Z",
+  "generatedAt": "2026-08-13T13:42:16Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Atherton: 'England must become Root's team - he has a unique opportunity'",
+      "timestamp": "Thu, 13 Aug 2026 13:07:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/cricket/news/12040/13572589/michael-atherton-england-must-be-reshaped-as-joe-roots-team-after-stokes-and-mccullum-departures-8211-he-has-a-unique-opportunity",
+        "lang": "en",
+        "summary": "Fresh from <a href='https://www.skysports.com/cricket/news/12123/13572211/joe-root-england-test-captain-removes-curfew-and-implores-his-players-to-be-adults-ahead-of-pakistan-series' target='_blank'>exclusively speaking to Joe Root following his reappointment as England captain</a>, Sky Sports Cricket's Michael Atherton looks further into the move..."
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -10,7 +21,7 @@
       "metadata": {
         "link": "https://www.skysports.com/cricket/news/12040/13572532/australia-vs-bangladesh-hosts-humbled-on-first-day-of-test-skittled-for-198-as-hasan-mahmud-takes-six-first-innings-wickets",
         "lang": "en",
-        "summary": "Bangladesh's bowlers overshadowed Australia's Big Four getting back together on day one of the first Test as the host was dismissed for 198 and Hasan Mahmud took a career-best 6-55."
+        "summary": "Bangladesh's bowlers overshadowed Australia's Big Four getting back together on day one of the first Test as the hosts were dismissed for 198 and Hasan Mahmud took a career-best 6-55."
       }
     },
     {
@@ -55,6 +66,17 @@
         "link": "https://www.skysports.com/golf/news/12040/13572526/liv-golf-tickets-for-team-championship-event-in-michigan-no-longer-on-sale-on-official-website-amid-cancellation-reports",
         "lang": "en",
         "summary": "Tickets for LIV Golf's season-ending Team Championship event in Michigan are no longer on sale on its official website amid reports it has been cancelled."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Crystal Palace latest: Eagles closing in on Khalaili signing",
+      "timestamp": "Thu, 13 Aug 2026 14:19:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/live-blog/12040/13279298/crystal-palace-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights",
+        "lang": "en",
+        "summary": ""
       }
     },
     {
@@ -198,28 +220,6 @@
         "link": "https://www.skysports.com/football/arsenal-vs-como/report/562442",
         "lang": "en",
         "summary": "Bruno Guimaraes made his first appearance and Myles Lewis-Skelly scored amid speculation about his future as Arsenal were held to a 1-1 draw by Como before winning 4-3 on penalties."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "New Zealand Darts Masters schedule: Van Veen, Price, Wade, Bunting in action",
-      "timestamp": "Wed, 12 Aug 2026 13:18:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/darts/news/12040/13572244/new-zealand-darts-masters-schedule-format-with-gian-van-veen-gerwyn-price-james-wade-stephen-bunting-in-action",
-        "lang": "en",
-        "summary": "Gian van Veen will kick off his SkyCity New Zealand Darts Masters campaign against Jonny Tata, as 2022 champion Gerwyn Price takes on Mark Cleaver.&#160;"
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Arteta: There's more we want to do in the transfer market",
-      "timestamp": "Wed, 12 Aug 2026 23:10:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13572410/mikel-arteta-says-arsenal-are-actively-looking-for-signings-in-the-transfer-market-after-bruno-guimaraes-makes-bow-in-friendly-against-como",
-        "lang": "en",
-        "summary": "Mikel Arteta says Arsenal are actively looking for more new signings in the transfer market but admits there is only a small pool of available players who can take them to the next level."
       }
     }
   ]
