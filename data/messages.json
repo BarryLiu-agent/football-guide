@@ -1,11 +1,44 @@
 {
-  "generatedAt": "2026-08-13T20:09:14Z",
+  "generatedAt": "2026-08-13T22:27:07Z",
   "total": 20,
   "messages": [
     {
       "source": "skysports",
       "type": "news",
-      "text": "McIlroy makes woeful start to FedExCup Playoffs as Spieth shares early lead",
+      "text": "Super League leaders Leeds beaten by Leigh after late drama",
+      "timestamp": "Thu, 13 Aug 2026 22:40:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/rugby-league/news/12040/13572725/super-league-leaders-leeds-rhinos-suffer-first-home-defeat-of-season-as-leigh-leopards-claim-surprise-20-16-win-at-headingley",
+        "lang": "en",
+        "summary": "Innes Senior scored twice as Leigh Leopards inflicted a first home defeat of the season on Betfred Super League leaders Leeds Rhinos by winning 20-16 at Headingley."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Gay out for duck as Pakistan impress against County Select XI",
+      "timestamp": "Thu, 13 Aug 2026 21:20:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/cricket/news/12040/13572739/england-opener-emilio-gay-out-for-duck-as-pakistan-impress-against-county-select-xi-ahead-of-test-series",
+        "lang": "en",
+        "summary": "England opening batter Emilio Gay was out for a duck as Pakistan made a strong start to their tour against a Professional County Club Select XI."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Papers: Arsenal hold talks over Osimhen with Galatasaray",
+      "timestamp": "Wed, 12 Aug 2026 23:30:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13572744/arsenal-transfer-news-gunners-discuss-victor-osimhen-with-galatasaray-amid-gabriel-martinelli-and-ethan-nwaneri-talks-paper-talk",
+        "lang": "en",
+        "summary": "The top stories and transfer rumours from Friday's newspapers..."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "McIlroy makes woeful start to FedExCup Playoffs as Spieth shares lead",
       "timestamp": "Thu, 13 Aug 2026 19:00:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/golf/news/12040/13572655/fedexcup-playoffs-rory-mcilroy-makes-woeful-start-at-fedex-st-jude-championship-with-four-over-par-opening-round",
@@ -88,6 +121,17 @@
         "link": "https://www.skysports.com/watch/video/13572644/zuffa-boxing-11-lee-cutler-and-louis-greene-share-intense-face-off-on-sky-sports-news",
         "lang": "en",
         "summary": "Lee Cutler and Louis Greene had an intense face-off as their fight was announced on Sky Sports News for Zuffa Boxing 11 in September."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Rangers booed off after Europa League exit as McInnes' winless start goes on",
+      "timestamp": "Thu, 13 Aug 2026 21:20:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/rangers-vs-jagiellonia-bialystok/report/571444",
+        "lang": "en",
+        "summary": "Derek McInnes' winless start to life at Rangers hit its lowest point as they were embarrassed and dumped out of the Europa League to a chorus of boos by Jagiellonia Bialystok on aggregate following a 1-1 draw at Ibrox."
       }
     },
     {
@@ -176,50 +220,6 @@
         "link": "https://www.skysports.com/football/live-blog/12040/13210475/west-ham-latest-news",
         "lang": "en",
         "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Atherton: 'England must become Root's team - he has a unique opportunity'",
-      "timestamp": "Thu, 13 Aug 2026 13:07:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/cricket/news/12040/13572589/michael-atherton-england-must-be-reshaped-as-joe-roots-team-after-stokes-and-mccullum-departures-8211-he-has-a-unique-opportunity",
-        "lang": "en",
-        "summary": "Fresh from <a href='https://www.skysports.com/cricket/news/12123/13572211/joe-root-england-test-captain-removes-curfew-and-implores-his-players-to-be-adults-ahead-of-pakistan-series' target='_blank'>exclusively speaking to Joe Root following his reappointment as England captain</a>, Sky Sports Cricket's Michael Atherton looks further into the move..."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Australia exposed by Bangladesh in stunning start to first Test",
-      "timestamp": "Thu, 13 Aug 2026 11:24:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/cricket/news/12040/13572532/australia-vs-bangladesh-hosts-humbled-on-first-day-of-test-skittled-for-198-as-hasan-mahmud-takes-six-first-innings-wickets",
-        "lang": "en",
-        "summary": "Bangladesh's bowlers overshadowed Australia's Big Four getting back together on day one of the first Test as the hosts were dismissed for 198 and Hasan Mahmud took a career-best 6-55."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Rangers disaster! Prelec header restores Jagiellonia's aggregate lead LIVE!",
-      "timestamp": "Thu, 13 Aug 2026 18:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/rangers-vs-jagiellonia-bialystok/live/571444",
-        "lang": "en",
-        "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Could UK diaspora players represent India? | Bhatia closes in on Liverpool stake",
-      "timestamp": "Wed, 12 Aug 2026 12:15:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13570292/devs-digest-will-british-indians-represent-india-national-team-amit-bhatia-closes-in-on-liverpool-stake-yan-dhandas-debut-revisited",
-        "lang": "en",
-        "summary": "Welcome to Dev's Digest, a regular Sky Sports column in which Asian Football Award winner Dev Trehan delivers exclusive news and reflects on some of the key developments for British South Asians in Football."
       }
     }
   ]
