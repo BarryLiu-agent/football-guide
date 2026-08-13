@@ -1,7 +1,18 @@
 {
-  "generatedAt": "2026-08-13T09:42:11Z",
+  "generatedAt": "2026-08-13T10:42:16Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "LIV season finale tickets no longer on sale amid cancellation reports",
+      "timestamp": "Thu, 13 Aug 2026 11:30:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/golf/news/12040/13572526/liv-golf-tickets-for-team-championship-event-in-michigan-no-longer-on-sale-on-official-website-amid-cancellation-reports",
+        "lang": "en",
+        "summary": "Tickets for LIV Golf's season-ending Team Championship event in Michigan are no longer on sale on its official website amid reports it has been cancelled."
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -44,6 +55,28 @@
         "link": "https://www.skysports.com/tennis/news/12040/13572450/canadian-open-rafael-jodar-bid-for-atp-rankings-history-put-on-hold-while-elena-rybakina-beats-coco-gauff-in-semi-finals",
         "lang": "en",
         "summary": "Spanish teenager Rafael Jodar's bid for ATP Tour rankings history was put on hold after he was beaten by Brandon Nakashima in the semi-finals of the Canadian Open."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Man City reject fresh Barcelona bid for Rodri",
+      "timestamp": "Thu, 13 Aug 2026 10:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13567985/rodri-transfer-news-man-city-reject-55m-bid-from-barcelona-for-world-cup-winning-midfielder",
+        "lang": "en",
+        "summary": "Manchester City have rejected a new &#163;55m bid from Barcelona for Rodri. "
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "EFL latest: 'It feels like home' - Jimenez explains Wolves return",
+      "timestamp": "Thu, 13 Aug 2026 11:26:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/live-blog/12040/13163353/championship-news-transfer-latest-and-gossip-plus-efl-updates-from-league-one-and-league-two",
+        "lang": "en",
+        "summary": ""
       }
     },
     {
@@ -187,39 +220,6 @@
         "link": "https://www.skysports.com/live-blog/12040/13571552/european-athletics-championships-2026-updates-from-birmingham-as-keely-hodgkinson-dina-asher-smith-katarina-johnson-thompson-compete",
         "lang": "en",
         "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Phoenix win battle to avoid Hundred wooden spoon vs MI London",
-      "timestamp": "Wed, 12 Aug 2026 18:38:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/cricket/news/12040/13572320/the-hundred-ellyse-perrys-half-century-sees-birmingham-phoenix-win-battle-to-avoid-wooden-spoon-vs-mi-london",
-        "lang": "en",
-        "summary": "Birmingham Phoenix prevailed in the battle to avoid the wooden spoon in The Hundred women's competition as Ellyse Perry's composed half-century condemned MI London to a sixth defeat of a chastening campaign."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Arsenal 1-1 Como commentary",
-      "timestamp": "Wed, 12 Aug 2026 18:10:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/arsenal-vs-como/live/562442",
-        "lang": "en",
-        "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Sports fans watch on as Britain experiences fullest solar eclipse since 1999",
-      "timestamp": "Wed, 12 Aug 2026 20:15:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/cricket/news/12040/13572383/solar-eclipse-fullest-above-british-skies-since-1999-as-spectators-take-it-in-at-sporting-events-across-europe",
-        "lang": "en",
-        "summary": "Cricket fans at Edgbaston were among sporting spectators given a stunning view of Wednesday evening's partial solar eclipse."
       }
     }
   ]
