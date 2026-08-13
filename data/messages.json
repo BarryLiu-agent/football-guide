@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-13T07:42:08Z",
+  "generatedAt": "2026-08-13T08:42:07Z",
   "total": 20,
   "messages": [
     {
@@ -11,6 +11,17 @@
         "link": "https://www.skysports.com/boxing/news/12040/13572325/damar-thomas-unfazed-by-anthony-joshua-comparisons-as-commonwealth-games-gold-medallist-chases-own-legacy-ahead-of-la-olympics",
         "lang": "en",
         "summary": "Commonwealth Games gold medallist Damar Thomas wants to create his \"own legacy\" after being compared to former Team GB super-heavyweight stars following his triumph in Glasgow."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "'Where has this tennis been?' | Swiatek beats Svitolina to reach first final of 2026",
+      "timestamp": "Thu, 13 Aug 2026 07:01:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13572456/iga-swiatek-vs-elina-svitolina-canadian-open-highlights",
+        "lang": "en",
+        "summary": "Highlights of the Canadian Open match between Iga Swiatek and Elina Svitolina."
       }
     },
     {
@@ -55,6 +66,17 @@
         "link": "https://www.skysports.com/football/news/12040/13572412/arsenal-transfer-news-gunners-hold-further-talks-over-aston-villa-defender-ezri-konsa-paper-talk",
         "lang": "en",
         "summary": "The top stories and transfer rumours from Thursday's newspapers..."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "FREE STREAM: Good Morning Transfers on Sky Sports News",
+      "timestamp": "Thu, 13 Aug 2026 08:50:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13569345/free-stream-the-transfer-show-on-sky-sports-news-latest-football-transfer-news-updates-and-rumours",
+        "lang": "en",
+        "summary": ""
       }
     },
     {
@@ -198,28 +220,6 @@
         "link": "https://www.skysports.com/football/newcastle-united-vs-everton/live/568648",
         "lang": "en",
         "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "'Nature of F1' | Cadillac CEO explains reasons behind Lowdon sacking",
-      "timestamp": "Wed, 12 Aug 2026 20:12:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13572380/formula-1-cadillac-ceo-explains-reasons-behind-graeme-lowdon-sacking",
-        "lang": "en",
-        "summary": "Cadillac CEO Dan Towriss explains the reasons behind sacking Team Principal Graeme Lowdon."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "O'Sullivan's poor start to season continues with early China Open loss",
-      "timestamp": "Wed, 12 Aug 2026 16:20:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/snooker/news/12040/13572300/ronnie-osullivan-the-rockets-poor-start-to-snooker-season-continues-with-shock-early-china-open-loss-to-noppon-saengkham",
-        "lang": "en",
-        "summary": "Ronnie O'Sullivan's poor start to the new season continued after he lost 6-4 to Noppon Saengkham in the second round of the China Open."
       }
     }
   ]
