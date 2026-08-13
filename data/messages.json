@@ -1,7 +1,128 @@
 {
-  "generatedAt": "2026-08-13T13:42:16Z",
+  "generatedAt": "2026-08-13T18:08:10Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Leicester City up for sale for more than £200m",
+      "timestamp": "Thu, 13 Aug 2026 18:27:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13572696/leicester-city-for-sale-thai-owners-king-power-put-club-on-market-for-more-than-200m",
+        "lang": "en",
+        "summary": "Thai owners King Power are seeking to sell Leicester City for more than &#163;200m.&#160;"
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Draper beaten in Cincinnati first round after blowing second-set lead",
+      "timestamp": "Thu, 13 Aug 2026 18:30:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/tennis/news/12040/13572651/cincinnati-open-jack-draper-beaten-by-martin-landaluce-in-first-round-after-blowing-six-set-point-chances-to-level-match",
+        "lang": "en",
+        "summary": "Jack Draper lost 6-3 7-5 to Martin Landaluce in the first round of the Cincinnati Open after blowing six set-point chances to level the match. "
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Doyle: Coppull can strike in the Hungerford",
+      "timestamp": "Thu, 13 Aug 2026 18:27:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/racing/news/12040/13572701/hollie-doyle-clive-cox-can-take-out-the-newbury-feature-with-talented-colt-coppull",
+        "lang": "en",
+        "summary": "Our ambassador previews four contests on Newbury's Hungerford Day and assesses the big races at Ripon - both cards live on Sky Sports Racing."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Celtic sign midfielder Baur on an initial four-year deal",
+      "timestamp": "Thu, 13 Aug 2026 16:05:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13566197/mika-baur-celtic-sign-germany-u21-midfielder-from-paderborn-on-initial-four-year-deal",
+        "lang": "en",
+        "summary": "Celtic have made their fourth summer signing with midfielder Mika Baur joining on an initial four-year deal, with the option for a further year."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Championship predictions & best bets: Wolves to fall flat on opening night",
+      "timestamp": "Thu, 13 Aug 2026 18:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13572484/efl-2026-27-season-kick-off-championship-predictions-and-best-bets",
+        "lang": "en",
+        "summary": ""
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Richards to face Kalajdzic showdown on Fisher bill",
+      "timestamp": "Thu, 13 Aug 2026 16:30:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/boxing/news/12040/13572483/craig-richards-vs-radivoje-kalajdzic-lee-cutler-vs-louis-greene-added-to-johnny-fisher-boxing-bill-at-copper-box-arena",
+        "lang": "en",
+        "summary": "British former world title challenger Craig Richards will take on Radivoje Kalajdzic in a 10-round light heavyweight showdown, while Lee Cutler faces Louis Greene in a middleweight clash, on Zuffa Boxing's Johnny Fisher bill at London's Copper Box Arena."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Cutler and Greene share intense face-off",
+      "timestamp": "Thu, 13 Aug 2026 15:56:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13572644/zuffa-boxing-11-lee-cutler-and-louis-greene-share-intense-face-off-on-sky-sports-news",
+        "lang": "en",
+        "summary": "Lee Cutler and Louis Greene had an intense face-off as their fight was announced on Sky Sports News for Zuffa Boxing 11 in September."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Brighton latest: Genoa make contact over Ferguson loan",
+      "timestamp": "Thu, 13 Aug 2026 15:27:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/live-blog/12040/13279295/brighton-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights",
+        "lang": "en",
+        "summary": ""
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "FREE STREAM: The Transfer Show on Sky Sports News",
+      "timestamp": "Thu, 13 Aug 2026 18:50:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13569345/free-stream-the-transfer-show-on-sky-sports-news-latest-football-transfer-news-updates-and-rumours",
+        "lang": "en",
+        "summary": ""
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "The Hundred awards: Broad, Hussain, Greenway give their player verdicts",
+      "timestamp": "Thu, 13 Aug 2026 13:50:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/cricket/news/12040/13572600/the-hundred-2026-awards-stuart-broad-nasser-hussain-lydia-greenway-pick-best-local-player-overseas-player-newcomer-fielder-captain-and-more",
+        "lang": "en",
+        "summary": "<em>Sky Sports Cricket's</em> Nasser Hussain and Stuart Broad give out their player awards for the 2026 men's Hundred campaign, while Lydia Greenway looks at the women's competition..."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "West Ham latest: Interim chief exec Virani targets Premier League return",
+      "timestamp": "Thu, 13 Aug 2026 15:08:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/live-blog/12040/13210475/west-ham-latest-news",
+        "lang": "en",
+        "summary": ""
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -27,6 +148,17 @@
     {
       "source": "skysports",
       "type": "news",
+      "text": "FIVE changes for Rangers vs Jagiellonia Bialystok LIVE!",
+      "timestamp": "Thu, 13 Aug 2026 18:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/rangers-vs-jagiellonia-bialystok/live/571444",
+        "lang": "en",
+        "summary": ""
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
       "text": "Could UK diaspora players represent India? | Bhatia closes in on Liverpool stake",
       "timestamp": "Wed, 12 Aug 2026 12:15:00 BST",
       "metadata": {
@@ -38,188 +170,56 @@
     {
       "source": "skysports",
       "type": "news",
+      "text": "'Best night of my life!' | Kelce reveals Taylor Swift wedding details",
+      "timestamp": "Thu, 13 Aug 2026 16:58:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13572664/travis-kelce-reveals-taylor-swift-wedding-details-best-night-of-my-life",
+        "lang": "en",
+        "summary": "Travis Kelce reveals Taylor Swift wedding details ahead of his 14th season with the Kansas City Chiefs. "
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Carrick: We want and need more signings at Man Utd",
+      "timestamp": "Thu, 13 Aug 2026 17:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13572595/man-utd-transfer-news-michael-carrick-says-he-wants-and-needs-more-signings-before-the-end-of-the-summer-window",
+        "lang": "en",
+        "summary": "Manchester United head coach Michael Carrick says the club \"want\" and \"need\" to do more transfer business before the summer window closes on September 1. "
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Super League receive investment offer from Australia's National Rugby League",
+      "timestamp": "Thu, 13 Aug 2026 15:53:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/rugby-league/news/12040/13572641/super-league-receive-investment-offer-from-australias-national-rugby-league-as-part-of-recapitalisation-project",
+        "lang": "en",
+        "summary": "Super League have received an investment offer from the Australia Rugby League Commission (ARLC) which governs the National Rugby League (NRL) in Australia."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "LIV tickets taken off sale, Hatton enters clashing event amid cancellation reports",
+      "timestamp": "Thu, 13 Aug 2026 17:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/golf/news/12040/13572526/liv-golf-tickets-for-team-championship-event-in-michigan-no-longer-on-sale-on-official-website-amid-cancellation-reports",
+        "lang": "en",
+        "summary": "Tickets for LIV Golf's season-ending Team Championship event in Michigan are no longer on sale on its official website amid reports it has been cancelled, while star player Tyrrell Hatton has entered a DP World Tour event on the same dates. "
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
       "text": "Spurs latest: PODCAST - A big summer for... Tottenham Hotspur",
       "timestamp": "Thu, 13 Aug 2026 12:00:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/football/live-blog/12040/13025489/tottenham-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts",
         "lang": "en",
         "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "O'Hara: Spurs should sign Rashford with De Zerbi 'perfect' for him",
-      "timestamp": "Thu, 13 Aug 2026 12:05:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13572329/marcus-rashford-transfer-news-tottenham-should-sign-man-utd-forward-says-ex-spurs-midfielder-jamie-ohara",
-        "lang": "en",
-        "summary": "Former Tottenham midfielder Jamie O'Hara wants Spurs to sign Manchester United forward Marcus Rashford."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "LIV season finale tickets no longer on sale amid cancellation reports",
-      "timestamp": "Thu, 13 Aug 2026 11:30:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/golf/news/12040/13572526/liv-golf-tickets-for-team-championship-event-in-michigan-no-longer-on-sale-on-official-website-amid-cancellation-reports",
-        "lang": "en",
-        "summary": "Tickets for LIV Golf's season-ending Team Championship event in Michigan are no longer on sale on its official website amid reports it has been cancelled."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Crystal Palace latest: Eagles closing in on Khalaili signing",
-      "timestamp": "Thu, 13 Aug 2026 14:19:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/live-blog/12040/13279298/crystal-palace-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights",
-        "lang": "en",
-        "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Leeds Rhinos sign Lodge from NRL's Cowboys",
-      "timestamp": "Mon, 10 Aug 2026 19:31:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/rugby-league/live-blog/12040/13303427/rugby-league-news-transfers-and-rumours-super-league-latest-and-highlights",
-        "lang": "en",
-        "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Gold medallist Thomas chases 'own legacy' after AJ comparisons",
-      "timestamp": "Thu, 13 Aug 2026 07:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/boxing/news/12040/13572325/damar-thomas-unfazed-by-anthony-joshua-comparisons-as-commonwealth-games-gold-medallist-chases-own-legacy-ahead-of-la-olympics",
-        "lang": "en",
-        "summary": "Commonwealth Games gold medallist Damar Thomas wants to create his \"own legacy\" after being compared to former Team GB super-heavyweight stars following his triumph in Glasgow."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "'Where has this tennis been?' | Swiatek beats Svitolina to reach first final of 2026",
-      "timestamp": "Thu, 13 Aug 2026 07:01:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13572456/iga-swiatek-vs-elina-svitolina-canadian-open-highlights",
-        "lang": "en",
-        "summary": "Highlights of the Canadian Open match between Iga Swiatek and Elina Svitolina."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Jodar's bid for history halted in Nakashima defeat as Rybakina beats Gauff",
-      "timestamp": "Thu, 13 Aug 2026 06:06:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/tennis/news/12040/13572450/canadian-open-rafael-jodar-bid-for-atp-rankings-history-put-on-hold-while-elena-rybakina-beats-coco-gauff-in-semi-finals",
-        "lang": "en",
-        "summary": "Spanish teenager Rafael Jodar's bid for ATP Tour rankings history was put on hold after he was beaten by Brandon Nakashima in the semi-finals of the Canadian Open."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Man City reject fresh Barcelona bid for Rodri",
-      "timestamp": "Thu, 13 Aug 2026 10:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13567985/rodri-transfer-news-man-city-reject-55m-bid-from-barcelona-for-world-cup-winning-midfielder",
-        "lang": "en",
-        "summary": "Manchester City have rejected a new &#163;55m bid from Barcelona for Rodri. "
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "The Hundred Eliminators and Finals: All you need to know",
-      "timestamp": "Thu, 13 Aug 2026 12:21:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/cricket/news/12040/13572516/the-hundred-teams-venues-timings-for-eliminators-and-finals-with-trent-rockets-waiting-to-find-out-their-opponents",
-        "lang": "en",
-        "summary": "The Hundred 2026 is reaching its dramatic climax and we have the Eliminators then the Finals still to come your way..."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "EFL latest: 'It feels like home' - Jimenez explains Wolves return",
-      "timestamp": "Thu, 13 Aug 2026 11:26:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/live-blog/12040/13163353/championship-news-transfer-latest-and-gossip-plus-efl-updates-from-league-one-and-league-two",
-        "lang": "en",
-        "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Today on Sky Sports Racing: Windsor and Lingfield feature on Thursday",
-      "timestamp": "Thu, 13 Aug 2026 06:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/racing/news/12040/13571992/today-on-sky-sports-racing-windsor-and-lingfield-feature-live-on-thursday",
-        "lang": "en",
-        "summary": "Windsor and Lingfield play host to Thursday evening's action - live on Sky Sports Racing."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Where would Antonelli rank among surprise F1 title winners?",
-      "timestamp": "Thu, 13 Aug 2026 06:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/f1/news/12040/13571878/kimi-antonelli-where-would-mercedes-driver-rank-among-surprise-f1-title-winners-in-recent-history",
-        "lang": "en",
-        "summary": "Kimi Antonelli is on course to become Formula 1&#8217;s youngest-ever world champion, but where would the Mercedes driver&#8217;s triumph rank among the sport&#8217;s biggest surprise title wins in recent history?"
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Papers: Arsenal hold further talks over Villa's Konsa",
-      "timestamp": "Wed, 12 Aug 2026 23:30:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13572412/arsenal-transfer-news-gunners-hold-further-talks-over-aston-villa-defender-ezri-konsa-paper-talk",
-        "lang": "en",
-        "summary": "The top stories and transfer rumours from Thursday's newspapers..."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "MI London's Hundred title defence over despite narrow win over Phoenix",
-      "timestamp": "Wed, 12 Aug 2026 22:07:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/cricket/news/12040/13572322/the-hundred-mi-londons-title-defence-and-hopes-of-fourth-in-a-row-over-despite-narrow-win-over-birmingham-phoenix",
-        "lang": "en",
-        "summary": "MI London had the lights turned out on their hopes of claiming a fourth straight Hundred title despite beating bottom-placed Birmingham Phoenix in a nip-and-tuck final men's group match."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Rashford absent in Leeds friendly win but still part of Man Utd plans",
-      "timestamp": "Wed, 12 Aug 2026 21:48:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/manchester-united-vs-leeds-united/report/555721",
-        "lang": "en",
-        "summary": "Joshua Zirkzee and Brenden Aaronson scored as Manchester United and old foes Leeds played out an entertaining 1-1 friendly draw at the spiritual home of Irish sport in Dublin, before the concluding shoot-out was edged 5-4 by Michael Carrick's side."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Guimaraes makes bow and Lewis-Skelly scores as Arsenal held by Como",
-      "timestamp": "Wed, 12 Aug 2026 21:30:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/arsenal-vs-como/report/562442",
-        "lang": "en",
-        "summary": "Bruno Guimaraes made his first appearance and Myles Lewis-Skelly scored amid speculation about his future as Arsenal were held to a 1-1 draw by Como before winning 4-3 on penalties."
       }
     }
   ]

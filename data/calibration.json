@@ -1,68 +1,62 @@
 {
- "generatedAt": "2026-08-13T13:42:17Z",
- "source": "1 赛季回测（Elo 滚动预测，跨赛季 Elo 连续）",
- "total": 485,
- "overall": 0.4247,
+ "generatedAt": "2026-08-10T17:03:19Z",
+ "source": "2025/26 赛季回测（Elo 滚动预测）",
+ "total": 1752,
+ "overall": 0.4795,
  "buckets": [
   {
    "label": "≤45%",
-   "n": 134,
-   "hitRate": 0.3358,
-   "avgProb": 0.416,
-   "bias": -0.0799
+   "n": 599,
+   "hitRate": 0.3773,
+   "avgProb": 0.403,
+   "bias": -0.0253
   },
   {
    "label": "45-55%",
-   "n": 292,
-   "hitRate": 0.4555,
-   "avgProb": 0.495,
-   "bias": -0.0397
+   "n": 690,
+   "hitRate": 0.4696,
+   "avgProb": 0.496,
+   "bias": -0.0261
   },
   {
    "label": "55-65%",
-   "n": 56,
-   "hitRate": 0.4464,
-   "avgProb": 0.574,
-   "bias": -0.1272
+   "n": 322,
+   "hitRate": 0.5994,
+   "avgProb": 0.593,
+   "bias": 0.0059
   },
   {
    "label": "≥65%",
-   "n": 3,
-   "hitRate": 1.0,
-   "avgProb": 0.676,
-   "bias": 0.3244
+   "n": 141,
+   "hitRate": 0.6879,
+   "avgProb": 0.709,
+   "bias": -0.021
   }
  ],
  "byLeague": {
   "BL1": {
-   "n": 97,
-   "hitRate": 0.3918
+   "n": 306,
+   "hitRate": 0.4837
   },
   "FL1": {
-   "n": 97,
-   "hitRate": 0.3918
+   "n": 306,
+   "hitRate": 0.4935
   },
   "PD": {
-   "n": 97,
-   "hitRate": 0.5258
+   "n": 380,
+   "hitRate": 0.4921
   },
   "PL": {
-   "n": 97,
-   "hitRate": 0.433
+   "n": 380,
+   "hitRate": 0.4632
   },
   "SA": {
-   "n": 97,
-   "hitRate": 0.3814
-  }
- },
- "bySeason": {
-  "2025/26": {
-   "n": 485,
-   "hitRate": 0.4247
+   "n": 380,
+   "hitRate": 0.4684
   }
  },
  "directionDist": {
-  "home": 479,
-  "away": 6
+  "home": 1501,
+  "away": 251
  }
 }
