@@ -165,3 +165,82 @@ def dc_probs(lam: float, mu: float, rho: float = -0.08, max_goals: int = 8) -> l
     entries = [{"score": f"{i}-{j}", "prob": round(p, 4)} for (i, j), p in mat.items()]
     entries.sort(key=lambda x: -x["prob"])
     return entries
+
+
+def dc_1x2_from(lam: float, mu: float, rho: float = -0.08, max_goals: int = 8):
+    """从 λ/μ 计算 Dixon-Coles 胜平负概率 (p_home, p_draw, p_away)。"""
+    entries = dc_probs(lam, mu, rho, max_goals)
+    p_home = sum(e["prob"] for e in entries if int(e["score"].split("-")[0]) > int(e["score"].split("-")[1]))
+    p_draw = sum(e["prob"] for e in entries if e["score"].split("-")[0] == e["score"].split("-")[1])
+    p_away = sum(e["prob"] for e in entries if int(e["score"].split("-")[0]) < int(e["score"].split("-")[1]))
+    return p_home, p_draw, p_away
+
+
+class XgModel:
+    """基于 xG 的攻防强度模型。
+    用历史比赛 xG 算每队进攻强度(场均 xG 创造)与防守强度(场均 xG 丢球)，
+    预测时用泊松参数 λ_home = 攻(主) × 防(客) / 联赛均值，再经 Dixon-Coles 得 1X2。
+    与 Elo 互补：Elo 看赛果（运气成分），xG 看过程（真实强度）。
+    """
+
+    def __init__(self, max_age: int = 20):
+        self.attack = {}   # team(norm) -> 场均 xG 创造
+        self.defense = {}  # team(norm) -> 场均 xG 丢球
+        self.avg_home_xg = 1.45  # 五大联赛主场场均 xG 基准（回退值）
+        self.avg_away_xg = 1.15  # 客场基准
+        self._home_sum = 0.0
+        self._away_sum = 0.0
+        self._home_n = 0
+        self._away_n = 0
+        self.max_age = max_age  # 每队只用最近 N 场（越近越反映当前状态）
+        self._team_recent = {}  # team -> list[(xg_for, xg_against)]
+
+    def add_match(self, home: str, away: str, xg_home, xg_away):
+        """累计一场比赛的 xG（按时间顺序调用）。"""
+        if xg_home is None or xg_away is None:
+            return
+        for t, xgf, xga in ((home, xg_home, xg_away), (away, xg_away, xg_home)):
+            rec = self._team_recent.setdefault(norm_team(t), [])
+            rec.append((float(xgf), float(xga)))
+            if len(rec) > self.max_age:
+                rec.pop(0)
+        self._home_sum += float(xg_home)
+        self._away_sum += float(xg_away)
+        self._home_n += 1
+        self._away_n += 1
+
+    def finalize(self):
+        """训练结束：计算每队攻防强度与联赛均值。"""
+        if self._home_n:
+            self.avg_home_xg = self._home_sum / self._home_n
+        if self._away_n:
+            self.avg_away_xg = self._away_sum / self._away_n
+        for t, rec in self._team_recent.items():
+            if rec:
+                self.attack[t] = sum(r[0] for r in rec) / len(rec)
+                self.defense[t] = sum(r[1] for r in rec) / len(rec)
+
+    def predict(self, home: str, away: str):
+        """返回 (p_home, p_draw, p_away)。两队缺数据时回退均匀 1/3。"""
+        h, a = norm_team(home), norm_team(away)
+        atk_h = self.attack.get(h)
+        def_a = self.defense.get(a)
+        atk_a = self.attack.get(a)
+        def_h = self.defense.get(h)
+        if None in (atk_h, def_a, atk_a, def_h):
+            return 1 / 3, 1 / 3, 1 / 3
+        # 主队 λ：主场基准 × 攻(主)/主场均值 × 防(客)/客场均值（防守弱=丢球多）
+        lam_home = self.avg_home_xg * (atk_h / self.avg_home_xg) * (def_a / self.avg_away_xg)
+        lam_away = self.avg_away_xg * (atk_a / self.avg_away_xg) * (def_h / self.avg_home_xg)
+        p_home, p_draw, p_away = dc_1x2_from(lam_home, lam_away)
+        return round(p_home, 4), round(p_draw, 4), round(p_away, 4)
+
+    def lam(self, home: str, away: str):
+        """返回 (λ_home, λ_away) 或 (None, None)。"""
+        h, a = norm_team(home), norm_team(away)
+        atk_h, def_a, atk_a, def_h = self.attack.get(h), self.defense.get(a), self.attack.get(a), self.defense.get(h)
+        if None in (atk_h, def_a, atk_a, def_h):
+            return None, None
+        lam_home = self.avg_home_xg * (atk_h / self.avg_home_xg) * (def_a / self.avg_away_xg)
+        lam_away = self.avg_away_xg * (atk_a / self.avg_away_xg) * (def_h / self.avg_home_xg)
+        return lam_home, lam_away

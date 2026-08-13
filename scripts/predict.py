@@ -27,7 +27,7 @@ if sys.stdout.encoding != "utf-8":
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from elo import EloModel, dc_probs
+from elo import EloModel, dc_probs, XgModel
 CONFIG_DIR = ROOT / "config"
 DATA_DIR = ROOT / "data"
 ODDS_DIR = DATA_DIR / "odds"
@@ -678,6 +678,41 @@ def main():
     except Exception as e:
         print(f"Elo 赛果迭代跳过: {e}")
 
+    # ── xG 攻防强度模型：用 season_2025.json 的 xgHome/xgAway 训练（与 Elo 互补）──
+    xg_model = XgModel(max_age=20)
+    try:
+        season_path = DATA_DIR / "season_2025.json"
+        if season_path.exists():
+            with open(season_path, encoding="utf-8") as f:
+                season = json.load(f)
+            n_xg = 0
+            for sm in season.get("matches", []):
+                if sm.get("xgHome") is None or sm.get("xgAway") is None:
+                    continue
+                # 防未来函数：预测窗口之后的比赛不参与训练
+                if min_kickoff and (sm.get("utcDate") or "") >= min_kickoff:
+                    continue
+                xg_model.add_match(sm["homeTeam"], sm["awayTeam"], sm["xgHome"], sm["xgAway"])
+                n_xg += 1
+            xg_model.finalize()
+            print(f"xG 模型: {len(xg_model.attack)} 队攻防强度, 已用 {n_xg} 场 xG 训练")
+    except Exception as e:
+        print(f"xG 模型训练跳过: {e}")
+
+    # ── 赛前首发/伤停（lineups.json，来自每小时 FotMob/ESPN/Sofascore 抓取）──
+    lineups_by_match = {}
+    try:
+        lu_path = DATA_DIR / "lineups.json"
+        if lu_path.exists():
+            with open(lu_path, encoding="utf-8") as f:
+                for lm in json.load(f).get("matches", []):
+                    if lm.get("homeLineup") or lm.get("awayLineup"):
+                        lineups_by_match[(norm_team(lm.get("homeTeam", "")),
+                                          norm_team(lm.get("awayTeam", "")))] = lm
+            print(f"首发数据: {len(lineups_by_match)} 场已公布")
+    except Exception:
+        pass
+
     predictor = ScorePredictor(rules)
     predictions = []
 
@@ -749,14 +784,17 @@ def main():
             # 消息信号不直接加减概率（量小滞后，避免噪声），只参与置信度与分歧展示。
             fusion = rules.get("fusion", {})
             w_mkt = fusion.get("marketWeight", 0.6)
-            w_elo = fusion.get("eloWeight", 0.4)
+            w_elo = fusion.get("eloWeight", 0.25)
+            w_xg = fusion.get("xgWeight", 0.15)
             h_sig = msg_result.get("signals", {}).get(home.lower(), {}).get("score", 0) if msg_result else 0
             a_sig = msg_result.get("signals", {}).get(away.lower(), {}).get("score", 0) if msg_result else 0
             msg_diff = (h_sig - a_sig) / 2  # 仅展示与置信度用，不参与概率融合
+            # xG 模型独立概率（缺数据回退均匀，不影响融合权重和）
+            xg_h, xg_d, xg_a = xg_model.predict(home, away)
             if market_prob:
-                f_home = w_mkt * market_prob["home"] + w_elo * ep_home
-                f_draw = w_mkt * market_prob["draw"] + w_elo * ep_draw
-                f_away = w_mkt * market_prob["away"] + w_elo * ep_away
+                f_home = w_mkt * market_prob["home"] + w_elo * ep_home + w_xg * xg_h
+                f_draw = w_mkt * market_prob["draw"] + w_elo * ep_draw + w_xg * xg_d
+                f_away = w_mkt * market_prob["away"] + w_elo * ep_away + w_xg * xg_a
                 _s = f_home + f_draw + f_away
                 if _s > 0:
                     f_home, f_draw, f_away = f_home / _s, f_draw / _s, f_away / _s
@@ -821,6 +859,17 @@ def main():
             # ── Elo 输出 + 价值检测 ──
             pred["eloProb"] = {k: round(v, 3) for k, v in pred_elo.items()}
             pred["dcProb"] = {k: round(v, 3) for k, v in dc12.items()}
+            pred["xgProb"] = {"home": round(xg_h, 3), "draw": round(xg_d, 3), "away": round(xg_a, 3)}
+            # 首发/伤停（若有）：供 AI 研判与前端展示
+            lu = lineups_by_match.get((norm_team(home), norm_team(away)))
+            if lu:
+                pred["lineup"] = {
+                    "homeLineup": lu.get("homeLineup", []),
+                    "awayLineup": lu.get("awayLineup", []),
+                    "injuries": lu.get("injuries", {}),
+                    "source": lu.get("source"),
+                    "fetchedAt": lu.get("fetchedAt"),
+                }
             pred["diverge"] = diverge
             pred["dirs"] = pred_dirs
             pred["form"] = {"home": fh, "away": fa}

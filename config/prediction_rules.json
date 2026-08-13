@@ -145,7 +145,8 @@
  },
  "fusion": {
   "marketWeight": 0.6,
-  "eloWeight": 0.4,
+  "eloWeight": 0.25,
+  "xgWeight": 0.15,
   "messageConfWeight": 0.1
  },
  "scorePrior": {
