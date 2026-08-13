@@ -1,7 +1,18 @@
 {
-  "generatedAt": "2026-08-13T18:08:10Z",
+  "generatedAt": "2026-08-13T20:07:13Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "McIlroy makes woeful start to FedExCup Playoffs as Spieth shares early lead",
+      "timestamp": "Thu, 13 Aug 2026 19:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/golf/news/12040/13572655/fedexcup-playoffs-rory-mcilroy-makes-woeful-start-at-fedex-st-jude-championship-with-four-over-par-opening-round",
+        "lang": "en",
+        "summary": "Rory McIlroy made a woeful start to the FedExCup Playoffs as he shot four-over par opening round at the FedEx St. Jude Championship in Memphis. "
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -82,6 +93,17 @@
     {
       "source": "skysports",
       "type": "news",
+      "text": "NRL legend Cherry-Evans signs one-year deal with Hull FC",
+      "timestamp": "Thu, 13 Aug 2026 21:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/rugby-league/news/12040/13572676/daly-cherry-evans-former-kangaroos-half-back-reportedly-in-advanced-talks-to-sign-for-hull-fc-for-2027-super-league-season",
+        "lang": "en",
+        "summary": "NRL legend Daly Cherry-Evans has signed a one-year deal for Hull FC which sees him complete a shock switch to Super League for the 2027 season. "
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
       "text": "Brighton latest: Genoa make contact over Ferguson loan",
       "timestamp": "Thu, 13 Aug 2026 15:27:00 BST",
       "metadata": {
@@ -93,12 +115,45 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "FREE STREAM: The Transfer Show on Sky Sports News",
-      "timestamp": "Thu, 13 Aug 2026 18:50:00 BST",
+      "text": "'How about that?!' | Fleetwood's '1 in 100' eagle",
+      "timestamp": "Thu, 13 Aug 2026 18:31:00 BST",
       "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13569345/free-stream-the-transfer-show-on-sky-sports-news-latest-football-transfer-news-updates-and-rumours",
+        "link": "https://www.skysports.com/watch/video/13572697/fedex-st-jude-championship-fleetwoods-1-in-100-eagle",
         "lang": "en",
-        "summary": ""
+        "summary": "Tommy Fleetwood produced this eagle on the third hole at the FedEx St. Jude Championship."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Mory leads the way at the Danish Golf Championship",
+      "timestamp": "Thu, 13 Aug 2026 18:10:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13572690/danish-golf-championship-round-one-highlights",
+        "lang": "en",
+        "summary": "Highlights from Round One of the Danish Golf Championship."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Rory finds water on nightmare double-bogey 18th hole!",
+      "timestamp": "Thu, 13 Aug 2026 19:29:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13572712/fedex-st-jude-championship-rory-mcilroy-finds-finds-the-water-on-nightmare-18th-hole",
+        "lang": "en",
+        "summary": "Rory McIlroy had an eighteenth hole to forget at the FedEx St. Jude Championship."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Explained: Why Leicester City has been put up for sale for £224m",
+      "timestamp": "Thu, 13 Aug 2026 20:29:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13572726/explained-why-leicester-city-has-been-put-up-for-sale-for-224m",
+        "lang": "en",
+        "summary": "Sky Sports' Rob Dorsett explains why Thai owners King Power are seeking to sell Leicester City for more than &#163;200m."
       }
     },
     {
@@ -148,7 +203,7 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "FIVE changes for Rangers vs Jagiellonia Bialystok LIVE!",
+      "text": "Rangers disaster! Prelec header restores Jagiellonia's aggregate lead LIVE!",
       "timestamp": "Thu, 13 Aug 2026 18:00:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/football/rangers-vs-jagiellonia-bialystok/live/571444",
@@ -165,61 +220,6 @@
         "link": "https://www.skysports.com/football/news/12040/13570292/devs-digest-will-british-indians-represent-india-national-team-amit-bhatia-closes-in-on-liverpool-stake-yan-dhandas-debut-revisited",
         "lang": "en",
         "summary": "Welcome to Dev's Digest, a regular Sky Sports column in which Asian Football Award winner Dev Trehan delivers exclusive news and reflects on some of the key developments for British South Asians in Football."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "'Best night of my life!' | Kelce reveals Taylor Swift wedding details",
-      "timestamp": "Thu, 13 Aug 2026 16:58:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13572664/travis-kelce-reveals-taylor-swift-wedding-details-best-night-of-my-life",
-        "lang": "en",
-        "summary": "Travis Kelce reveals Taylor Swift wedding details ahead of his 14th season with the Kansas City Chiefs. "
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Carrick: We want and need more signings at Man Utd",
-      "timestamp": "Thu, 13 Aug 2026 17:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13572595/man-utd-transfer-news-michael-carrick-says-he-wants-and-needs-more-signings-before-the-end-of-the-summer-window",
-        "lang": "en",
-        "summary": "Manchester United head coach Michael Carrick says the club \"want\" and \"need\" to do more transfer business before the summer window closes on September 1. "
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Super League receive investment offer from Australia's National Rugby League",
-      "timestamp": "Thu, 13 Aug 2026 15:53:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/rugby-league/news/12040/13572641/super-league-receive-investment-offer-from-australias-national-rugby-league-as-part-of-recapitalisation-project",
-        "lang": "en",
-        "summary": "Super League have received an investment offer from the Australia Rugby League Commission (ARLC) which governs the National Rugby League (NRL) in Australia."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "LIV tickets taken off sale, Hatton enters clashing event amid cancellation reports",
-      "timestamp": "Thu, 13 Aug 2026 17:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/golf/news/12040/13572526/liv-golf-tickets-for-team-championship-event-in-michigan-no-longer-on-sale-on-official-website-amid-cancellation-reports",
-        "lang": "en",
-        "summary": "Tickets for LIV Golf's season-ending Team Championship event in Michigan are no longer on sale on its official website amid reports it has been cancelled, while star player Tyrrell Hatton has entered a DP World Tour event on the same dates. "
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Spurs latest: PODCAST - A big summer for... Tottenham Hotspur",
-      "timestamp": "Thu, 13 Aug 2026 12:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/live-blog/12040/13025489/tottenham-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts",
-        "lang": "en",
-        "summary": ""
       }
     }
   ]
