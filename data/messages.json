@@ -1,7 +1,18 @@
 {
-  "generatedAt": "2026-08-12T22:23:48Z",
+  "generatedAt": "2026-08-13T00:42:20Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Papers: Arsenal hold further talks over Villa's Konsa",
+      "timestamp": "Wed, 12 Aug 2026 23:30:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13572412/arsenal-transfer-news-gunners-hold-further-talks-over-aston-villa-defender-ezri-konsa-paper-talk",
+        "lang": "en",
+        "summary": "The top stories and transfer rumours from Thursday's newspapers..."
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -209,17 +220,6 @@
         "link": "https://www.skysports.com/f1/news/12040/13572275/cadillac-appoint-marcin-budkowski-as-team-principal-following-f1-2026-newcomers-sudden-sacking-of-graeme-lowdon",
         "lang": "en",
         "summary": "Cadillac have sacked team principal Graeme Lowdon and replaced him with Marcin Budkowski in what Formula 1's 2026 newcomers claim is a \"planned leadership transition\". "
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Celtic sign Egypt winger Hassan in time for key Champions League tie",
-      "timestamp": "Wed, 12 Aug 2026 22:50:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13570650/haissem-hassan-celtic-sign-egypt-winger-from-real-oviedo-on-four-year-deal-worth-9m",
-        "lang": "en",
-        "summary": "Celtic have announced the signing of winger Haissem Hassan from Real Oviedo in a potential &#163;9m move."
       }
     }
   ]
