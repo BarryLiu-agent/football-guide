@@ -1,7 +1,29 @@
 {
-  "generatedAt": "2026-08-13T05:42:13Z",
+  "generatedAt": "2026-08-13T06:42:13Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Gold medallist Thomas chases 'own legacy' after AJ comparisons",
+      "timestamp": "Thu, 13 Aug 2026 07:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/boxing/news/12040/13572325/damar-thomas-unfazed-by-anthony-joshua-comparisons-as-commonwealth-games-gold-medallist-chases-own-legacy-ahead-of-la-olympics",
+        "lang": "en",
+        "summary": "Commonwealth Games gold medallist Damar Thomas wants to create his \"own legacy\" after being compared to former Team GB super-heavyweight stars following his triumph in Glasgow."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Jodar's bid for history halted in Nakashima defeat as Rybakina beats Gauff",
+      "timestamp": "Thu, 13 Aug 2026 06:06:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/tennis/news/12040/13572450/canadian-open-rafael-jodar-bid-for-atp-rankings-history-put-on-hold-while-elena-rybakina-beats-coco-gauff-in-semi-finals",
+        "lang": "en",
+        "summary": "Spanish teenager Rafael Jodar's bid for ATP Tour rankings history was put on hold after he was beaten by Brandon Nakashima in the semi-finals of the Canadian Open."
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -88,6 +110,17 @@
         "link": "https://www.skysports.com/football/news/12040/13572395/enzo-fernandez-transfer-news-chelsea-set-man-city-deadline-to-bid-for-midfielder",
         "lang": "en",
         "summary": "Chelsea have told Manchester City they have a deadline of 5pm this Friday to make an offer for Enzo Fernandez."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Marauding Madjo! How 'new' Villa showed their teeth against PSG",
+      "timestamp": "Thu, 13 Aug 2026 06:30:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13571624/brian-madjos-super-cup-performance-against-psg-shows-why-unai-emery-believes-new-aston-villa-can-keep-growing",
+        "lang": "en",
+        "summary": "This was the night that Aston Villa lost a game but found two players. Their 2-1 defeat to Paris Saint-Germain in the UEFA Super Cup featured breakout performances by 17-year-old striker Brian Madjo striker on debut and 19-year-old winger George Hemmings."
       }
     },
     {
@@ -187,39 +220,6 @@
         "link": "https://www.skysports.com/snooker/news/12040/13572300/ronnie-osullivan-the-rockets-poor-start-to-snooker-season-continues-with-shock-early-china-open-loss-to-noppon-saengkham",
         "lang": "en",
         "summary": "Ronnie O'Sullivan's poor start to the new season continued after he lost 6-4 to Noppon Saengkham in the second round of the China Open."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Everton breeze past lacklustre Newcastle in Murrayfield friendly",
-      "timestamp": "Wed, 12 Aug 2026 19:45:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/newcastle-united-vs-everton/report/568648",
-        "lang": "en",
-        "summary": "Matthias Jaissle was given a hint of the task in hand as Newcastle boss as Premier League rivals Everton strolled to a comfortable 3-1 win in a pre-season friendly at Murrayfield. "
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Chelsea stars for sale: The players who could leave - and what they'll cost",
-      "timestamp": "Wed, 12 Aug 2026 20:30:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/news/12040/13572382/chelsea-transfer-news-enzo-fernandez-nicolas-jackson-malo-gusto-and-more-in-spotlight-as-blues-look-to-player-sales",
-        "lang": "en",
-        "summary": "Chelsea are the Premier League's top spenders this summer with the bulk of their business done and attention is now turning to sales.&#160;"
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Fery feels 'no added pressure' despite being British No 1 as he returns",
-      "timestamp": "Wed, 12 Aug 2026 14:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/tennis/news/12040/13572237/arthur-fery-feels-no-added-pressure-despite-being-british-no-1-as-he-returns-to-action-at-cincinnati-open",
-        "lang": "en",
-        "summary": "Arthur Fery insists he feels &#8220;no added pressure&#8221; as the new British No 1 prepares to return to action this weekend for the first time since his memorable run to the Wimbledon semi-finals."
       }
     }
   ]
