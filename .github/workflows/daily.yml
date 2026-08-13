@@ -48,11 +48,11 @@ jobs:
       - name: Fetch messages
         run: python scripts/messages_fetcher.py
 
-      - name: Run prediction engine (push: 仅统计模型，省 AI 额度)
+      - name: "Run prediction engine (push: 仅统计模型，省 AI 额度)"
         if: github.event_name == 'push'
         run: python scripts/predict.py --skip-ai
 
-      - name: Run prediction engine (定时/手动: 含 AI 研判)
+      - name: "Run prediction engine (定时/手动: 含 AI 研判)"
         if: github.event_name != 'push'
         env:
           AI_API_KEY: ${{ secrets.AI_API_KEY }}

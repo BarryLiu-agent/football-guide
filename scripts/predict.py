@@ -1016,6 +1016,24 @@ def main():
         "disclaimer": "本结果仅用于个人数据分析与研究, 不构成任何投注建议",
     }
 
+    # ── AI 研判保留：--skip-ai 模式下沿用上次已生成的研判（省额度，避免高频刷新清空 AI 区块）──
+    if args.skip_ai:
+        try:
+            old_path = DATA_DIR / "predictions.json"
+            if old_path.exists():
+                old = json.loads(old_path.read_text(encoding="utf-8"))
+                by_key = {}
+                for op in old.get("predictions", []):
+                    if op.get("aiJudge"):
+                        by_key[(op.get("league"), op.get("homeTeam", "").lower(), op.get("awayTeam", "").lower())] = op["aiJudge"]
+                for p in predictions:
+                    k = (p.get("league"), p.get("homeTeam", "").lower(), p.get("awayTeam", "").lower())
+                    if k in by_key and not p.get("aiJudge"):
+                        p["aiJudge"] = by_key[k]
+                        p["aiJudgeStale"] = True  # 基于上次数据，供前端提示
+        except Exception:
+            pass
+
     # ── 预测战绩：存档 + 赛果对比 + 成功率统计 ──
     stats = evaluate_predictions(predictions)
     out["stats"] = stats
