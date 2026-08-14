@@ -27,7 +27,7 @@ if sys.stdout.encoding != "utf-8":
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from elo import EloModel, dc_probs, XgModel
+from elo import EloModel, dc_probs, XgModel, norm_team
 CONFIG_DIR = ROOT / "config"
 DATA_DIR = ROOT / "data"
 ODDS_DIR = DATA_DIR / "odds"
@@ -550,15 +550,27 @@ class AnalysisWriter:
 
 # ── 主流程 ───────────────────────────────────────────────
 
+def atomic_write(path, data):
+    """原子写 JSON：先写临时文件再 rename，避免写入中断产生损坏文件。"""
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, separators=(",", ":"))
+    tmp.replace(path)
+
+
 def load_odds():
-    """加载 data/odds/*.json, 返回 {league: [matches]}"""
+    """加载 data/odds/*.json, 返回 {league: [matches]}。
+    单个文件损坏/解析失败 → 跳过该联赛（不中断整批预测）。"""
     result = {}
     if not ODDS_DIR.exists():
         return result
     for f in ODDS_DIR.glob("*.json"):
-        with open(f, "r", encoding="utf-8") as fh:
-            data = json.load(fh)
-        result[data.get("league", f.stem)] = data.get("matches", [])
+        try:
+            with open(f, "r", encoding="utf-8") as fh:
+                data = json.load(fh)
+            result[data.get("league", f.stem)] = data.get("matches", [])
+        except Exception as e:
+            print(f"  ⚠ 跳过损坏赔率文件 {f.name}: {e}")
     return result
 
 
@@ -566,8 +578,12 @@ def load_messages():
     path = DATA_DIR / "messages.json"
     if not path.exists():
         return []
-    with open(path, "r", encoding="utf-8") as f:
-        return json.load(f).get("messages", [])
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f).get("messages", [])
+    except Exception as e:
+        print(f"  ⚠ 消息数据解析失败: {e}")
+        return []
 
 
 def load_standings():
@@ -575,29 +591,17 @@ def load_standings():
     path = DATA_DIR / "standings.json"
     if not path.exists():
         return {}
-    with open(path, "r", encoding="utf-8") as f:
-        return json.load(f).get("standings", {})
-
-
-_TEAM_ALIAS = {
-    # The Odds API / FBref 队名 → Football-Data 积分榜队名（跨源统一）
-    "bayern munchen": "bayern munich",
-    "athletic club": "athletic bilbao",
-    "paris saint germain": "psg",
-    "fc bayern munchen": "bayern munich",
-}
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f).get("standings", {})
+    except Exception as e:
+        print(f"  ⚠ 积分榜解析失败: {e}")
+        return {}
 
 
 def norm_team(s):
-    """队名归一化（与前端一致）。增强：去变音符/连字符/常见俱乐部后缀，别名统一。"""
-    import re
-    import unicodedata
-    t = (s or "").lower()
-    t = unicodedata.normalize("NFKD", t).encode("ascii", "ignore").decode()
-    t = re.sub(r"[\-\.']", " ", t)
-    t = re.sub(r"\b(fc|afc|cf|sc|ac|cd|ud|fk|sv|st|os|sc)\b", "", t)
-    t = re.sub(r"\s+", " ", t).replace("&", " ").strip()
-    return _TEAM_ALIAS.get(t, t)
+    """队名归一化（统一使用 elo.py 的 ALIASES 体系，消除双套归一化不一致）。"""
+    return __import__('elo').norm_team(s)
 
 
 FORM_LAST = 5  # 近 5 场状态
@@ -1174,8 +1178,7 @@ def main():
     stats = evaluate_predictions(predictions)
     out["stats"] = stats
 
-    with open(DATA_DIR / "predictions.json", "w", encoding="utf-8") as f:
-        json.dump(out, f, ensure_ascii=False, indent=2)
+    atomic_write(DATA_DIR / "predictions.json", out)
 
     # 摘要
     notable = [p for p in predictions if p["confidence"] >= rules.get("confidenceMin", 0.4)]
@@ -1503,7 +1506,7 @@ def evaluate_predictions(predictions):
         "updatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
     }
     hist["stats"] = stats
-    history_path.write_text(json.dumps(hist, ensure_ascii=False, indent=1), encoding="utf-8")
+    atomic_write(history_path, hist)
     return stats
 
 

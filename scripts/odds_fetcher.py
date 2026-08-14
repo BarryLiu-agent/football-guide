@@ -124,7 +124,7 @@ class TheOddsApiSource(OddsSource):
         }
         try:
             DATA_DIR.mkdir(parents=True, exist_ok=True)
-            QUOTA_FILE.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            QUOTA_FILE.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
         except Exception as e:
             print(f"    - 配额状态保存失败: {e}")
 
@@ -215,8 +215,8 @@ class TheOddsApiSource(OddsSource):
                         print(f"    - {league_code}: HTTP {r.status_code} (key ...{key[-4:]})")
                         return []
                 except Exception as e:
-                    print(f"    - {league_code}: 请求失败 {e} (key ...{key[-4:]})")
-                    return []
+                    print(f"    - {league_code}: 请求失败 {e} (key ...{key[-4:]}), 切换下一个 key")
+                    continue  # 网络异常也轮换，避免单 key 故障拖垮整批
                 if retry_without_asian:
                     print(f"    - {league_code}: asian_handicap 不受支持，降级重试 (key ...{key[-4:]})")
                     params = dict(params_base, apiKey=key)
@@ -236,8 +236,8 @@ class TheOddsApiSource(OddsSource):
                         print(f"    - {league_code}: HTTP {r.status_code} (降级后, key ...{key[-4:]})")
                         return []
                     except Exception as e:
-                        print(f"    - {league_code}: 降级请求失败 {e} (key ...{key[-4:]})")
-                        return []
+                        print(f"    - {league_code}: 降级请求失败 {e} (key ...{key[-4:]}), 切换下一个 key")
+                        continue
             print(f"    - {league_code}: 所有 Key 配额不足或不可用")
             return []
         finally:
@@ -521,7 +521,7 @@ def main():
                 "matches": merged,
             }
             with open(ODDS_DIR / f"{league}.json", "w", encoding="utf-8") as f:
-                json.dump(out, f, ensure_ascii=False, indent=2)
+                json.dump(out, f, ensure_ascii=False, separators=(",", ":"))
             print(f"    ✓ {len(merged)} 场赔率 -> data/odds/{league}.json")
             all_odds.extend(merged)
         else:

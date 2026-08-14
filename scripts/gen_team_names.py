@@ -363,5 +363,5 @@ if m:
 # 写出
 out = {k: T[k] for k in sorted(T)}
 (ROOT / "data" / "team_names.json").write_text(
-    json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+    json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 print(f"team_names.json: {len(out)} 条映射")

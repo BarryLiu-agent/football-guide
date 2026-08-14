@@ -260,7 +260,7 @@ def main():
             "matches": matches,
         }
         (out_dir / "matches.json").write_text(
-            json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+            json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         print(f"✓ {len(matches)} 场比赛 -> data/xg/matches.json")
         for m in matches[:5]:
             print(f"  {m['homeTeam']} {m['homeGoals']}-{m['awayGoals']} {m['awayTeam']} | xG {m['xgHome']} vs {m['xgAway']}")
@@ -282,7 +282,7 @@ def main():
                     "data": data,
                 }
                 (out_dir / f"{code}.json").write_text(
-                    json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+                    json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
                 print(f"  ✓ {code}: {len(data['teams'])} 队 / {len(data['players'])} 球员")
                 ok += 1
             except Exception as e:

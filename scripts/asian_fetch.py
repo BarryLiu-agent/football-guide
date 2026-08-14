@@ -131,7 +131,7 @@ def main():
             "matches": records,
         }
         path = ASIAN_DIR / f"{league}.json"
-        path.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
+        path.write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         n_ah = sum(1 for m in records if m.get("line"))
         n_settled = sum(1 for m in records if m.get("settle"))
         print(f"  [{league}] {len(records)} 场（含亚盘 {n_ah}，已结算 {n_settled}）-> data/asian/{league}.json")

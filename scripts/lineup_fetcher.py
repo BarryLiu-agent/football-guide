@@ -341,7 +341,7 @@ def main():
         "matches": results,
     }
     (DATA_DIR / "lineups.json").write_text(
-        json.dumps(out, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        json.dumps(out, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     print(f"输出: data/lineups.json ({len(results)} 场)")
     return 0
 

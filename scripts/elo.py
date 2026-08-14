@@ -37,6 +37,8 @@ ALIASES = {
     "torino fc": "torino", "torino": "torino", "cagliari": "cagliari", "udinese": "udinese",
     "verona": "verona", "hellas verona": "verona", "bologna": "bologna", "empoli": "empoli",
     "monza": "monza", "ac monza": "monza", "como": "como", "venezia": "venezia",
+    "borussia dortmund": "dortmund", "dortmund": "dortmund",
+    "rb leipzig": "leipzig", "red bull leipzig": "leipzig", "leipzig": "leipzig",
     "frosinone": "frosinone", "lecce": "lecce", "sassuolo": "sassuolo", "spezia": "spezia",
     "salernitana": "salernitana", "cremonese": "cremonese", "sampdoria": "sampdoria",
     "crotone": "crotone", "cesena": "cesena", "palermo": "palermo", "pisa": "pisa",
@@ -88,7 +90,7 @@ ALIASES = {
 def norm_team(name: str) -> str:
     """归一化队名：去后缀/重音/变体 → 标准键。"""
     words = (name or "").lower().replace("&", " ").split()
-    words = [w for w in words if w not in ("fc", "afc", "cf", "sc", "ac", "1", "2", "0", "4", "05", "1846", "1910", "04", "01", "1.")]
+    words = [w for w in words if w not in ("fc", "afc", "cf", "sc", "ac", "ud", "cd", "1", "2", "0", "4", "05", "1846", "1910", "04", "01", "1.")]
     raw = " ".join(words)
     raw = unicodedata.normalize("NFKD", raw).encode("ascii", "ignore").decode()
     raw = " ".join(raw.split())

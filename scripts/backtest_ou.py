@@ -113,8 +113,8 @@ def main():
     }
 
     with open(DATA_DIR / "calibration_ou.json", "w", encoding="utf-8") as f:
-        json.dump(out, f, ensure_ascii=False, indent=1)
-    print(json.dumps(out, ensure_ascii=False, indent=1))
+        json.dump(out, f, ensure_ascii=False, separators=(",", ":"))
+    print(json.dumps(out, ensure_ascii=False, separators=(",", ":")))
     return 0
 
 
