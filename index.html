@@ -727,13 +727,13 @@ function statusLight(mod, m) {
     return m && m.ok === false ? 'st-red' : 'st-gray';
   }
   if (!m.ok) return 'st-red';
-  // 统一阈值（北京时间）：≤12h 绿，>12h 且 ≤24h 黄，>24h 红
-  // 边界：恰好 12h → 绿；恰好 24h → 黄；24h+1ms → 红
+  // 统一阈值（北京时间）：≤1天 绿，>1天 且 ≤2天 黄，>2天 红
+  // 所有数据源至少超过 1 天才提示偏旧，避免抓取延迟数小时就误报
   const age = Date.now() - new Date(m.updatedAt).getTime();
   if (isNaN(age)) return 'st-gray';
   const H = 3600000;
-  if (age <= 12 * H) return 'st-green';
-  if (age <= 24 * H) return 'st-yellow';
+  if (age <= 24 * H) return 'st-green';
+  if (age <= 48 * H) return 'st-yellow';
   return 'st-red';
 }
 
@@ -759,7 +759,9 @@ function renderStatus() {
     let l4 = '';
     if (m && m.updatedAt && mod.staleAfter > 0) {
       const age = Date.now() - new Date(m.updatedAt).getTime();
-      if (age > mod.staleAfter) {
+      // 所有数据源至少超过 1 天才显示"已超过常规更新间隔"，避免延迟数小时误报
+      const MIN_STALE_MS = 24 * 3600000;
+      if (age > Math.max(mod.staleAfter * 1000, MIN_STALE_MS)) {
         l4 = `<span style="color:${cls === 'st-red' ? '#ef4444' : '#eab308'}">⚠️ 已超过常规更新间隔</span>`;
       }
     }
@@ -772,7 +774,7 @@ function renderStatus() {
     return `<div class="status-row">
       <div class="l1">${dot}<b>${mod.label}</b><span style="color:var(--muted);font-size:11px">${mod.source}</span>${localTag}</div>
       <div class="l2">${l2}</div>
-      <div class="l3">${mod.cadence}${m && m.files ? ' · 文件 ' + m.files : ''}</div>
+      <div class="l3">${mod.cadence}${m && m.files ? ' · 文件 ' + m.files : ''}${m && m.missing && m.missing.length ? `<span style="color:#eab308"> · 缺失: ${m.missing.join(', ')}</span>` : ''}</div>
       ${l4 ? `<div class="l4">${l4}</div>` : ''}
     </div>`;
   }).join('');
