@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T06:24:44Z",
+  "generatedAt": "2026-08-14T06:42:11Z",
   "total": 58,
   "rulesVersion": "1.1",
   "modelInfo": {
@@ -11342,6 +11342,6 @@
         "avgConf": 0
       }
     },
-    "updatedAt": "2026-08-14T06:24:44Z"
+    "updatedAt": "2026-08-14T06:42:11Z"
   }
 }
