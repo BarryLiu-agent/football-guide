@@ -116,8 +116,8 @@ def normalize(d: dict) -> dict:
                     "h": hhad.get("h"), "d": hhad.get("d"), "a": hhad.get("a"),
                     "goalLine": hhad.get("goalLineValue"),
                 },
-                # 总进球 SP（0-7+）
-                "ttg": {str(i): ttg.get(str(i)) for i in range(8)},
+                # 总进球 SP（0-7+）。接口键为 s0~s7（s7=7+球），s{i}f 为涨跌标记
+                "ttg": {str(i): ttg.get(f"s{i}") for i in range(8)},
                 # 半全场 SP（胜胜/胜平/胜负/平胜/平平/平负/负胜/负平/负负）
                 "hafu": {
                     "胜胜": hafu.get("hh"), "胜平": hafu.get("hd"), "胜负": hafu.get("ha"),

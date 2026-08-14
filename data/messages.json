@@ -1,7 +1,18 @@
 {
-  "generatedAt": "2026-08-14T07:03:03Z",
-  "total": 9,
+  "generatedAt": "2026-08-14T07:19:34Z",
+  "total": 10,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "The latest on transfers, Liverpool and Thomas Tuchel's England from the back pages",
+      "timestamp": "Fri, 14 Aug 2026 07:57:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/watch/video/13572832/paper-talk-the-latest-on-transfers-liverpool-and-tuchels-england",
+        "lang": "en",
+        "summary": "Sky Sports News takes you through a selection of the back page headlines from Friday morning's papers."
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
