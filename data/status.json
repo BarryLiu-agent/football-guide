@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T04:42:54Z",
+  "generatedAt": "2026-08-14T04:58:37Z",
   "modules": [
     {
       "key": "fixtures",
@@ -53,21 +53,28 @@
     },
     {
       "key": "odds",
-      "updatedAt": "2026-08-14T03:41:57Z",
+      "updatedAt": "2026-08-14T03:42:04Z",
       "ok": true,
-      "files": "6/6"
+      "files": "6/6",
+      "missing": [
+        "CL.json"
+      ]
     },
     {
       "key": "asian",
-      "updatedAt": "2026-08-14T04:42:30Z",
+      "updatedAt": "2026-08-14T04:42:35Z",
       "ok": true,
       "files": "5/5"
     },
     {
       "key": "xgTeams",
-      "updatedAt": "2026-08-10T00:00:00Z",
+      "updatedAt": "2026-08-14T01:02:15Z",
       "ok": true,
-      "files": "6/6"
+      "files": "6/6",
+      "missing": [
+        "CL.json",
+        "PL.json"
+      ]
     }
   ],
   "oddsQuota": {

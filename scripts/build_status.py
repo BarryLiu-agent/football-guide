@@ -61,7 +61,8 @@ def _read_generated(path: Path):
 
 
 def _is_empty_stub(path: Path) -> bool:
-    """判断是否为空壳数据文件（如休赛期 CL.json 无比赛）。空壳不参与新鲜度计算。"""
+    """判断是否为空壳数据文件（如休赛期 CL.json 无比赛 / xg 抓取失败只剩空榜）。
+    空壳不参与新鲜度计算。"""
     try:
         d = json.loads(path.read_text(encoding="utf-8"))
         ms = d.get("matches")
@@ -70,31 +71,52 @@ def _is_empty_stub(path: Path) -> bool:
         # asian/xg 榜单类：看 data.teams 或 top 级 total
         if d.get("total") == 0:
             return True
+        # xg 榜单：teams 为空 或 players 全为空行（抓取失败遗留 stub）
+        data = d.get("data")
+        if isinstance(data, dict):
+            teams = data.get("teams")
+            players = data.get("players")
+            if isinstance(teams, list) and isinstance(players, list):
+                if len(teams) == 0:
+                    return True
+                if players and all(not (p or {}).get("player_name") for p in players):
+                    return True
         return False
     except Exception:
         return False
 
 
 def _collect_multi(pattern: str, expect: int):
-    """多文件模块：返回 (ok, 最旧非空 generatedAt, 存在文件数/期望数)。
-    空壳文件（如欧冠休赛期无比赛）不拖低新鲜度。"""
+    """多文件模块：返回 (ok, 最新非空 generatedAt, 存在文件数/期望数, 缺失文件清单)。
+    空壳文件（如欧冠休赛期无比赛）不参与新鲜度计算；时间取非空文件中最新（真实最近抓取）。
+    缺失 = 文件不存在 / 读取失败 / 空壳且同批其他文件有数据（如某联赛抓取失败只剩 stub）。"""
     files = sorted(DATA_DIR.glob(pattern))
     # 排除 xg/matches.json（它单独一个模块）
     files = [f for f in files if not (f.parent.name == "xg" and f.name == "matches.json")]
     gens = []
     ok_files = 0
+    empty_stubs = []
+    missing = []
     for f in files:
         ok, g = _read_generated(f)
-        if ok:
-            ok_files += 1
-            if g and not _is_empty_stub(f):
-                gens.append(g)
+        if not ok:
+            missing.append(f.name)
+            continue
+        ok_files += 1
+        if not g:
+            missing.append(f.name)
+            continue
+        if _is_empty_stub(f):
+            empty_stubs.append(f.name)
+            continue
+        gens.append(g)
     if not gens:
         # 全部为空壳（如整个赛季未开）：报 ok 但无更新时间
-        return ok_files >= max(1, expect - 1), None, f"{ok_files}/{expect}"
-    oldest = min(gens)  # 非空文件中取最旧（同批次抓取应一致）
+        ok = ok_files >= max(1, expect - 1)
+        return ok, None, f"{ok_files}/{expect}", (missing + empty_stubs)
+    newest = max(gens)  # 非空文件中取最新（真实最近一次抓取）
     ok = ok_files >= max(1, expect - 1)  # 允许缺 1 个（如欧冠空文件仍算正常）
-    return ok, oldest, f"{ok_files}/{expect}"
+    return ok, newest, f"{ok_files}/{expect}", (missing + empty_stubs)
 
 
 def build() -> dict:
@@ -106,8 +128,11 @@ def build() -> dict:
         modules.append({"key": key, "updatedAt": gen, "ok": ok})
 
     for key, (pattern, expect) in MULTI_FILE.items():
-        ok, gen, count = _collect_multi(pattern, expect)
-        modules.append({"key": key, "updatedAt": gen, "ok": ok, "files": count})
+        ok, gen, count, missing = _collect_multi(pattern, expect)
+        entry = {"key": key, "updatedAt": gen, "ok": ok, "files": count}
+        if missing:
+            entry["missing"] = sorted(set(missing))
+        modules.append(entry)
 
     # 欧赔配额附加信息（供前端展示剩余量）
     try:
