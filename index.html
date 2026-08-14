@@ -654,12 +654,28 @@ function findXgMatch(home, away) {
 function findJingcai(home, away, league) {
   const h = normTeam(home), a = normTeam(away);
   if (!h || !a) return null;
+  // 中文名匹配通道：英文名 → teamNames 中文 → 与竞彩中文队名比对
+  // （竞彩接口返回中文队名如"阿拉维斯"，预测数据是英文"Alaves"，两边要靠中文桥接）
+  const cn = (en) => {
+    if (!en) return '';
+    const t = state.teamNames[en] || state.teamNames[en.replace(/\s+(FC|CF|SC|AFC|UD|CD)$/i, '')];
+    return t || '';
+  };
+  const hCn = cn(home), aCn = cn(away);
+  // 中译名归一：常见异译统一（竞彩"赫塔费" vs 映射"赫塔菲"等）
+  const normCn = (s) => (s || '').replace('赫塔费', '赫塔菲').replace('高云地利', '考文垂');
   return (state.jingcai || []).find(m => {
-    const mh = normTeam(m.homeTeam), ma = normTeam(m.awayTeam);
-    if (!mh || !ma) return false;
-    return (!league || !m.leagueName || LEAGUE_CN[league] === m.leagueName || (m.leagueName || '').includes(COMPETITIONS[league] || '')) &&
-      ((mh === h && ma === a) ||
-       (mh.split(' ')[0] === h.split(' ')[0] && ma.split(' ')[0] === a.split(' ')[0]));
+    const mh = normCn(normTeam(m.homeTeam)), ma = normCn(normTeam(m.awayTeam));
+    if (!mh && !ma) return false;
+    if (!league || !m.leagueName || LEAGUE_CN[league] === m.leagueName || (m.leagueName || '').includes(COMPETITIONS[league] || '')) {
+      // 英文直接匹配
+      if (mh && ma && ((mh === h && ma === a) ||
+          (mh.split(' ')[0] === h.split(' ')[0] && ma.split(' ')[0] === a.split(' ')[0]))) return true;
+      // 中文桥接匹配：竞彩中文队名 vs 预测英文名翻译的中文
+      if (hCn && aCn && ((mh && mh === normCn(hCn) && ma && ma === normCn(aCn)) ||
+          (mh && mh.split(' ')[0] === normCn(hCn).split(' ')[0] && ma && ma.split(' ')[0] === normCn(aCn).split(' ')[0]))) return true;
+    }
+    return false;
   });
 }
 
