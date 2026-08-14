@@ -23,7 +23,7 @@ SPREAD = 400.0      # Elo 换算尺度
 ALIASES = {
     "inter milan": "inter", "internazionale": "inter", "inter milano": "inter",
     "ac milan": "milan", "milan": "milan",
-    "atletico madrid": "atletico madrid", "atletico de madrid": "atletico madrid", "atleti": "atletico madrid",
+    "atletico madrid": "atletico madrid", "atletico de madrid": "atletico madrid", "atleti": "atletico madrid", "atletico": "atletico madrid",
     "manchester united": "manchester united", "man united": "manchester united", "man utd": "manchester united",
     "manchester city": "manchester city", "man city": "manchester city",
     "bayern munich": "bayern munich", "bayern munchen": "bayern munich",

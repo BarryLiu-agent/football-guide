@@ -173,13 +173,12 @@ _NON_FOOTBALL_HINTS = [
     "mory", "danish golf", "doyle", "hungerford", "fedex cup", "worcestershire",
     # 网球
     "tennis", "wimbledon", "grand slam", "set point", "break point", "cincinnati",
-    "first round", "second round", "quarter-final", "semi-final", "masters 1000",
     # 橄榄球联赛/联盟
     "super league", "nrl", "rugby", "rfl", "challenge cup", "leeds rhinos", "hull fc",
     "catalans", "wigan", "salford", "st helens", "warrington",
     # 拳击/格斗/赛马/棒球/篮球
     "boxing", "bellator", "ufc", "knockout", "horse racing", "grand national",
-    "derby day", "nba", "nfl", "mlb", "nhl", "formula 1", "f1 ", "moto",
+    "nba", "nfl", "mlb", "nhl", "formula 1", "f1 ", "moto",
     "kalajdzic", "showdown", "face-off", "faceoff", "fisher bill", "fight night", "coppull",
     # 台球/斯诺克/其他
     "snooker", "darts", "world championship",

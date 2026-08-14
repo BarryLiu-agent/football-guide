@@ -146,7 +146,7 @@ def _build_context(pred: dict) -> str:
             return "; ".join(f"{i.get('name')}({i.get('status')})" for i in lst)
         lines.append(f"伤停: 主队 {_inj_txt(inj.get('home', []))} 客队 {_inj_txt(inj.get('away', []))}")
     if top3:
-        lines.append("模型波胆Top3: " + ", ".join(f"{c['score']}({c.get('prob')})" for c in top3))
+        lines.append("模型波胆Top3: " + ", ".join(f"{c.get('score', '?')}({c.get('prob')})" for c in top3))
     if msg:
         lines.append("消息信号: " + "; ".join(str(m)[:120] for m in msg[:3]))
     return "\n".join(lines)
