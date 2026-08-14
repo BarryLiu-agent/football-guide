@@ -1,7 +1,29 @@
 {
-  "generatedAt": "2026-08-14T04:59:46Z",
+  "generatedAt": "2026-08-14T05:43:46Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Swiatek beats Rybakina to end title drought in Toronto",
+      "timestamp": "Fri, 14 Aug 2026 06:10:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/tennis/news/12040/13572813/canadian-open-iga-swiatek-defeats-elena-rybakina-to-end-title-drought",
+        "lang": "en",
+        "summary": "Iga Swiatek claimed her first title of the season with a dominant 6-2 6-3 win over Elena Rybakina in the final of the National Bank Open in Toronto."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Today on Sky Sports Racing: Efsixteen returns in hot Newbury race",
+      "timestamp": "Fri, 14 Aug 2026 06:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/racing/news/12040/13572338/today-on-sky-sports-racing-newbury-and-yarmouth-feature-live-on-friday-as-efsixteen-returns-in-hot-contest",
+        "lang": "en",
+        "summary": "We have an interesting day's racing on Friday with Flat action from Newbury and Yarmouth, live on Sky Sports Racing..."
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -198,28 +220,6 @@
         "link": "https://www.skysports.com/watch/video/13572712/fedex-st-jude-championship-rory-mcilroy-finds-finds-the-water-on-nightmare-18th-hole",
         "lang": "en",
         "summary": "Rory McIlroy had an eighteenth hole to forget at the FedEx St. Jude Championship."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Explained: Why Leicester City has been put up for sale for £224m",
-      "timestamp": "Thu, 13 Aug 2026 20:29:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13572726/explained-why-leicester-city-has-been-put-up-for-sale-for-224m",
-        "lang": "en",
-        "summary": "Sky Sports' Rob Dorsett explains why Thai owners King Power are seeking to sell Leicester City for more than &#163;200m."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "The Hundred awards: Broad, Hussain, Greenway give their player verdicts",
-      "timestamp": "Thu, 13 Aug 2026 13:50:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/cricket/news/12040/13572600/the-hundred-2026-awards-stuart-broad-nasser-hussain-lydia-greenway-pick-best-local-player-overseas-player-newcomer-fielder-captain-and-more",
-        "lang": "en",
-        "summary": "<em>Sky Sports Cricket's</em> Nasser Hussain and Stuart Broad give out their player awards for the 2026 men's Hundred campaign, while Lydia Greenway looks at the women's competition..."
       }
     }
   ]
