@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T03:25:07Z",
+  "generatedAt": "2026-08-14T03:41:47Z",
   "dateRange": {
     "from": "2026-08-07",
     "to": "2026-09-18"
@@ -5418,12 +5418,12 @@
         "winner": null
       },
       "id": 564658,
-      "utcDate": "2026-09-07T19:00:00Z",
+      "utcDate": "2026-09-07T19:30:00Z",
       "status": "TIMED",
       "matchday": 4,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-13T05:20:20Z",
+      "lastUpdated": "2026-08-14T03:25:08Z",
       "homeTeam": {
         "id": 285,
         "name": "Elche CF",
@@ -8555,12 +8555,12 @@
         "winner": null
       },
       "id": 558610,
-      "utcDate": "2026-09-07T16:30:00Z",
+      "utcDate": "2026-09-07T16:00:00Z",
       "status": "TIMED",
       "matchday": 3,
       "stage": "REGULAR_SEASON",
       "group": null,
-      "lastUpdated": "2026-08-13T05:20:20Z",
+      "lastUpdated": "2026-08-14T03:25:10Z",
       "homeTeam": {
         "id": 104,
         "name": "Cagliari Calcio",
