@@ -60,8 +60,24 @@ def _read_generated(path: Path):
         return False, None
 
 
+def _is_empty_stub(path: Path) -> bool:
+    """判断是否为空壳数据文件（如休赛期 CL.json 无比赛）。空壳不参与新鲜度计算。"""
+    try:
+        d = json.loads(path.read_text(encoding="utf-8"))
+        ms = d.get("matches")
+        if isinstance(ms, list):
+            return len(ms) == 0
+        # asian/xg 榜单类：看 data.teams 或 top 级 total
+        if d.get("total") == 0:
+            return True
+        return False
+    except Exception:
+        return False
+
+
 def _collect_multi(pattern: str, expect: int):
-    """多文件模块：返回 (ok, 最旧 generatedAt, 存在文件数/期望数)。"""
+    """多文件模块：返回 (ok, 最旧非空 generatedAt, 存在文件数/期望数)。
+    空壳文件（如欧冠休赛期无比赛）不拖低新鲜度。"""
     files = sorted(DATA_DIR.glob(pattern))
     # 排除 xg/matches.json（它单独一个模块）
     files = [f for f in files if not (f.parent.name == "xg" and f.name == "matches.json")]
@@ -71,11 +87,12 @@ def _collect_multi(pattern: str, expect: int):
         ok, g = _read_generated(f)
         if ok:
             ok_files += 1
-            if g:
+            if g and not _is_empty_stub(f):
                 gens.append(g)
     if not gens:
-        return False, None, f"{ok_files}/{expect}"
-    oldest = min(gens)  # 保守：按最旧文件算新鲜度
+        # 全部为空壳（如整个赛季未开）：报 ok 但无更新时间
+        return ok_files >= max(1, expect - 1), None, f"{ok_files}/{expect}"
+    oldest = min(gens)  # 非空文件中取最旧（同批次抓取应一致）
     ok = ok_files >= max(1, expect - 1)  # 允许缺 1 个（如欧冠空文件仍算正常）
     return ok, oldest, f"{ok_files}/{expect}"
 
