@@ -715,7 +715,8 @@ function absTime(iso) {
   if (!iso) return '';
   const t = new Date(iso);
   if (isNaN(t.getTime())) return '';
-  const opts = { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false };
+  // 强制北京时间（UTC+8），不依赖浏览器本地时区
+  const opts = { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Asia/Shanghai' };
   return ' · ' + t.toLocaleString('zh-CN', opts);
 }
 
@@ -726,12 +727,14 @@ function statusLight(mod, m) {
     return m && m.ok === false ? 'st-red' : 'st-gray';
   }
   if (!m.ok) return 'st-red';
-  if (mod.staleAfter <= 0) return 'st-green';
+  // 统一阈值（北京时间）：≤12h 绿，>12h 且 ≤24h 黄，>24h 红
+  // 边界：恰好 12h → 绿；恰好 24h → 黄；24h+1ms → 红
   const age = Date.now() - new Date(m.updatedAt).getTime();
   if (isNaN(age)) return 'st-gray';
-  if (age > mod.staleAfter * 1.6) return 'st-red';
-  if (age > mod.staleAfter) return 'st-yellow';
-  return 'st-green';
+  const H = 3600000;
+  if (age <= 12 * H) return 'st-green';
+  if (age <= 24 * H) return 'st-yellow';
+  return 'st-red';
 }
 
 function renderStatus() {
