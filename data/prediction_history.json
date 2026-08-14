@@ -1521,11 +1521,34 @@
    "aiScore": "2-0",
    "aiConfidence": 0.65,
    "aiModel": "deepseek-chat"
+  },
+  {
+   "homeTeam": "Celta Vigo",
+   "awayTeam": "CA Osasuna",
+   "kickoff": "2026-08-27T18:30:00Z",
+   "predictedScore": "1-0",
+   "confidence": 0.579,
+   "valuePicks": [],
+   "signalLevel": "none",
+   "aiPick": "home",
+   "aiScore": "1-0",
+   "aiConfidence": 0.55,
+   "aiModel": "deepseek-chat",
+   "betRec": null,
+   "ouModel": {
+    "line": 2.5,
+    "over": 0.427,
+    "under": 0.573,
+    "edge": -0.033,
+    "kelly": -0.124
+   },
+   "spModel": null,
+   "predictedAt": "2026-08-14T03:43:38Z"
   }
  ],
  "results": [],
  "stats": {
-  "total": 58,
+  "total": 59,
   "finished": 0,
   "exactHit": 0,
   "exactRate": 0,
@@ -1571,6 +1594,6 @@
     "avgConf": 0
    }
   },
-  "updatedAt": "2026-08-13T03:10:31Z"
+  "updatedAt": "2026-08-14T03:43:38Z"
  }
 }
