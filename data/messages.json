@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-13T22:27:07Z",
+  "generatedAt": "2026-08-14T00:42:17Z",
   "total": 20,
   "messages": [
     {
@@ -99,6 +99,17 @@
         "link": "https://www.skysports.com/football/news/12040/13572484/efl-2026-27-season-kick-off-championship-predictions-and-best-bets",
         "lang": "en",
         "summary": ""
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Rangers 'are not ready' to compete in Europa League, says McInnes",
+      "timestamp": "Thu, 13 Aug 2026 23:00:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13572768/rangers-derek-mcinnes-admits-rangers-not-ready-to-compete-in-europa-league-as-dismal-winless-run-continues",
+        "lang": "en",
+        "summary": "Derek McInnes admitted Rangers are \"not ready\" to compete at Europa League level. "
       }
     },
     {
@@ -209,17 +220,6 @@
         "link": "https://www.skysports.com/cricket/news/12040/13572600/the-hundred-2026-awards-stuart-broad-nasser-hussain-lydia-greenway-pick-best-local-player-overseas-player-newcomer-fielder-captain-and-more",
         "lang": "en",
         "summary": "<em>Sky Sports Cricket's</em> Nasser Hussain and Stuart Broad give out their player awards for the 2026 men's Hundred campaign, while Lydia Greenway looks at the women's competition..."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "West Ham latest: Interim chief exec Virani targets Premier League return",
-      "timestamp": "Thu, 13 Aug 2026 15:08:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/live-blog/12040/13210475/west-ham-latest-news",
-        "lang": "en",
-        "summary": ""
       }
     }
   ]
