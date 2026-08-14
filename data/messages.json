@@ -1,7 +1,18 @@
 {
-  "generatedAt": "2026-08-14T05:12:01Z",
+  "generatedAt": "2026-08-14T05:43:46Z",
   "total": 20,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Swiatek beats Rybakina to end title drought in Toronto",
+      "timestamp": "Fri, 14 Aug 2026 06:10:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/tennis/news/12040/13572813/canadian-open-iga-swiatek-defeats-elena-rybakina-to-end-title-drought",
+        "lang": "en",
+        "summary": "Iga Swiatek claimed her first title of the season with a dominant 6-2 6-3 win over Elena Rybakina in the final of the National Bank Open in Toronto."
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -209,17 +220,6 @@
         "link": "https://www.skysports.com/watch/video/13572712/fedex-st-jude-championship-rory-mcilroy-finds-finds-the-water-on-nightmare-18th-hole",
         "lang": "en",
         "summary": "Rory McIlroy had an eighteenth hole to forget at the FedEx St. Jude Championship."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Explained: Why Leicester City has been put up for sale for £224m",
-      "timestamp": "Thu, 13 Aug 2026 20:29:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13572726/explained-why-leicester-city-has-been-put-up-for-sale-for-224m",
-        "lang": "en",
-        "summary": "Sky Sports' Rob Dorsett explains why Thai owners King Power are seeking to sell Leicester City for more than &#163;200m."
       }
     }
   ]
