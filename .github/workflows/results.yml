@@ -47,6 +47,9 @@ jobs:
           AI_MODEL: ${{ secrets.AI_MODEL }}
         run: python scripts/predict.py
 
+      - name: Build status manifest (data/status.json)
+        run: python scripts/build_status.py
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:

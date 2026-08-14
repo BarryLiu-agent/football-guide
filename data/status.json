@@ -1,0 +1,74 @@
+{
+  "generatedAt": "2026-08-14T03:15:48Z",
+  "modules": [
+    {
+      "key": "fixtures",
+      "updatedAt": "2026-08-10T15:28:40Z",
+      "ok": true
+    },
+    {
+      "key": "predictions",
+      "updatedAt": "2026-08-13T03:10:31Z",
+      "ok": true
+    },
+    {
+      "key": "standings",
+      "updatedAt": "2026-08-10T15:29:18Z",
+      "ok": true
+    },
+    {
+      "key": "jingcai",
+      "updatedAt": "2026-08-14T02:41:03Z",
+      "ok": true
+    },
+    {
+      "key": "messages",
+      "updatedAt": "2026-08-10T16:40:54Z",
+      "ok": true
+    },
+    {
+      "key": "lineups",
+      "updatedAt": null,
+      "ok": false
+    },
+    {
+      "key": "oddsQuota",
+      "updatedAt": null,
+      "ok": false
+    },
+    {
+      "key": "xgMatches",
+      "updatedAt": "2026-08-10T00:00:00Z",
+      "ok": true
+    },
+    {
+      "key": "calibration",
+      "updatedAt": "2026-08-10T17:03:19Z",
+      "ok": true
+    },
+    {
+      "key": "calibrationOu",
+      "updatedAt": "2026-08-12T01:24:36Z",
+      "ok": true
+    },
+    {
+      "key": "odds",
+      "updatedAt": "2026-08-10T16:56:55Z",
+      "ok": true,
+      "files": "6/6"
+    },
+    {
+      "key": "asian",
+      "updatedAt": "2026-08-11T10:55:33Z",
+      "ok": true,
+      "files": "5/5"
+    },
+    {
+      "key": "xgTeams",
+      "updatedAt": "2026-08-10T00:00:00Z",
+      "ok": true,
+      "files": "6/5"
+    }
+  ],
+  "oddsQuota": {}
+}

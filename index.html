@@ -430,6 +430,40 @@ table.standings .down { color: var(--red); }
   .empty-state { font-size: 13px; padding: 24px 12px; }
   .record-row span[style*="flex:1"] { flex: 1 1 100%; order: -1; }
 }
+
+/* ===== 数据状态抽屉 ===== */
+.status-btn { position: relative; }
+.status-dot { position: absolute; top: -3px; right: -3px; width: 8px; height: 8px;
+  background: var(--red, #ef4444); border-radius: 50%; display: none; }
+.status-overlay { position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 200;
+  display: none; align-items: flex-end; justify-content: center; }
+.status-overlay.show { display: flex; }
+.status-panel { width: 100%; max-width: 560px; max-height: 78vh; overflow-y: auto;
+  background: var(--bg, #0d1117); border-radius: 16px 16px 0 0; padding: 16px;
+  animation: slideUp .25s ease; }
+@keyframes slideUp { from { transform: translateY(30px); opacity: .6; } to { transform: none; opacity: 1; } }
+.status-head { display: flex; justify-content: space-between; align-items: center;
+  padding-bottom: 10px; border-bottom: 1px solid var(--border, #30363d); margin-bottom: 10px; }
+.status-head .t { font-size: 15px; font-weight: 700; }
+.status-head .s { font-size: 11px; color: var(--muted, #8b949e); }
+.status-close { background: none; border: none; color: var(--muted, #8b949e);
+  font-size: 20px; cursor: pointer; padding: 0 4px; }
+.status-row { padding: 10px 0; border-bottom: 1px solid var(--border, #30363d); }
+.status-row:last-child { border-bottom: none; }
+.status-row .l1 { display: flex; align-items: center; gap: 6px; font-size: 13px; }
+.status-row .l1 b { font-weight: 600; }
+.status-row .l2 { font-size: 11px; color: var(--muted, #8b949e); margin-top: 3px; }
+.status-row .l3 { font-size: 11px; color: var(--text-3, #6e7681); margin-top: 2px; }
+.status-row .l4 { font-size: 10.5px; margin-top: 3px; }
+.st-dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+.st-green { background: #22c55e; } .st-yellow { background: #eab308; }
+.st-red { background: #ef4444; } .st-gray { background: #6e7681; }
+.tag-local { font-size: 9px; padding: 1px 5px; border-radius: 4px;
+  background: rgba(59,130,246,.15); color: #60a5fa; }
+.status-foot { font-size: 10px; color: var(--text-3, #6e7681); text-align: center;
+  padding-top: 8px; border-top: 1px solid var(--border, #30363d); margin-top: 8px; }
+.footer-status { font-size: 10px; color: var(--text-3, #6e7681); text-align: center;
+  padding: 14px 8px 20px; line-height: 1.8; }
 </style>
 </head>
 <body>
@@ -440,6 +474,7 @@ table.standings .down { color: var(--red); }
     <div class="logo">🎲 赌狗赌到<span class="accent">最后应有尽有</span></div>
     <div class="header-right">
       <span class="header-time" id="lastUpdated"></span>
+      <button class="btn-refresh status-btn" onclick="openStatus()" title="数据更新状态">🕐<span class="status-dot" id="statusDot"></span></button>
       <button class="btn-refresh" onclick="refreshAll()">🔄 刷新</button>
       <span class="refresh-note" id="refreshStatus" style="display:inline-block;max-width:300px;vertical-align:middle"></span>
     </div>
@@ -453,6 +488,18 @@ table.standings .down { color: var(--red); }
 <main class="main">
   <div id="pageContent"></div>
 </main>
+
+<!-- ===== 数据状态抽屉 ===== -->
+<div class="status-overlay" id="statusOverlay" onclick="if(event.target===this)closeStatus()">
+  <div class="status-panel">
+    <div class="status-head">
+      <div><span class="t">🕐 数据更新状态</span> <span class="s" id="statusSummary"></span></div>
+      <button class="status-close" onclick="closeStatus()">×</button>
+    </div>
+    <div id="statusList"></div>
+    <div class="status-foot">自动刷新：页面打开时 + 每 5 分钟 · 相对时间每 1 分钟更新</div>
+  </div>
+</div>
 
 <!-- ===== Detail Modal ===== -->
 <div class="modal-overlay" id="detailModal" onclick="if(event.target===this)closeDetail()">
@@ -622,10 +669,149 @@ async function loadJson(url) {
   if (!r.ok) throw new Error('HTTP ' + r.status);
   return r.json();
 }
+
+// ===== 数据状态抽屉（模块描述表，与 CI 生成的 status.json key 对齐）=====
+// staleAfter: 秒。local: 本地脚本抓取。gray: 正常无数据时灰灯（不报红）。
+const STATUS_MODULES = [
+  { key: 'fixtures',       label: '赛程/赛果',   source: 'football-data.org', cadence: '每 30 分钟', staleAfter: 5400,  note: '' },
+  { key: 'odds',           label: '欧赔',        source: 'The Odds API',      cadence: '每天 10:00', staleAfter: 90000, note: '' },
+  { key: 'predictions',    label: '预测模型',    source: '本地管线',           cadence: '每 30 分钟', staleAfter: 7200,  note: '' },
+  { key: 'jingcai',        label: '竞彩 SP',     source: '竞彩官方',           cadence: '每小时',     staleAfter: 10800, note: '本地脚本运行才有；电脑关机/脚本停 = 显示停更', local: true },
+  { key: 'lineups',        label: '首发名单',    source: 'FotMob/ESPN/Sofa',  cadence: '赛前每小时', staleAfter: 0,     note: '赛前 1 小时公布；非比赛时段无数据属正常', gray: true },
+  { key: 'asian',          label: '亚盘历史',    source: 'football-data.co.uk', cadence: '每周',     staleAfter: 604800, note: '历史收盘盘口，开赛后每轮入库' },
+  { key: 'xgTeams',        label: 'xG 球队榜',   source: 'Understat',          cadence: '不定期(本地)', staleAfter: 604800, note: '本地脚本抓取', local: true },
+  { key: 'xgMatches',      label: 'xG 单场(模型)', source: 'Understat',        cadence: '每轮(本地)', staleAfter: 604800, note: '开赛后每轮抓取，自动纳入预测模型', local: true },
+  { key: 'messages',       label: '新闻消息',    source: 'ESPN/Sky RSS',      cadence: '每天',       staleAfter: 172800, note: '' },
+  { key: 'standings',      label: '积分榜',      source: 'football-data.org', cadence: '每天',       staleAfter: 172800, note: '' },
+];
+
+let statusData = null;        // 最近一次拉到的 status.json
+let statusTimer = null;       // 每 60s 刷新相对时间
+let statusPollTimer = null;   // 每 5 分钟重拉 status.json
+
+async function loadStatus() {
+  try {
+    statusData = await loadJson('data/status.json');
+  } catch (e) {
+    statusData = null;
+  }
+  updateStatusUI();
+}
+
+function timeAgo(iso) {
+  if (!iso) return '无记录';
+  const t = new Date(iso).getTime();
+  if (isNaN(t)) return '无记录';
+  const diff = Math.max(0, Date.now() - t);
+  const m = Math.floor(diff / 60000), h = Math.floor(diff / 3600000), d = Math.floor(diff / 86400000);
+  if (d >= 7) return d + ' 天前';
+  if (d >= 1) return d + ' 天 ' + Math.floor((diff % 86400000) / 3600000) + ' 小时前';
+  if (h >= 1) return h + ' 小时 ' + Math.floor((diff % 3600000) / 60000) + ' 分钟前';
+  if (m >= 1) return m + ' 分钟前';
+  return '刚刚';
+}
+
+function absTime(iso) {
+  if (!iso) return '';
+  const t = new Date(iso);
+  if (isNaN(t.getTime())) return '';
+  const opts = { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false };
+  return ' · ' + t.toLocaleString('zh-CN', opts);
+}
+
+function statusLight(mod, m) {
+  // 灰灯：正常无数据（首发未公布等）
+  if (!m || m.updatedAt == null) {
+    if (mod.gray) return 'st-gray';
+    return m && m.ok === false ? 'st-red' : 'st-gray';
+  }
+  if (!m.ok) return 'st-red';
+  if (mod.staleAfter <= 0) return 'st-green';
+  const age = Date.now() - new Date(m.updatedAt).getTime();
+  if (isNaN(age)) return 'st-gray';
+  if (age > mod.staleAfter * 1.6) return 'st-red';
+  if (age > mod.staleAfter) return 'st-yellow';
+  return 'st-green';
+}
+
+function renderStatus() {
+  const list = $('statusList');
+  const summary = $('statusSummary');
+  if (!list) return;
+  const mods = statusData ? statusData.modules : [];
+  const byKey = {};
+  for (const m of mods) byKey[m.key] = m;
+
+  let bad = 0, warn = 0;
+  const rows = STATUS_MODULES.map(mod => {
+    const m = byKey[mod.key];
+    const cls = statusLight(mod, m);
+    if (cls === 'st-red') bad++;
+    if (cls === 'st-yellow') warn++;
+    const dot = `<span class="st-dot ${cls}"></span>`;
+    const localTag = mod.local ? ' <span class="tag-local">本地</span>' : '';
+    const l2 = m && m.updatedAt
+      ? `${timeAgo(m.updatedAt)}${absTime(m.updatedAt)}`
+      : (m && m.ok === false ? '抓取失败/文件缺失' : '暂无数据');
+    let l4 = '';
+    if (m && m.updatedAt && mod.staleAfter > 0) {
+      const age = Date.now() - new Date(m.updatedAt).getTime();
+      if (age > mod.staleAfter) {
+        l4 = `<span style="color:${cls === 'st-red' ? '#ef4444' : '#eab308'}">⚠️ 已超过常规更新间隔</span>`;
+      }
+    }
+    if (mod.key === 'odds' && statusData && statusData.oddsQuota && statusData.oddsQuota.totalRemaining != null) {
+      l4 = (l4 ? l4 + ' · ' : '') + '本月剩余配额 ' + statusData.oddsQuota.totalRemaining + ' 次';
+    }
+    if (mod.note) {
+      l4 = (l4 ? l4 + ' · ' : '') + mod.note;
+    }
+    return `<div class="status-row">
+      <div class="l1">${dot}<b>${mod.label}</b><span style="color:var(--muted);font-size:11px">${mod.source}</span>${localTag}</div>
+      <div class="l2">${l2}</div>
+      <div class="l3">${mod.cadence}${m && m.files ? ' · 文件 ' + m.files : ''}</div>
+      ${l4 ? `<div class="l4">${l4}</div>` : ''}
+    </div>`;
+  }).join('');
+
+  list.innerHTML = rows;
+  const total = STATUS_MODULES.length;
+  summary.textContent = `${total} 个模块${bad ? ' · ' + bad + ' 个异常' : ''}${warn ? ' · ' + warn + ' 个偏旧' : ''}`;
+  // header 红点
+  const dot = $('statusDot');
+  if (dot) dot.style.display = (bad > 0) ? 'block' : 'none';
+  // 页脚简版：取最关键的 4 个
+  const pick = ['fixtures', 'odds', 'predictions', 'jingcai'];
+  const footTxt = pick.map(k => {
+    const mod = STATUS_MODULES.find(x => x.key === k);
+    const m = byKey[k];
+    return mod.label + ' ' + (m && m.updatedAt ? timeAgo(m.updatedAt) : '无数据');
+  }).join(' · ');
+  const foot = $('footerStatus');
+  if (foot) foot.textContent = '数据更新：' + footTxt;
+}
+
+function updateStatusUI() { renderStatus(); }
+
+function openStatus() {
+  const ov = $('statusOverlay');
+  if (ov) { ov.classList.add('show'); renderStatus(); }
+  // 打开时强制重拉一次最新状态
+  loadStatus();
+  if (!statusTimer) statusTimer = setInterval(() => { if ($('statusOverlay').classList.contains('show')) renderStatus(); }, 60000);
+  if (!statusPollTimer) statusPollTimer = setInterval(loadStatus, 5 * 60000);
+}
+
+function closeStatus() {
+  const ov = $('statusOverlay');
+  if (ov) ov.classList.remove('show');
+}
+
 async function loadAll() {
   const failed = [];
   const track = (name, p) => p.catch(() => { failed.push(name); });
   const jobs = [
+    track('status.json', loadJson('data/status.json').then(d => { statusData = d; })),
     track('fixtures.json', loadJson('data/fixtures.json').then(d => { state.fixtures = d.matches || []; })),
     track('predictions.json', loadJson('data/predictions.json').then(d => { state.predictions = d.predictions || []; state.predictionsMeta = d; })),
     track('standings.json', loadJson('data/standings.json').then(d => { state.standings = d.standings || {}; })),
@@ -655,6 +841,7 @@ async function loadAll() {
     jobs.push(loadJson(`data/asian/${lg.code}.json`).then(d => { state.asianByLeague[lg.code] = d; }).catch(() => {}));
   }
   await Promise.all(jobs);
+  updateStatusUI();  // 数据状态红点/页脚随每次 loadAll 刷新
   // 加载失败提示：file:// 直开或部署缺文件时不再白屏无解释
   if (failed.length) {
     const el = $('pageContent');
@@ -1533,6 +1720,7 @@ function refreshAll() {
   }
   // 2 立即重载现有数据并渲染(本地 / GitHub Pages 都是重新拉取 data/*.json)
   loadAll().then(() => {
+    loadStatus();  // 状态抽屉数据一并刷新
     render();
     lastGen = (state.predictionsMeta || {}).generatedAt || null;
     if (currentPred) syncDetail();
@@ -1585,6 +1773,15 @@ function syncDetail() {
 
 // ===== Init =====
 loadAll().then(render);
+
+// ===== 页脚数据状态简版 =====
+(function initFooter() {
+  const foot = document.createElement('div');
+  foot.className = 'footer-status';
+  foot.id = 'footerStatus';
+  foot.textContent = '数据更新时间加载中...';
+  document.body.appendChild(foot);
+})();
 </script>
 </body>
 </html>
