@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-14T05:43:46Z",
-  "total": 20,
+  "generatedAt": "2026-08-14T06:00:11Z",
+  "total": 9,
   "messages": [
     {
       "source": "skysports",
@@ -27,28 +27,6 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Super League leaders Leeds beaten by Leigh after late drama",
-      "timestamp": "Thu, 13 Aug 2026 22:40:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/rugby-league/news/12040/13572725/super-league-leaders-leeds-rhinos-suffer-first-home-defeat-of-season-as-leigh-leopards-claim-surprise-20-16-win-at-headingley",
-        "lang": "en",
-        "summary": "Innes Senior scored twice as Leigh Leopards inflicted a first home defeat of the season on Betfred Super League leaders Leeds Rhinos by winning 20-16 at Headingley."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Gay out for duck as Pakistan impress against County Select XI",
-      "timestamp": "Thu, 13 Aug 2026 21:20:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/cricket/news/12040/13572739/england-opener-emilio-gay-out-for-duck-as-pakistan-impress-against-county-select-xi-ahead-of-test-series",
-        "lang": "en",
-        "summary": "England opening batter Emilio Gay was out for a duck as Pakistan made a strong start to their tour against a Professional County Club Select XI."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
       "text": "Papers: Arsenal hold talks over Osimhen with Galatasaray",
       "timestamp": "Wed, 12 Aug 2026 23:30:00 BST",
       "metadata": {
@@ -60,45 +38,12 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "McIlroy makes woeful start to FedExCup Playoffs as Spieth shares lead",
-      "timestamp": "Thu, 13 Aug 2026 19:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/golf/news/12040/13572655/fedexcup-playoffs-rory-mcilroy-makes-woeful-start-at-fedex-st-jude-championship-with-four-over-par-opening-round",
-        "lang": "en",
-        "summary": "Rory McIlroy made a woeful start to the FedExCup Playoffs as he shot four-over par opening round at the FedEx St. Jude Championship in Memphis. "
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
       "text": "Leicester City up for sale for more than £200m",
       "timestamp": "Thu, 13 Aug 2026 18:27:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/football/news/12040/13572696/leicester-city-for-sale-thai-owners-king-power-put-club-on-market-for-more-than-200m",
         "lang": "en",
         "summary": "Thai owners King Power are seeking to sell Leicester City for more than &#163;200m.&#160;"
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Draper beaten in Cincinnati first round after blowing second-set lead",
-      "timestamp": "Thu, 13 Aug 2026 18:30:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/tennis/news/12040/13572651/cincinnati-open-jack-draper-beaten-by-martin-landaluce-in-first-round-after-blowing-six-set-point-chances-to-level-match",
-        "lang": "en",
-        "summary": "Jack Draper lost 6-3 7-5 to Martin Landaluce in the first round of the Cincinnati Open after blowing six set-point chances to level the match. "
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Doyle: Coppull can strike in the Hungerford",
-      "timestamp": "Thu, 13 Aug 2026 18:27:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/racing/news/12040/13572701/hollie-doyle-clive-cox-can-take-out-the-newbury-feature-with-talented-colt-coppull",
-        "lang": "en",
-        "summary": "Our ambassador previews four contests on Newbury's Hungerford Day and assesses the big races at Ripon - both cards live on Sky Sports Racing."
       }
     },
     {
@@ -137,28 +82,6 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "Richards to face Kalajdzic showdown on Fisher bill",
-      "timestamp": "Thu, 13 Aug 2026 16:30:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/boxing/news/12040/13572483/craig-richards-vs-radivoje-kalajdzic-lee-cutler-vs-louis-greene-added-to-johnny-fisher-boxing-bill-at-copper-box-arena",
-        "lang": "en",
-        "summary": "British former world title challenger Craig Richards will take on Radivoje Kalajdzic in a 10-round light heavyweight showdown, while Lee Cutler faces Louis Greene in a middleweight clash, on Zuffa Boxing's Johnny Fisher bill at London's Copper Box Arena."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Cutler and Greene share intense face-off",
-      "timestamp": "Thu, 13 Aug 2026 15:56:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13572644/zuffa-boxing-11-lee-cutler-and-louis-greene-share-intense-face-off-on-sky-sports-news",
-        "lang": "en",
-        "summary": "Lee Cutler and Louis Greene had an intense face-off as their fight was announced on Sky Sports News for Zuffa Boxing 11 in September."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
       "text": "Rangers booed off after Europa League exit as McInnes' winless start goes on",
       "timestamp": "Thu, 13 Aug 2026 21:20:00 BST",
       "metadata": {
@@ -170,56 +93,12 @@
     {
       "source": "skysports",
       "type": "news",
-      "text": "NRL legend Cherry-Evans signs one-year deal with Hull FC",
-      "timestamp": "Thu, 13 Aug 2026 21:00:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/rugby-league/news/12040/13572676/daly-cherry-evans-former-kangaroos-half-back-reportedly-in-advanced-talks-to-sign-for-hull-fc-for-2027-super-league-season",
-        "lang": "en",
-        "summary": "NRL legend Daly Cherry-Evans has signed a one-year deal for Hull FC which sees him complete a shock switch to Super League for the 2027 season. "
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
       "text": "Brighton latest: Genoa make contact over Ferguson loan",
       "timestamp": "Thu, 13 Aug 2026 15:27:00 BST",
       "metadata": {
         "link": "https://www.skysports.com/football/live-blog/12040/13279295/brighton-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights",
         "lang": "en",
         "summary": ""
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "'How about that?!' | Fleetwood's '1 in 100' eagle",
-      "timestamp": "Thu, 13 Aug 2026 18:31:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13572697/fedex-st-jude-championship-fleetwoods-1-in-100-eagle",
-        "lang": "en",
-        "summary": "Tommy Fleetwood produced this eagle on the third hole at the FedEx St. Jude Championship."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Mory leads the way at the Danish Golf Championship",
-      "timestamp": "Thu, 13 Aug 2026 18:10:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13572690/danish-golf-championship-round-one-highlights",
-        "lang": "en",
-        "summary": "Highlights from Round One of the Danish Golf Championship."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Rory finds water on nightmare double-bogey 18th hole!",
-      "timestamp": "Thu, 13 Aug 2026 19:29:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/watch/video/13572712/fedex-st-jude-championship-rory-mcilroy-finds-finds-the-water-on-nightmare-18th-hole",
-        "lang": "en",
-        "summary": "Rory McIlroy had an eighteenth hole to forget at the FedEx St. Jude Championship."
       }
     }
   ]
