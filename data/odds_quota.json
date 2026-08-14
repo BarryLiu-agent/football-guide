@@ -1,0 +1,30 @@
+{
+  "generatedAt": "2026-08-14T03:42:05Z",
+  "totalRemaining": 373,
+  "keys": [
+    {
+      "env": "ODDS_API_KEY",
+      "last4": "f9ea",
+      "remaining": 373,
+      "masked": "****************************f9ea"
+    },
+    {
+      "env": "ODDS_API_KEY_2",
+      "last4": "5c26",
+      "remaining": null,
+      "masked": "****************************5c26"
+    },
+    {
+      "env": "ODDS_API_KEY_3",
+      "last4": "b121",
+      "remaining": null,
+      "masked": "****************************b121"
+    },
+    {
+      "env": "ODDS_API_KEY_4",
+      "last4": "4d2f",
+      "remaining": null,
+      "masked": "****************************4d2f"
+    }
+  ]
+}
