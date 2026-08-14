@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-08-14T06:42:27Z",
+  "generatedAt": "2026-08-14T06:59:49Z",
   "modules": [
     {
       "key": "fixtures",
-      "updatedAt": "2026-08-14T06:41:49Z",
+      "updatedAt": "2026-08-14T06:57:39Z",
       "ok": true
     },
     {
       "key": "predictions",
-      "updatedAt": "2026-08-14T06:42:11Z",
+      "updatedAt": "2026-08-14T06:59:36Z",
       "ok": true
     },
     {
       "key": "standings",
-      "updatedAt": "2026-08-14T06:42:04Z",
+      "updatedAt": "2026-08-14T06:57:55Z",
       "ok": true
     },
     {
@@ -23,7 +23,7 @@
     },
     {
       "key": "messages",
-      "updatedAt": "2026-08-14T06:42:09Z",
+      "updatedAt": "2026-08-14T06:58:09Z",
       "ok": true
     },
     {
@@ -33,7 +33,7 @@
     },
     {
       "key": "oddsQuota",
-      "updatedAt": "2026-08-14T03:42:05Z",
+      "updatedAt": "2026-08-14T06:57:59Z",
       "ok": true
     },
     {
@@ -43,17 +43,17 @@
     },
     {
       "key": "calibration",
-      "updatedAt": "2026-08-14T06:42:11Z",
+      "updatedAt": "2026-08-14T06:59:37Z",
       "ok": true
     },
     {
       "key": "calibrationOu",
-      "updatedAt": "2026-08-14T06:42:27Z",
+      "updatedAt": "2026-08-14T06:59:49Z",
       "ok": true
     },
     {
       "key": "odds",
-      "updatedAt": "2026-08-14T03:42:04Z",
+      "updatedAt": "2026-08-14T06:57:59Z",
       "ok": true,
       "files": "6/6",
       "missing": [
@@ -62,7 +62,7 @@
     },
     {
       "key": "asian",
-      "updatedAt": "2026-08-14T06:42:08Z",
+      "updatedAt": "2026-08-14T06:58:08Z",
       "ok": true,
       "files": "5/5"
     },
@@ -78,6 +78,6 @@
     }
   ],
   "oddsQuota": {
-    "totalRemaining": 373
+    "totalRemaining": 358
   }
 }

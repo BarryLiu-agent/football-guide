@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T03:42:02Z",
+  "generatedAt": "2026-08-14T06:57:58Z",
   "league": "BL1",
   "history": {
     "bayern munich|vfb stuttgart": [
@@ -105,6 +105,33 @@
       },
       {
         "ts": "2026-08-14T03:42:02Z",
+        "h2h": {
+          "home": 1.29,
+          "draw": 6.4,
+          "away": 8.0
+        },
+        "totals": {
+          "line": 3.5,
+          "over": 1.57,
+          "under": 2.35
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 1.75
+          },
+          "away": {
+            "point": 1.5,
+            "price": 2.15
+          }
+        },
+        "asian": {
+          "home": null,
+          "away": null
+        }
+      },
+      {
+        "ts": "2026-08-14T06:57:58Z",
         "h2h": {
           "home": 1.29,
           "draw": 6.4,
@@ -258,6 +285,33 @@
           "home": null,
           "away": null
         }
+      },
+      {
+        "ts": "2026-08-14T06:57:58Z",
+        "h2h": {
+          "home": 2.8,
+          "draw": 3.65,
+          "away": 2.3
+        },
+        "totals": {
+          "line": 3.5,
+          "over": 2.25,
+          "under": 1.64
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 2.16
+          },
+          "away": {
+            "point": 0.0,
+            "price": 1.77
+          }
+        },
+        "asian": {
+          "home": null,
+          "away": null
+        }
       }
     ],
     "elversberg|bayer leverkusen": [
@@ -363,6 +417,33 @@
       },
       {
         "ts": "2026-08-14T03:42:02Z",
+        "h2h": {
+          "home": 5.23,
+          "draw": 4.5,
+          "away": 1.55
+        },
+        "totals": {
+          "line": 3.5,
+          "over": 2.05,
+          "under": 1.74
+        },
+        "spreads": {
+          "home": {
+            "point": 1.0,
+            "price": 1.97
+          },
+          "away": {
+            "point": -1.0,
+            "price": 1.87
+          }
+        },
+        "asian": {
+          "home": null,
+          "away": null
+        }
+      },
+      {
+        "ts": "2026-08-14T06:57:58Z",
         "h2h": {
           "home": 5.23,
           "draw": 4.5,
@@ -516,6 +597,33 @@
           "home": null,
           "away": null
         }
+      },
+      {
+        "ts": "2026-08-14T06:57:58Z",
+        "h2h": {
+          "home": 1.53,
+          "draw": 4.6,
+          "away": 5.32
+        },
+        "totals": {
+          "line": 3.5,
+          "over": 2.05,
+          "under": 1.7
+        },
+        "spreads": {
+          "home": {
+            "point": -1.0,
+            "price": 1.86
+          },
+          "away": {
+            "point": 1.0,
+            "price": 1.98
+          }
+        },
+        "asian": {
+          "home": null,
+          "away": null
+        }
       }
     ],
     "union berlin|eintracht frankfurt": [
@@ -621,6 +729,33 @@
       },
       {
         "ts": "2026-08-14T03:42:02Z",
+        "h2h": {
+          "home": 2.4,
+          "draw": 3.5,
+          "away": 2.78
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.72,
+          "under": 2.1
+        },
+        "spreads": {
+          "home": {
+            "point": 0.0,
+            "price": 1.82
+          },
+          "away": {
+            "point": 0.0,
+            "price": 2.1
+          }
+        },
+        "asian": {
+          "home": null,
+          "away": null
+        }
+      },
+      {
+        "ts": "2026-08-14T06:57:58Z",
         "h2h": {
           "home": 2.4,
           "draw": 3.5,
@@ -774,6 +909,33 @@
           "home": null,
           "away": null
         }
+      },
+      {
+        "ts": "2026-08-14T06:57:58Z",
+        "h2h": {
+          "home": 1.69,
+          "draw": 4.0,
+          "away": 4.62
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.68,
+          "under": 2.15
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 3.02
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.46
+          }
+        },
+        "asian": {
+          "home": null,
+          "away": null
+        }
       }
     ],
     "borussia dortmund|hamburger sv": [
@@ -903,6 +1065,33 @@
           "home": null,
           "away": null
         }
+      },
+      {
+        "ts": "2026-08-14T06:57:58Z",
+        "h2h": {
+          "home": 1.33,
+          "draw": 5.5,
+          "away": 8.5
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.57,
+          "under": 2.23
+        },
+        "spreads": {
+          "home": {
+            "point": -1.5,
+            "price": 1.955
+          },
+          "away": {
+            "point": 1.5,
+            "price": 1.9
+          }
+        },
+        "asian": {
+          "home": null,
+          "away": null
+        }
       }
     ],
     "sc freiburg|werder bremen": [
@@ -1008,6 +1197,33 @@
       },
       {
         "ts": "2026-08-14T03:42:02Z",
+        "h2h": {
+          "home": 2.03,
+          "draw": 3.55,
+          "away": 3.55
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.73,
+          "under": 2.08
+        },
+        "spreads": {
+          "home": {
+            "point": -0.5,
+            "price": 2.025
+          },
+          "away": {
+            "point": 0.5,
+            "price": 1.83
+          }
+        },
+        "asian": {
+          "home": null,
+          "away": null
+        }
+      },
+      {
+        "ts": "2026-08-14T06:57:58Z",
         "h2h": {
           "home": 2.03,
           "draw": 3.55,
@@ -1161,6 +1377,33 @@
           "home": null,
           "away": null
         }
+      },
+      {
+        "ts": "2026-08-14T06:57:58Z",
+        "h2h": {
+          "home": 2.11,
+          "draw": 3.7,
+          "away": 3.1
+        },
+        "totals": {
+          "line": 2.5,
+          "over": 1.57,
+          "under": 2.3
+        },
+        "spreads": {
+          "home": {
+            "point": -0.25,
+            "price": 1.92
+          },
+          "away": {
+            "point": 0.25,
+            "price": 1.93
+          }
+        },
+        "asian": {
+          "home": null,
+          "away": null
+        }
       }
     ]
   },
@@ -1242,7 +1485,7 @@
       ],
       "bookmakers": 21,
       "prevH2h": {
-        "home": 2.85,
+        "home": 2.8,
         "draw": 3.65,
         "away": 2.3
       }
@@ -1283,7 +1526,7 @@
       ],
       "bookmakers": 21,
       "prevH2h": {
-        "home": 5.2,
+        "home": 5.23,
         "draw": 4.5,
         "away": 1.55
       }
@@ -1324,9 +1567,9 @@
       ],
       "bookmakers": 21,
       "prevH2h": {
-        "home": 1.54,
+        "home": 1.53,
         "draw": 4.6,
-        "away": 5.3
+        "away": 5.32
       }
     },
     {
@@ -1367,7 +1610,7 @@
       "prevH2h": {
         "home": 2.4,
         "draw": 3.5,
-        "away": 2.8
+        "away": 2.78
       }
     },
     {
@@ -1419,7 +1662,7 @@
       "markets": {
         "h2h": {
           "home": 1.33,
-          "draw": 5.4,
+          "draw": 5.5,
           "away": 8.5
         },
         "totals": {
@@ -1448,8 +1691,8 @@
       "bookmakers": 21,
       "prevH2h": {
         "home": 1.33,
-        "draw": 5.5,
-        "away": 8.4
+        "draw": 5.4,
+        "away": 8.5
       }
     },
     {
@@ -1500,23 +1743,23 @@
       "matchUrl": "",
       "markets": {
         "h2h": {
-          "home": 2.1,
+          "home": 2.11,
           "draw": 3.7,
-          "away": 3.15
+          "away": 3.1
         },
         "totals": {
           "line": 2.5,
-          "over": 1.58,
+          "over": 1.57,
           "under": 2.3
         },
         "spreads": {
           "home": {
             "point": -0.25,
-            "price": 1.84
+            "price": 1.92
           },
           "away": {
             "point": 0.25,
-            "price": 2.02
+            "price": 1.93
           }
         },
         "asian": {
