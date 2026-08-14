@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T04:33:20Z",
+  "generatedAt": "2026-08-14T04:42:39Z",
   "total": 58,
   "rulesVersion": "1.1",
   "modelInfo": {
@@ -208,11 +208,12 @@
       "aiJudge": {
         "pick": "away",
         "score": "0-1",
-        "confidence": 0.6,
-        "reason": "统计模型和xG模型均显示客队胜率较高，欧赔也支持客胜，但Elo概率显示主队有一定竞争力，故信心中等。",
+        "confidence": 0.606,
+        "reason": "统计模型和xG模型均看好客队，欧赔也支持客胜，但Elo概率显示主队有一定竞争力，故信心适中。",
         "model": "deepseek-chat",
-        "latency": 1.8
-      }
+        "latency": 1.2
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Inter Milan",
@@ -403,10 +404,11 @@
         "pick": "home",
         "score": "2-1",
         "confidence": 0.65,
-        "reason": "主胜概率高且欧赔支持，但xG模型分歧较大，信心适度。",
+        "reason": "欧赔和统计模型均看好主胜，但Elo概率显示客队有优势，综合后倾向主胜但信心一般。",
         "model": "deepseek-chat",
-        "latency": 2.0
-      }
+        "latency": 1.2
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Parma",
@@ -590,13 +592,14 @@
       "btts": 0.4423,
       "analysis": "【胜负】双方实力接近，主队Parma略占优（主胜 36% vs 客胜 33%）（赔率 2.65 / 3.05 / 2.85）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.835 / 2.0149999999999997）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（13%）、0-1（11%）。\n【大小球】2.5 球盘口：大球 40% / 小球 60%（赔率 大 2.3499999999999996 / 小 1.55），倾向小球。\n【进球数】总进球概率：0球 11%、1球 24%、2球 27%、3球 20%、4球 11%。\n【双方进球】双方都进球概率 44%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 49% vs 盘口 36%（差 +14%），值得关注。\n【结论】综合赔率与消息，Parma不败概率更高，关注波胆 1-1 方向。",
       "aiJudge": {
-        "pick": "home",
-        "score": "1-0",
-        "confidence": 0.538,
-        "reason": "统计模型和Elo均略倾向主胜，且主胜赔率较低，但平局概率不低，谨慎看好主队小胜。",
+        "pick": "none",
+        "score": "1-1",
+        "confidence": 0.5,
+        "reason": "数据无明显倾向，模型概率分散，平局概率较高。",
         "model": "deepseek-chat",
-        "latency": 2.1
-      }
+        "latency": 1.7
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Genoa",
@@ -794,11 +797,12 @@
       "aiJudge": {
         "pick": "away",
         "score": "0-1",
-        "confidence": 0.588,
-        "reason": "客胜概率综合最高，欧赔与统计模型均支持客队，但Elo概率显示主队有一定竞争力，故信心中等。",
+        "confidence": 0.589,
+        "reason": "客胜概率综合最高，欧赔与模型均支持客队，但平局概率不低，信心适中。",
         "model": "deepseek-chat",
-        "latency": 2.0
-      }
+        "latency": 1.4
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Frosinone",
@@ -991,12 +995,13 @@
       "analysis": "【胜负】市场明显看好客队Juventus，客胜隐含概率 65%（赔率 6.9 / 4.5 / 1.45）。\n【让球】客队Juventus让 1.0 球（盘口赔率 2.1 / 1.77）。\n【波胆】泊松模型推算最可能比分：1-1（11%）、0-1（10%）、1-2（10%）。\n【大小球】2.5 球盘口：大球 52% / 小球 48%（赔率 大 1.82 / 小 1.96），倾向大球。\n【进球数】总进球概率：0球 6%、1球 17%、2球 24%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 54%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 42% vs 盘口 14%（差 +28%），值得关注。\n【结论】综合赔率与消息，Juventus不败概率更高，关注波胆 1-1 方向。",
       "aiJudge": {
         "pick": "away",
-        "score": "1-2",
+        "score": "0-1",
         "confidence": 0.62,
-        "reason": "统计模型和欧赔均强烈倾向客胜，但Elo和xG模型显示客队优势不大，综合调整后仍看好客队小胜。",
+        "reason": "客队尤文图斯胜率显著占优，欧赔和统计模型均支持客胜，但xG模型显示均势，故信心适度下调。",
         "model": "deepseek-chat",
-        "latency": 2.0
-      }
+        "latency": 2.8
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Venezia",
@@ -1182,11 +1187,12 @@
       "aiJudge": {
         "pick": "home",
         "score": "1-0",
-        "confidence": 0.55,
-        "reason": "统计模型和Elo均倾向主胜，欧赔主胜略低，但平局概率不低，谨慎看好主队小胜。",
+        "confidence": 0.647,
+        "reason": "统计模型和Elo均看好主队，且欧赔主胜较低，但xG模型显示均势，故适度下调信心。",
         "model": "deepseek-chat",
-        "latency": 1.4
-      }
+        "latency": 1.1
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Torino",
@@ -1385,10 +1391,11 @@
         "pick": "away",
         "score": "1-2",
         "confidence": 0.55,
-        "reason": "欧赔与统计模型均倾向客胜，但Elo和xG模型支持主队，综合分歧较大，谨慎选择客胜。",
+        "reason": "欧赔和统计模型均倾向客胜，但Elo和xG模型支持主队，综合分歧较大，谨慎选择客胜。",
         "model": "deepseek-chat",
-        "latency": 2.0
-      }
+        "latency": 1.0
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Atalanta BC",
@@ -1557,12 +1564,13 @@
       "analysis": "【胜负】市场高度看好主队Atalanta BC，主胜隐含概率 62%（赔率 1.53 / 4.35 / 5.9）。\n【让球】主队Atalanta BC让 1.0 球（盘口赔率 1.8849999999999998 / 1.9449999999999998）。\n【波胆】泊松模型推算最可能比分：1-0（12%）、1-1（11%）、2-0（10%）。\n【大小球】2.5 球盘口：大球 57% / 小球 43%（赔率 大 1.66 / 小 2.165），倾向大球。\n【进球数】总进球概率：0球 7%、1球 18%、2球 24%、3球 22%、4球 15%。\n【双方进球】双方都进球概率 51%，倾向至少一方零封。\n【结论】综合赔率与消息，Atalanta BC不败概率更高，关注波胆 1-0 方向。",
       "aiJudge": {
         "pick": "home",
-        "score": "1-0",
-        "confidence": 0.62,
-        "reason": "主胜概率与欧赔一致，但xG模型分歧较大，信心适度下调。",
+        "score": "2-0",
+        "confidence": 0.65,
+        "reason": "主队胜率与欧赔一致，但xG模型分歧较大，综合信心中等。",
         "model": "deepseek-chat",
-        "latency": 1.9
-      }
+        "latency": 1.4
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Bologna",
@@ -1737,10 +1745,11 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "统计模型和Elo均看好主胜，欧赔也倾向主队，但xG模型显示平局概率较高，故信心适中。",
+        "reason": "统计模型和Elo均略倾向主胜，欧赔主胜较低，但xG模型接近均势，信心不宜过高。",
         "model": "deepseek-chat",
-        "latency": 1.7
-      }
+        "latency": 1.3
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "AS Roma",
@@ -1934,11 +1943,12 @@
       "aiJudge": {
         "pick": "home",
         "score": "1-0",
-        "confidence": 0.55,
-        "reason": "统计模型和欧赔均倾向主胜，但xG模型显示均势，信心适度。",
+        "confidence": 0.65,
+        "reason": "主队胜率综合较高，欧赔与Elo均支持主胜，但xG模型显示均势，故适度下调信心。",
         "model": "deepseek-chat",
-        "latency": 1.8
-      }
+        "latency": 1.4
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Marseille",
@@ -2112,11 +2122,12 @@
       "aiJudge": {
         "pick": "home",
         "score": "2-1",
-        "confidence": 0.6,
-        "reason": "主胜概率与赔率一致，xG模型支持主队，但平局概率不低，信心适中。",
+        "confidence": 0.62,
+        "reason": "主队胜率与赔率一致，xG模型支持主胜，但平局概率不低，需谨慎。",
         "model": "deepseek-chat",
-        "latency": 1.4
-      }
+        "latency": 1.6
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "RC Lens",
@@ -2310,11 +2321,12 @@
       "aiJudge": {
         "pick": "home",
         "score": "1-0",
-        "confidence": 0.6,
-        "reason": "欧赔和统计模型均倾向主胜，但xG模型显示均势，信心适度下调。",
+        "confidence": 0.55,
+        "reason": "欧赔和统计模型均倾向主胜，但xG模型无倾向，综合小幅看好主队小胜。",
         "model": "deepseek-chat",
-        "latency": 1.7
-      }
+        "latency": 1.6
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Le Mans FC",
@@ -2507,12 +2519,13 @@
       "analysis": "【胜负】双方实力接近，主队Le Mans FC略占优（主胜 38% vs 客胜 35%）（赔率 2.5 / 3.49 / 2.72）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.82 / 2.04）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（10%）、0-1（9%）。\n【大小球】2.5 球盘口：大球 54% / 小球 46%（赔率 大 1.75 / 小 2.04），倾向大球。\n【进球数】总进球概率：0球 7%、1球 19%、2球 25%、3球 22%、4球 14%。\n【双方进球】双方都进球概率 52%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 56% vs 盘口 38%（差 +18%），值得关注。\n【结论】综合赔率与消息，Le Mans FC不败概率更高，关注波胆 1-1 方向。",
       "aiJudge": {
         "pick": "home",
-        "score": "1-0",
+        "score": "2-1",
         "confidence": 0.55,
-        "reason": "统计模型和Elo均看好主队，欧赔也略倾向主胜，但xG模型显示均势，故信心中等。",
+        "reason": "统计模型和Elo均看好主队，但欧赔和xG模型分歧较大，信心适度。",
         "model": "deepseek-chat",
-        "latency": 1.5
-      }
+        "latency": 1.9
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Nice",
@@ -2685,12 +2698,13 @@
       "analysis": "【胜负】双方实力接近，主队Nice略占优（主胜 44% vs 客胜 29%）（赔率 2.15 / 3.5 / 3.2）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.66 / 2.42）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（10%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 54% / 小球 46%（赔率 大 1.75 / 小 2.05），倾向大球。\n【进球数】总进球概率：0球 7%、1球 18%、2球 24%、3球 22%、4球 15%。\n【双方进球】双方都进球概率 54%，倾向至少一方零封。\n【结论】综合赔率与消息，Nice不败概率更高，关注波胆 1-1 方向。",
       "aiJudge": {
         "pick": "home",
-        "score": "1-0",
-        "confidence": 0.45,
-        "reason": "主胜概率略高且欧赔支持，但平局概率不低，谨慎看好小胜。",
+        "score": "2-1",
+        "confidence": 0.533,
+        "reason": "统计模型和xG模型均看好主队，且欧赔主胜赔率较低，但Elo模型强烈看好客队，综合后倾向主胜但信心一般。",
         "model": "deepseek-chat",
-        "latency": 1.4
-      }
+        "latency": 2.0
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Toulouse",
@@ -2886,13 +2900,14 @@
       "btts": 0.5626,
       "analysis": "【胜负】比赛悬念较大，主胜 29% / 平 26% / 客胜 46%（赔率 3.3 / 3.65 / 2.07）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 2.52 / 1.62）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、0-1（9%）、1-2（9%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%（赔率 大 1.72 / 小 2.1），倾向大球。\n【进球数】总进球概率：0球 6%、1球 17%、2球 24%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 56%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 48% vs 盘口 29%（差 +19%），值得关注。\n【结论】综合赔率与消息，Lyon不败概率更高，关注波胆 1-1 方向。",
       "aiJudge": {
-        "pick": "away",
-        "score": "1-2",
-        "confidence": 0.54,
-        "reason": "欧赔客胜明显偏低，统计模型客胜概率最高，尽管Elo和xG模型偏向主队，但盘口支持客队。",
+        "pick": "home",
+        "score": "2-1",
+        "confidence": 0.55,
+        "reason": "统计模型和xG模型均略倾向主胜，且Elo概率大幅支持主队，但欧赔客胜偏低形成矛盾，故谨慎选择主胜。",
         "model": "deepseek-chat",
-        "latency": 1.5
-      }
+        "latency": 3.7
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Troyes",
@@ -3060,13 +3075,14 @@
       "btts": 0.4861,
       "analysis": "【胜负】比赛悬念较大，主胜 35% / 平 27% / 客胜 38%（赔率 2.72 / 3.5 / 2.47）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 2.06 / 1.81）。\n【波胆】泊松模型推算最可能比分：1-1（13%）、1-0（11%）、0-1（11%）。\n【大小球】2.5 球盘口：大球 56% / 小球 44%（赔率 大 1.68 / 小 2.15），倾向大球。\n【进球数】总进球概率：0球 9%、1球 22%、2球 26%、3球 21%、4球 13%。\n【双方进球】双方都进球概率 49%，倾向至少一方零封。\n【结论】综合赔率与消息，Paris FC不败概率更高，关注波胆 1-1 方向。",
       "aiJudge": {
-        "pick": "none",
-        "score": "1-1",
-        "confidence": 0.5,
-        "reason": "统计模型与欧赔显示客队略占优，但Elo和xG模型分歧较大，无明显倾向。",
+        "pick": "away",
+        "score": "0-1",
+        "confidence": 0.578,
+        "reason": "客队胜率在统计模型和Elo中均占优，欧赔也倾向客队，尽管xG模型均衡，但综合数据支持客胜。",
         "model": "deepseek-chat",
-        "latency": 1.6
-      }
+        "latency": 1.5
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Angers",
@@ -3265,10 +3281,11 @@
         "pick": "away",
         "score": "0-1",
         "confidence": 0.65,
-        "reason": "客队胜率在统计模型和xG模型中均显著占优，欧赔也支持客胜，但Elo概率稍低，故适度下调信心。",
+        "reason": "客队胜率显著占优，模型和赔率均支持客胜。",
         "model": "deepseek-chat",
-        "latency": 1.6
-      }
+        "latency": 1.2
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Le Havre",
@@ -3462,11 +3479,12 @@
       "aiJudge": {
         "pick": "away",
         "score": "0-1",
-        "confidence": 0.572,
-        "reason": "客胜概率最高且欧赔支持客队，但Elo概率接近，故信心中等。",
+        "confidence": 0.592,
+        "reason": "客队胜率在统计模型和欧赔中均占优，且模型最可能比分包含0-1，但主队有一定不败概率，故信心中等。",
         "model": "deepseek-chat",
-        "latency": 1.4
-      }
+        "latency": 1.8
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Paris Saint Germain",
@@ -3648,11 +3666,12 @@
       "aiJudge": {
         "pick": "home",
         "score": "2-1",
-        "confidence": 0.65,
-        "reason": "主队胜率显著占优，欧赔与xG模型均支持主胜，但客队有一定进球能力，预测2-1小胜。",
+        "confidence": 0.72,
+        "reason": "主队胜率极高且赔率支持，但客队有一定进球能力，预测2-1小胜。",
         "model": "deepseek-chat",
-        "latency": 1.5
-      }
+        "latency": 1.3
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Bayern Munich",
@@ -3840,10 +3859,11 @@
         "pick": "home",
         "score": "2-0",
         "confidence": 0.72,
-        "reason": "拜仁主场优势明显，数据模型和赔率均强烈支持主胜，且客队无爆冷迹象。",
+        "reason": "拜仁主场优势明显，攻防数据全面占优，欧赔与模型概率一致支持主胜。",
         "model": "deepseek-chat",
-        "latency": 1.2
-      }
+        "latency": 1.5
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "1. FC Köln",
@@ -4022,11 +4042,12 @@
       "aiJudge": {
         "pick": "away",
         "score": "0-1",
-        "confidence": 0.544,
-        "reason": "客队排名和实力占优，欧赔和统计模型均倾向客胜，但主队主场有一定韧性，比分预测为0-1。",
+        "confidence": 0.546,
+        "reason": "客队排名和实力占优，欧赔和统计模型均倾向客胜，但概率优势有限。",
         "model": "deepseek-chat",
-        "latency": 1.9
-      }
+        "latency": 1.6
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Elversberg",
@@ -4196,11 +4217,12 @@
       "aiJudge": {
         "pick": "away",
         "score": "1-2",
-        "confidence": 0.55,
-        "reason": "客队勒沃库森实力占优，欧赔和Elo均支持客胜，但xG模型显示均势，信心适度下调。",
+        "confidence": 0.65,
+        "reason": "客队勒沃库森实力占优，欧赔和Elo均支持客胜，但xG模型分歧较大，信心适度下调。",
         "model": "deepseek-chat",
         "latency": 1.4
-      }
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "RB Leipzig",
@@ -4379,11 +4401,12 @@
       "aiJudge": {
         "pick": "home",
         "score": "2-1",
-        "confidence": 0.65,
-        "reason": "主队积分排名和攻防数据占优，欧赔及统计模型均支持主胜，但xG模型显示均势，故适度下调信心。",
+        "confidence": 0.62,
+        "reason": "主队排名和状态占优，欧赔和Elo均支持主胜，但xG模型分歧较大，故适度下调信心。",
         "model": "deepseek-chat",
-        "latency": 1.9
-      }
+        "latency": 1.3
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Union Berlin",
@@ -4594,11 +4617,12 @@
       "aiJudge": {
         "pick": "away",
         "score": "0-1",
-        "confidence": 0.526,
-        "reason": "客队Elo概率和积分排名占优，且统计模型预测客胜概率最高，但主队主场因素和欧赔接近，信心适中。",
+        "confidence": 0.525,
+        "reason": "客队Elo概率显著占优，且统计模型与波胆均倾向客胜，但主队xG概率略高，故信心适中。",
         "model": "deepseek-chat",
-        "latency": 1.4
-      }
+        "latency": 1.5
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "FSV Mainz 05",
@@ -4781,10 +4805,11 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.65,
-        "reason": "统计模型和Elo均看好主胜，欧赔支持主队，但xG模型分歧较大，故信心适中。",
+        "reason": "统计模型和欧赔均支持主胜，但xG模型显示平局概率较高，故适度下调信心。",
         "model": "deepseek-chat",
-        "latency": 1.2
-      }
+        "latency": 1.5
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Borussia Dortmund",
@@ -4972,10 +4997,11 @@
         "pick": "home",
         "score": "2-0",
         "confidence": 0.85,
-        "reason": "主队实力和状态明显占优，模型概率和赔率均支持主胜，且比分预测为2-0。",
+        "reason": "主队实力与状态全面占优，欧赔和模型概率均强烈支持主胜，且比分预测2-0概率最高。",
         "model": "deepseek-chat",
         "latency": 1.1
-      }
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "SC Freiburg",
@@ -5194,10 +5220,11 @@
         "pick": "home",
         "score": "2-1",
         "confidence": 0.62,
-        "reason": "主队排名和状态占优，统计模型和xG模型均支持主胜，但客队有保级动力，需防平局。",
+        "reason": "主队积分排名和Elo概率占优，欧赔支持主胜，但客队有保级战意，平局概率不低，故谨慎看好主胜。",
         "model": "deepseek-chat",
-        "latency": 1.4
-      }
+        "latency": 1.2
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Augsburg",
@@ -5392,10 +5419,11 @@
         "pick": "home",
         "score": "2-1",
         "confidence": 0.6,
-        "reason": "统计模型和Elo均看好主队，欧赔也倾向主胜，但xG模型分歧较大，故适度下调信心。",
+        "reason": "统计模型和Elo均看好主胜，欧赔也倾向主队，但xG模型显示均势，故信心适中。",
         "model": "deepseek-chat",
-        "latency": 1.1
-      }
+        "latency": 1.0
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Arsenal",
@@ -5566,10 +5594,11 @@
         "pick": "home",
         "score": "2-0",
         "confidence": 0.75,
-        "reason": "主队胜率极高，欧赔和Elo均支持主胜，模型预测2-0为最可能比分。",
+        "reason": "主队胜率极高，欧赔和Elo均支持主胜，模型预测2-0。",
         "model": "deepseek-chat",
-        "latency": 1.4
-      }
+        "latency": 1.2
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Hull City",
@@ -5740,10 +5769,11 @@
         "pick": "away",
         "score": "0-2",
         "confidence": 0.62,
-        "reason": "客胜概率显著占优，欧赔与Elo均支持曼联，但xG模型分歧较大，故适度下调信心。",
+        "reason": "客队胜率显著占优，欧赔和Elo均支持客胜，尽管xG模型分歧，但综合倾向客队获胜。",
         "model": "deepseek-chat",
-        "latency": 1.7
-      }
+        "latency": 1.6
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Everton",
@@ -5931,10 +5961,11 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队胜率略高且主场优势，但平局概率不低，谨慎看好小胜。",
+        "reason": "主队埃弗顿在积分榜和攻防数据上略占优势，且统计模型和欧赔均倾向主胜，但客队有一定抵抗力，故信心中等。",
         "model": "deepseek-chat",
         "latency": 1.6
-      }
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Ipswich Town",
@@ -6120,11 +6151,12 @@
       "aiJudge": {
         "pick": "away",
         "score": "0-1",
-        "confidence": 0.543,
-        "reason": "客队胜率在统计模型和Elo中均占优，欧赔也略倾向客队，但优势有限。",
+        "confidence": 0.542,
+        "reason": "客队胜率在统计模型和Elo中均占优，且欧赔客胜略低，但平局概率不低，谨慎看好客胜。",
         "model": "deepseek-chat",
-        "latency": 1.4
-      }
+        "latency": 1.6
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Nottingham Forest",
@@ -6324,10 +6356,11 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队胜率综合略高，且模型预测1-0，但客队积分稍高，信心有限。",
+        "reason": "主队胜率在统计模型和Elo中均占优，且欧赔略倾向主胜，但客队实力接近，信心适中。",
         "model": "deepseek-chat",
-        "latency": 1.8
-      }
+        "latency": 1.4
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Brentford",
@@ -6533,12 +6566,13 @@
       "analysis": "【排名】主队Brentford排名第9（53分/38场），客队Tottenham Hotspur排名第17（41分/38场），主队排名领先 8 位。\n【胜负】双方实力接近，主队Brentford略占优（主胜 39% vs 客胜 35%）（赔率 2.425 / 3.6 / 2.75）。\n【让球】平手盘（主 0.0 / 客 -0.0，赔率 1.82 / 2.085）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（10%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 57% / 小球 43%（赔率 大 1.67 / 小 2.2），倾向大球。\n【进球数】总进球概率：0球 7%、1球 18%、2球 24%、3球 22%、4球 15%。\n【双方进球】双方都进球概率 54%，倾向至少一方零封。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 61% vs 盘口 39%（差 +22%），值得关注。\n【结论】综合赔率与消息，Brentford不败概率更高，关注波胆 1-1 方向。",
       "aiJudge": {
         "pick": "home",
-        "score": "1-0",
+        "score": "2-1",
         "confidence": 0.55,
-        "reason": "主队积分和状态占优，统计模型和Elo均支持主胜，但客队实力不弱，需谨慎。",
+        "reason": "主队积分排名和Elo概率占优，且统计模型预测主胜，但客队欧赔较低且xG模型均衡，故信心中等。",
         "model": "deepseek-chat",
-        "latency": 1.6
-      }
+        "latency": 1.7
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Brighton and Hove Albion",
@@ -6733,10 +6767,11 @@
         "pick": "away",
         "score": "0-1",
         "confidence": 0.519,
-        "reason": "客队Elo概率显著占优，统计模型与欧赔均略倾向客队，但xG模型均衡，故信心中等。",
+        "reason": "统计模型与Elo均倾向客胜，欧赔客胜略低，综合看好阿斯顿维拉小胜。",
         "model": "deepseek-chat",
-        "latency": 1.3
-      }
+        "latency": 3.8
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Manchester City",
@@ -6923,11 +6958,12 @@
       "aiJudge": {
         "pick": "home",
         "score": "2-1",
-        "confidence": 0.75,
-        "reason": "主队实力和状态占优，但客队有一定韧性，预测主胜小胜。",
+        "confidence": 0.65,
+        "reason": "主队实力与状态占优，模型概率和赔率均支持主胜，但客队有一定韧性，比分预测2-1。",
         "model": "deepseek-chat",
-        "latency": 1.5
-      }
+        "latency": 1.0
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Newcastle United",
@@ -7122,11 +7158,12 @@
       "aiJudge": {
         "pick": "away",
         "score": "1-2",
-        "confidence": 0.55,
-        "reason": "客队利物浦实力与状态占优，欧赔和统计模型均倾向客胜，但主队主场有一定韧性，比分预测为1-2。",
+        "confidence": 0.573,
+        "reason": "客队整体实力和状态占优，统计模型与欧赔均倾向客胜，但主队主场有一定韧性，故信心中等。",
         "model": "deepseek-chat",
-        "latency": 1.9
-      }
+        "latency": 1.2
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Fulham",
@@ -7336,12 +7373,13 @@
       "analysis": "【排名】主队Fulham排名第11（52分/38场），客队Chelsea排名第10（52分/38场），排名接近。\n【胜负】比赛悬念较大，主胜 29% / 平 26% / 客胜 45%（赔率 3.2649999999999997 / 3.725 / 2.1）。\n【让球】客队Chelsea让 0.5 球（盘口赔率 1.77 / 2.04）。\n【波胆】泊松模型推算最可能比分：1-1（11%）、1-2（8%）、2-1（8%）。\n【大小球】2.5 球盘口：大球 59% / 小球 41%（赔率 大 1.62 / 小 2.3），倾向大球。\n【进球数】总进球概率：0球 5%、1球 15%、2球 22%、3球 22%、4球 17%。\n【双方进球】双方都进球概率 60%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：主胜 模型 55% vs 盘口 29%（差 +26%），值得关注。\n【结论】综合赔率与消息，Chelsea不败概率更高，关注波胆 1-1 方向。",
       "aiJudge": {
         "pick": "none",
-        "score": "1-1",
+        "score": "2-1",
         "confidence": 0.5,
-        "reason": "主客胜概率接近，欧赔客胜偏低但Elo和xG模型支持主队，无明显倾向。",
+        "reason": "主客胜率接近，欧赔客胜偏低但统计模型无显著倾向，建议观望。",
         "model": "deepseek-chat",
         "latency": 1.6
-      }
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Alavés",
@@ -7545,10 +7583,11 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队胜率综合略高，且xG模型支持主胜，但客队排名占优，信心有限。",
+        "reason": "主队胜率综合略高，xG模型支持主胜，但客队排名更优，信心有限。",
         "model": "deepseek-chat",
-        "latency": 1.8
-      }
+        "latency": 1.1
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Sevilla",
@@ -7736,10 +7775,11 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队胜率略高且欧赔支持，但客队积分更高，平局概率不低，谨慎看好主胜。",
+        "reason": "主队胜率略高且模型预测1-0，但客队积分更高，倾向谨慎。",
         "model": "deepseek-chat",
-        "latency": 1.8
-      }
+        "latency": 1.3
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Real Racing Club de Santander",
@@ -7909,11 +7949,12 @@
       "aiJudge": {
         "pick": "away",
         "score": "0-1",
-        "confidence": 0.588,
+        "confidence": 0.582,
         "reason": "客队胜率在统计模型和Elo中均占优，欧赔也支持客胜，但xG模型显示均势，故信心适中。",
         "model": "deepseek-chat",
-        "latency": 1.6
-      }
+        "latency": 2.1
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Espanyol",
@@ -8101,10 +8142,11 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队积分和排名略优，欧赔和Elo均支持主胜，但xG模型看低主队，综合小幅倾向主胜。",
+        "reason": "主队积分和排名占优，欧赔和Elo均支持主胜，但xG模型看低主队，综合小幅倾向主胜。",
         "model": "deepseek-chat",
-        "latency": 1.9
-      }
+        "latency": 1.2
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Deportivo La Coruña",
@@ -8291,10 +8333,11 @@
         "pick": "none",
         "score": "1-1",
         "confidence": 0.5,
-        "reason": "统计模型与欧赔显示主队微弱优势，但Elo和xG模型偏向客队或均势，无明显倾向。",
+        "reason": "模型概率分散，主客胜率接近，无明显倾向，平局概率较高。",
         "model": "deepseek-chat",
-        "latency": 1.5
-      }
+        "latency": 1.4
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Atlético Madrid",
@@ -8488,11 +8531,12 @@
       "aiJudge": {
         "pick": "home",
         "score": "2-0",
-        "confidence": 0.65,
-        "reason": "主队胜率显著占优且欧赔支持，但xG模型分歧较大，适度下调信心。",
+        "confidence": 0.62,
+        "reason": "主胜概率显著高于平局和客胜，且欧赔和模型预测均支持主队获胜。",
         "model": "deepseek-chat",
-        "latency": 1.6
-      }
+        "latency": 1.1
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Rayo Vallecano",
@@ -8696,10 +8740,11 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队积分和排名占优，且统计模型和Elo均倾向主胜，但客队防守尚可，小胜概率较高。",
+        "reason": "主队积分和状态占优，欧赔和Elo均支持主胜，但平局概率不低，谨慎看好小胜。",
         "model": "deepseek-chat",
-        "latency": 1.7
-      }
+        "latency": 1.3
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Real Betis",
@@ -8887,10 +8932,11 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队积分排名和攻防数据占优，欧赔与模型均倾向主胜，但平局概率不低，故信心中等。",
+        "reason": "主队积分排名和攻防数据占优，欧赔与模型概率均倾向主胜，但平局概率不低，需谨慎。",
         "model": "deepseek-chat",
         "latency": 1.6
-      }
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Athletic Bilbao",
@@ -9093,11 +9139,12 @@
       "aiJudge": {
         "pick": "home",
         "score": "1-0",
-        "confidence": 0.62,
-        "reason": "主胜概率最高且欧赔支持，但xG模型显示平局概率不低，谨慎看好小胜。",
+        "confidence": 0.55,
+        "reason": "主队胜率略高且欧赔支持，但xG模型显示平局概率不低，谨慎看好小胜。",
         "model": "deepseek-chat",
-        "latency": 1.5
-      }
+        "latency": 1.2
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Valencia",
@@ -9315,11 +9362,12 @@
       "aiJudge": {
         "pick": "home",
         "score": "1-0",
-        "confidence": 0.55,
-        "reason": "主队胜率在统计模型和Elo/xG模型中均占优，且欧赔略倾向主胜，但客队积分排名更高，需谨慎。",
+        "confidence": 0.6,
+        "reason": "主队胜率在统计模型和Elo/xG模型中均占优，且欧赔略支持主胜，但平局概率不低，故谨慎选择主胜。",
         "model": "deepseek-chat",
-        "latency": 1.6
-      }
+        "latency": 1.4
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Espanyol",
@@ -9505,12 +9553,13 @@
       "analysis": "【排名】主队Espanyol排名第11（46分/38场），客队Real Madrid排名第2（86分/38场），客队排名领先 9 位。\n【胜负】市场明显看好客队Real Madrid，客胜隐含概率 60%（赔率 5.4 / 4.0 / 1.56）。\n【让球】客队Real Madrid让 1.5 球（盘口赔率 1.6 / 2.55）。\n【波胆】泊松模型推算最可能比分：0-1（12%）、0-2（11%）、1-1（11%）。\n【大小球】2.5 球盘口：大球 55% / 小球 45%（赔率 大 1.72 / 小 2.1），倾向大球。\n【进球数】总进球概率：0球 7%、1球 18%、2球 24%、3球 22%、4球 15%。\n【双方进球】双方都进球概率 49%，倾向至少一方零封。\n【结论】综合赔率与消息，Real Madrid不败概率更高，关注波胆 0-1 方向。",
       "aiJudge": {
         "pick": "away",
-        "score": "0-2",
+        "score": "0-1",
         "confidence": 0.65,
-        "reason": "客队实力和状态明显占优，欧赔和模型均支持客胜，但客队客场进球效率一般，比分保守。",
+        "reason": "客队实力与状态占优，但主队防守稳固，小胜概率较高。",
         "model": "deepseek-chat",
-        "latency": 1.9
-      }
+        "latency": 1.1
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Atlético Madrid",
@@ -9720,12 +9769,13 @@
       "analysis": "【排名】主队Atlético Madrid排名第4（69分/38场），客队Villarreal排名第3（72分/38场），排名接近。\n【胜负】比赛悬念较大，主胜 49% / 平 27% / 客胜 24%（赔率 1.9 / 3.5 / 3.92）。\n【让球】平手盘（主 0.0 / 客 0.0，赔率 1.47 / 2.98）。\n【波胆】泊松模型推算最可能比分：1-1（12%）、1-0（9%）、2-1（9%）。\n【大小球】2.5 球盘口：大球 49% / 小球 51%（赔率 大 1.9 / 小 1.85），倾向小球。\n【进球数】总进球概率：0球 6%、1球 17%、2球 24%、3球 22%、4球 16%。\n【双方进球】双方都进球概率 56%，倾向双方有球。\n【价值】独立模型(Elo)与市场存在分歧：客胜 模型 51% vs 盘口 24%（差 +27%），值得关注。\n【结论】综合赔率与消息，Atlético Madrid不败概率更高，关注波胆 1-1 方向。",
       "aiJudge": {
         "pick": "none",
-        "score": "1-1",
+        "score": "2-1",
         "confidence": 0.5,
-        "reason": "数据矛盾，主客无明显倾向",
+        "reason": "统计模型与欧赔倾向主胜，但Elo和xG模型倾向客胜，信号矛盾，无明显倾向。",
         "model": "deepseek-chat",
         "latency": 1.2
-      }
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Getafe",
@@ -9919,11 +9969,12 @@
       "aiJudge": {
         "pick": "home",
         "score": "1-0",
-        "confidence": 0.62,
-        "reason": "主胜概率综合占优，且比分预测和波胆均指向1-0小胜。",
+        "confidence": 0.6,
+        "reason": "统计模型和Elo均看好主队，欧赔支持主胜，但xG模型显示均势，故信心适中。",
         "model": "deepseek-chat",
-        "latency": 1.9
-      }
+        "latency": 1.4
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Elche CF",
@@ -10135,10 +10186,11 @@
         "pick": "away",
         "score": "1-2",
         "confidence": 0.65,
-        "reason": "巴萨整体实力和状态远超对手，但主队有一定主场韧性，客胜概率最高。",
+        "reason": "巴萨整体实力和状态远超对手，但主队有一定主场韧性，预测客胜但比分接近。",
         "model": "deepseek-chat",
-        "latency": 1.7
-      }
+        "latency": 1.3
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "CA Osasuna",
@@ -10322,10 +10374,11 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队主场优势且欧赔支持，但xG模型显示均势，信心不宜过高。",
+        "reason": "主队主场优势及Elo概率略高，但xG模型显示均势，信心适中。",
         "model": "deepseek-chat",
-        "latency": 1.5
-      }
+        "latency": 1.3
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Málaga",
@@ -10507,11 +10560,12 @@
       "aiJudge": {
         "pick": "home",
         "score": "1-0",
-        "confidence": 0.55,
-        "reason": "统计模型和Elo均略倾向主胜，欧赔主胜较低，且比分预测1-0，但平局概率不低，故谨慎选择。",
+        "confidence": 0.549,
+        "reason": "统计模型和Elo均略倾向主胜，且比分预测为1-0，但欧赔和xG显示平局概率不低，故谨慎选择主胜。",
         "model": "deepseek-chat",
-        "latency": 2.1
-      }
+        "latency": 1.4
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Valencia",
@@ -10730,10 +10784,11 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队胜率在统计模型和Elo中占优，且比分预测为1-0，但客队实力不弱，信心适中。",
+        "reason": "模型概率和Elo均倾向主胜，且主胜赔率略低，但客队排名更高，信心有限。",
         "model": "deepseek-chat",
         "latency": 1.4
-      }
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Real Madrid",
@@ -10920,11 +10975,12 @@
       "aiJudge": {
         "pick": "home",
         "score": "2-0",
-        "confidence": 0.75,
-        "reason": "主队实力和状态明显占优，模型和赔率均支持主胜，但客队有一定防守能力，比分预测2-0。",
+        "confidence": 0.65,
+        "reason": "主队实力和状态占优，但客队防守稳固，预计小胜。",
         "model": "deepseek-chat",
-        "latency": 1.6
-      }
+        "latency": 1.1
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Celta Vigo",
@@ -11095,10 +11151,11 @@
         "pick": "home",
         "score": "1-0",
         "confidence": 0.55,
-        "reason": "主队排名和状态占优，欧赔支持主胜，但客队防守稳固，平局概率不低，谨慎看好小胜。",
+        "reason": "主队排名和状态占优，欧赔与统计模型均支持主胜，但客队防守稳固，小胜概率较高。",
         "model": "deepseek-chat",
-        "latency": 1.7
-      }
+        "latency": 1.6
+      },
+      "aiJudgeStale": true
     },
     {
       "homeTeam": "Barcelona",
@@ -11285,11 +11342,12 @@
       "aiJudge": {
         "pick": "home",
         "score": "2-0",
-        "confidence": 0.75,
-        "reason": "主队实力和状态全面占优，欧赔和Elo均支持主胜，模型预测2-0概率最高。",
+        "confidence": 0.68,
+        "reason": "主队实力和状态明显占优，欧赔和Elo均支持主胜，模型预测2-0概率最高。",
         "model": "deepseek-chat",
-        "latency": 1.5
-      }
+        "latency": 1.2
+      },
+      "aiJudgeStale": true
     }
   ],
   "disclaimer": "本结果仅用于个人数据分析与研究, 不构成任何投注建议",
@@ -11340,6 +11398,6 @@
         "avgConf": 0
       }
     },
-    "updatedAt": "2026-08-14T04:33:20Z"
+    "updatedAt": "2026-08-14T04:42:39Z"
   }
 }
