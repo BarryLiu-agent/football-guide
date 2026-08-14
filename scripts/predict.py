@@ -143,9 +143,10 @@ class MessageAnalyzer(Analyzer):
         term = term.strip().lower()
         if not term:
             return False
-        # 多词短语：要求短语作为连续子串且边界为词边界
+        # 多词短语：要求短语作为连续子串且边界为词边界（'man city' 不命中 'man cityzens'）
         if " " in term:
-            return term in text
+            import re
+            return re.search(r"(?<![a-z0-9])" + re.escape(term) + r"(?![a-z0-9])", text) is not None
         # 单词：\b 词边界匹配（'angers' 不会命中 'rangers'）
         import re
         return re.search(r"\b" + re.escape(term) + r"\b", text) is not None
@@ -160,9 +161,14 @@ class MessageAnalyzer(Analyzer):
         for alias, full in self.TEAM_ALIASES.items():
             if full == team:
                 terms.append(alias)
-        # 正向别名（已有）
+        # 正向别名（已有）：当 team 是简称时（如 "atletico"），补上对应全称（"atletico madrid"）
         if self.TEAM_ALIASES.get(team):
             terms.append(self.TEAM_ALIASES[team])
+        else:
+            # 反向补全称：team 是某别名的 key（简称），新闻标题常写全称
+            for alias, full in self.TEAM_ALIASES.items():
+                if alias == team and full != team:
+                    terms.append(full)
         # 球员名（该队球员）
         terms += [p for p, t in self.PLAYER_MAP.items() if t == team]
         # 去掉城市/地名后缀的核心名（"brighton and hove albion" → "brighton"）
@@ -926,7 +932,22 @@ def main():
             pred["dcProb"] = {k: round(v, 3) for k, v in dc12.items()}
             pred["xgProb"] = {"home": round(xg_h, 3), "draw": round(xg_d, 3), "away": round(xg_a, 3)}
             # 首发/伤停（若有）：供 AI 研判与前端展示
+            # lineups.json 队名来自 fixtures（可能带后缀/简称），与 odds 队名不完全一致：
+            # 先精确匹配，再用"核心词包含"兜底（home/away 双方都命中才算）
             lu = lineups_by_match.get((norm_team(home), norm_team(away)))
+            if not lu:
+                for (lk_h, lk_a), lm in lineups_by_match.items():
+                    hn, an = norm_team(home), norm_team(away)
+                    h_words = [w for w in hn.split() if len(w) >= 4]
+                    a_words = [w for w in an.split() if len(w) >= 4]
+                    lh_words = [w for w in lk_h.split() if len(w) >= 4]
+                    la_words = [w for w in lk_a.split() if len(w) >= 4]
+                    if h_words and a_words and lh_words and la_words:
+                        h_hit = any(w in lh_words for w in h_words)
+                        a_hit = any(w in la_words for w in a_words)
+                        if h_hit and a_hit:
+                            lu = lm
+                            break
             if lu:
                 pred["lineup"] = {
                     "homeLineup": lu.get("homeLineup", []),

@@ -58,7 +58,13 @@ def _get(url, timeout=15):
 
 
 def _norm(name: str) -> str:
-    return (name or "").lower().replace("fc ", "").strip()
+    """归一化队名：小写 + 去常见俱乐部后缀（FC/AFC/CF/SC/UD/CD，含不带空格与带点变体）。"""
+    import re
+    t = (name or "").lower().strip()
+    t = re.sub(r"\b(fc|afc|cf|sc|ud|cd|ac|sv|fk)\b", "", t)
+    t = re.sub(r"[\-\.']", " ", t)
+    t = re.sub(r"\s+", " ", t).strip()
+    return t
 
 
 # ── 源 1: FotMob ──────────────────────────────────────────
@@ -233,14 +239,15 @@ def fetch_sofascore(target: dict) -> dict or None:
         return [x for x in res if x]
 
     def injuries(block):
-        """Sofascore lineup 中 confirmed=false 的球员视为伤停。"""
+        """Sofascore lineup 中 confirmed=false 的球员视为存疑（非首发未确认 ≠ 伤停 out）。
+        仅当球员明确不在首发且确认缺席时才标出，避免把替补当伤停。"""
         res = []
         for p in block.get("players", []):
             if not p.get("starter") and p.get("confirmed") is False:
                 pl = p.get("player") or {}
                 nm = pl.get("name") or ""
                 if nm:
-                    res.append({"name": nm, "status": "out", "reason": "not confirmed"})
+                    res.append({"name": nm, "status": "doubtful", "reason": "not confirmed in lineup"})
         return res
 
     if lu.get("home") and lu["home"].get("confirmed"):

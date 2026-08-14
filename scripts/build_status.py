@@ -102,12 +102,13 @@ def _collect_multi(pattern: str, expect: int):
         if not ok:
             missing.append(f.name)
             continue
+        if _is_empty_stub(f):
+            # 空壳文件（欧冠休赛期无比赛 / 该联赛抓取失败只剩 stub）：不参与新鲜度与 ok 计数
+            empty_stubs.append(f.name)
+            continue
         ok_files += 1
         if not g:
             missing.append(f.name)
-            continue
-        if _is_empty_stub(f):
-            empty_stubs.append(f.name)
             continue
         gens.append(g)
     if not gens:

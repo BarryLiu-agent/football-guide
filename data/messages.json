@@ -1,7 +1,18 @@
 {
-  "generatedAt": "2026-08-14T07:42:14Z",
+  "generatedAt": "2026-08-14T08:08:07Z",
   "total": 11,
   "messages": [
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "FREE STREAM: Good Morning Transfers on Sky Sports News",
+      "timestamp": "Fri, 14 Aug 2026 08:50:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/football/news/12040/13569345/free-stream-the-transfer-show-on-sky-sports-news-latest-football-transfer-news-updates-and-rumours",
+        "lang": "en",
+        "summary": ""
+      }
+    },
     {
       "source": "skysports",
       "type": "news",
@@ -110,17 +121,6 @@
         "link": "https://www.skysports.com/football/rangers-vs-jagiellonia-bialystok/report/571444",
         "lang": "en",
         "summary": "Derek McInnes' winless start to life at Rangers hit its lowest point as they were embarrassed and dumped out of the Europa League to a chorus of boos by Jagiellonia Bialystok on aggregate following a 1-1 draw at Ibrox."
-      }
-    },
-    {
-      "source": "skysports",
-      "type": "news",
-      "text": "Brighton latest: Genoa make contact over Ferguson loan",
-      "timestamp": "Thu, 13 Aug 2026 15:27:00 BST",
-      "metadata": {
-        "link": "https://www.skysports.com/football/live-blog/12040/13279295/brighton-transfers-latest-news-rumours-and-gossip-live-updates-goals-and-highlights",
-        "lang": "en",
-        "summary": ""
       }
     }
   ]
