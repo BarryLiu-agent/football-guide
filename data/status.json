@@ -1,35 +1,35 @@
 {
-  "generatedAt": "2026-08-14T07:19:51Z",
+  "generatedAt": "2026-08-14T07:42:26Z",
   "modules": [
     {
       "key": "fixtures",
-      "updatedAt": "2026-08-14T07:19:13Z",
+      "updatedAt": "2026-08-14T07:41:52Z",
       "ok": true
     },
     {
       "key": "predictions",
-      "updatedAt": "2026-08-14T07:19:36Z",
+      "updatedAt": "2026-08-14T07:42:15Z",
       "ok": true
     },
     {
       "key": "standings",
-      "updatedAt": "2026-08-14T07:19:28Z",
+      "updatedAt": "2026-08-14T07:42:07Z",
       "ok": true
     },
     {
       "key": "jingcai",
-      "updatedAt": "2026-08-14T07:18:05Z",
+      "updatedAt": "2026-08-14T07:41:03Z",
       "ok": true
     },
     {
       "key": "messages",
-      "updatedAt": "2026-08-14T07:19:34Z",
+      "updatedAt": "2026-08-14T07:42:14Z",
       "ok": true
     },
     {
       "key": "lineups",
-      "updatedAt": null,
-      "ok": false
+      "updatedAt": "2026-08-14T07:38:56Z",
+      "ok": true
     },
     {
       "key": "oddsQuota",
@@ -43,12 +43,12 @@
     },
     {
       "key": "calibration",
-      "updatedAt": "2026-08-14T07:19:36Z",
+      "updatedAt": "2026-08-14T07:42:15Z",
       "ok": true
     },
     {
       "key": "calibrationOu",
-      "updatedAt": "2026-08-14T07:19:51Z",
+      "updatedAt": "2026-08-14T07:42:26Z",
       "ok": true
     },
     {
@@ -62,7 +62,7 @@
     },
     {
       "key": "asian",
-      "updatedAt": "2026-08-14T07:19:32Z",
+      "updatedAt": "2026-08-14T07:42:12Z",
       "ok": true,
       "files": "5/5"
     },
