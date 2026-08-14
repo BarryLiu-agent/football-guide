@@ -137,11 +137,14 @@ def _build_context(pred: dict) -> str:
     ]
     # 首发名单（赛前 1 小时左右公布，最重要的一次性赛前信息）
     if lu.get("homeLineup") or lu.get("awayLineup"):
-        lines.append(f"首发名单[{lu.get('source')}] 主队: {', '.join(lu.get('homeLineup', [])[:18])}")
-        lines.append(f"首发名单[{lu.get('source')}] 客队: {', '.join(lu.get('awayLineup', [])[:18])}")
+        lu_tag = "正式" if lu.get("confirmed") else "预测"
+        lines.append(f"首发名单[{lu_tag}/{lu.get('source')}] 主队: {', '.join(lu.get('homeLineup', [])[:18])}")
+        lines.append(f"首发名单[{lu_tag}/{lu.get('source')}] 客队: {', '.join(lu.get('awayLineup', [])[:18])}")
     inj = lu.get("injuries") or {}
     if inj.get("home") or inj.get("away"):
-        lines.append(f"伤停: 主队 {inj.get('home', [])} 客队 {inj.get('away', [])}")
+        def _inj_txt(lst):
+            return "; ".join(f"{i.get('name')}({i.get('status')})" for i in lst)
+        lines.append(f"伤停: 主队 {_inj_txt(inj.get('home', []))} 客队 {_inj_txt(inj.get('away', []))}")
     if top3:
         lines.append("模型波胆Top3: " + ", ".join(f"{c['score']}({c.get('prob')})" for c in top3))
     if msg:

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-14T07:19:34Z",
-  "total": 10,
+  "generatedAt": "2026-08-14T07:42:14Z",
+  "total": 11,
   "messages": [
     {
       "source": "skysports",
@@ -44,6 +44,17 @@
         "link": "https://www.skysports.com/football/news/12040/13572744/arsenal-transfer-news-gunners-discuss-victor-osimhen-with-galatasaray-amid-gabriel-martinelli-and-ethan-nwaneri-talks-paper-talk",
         "lang": "en",
         "summary": "The top stories and transfer rumours from Friday's newspapers..."
+      }
+    },
+    {
+      "source": "skysports",
+      "type": "news",
+      "text": "Steelers rookie Allar stars as McCarthy beats Packers on debut",
+      "timestamp": "Fri, 14 Aug 2026 08:06:00 BST",
+      "metadata": {
+        "link": "https://www.skysports.com/nfl/news/12040/13572834/nfl-preseason-steelers-rookie-allar-stars-against-packers-as-mccarthy-era-starts-with-win",
+        "lang": "en",
+        "summary": "Rookie Drew Allar starred in Mike McCarthy's first game as Pittsburgh Steelers head coach, throwing two touchdown passes and running for another in a 28-9 preseason win over the Green Bay Packers."
       }
     },
     {
