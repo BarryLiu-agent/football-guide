@@ -1617,6 +1617,7 @@ function switchMkt(mkt) {
     </div>
     <div style="font-size:10px;color:var(--muted);margin-top:6px;text-align:center">↗ 较上次快照升(看淡)↘ 降(看好)· 凯利>0 有正期望 · 快照持续累积后将升级为走势曲线</div>
     ${oddsTrendBlock(p)}
+    ${(() => { const ou = p.overUnder || {}; const over = ou.over; if (over == null) return ''; const overPct = Math.round(over * 100); if (overPct < 55) return ''; const big = (p.correctScores || []).filter(c => { const [h, a] = c.score.split('-').map(Number); return h + a >= 4; }); let t = '🔥 大球倾向:模型看总进球≥' + ou.line + ' 概率 ' + overPct + '%'; if (big.length) t += ' · 若大球最可能 ' + big[0].score; return '<div style="font-size:10.5px;color:#16c784;margin-top:8px;padding:6px 8px;border-radius:6px;background:rgba(22,199,132,.08);border:1px solid rgba(22,199,132,.25)">' + t + '</div>'; })()}
     ${(function(a){ const aiBox = 'padding:10px 12px;border-radius:8px;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.25);font-size:12px;line-height:1.7'; const note = '<div style="font-size:10px;color:var(--muted);margin-top:6px">⚠️ AI 研判仅供参考,方向受统计模型约束(置信度已钳制在模型概率附近)</div>'; if (!a) return `<div class="section-title" style="margin-top:10px">🤖 AI 研判</div><div style="${aiBox};color:var(--muted)">AI 研判未生成(未配置或调用失败),当前展示为纯统计模型输出。${note}</div>`; const cn = {home:'主胜',draw:'平局',away:'客胜',none:'不碰'}; const conf = a.confidence != null ? Math.round(a.confidence*100) : null; const diffScore = a.score && p.predictedScore && a.score !== p.predictedScore ? ' <span style="color:var(--gold)">(模型预测 ' + p.predictedScore + ')</span>' : ''; const staleTag = p.aiJudgeStale ? ' · 基于上次数据' : ''; return `<div class="section-title" style="margin-top:10px">🤖 AI 研判<span style="font-size:10px;color:var(--muted);font-weight:400"> ${a.model || ''} · ${a.latency != null ? a.latency + 's' : ''}${staleTag} · 仅供参考</span></div><div style="${aiBox}"><div style="margin-bottom:4px"><b>${a.pick && a.pick !== 'none' ? cn[a.pick] : '无明显倾向'}</b>${a.score ? ' · 比分 ' + a.score : ''}${diffScore}${conf != null ? ' · 置信度 ' + conf + '%' : ''}</div>${a.reason ? '<div style="color:var(--text-2)">' + esc(a.reason) + '</div>' : ''}${note}</div>`; })(p.aiJudge)}
     ${p.eloProb ? `<div class="section-title" style="margin-top:10px">🤖 独立模型 (Elo+xG+DC)</div>
     <div class="odds-grid">
@@ -1737,7 +1738,8 @@ function switchMkt(mkt) {
       return `<div class="cs-item"><div class="score">${c.score}</div><div class="p">${pct(c.prob)}</div>${val}</div>`;
     }).join('');
     el.innerHTML = `<div class="cs-grid">${items}</div>` +
-      (hasCrs ? '<div style="font-size:10px;color:var(--muted);margin-top:6px">模型比分概率 vs 竞彩波胆赔率隐含概率:模型概率更高 = 该比分有价值(开赛后自动出现)</div>' : '<div style="font-size:10px;color:var(--muted);margin-top:6px">竞彩波胆未开售该场比赛,无法对比价值</div>');
+      (hasCrs ? '<div style="font-size:10px;color:var(--muted);margin-top:6px">模型比分概率 vs 竞彩波胆赔率隐含概率:模型概率更高 = 该比分有价值(开赛后自动出现)</div>' : '<div style="font-size:10px;color:var(--muted);margin-top:6px">竞彩波胆未开售该场比赛,无法对比价值</div>') +
+      (() => { const big = cs.filter(c => { const [h, a] = c.score.split('-').map(Number); return h >= 3 || a >= 3; }); if (!big.length) return ''; const top = big[0]; return '<div style="font-size:10.5px;color:var(--gold);margin-top:8px;padding:6px 8px;border-radius:6px;background:rgba(240,185,11,.08);border:1px solid rgba(240,185,11,.2)">🎯 若爆大比分,最可能 <b>' + top.score + '</b> (' + pct(top.prob) + ')</div>'; })();
   }
 }
 
