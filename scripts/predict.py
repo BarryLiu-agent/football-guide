@@ -932,6 +932,7 @@ def main():
                     "homeLineup": lu.get("homeLineup", []),
                     "awayLineup": lu.get("awayLineup", []),
                     "injuries": lu.get("injuries", {}),
+                    "confirmed": lu.get("confirmed"),
                     "source": lu.get("source"),
                     "fetchedAt": lu.get("fetchedAt"),
                 }

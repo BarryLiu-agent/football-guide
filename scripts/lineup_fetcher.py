@@ -62,6 +62,26 @@ def _norm(name: str) -> str:
 
 
 # ── 源 1: FotMob ──────────────────────────────────────────
+def _fotmob_parse_injuries(team_block: dict) -> list:
+    """从 FotMob lineup 球员块解析伤停：球员对象 status != normal 视为异常。
+    返回 [{name, status, reason}]。"""
+    inj = []
+    for row in (team_block.get("players") or []):
+        items = row if isinstance(row, list) else [row]
+        for p in items:
+            if not isinstance(p, dict):
+                continue
+            name = (p.get("name") or {}).get("fullName") or p.get("name")
+            status = (p.get("status") or "normal").lower()
+            if name and status and status not in ("normal", "starter", "substitute", ""):
+                inj.append({
+                    "name": name,
+                    "status": "out" if status in ("injured", "suspended", "absent") else "doubtful",
+                    "reason": status,
+                })
+    return inj
+
+
 def fetch_fotmob(target: dict) -> dict or None:
     """target = {homeTeam, awayTeam, kickoff}。按日期+队名匹配 matchId 后取首发。"""
     date = datetime.fromisoformat(target["kickoff"].replace("Z", "+00:00"))
@@ -86,7 +106,9 @@ def fetch_fotmob(target: dict) -> dict or None:
     detail = _get(f"https://www.fotmob.com/api/matchDetails?matchId={match_id}")
     content = detail.get("content", {})
     lu = (content.get("lineup") or {}).get("lineup") or []
-    out = {"homeLineup": [], "awayLineup": [], "injuries": {"home": [], "away": []}}
+    out = {"homeLineup": [], "awayLineup": [], "injuries": {"home": [], "away": []},
+           "confirmed": True}
+    any_confirmed = False
     for team_block in lu:
         tname = _norm((team_block.get("team") or {}).get("name") or "")
         players = []
@@ -98,17 +120,42 @@ def fetch_fotmob(target: dict) -> dict or None:
                     if isinstance(p, dict):
                         players.append((p.get("name") or {}).get("fullName") or p.get("name"))
         players = [p for p in players if p]
+        # 伤停：同块解析（异常状态球员）
+        inj = _fotmob_parse_injuries(team_block)
         if tname == _norm(target["homeTeam"]):
             out["homeLineup"] = players
+            out["injuries"]["home"] = inj
         elif tname == _norm(target["awayTeam"]):
             out["awayLineup"] = players
+            out["injuries"]["away"] = inj
+        if team_block.get("confirmed") is True:
+            any_confirmed = True
     if not out["homeLineup"] and not out["awayLineup"]:
         return None
+    # FotMob lineup 无 confirmed 标记时：以球员数量接近 11 为"已确认"
+    out["confirmed"] = any_confirmed or max(len(out["homeLineup"]), len(out["awayLineup"])) >= 11
     out["source"] = "fotmob"
     return out
 
 
 # ── 源 2: ESPN ────────────────────────────────────────────
+def _espn_parse_injuries(s: dict) -> dict:
+    """ESPN summary 顶层 injuries 数组 → {homeTeam_norm: [inj], awayTeam_norm: [inj]}。
+    结构: [{team:{displayName}, athlete:{displayName}, type:{description}, status}]。"""
+    out = {}
+    for it in s.get("injuries", []) or []:
+        team = ((it.get("team") or {}).get("displayName") or "")
+        name = ((it.get("athlete") or {}).get("displayName") or "")
+        reason = ((it.get("type") or {}).get("description") or "") or (it.get("status") or "")
+        st = str(it.get("status") or "").lower()
+        status = "out" if st in ("out", "ruled out") else ("doubtful" if st in ("questionable", "day-to-day", "doubtful") else "out")
+        if team and name:
+            out.setdefault(_norm(team), []).append({
+                "name": name, "status": status, "reason": reason or "injury",
+            })
+    return out
+
+
 def fetch_espn(target: dict) -> dict or None:
     date = datetime.fromisoformat(target["kickoff"].replace("Z", "+00:00"))
     day = date.strftime("%Y%m%d")
@@ -133,7 +180,9 @@ def fetch_espn(target: dict) -> dict or None:
             s = _get(f"https://site.api.espn.com/apis/site/v2/sports/soccer/{league}/summary?event={event_id}")
         except Exception:
             return None
-        out = {"homeLineup": [], "awayLineup": [], "injuries": {"home": [], "away": []}}
+        out = {"homeLineup": [], "awayLineup": [], "injuries": {"home": [], "away": []},
+               "confirmed": True}
+        inj_map = _espn_parse_injuries(s)
         for roster in s.get("rosters", []):
             tname = _norm((roster.get("team") or {}).get("displayName") or "")
             starters = [((r.get("athlete") or {}).get("displayName") or "")
@@ -141,8 +190,10 @@ def fetch_espn(target: dict) -> dict or None:
             starters = [p for p in starters if p]
             if tname == _norm(target["homeTeam"]):
                 out["homeLineup"] = starters
+                out["injuries"]["home"] = inj_map.get(tname, [])
             elif tname == _norm(target["awayTeam"]):
                 out["awayLineup"] = starters
+                out["injuries"]["away"] = inj_map.get(tname, [])
         if not out["homeLineup"] and not out["awayLineup"]:
             continue
         out["source"] = "espn"
@@ -170,7 +221,8 @@ def fetch_sofascore(target: dict) -> dict or None:
     if not event_id:
         return None
     lu = _get(f"https://api.sofascore.com/api/v1/event/{event_id}/lineups")
-    out = {"homeLineup": [], "awayLineup": [], "injuries": {"home": [], "away": []}}
+    out = {"homeLineup": [], "awayLineup": [], "injuries": {"home": [], "away": []},
+           "confirmed": False}
 
     def starters(block):
         res = []
@@ -180,10 +232,28 @@ def fetch_sofascore(target: dict) -> dict or None:
                 res.append(pl.get("name") or "")
         return [x for x in res if x]
 
+    def injuries(block):
+        """Sofascore lineup 中 confirmed=false 的球员视为伤停。"""
+        res = []
+        for p in block.get("players", []):
+            if not p.get("starter") and p.get("confirmed") is False:
+                pl = p.get("player") or {}
+                nm = pl.get("name") or ""
+                if nm:
+                    res.append({"name": nm, "status": "out", "reason": "not confirmed"})
+        return res
+
     if lu.get("home") and lu["home"].get("confirmed"):
         out["homeLineup"] = starters(lu["home"])
+        out["confirmed"] = True
     if lu.get("away") and lu["away"].get("confirmed"):
         out["awayLineup"] = starters(lu["away"])
+        out["confirmed"] = True
+    # 伤停（无论首发是否确认，只要 lineups 接口有数据就解析）
+    if lu.get("home"):
+        out["injuries"]["home"] = injuries(lu["home"])
+    if lu.get("away"):
+        out["injuries"]["away"] = injuries(lu["away"])
     if not out["homeLineup"] and not out["awayLineup"]:
         return None
     out["source"] = "sofascore"
