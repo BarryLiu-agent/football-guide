@@ -160,6 +160,60 @@ def denoise(messages: list, min_len: int = 12) -> list:
     return result
 
 
+# 非足球体育项目的强特征词（板球/高尔夫/网球/橄榄球/拳击/赛马/棒球等）
+# 命中任一即判定该消息与足球无关，丢弃（综合体育源如 skysports 12040 会混入这些）
+_NON_FOOTBALL_HINTS = [
+    # 板球
+    "cricket", "wicket", "innings", "duck", "county select", "the hundred", "bowled",
+    "runs", "overs", "test match", "ashes", "batter", "all-rounder", "sri lanka", "pakistan",
+    "india", "australia", "england vs", "t20", "odi",
+    # 高尔夫
+    "golf", "mcilroy", "spieth", "fedexcup", "playoffs", "birdie", "eagle", "bogey",
+    "par ", "masters", "ryder cup", "pga", "lpg", "greenway", "golf championship",
+    "mory", "danish golf", "doyle", "hungerford", "fedex cup", "worcestershire",
+    # 网球
+    "tennis", "wimbledon", "grand slam", "set point", "break point", "cincinnati",
+    "first round", "second round", "quarter-final", "semi-final", "masters 1000",
+    # 橄榄球联赛/联盟
+    "super league", "nrl", "rugby", "rfl", "challenge cup", "leeds rhinos", "hull fc",
+    "catalans", "wigan", "salford", "st helens", "warrington",
+    # 拳击/格斗/赛马/棒球/篮球
+    "boxing", "bellator", "ufc", "knockout", "horse racing", "grand national",
+    "derby day", "nba", "nfl", "mlb", "nhl", "formula 1", "f1 ", "moto",
+    "kalajdzic", "showdown", "face-off", "faceoff", "fisher bill", "fight night", "coppull",
+    # 台球/斯诺克/其他
+    "snooker", "darts", "world championship",
+]
+
+_FOOTBALL_HINTS = [
+    # 强特征足球词：命中这些才视为"确实与足球相关"（豁免非足球词误杀）
+    "football", "soccer", "premier league", "championship match", "la liga", "bundesliga",
+    "serie a", "ligue 1", "champions league", "europa league", "efl",
+    "wolves", "arsenal", "chelsea", "liverpool", "manchester", "tottenham", "celtic",
+    "rangers", "leicester", "brighton", "everton", "newcastle", "west ham", "aston villa",
+    "transfer", "signing", "loan deal", "contract", "striker", "midfielder",
+    "defender", "keeper", "manager", "coach", "klopp", "guardiola", "mikel",
+    "goal", "scored", "score", "penalty", "red card", "yellow card", "own goal",
+    "world cup", "euro 2028", "qualifier", "friendly", "derby match", "stadium",
+]
+
+
+def keep_football(messages: list) -> list:
+    """过滤非足球消息（综合体育源会混入板球/高尔夫等）。"""
+    result = []
+    for m in messages:
+        low = (m.get("text", "") or "").lower()
+        if not low:
+            continue
+        # 命中非足球强特征词 → 除非同时有明显足球词（如 "england" 可能两者）
+        if any(h in low for h in _NON_FOOTBALL_HINTS):
+            # 有明确足球词才保留（如 "Celtic sign" 同时含 "sign"）
+            if not any(f in low for f in _FOOTBALL_HINTS):
+                continue
+        result.append(m)
+    return result
+
+
 def main():
     parser = argparse.ArgumentParser(description="消息数据收集")
     parser.add_argument("--limit", type=int, default=200, help="每源最多保留消息数")
@@ -184,6 +238,8 @@ def main():
 
     all_messages = dedupe(all_messages)
     all_messages = denoise(all_messages)
+    # 综合体育源会混入板球/高尔夫等非足球消息 → 只保留足球相关
+    all_messages = keep_football(all_messages)
     if args.limit:
         all_messages = all_messages[: args.limit]
 

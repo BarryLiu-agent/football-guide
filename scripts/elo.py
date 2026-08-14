@@ -28,9 +28,54 @@ ALIASES = {
     "manchester city": "manchester city", "man city": "manchester city",
     "bayern munich": "bayern munich", "bayern munchen": "bayern munich",
     "paris saint germain": "psg", "paris saint-germain": "psg", "psg": "psg",
-    "bodo glimt": "bodoglimt", "bodo/glimt": "bodoglimt",
-    "red bull leipzig": "leipzig", "rb leipzig": "leipzig", "leipzig": "leipzig",
+    # 意甲/法甲常见带冠词名（odds 全称 → 赛季数据常用名）
+    "atalanta bc": "atalanta", "as roma": "roma", "as monaco": "monaco",
+    "ca osasuna": "osasuna", "rc lens": "lens", "parma calcio 1913": "parma",
+    "parma calcio": "parma", "us lecce": "lecce", "us salernitana": "salernitana",
+    "a cf fiorentina": "fiorentina", "acf fiorentina": "fiorentina", "cf fiorentina": "fiorentina",
+    "fiorentina": "fiorentina", "genoa cfc": "genoa", "genoa": "genoa",
+    "torino fc": "torino", "torino": "torino", "cagliari": "cagliari", "udinese": "udinese",
+    "verona": "verona", "hellas verona": "verona", "bologna": "bologna", "empoli": "empoli",
+    "monza": "monza", "ac monza": "monza", "como": "como", "venezia": "venezia",
+    "frosinone": "frosinone", "lecce": "lecce", "sassuolo": "sassuolo", "spezia": "spezia",
+    "salernitana": "salernitana", "cremonese": "cremonese", "sampdoria": "sampdoria",
+    "crotone": "crotone", "cesena": "cesena", "palermo": "palermo", "pisa": "pisa",
+    "reggiana": "reggiana", "bari": "bari", "brescia": "brescia", "carrarese": "carrarese",
+    "mantova": "mantova", "modena": "modena", "southampton": "southampton",
+    # 法甲
+    "marseille": "marseille", "olympique de marseille": "marseille", "olympique marseille": "marseille",
+    "stade rennais": "rennes", "rennes": "rennes", "lille osc": "lille", "lille": "lille",
+    "rc strasbourg": "strasbourg", "strasbourg": "strasbourg", "stade brestois": "brest",
+    "brest": "brest", "fc nantes": "nantes", "nantes": "nantes", "toulouse": "toulouse",
+    "stade de reims": "reims", "reims": "reims", "ajaccio": "ajaccio", "lorient": "lorient",
+    "le havre": "le havre", "havre ac": "le havre", "auxerre": "auxerre", "angers": "angers",
+    "montpellier": "montpellier", "nice": "nice", "ogc nice": "nice", "le mans": "le mans",
+    "paris fc": "paris fc", "troyes": "troyes", "metz": "metz", "gignac": "gignac",
+    # 西甲
+    "espanyol": "espanyol", "rcd espanyol": "espanyol", "osasuna": "osasuna",
+    "deportivo la coruna": "deportivo", "rc deportivo": "deportivo", "deportivo": "deportivo",
+    "elche cf": "elche", "elche": "elche", "malaga cf": "malaga", "malaga": "malaga",
+    "real racing club de santander": "racing santander", "racing santander": "racing santander",
+    "real racing santander": "racing santander", "racing club": "racing santander",
+    "valladolid": "valladolid", "real valladolid": "valladolid", "girona": "girona",
+    "leganes": "leganes", "cd leganes": "leganes", "tenerife": "tenerife", "mirandes": "mirandes",
+    "oviedo": "oviedo", "real oviedo": "oviedo", "eibar": "eibar", "sporting gijon": "sporting gijon",
+    "granada": "granada", "castellon": "castellon", "cordoba": "cordoba", "huesca": "huesca",
+    "albacete": "albacete", "burgos": "burgos", "cartagena": "cartagena", "ferrol": "ferrol",
+    "eldense": "eldense", "racing ferrol": "ferrol",
+    # 德甲
+    "fc augsburg": "augsburg", "augsburg": "augsburg", "sc paderborn": "paderborn",
+    "paderborn": "paderborn", "sv elversberg": "elversberg", "elversberg": "elversberg",
+    "fc schalke 04": "schalke", "schalke 04": "schalke", "schalke": "schalke",
+    "fsv mainz 05": "mainz", "mainz 05": "mainz", "mainz": "mainz",
+    "holstein kiel": "kiel", "holstein": "kiel", "fc st pauli 1910": "st pauli",
+    "st pauli": "st pauli", "sv darmstadt 98": "darmstadt", "darmstadt": "darmstadt",
+    "fortuna dusseldorf": "fortuna dusseldorf", "fc kaiserslautern": "kaiserslautern",
+    "kaiserslautern": "kaiserslautern", "hamburger sv": "hamburg", "hamburg": "hamburg",
+    "fc koln": "koln", "koln": "koln", "fc heidenheim 1846": "heidenheim",
+    "heidenheim": "heidenheim", "1 fc union berlin": "union berlin", "union berlin": "union berlin",
     "borussia monchengladbach": "gladbach", "borussia mgladbach": "gladbach", "mgladbach": "gladbach",
+    "borussia m.gladbach": "gladbach", "borussia m'gladbach": "gladbach",
     "fc koln": "koln", "koln": "koln",
     "bayer leverkusen": "leverkusen", "bayer 04 leverkusen": "leverkusen",
     "porto": "porto", "fc porto": "porto",
@@ -43,7 +88,7 @@ ALIASES = {
 def norm_team(name: str) -> str:
     """归一化队名：去后缀/重音/变体 → 标准键。"""
     words = (name or "").lower().replace("&", " ").split()
-    words = [w for w in words if w not in ("fc", "afc", "cf", "sc", "ac", "1", "2", "0", "4", "05")]
+    words = [w for w in words if w not in ("fc", "afc", "cf", "sc", "ac", "1", "2", "0", "4", "05", "1846", "1910", "04", "01", "1.")]
     raw = " ".join(words)
     raw = unicodedata.normalize("NFKD", raw).encode("ascii", "ignore").decode()
     raw = " ".join(raw.split())
