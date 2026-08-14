@@ -138,6 +138,46 @@ class MessageAnalyzer(Analyzer):
         "openda": "rb leipzig", "guirassy": "borussia dortmund", "brandt": "borussia dortmund",
     }
 
+    def _word_hit(self, term: str, text: str) -> bool:
+        """词级匹配：term 作为独立词/短语出现在 text 中（避免 'angers' 命中 'rangers'）。"""
+        term = term.strip().lower()
+        if not term:
+            return False
+        # 多词短语：要求短语作为连续子串且边界为词边界
+        if " " in term:
+            return term in text
+        # 单词：\b 词边界匹配（'angers' 不会命中 'rangers'）
+        import re
+        return re.search(r"\b" + re.escape(term) + r"\b", text) is not None
+
+    def _team_terms(self, team: str) -> list:
+        """生成队名的全部匹配词：全称 + 双向别名 + 球员名 + 去后缀核心名。"""
+        team = (team or "").lower()
+        if not team:
+            return []
+        terms = [team]
+        # 反向别名：全称→简称（odds 名 → 新闻常用名）
+        for alias, full in self.TEAM_ALIASES.items():
+            if full == team:
+                terms.append(alias)
+        # 正向别名（已有）
+        if self.TEAM_ALIASES.get(team):
+            terms.append(self.TEAM_ALIASES[team])
+        # 球员名（该队球员）
+        terms += [p for p, t in self.PLAYER_MAP.items() if t == team]
+        # 去掉城市/地名后缀的核心名（"brighton and hove albion" → "brighton"）
+        core = team.replace(" and hove albion", "").replace(" hotspur", "").replace(" united", "")
+        core = core.replace(" city", "").replace(" fc", "").replace(" cf", "").replace(" ac", "")
+        if core != team:
+            terms.append(core)
+        # 去重，保持顺序
+        seen, out = set(), []
+        for t in terms:
+            if t and t not in seen:
+                seen.add(t)
+                out.append(t)
+        return out
+
     def analyze(self, context: dict) -> dict:
         messages = context.get("messages", [])
         home = (context.get("homeTeam") or "").lower()
@@ -155,12 +195,13 @@ class MessageAnalyzer(Analyzer):
             if not text:
                 continue
             # 该消息涉及哪支球队（队名 + 别名 + 球员名）
+            # 双方向别名：全称→简称（"brighton and hove albion" 能匹配标题里的 "brighton"）
             involved = set()
-            home_terms = [home, self.TEAM_ALIASES.get(home, home)] + [p for p, t in self.PLAYER_MAP.items() if t == home]
-            away_terms = [away, self.TEAM_ALIASES.get(away, away)] + [p for p, t in self.PLAYER_MAP.items() if t == away]
-            if any(tok in text for tok in home_terms):
+            home_terms = self._team_terms(home)
+            away_terms = self._team_terms(away)
+            if any(self._word_hit(tok, text) for tok in home_terms):
                 involved.add(home)
-            if any(tok in text for tok in away_terms):
+            if any(self._word_hit(tok, text) for tok in away_terms):
                 involved.add(away)
             if not involved:
                 continue
