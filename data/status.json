@@ -1,19 +1,19 @@
 {
-  "generatedAt": "2026-08-14T06:59:49Z",
+  "generatedAt": "2026-08-14T07:03:20Z",
   "modules": [
     {
       "key": "fixtures",
-      "updatedAt": "2026-08-14T06:57:39Z",
+      "updatedAt": "2026-08-14T07:02:39Z",
       "ok": true
     },
     {
       "key": "predictions",
-      "updatedAt": "2026-08-14T06:59:36Z",
+      "updatedAt": "2026-08-14T07:03:05Z",
       "ok": true
     },
     {
       "key": "standings",
-      "updatedAt": "2026-08-14T06:57:55Z",
+      "updatedAt": "2026-08-14T07:02:55Z",
       "ok": true
     },
     {
@@ -23,7 +23,7 @@
     },
     {
       "key": "messages",
-      "updatedAt": "2026-08-14T06:58:09Z",
+      "updatedAt": "2026-08-14T07:03:03Z",
       "ok": true
     },
     {
@@ -43,12 +43,12 @@
     },
     {
       "key": "calibration",
-      "updatedAt": "2026-08-14T06:59:37Z",
+      "updatedAt": "2026-08-14T07:03:05Z",
       "ok": true
     },
     {
       "key": "calibrationOu",
-      "updatedAt": "2026-08-14T06:59:49Z",
+      "updatedAt": "2026-08-14T07:03:20Z",
       "ok": true
     },
     {
@@ -62,7 +62,7 @@
     },
     {
       "key": "asian",
-      "updatedAt": "2026-08-14T06:58:08Z",
+      "updatedAt": "2026-08-14T07:03:01Z",
       "ok": true,
       "files": "5/5"
     },
