@@ -153,7 +153,7 @@ def build() -> dict:
 def main():
     payload = build()
     (DATA_DIR / "status.json").write_text(
-        json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
     ok_count = sum(1 for m in payload["modules"] if m["ok"])
     print(f"status.json: {ok_count}/{len(payload['modules'])} 模块正常")
     return 0

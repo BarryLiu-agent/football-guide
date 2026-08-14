@@ -107,12 +107,12 @@ def main():
         # 应用折扣：把 high 置信度的输出乘折扣（写入 rules 供 predict.py 使用）
         rules = json.loads(RULES_FILE.read_text(encoding="utf-8"))
         rules["confidenceDiscount"] = discount
-        RULES_FILE.write_text(json.dumps(rules, ensure_ascii=False, indent=1), encoding="utf-8")
+        RULES_FILE.write_text(json.dumps(rules, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         report["applied"] = True
         report["recommendations"].append(f"已应用高置信折扣 {discount}")
 
-    EVO_FILE.write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(json.dumps(report, ensure_ascii=False, indent=1))
+    EVO_FILE.write_text(json.dumps(report, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    print(json.dumps(report, ensure_ascii=False, separators=(",", ":")))
     return 0
 
 

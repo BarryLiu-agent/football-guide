@@ -37,6 +37,8 @@ ALIASES = {
     "torino fc": "torino", "torino": "torino", "cagliari": "cagliari", "udinese": "udinese",
     "verona": "verona", "hellas verona": "verona", "bologna": "bologna", "empoli": "empoli",
     "monza": "monza", "ac monza": "monza", "como": "como", "venezia": "venezia",
+    "borussia dortmund": "dortmund", "dortmund": "dortmund",
+    "rb leipzig": "leipzig", "red bull leipzig": "leipzig", "leipzig": "leipzig",
     "frosinone": "frosinone", "lecce": "lecce", "sassuolo": "sassuolo", "spezia": "spezia",
     "salernitana": "salernitana", "cremonese": "cremonese", "sampdoria": "sampdoria",
     "crotone": "crotone", "cesena": "cesena", "palermo": "palermo", "pisa": "pisa",
@@ -88,7 +90,7 @@ ALIASES = {
 def norm_team(name: str) -> str:
     """归一化队名：去后缀/重音/变体 → 标准键。"""
     words = (name or "").lower().replace("&", " ").split()
-    words = [w for w in words if w not in ("fc", "afc", "cf", "sc", "ac", "1", "2", "0", "4", "05", "1846", "1910", "04", "01", "1.")]
+    words = [w for w in words if w not in ("fc", "afc", "cf", "sc", "ac", "ud", "cd", "1", "2", "0", "4", "05", "1846", "1910", "04", "01", "1.")]
     raw = " ".join(words)
     raw = unicodedata.normalize("NFKD", raw).encode("ascii", "ignore").decode()
     raw = " ".join(raw.split())
@@ -108,14 +110,6 @@ class EloModel:
                 pos = r.get("position") or 20
                 elo = INIT_ELO + (21 - min(pos, 20)) * 15
                 self.ratings.setdefault(norm_team(r.get("team", "")), elo)
-
-    def init_from_players(self, xg_teams: list) -> None:
-        """用 xG 榜初始化（按 xG 排序 → Elo）。"""
-        if not xg_teams:
-            return
-        sorted_teams = sorted(xg_teams, key=lambda t: -(t.get("xG") or 0))
-        for i, t in enumerate(sorted_teams[:20]):
-            self.ratings.setdefault(norm_team(t.get("title", "")), INIT_ELO + (21 - i) * 15)
 
     def update(self, finished_matches: list) -> None:
         """用已完赛比赛迭代更新 Elo（按时间顺序）。"""
@@ -173,9 +167,6 @@ class EloModel:
                 if all(w in key.split() for w in words):
                     return val
         return INIT_ELO
-
-    def ratings_table(self, top_n: int = 20) -> list:
-        return sorted(self.ratings.items(), key=lambda kv: -kv[1])[:top_n]
 
 
 # ── Dixon-Coles 低比分修正 ────────────────
@@ -279,13 +270,3 @@ class XgModel:
         lam_away = self.avg_away_xg * (atk_a / self.avg_away_xg) * (def_h / self.avg_home_xg)
         p_home, p_draw, p_away = dc_1x2_from(lam_home, lam_away)
         return round(p_home, 4), round(p_draw, 4), round(p_away, 4)
-
-    def lam(self, home: str, away: str):
-        """返回 (λ_home, λ_away) 或 (None, None)。"""
-        h, a = norm_team(home), norm_team(away)
-        atk_h, def_a, atk_a, def_h = self.attack.get(h), self.defense.get(a), self.attack.get(a), self.defense.get(h)
-        if None in (atk_h, def_a, atk_a, def_h):
-            return None, None
-        lam_home = self.avg_home_xg * (atk_h / self.avg_home_xg) * (def_a / self.avg_away_xg)
-        lam_away = self.avg_away_xg * (atk_a / self.avg_away_xg) * (def_h / self.avg_home_xg)
-        return lam_home, lam_away

@@ -3,9 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="data:,">
-<title>赌狗赌到最后应有尽有</title>
+<meta name="description" content="五大联赛+欧冠实时比分、欧赔/亚盘/竞彩 SP 赔率、模型预测与 AI 研判 - 个人数据分析工具站">
+<meta property="og:title" content="足球数据面板">
+<meta property="og:description" content="五大联赛+欧冠赔率与模型预测数据分析">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://barryliu-agent.github.io/football-guide/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎲</text></svg>">
+<title>赌狗赌到最后应有尽有 - 足球数据面板</title>
 <style>
+/* 焦点可见性（键盘导航） */
+:focus-visible { outline: 2px solid var(--gold, #f0b90b); outline-offset: 2px; }
+
 /* ===== Design Tokens ===== */
 :root {
   --bg: #0b0e14;
@@ -16,8 +24,8 @@
   --border-light: #333c4d;
   --text: #e8ecf2;
   --text-2: #9aa5b5;
-  --text-3: #6b7686;
-  --muted: #6b7686;
+  --text-3: #8b95a3;  /* 对比度达标(在 #0b0e14 上 ≈5.2:1) */
+  --muted: #8b95a3;
   --gold: #f0b90b;
   --gold-dim: #b8860b;
   --green: #16c784;
@@ -471,11 +479,11 @@ table.standings .down { color: var(--red); }
 <!-- ===== Header ===== -->
 <header class="header">
   <div class="header-inner">
-    <div class="logo">🎲 赌狗赌到<span class="accent">最后应有尽有</span></div>
+    <h1 class="logo" style="font-size:inherit;font-weight:inherit;margin:0">🎲 赌狗赌到<span class="accent">最后应有尽有</span></h1>
     <div class="header-right">
       <span class="header-time" id="lastUpdated"></span>
-      <button class="btn-refresh status-btn" onclick="openStatus()" title="数据更新状态">🕐<span class="status-dot" id="statusDot"></span></button>
-      <button class="btn-refresh" onclick="refreshAll()">🔄 刷新</button>
+      <button class="btn-refresh status-btn" onclick="openStatus()" title="数据更新状态" aria-label="数据更新状态">🕐<span class="status-dot" id="statusDot"></span></button>
+      <button class="btn-refresh" onclick="refreshAll()" title="刷新数据" aria-label="刷新数据">🔄 刷新</button>
       <span class="refresh-note" id="refreshStatus" style="display:inline-block;max-width:300px;vertical-align:middle"></span>
     </div>
   </div>
@@ -490,11 +498,11 @@ table.standings .down { color: var(--red); }
 </main>
 
 <!-- ===== 数据状态抽屉 ===== -->
-<div class="status-overlay" id="statusOverlay" onclick="if(event.target===this)closeStatus()">
+<div class="status-overlay" id="statusOverlay" onclick="if(event.target===this)closeStatus()" role="dialog" aria-modal="true" aria-labelledby="statusTitle">
   <div class="status-panel">
     <div class="status-head">
-      <div><span class="t">🕐 数据更新状态</span> <span class="s" id="statusSummary"></span></div>
-      <button class="status-close" onclick="closeStatus()">×</button>
+      <div><span class="t" id="statusTitle">🕐 数据更新状态</span> <span class="s" id="statusSummary"></span></div>
+      <button class="status-close" onclick="closeStatus()" aria-label="关闭" title="关闭">×</button>
     </div>
     <div id="statusList"></div>
     <div class="status-foot">自动刷新:页面打开时 + 每 5 分钟 · 相对时间每 1 分钟更新</div>
@@ -502,11 +510,11 @@ table.standings .down { color: var(--red); }
 </div>
 
 <!-- ===== Detail Modal ===== -->
-<div class="modal-overlay" id="detailModal" onclick="if(event.target===this)closeDetail()">
+<div class="modal-overlay" id="detailModal" onclick="if(event.target===this)closeDetail()" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
   <div class="modal">
     <div class="modal-header">
       <div class="modal-title" id="modalTitle"></div>
-      <button class="modal-close" onclick="closeDetail()">×</button>
+      <button class="modal-close" onclick="closeDetail()" aria-label="关闭" title="关闭">×</button>
     </div>
     <div class="modal-body">
       <div class="mkt-tabs" id="mktTabs"></div>
@@ -682,8 +690,13 @@ function findJingcai(home, away, league) {
 }
 
 // ===== 数据加载 =====
+// 缓存策略：数据文件带 ?v=<version>（版本号 = CI 对全部数据文件的 MD5 汇总），
+// 数据变化 → 版本变化 → URL 变化 → 重新下载；数据未变 → 命中缓存（性能关键）。
+// version.json 本身极小且每次必须新鲜（?t=now 冷拉）；本地无 version.json 时自动降级 ?t=now。
+let DATA_VERSION = null;
 async function loadJson(url) {
-  const r = await fetch(url + '?t=' + Date.now());
+  const q = (DATA_VERSION && !url.includes('version.json')) ? '?v=' + DATA_VERSION : '?t=' + Date.now();
+  const r = await fetch(url + q);
   if (!r.ok) throw new Error('HTTP ' + r.status);
   return r.json();
 }
@@ -831,6 +844,13 @@ function closeStatus() {
 }
 
 async function loadAll() {
+  // 先取版本指纹（小文件、恒新鲜），失败则降级为旧策略 ?t=now
+  try {
+    const v = await loadJson('data/version.json');
+    DATA_VERSION = v.version || null;
+  } catch (e) {
+    DATA_VERSION = null;
+  }
   const failed = [];
   const track = (name, p) => p.catch(() => { failed.push(name); });
   const jobs = [
@@ -1175,8 +1195,8 @@ function renderCard(m) {
   return `<div class="match-card" onclick="openDetail('${esc(homeName).replace(/'/g, '')}','${esc(awayName).replace(/'/g, '')}','${m.competition?.code || ''}')">
     <div class="mc-time"><div class="t">${score.text === 'VS' ? fmtTime(m.utcDate) : score.text}</div><div class="d">${score.statusText || (m.competition?.code === 'CL' ? '欧冠' : '')}</div></div>
     <div class="mc-teams">
-      <div class="mc-team">${m.homeTeam?.crest ? `<img src="${m.homeTeam.crest}" onerror="this.style.display='none'">` : ''}<span class="cn">${cnTeam(homeName)}</span></div>
-      <div class="mc-team">${m.awayTeam?.crest ? `<img src="${m.awayTeam.crest}" onerror="this.style.display='none'">` : ''}<span class="cn">${cnTeam(awayName)}</span></div>
+      <div class="mc-team">${m.homeTeam?.crest ? `<img src="${m.homeTeam.crest}" alt="${esc(cnTeam(homeName))} 队徽" onerror="this.style.display='none'">` : ''}<span class="cn">${cnTeam(homeName)}</span></div>
+      <div class="mc-team">${m.awayTeam?.crest ? `<img src="${m.awayTeam.crest}" alt="${esc(cnTeam(awayName))} 队徽" onerror="this.style.display='none'">` : ''}<span class="cn">${cnTeam(awayName)}</span></div>
     </div>
     <div class="mc-score ${score.cls}"><div class="s">${score.text === 'VS' ? 'VS' : score.text}</div>${score.statusText && score.statusText !== 'VS' ? `<div class="st">${score.statusText}</div>` : ''}</div>
     ${pred && pred.signalLevel !== 'none' ? `<div class="mc-pred"><div class="ps">${pred.predictedScore}</div><div class="pc">预测 ${Math.round((pred.confidence||0)*100)}%</div></div>` : ''}
@@ -1468,7 +1488,7 @@ function renderRecord() {
 }
 
 // ===== 详情 =====
-let currentPred = null, currentJc = null, pollTimer = null, lastGen = null;
+let currentPred = null, currentJc = null, pollTimer = null, lastVersion = null;
 function openDetail(homeName, awayName, league) {
   currentPred = findPrediction(homeName, awayName, league);
   currentJc = findJingcai(homeName, awayName, league);
@@ -1745,7 +1765,7 @@ function refreshAll() {
   loadAll().then(() => {
     loadStatus();  // 状态抽屉数据一并刷新
     render();
-    lastGen = (state.predictionsMeta || {}).generatedAt || null;
+    lastVersion = DATA_VERSION;
     if (currentPred) syncDetail();
     if (!pat) {
       status.innerHTML = '已刷新 ' + new Date().toLocaleTimeString('zh-CN', { hour12: false }) + ' · <a href="#" onclick="event.preventDefault();configToken()" style="color:var(--gold)">配置云端 Token</a>';
@@ -1768,18 +1788,20 @@ function configToken() {
 }
 
 function startPoll() {
-  // 轮询检测云端预测数据是否更新,更新后自动重载并同步详情;5 分钟无变化自动停止
+  // 轮询检测云端数据版本是否更新（只拉 ~90B 的 version.json，不拉大文件）
+  // CI 写回是原子提交：version.json 与数据文件同批变化 → 版本变 = 数据变
   if (pollTimer) clearInterval(pollTimer);
   const start = Date.now();
   pollTimer = setInterval(async () => {
     try {
-      const d = await loadJson('data/predictions.json');
-      if (lastGen && d.generatedAt !== lastGen) {
+      const v = await loadJson('data/version.json');
+      if (lastVersion && v.version && v.version !== lastVersion) {
         clearInterval(pollTimer); pollTimer = null;
+        lastVersion = v.version;
         $('refreshStatus').textContent = '✅ 云端数据已更新';
         loadAll().then(() => { render(); if (currentPred) syncDetail(); });
-      } else if (!lastGen) {
-        lastGen = d.generatedAt;
+      } else if (!lastVersion) {
+        lastVersion = v.version;
       } else if (Date.now() - start > 5 * 60000) {
         clearInterval(pollTimer); pollTimer = null;
         $('refreshStatus').textContent = '云端刷新完成(数据未变化)';

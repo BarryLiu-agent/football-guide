@@ -134,7 +134,7 @@ def fetch_standings():
         except Exception as e:
             print(f"  - {code} 积分榜失败: {e}")
     out = {"generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "standings": standings}
-    (ROOT / "data" / "standings.json").write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
+    (ROOT / "data" / "standings.json").write_text(json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     print(f"  ✓ 积分榜: {len(standings)} 个联赛 -> data/standings.json")
 
 def is_big_team(team_name, flat_list):
@@ -258,7 +258,7 @@ def main(no_filter=False, no_standings=False):
     # Write
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
-        json.dump(output, f, ensure_ascii=False, indent=2)
+        json.dump(output, f, ensure_ascii=False, separators=(",", ":"))
 
     print(f"\n✅ 已保存到: {OUTPUT_FILE}")
     print(f"   文件大小: {OUTPUT_FILE.stat().st_size / 1024:.1f} KB")
@@ -279,7 +279,7 @@ def main(no_filter=False, no_standings=False):
         stats["byCompetition"][code] += 1
 
     with open(stats_file, "w", encoding="utf-8") as f:
-        json.dump(stats, f, ensure_ascii=False, indent=2)
+        json.dump(stats, f, ensure_ascii=False, separators=(",", ":"))
 
     print(f"   统计文件: {stats_file}")
 

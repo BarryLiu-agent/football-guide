@@ -133,7 +133,7 @@ def fetch_all(season: int = None):
                 'data': stats,
             }
             with open(out_path, 'w', encoding='utf-8') as f:
-                json.dump(output, f, ensure_ascii=False, indent=2)
+                json.dump(output, f, ensure_ascii=False, separators=(",", ":"))
             print(f'  [OK] {code}.json saved ({len(stats["shooting"])} teams)', flush=True)
 
         except Exception as e:

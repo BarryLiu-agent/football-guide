@@ -223,7 +223,7 @@ def main() -> int:
     r = ai_judge(sample)
     if r:
         print("自检通过，示例输出:")
-        print(json.dumps(r, ensure_ascii=False, indent=2))
+        print(json.dumps(r, ensure_ascii=False, separators=(",", ":")))
         return 0
     print("自检失败（未配置或调用出错）。")
     return 1

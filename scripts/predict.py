@@ -27,7 +27,7 @@ if sys.stdout.encoding != "utf-8":
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from elo import EloModel, dc_probs, XgModel
+from elo import EloModel, dc_probs, XgModel, norm_team
 CONFIG_DIR = ROOT / "config"
 DATA_DIR = ROOT / "data"
 ODDS_DIR = DATA_DIR / "odds"
@@ -550,15 +550,27 @@ class AnalysisWriter:
 
 # ── 主流程 ───────────────────────────────────────────────
 
+def atomic_write(path, data):
+    """原子写 JSON：先写临时文件再 rename，避免写入中断产生损坏文件。"""
+    tmp = path.with_suffix(path.suffix + ".tmp")
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, separators=(",", ":"))
+    tmp.replace(path)
+
+
 def load_odds():
-    """加载 data/odds/*.json, 返回 {league: [matches]}"""
+    """加载 data/odds/*.json, 返回 {league: [matches]}。
+    单个文件损坏/解析失败 → 跳过该联赛（不中断整批预测）。"""
     result = {}
     if not ODDS_DIR.exists():
         return result
     for f in ODDS_DIR.glob("*.json"):
-        with open(f, "r", encoding="utf-8") as fh:
-            data = json.load(fh)
-        result[data.get("league", f.stem)] = data.get("matches", [])
+        try:
+            with open(f, "r", encoding="utf-8") as fh:
+                data = json.load(fh)
+            result[data.get("league", f.stem)] = data.get("matches", [])
+        except Exception as e:
+            print(f"  ⚠ 跳过损坏赔率文件 {f.name}: {e}")
     return result
 
 
@@ -566,8 +578,12 @@ def load_messages():
     path = DATA_DIR / "messages.json"
     if not path.exists():
         return []
-    with open(path, "r", encoding="utf-8") as f:
-        return json.load(f).get("messages", [])
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f).get("messages", [])
+    except Exception as e:
+        print(f"  ⚠ 消息数据解析失败: {e}")
+        return []
 
 
 def load_standings():
@@ -575,29 +591,17 @@ def load_standings():
     path = DATA_DIR / "standings.json"
     if not path.exists():
         return {}
-    with open(path, "r", encoding="utf-8") as f:
-        return json.load(f).get("standings", {})
-
-
-_TEAM_ALIAS = {
-    # The Odds API / FBref 队名 → Football-Data 积分榜队名（跨源统一）
-    "bayern munchen": "bayern munich",
-    "athletic club": "athletic bilbao",
-    "paris saint germain": "psg",
-    "fc bayern munchen": "bayern munich",
-}
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f).get("standings", {})
+    except Exception as e:
+        print(f"  ⚠ 积分榜解析失败: {e}")
+        return {}
 
 
 def norm_team(s):
-    """队名归一化（与前端一致）。增强：去变音符/连字符/常见俱乐部后缀，别名统一。"""
-    import re
-    import unicodedata
-    t = (s or "").lower()
-    t = unicodedata.normalize("NFKD", t).encode("ascii", "ignore").decode()
-    t = re.sub(r"[\-\.']", " ", t)
-    t = re.sub(r"\b(fc|afc|cf|sc|ac|cd|ud|fk|sv|st|os|sc)\b", "", t)
-    t = re.sub(r"\s+", " ", t).replace("&", " ").strip()
-    return _TEAM_ALIAS.get(t, t)
+    """队名归一化（统一使用 elo.py 的 ALIASES 体系，消除双套归一化不一致）。"""
+    return __import__('elo').norm_team(s)
 
 
 FORM_LAST = 5  # 近 5 场状态
@@ -660,6 +664,108 @@ LEAGUE_ALIAS = {
 }
 
 
+def _train_elo(standings_by_league: dict, min_kickoff: str):
+    """Elo 训练：积分榜初始化 → 上赛季 season_2025 迭代 → 本赛季已完赛（时间正序，新赛季最后覆盖）。"""
+    elo = EloModel()
+    elo.init_from_standings(standings_by_league)
+    season_total = 0
+    finished_count = 0
+    try:
+        # 上赛季迭代（与回测同源）：消除积分榜与赔率源球队构成不一致导致的无历史评级
+        season_path = DATA_DIR / "season_2025.json"
+        if season_path.exists():
+            try:
+                with open(season_path, encoding="utf-8") as f:
+                    season = json.load(f)
+                ms_by_lg = {}
+                for sm in season.get("matches", []):
+                    if sm.get("homeGoals") is None or sm.get("awayGoals") is None:
+                        continue
+                    # 防未来函数：预测窗口之后的赛果不参与训练
+                    if min_kickoff and (sm.get("utcDate") or "") >= min_kickoff:
+                        continue
+                    ms_by_lg.setdefault(sm["league"], []).append(sm)
+                for lg_ms in ms_by_lg.values():
+                    # 抓取顺序 = 从最新往回 → 反转即时间正序
+                    elo.update([{
+                        "utcDate": sm.get("utcDate", ""),
+                        "homeTeam": {"name": sm["homeTeam"]},
+                        "awayTeam": {"name": sm["awayTeam"]},
+                        "score": {"fullTime": {"home": sm["homeGoals"], "away": sm["awayGoals"]}},
+                    } for sm in reversed(lg_ms)])
+                    season_total += len(lg_ms)
+            except Exception as e:
+                print(f"Elo 上赛季迭代失败: {e}")
+        # 本赛季已完赛（开赛后逐步积累，最后迭代使其权重最高）
+        with open(DATA_DIR / "fixtures.json", encoding="utf-8") as f:
+            fixtures_all = json.load(f).get("matches", [])
+        finished = [m for m in fixtures_all if m.get("status") == "FINISHED"]
+        elo.update(finished)
+        finished_count = len(finished)
+    except Exception as e:
+        print(f"Elo 赛果迭代跳过: {e}")
+    return elo, season_total, finished_count
+
+
+def _train_xg(min_kickoff: str):
+    """xG 攻防强度模型：上赛季 season_2025 + 本赛季 Understat 单场 xG（开赛后自动纳入）。"""
+    xg_model = XgModel(max_age=20)
+    n_xg = 0
+    xg_current = 0
+    try:
+        season_path = DATA_DIR / "season_2025.json"
+        if season_path.exists():
+            with open(season_path, encoding="utf-8") as f:
+                season = json.load(f)
+            for sm in season.get("matches", []):
+                if sm.get("xgHome") is None or sm.get("xgAway") is None:
+                    continue
+                # 防未来函数：预测窗口之后的比赛不参与训练
+                if min_kickoff and (sm.get("utcDate") or "") >= min_kickoff:
+                    continue
+                xg_model.add_match(sm["homeTeam"], sm["awayTeam"], sm["xgHome"], sm["xgAway"])
+                n_xg += 1
+    except Exception as e:
+        print(f"xG 上赛季训练跳过: {e}")
+    # 本赛季 xG 接入点（数据就绪即生效）：只取已完赛（有比分+xG）且早于预测窗口的场次
+    try:
+        xgm_path = DATA_DIR / "xg" / "matches.json"
+        if xgm_path.exists():
+            with open(xgm_path, encoding="utf-8") as f:
+                xgm_all = json.load(f).get("matches", [])
+            fin = [m for m in xgm_all
+                   if m.get("homeGoals") is not None and m.get("awayGoals") is not None
+                   and m.get("xgHome") is not None and m.get("xgAway") is not None
+                   and (m.get("date") or "")]
+            if min_kickoff:
+                fin = [m for m in fin if (m.get("date") or "")[:10] < str(min_kickoff)[:10]]
+            fin.sort(key=lambda m: m.get("date", ""))
+            for m in fin:
+                xg_model.add_match(m["homeTeam"], m["awayTeam"], m["xgHome"], m["xgAway"])
+                xg_current += 1
+    except Exception as e:
+        print(f"本赛季 xG 纳入跳过: {e}")
+    xg_model.finalize()
+    return xg_model, n_xg, xg_current
+
+
+def _load_lineups() -> dict:
+    """赛前首发/伤停（lineups.json，来自每小时 FotMob/ESPN/Sofascore 抓取）。"""
+    lineups_by_match = {}
+    try:
+        lu_path = DATA_DIR / "lineups.json"
+        if lu_path.exists():
+            with open(lu_path, encoding="utf-8") as f:
+                for lm in json.load(f).get("matches", []):
+                    if lm.get("homeLineup") or lm.get("awayLineup"):
+                        lineups_by_match[(norm_team(lm.get("homeTeam", "")),
+                                          norm_team(lm.get("awayTeam", "")))] = lm
+            print(f"首发数据: {len(lineups_by_match)} 场已公布")
+    except Exception:
+        pass
+    return lineups_by_match
+
+
 def main():
     parser = argparse.ArgumentParser(description="比分预测引擎")
     parser.add_argument("--skip-ai", action="store_true",
@@ -685,104 +791,15 @@ def main():
     form = load_form(min_kickoff)
     print(f"赔率联赛: {list(odds_by_league.keys())}, 消息: {len(messages)} 条, 积分榜联赛: {len(standings_by_league)}, 近5场form球队: {len(form)}")
 
-    # Elo 独立模型：积分榜初始化 → 上赛季迭代 → 本赛季已完赛（时间正序，新赛季最后覆盖）
-    elo = EloModel()
-    elo.init_from_standings(standings_by_league)
-    try:
-        # 上赛季 1752 场迭代（与回测同源）：消除 Football-Data 积分榜与赔率源
-        # 球队构成不一致导致的无历史评级（国米/马竞/里昂等被误判为 1500 初始）
-        season_total = 0
-        season_path = DATA_DIR / "season_2025.json"
-        if season_path.exists():
-            try:
-                with open(season_path, encoding="utf-8") as f:
-                    season = json.load(f)
-                ms_by_lg = {}
-                for sm in season.get("matches", []):
-                    if sm.get("homeGoals") is None or sm.get("awayGoals") is None:
-                        continue
-                    # 防未来函数：预测窗口之后的赛果（如 season 文件混入下赛季/未来赛果）不参与训练
-                    if min_kickoff and (sm.get("utcDate") or "") >= min_kickoff:
-                        continue
-                    ms_by_lg.setdefault(sm["league"], []).append(sm)
-                for lg_ms in ms_by_lg.values():
-                    # 抓取顺序 = 从最新往回 → 反转即时间正序
-                    elo.update([{
-                        "utcDate": sm.get("utcDate", ""),
-                        "homeTeam": {"name": sm["homeTeam"]},
-                        "awayTeam": {"name": sm["awayTeam"]},
-                        "score": {"fullTime": {"home": sm["homeGoals"], "away": sm["awayGoals"]}},
-                    } for sm in reversed(lg_ms)])
-                    season_total += len(lg_ms)
-            except Exception as e:
-                print(f"Elo 上赛季迭代失败: {e}")
-        # 本赛季已完赛（开赛后逐步积累，最后迭代使其权重最高）
-        with open(DATA_DIR / "fixtures.json", encoding="utf-8") as f:
-            fixtures_all = json.load(f).get("matches", [])
-        finished = [m for m in fixtures_all if m.get("status") == "FINISHED"]
-        elo.update(finished)
-        print(f"Elo: {len(elo.ratings)} 队, 已用 {season_total} 场上赛季 + {len(finished)} 场本赛季赛果迭代")
-    except Exception as e:
-        print(f"Elo 赛果迭代跳过: {e}")
+    # 模型训练：Elo（赛果）+ xG（攻防强度）并行独立训练，互不依赖
+    elo, season_total, finished_count = _train_elo(standings_by_league, min_kickoff)
+    print(f"Elo: {len(elo.ratings)} 队, 已用 {season_total} 场上赛季 + {finished_count} 场本赛季赛果迭代")
 
-    # ── xG 攻防强度模型：上赛季 season_2025.json + 本赛季 Understat 单场 xG（开赛后自动纳入）──
-    xg_model = XgModel(max_age=20)
-    n_xg = 0
-    xg_current = 0
-    try:
-        season_path = DATA_DIR / "season_2025.json"
-        if season_path.exists():
-            with open(season_path, encoding="utf-8") as f:
-                season = json.load(f)
-            for sm in season.get("matches", []):
-                if sm.get("xgHome") is None or sm.get("xgAway") is None:
-                    continue
-                # 防未来函数：预测窗口之后的比赛不参与训练
-                if min_kickoff and (sm.get("utcDate") or "") >= min_kickoff:
-                    continue
-                xg_model.add_match(sm["homeTeam"], sm["awayTeam"], sm["xgHome"], sm["xgAway"])
-                n_xg += 1
-    except Exception as e:
-        print(f"xG 上赛季训练跳过: {e}")
-    # ── 本赛季 xG 接入点（数据就绪即生效，无需改代码）──
-    # data/xg/matches.json 由本地 `python scripts/xg_fetch_local.py --matches --push` 抓取（Understat）。
-    # 开赛前文件为空/缺失 → 本段自动跳过，零副作用。
-    # 开赛后每轮抓取：只取已完赛（有比分+xG）且早于预测窗口的场次，按时间正序叠加；
-    # XgModel 每队仅保留最近 20 场 → 新赛季状态逐步取代上赛季旧数据。
-    try:
-        xgm_path = DATA_DIR / "xg" / "matches.json"
-        if xgm_path.exists():
-            with open(xgm_path, encoding="utf-8") as f:
-                xgm_all = json.load(f).get("matches", [])
-            fin = [m for m in xgm_all
-                   if m.get("homeGoals") is not None and m.get("awayGoals") is not None
-                   and m.get("xgHome") is not None and m.get("xgAway") is not None
-                   and (m.get("date") or "")]
-            # 防未来函数：预测窗口之后的场次不参与
-            if min_kickoff:
-                fin = [m for m in fin if (m.get("date") or "")[:10] < str(min_kickoff)[:10]]
-            fin.sort(key=lambda m: m.get("date", ""))
-            for m in fin:
-                xg_model.add_match(m["homeTeam"], m["awayTeam"], m["xgHome"], m["xgAway"])
-                xg_current += 1
-    except Exception as e:
-        print(f"本赛季 xG 纳入跳过: {e}")
-    xg_model.finalize()
+    xg_model, n_xg, xg_current = _train_xg(min_kickoff)
     print(f"xG 模型: {len(xg_model.attack)} 队攻防强度, 已用 {n_xg} 场上赛季 + {xg_current} 场本赛季 xG 训练")
 
-    # ── 赛前首发/伤停（lineups.json，来自每小时 FotMob/ESPN/Sofascore 抓取）──
-    lineups_by_match = {}
-    try:
-        lu_path = DATA_DIR / "lineups.json"
-        if lu_path.exists():
-            with open(lu_path, encoding="utf-8") as f:
-                for lm in json.load(f).get("matches", []):
-                    if lm.get("homeLineup") or lm.get("awayLineup"):
-                        lineups_by_match[(norm_team(lm.get("homeTeam", "")),
-                                          norm_team(lm.get("awayTeam", "")))] = lm
-            print(f"首发数据: {len(lineups_by_match)} 场已公布")
-    except Exception:
-        pass
+    # 赛前首发/伤停（lineups.json，来自每小时 FotMob/ESPN/Sofascore 抓取）
+    lineups_by_match = _load_lineups()
 
     predictor = ScorePredictor(rules)
     predictions = []
@@ -1174,8 +1191,7 @@ def main():
     stats = evaluate_predictions(predictions)
     out["stats"] = stats
 
-    with open(DATA_DIR / "predictions.json", "w", encoding="utf-8") as f:
-        json.dump(out, f, ensure_ascii=False, indent=2)
+    atomic_write(DATA_DIR / "predictions.json", out)
 
     # 摘要
     notable = [p for p in predictions if p["confidence"] >= rules.get("confidenceMin", 0.4)]
@@ -1503,7 +1519,7 @@ def evaluate_predictions(predictions):
         "updatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
     }
     hist["stats"] = stats
-    history_path.write_text(json.dumps(hist, ensure_ascii=False, indent=1), encoding="utf-8")
+    atomic_write(history_path, hist)
     return stats
 
 

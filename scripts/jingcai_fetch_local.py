@@ -168,7 +168,7 @@ def main():
     out_path = ROOT / "data" / "jingcai.json"
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(out, f, ensure_ascii=False, indent=1)
+        json.dump(out, f, ensure_ascii=False, separators=(",", ":"))
 
     print(f"✓ 在售比赛 {out['total']} 场 -> {out_path}")
     for m in out["matches"][:5]:

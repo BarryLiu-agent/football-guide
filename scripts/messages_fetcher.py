@@ -262,7 +262,7 @@ def main():
     }
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     with open(DATA_DIR / "messages.json", "w", encoding="utf-8") as f:
-        json.dump(out, f, ensure_ascii=False, indent=2)
+        json.dump(out, f, ensure_ascii=False, separators=(",", ":"))
 
     print(f"\n总计: {len(all_messages)} 条消息 -> data/messages.json")
     return 0
