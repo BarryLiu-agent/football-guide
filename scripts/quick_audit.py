@@ -4,7 +4,7 @@ from pathlib import Path
 
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-ROOT = Path("C:/Users/QZ/Desktop/FOOTBALL/data")
+ROOT = Path(__file__).resolve().parent.parent / "data"
 issues = []
 
 pj = json.loads((ROOT / "predictions.json").read_text(encoding="utf-8"))

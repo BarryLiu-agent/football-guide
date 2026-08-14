@@ -25,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Fetch lineups (多源回退: FotMob → ESPN → Sofascore)
+      - name: "Fetch lineups (多源回退: FotMob → ESPN → Sofascore)"
         run: python scripts/lineup_fetcher.py
 
       - name: Commit lineups data
