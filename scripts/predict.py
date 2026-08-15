@@ -708,10 +708,9 @@ def _train_elo(standings_by_league: dict, min_kickoff: str):
 
 
 def _train_xg(min_kickoff: str):
-    """xG 攻防强度模型：上赛季 season_2025 + 本赛季 Understat 单场 xG（开赛后自动纳入）。"""
+    """xG 攻防强度模型：上赛季 season_2025（单场实时 xG 已下线，不再纳入本赛季数据）。"""
     xg_model = XgModel(max_age=20)
     n_xg = 0
-    xg_current = 0
     try:
         season_path = DATA_DIR / "season_2025.json"
         if season_path.exists():
@@ -727,26 +726,8 @@ def _train_xg(min_kickoff: str):
                 n_xg += 1
     except Exception as e:
         print(f"xG 上赛季训练跳过: {e}")
-    # 本赛季 xG 接入点（数据就绪即生效）：只取已完赛（有比分+xG）且早于预测窗口的场次
-    try:
-        xgm_path = DATA_DIR / "xg" / "matches.json"
-        if xgm_path.exists():
-            with open(xgm_path, encoding="utf-8") as f:
-                xgm_all = json.load(f).get("matches", [])
-            fin = [m for m in xgm_all
-                   if m.get("homeGoals") is not None and m.get("awayGoals") is not None
-                   and m.get("xgHome") is not None and m.get("xgAway") is not None
-                   and (m.get("date") or "")]
-            if min_kickoff:
-                fin = [m for m in fin if (m.get("date") or "")[:10] < str(min_kickoff)[:10]]
-            fin.sort(key=lambda m: m.get("date", ""))
-            for m in fin:
-                xg_model.add_match(m["homeTeam"], m["awayTeam"], m["xgHome"], m["xgAway"])
-                xg_current += 1
-    except Exception as e:
-        print(f"本赛季 xG 纳入跳过: {e}")
     xg_model.finalize()
-    return xg_model, n_xg, xg_current
+    return xg_model, n_xg
 
 
 def _load_lineups() -> dict:
@@ -795,8 +776,8 @@ def main():
     elo, season_total, finished_count = _train_elo(standings_by_league, min_kickoff)
     print(f"Elo: {len(elo.ratings)} 队, 已用 {season_total} 场上赛季 + {finished_count} 场本赛季赛果迭代")
 
-    xg_model, n_xg, xg_current = _train_xg(min_kickoff)
-    print(f"xG 模型: {len(xg_model.attack)} 队攻防强度, 已用 {n_xg} 场上赛季 + {xg_current} 场本赛季 xG 训练")
+    xg_model, n_xg = _train_xg(min_kickoff)
+    print(f"xG 模型: {len(xg_model.attack)} 队攻防强度, 已用 {n_xg} 场上赛季 xG 训练")
 
     # 赛前首发/伤停（lineups.json，来自每小时 FotMob/ESPN/Sofascore 抓取）
     lineups_by_match = _load_lineups()

@@ -30,7 +30,7 @@ DATA_DIR = ROOT / "data"
 # 与 index.html loadAll() 一致的数据文件清单
 NAMED = [
     "fixtures.json", "predictions.json", "standings.json", "jingcai.json",
-    "xg/matches.json", "prediction_history.json", "calibration.json",
+    "prediction_history.json", "calibration.json",
     "calibration_ou.json", "team_names.json",
 ]
 GLOBS = ["odds/*.json", "xg/*.json", "advanced/*.json", "asian/*.json"]
@@ -40,7 +40,7 @@ def collect_files() -> list:
     files = [DATA_DIR / n for n in NAMED]
     for g in GLOBS:
         files.extend(sorted(DATA_DIR.glob(g)))
-    # xg/*.json 包含 xg/matches.json，去重
+    # xg/*.json 仅含球队榜（单场 matches.json 已下线）
     seen, out = set(), []
     for f in files:
         rp = f.relative_to(DATA_DIR).as_posix()

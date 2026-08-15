@@ -179,6 +179,10 @@ img { display: block; }
 
 /* ===== Date Group ===== */
 .date-group { margin-bottom: 18px; }
+/* 已完赛赛果区：绿色标题 + 轻微底色区分 */
+.date-group.results-group { padding: 10px 12px; border: 1px solid rgba(34,197,94,.25); border-radius: 10px; background: rgba(34,197,94,.05); margin-bottom: 20px; }
+.date-group.results-group .date-label { color: #22c55e; }
+.date-group.results-group .date-label .dot { background: #22c55e; }
 .date-label {
   display: flex; align-items: center; gap: 8px;
   font-size: 12px; font-weight: 700; color: var(--text-2);
@@ -250,8 +254,6 @@ table.standings .down { color: var(--red); }
 .chip.active { background: var(--gold); color: #0b0e14; font-weight: 700; border-color: var(--gold); }
 
 .value-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; background:rgba(240,185,11,.15); color:var(--gold); border:1px solid rgba(240,185,11,.4); animation: pulse 1.5s infinite; }
-.xg-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; background:rgba(59,130,246,.15); color:#60a5fa; border:1px solid rgba(59,130,246,.35); }
-.xg-tag.diverging { background:rgba(234,57,67,.15); color:#f87171; border-color:rgba(234,57,67,.45); }
 .val-tag { font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; display:inline-block; }
 .val-tag.gold { background:rgba(240,185,11,.15); color:#fbbf24; border:1px solid rgba(240,185,11,.5); }
 .val-tag.watch { background:rgba(148,163,184,.12); color:#94a3b8; border:1px solid rgba(148,163,184,.35); }
@@ -432,7 +434,7 @@ table.standings .down { color: var(--red); }
   .modal-body { padding: 12px 14px; }
   .mc-team .en { display: none; }
   .mc-score .s { font-size: 15px; }
-  .tags, .diff-tag, .val-tag, .hot-tag, .xg-tag { font-size: 10px; padding: 1px 5px; }
+  .tags, .diff-tag, .val-tag, .hot-tag { font-size: 10px; padding: 1px 5px; }
   .standings th, .standings td { padding: 7px 8px; font-size: 11.5px; }
   .rec-chip { font-size: 10px; }
   .empty-state { font-size: 13px; padding: 24px 12px; }
@@ -521,7 +523,6 @@ table.standings .down { color: var(--red); }
       <div id="mktContent"></div>
       <div class="section-title">📝 数据分析</div>
       <div class="analysis-box" id="analysisBox"></div>
-            <div id="xgBox"></div>
       <div id="h2hBox"></div>
     </div>
   </div>
@@ -560,7 +561,6 @@ let state = {
   predictions: [],    // 预测
   predictionsMeta: null,
   jingcai: [],        // 竞彩
-  xgMatches: [],      // 单场实时 xG
   history: null,      // 预测战绩
   teamNames: {},
   calibration: null,  // 模型校准报告
@@ -649,16 +649,6 @@ function findPrediction(home, away, league) {
   }
   return cands[0];
 }
-function findXgMatch(home, away) {
-  const h = normTeam(home), a = normTeam(away);
-  if (!h || !a) return null;
-  return (state.xgMatches || []).find(m => {
-    const mh = normTeam(m.homeTeam), ma = normTeam(m.awayTeam);
-    if (!mh || !ma) return false;
-    return (mh === h && ma === a) ||
-      (mh.split(' ')[0] === h.split(' ')[0] && ma.split(' ')[0] === a.split(' ')[0]);
-  });
-}
 function findJingcai(home, away, league) {
   const h = normTeam(home), a = normTeam(away);
   if (!h || !a) return null;
@@ -711,7 +701,6 @@ const STATUS_MODULES = [
   { key: 'lineups',        label: '首发名单',    source: 'FotMob/ESPN/Sofa',  cadence: '赛前每小时', staleAfter: 0,     note: '赛前 1 小时公布;非比赛时段无数据属正常', gray: true },
   { key: 'asian',          label: '亚盘历史',    source: 'football-data.co.uk', cadence: '每周',     staleAfter: 604800, note: '历史收盘盘口,开赛后每轮入库' },
   { key: 'xgTeams',        label: 'xG 球队榜',   source: 'Understat',          cadence: '不定期(本地)', staleAfter: 604800, note: '本地脚本抓取', local: true },
-  { key: 'xgMatches',      label: 'xG 单场(模型)', source: 'Understat',        cadence: '每轮(本地)', staleAfter: 604800, note: '开赛后每轮抓取,自动纳入预测模型', local: true },
   { key: 'messages',       label: '新闻消息',    source: 'ESPN/Sky RSS',      cadence: '每天',       staleAfter: 172800, note: '' },
   { key: 'standings',      label: '积分榜',      source: 'football-data.org', cadence: '每天',       staleAfter: 172800, note: '' },
 ];
@@ -859,7 +848,6 @@ async function loadAll() {
     track('predictions.json', loadJson('data/predictions.json').then(d => { state.predictions = d.predictions || []; state.predictionsMeta = d; })),
     track('standings.json', loadJson('data/standings.json').then(d => { state.standings = d.standings || {}; })),
     track('jingcai.json', loadJson('data/jingcai.json').then(d => { state.jingcai = d.matches || []; state.jingcaiGen = d.generatedAt || ''; })),
-    track('xg/matches.json', loadJson('data/xg/matches.json').then(d => { state.xgMatches = d.matches || []; })),
     track('prediction_history.json', loadJson('data/prediction_history.json').then(d => { state.history = d; })),
     track('calibration.json', loadJson('data/calibration.json').then(d => { state.calibration = d; })),
     track('calibration_ou.json', loadJson('data/calibration_ou.json').then(d => { state.calibOu = d; })),
@@ -1060,7 +1048,16 @@ function renderParlay() {
 // ===== 赛程赛果 =====
 function renderFixtures() {
   const code = FD_CODE[state.league];
-  let ms = state.fixtures.filter(m => m.competition?.code === code);
+  const all = state.fixtures.filter(m => m.competition?.code === code);
+  // 已完赛赛果：单独一览（最近完赛倒序，最多 40 场）
+  const finishedAll = all.filter(m => m.status === 'FINISHED')
+    .sort((a, b) => b.utcDate.localeCompare(a.utcDate)).slice(0, 40);
+  const resultsHtml = finishedAll.length ? `<div class="date-group results-group">
+    <div class="date-label"><span class="dot"></span>✅ 已完赛赛果 <span class="count">${finishedAll.length} 场</span></div>
+    <div class="match-list">${finishedAll.map(renderCard).join('')}</div>
+  </div>` : '';
+
+  let ms = all;
   // 常规模式基准(展示模式分支也使用)
   const t = todayBJ();
   const maxD = fmtDate(new Date(Date.now() + 30 * 86400000).toISOString());
@@ -1091,13 +1088,14 @@ function renderFixtures() {
     .map(p => ({ synthetic: true, homeTeam: { name: p.homeTeam }, awayTeam: { name: p.awayTeam }, utcDate: p.kickoff, competition: { code: p.league }, pred: p }));
   ms = ms.concat(extras).sort((a, b) => a.utcDate.localeCompare(b.utcDate));
 
-  if (!ms.length) return `<div class="empty-state"><div class="icon">📭</div>${state.league === 'CL' ? '欧冠正赛 9 月中旬开赛,暂无可抓数据(资格赛/附加赛不收录)' : '该联赛暂无未来比赛安排'}</div>`;
+  // 未来赛程为空但已有赛果时，仍显示赛果区（空态提示放到赛果下方）
+  if (!ms.length && !finishedAll.length) return `<div class="empty-state"><div class="icon">📭</div>${state.league === 'CL' ? '欧冠正赛 9 月中旬开赛,暂无可抓数据(资格赛/附加赛不收录)' : '该联赛暂无未来比赛安排'}</div>`;
 
   // 分组(按日期从近到远升序)
   const groups = {};
   ms.forEach(m => { const d = fmtDate(m.utcDate); (groups[d] = groups[d] || []).push(m); });
   const groupOrder = Object.keys(groups).sort((a, b) => a.localeCompare(b));
-  return groupOrder.map(d => { const list = groups[d];
+  const upcomingHtml = groupOrder.map(d => { const list = groups[d];
     const t2 = todayBJ(), tm = fmtDate(new Date(Date.now() + 86400000).toISOString());
     const cls = d === t2 ? 'is-today' : d === tm ? 'is-tomorrow' : '';
     // 出手建议:有价值信号/异动/高置信预测的优先展示,其余折叠降噪
@@ -1115,6 +1113,8 @@ function renderFixtures() {
       ${rest.length ? `<details class="no-signal"><summary>其他 ${rest.length} 场(无价值信号)</summary><div class="match-list dim">${rest.map(renderCard).join('')}</div></details>` : ''}
     </div>`;
   }).join('');
+  // 赛果一览置顶，未来赛程在下（无未来赛程时只显示赛果）
+  return resultsHtml + upcomingHtml;
 }
 
 function renderCard(m) {
@@ -1202,7 +1202,6 @@ function renderCard(m) {
     ${pred && pred.signalLevel !== 'none' ? `<div class="mc-pred"><div class="ps">${pred.predictedScore}</div><div class="pc">预测 ${Math.round((pred.confidence||0)*100)}%</div></div>` : ''}
     ${jc ? `<div class="mc-badge-jc">竞彩</div>` : ''}
     ${(() => { const vp = (pred && pred.valuePicks && pred.valuePicks.length) ? pred.valuePicks[0] : null; return vp ? `<span class="val-tag" title="${vp.label}: 模型${Math.round(vp.modelProb*100)}% vs 盘口${Math.round(vp.oddsProb*100)}%">💰${vp.label} ${vp.edge > 0 ? '+' : ''}${Math.round(vp.edge*100)}%</span>` : ''; })()}
-    ${(() => { const xm = findXgMatch(homeName, awayName); if (!xm || (xm.xgHome == null && xm.xgAway == null)) return ''; const xh = xm.xgHome ?? 0, xa = xm.xgAway ?? 0; const xt = xh > xa ? 'home' : xa > xh ? 'away' : 'draw'; let diverge = false; if (pred && pred.eloProb) { const et = pred.eloProb.home > pred.eloProb.away ? 'home' : pred.eloProb.away > pred.eloProb.home ? 'away' : 'draw'; diverge = xt !== 'draw' && et !== 'draw' && xt !== et; } return diverge ? '<span class="xg-tag diverging">🎯 ' + xh.toFixed(1) + '-' + xa.toFixed(1) + ' ⚠️背离</span>' : `<span class="xg-tag">🎯 ${xh.toFixed(1)}-${xa.toFixed(1)}</span>`; })()}
     ${pred && pred.signalLevel === 'gold' && pred.valuePicks?.length ? `<span class="val-tag gold">💰 ${pred.valuePicks.map(v => v.label).join('/')}</span>` : (pred && pred.signalLevel === 'watch' ? `<span class="val-tag watch">👀 关注</span>` : '')}
     ${hot || diff || value || divTag || revTag || injTag || riskTags ? `<div style="display:flex;gap:4px;margin-top:6px;flex-wrap:wrap">${hot}${value}${diff}${divTag}${revTag}${injTag}${riskTags}</div>` : ''}
   </div>`;
@@ -1507,31 +1506,6 @@ function openDetail(homeName, awayName, league) {
     (normTeam(f.homeTeam?.name || f.homeTeam?.shortName) === n1 && normTeam(f.awayTeam?.name || f.awayTeam?.shortName) === n2) ||
     (normTeam(f.homeTeam?.name || f.homeTeam?.shortName) === n2 && normTeam(f.awayTeam?.name || f.awayTeam?.shortName) === n1)
   )).sort((a, b) => b.utcDate.localeCompare(a.utcDate)).slice(0, 5);
-  // 单场实时 xG
-  const xm = findXgMatch(homeName, awayName);
-  const xgBox = $('xgBox');
-  if (xm && (xm.xgHome != null || xm.xgAway != null)) {
-    const st = xm.status === 'finished' ? '已完赛' : (xm.status === 'live' ? '🟢 比赛中' : (xm.minute ? '第' + xm.minute + '分钟' : '未开赛'));
-    const xgHome = xm.xgHome ?? 0, xgAway = xm.xgAway ?? 0;
-    const xgTend = xgHome > xgAway ? 'home' : xgAway > xgHome ? 'away' : 'draw';
-    // 背离检测:xG 倾向 vs 盘口/模型倾向
-    let diverge = '';
-    if (currentPred && currentPred.eloProb) {
-      const eloTend = currentPred.eloProb.home > currentPred.eloProb.away ? 'home' : currentPred.eloProb.away > currentPred.eloProb.home ? 'away' : 'draw';
-      if (xgTend !== 'draw' && eloTend !== 'draw' && xgTend !== eloTend) {
-        const xgName = xgTend === 'home' ? cnTeam(xm.homeTeam) : cnTeam(xm.awayTeam);
-        diverge = '<div style="margin-top:8px;padding:8px 12px;border-radius:8px;background:rgba(234,57,67,.12);border:1px solid rgba(234,57,67,.35);font-size:11px;color:#f87171">⚠️ <b>xG 背离</b>:xG 数据倾向 ' + xgName + ',但模型/盘口更看好对家--实际表现与纸面预期出现偏差</div>';
-      }
-    }
-    xgBox.innerHTML = '<div class="section-title" style="margin-top:12px">🎯 本场 xG(实时)<span style="font-size:10px;color:var(--muted);font-weight:400">' + st + '</span></div>' +
-      '<div class="odds-grid">' +
-      '<div class="odds-box"><div class="label">主队</div><div class="value">' + xgHome.toFixed(2) + '</div><div class="sub">' + cnTeam(xm.homeTeam) + '</div></div>' +
-      '<div class="odds-box"><div class="label">客队</div><div class="value">' + xgAway.toFixed(2) + '</div><div class="sub">' + cnTeam(xm.awayTeam) + '</div></div>' +
-      '<div class="odds-box"><div class="label">倾向</div><div class="value" style="font-size:13px">' + (xgTend === 'home' ? '主队占优' : xgTend === 'away' ? '客队占优' : '势均力敌') + '</div><div class="sub">' + (xm.score ? '比分 ' + xm.score : '') + '</div></div>' +
-      '</div>' + diverge;
-  } else {
-    xgBox.innerHTML = '<div class="section-title" style="margin-top:12px">🎯 本场 xG</div><div style="font-size:12px;color:var(--muted);padding:6px 0">暂无本场 xG 数据(开赛后本地脚本每 15 分钟自动更新)</div>';
-  }
   const h2hEl = $('h2hBox');
   if (h2h.length) {
     h2hEl.innerHTML = '<div class="section-title" style="margin-top:12px">🔄 本赛季交锋</div>' + h2h.map(f => {
