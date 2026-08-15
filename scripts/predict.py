@@ -1236,6 +1236,9 @@ def evaluate_predictions(predictions):
                 # 覆盖为新预测（临场最新）
                 old["predictedScore"] = p["predictedScore"]
                 old["confidence"] = p.get("confidence")
+                old["league"] = p.get("league", old.get("league", ""))
+                old["modelProbs"] = p.get("modelProbs") or p.get("probabilities") or old.get("modelProbs") or {}
+                old["probabilities"] = p.get("probabilities") or old.get("probabilities") or {}
                 old["valuePicks"] = p.get("valuePicks") or []
                 old["signalLevel"] = p.get("signalLevel", "none")
                 old["predictedAt"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -1248,12 +1251,18 @@ def evaluate_predictions(predictions):
                     old["aiScore"] = ai.get("score")
                     old["aiConfidence"] = ai.get("confidence")
                     old["aiModel"] = ai.get("model")
+                    old["aiReason"] = ai.get("reason")
             elif old and not old.get("aiPick") and ai.get("pick"):
                 # 非临场或已结算：仅补写 AI 研判
                 old["aiPick"] = ai.get("pick")
                 old["aiScore"] = ai.get("score")
                 old["aiConfidence"] = ai.get("confidence")
                 old["aiModel"] = ai.get("model")
+                old["aiReason"] = ai.get("reason")
+            if old and not old.get("league"):
+                old["league"] = p.get("league", "")
+            if old and not old.get("modelProbs"):
+                old["modelProbs"] = p.get("modelProbs") or p.get("probabilities") or {}
             continue
         seen.add(key)
         hist["predictions"].append({

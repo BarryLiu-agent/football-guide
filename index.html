@@ -1132,10 +1132,31 @@ function renderFixtures() {
 function renderResults() {
   const code = FD_CODE[state.league];
   const h = state.history;
-  const results = (h && h.results ? h.results : [])
-    .filter(r => !code || (r.league || '') === code || (!r.league && (state.fixtures || []).some(f =>
-      f.competition?.code === code && f.status === 'FINISHED' &&
-      normTeam(f.homeTeam?.name) === normTeam(r.homeTeam) && normTeam(f.awayTeam?.name) === normTeam(r.awayTeam))))
+  // league 缺失的旧记录：用 fixtures 已完赛场次做队名模糊匹配推断联赛归属
+  const finByCode = {};
+  (state.fixtures || []).forEach(f => {
+    if (f.status === 'FINISHED') {
+      const c = f.competition?.code;
+      const key = normTeam(f.homeTeam?.name) + '|' + normTeam(f.awayTeam?.name);
+      finByCode[key] = c;
+    }
+  });
+  const belongs = (r) => {
+    if (r.league) return r.league === code;
+    // 无 league：查 fixtures 同对阵（含首词模糊）的完赛场次归属
+    const rk = normTeam(r.homeTeam) + '|' + normTeam(r.awayTeam);
+    if (finByCode[rk]) return finByCode[rk] === code;
+    const rh = normTeam(r.homeTeam), ra = normTeam(r.awayTeam);
+    for (const f of (state.fixtures || [])) {
+      if (f.status !== 'FINISHED') continue;
+      const fh = normTeam(f.homeTeam?.name), fa = normTeam(f.awayTeam?.name);
+      const hitH = rh === fh || (rh.split(' ')[0] === fh.split(' ')[0] && rh.split(' ')[0].length >= 4);
+      const hitA = ra === fa || (ra.split(' ')[0] === fa.split(' ')[0] && ra.split(' ')[0].length >= 4);
+      if (hitH && hitA) return f.competition?.code === code;
+    }
+    return false;
+  };
+  const results = (h && h.results ? h.results : []).filter(belongs)
     .sort((a, b) => (b.kickoff || '').localeCompare(a.kickoff || ''));
   if (!results.length) return `<div class="empty-state"><div class="icon">⚽</div>该联赛暂无已完赛赛果(开赛后自动结算,显示当时模型/AI 预测 vs 实际比分)</div>`;
 
