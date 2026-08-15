@@ -116,15 +116,19 @@ def fetch_all(season: int = None):
 
     for i, code in enumerate(LEAGUE_MAP):
         out_path = os.path.join(OUT_DIR, f'{code}.json')
-        if os.path.exists(out_path):
-            print(f'  [SKIP] {code}.json exists', flush=True)
-            continue
         if i > 0:
             delay = random.randint(30, 60)
             print(f'  等待 {delay}s 避免限流...', flush=True)
             time.sleep(delay)
         try:
             stats = fetch_league_stats(code, season)
+
+            # 空数据保护：新赛季未开赛时 FBref 返回空表，不能覆盖已有旧赛季数据
+            # （脚本默认抓当前年份赛季；开赛前 2026 为空 → 保留 2025 旧数据）
+            team_count = len(stats.get('shooting') or [])
+            if team_count < 10:
+                print(f'  [SKIP] {code}: 仅 {team_count} 队(赛季未开赛?), 保留旧文件', flush=True)
+                continue
 
             output = {
                 'generatedAt': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
@@ -134,7 +138,7 @@ def fetch_all(season: int = None):
             }
             with open(out_path, 'w', encoding='utf-8') as f:
                 json.dump(output, f, ensure_ascii=False, separators=(",", ":"))
-            print(f'  [OK] {code}.json saved ({len(stats["shooting"])} teams)', flush=True)
+            print(f'  [OK] {code}.json saved ({team_count} teams)', flush=True)
 
         except Exception as e:
             print(f'  [FAIL] {code}: {e}', flush=True)
