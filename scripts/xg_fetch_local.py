@@ -5,13 +5,10 @@ Understat 使用 Cloudflare 反爬：必须用真实浏览器（Playwright）加
 
 用法:
   python scripts/xg_fetch_local.py                 # 赛季球队/球员 xG 榜（每天 1 次）
-  python scripts/xg_fetch_local.py --matches       # 单场比赛实时 xG（比赛日每 10-15 分钟）
   python scripts/xg_fetch_local.py --push          # 抓取后自动 git push
-  python scripts/xg_fetch_local.py --all --push    # 全部 + 推送
 
 输出:
-  data/xg/{PL,PD,BL1,SA,FL1}.json   赛季球队榜 + 射手榜
-  data/xg/matches.json              单场实时 xG（含比分、两队 xG）
+  data/xg/{PL,PD,BL1,SA,FL1,CL}.json   赛季球队榜 + 射手榜
 
 依赖:
   pip install playwright beautifulsoup4
@@ -148,136 +145,6 @@ def fetch_league(league_code: str, understat_path: str) -> dict:
     return {"teams": teams, "players": players}
 
 
-def _get_league_matches_data(understat_path: str, season: int) -> list or None:
-    """渲染联赛页一次，提取 matchesData JSON（含全部比赛的实时 xG/比分/状态）。
-    matchesData 是 Understat 联赛页内嵌的完整赛季比赛数据，一次请求即可拿到
-    已完赛 + 进行中（实时 xG 随页面刷新更新）+ 未开赛的比赛，无需逐场访问。"""
-    url = f"https://understat.com/league/{understat_path}/{season}"
-    p, browser, ctx = _browser()
-    page = ctx.new_page()
-    try:
-        page.goto(url, timeout=60000, wait_until="domcontentloaded")
-        html = _wait_data(page, min_size=100000, marker="matchesData")
-    except Exception as e:
-        print(f"    联赛页渲染失败: {e}")
-        return None
-    finally:
-        ctx.close()
-    m = re.search(r"matchesData\s*=\s*JSON\.parse\('(.+?)'\)", html, re.S)
-    if not m:
-        return None
-    try:
-        raw = m.group(1).encode().decode("unicode_escape")
-        return json.loads(raw)
-    except Exception:
-        return None
-
-
-def fetch_matches(season=None) -> list:
-    """单场比赛实时 xG：优先用联赛页 matchesData 全量 JSON（一次拿全部比赛，含实时 xG），
-    失败时回退逐场访问。season=None 时自动从今年开始往前尝试。"""
-    if season is None:
-        year = datetime.now().year
-        season_candidates = [year, year - 1, year - 2]
-    else:
-        season_candidates = [season]
-    results = []
-    seen = set()
-    for code, path in LEAGUES.items():
-        got = False
-        for s in season_candidates:
-            if got:
-                break
-            try:
-                data = _get_league_matches_data(path, s)
-                if data:
-                    got = True
-                    for g in data:
-                        gid = g.get("id")
-                        if gid in seen:
-                            continue
-                        seen.add(gid)
-                        xgh = g.get("xG")
-                        xga = g.get("xGA")
-                        if xgh is None or xga is None:
-                            continue  # 未开赛无 xG
-                        results.append({
-                            "matchId": gid,
-                            "homeTeam": g.get("h"),
-                            "awayTeam": g.get("a"),
-                            "homeGoals": g.get("goals" or {}).get("h") if isinstance(g.get("goals"), dict) else None,
-                            "awayGoals": g.get("goals" or {}).get("a") if isinstance(g.get("goals"), dict) else None,
-                            "xgHome": float(xgh),
-                            "xgAway": float(xga),
-                            "date": g.get("datetime"),
-                            "season": g.get("season"),
-                            "status": "finished" if g.get("isResult") else ("live" if g.get("isLive") else "scheduled"),
-                            "league": code,
-                        })
-                    league_count = sum(1 for r in results if r.get("league") == code and r.get("season") == s)
-                    print(f"  {code} ({s}): {league_count} 场 (matchesData)")
-                else:
-                    # 回退：逐场访问（老逻辑）
-                    links = _get_match_links(path, s)
-                    if not links:
-                        continue
-                    got = True
-                    for mid in links:
-                        if mid in seen:
-                            continue
-                        seen.add(mid)
-                        try:
-                            info = _get_match_info(mid)
-                            if info:
-                                info["league"] = code
-                                results.append(info)
-                        except Exception as e:
-                            print(f"  {code} match {mid}: {e}")
-            except Exception as e:
-                print(f"  {code} ({s}): {e}")
-        if not got:
-            print(f"  {code}: 无比赛链接（休赛期或未开赛）")
-    return results
-
-
-def _get_match_links(understat_path: str, season: int) -> list:
-    """从联赛页提取比赛链接（历史赛季页有最近比赛）。"""
-    url = f"https://understat.com/league/{understat_path}/{season}"
-    p, browser, ctx = _browser()
-    page = ctx.new_page()
-    page.goto(url, timeout=60000, wait_until="domcontentloaded")
-    html = _wait_data(page, min_size=100000)
-    ctx.close()
-    links = set(re.findall(r'href="(/match/\d+)"', html))
-    return [int(l.split("/")[-1]) for l in links]
-
-
-def _get_match_info(match_id: int) -> dict or None:
-    """比赛页提取 match_info JSON（队名、比分、两队 xG）。"""
-    p, browser, ctx = _browser()
-    page = ctx.new_page()
-    page.goto(f"https://understat.com/match/{match_id}", timeout=60000, wait_until="domcontentloaded")
-    html = _wait_data(page, min_size=50000, marker="match_info")
-    ctx.close()
-
-    m = re.search(r"match_info\s*=\s*JSON\.parse\('(.+?)'\)", html, re.S)
-    if not m:
-        return None
-    raw = m.group(1).encode().decode("unicode_escape")
-    data = json.loads(raw)
-    return {
-        "matchId": data.get("id"),
-        "homeTeam": data.get("team_h") or data.get("h_title"),
-        "awayTeam": data.get("team_a") or data.get("a_title"),
-        "homeGoals": data.get("h_goals"),
-        "awayGoals": data.get("a_goals"),
-        "xgHome": data.get("h_xg"),
-        "xgAway": data.get("a_xg"),
-        "date": data.get("date"),
-        "season": data.get("season"),
-    }
-
-
 def git_push(message: str):
     """add → commit → pull --rebase（防云端 Actions 并发冲突）→ push，失败重试 3 次。"""
     for attempt in range(3):
@@ -295,8 +162,7 @@ def git_push(message: str):
 
 def main():
     import argparse
-    parser = argparse.ArgumentParser(description="Understat xG 本地抓取")
-    parser.add_argument("--matches", action="store_true", help="抓取单场比赛实时 xG")
+    parser = argparse.ArgumentParser(description="Understat xG 本地抓取（球队榜/球员榜）")
     parser.add_argument("--season", type=int, default=None, help="Understat 赛季标签（如 2026 = 2026/27 赛季）")
     parser.add_argument("--leagues", nargs="*", default=list(LEAGUES.keys()))
     parser.add_argument("--push", action="store_true", help="抓取后自动 git push")
@@ -305,43 +171,29 @@ def main():
     out_dir = ROOT / "data" / "xg"
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    if args.matches:
-        print("抓取单场比赛 xG...")
-        matches = fetch_matches(args.season)
-        out = {
-            "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-            "total": len(matches),
-            "matches": matches,
-        }
-        (out_dir / "matches.json").write_text(
-            json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-        print(f"✓ {len(matches)} 场比赛 -> data/xg/matches.json")
-        for m in matches[:5]:
-            print(f"  {m['homeTeam']} {m['homeGoals']}-{m['awayGoals']} {m['awayTeam']} | xG {m['xgHome']} vs {m['xgAway']}")
-    else:
-        ok = 0
-        for code in args.leagues:
-            path = LEAGUES.get(code)
-            if not path:
+    ok = 0
+    for code in args.leagues:
+        path = LEAGUES.get(code)
+        if not path:
+            continue
+        print(f"抓取 {code} ({path})...")
+        try:
+            data = fetch_league(code, path)
+            if not data["teams"] and not data["players"]:
+                print(f"  ✗ {code}: 表格为空")
                 continue
-            print(f"抓取 {code} ({path})...")
-            try:
-                data = fetch_league(code, path)
-                if not data["teams"] and not data["players"]:
-                    print(f"  ✗ {code}: 表格为空")
-                    continue
-                out = {
-                    "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-                    "league": code,
-                    "data": data,
-                }
-                (out_dir / f"{code}.json").write_text(
-                    json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-                print(f"  ✓ {code}: {len(data['teams'])} 队 / {len(data['players'])} 球员")
-                ok += 1
-            except Exception as e:
-                print(f"  ✗ {code}: {e}")
-        print(f"完成: {ok}/{len(args.leagues)} 联赛")
+            out = {
+                "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                "league": code,
+                "data": data,
+            }
+            (out_dir / f"{code}.json").write_text(
+                json.dumps(out, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+            print(f"  ✓ {code}: {len(data['teams'])} 队 / {len(data['players'])} 球员")
+            ok += 1
+        except Exception as e:
+            print(f"  ✗ {code}: {e}")
+    print(f"完成: {ok}/{len(args.leagues)} 联赛")
 
     _close_browser()
 

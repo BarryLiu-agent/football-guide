@@ -36,7 +36,6 @@ SINGLE_FILE = {
     "messages": "messages.json",
     "lineups": "lineups.json",
     "oddsQuota": "odds_quota.json",
-    "xgMatches": "xg/matches.json",
     "calibration": "calibration.json",
     "calibrationOu": "calibration_ou.json",
 }
@@ -91,8 +90,6 @@ def _collect_multi(pattern: str, expect: int):
     空壳文件（如欧冠休赛期无比赛）不参与新鲜度计算；时间取非空文件中最新（真实最近抓取）。
     缺失 = 文件不存在 / 读取失败 / 空壳且同批其他文件有数据（如某联赛抓取失败只剩 stub）。"""
     files = sorted(DATA_DIR.glob(pattern))
-    # 排除 xg/matches.json（它单独一个模块）
-    files = [f for f in files if not (f.parent.name == "xg" and f.name == "matches.json")]
     gens = []
     ok_files = 0
     empty_stubs = []
