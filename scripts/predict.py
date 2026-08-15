@@ -1258,15 +1258,19 @@ def evaluate_predictions(predictions):
         seen.add(key)
         hist["predictions"].append({
             "homeTeam": p["homeTeam"], "awayTeam": p["awayTeam"],
+            "league": p.get("league", ""),
             "kickoff": p.get("kickoff", ""),
             "predictedScore": p["predictedScore"],
             "confidence": p.get("confidence"),
+            "modelProbs": p.get("modelProbs") or p.get("probabilities") or {},
+            "probabilities": p.get("probabilities") or {},
             "valuePicks": p.get("valuePicks") or [],
             "signalLevel": p.get("signalLevel", "none"),
             "aiPick": ai.get("pick"),
             "aiScore": ai.get("score"),
             "aiConfidence": ai.get("confidence"),
             "aiModel": ai.get("model"),
+            "aiReason": ai.get("reason"),
             "betRec": p.get("betRec"),
             # 盘口方向（用于按盘口类型统计）
             "ouModel": p.get("ouModel"),
@@ -1311,6 +1315,10 @@ def evaluate_predictions(predictions):
     result_keys = {}
     for r in finished:
         result_keys[(norm_team(r["homeTeam"]), norm_team(r["awayTeam"]), r["kickoff"][:10])] = r
+    # 当前预测索引（结算时补充老存档缺失的 modelProbs/aiReason）
+    pred_by_key = {}
+    for pr in predictions:
+        pred_by_key[(pr.get("league", ""), norm_team(pr["homeTeam"]), norm_team(pr["awayTeam"]))] = pr
     evaluated = 0
     exact_hit = 0
     outcome_hit = 0
@@ -1365,6 +1373,16 @@ def evaluate_predictions(predictions):
                     r = rv
                     break
         if r:
+            # 从当前预测补充当时胜率/AI 理由（老存档无这些字段，且已完赛场次可能即将从 predictions 淘汰）
+            if not p.get("modelProbs"):
+                cur = pred_by_key.get((p.get("league", ""), norm_team(p["homeTeam"]), norm_team(p["awayTeam"])))
+                if cur:
+                    p["modelProbs"] = cur.get("modelProbs") or cur.get("probabilities") or {}
+                    p["probabilities"] = cur.get("probabilities") or {}
+                    if not p.get("aiReason"):
+                        p["aiReason"] = (cur.get("aiJudge") or {}).get("reason")
+                    if p.get("aiConfidence") is None:
+                        p["aiConfidence"] = (cur.get("aiJudge") or {}).get("confidence")
             p["actualScore"] = r["actualScore"]
             p["evaluatedAt"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
             p["hitExact"] = (p["predictedScore"] == r["actualScore"])
@@ -1449,13 +1467,18 @@ def evaluate_predictions(predictions):
                     value_hit += 1
             hist["results"].append({
                 "homeTeam": p["homeTeam"], "awayTeam": p["awayTeam"],
+                "league": p.get("league", ""),
                 "kickoff": p.get("kickoff", ""),
                 "predictedScore": p["predictedScore"],
                 "actualScore": r["actualScore"],
                 "hitExact": p["hitExact"],
                 "hitOutcome": p["hitOutcome"],
+                "modelProbs": p.get("modelProbs") or p.get("probabilities") or {},
+                "probabilities": p.get("probabilities") or {},
                 "aiPick": p.get("aiPick"),
                 "aiScore": p.get("aiScore"),
+                "aiConfidence": p.get("aiConfidence"),
+                "aiReason": p.get("aiReason"),
                 "aiHitOutcome": p.get("aiHitOutcome"),
                 "aiHitExact": p.get("aiHitExact"),
                 "betRec": p.get("betRec"),
