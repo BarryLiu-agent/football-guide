@@ -179,6 +179,10 @@ img { display: block; }
 
 /* ===== Date Group ===== */
 .date-group { margin-bottom: 18px; }
+/* 已完赛赛果区：绿色标题 + 轻微底色区分 */
+.date-group.results-group { padding: 10px 12px; border: 1px solid rgba(34,197,94,.25); border-radius: 10px; background: rgba(34,197,94,.05); margin-bottom: 20px; }
+.date-group.results-group .date-label { color: #22c55e; }
+.date-group.results-group .date-label .dot { background: #22c55e; }
 .date-label {
   display: flex; align-items: center; gap: 8px;
   font-size: 12px; font-weight: 700; color: var(--text-2);
@@ -1044,7 +1048,16 @@ function renderParlay() {
 // ===== 赛程赛果 =====
 function renderFixtures() {
   const code = FD_CODE[state.league];
-  let ms = state.fixtures.filter(m => m.competition?.code === code);
+  const all = state.fixtures.filter(m => m.competition?.code === code);
+  // 已完赛赛果：单独一览（最近完赛倒序，最多 40 场）
+  const finishedAll = all.filter(m => m.status === 'FINISHED')
+    .sort((a, b) => b.utcDate.localeCompare(a.utcDate)).slice(0, 40);
+  const resultsHtml = finishedAll.length ? `<div class="date-group results-group">
+    <div class="date-label"><span class="dot"></span>✅ 已完赛赛果 <span class="count">${finishedAll.length} 场</span></div>
+    <div class="match-list">${finishedAll.map(renderCard).join('')}</div>
+  </div>` : '';
+
+  let ms = all;
   // 常规模式基准(展示模式分支也使用)
   const t = todayBJ();
   const maxD = fmtDate(new Date(Date.now() + 30 * 86400000).toISOString());
@@ -1075,13 +1088,14 @@ function renderFixtures() {
     .map(p => ({ synthetic: true, homeTeam: { name: p.homeTeam }, awayTeam: { name: p.awayTeam }, utcDate: p.kickoff, competition: { code: p.league }, pred: p }));
   ms = ms.concat(extras).sort((a, b) => a.utcDate.localeCompare(b.utcDate));
 
-  if (!ms.length) return `<div class="empty-state"><div class="icon">📭</div>${state.league === 'CL' ? '欧冠正赛 9 月中旬开赛,暂无可抓数据(资格赛/附加赛不收录)' : '该联赛暂无未来比赛安排'}</div>`;
+  // 未来赛程为空但已有赛果时，仍显示赛果区（空态提示放到赛果下方）
+  if (!ms.length && !finishedAll.length) return `<div class="empty-state"><div class="icon">📭</div>${state.league === 'CL' ? '欧冠正赛 9 月中旬开赛,暂无可抓数据(资格赛/附加赛不收录)' : '该联赛暂无未来比赛安排'}</div>`;
 
   // 分组(按日期从近到远升序)
   const groups = {};
   ms.forEach(m => { const d = fmtDate(m.utcDate); (groups[d] = groups[d] || []).push(m); });
   const groupOrder = Object.keys(groups).sort((a, b) => a.localeCompare(b));
-  return groupOrder.map(d => { const list = groups[d];
+  const upcomingHtml = groupOrder.map(d => { const list = groups[d];
     const t2 = todayBJ(), tm = fmtDate(new Date(Date.now() + 86400000).toISOString());
     const cls = d === t2 ? 'is-today' : d === tm ? 'is-tomorrow' : '';
     // 出手建议:有价值信号/异动/高置信预测的优先展示,其余折叠降噪
@@ -1099,6 +1113,8 @@ function renderFixtures() {
       ${rest.length ? `<details class="no-signal"><summary>其他 ${rest.length} 场(无价值信号)</summary><div class="match-list dim">${rest.map(renderCard).join('')}</div></details>` : ''}
     </div>`;
   }).join('');
+  // 赛果一览置顶，未来赛程在下（无未来赛程时只显示赛果）
+  return resultsHtml + upcomingHtml;
 }
 
 function renderCard(m) {
