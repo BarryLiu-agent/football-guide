@@ -1511,7 +1511,7 @@ function openDetail(homeName, awayName, league) {
   const xm = findXgMatch(homeName, awayName);
   const xgBox = $('xgBox');
   if (xm && (xm.xgHome != null || xm.xgAway != null)) {
-    const st = xm.status === 'finished' ? '已完赛' : (xm.minute ? '第' + xm.minute + '分钟' : '未开赛');
+    const st = xm.status === 'finished' ? '已完赛' : (xm.status === 'live' ? '🟢 比赛中' : (xm.minute ? '第' + xm.minute + '分钟' : '未开赛'));
     const xgHome = xm.xgHome ?? 0, xgAway = xm.xgAway ?? 0;
     const xgTend = xgHome > xgAway ? 'home' : xgAway > xgHome ? 'away' : 'draw';
     // 背离检测:xG 倾向 vs 盘口/模型倾向

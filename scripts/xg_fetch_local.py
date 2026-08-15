@@ -148,9 +148,34 @@ def fetch_league(league_code: str, understat_path: str) -> dict:
     return {"teams": teams, "players": players}
 
 
+def _get_league_matches_data(understat_path: str, season: int) -> list or None:
+    """渲染联赛页一次，提取 matchesData JSON（含全部比赛的实时 xG/比分/状态）。
+    matchesData 是 Understat 联赛页内嵌的完整赛季比赛数据，一次请求即可拿到
+    已完赛 + 进行中（实时 xG 随页面刷新更新）+ 未开赛的比赛，无需逐场访问。"""
+    url = f"https://understat.com/league/{understat_path}/{season}"
+    p, browser, ctx = _browser()
+    page = ctx.new_page()
+    try:
+        page.goto(url, timeout=60000, wait_until="domcontentloaded")
+        html = _wait_data(page, min_size=100000, marker="matchesData")
+    except Exception as e:
+        print(f"    联赛页渲染失败: {e}")
+        return None
+    finally:
+        ctx.close()
+    m = re.search(r"matchesData\s*=\s*JSON\.parse\('(.+?)'\)", html, re.S)
+    if not m:
+        return None
+    try:
+        raw = m.group(1).encode().decode("unicode_escape")
+        return json.loads(raw)
+    except Exception:
+        return None
+
+
 def fetch_matches(season=None) -> list:
-    """单场比赛实时 xG：遍历五大联赛页拿比赛链接 → 比赛页提取 xG。
-    season=None 时自动从今年开始往前尝试（跨年时优先找到当前赛季页）。"""
+    """单场比赛实时 xG：优先用联赛页 matchesData 全量 JSON（一次拿全部比赛，含实时 xG），
+    失败时回退逐场访问。season=None 时自动从今年开始往前尝试。"""
     if season is None:
         year = datetime.now().year
         season_candidates = [year, year - 1, year - 2]
@@ -164,21 +189,50 @@ def fetch_matches(season=None) -> list:
             if got:
                 break
             try:
-                links = _get_match_links(path, s)
-                if not links:
-                    continue
-                got = True
-                for mid in links:
-                    if mid in seen:
+                data = _get_league_matches_data(path, s)
+                if data:
+                    got = True
+                    for g in data:
+                        gid = g.get("id")
+                        if gid in seen:
+                            continue
+                        seen.add(gid)
+                        xgh = g.get("xG")
+                        xga = g.get("xGA")
+                        if xgh is None or xga is None:
+                            continue  # 未开赛无 xG
+                        results.append({
+                            "matchId": gid,
+                            "homeTeam": g.get("h"),
+                            "awayTeam": g.get("a"),
+                            "homeGoals": g.get("goals" or {}).get("h") if isinstance(g.get("goals"), dict) else None,
+                            "awayGoals": g.get("goals" or {}).get("a") if isinstance(g.get("goals"), dict) else None,
+                            "xgHome": float(xgh),
+                            "xgAway": float(xga),
+                            "date": g.get("datetime"),
+                            "season": g.get("season"),
+                            "status": "finished" if g.get("isResult") else ("live" if g.get("isLive") else "scheduled"),
+                            "league": code,
+                        })
+                    league_count = sum(1 for r in results if r.get("league") == code and r.get("season") == s)
+                    print(f"  {code} ({s}): {league_count} 场 (matchesData)")
+                else:
+                    # 回退：逐场访问（老逻辑）
+                    links = _get_match_links(path, s)
+                    if not links:
                         continue
-                    seen.add(mid)
-                    try:
-                        info = _get_match_info(mid)
-                        if info:
-                            info["league"] = code
-                            results.append(info)
-                    except Exception as e:
-                        print(f"  {code} match {mid}: {e}")
+                    got = True
+                    for mid in links:
+                        if mid in seen:
+                            continue
+                        seen.add(mid)
+                        try:
+                            info = _get_match_info(mid)
+                            if info:
+                                info["league"] = code
+                                results.append(info)
+                        except Exception as e:
+                            print(f"  {code} match {mid}: {e}")
             except Exception as e:
                 print(f"  {code} ({s}): {e}")
         if not got:
