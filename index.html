@@ -349,6 +349,23 @@ table.standings .down { color: var(--red); }
   padding: 14px; text-align: center;
 }
 .rec-card .v { font-size: 22px; font-weight: 800; font-variant-numeric: tabular-nums; }
+
+/* ===== 赛果页（模型/AI 预测对照）===== */
+.res-list { display: flex; flex-direction: column; gap: 10px; }
+.res-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 14px; }
+.res-head { display: flex; align-items: center; gap: 8px; font-size: 13px; flex-wrap: wrap; }
+.res-score { font-size: 18px; font-weight: 800; color: var(--gold); font-variant-numeric: tabular-nums; }
+.res-date { margin-left: auto; font-size: 11px; color: var(--text-3); }
+.res-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+.res-cell { background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; }
+.res-cell .k { font-size: 10px; color: var(--text-3); margin-bottom: 4px; }
+.res-cell .v { font-size: 14px; font-weight: 700; }
+.res-cell .s { font-size: 11px; color: var(--text-2); margin-top: 3px; line-height: 1.5; }
+.res-cell .hit { color: var(--green); font-size: 11px; margin-left: 6px; }
+.res-cell .miss { color: var(--red); font-size: 11px; margin-left: 6px; }
+@media (max-width: 560px) {
+  .res-grid { grid-template-columns: 1fr; }
+}
 .rec-card .v.gold { color: var(--gold); }
 .rec-card .v.green { color: var(--green); }
 .rec-card .v.red { color: var(--red); }
@@ -539,7 +556,8 @@ const LEAGUES = [
   { code: 'CL',  name: '欧冠', en: 'Champions League', color: '#103f68', abbr: 'CL' },
 ];
 const SUBS = [
-  { id: 'fixtures', name: '📋 赛程赛果' },
+  { id: 'fixtures', name: '📋 赛程' },
+  { id: 'results', name: '⚽ 赛果' },
   { id: 'standings', name: '🏆 积分榜' },
   { id: 'xg', name: '📈 xG 数据' },
   { id: 'teamStats', name: '📊 球队数据' },
@@ -941,6 +959,7 @@ function render() {
   </div>
   ${state.sub === 'fixtures' ? renderTopBar(lg.code) : ''}`;
   const body = state.sub === 'fixtures' ? renderFixtures() :
+               state.sub === 'results' ? renderResults() :
                state.sub === 'standings' ? renderStandings() :
                state.sub === 'xg' ? renderXg() :
                state.sub === 'teamStats' ? renderTeamStats() :
@@ -1045,17 +1064,10 @@ function renderParlay() {
     '<div style="font-size:10px;color:var(--muted);margin-top:8px">概率 = 各腿模型概率相乘(独立假设)× 校准折扣 85%;期望值 &gt;1.05 才值得考虑。串关高风险,仅建议小注娱乐。</div>';
 }
 
-// ===== 赛程赛果 =====
+// ===== 赛程 =====
 function renderFixtures() {
   const code = FD_CODE[state.league];
   const all = state.fixtures.filter(m => m.competition?.code === code);
-  // 已完赛赛果：单独一览（最近完赛倒序，最多 40 场）
-  const finishedAll = all.filter(m => m.status === 'FINISHED')
-    .sort((a, b) => b.utcDate.localeCompare(a.utcDate)).slice(0, 40);
-  const resultsHtml = finishedAll.length ? `<div class="date-group results-group">
-    <div class="date-label"><span class="dot"></span>✅ 已完赛赛果 <span class="count">${finishedAll.length} 场</span></div>
-    <div class="match-list">${finishedAll.map(renderCard).join('')}</div>
-  </div>` : '';
 
   let ms = all;
   // 常规模式基准(展示模式分支也使用)
@@ -1113,8 +1125,51 @@ function renderFixtures() {
       ${rest.length ? `<details class="no-signal"><summary>其他 ${rest.length} 场(无价值信号)</summary><div class="match-list dim">${rest.map(renderCard).join('')}</div></details>` : ''}
     </div>`;
   }).join('');
-  // 赛果一览置顶，未来赛程在下（无未来赛程时只显示赛果）
-  return resultsHtml + upcomingHtml;
+  return upcomingHtml;
+}
+
+// ===== 赛果（含当时模型/AI 预测对照）=====
+function renderResults() {
+  const code = FD_CODE[state.league];
+  const h = state.history;
+  const results = (h && h.results ? h.results : [])
+    .filter(r => !code || (r.league || '') === code || (!r.league && (state.fixtures || []).some(f =>
+      f.competition?.code === code && f.status === 'FINISHED' &&
+      normTeam(f.homeTeam?.name) === normTeam(r.homeTeam) && normTeam(f.awayTeam?.name) === normTeam(r.awayTeam))))
+    .sort((a, b) => (b.kickoff || '').localeCompare(a.kickoff || ''));
+  if (!results.length) return `<div class="empty-state"><div class="icon">⚽</div>该联赛暂无已完赛赛果(开赛后自动结算,显示当时模型/AI 预测 vs 实际比分)</div>`;
+
+  const cn = (s) => state.teamNames[s] || s;
+  const pickCn = { home: '主胜', draw: '平局', away: '客胜', none: '不碰' };
+  const outcomeOf = (s) => { if (!s) return 'draw'; const [a, b] = String(s).split('-').map(Number); if (a > b) return 'home'; if (a < b) return 'away'; return 'draw'; };
+
+  const rows = results.map(r => {
+    const mp = r.modelProbs || r.probabilities || {};
+    const pct = (v) => v == null ? '—' : Math.round(v * 100) + '%';
+    const mOut = outcomeOf(r.predictedScore), aOut = outcomeOf(r.actualScore);
+    const mHit = mOut === aOut;
+    const aiHit = r.aiPick != null && r.aiPick !== 'none' ? r.aiPick === aOut : null;
+    const aiCls = aiHit === null ? '' : (aiHit ? 'hit' : 'miss');
+    const mCls = mHit ? 'hit' : 'miss';
+    return `<div class="res-card">
+      <div class="res-head"><b>${cn(r.homeTeam)}</b> <span class="res-score">${r.actualScore || '—'}</span> <b>${cn(r.awayTeam)}</b>
+        <span class="res-date">${(r.kickoff || '').slice(0, 10)}</span></div>
+      <div class="res-grid">
+        <div class="res-cell model">
+          <div class="k">🤖 模型预测</div>
+          <div class="v">${r.predictedScore || '—'} <span class="${mCls}">${mHit ? '✓命中' : '✗未中'}</span></div>
+          <div class="s">主${pct(mp.home)} 平${pct(mp.draw)} 客${pct(mp.away)}</div>
+        </div>
+        <div class="res-cell ai">
+          <div class="k">✨ AI 研判</div>
+          <div class="v">${r.aiPick && r.aiPick !== 'none' ? pickCn[r.aiPick] + (r.aiScore ? ' ' + r.aiScore : '') : '无明显倾向'} <span class="${aiCls}">${aiHit === null ? '' : (aiHit ? '✓命中' : '✗未中')}</span></div>
+          <div class="s">${r.aiConfidence != null ? '置信 ' + Math.round(r.aiConfidence * 100) + '%' : ''}${r.aiReason ? ' · ' + esc(r.aiReason) : ''}</div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+  return `<div class="res-list">${rows}</div>
+    <div style="font-size:11px;color:var(--muted);margin-top:10px">模型预测 = 预测时的融合模型比分与胜率;AI 研判 = 预测时的 DeepSeek 输出;命中 = 胜负方向与实际一致。开赛后自动累计。</div>`;
 }
 
 function renderCard(m) {
