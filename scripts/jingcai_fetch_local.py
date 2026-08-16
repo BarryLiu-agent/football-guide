@@ -70,7 +70,9 @@ def normalize(d: dict) -> dict:
             if m.get("sellStatus") not in (1, 2):  # 在售/部分销售都保留
                 continue
             league_name = m.get("leagueAllName", "")
-            if league_name not in LEAGUE_WHITELIST:
+            # 联赛白名单做"包含"匹配（防接口改写叫法/加字样导致静默漏批）
+            # 全等匹配静默失败:status.json 的 jingcai 模块仍报 ok,不易察觉
+            if not any(seg in league_name for seg in LEAGUE_WHITELIST):
                 continue
             # 四种玩法 SP
             had = m.get("had") or {}

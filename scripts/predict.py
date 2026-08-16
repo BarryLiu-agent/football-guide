@@ -324,6 +324,7 @@ class ScoreModel:
     def __init__(self):
         self.lam_h = 1.3
         self.lam_a = 1.1
+        self.score_prior = {}   # 常见比分先验(scorePrior): { '1-0': 0.1, ... }，可选
 
     def fit(self, p_home, p_draw, p_away):
         """数值求解 λh/λa 使模型 1X2 概率最接近输入概率。"""
@@ -367,6 +368,31 @@ class ScoreModel:
         p_away += tail_away + tail_both * (1 - share_h)
         return p_home, p_draw, p_away
 
+    def _apply_prior(self, entries):
+        """把常见比分先验(scorePrior)与泊松/DC 波胆做软融合。
+        w(s) = prior.get(s, 最小先验) / 最大先验；再 归一化。
+        令常见比分(1-0/2-1 等)按其在真实分布中的频率获得温和上浮，
+        未出现在先验表的冷门比分获得与"最小先验"同级的相对权重，不会被清零。
+        有 prior 时覆盖输入 entries 的 prob，并保持 total=1。"""
+        if not self.score_prior or not entries:
+            return entries
+        try:
+            max_p = max(self.score_prior.values())
+            min_p = min(self.score_prior.values())
+        except ValueError:
+            return entries
+        if max_p <= 0:
+            return entries
+        tot = 0.0
+        for e in entries:
+            w = self.score_prior.get(e["score"], min_p) / max_p
+            e = e.copy()
+            e["prob"] = e["prob"] * w
+            tot += e["prob"]
+        if tot <= 0:
+            return entries
+        return [{**e, "prob": round(e["prob"] / tot, 4)} for e in entries]
+
     def correct_scores(self, top_n=6):
         """返回 Top N 波胆: [{score: '1-0', prob: 0.12}]"""
         n = self.MAX_GOALS
@@ -376,8 +402,11 @@ class ScoreModel:
         return entries[:top_n]
 
     def dc_scores(self, top_n=6, rho=-0.08):
-        """Dixon-Coles 修正的波胆分布（修正 0-0/1-0/0-1/1-1 低比分依赖）。"""
-        return dc_probs(self.lam_h, self.lam_a, rho=rho)[:top_n]
+        """Dixon-Coles 修正的波胆分布（修正 0-0/1-0/0-1/1-1 低比分依赖）。
+        若配置了 scorePrior，则按常见比分先验做软融合后再取 Top N。"""
+        entries = dc_probs(self.lam_h, self.lam_a, rho=rho)
+        entries = self._apply_prior(entries)
+        return entries[:top_n]
 
     def dc_1x2(self, rho=-0.08):
         """Dixon-Coles 修正的胜平负概率。"""
@@ -747,6 +776,35 @@ def _load_lineups() -> dict:
     return lineups_by_match
 
 
+# 竞彩联赛中文名（用于 jingcai ↔ odds 联赛代码映射）
+JINGCAI_LEAGUE_CN = {
+    "PL": ("英格兰超级联赛", "英超"),
+    "PD": ("西班牙甲级联赛", "西甲"),
+    "SA": ("意大利甲级联赛", "意甲"),
+    "BL1": ("德国甲级联赛", "德甲"),
+    "FL1": ("法国甲级联赛", "法甲"),
+    "CL": ("欧洲冠军联赛", "欧冠"),
+}
+
+
+def load_jingcai() -> dict:
+    """加载 data/jingcai.json → 按 (主队归一化, 客队归一化) 索引（同队名可多联赛，故为列表）。
+    供波胆价值(模型概率 vs 竞彩 crsOdds 隐含)使用。返回 dict[(h_norm, a_norm)] -> [match, ...]。"""
+    jc_by_key = {}
+    path = DATA_DIR / "jingcai.json"
+    if not path.exists():
+        return jc_by_key
+    try:
+        with open(path, encoding="utf-8") as f:
+            data = json.load(f)
+        for m in data.get("matches", []):
+            key = (norm_team(m.get("homeTeam", "")), norm_team(m.get("awayTeam", "")))
+            jc_by_key.setdefault(key, []).append(m)
+    except Exception as e:
+        print(f"  ⚠ 竞彩数据解析失败: {e}")
+    return jc_by_key
+
+
 def main():
     parser = argparse.ArgumentParser(description="比分预测引擎")
     parser.add_argument("--skip-ai", action="store_true",
@@ -781,6 +839,9 @@ def main():
 
     # 赛前首发/伤停（lineups.json，来自每小时 FotMob/ESPN/Sofascore 抓取）
     lineups_by_match = _load_lineups()
+
+    # 竞彩（波胆 crsOdds 价值对账用）
+    jingcai_by_key = load_jingcai()
 
     predictor = ScorePredictor(rules)
     predictions = []
@@ -872,6 +933,7 @@ def main():
 
             score_model = ScoreModel()
             score_model.fit(f_home, f_draw, f_away)
+            score_model.score_prior = rules.get("scorePrior", {}) or {}
 
             # ── 多模型分歧：Elo vs Dixon-Coles vs 市场（方向不一致 = 不碰）──
             # 用真正的 Dixon-Coles 修正概率（归一化、和=1），替代旧版普通泊松拟合（未归一化）
@@ -1009,32 +1071,24 @@ def main():
             pred["reversePicks"] = reverse_picks
             pred["signalLevel"] = "gold" if any(v["level"] == "gold" for v in value_picks) else ("watch" if value_picks else "none")
 
-            # ── 推荐投注记录（ROI 结算用）：价值信号方向 + 当时欧赔 + 凯利注额 ──
-            # 只记有 edge 的场次（无价值信号 = 不推荐下注）；注额 = 凯利分数 clamped 到 0~5%
-            # 凯利用模型概率重算（旧 kelly 字段误用市场概率，恒≈0）
-            bet_rec = None
+            # ── 推荐投注候选（ROI 结算用）：跨盘口类型收集 ──
+            # 只记有正 edge + 正凯利的候选（负期望不推荐，避免必亏场次计入结算）
+            # 候选类型: h2h(胜负) / spread(让球,Odds 盘) / score(波胆,竞彩 crsOdds)。
+            bet_candidates = []
+            # h2h 候选：价值信号方向 + 欧赔 + 凯利注额（用模型概率重算，避免旧版误用市场概率恒≈0）
             if value_picks:
                 best_vp = max(value_picks, key=lambda v: abs(v.get("edge", 0)))
                 o = raw_odds.get(best_vp["side"]) if raw_odds else None
                 if isinstance(o, (int, float)) and o > 1:
                     mp = best_vp.get("modelProb")
-                    if mp:
-                        kl = (o * mp - 1) / (o - 1)
-                    else:
-                        kl = 0
+                    kl = (o * mp - 1) / (o - 1) if mp else 0
                     stake = round(max(0.0, min(0.05, kl)), 4)
-                    if stake <= 0:
-                        # 凯利≤0 = 负期望：即使模型比市场更看好也不下注（避免必亏场次计入结算）
-                        bet_rec = None
-                    else:
-                        bet_rec = {
-                            "side": best_vp["side"],
-                            "odds": round(o, 2),
-                            "stake": stake,
-                            "source": "value:" + best_vp["level"],
-                            "edge": best_vp.get("edge"),
-                        }
-            pred["betRec"] = bet_rec
+                    if stake > 0:
+                        bet_candidates.append({
+                            "market": "h2h", "side": best_vp["side"],
+                            "score": None, "odds": round(o, 2), "stake": stake,
+                            "source": "value:" + best_vp["level"], "edge": best_vp.get("edge"),
+                        })
 
             # Dixon-Coles 波胆 + 大小球 + 分布
             dc_all = score_model.dc_scores(6)
@@ -1111,6 +1165,55 @@ def main():
                 "home": round(score_model.lam_h, 2), "away": round(score_model.lam_a, 2)
             }
             pred["analysis"] = AnalysisWriter.generate(home, away, odds_result, msg_result, score_model, ou, pred["spreads"], pred["standings"], {"valuePicks": value_picks})
+
+            # ── 让球候选（模型 spModel vs The Odds API 让球盘）──
+            if sp_model and sp_model.get("edge") is not None and sp_model["edge"] >= value_threshold:
+                sk = sp_model.get("kelly")
+                if isinstance(sk, (int, float)) and sk > 0 and sp_model.get("price"):
+                    stake_sp = round(max(0.0, min(0.05, sk)), 4)
+                    if stake_sp > 0:
+                        bet_candidates.append({
+                            "market": "spread",
+                            "side": "home_cover",
+                            "point": sp_model["point"],
+                            "score": None,
+                            "odds": round(sp_model["price"], 2), "stake": stake_sp,
+                            "source": "value:spread", "edge": sp_model["edge"],
+                        })
+
+            # ── 波胆候选（模型 DC 波胆概率 vs 竞彩 crsOdds 隐含）──
+            jc_matches = jingcai_by_key.get((norm_team(home), norm_team(away)), [])
+            cn_leagues = JINGCAI_LEAGUE_CN.get(league, ())
+            jc_match = next((jm for jm in jc_matches
+                             if any(seg in (jm.get("leagueName") or "") for seg in cn_leagues)), None)
+            for cs in dc_all:
+                price = (jc_match or {}).get("crsOdds", {}).get(cs["score"]) if jc_match else None
+                try:
+                    price = float(price) if price not in (None, "") else None
+                except (ValueError, TypeError):
+                    price = None
+                if price and price > 1:
+                    p = cs.get("prob") or 0
+                    if p <= 0:
+                        continue
+                    implied = 1 / price
+                    edge_cs = p - implied
+                    if edge_cs >= value_threshold:
+                        kl_cs = (price * p - 1) / (price - 1)
+                        stake_cs = round(max(0.0, min(0.05, kl_cs)), 4)
+                        if stake_cs > 0:
+                            bet_candidates.append({
+                                "market": "score", "side": cs["score"], "score": cs["score"],
+                                "odds": round(price, 2), "stake": stake_cs,
+                                "source": "value:crs", "edge": round(edge_cs, 3),
+                            })
+                            break  # 只用模型波胆 Top 里第一个有值的
+
+            # ── 跨盘口类型价值投注列表：命中胜负/让球/波胆各自有值即各自成注 ──
+            # 每个 market 独立成 betRec(正期望,注额=凯利上限5%),供按盘口类型分别结算。
+            # pred["betRec"] 保留"最优单注"供旧字段兼容; 结算/展示用 pred["betRecs"]。
+            pred["betRecs"] = bet_candidates
+            pred["betRec"] = bet_candidates[0] if bet_candidates else None
 
             # ── AI 最终研判（可选增强层）：失败返回 None，不影响统计预测 ──
             if not args.skip_ai:
@@ -1199,6 +1302,103 @@ def outcome_of(score_str):
         return None
 
 
+def _season_start_year(iso_str):
+    """从 kickoff 推断赛季开始年份（与前端一致：8 月起属当年赛季，否则属上一赛季）。
+    返回赛季起始年，如 2026-08 开赛 → 2026；2026-03 开赛 → 2025。"""
+    try:
+        y = int((iso_str or "")[:4])
+        mo = int((iso_str or "")[5:7])
+        if y and mo:
+            return y if mo >= 8 else y - 1
+    except (ValueError, IndexError):
+        pass
+    return 0
+
+
+def _prune_history(hist: dict, keep_seasons: int = 2):
+    """prediction_history 只保留最近 keep_seasons 个完整赛季的记录，防止无限增长。
+    对 predictions 与 results 同时按 kickoff 推算的赛季年份裁剪。
+    无效/无日期的记录保留（不丢信息）。"""
+    now = datetime.now(timezone.utc)
+    cur_sea = _season_start_year(now.strftime("%Y-%m-%dT00:00:00Z"))
+    min_season = cur_sea - (keep_seasons - 1)
+
+    def keep(rec):
+        s = _season_start_year((rec or {}).get("kickoff") or "")
+        if s == 0:
+            return True  # 未知赛季不裁剪
+        return s >= min_season
+
+    for key in ("predictions", "results"):
+        arr = hist.get(key)
+        if isinstance(arr, list):
+            hist[key] = [r for r in arr if keep(r)]
+    return hist
+
+
+_REBET = {"push": None, False: False, True: True}
+
+
+def _bet_won(br: dict, actual_score: str):
+    """按盘口类型判定一条 betRec 是否赢。
+    返回 True/False/None(push 走水=退本金,不记胜负)。"""
+    if not br:
+        return False
+    try:
+        h, a = (int(x) for x in actual_score.split("-"))
+    except (ValueError, AttributeError):
+        return False
+    market = br.get("market") or "h2h"
+    if market == "score":
+        return br.get("side") == actual_score
+    if market == "spread":
+        pt = br.get("point")
+        if pt is None:
+            return False
+        # 主队让球点(pt 负=主让)。主队赢盘 ⇔ 净胜差 > -pt；整球盘恰等于 -pt 为走水
+        diff = h - a
+        cover = diff > -pt
+        if float(pt).is_integer() and diff == -pt:
+            return _REBET[None]
+        return cover
+    # h2h（默认）：胜负方向比对
+    ao = "home" if h > a else ("draw" if h == a else "away")
+    return br.get("side") == ao
+
+
+def _norm_beta(p):
+    """把预测/历史记录里的投注清单归一化为列表。
+    老数据存单条 betRec(dict)；新数据存 betRecs(list)。兼容两种。"""
+    if isinstance(p.get("betRecs"), list) and p["betRecs"]:
+        return p["betRecs"]
+    br = p.get("betRec")
+    return [br] if isinstance(br, dict) else []
+
+
+def _settle_bets(bets, actual_score: str):
+    """给每条 bet 写入 pnl/actualOutcome。返回 (stake, pnl, won, settled)。
+    走水(push)记 pnl=0 退本金，不计胜负。"""
+    stake = pnl = 0.0
+    won = settled = 0
+    for br in bets:
+        if br is None or not br.get("odds") or not br.get("stake"):
+            continue
+        br["market"] = br.get("market") or "h2h"   # 老数据无 market → 视为 h2h
+        br["actualOutcome"] = outcome_of(actual_score)
+        w = _bet_won(br, actual_score)
+        if w is True:
+            br["pnl"] = round(br["stake"] * (br["odds"] - 1), 4)
+            won += 1
+        elif w is False:
+            br["pnl"] = round(-br["stake"], 4)
+        else:
+            br["pnl"] = 0.0  # 走水：退本金
+        stake += br["stake"]
+        pnl += br["pnl"]
+        settled += 1
+    return stake, pnl, won, settled
+
+
 def evaluate_predictions(predictions):
     """
     预测战绩评估：
@@ -1213,6 +1413,8 @@ def evaluate_predictions(predictions):
             hist = json.loads(history_path.read_text(encoding="utf-8"))
         except Exception:
             hist = {"predictions": [], "results": []}
+    # 只保留最近 2 个完整赛季，防止 history 无限增长
+    hist = _prune_history(hist, keep_seasons=2)
 
     # 1. 合并当前预测（临场口径：同场已有预测时，赛前 24h 内的新预测覆盖旧预测，
     #    取离开赛最近的一次；开赛前 >24h 的预测不覆盖已存档的）
@@ -1245,6 +1447,7 @@ def evaluate_predictions(predictions):
                 old["ouModel"] = p.get("ouModel") or old.get("ouModel")
                 old["spModel"] = p.get("spModel") or old.get("spModel")
                 old["betRec"] = p.get("betRec") or old.get("betRec")
+                old["betRecs"] = p.get("betRecs") or old.get("betRecs")
                 # AI 字段：新预测有则用新的，否则保留旧的
                 if ai.get("pick"):
                     old["aiPick"] = ai.get("pick")
@@ -1293,6 +1496,7 @@ def evaluate_predictions(predictions):
             "aiRisks": ai.get("risks") or [],
             "aiAltScore": ai.get("altScore"),
             "betRec": p.get("betRec"),
+            "betRecs": p.get("betRecs"),
             # 盘口方向（用于按盘口类型统计）
             "ouModel": p.get("ouModel"),
             "spModel": p.get("spModel"),
@@ -1359,6 +1563,7 @@ def evaluate_predictions(predictions):
     bet_pnl = 0.0           # 累计盈亏
     bet_won = 0             # 赢的场次数
     bet_settled = 0         # 已结算推荐场次
+    bet_by_market = {}      # 按盘口类型(h2h/spread/score)统计: {market: [n, won, stake, pnl]} 
     for p in hist["predictions"]:
         if p.get("actualScore"):
             evaluated += 1
@@ -1372,18 +1577,27 @@ def evaluate_predictions(predictions):
                     ai_hit += 1
                 if p.get("aiHitExact"):
                     ai_exact += 1
-            # 已结算的历史记录：补算推荐投注盈亏（老数据无 pnl 字段）
-            br = p.get("betRec")
-            if br and br.get("pnl") is None and br.get("odds") and br.get("stake"):
-                ao = outcome_of(p["actualScore"])
-                br["pnl"] = round(br["stake"] * (br["odds"] - 1), 4) if br["side"] == ao else round(-br["stake"], 4)
-                br["actualOutcome"] = ao
-            if br and br.get("pnl") is not None:
-                bet_stake_total += br.get("stake", 0)
+            # 已结算的历史记录：补算推荐投注盈亏（老数据无 pnl 字段，含单条 betRec / betRecs 列表）
+            all_bets = _norm_beta(p)
+            pending = [br for br in all_bets if br and br.get("pnl") is None and br.get("odds") and br.get("stake")]
+            if pending:
+                stake_a, pnl_a, won_a, settled_a = _settle_bets(pending, p["actualScore"])
+            # 计入总量与 per-market（含已结算过 pnl 的记录，保证 ROI 统计完整）
+            for br in all_bets:
+                if not br or br.get("pnl") is None or not br.get("stake"):
+                    continue
+                mk = br.get("market") or "h2h"
+                bet_stake_total += br["stake"]
                 bet_pnl += br["pnl"]
                 bet_settled += 1
                 if br["pnl"] > 0:
                     bet_won += 1
+                b = bet_by_market.setdefault(mk, [0, 0, 0.0, 0.0])
+                b[0] += 1
+                if br["pnl"] > 0:
+                    b[1] += 1
+                b[2] += br["stake"]
+                b[3] += br["pnl"]
             continue
         key = (norm_team(p["homeTeam"]), norm_team(p["awayTeam"]), p.get("kickoff", "")[:10])
         r = result_keys.get(key)
@@ -1460,25 +1674,34 @@ def evaluate_predictions(predictions):
                     ai_hit += 1
                 if p["aiHitExact"]:
                     ai_exact += 1
-            # 推荐投注盈亏：老数据可能没存 betRec → 从 valuePicks 重建
-            if not p.get("betRec") and p.get("valuePicks"):
+            # 推荐投注盈亏：老数据可能没存 betRec/betRecs → 从 valuePicks 重建
+            if not _norm_beta(p) and p.get("valuePicks"):
                 vp = max(p["valuePicks"], key=lambda v: abs(v.get("edge", 0)))
                 old_odds = p.get("rawOdds") or {}
                 o = old_odds.get(vp["side"])
                 if isinstance(o, (int, float)) and o > 1:
-                    p["betRec"] = {"side": vp["side"], "odds": round(o, 2),
+                    p["betRec"] = {"market": "h2h", "side": vp["side"], "odds": round(o, 2),
                                    "stake": 0.02, "source": "value:" + vp.get("level", "watch"),
                                    "edge": vp.get("edge")}
-            br = p.get("betRec")
-            if br and br.get("odds") and br.get("stake"):
-                actual_out = outcome_of(r["actualScore"])
-                br["actualOutcome"] = actual_out
-                br["pnl"] = round(br["stake"] * (br["odds"] - 1), 4) if br["side"] == actual_out else round(-br["stake"], 4)
-                bet_stake_total += br["stake"]
-                bet_pnl += br["pnl"]
-                bet_settled += 1
-                if br["pnl"] > 0:
-                    bet_won += 1
+            all_bets = _norm_beta(p)
+            eligible = [br for br in all_bets if br and br.get("odds") and br.get("stake")]
+            if eligible:
+                stake_a, pnl_a, won_a, settled_a = _settle_bets(eligible, r["actualScore"])
+                p["betRecs"] = all_bets   # 结算结果写回(供 results/存档展示含 pnl)
+                bet_stake_total += stake_a
+                bet_pnl += pnl_a
+                bet_settled += settled_a
+                bet_won += won_a
+                for br in all_bets:
+                    if not br:
+                        continue
+                    mk = br.get("market") or "h2h"
+                    b = bet_by_market.setdefault(mk, [0, 0, 0.0, 0.0])
+                    b[0] += 1
+                    if br.get("pnl", 0) > 0:
+                        b[1] += 1
+                    b[2] += br.get("stake", 0)
+                    b[3] += br.get("pnl", 0)
             # 价值标记方向命中（bestOutcome）
             vp = p.get("valuePicks") or []
             if vp:
@@ -1503,6 +1726,7 @@ def evaluate_predictions(predictions):
                 "aiHitOutcome": p.get("aiHitOutcome"),
                 "aiHitExact": p.get("aiHitExact"),
                 "betRec": p.get("betRec"),
+                "betRecs": p.get("betRecs"),
             })
 
     # 4. 统计
@@ -1527,6 +1751,14 @@ def evaluate_predictions(predictions):
         "betStakeTotal": round(bet_stake_total, 4),
         "betPnl": round(bet_pnl, 4),
         "betROI": round(bet_pnl / bet_stake_total, 4) if bet_stake_total else 0,
+        # 按盘口类型(h2h/spread/score)分别结算 ROI
+        "betByMarket": {
+            k: {"n": v[0], "won": v[1],
+                "rate": round(v[1] / v[0], 4) if v[0] else 0,
+                "stake": round(v[2], 4), "pnl": round(v[3], 4),
+                "roi": round(v[3] / v[2], 4) if v[2] else 0}
+            for k, v in sorted(bet_by_market.items())
+        },
         # 盘口类型统计
         "ouTotal": ou_total,
         "ouHit": ou_hit,
