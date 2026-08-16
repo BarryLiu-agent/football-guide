@@ -1714,13 +1714,14 @@ function switchMkt(mkt) {
     const ttg = jc.ttg || {};
     el.innerHTML = `
       ${(function(){ const oh = (jc.oddsHistory || []).filter(o => o && o.had && (o.had.h || o.had.d || o.had.a)).slice().sort((a, b) => (a.time || '').localeCompare(b.time || '')); if (!oh.length) return ''; const first = oh[0], last = oh[oh.length - 1]; const arrow = (a, b) => { const na = parseFloat(a), nb = parseFloat(b); if (isNaN(na) || isNaN(nb)) return ''; if (na === nb) return '<span style="color:var(--muted)">平</span>'; return na > nb ? '<span style="color:var(--red)">↗' + (na - nb).toFixed(2) + '</span>' : '<span style="color:var(--green)">↘' + (nb - na).toFixed(2) + '</span>'; }; const fh = first.had, lh = last.had; return '<div style="font-size:10px;color:var(--muted);margin-bottom:8px">SP 走势：主胜 ' + (fh.h || '—') + arrow(lh.h, fh.h) + ' · 平 ' + (fh.d || '—') + arrow(lh.d, fh.d) + ' · 客 ' + (fh.a || '—') + arrow(lh.a, fh.a) + '（' + oh.length + ' 次采样）</div>'; })()}
+      <div style="font-size:10px;color:var(--muted);margin-bottom:6px">竞彩官方可下注盘口(本地定时抓取)。让球胜平负为竞彩口——与「让球」(The Odds 盘) /「亚盘」(历史收盘) 不同源。</div>
       <div class="section-title" style="margin-top:0">胜平负 SP</div>
       <div class="odds-grid">
         <div class="odds-box"><div class="label">主胜</div><div class="value">${had.h ?? '-'}</div></div>
         <div class="odds-box"><div class="label">平局</div><div class="value">${had.d ?? '-'}</div></div>
         <div class="odds-box"><div class="label">客胜</div><div class="value">${had.a ?? '-'}</div></div>
       </div>
-      <div class="section-title">让球胜平负(${jc.hhad?.goalLine ? '让 ' + jc.hhad.goalLine + ' 球' : ''})</div>
+      <div class="section-title">竞彩让球胜平负(${jc.hhad?.goalLine ? '让 ' + jc.hhad.goalLine + ' 球' : ''})</div>
       <div class="odds-grid">
         <div class="odds-box"><div class="label">主胜</div><div class="value">${hhad.h ?? '-'}</div></div>
         <div class="odds-box"><div class="label">平局</div><div class="value">${hhad.d ?? '-'}</div></div>
@@ -1761,7 +1762,9 @@ function switchMkt(mkt) {
     const s = p.spreads;
     const sm = p.spModel;
     const eCls = sm && sm.edge != null ? (sm.edge > 0.02 ? 'color:#22c55e' : (sm.edge < -0.02 ? 'color:#ef4444' : 'color:var(--muted)')) : '';
-    el.innerHTML = `<div class="odds-grid">
+    el.innerHTML = `<div class="section-title" style="margin-top:0">🧭 让球分析（The Odds API 实时盘 + 模型）</div>
+    <div style="font-size:10px;color:var(--muted);margin-bottom:6px">与「竞彩 SP」的竞彩让球盘(hhad) 及「亚盘」的历史收盘亚盘是不同数据源,勿混看。</div>
+    <div class="odds-grid">
       <div class="odds-box"><div class="label">主队让球</div><div class="value">${s.home?.point ?? '-'}</div><div class="sub">赔率 ${s.home?.price ?? '-'}</div></div>
       <div class="odds-box"><div class="label">客队受让</div><div class="value">${s.away?.point ?? '-'}</div><div class="sub">赔率 ${s.away?.price ?? '-'}</div></div>
       <div class="odds-box"><div class="label">解读</div><div class="value" style="font-size:13px">${s.home && s.home.point != null ? (s.home.point < 0 ? '机构看好主队' : (s.home.point > 0 ? '机构看好客队' : '平手盘')) : '数据不足'}</div></div>
@@ -1773,24 +1776,9 @@ function switchMkt(mkt) {
     </div>
     <div style="font-size:10px;color:var(--muted)">edge = 模型赢盘率 - 盘口隐含概率;正=让球方向有正期望</div>` : ''}`;
   } else if (mkt === 'ah') {
-    // ── 实时让球（The Odds API spreads，临场点差盘）──
-    // 注:The Odds API V4 无 asian_handicap 市场，只有 spreads(点差让球)，
-    // 实时盘用 spreads 代替;下方再给 football-data.co.uk 的"历史亚盘"收盘盘口。
-    const rs = ((p && p.spreads) || {});
-    let liveHtml = '';
-    if (rs.home && rs.home.point != null && rs.away && rs.away.point != null) {
-      const fmtPt = (pt) => pt == null ? '-' : (pt > 0 ? '+' + pt : String(pt));
-      const lv = rs.home.point < 0 ? '主队让 ' + fmtPt(-rs.home.point) + ' 球' : (rs.home.point > 0 ? '主队受让(机构看好客队) ' + fmtPt(rs.home.point) : '平手盘');
-      liveHtml = `<div class="section-title">🔴 实时让球盘（The Odds API 临场盘口）</div>
-      <div class="odds-grid">
-        <div class="odds-box"><div class="label">主队 ${fmtPt(rs.home.point)}</div><div class="value">${rs.home.price ?? '-'}</div><div class="sub">水位(让球方)</div></div>
-        <div class="odds-box"><div class="label">客队 ${fmtPt(rs.away.point)}</div><div class="value">${rs.away.price ?? '-'}</div><div class="sub">水位(受让方)</div></div>
-        <div class="odds-box"><div class="label">解读</div><div class="value" style="font-size:13px">${lv}</div><div class="sub">各机构点差让球中位数</div></div>
-      </div>
-      <div style="font-size:10px;color:var(--muted);margin-top:6px">实时让球 = spreads 市场最常见点差 + 中位数水位 · 主队视角,负=让球 · The Odds API 无真亚盘(quarter-ball)市场,以点差让球代替</div>`;
-    } else {
-      liveHtml = '<div style="padding:10px 0;color:var(--muted);font-size:12px">暂无实时让球盘（休赛期/无盘时无数据，见下方历史亚盘）</div>';
-    }
+    // ── 亚盘：专注"历史收盘亚盘"(football-data.co.uk，真亚盘含 1/4 盘)。
+    // 实时让球(spreads)已在「让球」页签，不再在此重复展示。
+    const liveNote = '<div style="padding:6px 8px;margin-bottom:8px;border-radius:6px;background:rgba(59,130,246,.07);border:1px solid rgba(59,130,246,.2);font-size:11px;color:var(--muted)">ℹ️ 实时让球盘见「让球」页签(The Odds API 点差盘)。本页为历史收盘亚盘(真亚盘,含 1/4 盘赢半/输半)。</div>';
     // ── 历史亚盘（football-data.co.uk 收盘盘口，开赛后每轮入库）──
     const od = (p && p.league) ? state.asianByLeague[p.league] : null;
     const seasonOf = (iso) => { const y = parseInt((iso || '').slice(0, 4), 10); const mo = parseInt((iso || '').slice(5, 7), 10); return (y && mo) ? (mo >= 8 ? y : y - 1) : 0; };
@@ -1802,13 +1790,13 @@ function switchMkt(mkt) {
     }) : null;
     let histHtml;
     if (!am) {
-      histHtml = '<div style="margin-top:12px" class="empty-state" style="">新赛季场次赛后才入库历史亚盘(每周更新)</div>';
+      histHtml = '<div class="empty-state">历史亚盘(收盘盘口)新赛季场次赛后才入库,每周更新。实时让球见「让球」页签。</div>';
     } else {
       const fmtPoint = (pt) => pt == null ? '-' : (pt > 0 ? '+' + pt : String(pt));
       const settleTxt = { 'home': '主队赢盘', 'away': '客队赢盘', 'home_half': '主队赢半', 'away_half': '客队赢半', 'push': '走水' }[am.settle] || '未结算';
       const settleCls = am.settle === 'home' || am.settle === 'home_half' ? 'var(--green)' : (am.settle === 'away' || am.settle === 'away_half') ? 'var(--red)' : 'var(--muted)';
       const interp = am.line == null ? '数据不足' : (am.line < 0 ? '主队让 ' + fmtPoint(-am.line) + ' 球(机构看好主队)' : am.line > 0 ? '主队受让 ' + fmtPoint(am.line) + ' 球(机构看好客队)' : '平手盘(势均力敌)');
-      histHtml = `<div class="section-title" style="margin-top:12px">📁 历史亚盘（football-data.co.uk 收盘盘口）</div>
+      histHtml = `<div class="section-title" style="margin-top:0">📁 历史亚盘（football-data.co.uk 收盘盘口）</div>
       <div class="odds-grid">
         <div class="odds-box"><div class="label">主队 ${fmtPoint(am.line)}</div><div class="value">${am.homeOdds ?? '-'}</div><div class="sub">水位(让球方)</div></div>
         <div class="odds-box"><div class="label">客队 ${fmtPoint(-am.line)}</div><div class="value">${am.awayOdds ?? '-'}</div><div class="sub">水位(受让方)</div></div>
@@ -1817,7 +1805,7 @@ function switchMkt(mkt) {
       <div class="odds-box" style="margin-top:8px"><div class="label">解读</div><div class="value" style="font-size:13px">${interp}</div></div>
       <div style="font-size:10px;color:var(--muted);margin-top:6px">亚盘让球数:主队视角,负=让球 正=受让 · 结算含 1/4 盘赢半/输半</div>`;
     }
-    el.innerHTML = liveHtml + histHtml;
+    el.innerHTML = liveNote + histHtml;
   } else if (mkt === 'cs') {
     if (!p) { el.innerHTML = '<div class="empty-state">暂无波胆数据</div>'; return; }
     const cs = p.correctScores || [];
@@ -1834,7 +1822,9 @@ function switchMkt(mkt) {
       }
       return `<div class="cs-item"><div class="score">${c.score}</div><div class="p">${pct(c.prob)}</div>${val}</div>`;
     }).join('');
-    el.innerHTML = `<div class="cs-grid">${items}</div>` +
+    el.innerHTML = `<div class="section-title" style="margin-top:0">🎯 波胆分析（模型概率 vs 竞彩比值）</div>
+    <div style="font-size:10px;color:var(--muted);margin-bottom:6px">竞彩可下注的波胆 SP 清单见「竞彩 SP」页;这里是对比模型与竞彩隐含、给出有价值比分。</div>
+    <div class="cs-grid">${items}</div>` +
       (hasCrs ? '<div style="font-size:10px;color:var(--muted);margin-top:6px">模型比分概率 vs 竞彩波胆赔率隐含概率:模型概率更高 = 该比分有价值(开赛后自动出现)</div>' : '<div style="font-size:10px;color:var(--muted);margin-top:6px">竞彩波胆未开售该场比赛,无法对比价值</div>') +
       (() => { const big = cs.filter(c => { const [h, a] = c.score.split('-').map(Number); return h >= 3 || a >= 3; }); if (!big.length) return ''; const top = big[0]; return '<div style="font-size:10.5px;color:var(--gold);margin-top:8px;padding:6px 8px;border-radius:6px;background:rgba(240,185,11,.08);border:1px solid rgba(240,185,11,.2)">🎯 若爆大比分,最可能 <b>' + top.score + '</b> (' + pct(top.prob) + ')</div>'; })();
   }
