@@ -1773,22 +1773,23 @@ function switchMkt(mkt) {
     </div>
     <div style="font-size:10px;color:var(--muted)">edge = 模型赢盘率 - 盘口隐含概率;正=让球方向有正期望</div>` : ''}`;
   } else if (mkt === 'ah') {
-    // ── 实时亚盘（The Odds API asian_handicap，临场盘口）──
-    const ra = (p && p.asian) || {};
-    const ahTrend = (p && p.oddsChange);
+    // ── 实时让球（The Odds API spreads，临场点差盘）──
+    // 注:The Odds API V4 无 asian_handicap 市场，只有 spreads(点差让球)，
+    // 实时盘用 spreads 代替;下方再给 football-data.co.uk 的"历史亚盘"收盘盘口。
+    const rs = ((p && p.spreads) || {});
     let liveHtml = '';
-    if (ra.home && ra.home.point != null && ra.away && ra.away.point != null) {
+    if (rs.home && rs.home.point != null && rs.away && rs.away.point != null) {
       const fmtPt = (pt) => pt == null ? '-' : (pt > 0 ? '+' + pt : String(pt));
-      const lv = ra.home.point < 0 ? '主队让 ' + fmtPt(-ra.home.point) + ' 球' : (ra.home.point > 0 ? '主队受让(机构看好客队) ' + fmtPt(ra.home.point) : '平手盘');
-      liveHtml = `<div class="section-title">🔴 实时亚盘（The Odds API 临场盘口）</div>
+      const lv = rs.home.point < 0 ? '主队让 ' + fmtPt(-rs.home.point) + ' 球' : (rs.home.point > 0 ? '主队受让(机构看好客队) ' + fmtPt(rs.home.point) : '平手盘');
+      liveHtml = `<div class="section-title">🔴 实时让球盘（The Odds API 临场盘口）</div>
       <div class="odds-grid">
-        <div class="odds-box"><div class="label">主队 ${fmtPt(ra.home.point)}</div><div class="value">${ra.home.price ?? '-'}</div><div class="sub">水位(让球方)</div></div>
-        <div class="odds-box"><div class="label">客队 ${fmtPt(ra.away.point)}</div><div class="value">${ra.away.price ?? '-'}</div><div class="sub">水位(受让方)</div></div>
-        <div class="odds-box"><div class="label">解读</div><div class="value" style="font-size:13px">${lv}</div><div class="sub">各机构 asian_handicap 中位数</div></div>
+        <div class="odds-box"><div class="label">主队 ${fmtPt(rs.home.point)}</div><div class="value">${rs.home.price ?? '-'}</div><div class="sub">水位(让球方)</div></div>
+        <div class="odds-box"><div class="label">客队 ${fmtPt(rs.away.point)}</div><div class="value">${rs.away.price ?? '-'}</div><div class="sub">水位(受让方)</div></div>
+        <div class="odds-box"><div class="label">解读</div><div class="value" style="font-size:13px">${lv}</div><div class="sub">各机构点差让球中位数</div></div>
       </div>
-      <div style="font-size:10px;color:var(--muted);margin-top:6px">实时亚盘 = 各机构 asian_handicap 取最常见盘口 + 中位数水位 · 主队视角,负=让球 <span style="color:inherit">${ahTrend ? '· 随每日欧赔刷新' : ''}</span></div>`;
+      <div style="font-size:10px;color:var(--muted);margin-top:6px">实时让球 = spreads 市场最常见点差 + 中位数水位 · 主队视角,负=让球 · The Odds API 无真亚盘(quarter-ball)市场,以点差让球代替</div>`;
     } else {
-      liveHtml = '<div style="padding:10px 0;color:var(--muted);font-size:12px">暂无实时亚盘（遇休赛期 or 该联赛不支持 asian_handicap 时无数据，见下方历史收盘盘口）</div>';
+      liveHtml = '<div style="padding:10px 0;color:var(--muted);font-size:12px">暂无实时让球盘（休赛期/无盘时无数据，见下方历史亚盘）</div>';
     }
     // ── 历史亚盘（football-data.co.uk 收盘盘口，开赛后每轮入库）──
     const od = (p && p.league) ? state.asianByLeague[p.league] : null;
