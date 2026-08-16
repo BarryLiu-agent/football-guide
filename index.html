@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://barryliu-agent.github.io/football-guide/">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎲</text></svg>">
-<title>赌狗赌到最后应有尽有 - 足球数据面板</title>
+<title>足球数据面板 - 五大联赛+欧冠赔率与模型预测</title>
 <style>
 /* 焦点可见性（键盘导航） */
 :focus-visible { outline: 2px solid var(--gold, #f0b90b); outline-offset: 2px; }
@@ -1544,11 +1544,29 @@ function renderRecord() {
      '<div class="rec-card"><div class="v">' + (s.betStakeTotal || 0).toFixed(2) + '</div><div class="k">累计注额(基准)</div></div>' +
      '</div>' +
      '<div style="font-size:11px;color:var(--muted);margin-bottom:4px">ROI 按推荐场次统一基准注额结算:盈 = 注额×(赔率-1),亏 = 注额;注额 = 凯利分数(上限 5%)。ROI>0 = 按推荐下注有正期望</div>' : '';
+   // 按盘口类型分别结算 ROI(h2h胜负 / spread让球 / score波胆)
+   const mkLabel = { h2h: '胜负', spread: '让球', score: '波胆' };
+   const mktBetRows = (s.betByMarket && Object.keys(s.betByMarket).length)
+     ? Object.keys(s.betByMarket).map(mk => {
+         const b = s.betByMarket[mk];
+         const cls = b.pnl > 0 ? 'green' : (b.pnl < 0 ? 'red' : '');
+         return '<div class="rec-card"><div class="v ' + cls + '">' + (b.pnl > 0 ? '+' : '') + b.pnl.toFixed(2) + ' · ' + (b.roi > 0 ? '+' : '') + (b.roi * 100).toFixed(1) + '%</div><div class="k">' + (mkLabel[mk] || mk) + '(' + b.n + '场/' + b.won + '胜)</div></div>';
+       }).join('')
+     : '';
+   const mktBetRow = mktBetRows ? '<div class="record-cards" style="margin-top:8px;border:1px solid var(--border);border-radius:12px;padding:6px">' + mktBetRows + '</div>' : '';
   const rows = (h.results || []).slice().reverse().slice(0, 30).map(r => {
     const hit = r.hitOutcome;
     const aiHit = r.aiPick && r.aiPick !== 'none' ? r.aiHitOutcome : null;
     const br = r.betRec;
-    const pnlTag = (br && br.pnl != null) ? '<span class="' + (br.pnl > 0 ? 'res hit' : 'res miss') + '" style="margin-left:6px" title="推荐 ' + (br.side === 'home' ? '主胜' : br.side === 'away' ? '客胜' : '平局') + ' @' + br.odds + ' 注额' + (br.stake * 100).toFixed(1) + '%">' + (br.pnl > 0 ? '+' : '') + (br.pnl * 100).toFixed(1) + '%</span>' : '';
+    const mkLb = { h2h: '胜负', spread: '让球', score: '波胆' };
+    const brDesc = (br) => {
+      const m = mkLb[br.market || 'h2h'] || '投注';
+      if ((br.market || 'h2h') === 'score') return m + ' ' + br.side + ' @' + br.odds;
+      if ((br.market || 'h2h') === 'spread') return m + ' 主' + (br.point == null ? '-' : (br.point > 0 ? '+' + br.point : br.point)) + '盘 @' + br.odds;
+      const s = br.side;
+      return m + ' ' + (s === 'home' ? '主胜' : s === 'away' ? '客胜' : s === 'draw' ? '平局' : s);
+    };
+    const pnlTag = (br && br.pnl != null) ? '<span class="' + (br.pnl > 0 ? 'res hit' : 'res miss') + '" style="margin-left:6px" title="推荐 ' + brDesc(br) + ' 注额' + ((br.stake || 0) * 100).toFixed(1) + '%">' + (br.pnl > 0 ? '+' : '') + (br.pnl * 100).toFixed(1) + '%</span>' : '';
     return '<div class="record-row"><div class="res ' + (hit ? 'hit' : 'miss') + '">' + (hit ? '✓' : '✗') + '</div>' +
       '<span style="flex:1">' + cnTeam(r.homeTeam) + ' vs ' + cnTeam(r.awayTeam) + '</span>' +
       '<span style="color:var(--muted);font-size:11px">预测</span> <span class="pred">' + (r.predictedScore || '-') + '</span>' +
@@ -1564,6 +1582,7 @@ function renderRecord() {
   confRow +
   aiRow +
   roiRow +
+  mktBetRow +
   '<div style="font-size:11px;color:var(--muted);margin-bottom:10px">命中判定基于预测时的胜负方向;价值标记命中 = 模型 vs 盘口差>5%的方向是否正确 · 🤖 标记为 AI 研判同场命中 · 💰 标记为推荐投注盈亏(基准注额) · 样本越多越可信</div>' +
   (rows || '<div class="empty-state">暂无结算记录</div>');
 }
@@ -1754,10 +1773,25 @@ function switchMkt(mkt) {
     </div>
     <div style="font-size:10px;color:var(--muted)">edge = 模型赢盘率 - 盘口隐含概率;正=让球方向有正期望</div>` : ''}`;
   } else if (mkt === 'ah') {
-    // 亚盘数据:football-data.co.uk 历史盘口(收盘),按队名匹配
+    // ── 实时亚盘（The Odds API asian_handicap，临场盘口）──
+    const ra = (p && p.asian) || {};
+    const ahTrend = (p && p.oddsChange);
+    let liveHtml = '';
+    if (ra.home && ra.home.point != null && ra.away && ra.away.point != null) {
+      const fmtPt = (pt) => pt == null ? '-' : (pt > 0 ? '+' + pt : String(pt));
+      const lv = ra.home.point < 0 ? '主队让 ' + fmtPt(-ra.home.point) + ' 球' : (ra.home.point > 0 ? '主队受让(机构看好客队) ' + fmtPt(ra.home.point) : '平手盘');
+      liveHtml = `<div class="section-title">🔴 实时亚盘（The Odds API 临场盘口）</div>
+      <div class="odds-grid">
+        <div class="odds-box"><div class="label">主队 ${fmtPt(ra.home.point)}</div><div class="value">${ra.home.price ?? '-'}</div><div class="sub">水位(让球方)</div></div>
+        <div class="odds-box"><div class="label">客队 ${fmtPt(ra.away.point)}</div><div class="value">${ra.away.price ?? '-'}</div><div class="sub">水位(受让方)</div></div>
+        <div class="odds-box"><div class="label">解读</div><div class="value" style="font-size:13px">${lv}</div><div class="sub">各机构 asian_handicap 中位数</div></div>
+      </div>
+      <div style="font-size:10px;color:var(--muted);margin-top:6px">实时亚盘 = 各机构 asian_handicap 取最常见盘口 + 中位数水位 · 主队视角,负=让球 <span style="color:inherit">${ahTrend ? '· 随每日欧赔刷新' : ''}</span></div>`;
+    } else {
+      liveHtml = '<div style="padding:10px 0;color:var(--muted);font-size:12px">暂无实时亚盘（遇休赛期 or 该联赛不支持 asian_handicap 时无数据，见下方历史收盘盘口）</div>';
+    }
+    // ── 历史亚盘（football-data.co.uk 收盘盘口，开赛后每轮入库）──
     const od = (p && p.league) ? state.asianByLeague[p.league] : null;
-    // 赛季判定:8 月及以后属当年赛季,否则属上一赛季(亚盘/预测须同赛季才匹配,
-    // 避免未开赛的新赛季对阵捞到上赛季同名交锋的历史结算)
     const seasonOf = (iso) => { const y = parseInt((iso || '').slice(0, 4), 10); const mo = parseInt((iso || '').slice(5, 7), 10); return (y && mo) ? (mo >= 8 ? y : y - 1) : 0; };
     const am = (od && od.matches) ? od.matches.find(x => {
       if (seasonOf(x.kickoff) !== seasonOf(p.kickoff)) return false;
@@ -1765,18 +1799,24 @@ function switchMkt(mkt) {
       const h = normTeam(p.homeTeam), a = normTeam(p.awayTeam);
       return (xh === h && xa === a) || (xh.split(' ')[0] === h.split(' ')[0] && xa.split(' ')[0] === a.split(' ')[0]);
     }) : null;
-    if (!am) { el.innerHTML = '<div class="empty-state">暂无亚盘数据(历史亚盘来自 football-data.co.uk,每周更新;新赛季场次赛后才入库)</div>'; return; }
-    const fmtPoint = (pt) => pt == null ? '-' : (pt > 0 ? '+' + pt : String(pt));
-    const settleTxt = { 'home': '主队赢盘', 'away': '客队赢盘', 'home_half': '主队赢半', 'away_half': '客队赢半', 'push': '走水' }[am.settle] || '未结算';
-    const settleCls = am.settle === 'home' || am.settle === 'home_half' ? 'var(--green)' : (am.settle === 'away' || am.settle === 'away_half') ? 'var(--red)' : 'var(--muted)';
-    const interp = am.line == null ? '数据不足' : (am.line < 0 ? '主队让 ' + fmtPoint(-am.line) + ' 球(机构看好主队)' : am.line > 0 ? '主队受让 ' + fmtPoint(am.line) + ' 球(机构看好客队)' : '平手盘(势均力敌)');
-    el.innerHTML = `<div class="odds-grid">
-      <div class="odds-box"><div class="label">主队 ${fmtPoint(am.line)}</div><div class="value">${am.homeOdds ?? '-'}</div><div class="sub">水位(让球方)</div></div>
-      <div class="odds-box"><div class="label">客队 ${fmtPoint(-am.line)}</div><div class="value">${am.awayOdds ?? '-'}</div><div class="sub">水位(受让方)</div></div>
-      <div class="odds-box"><div class="label">结算</div><div class="value" style="font-size:13px;color:${settleCls}">${am.result ? am.result + ' → ' + settleTxt : settleTxt}</div><div class="sub">${am.kickoff || ''}</div></div>
-    </div>
-    <div class="odds-box" style="margin-top:8px"><div class="label">解读</div><div class="value" style="font-size:13px">${interp}</div></div>
-    <div style="font-size:10px;color:var(--muted);margin-top:6px">亚盘让球数:主队视角,负=让球 正=受让 · 水位为欧赔格式 · 数据源 football-data.co.uk(收盘盘口,每周更新)· 结算含 1/4 盘赢半/输半</div>`;
+    let histHtml;
+    if (!am) {
+      histHtml = '<div style="margin-top:12px" class="empty-state" style="">新赛季场次赛后才入库历史亚盘(每周更新)</div>';
+    } else {
+      const fmtPoint = (pt) => pt == null ? '-' : (pt > 0 ? '+' + pt : String(pt));
+      const settleTxt = { 'home': '主队赢盘', 'away': '客队赢盘', 'home_half': '主队赢半', 'away_half': '客队赢半', 'push': '走水' }[am.settle] || '未结算';
+      const settleCls = am.settle === 'home' || am.settle === 'home_half' ? 'var(--green)' : (am.settle === 'away' || am.settle === 'away_half') ? 'var(--red)' : 'var(--muted)';
+      const interp = am.line == null ? '数据不足' : (am.line < 0 ? '主队让 ' + fmtPoint(-am.line) + ' 球(机构看好主队)' : am.line > 0 ? '主队受让 ' + fmtPoint(am.line) + ' 球(机构看好客队)' : '平手盘(势均力敌)');
+      histHtml = `<div class="section-title" style="margin-top:12px">📁 历史亚盘（football-data.co.uk 收盘盘口）</div>
+      <div class="odds-grid">
+        <div class="odds-box"><div class="label">主队 ${fmtPoint(am.line)}</div><div class="value">${am.homeOdds ?? '-'}</div><div class="sub">水位(让球方)</div></div>
+        <div class="odds-box"><div class="label">客队 ${fmtPoint(-am.line)}</div><div class="value">${am.awayOdds ?? '-'}</div><div class="sub">水位(受让方)</div></div>
+        <div class="odds-box"><div class="label">结算</div><div class="value" style="font-size:13px;color:${settleCls}">${am.result ? am.result + ' → ' + settleTxt : settleTxt}</div><div class="sub">${am.kickoff || ''}</div></div>
+      </div>
+      <div class="odds-box" style="margin-top:8px"><div class="label">解读</div><div class="value" style="font-size:13px">${interp}</div></div>
+      <div style="font-size:10px;color:var(--muted);margin-top:6px">亚盘让球数:主队视角,负=让球 正=受让 · 结算含 1/4 盘赢半/输半</div>`;
+    }
+    el.innerHTML = liveHtml + histHtml;
   } else if (mkt === 'cs') {
     if (!p) { el.innerHTML = '<div class="empty-state">暂无波胆数据</div>'; return; }
     const cs = p.correctScores || [];

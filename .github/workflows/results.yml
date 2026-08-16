@@ -47,6 +47,9 @@ jobs:
           AI_MODEL: ${{ secrets.AI_MODEL }}
         run: python scripts/predict.py
 
+      - name: "Prediction consistency check (方向 vs 概率最大值)"
+        run: python scripts/check_consistency.py
+
       - name: Build status manifest (data/status.json)
         run: python scripts/build_status.py
 

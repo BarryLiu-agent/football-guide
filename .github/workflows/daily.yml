@@ -63,6 +63,9 @@ jobs:
       - name: Model calibration backtest
         run: python scripts/backtest.py
 
+      - name: "Prediction consistency check (方向 vs 概率最大值)"
+        run: python scripts/check_consistency.py
+
       - name: Odds calibration backtest (OU/Asian)
         run: python scripts/backtest_ou.py
 
@@ -80,21 +83,35 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/
-          if git diff --cached --quiet; then
-            echo "数据无变化，跳过提交"
+          # 部署条件 = 数据有变化 OR 本次 push 提交改动了非数据文件(index.html/config/脚本等)。
+          # 代码改动(如 index.html)无需数据变化也需重新部署上线。
+          code_changed=0
+          if git diff --quiet "$(git rev-parse HEAD^ 2>/dev/null || echo HEAD~1)" HEAD -- ':!data' ':!**/*.json'; then
+            code_changed=0
           else
-            git commit -m "chore: CI 更新数据 [skip ci]"
+            code_changed=1
+          fi
+          if git diff --cached --quiet && [ "$code_changed" = "0" ]; then
+            echo "无影响部署的改动，跳过提交"
+            echo "data_changed=false" >> "$GITHUB_ENV"
+          else
+            if ! git diff --cached --quiet; then
+              git commit -m "chore: CI 更新数据 [skip ci]"
+            fi
             for i in 1 2 3; do
               if git pull --rebase --autostash origin main && git push origin main; then
-                echo "数据已写回 main"
+                echo "已写回 main"
                 break
               fi
               echo "写回失败，重试 $i/3"
               sleep 5
             done
+            echo "data_changed=true" >> "$GITHUB_ENV"
           fi
 
       - name: Deploy to GitHub Pages
+        # 无影响部署的改动则跳过部署，省 Actions 分钟数
+        if: env.data_changed == 'true'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

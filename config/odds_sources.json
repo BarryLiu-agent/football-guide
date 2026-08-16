@@ -8,10 +8,12 @@
       "markets": [
         "h2h",
         "totals",
-        "spreads"
+        "spreads",
+        "asian_handicap"
       ],
       "regions": [
-        "eu"
+        "eu",
+        "us"
       ]
     }
   }
