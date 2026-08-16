@@ -96,7 +96,7 @@ def _call_llm(messages: list[dict], timeout: int = DEFAULT_TIMEOUT) -> str | Non
         "messages": messages,
         "temperature": 0.2,          # 低随机性保证可复现
         "response_format": {"type": "json_object"},
-        "max_tokens": 400,
+        "max_tokens": 1200,
     }).encode("utf-8")
     req = urllib.request.Request(
         base + "/chat/completions",
