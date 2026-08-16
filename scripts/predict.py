@@ -1252,6 +1252,10 @@ def evaluate_predictions(predictions):
                     old["aiConfidence"] = ai.get("confidence")
                     old["aiModel"] = ai.get("model")
                     old["aiReason"] = ai.get("reason")
+                    old["aiAnalysis"] = ai.get("analysis") or old.get("aiAnalysis") or {}
+                    old["aiKeyFactors"] = ai.get("keyFactors") or old.get("aiKeyFactors") or []
+                    old["aiRisks"] = ai.get("risks") or old.get("aiRisks") or []
+                    old["aiAltScore"] = ai.get("altScore") or old.get("aiAltScore")
             elif old and not old.get("aiPick") and ai.get("pick"):
                 # 非临场或已结算：仅补写 AI 研判
                 old["aiPick"] = ai.get("pick")
@@ -1259,6 +1263,10 @@ def evaluate_predictions(predictions):
                 old["aiConfidence"] = ai.get("confidence")
                 old["aiModel"] = ai.get("model")
                 old["aiReason"] = ai.get("reason")
+                old["aiAnalysis"] = ai.get("analysis") or old.get("aiAnalysis") or {}
+                old["aiKeyFactors"] = ai.get("keyFactors") or old.get("aiKeyFactors") or []
+                old["aiRisks"] = ai.get("risks") or old.get("aiRisks") or []
+                old["aiAltScore"] = ai.get("altScore") or old.get("aiAltScore")
             if old and not old.get("league"):
                 old["league"] = p.get("league", "")
             if old and not old.get("modelProbs"):
@@ -1280,6 +1288,10 @@ def evaluate_predictions(predictions):
             "aiConfidence": ai.get("confidence"),
             "aiModel": ai.get("model"),
             "aiReason": ai.get("reason"),
+            "aiAnalysis": ai.get("analysis") or {},
+            "aiKeyFactors": ai.get("keyFactors") or [],
+            "aiRisks": ai.get("risks") or [],
+            "aiAltScore": ai.get("altScore"),
             "betRec": p.get("betRec"),
             # 盘口方向（用于按盘口类型统计）
             "ouModel": p.get("ouModel"),
