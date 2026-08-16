@@ -1171,29 +1171,32 @@ function renderResults() {
     const mp = r.modelProbs || r.probabilities || {};
     const pct = (v) => v == null ? '—' : Math.round(v * 100) + '%';
     const mOut = outcomeOf(r.predictedScore), aOut = outcomeOf(r.actualScore);
+    // 比分精确命中 + 胜负方向命中分开计算
+    const mExact = r.predictedScore === r.actualScore;
     const mHit = mOut === aOut;
+    const aiExact = r.aiScore === r.actualScore;
     const aiHit = r.aiPick != null && r.aiPick !== 'none' ? r.aiPick === aOut : null;
-    const aiCls = aiHit === null ? '' : (aiHit ? 'hit' : 'miss');
-    const mCls = mHit ? 'hit' : 'miss';
+    const mScoreTxt = `<span class="${mExact ? 'hit' : 'miss'}">比分${mExact ? '✓' : '✗'}</span> <span class="${mHit ? 'hit' : 'miss'}">胜负${mHit ? '✓' : '✗'}</span>`;
+    const aiScoreTxt = aiHit === null ? '' : `<span class="${aiExact ? 'hit' : 'miss'}">比分${aiExact ? '✓' : '✗'}</span> <span class="${aiHit ? 'hit' : 'miss'}">胜负${aiHit ? '✓' : '✗'}</span>`;
     return `<div class="res-card">
       <div class="res-head"><b>${cn(r.homeTeam)}</b> <span class="res-score">${r.actualScore || '—'}</span> <b>${cn(r.awayTeam)}</b>
         <span class="res-date">${(r.kickoff || '').slice(0, 10)}</span></div>
       <div class="res-grid">
         <div class="res-cell model">
           <div class="k">🤖 模型预测</div>
-          <div class="v">${r.predictedScore || '—'} <span class="${mCls}">${mHit ? '✓命中' : '✗未中'}</span></div>
+          <div class="v">${r.predictedScore || '—'} ${mScoreTxt}</div>
           <div class="s">主${pct(mp.home)} 平${pct(mp.draw)} 客${pct(mp.away)}</div>
         </div>
         <div class="res-cell ai">
           <div class="k">✨ AI 研判</div>
-          <div class="v">${r.aiPick && r.aiPick !== 'none' ? pickCn[r.aiPick] + (r.aiScore ? ' ' + r.aiScore : '') : '无明显倾向'} <span class="${aiCls}">${aiHit === null ? '' : (aiHit ? '✓命中' : '✗未中')}</span></div>
+          <div class="v">${r.aiPick && r.aiPick !== 'none' ? pickCn[r.aiPick] + (r.aiScore ? ' ' + r.aiScore : '') : '无明显倾向'} ${aiScoreTxt}</div>
           <div class="s">${r.aiConfidence != null ? '置信 ' + Math.round(r.aiConfidence * 100) + '%' : ''}${r.aiReason ? ' · ' + esc(r.aiReason) : ''}</div>
         </div>
       </div>
     </div>`;
   }).join('');
   return `<div class="res-list">${rows}</div>
-    <div style="font-size:11px;color:var(--muted);margin-top:10px">模型预测 = 预测时的融合模型比分与胜率;AI 研判 = 预测时的 DeepSeek 输出;命中 = 胜负方向与实际一致。开赛后自动累计。</div>`;
+    <div style="font-size:11px;color:var(--muted);margin-top:10px">模型预测 = 预测时的融合模型比分与胜率;AI 研判 = 预测时的 DeepSeek 输出;比分✓ = 预测比分与实际完全一致;胜负✓ = 胜负方向与实际一致。开赛后自动累计。</div>`;
 }
 
 function renderCard(m) {
