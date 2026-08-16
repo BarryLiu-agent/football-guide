@@ -141,6 +141,14 @@ def _build_context(pred: dict) -> str:
     lu = pred.get("lineup") or {}
     st = pred.get("standings") or {}
     msg = pred.get("messageEvidence") or []
+    f = pred.get("form") or {}
+    kelly = pred.get("kelly") or {}
+    vp = pred.get("valuePicks") or []
+    rp = pred.get("reversePicks") or []
+    sp = pred.get("spModel") or {}
+    ou_m = pred.get("ouModel") or {}
+    div = pred.get("diverge")
+    dirs = pred.get("dirs") or {}
     lines = [
         f"比赛: {home} vs {away} ({league}) 开赛 {kickoff}",
         f"统计模型比分预测: {pred.get('predictedScore', '?')}",
@@ -148,9 +156,31 @@ def _build_context(pred: dict) -> str:
         f"欧赔: 主{raw.get('home')} 平{raw.get('draw')} 客{raw.get('away')}",
         f"Elo概率: 主{elo.get('home')} 平{elo.get('draw')} 客{elo.get('away')}",
         f"xG攻防模型概率: 主{xg.get('home')} 平{xg.get('draw')} 客{xg.get('away')}",
-        f"大小球: {ou.get('line')} 大{ou.get('over')} 小{ou.get('under')}",
+        f"大小球盘口: {ou.get('line')} 大{ou.get('over')} 小{ou.get('under')}" + (f"(赔率大{ou.get('overPrice')}/小{ou.get('underPrice')})" if ou.get('overPrice') else ""),
         f"积分榜: 主{st.get('home')} 客{st.get('away')}",
+        f"近期状态(场均积分): 主{f.get('home')} 客{f.get('away')}",
     ]
+    # 欧赔变化（初盘→临场）
+    oc = pred.get("oddsChange") or {}
+    if any(v is not None for v in oc.values()):
+        lines.append(f"欧赔变化(较上次): 主{oc.get('home')} 平{oc.get('draw')} 客{oc.get('away')}")
+    # 让球盘口 + 模型价值
+    if sp.get("point") is not None:
+        lines.append(f"让球盘: 主队让{sp.get('point')}(赔率{sp.get('price')}) 模型赢盘率{sp.get('cover')} vs 盘口隐含{sp.get('implied')} edge{sp.get('edge')}")
+    # 大小球模型价值
+    if ou_m.get("edge") is not None:
+        lines.append(f"大小球模型: 模型大球{ou_m.get('over')} vs 盘口大球{ou.get('over')} edge{ou_m.get('edge')}")
+    # 凯利（模型 vs 欧赔）
+    ktxt = " ".join(f"{k}:{kelly.get(k)}" for k in ("home", "draw", "away") if kelly.get(k) is not None)
+    if ktxt:
+        lines.append(f"凯利指数: {ktxt}")
+    # 价值信号 / 反向信号 / 模型分歧
+    if vp:
+        lines.append("价值信号: " + "; ".join(f"{v.get('label')}(模型{v.get('modelProb')} vs 盘口{v.get('oddsProb')} edge{v.get('edge')})" for v in vp[:3]))
+    if rp:
+        lines.append("反向信号(模型不看好): " + "; ".join(f"{v.get('label')}(edge{v.get('edge')})" for v in rp[:3]))
+    if div is not None:
+        lines.append(f"模型分歧: {'是(Elo/DC/市场方向不一致,谨慎)' if div else '否(各模型方向一致)'} 方向={dirs}")
     # 首发名单（赛前 1 小时左右公布，最重要的一次性赛前信息）
     if lu.get("homeLineup") or lu.get("awayLineup"):
         lu_tag = "正式" if lu.get("confirmed") else "预测"
@@ -163,6 +193,15 @@ def _build_context(pred: dict) -> str:
         lines.append(f"伤停: 主队 {_inj_txt(inj.get('home', []))} 客队 {_inj_txt(inj.get('away', []))}")
     if top3:
         lines.append("模型波胆Top3: " + ", ".join(f"{c.get('score', '?')}({c.get('prob')})" for c in top3))
+    # 总进球分布 top5
+    tgd = pred.get("totalGoalsDist") or {}
+    if tgd:
+        top_tgd = sorted(tgd.items(), key=lambda x: -x[1])[:5]
+        lines.append("总进球分布: " + " ".join(f"{k}球{v}" for k, v in top_tgd))
+    # 双方进球概率
+    if pred.get("btts") is not None:
+        lines.append(f"双方进球概率: {pred.get('btts')}")
+    # 消息信号
     if msg:
         lines.append("消息信号: " + "; ".join(str(m)[:120] for m in msg[:3]))
     return "\n".join(lines)
