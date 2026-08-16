@@ -32,13 +32,29 @@ MAX_RETRY = 2                 # 失败重试次数（含首次共 MAX_RETRY+1 �
 
 PROMPT_SYSTEM = (
     "你是一名资深足球数据分析师。根据提供的统计数据、盘口和消息信号，"
-    "对比赛做最终研判。规则：\n"
+    "对比赛做全面深度研判。规则：\n"
     "1. 只基于提供的数据推理，禁止臆测伤病、停赛等未提供信息；\n"
     "2. 输出必须是合法 JSON，包含以下字段：\n"
-    '   {"pick": "home|draw|away", "score": "X-Y", '
-    '"confidence": 0到1之间数字, "reason": "一句话理由(中文)"}；\n'
+    '   {\n'
+    '     "pick": "home|draw|away",\n'
+    '     "score": "X-Y",\n'
+    '     "confidence": 0到1之间数字,\n'
+    '     "analysis": {\n'
+    '       "h2h": "胜平负分析(结合欧赔与模型概率,指出市场态度)",\n'
+    '       "ou": "大小球分析(盘口线与两队进攻防守特点)",\n'
+    '       "spread": "让球分析(盘口是否合理,有无诱盘迹象)",\n'
+    '       "btts": "双方进球概率判断",\n'
+    '       "score": "最可能比分及理由"\n'
+    '     },\n'
+    '     "keyFactors": ["关键因素1(数据依据)", "关键因素2", "关键因素3"],\n'
+    '     "risks": ["风险点1", "风险点2"],\n'
+    '     "altScore": "备选比分 X-Y",\n'
+    '     "reason": "一句话总结(中文)"\n'
+    '   }\n'
     "3. confidence 应在统计模型 confidence 上下 0.15 以内微调，不要偏离过大；\n"
-    "4. 如果认为没有明显倾向，pick 用 'none'，confidence 用 0.5。"
+    "4. 如果认为没有明显倾向，pick 用 'none'，confidence 用 0.5；\n"
+    "5. analysis 各子项要具体引用数据（赔率/概率/盘口数值），不要空泛；\n"
+    "6. keyFactors 至少 2 条、risks 至少 1 条，都要有数据支撑。\n"
 )
 
 
@@ -186,11 +202,31 @@ def ai_judge(pred: dict, timeout: int = DEFAULT_TIMEOUT) -> dict | None:
         base = (pred.get("modelProbs") or {}).get(pick, 0.5) if pick in ("home", "draw", "away") else 0.5
         lo, hi = max(0.0, base - 0.15), min(1.0, base + 0.15)
         conf = max(lo, min(hi, conf))
+        # 深度分析字段（新）：逐项信息面 + 关键因素 + 风险 + 备选比分
+        analysis = data.get("analysis") or {}
+        if not isinstance(analysis, dict):
+            analysis = {}
+        key_factors = data.get("keyFactors") or []
+        if not isinstance(key_factors, list):
+            key_factors = []
+        risks = data.get("risks") or []
+        if not isinstance(risks, list):
+            risks = []
         return {
             "pick": pick,
             "score": score,
             "confidence": round(conf, 3),
             "reason": str(data.get("reason", "")).strip(),
+            "analysis": {
+                "h2h": str(analysis.get("h2h", "")).strip(),
+                "ou": str(analysis.get("ou", "")).strip(),
+                "spread": str(analysis.get("spread", "")).strip(),
+                "btts": str(analysis.get("btts", "")).strip(),
+                "score": str(analysis.get("score", "")).strip(),
+            },
+            "keyFactors": [str(x).strip() for x in key_factors if str(x).strip()][:6],
+            "risks": [str(x).strip() for x in risks if str(x).strip()][:4],
+            "altScore": str(data.get("altScore", "")).strip(),
             "model": os.environ.get("AI_MODEL") or DEFAULT_MODEL,
             "latency": round(time.time() - t0, 1),
         }
