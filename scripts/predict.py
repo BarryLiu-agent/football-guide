@@ -465,7 +465,7 @@ class AnalysisWriter:
     """基于赔率/波胆/大小球/消息信号生成中文文字分析。"""
 
     @staticmethod
-    def generate(home, away, odds_result, msg_result, score_model, ou=None, spreads=None, standings=None, context=None):
+    def generate(home, away, odds_result, msg_result, score_model, ou=None, spreads=None, standings=None, context=None, ou_model=None):
         lines = []
         prob = odds_result.get("prob") if odds_result else None
         raw = odds_result.get("rawOdds") if odds_result else None
@@ -519,14 +519,26 @@ class AnalysisWriter:
             lines.append(f"【波胆】泊松模型推算最可能比分：{cs_str}。")
 
         # 4. 大小球（真实赔率优先，否则泊松）
+        # 注意区分两个口径：ou=市场盘口隐含概率，ou_model=模型泊松判断。
+        # 二者方向相反时以模型为准，并明示分歧，避免"市场看大/模型看小"被误解。
         if not ou:
             ou = score_model.over_under(2.5)
         if ou:
-            direction = "大球" if ou["over"] >= 0.5 else "小球"
             price_str = ""
             if ou.get("overPrice") and ou.get("underPrice"):
                 price_str = f"（赔率 大 {ou['overPrice']} / 小 {ou['underPrice']}）"
-            lines.append(f"【大小球】{ou['line']} 球盘口：大球 {ou['over']:.0%} / 小球 {ou['under']:.0%}{price_str}，倾向{direction}。")
+            mkt_dir = "大球" if ou["over"] >= 0.5 else "小球"
+            if ou_model and ou_model.get("over") is not None:
+                m_over, m_under = ou_model["over"], ou_model["under"]
+                edge = ou_model.get("edge")
+                edge_str = f"，edge {edge:+.0%}" if edge is not None else ""
+                mod_dir = "大球" if m_over >= 0.5 else "小球"
+                if mkt_dir == mod_dir:
+                    lines.append(f"【大小球】{ou['line']} 球盘口：大球 {ou['over']:.0%} / 小球 {ou['under']:.0%}{price_str}；模型大球 {m_over:.0%} / 小球 {m_under:.0%}{edge_str}，市场与模型均倾向{mkt_dir}。")
+                else:
+                    lines.append(f"【大小球】{ou['line']} 球盘口：市场 大球 {ou['over']:.0%} / 小球 {ou['under']:.0%}{price_str}；模型 大球 {m_over:.0%} / 小球 {m_under:.0%}{edge_str}。市场倾向{mkt_dir}，模型倾向{mod_dir}（以模型为准）。")
+            else:
+                lines.append(f"【大小球】{ou['line']} 球盘口：大球 {ou['over']:.0%} / 小球 {ou['under']:.0%}{price_str}，倾向{mkt_dir}。")
 
         # 5. 总进球分布 + 双方进球
         dist = score_model.total_goals_dist()
@@ -1164,7 +1176,7 @@ def main():
             pred["expectedGoals"] = {
                 "home": round(score_model.lam_h, 2), "away": round(score_model.lam_a, 2)
             }
-            pred["analysis"] = AnalysisWriter.generate(home, away, odds_result, msg_result, score_model, ou, pred["spreads"], pred["standings"], {"valuePicks": value_picks})
+            pred["analysis"] = AnalysisWriter.generate(home, away, odds_result, msg_result, score_model, ou, pred["spreads"], pred["standings"], {"valuePicks": value_picks}, ou_model)
 
             # ── 让球候选（模型 spModel vs The Odds API 让球盘）──
             if sp_model and sp_model.get("edge") is not None and sp_model["edge"] >= value_threshold:
