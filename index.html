@@ -1150,8 +1150,11 @@ function renderResults() {
     for (const f of (state.fixtures || [])) {
       if (f.status !== 'FINISHED') continue;
       const fh = normTeam(f.homeTeam?.name), fa = normTeam(f.awayTeam?.name);
-      const hitH = rh === fh || (rh.split(' ')[0] === fh.split(' ')[0] && rh.split(' ')[0].length >= 4);
-      const hitA = ra === fa || (ra.split(' ')[0] === fa.split(' ')[0] && ra.split(' ')[0].length >= 4);
+      // 匹配：完全相等 / 首词相等(≥4字符) / 一方核心词包含在另一方队名中
+      const hitH = rh === fh || (rh && fh && (rh.includes(fh) || fh.includes(rh) ||
+        (rh.split(' ')[0] === fh.split(' ')[0] && rh.split(' ')[0].length >= 4)));
+      const hitA = ra === fa || (ra && fa && (ra.includes(fa) || fa.includes(ra) ||
+        (ra.split(' ')[0] === fa.split(' ')[0] && ra.split(' ')[0].length >= 4)));
       if (hitH && hitA) return f.competition?.code === code;
     }
     return false;
