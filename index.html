@@ -235,7 +235,6 @@ table.standings .pos.releg { color: var(--red); }
 table.standings .team { font-weight: 600; }
 table.standings .team .en { color: var(--text-3); font-weight: 400; font-size: 11px; margin-left: 6px; }
 table.standings .pts { font-weight: 800; color: var(--gold); }
-table.standings .xg-pos { color: var(--text-3); }
 table.standings .up { color: var(--green); }
 table.standings .down { color: var(--red); }
 
@@ -392,19 +391,6 @@ table.standings .down { color: var(--red); }
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* ===== Scorer / xG lists ===== */
-.xg-row {
-  display: flex; align-items: center; gap: 12px;
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: 10px; padding: 10px 14px; margin-bottom: 6px;
-}
-.xg-row .rank { width: 28px; font-weight: 800; color: var(--text-3); font-variant-numeric: tabular-nums; }
-.xg-row .name { flex: 1; font-weight: 600; }
-.xg-row .val { font-weight: 800; color: var(--gold); font-variant-numeric: tabular-nums; min-width: 52px; text-align: right; }
-.xg-row .bar-wrap { flex: 1; height: 6px; background: var(--bg-2); border-radius: 3px; overflow: hidden; }
-.xg-row .bar { height: 100%; background: linear-gradient(90deg, var(--gold-dim), var(--gold)); border-radius: 3px; }
-.xg-note { font-size: 11px; color: var(--text-3); margin: 10px 0; text-align: center; }
-
 /* ===== Responsive ===== */
 @media (max-width: 640px) {
   .header-inner { padding: 10px 14px; }
@@ -555,9 +541,6 @@ const SUBS = [
   { id: 'fixtures', name: '📋 赛程' },
   { id: 'results', name: '⚽ 赛果' },
   { id: 'standings', name: '🏆 积分榜' },
-  { id: 'xg', name: '📈 xG 数据' },
-  { id: 'teamStats', name: '📊 球队数据' },
-  { id: 'scorers', name: '⚽ 射手榜' },
 ];
 // Football-Data 赛程代码 ↔ 展示代码
 const FD_CODE = { PL: 'PL', PD: 'PD', SA: 'SA', BL1: 'BL1', FL1: 'FL1', CL: 'CL' };
@@ -571,14 +554,12 @@ let state = {
   sub: 'fixtures',
   fixtures: [],       // 全部赛程
   standings: {},      // 积分榜 {code: [...]}
-  xg: {},             // xG {code: {...}}
   predictions: [],    // 预测
   predictionsMeta: null,
   history: null,      // 预测战绩
   teamNames: {},
   calibration: null,  // 模型校准报告
   oddsByLeague: {},   // 赔率 {code: {matches, history}}
-  teamStats: {},       // FBref 高级数据 {code: {shooting, goalkeeper, discipline}}
 };
 
 // ===== 工具 =====
@@ -680,8 +661,6 @@ const STATUS_MODULES = [
   { key: 'fixtures',       label: '赛程/赛果',   source: 'football-data.org', cadence: '每 30 分钟', staleAfter: 5400,  note: '' },
   { key: 'odds',           label: '欧赔',        source: 'The Odds API',      cadence: '每天 10:00', staleAfter: 90000, note: '' },
   { key: 'predictions',    label: '预测模型',    source: '云端管线',           cadence: '每 30 分钟', staleAfter: 7200,  note: '' },
-  { key: 'lineups',        label: '首发名单',    source: 'FotMob/ESPN/Sofa',  cadence: '赛前每小时', staleAfter: 0,     note: '赛前 1 小时公布;非比赛时段无数据属正常', gray: true },
-  { key: 'xgTeams',        label: 'xG 球队榜',   source: 'Understat',          cadence: '每天 20:00', staleAfter: 604800, note: '' },
   { key: 'messages',       label: '新闻消息',    source: 'ESPN/Sky RSS',      cadence: '每天',       staleAfter: 172800, note: '' },
   { key: 'standings',      label: '积分榜',      source: 'football-data.org', cadence: '每天',       staleAfter: 172800, note: '' },
 ];
@@ -833,20 +812,10 @@ async function loadAll() {
     track('calibration_ou.json', loadJson('data/calibration_ou.json').then(d => { state.calibOu = d; })),
     track('team_names.json', loadJson('data/team_names.json').then(d => { state.teamNames = d; })),
   ];
-  // xG 逐个联赛加载(可能不存在)
-  for (const lg of LEAGUES) {
-    jobs.push(loadJson(`data/xg/${lg.code}.json`).then(d => { state.xg[lg.code] = d; }).catch(() => {}));
-  }
   // 赔率快照(含初盘→临场 history)逐个联赛加载
   for (const lg of LEAGUES) {
     jobs.push(loadJson(`data/odds/${lg.code}.json`).then(d => { state.oddsByLeague[lg.code] = d; }).catch(() => {}));
   }
-  // FBref 高级数据(射门/门将/纪律)逐个联赛加载(欧冠休赛期无数据,跳过)
-  for (const lg of LEAGUES) {
-    if (lg.code === 'CL') continue;
-    jobs.push(loadJson(`data/advanced/${lg.code}.json`).then(d => { state.teamStats[lg.code] = d; }).catch(() => {}));
-  }
-  // 亚盘接口已移除(数据源 football-data.co.uk 抓取不可用)
   await Promise.all(jobs);
   updateStatusUI();  // 数据状态红点/页脚随每次 loadAll 刷新
   // 加载失败提示:file:// 直开或部署缺文件时不再白屏无解释
@@ -908,10 +877,8 @@ function render() {
   const body = state.sub === 'fixtures' ? renderFixtures() :
                state.sub === 'results' ? renderResults() :
                state.sub === 'standings' ? renderStandings() :
-               state.sub === 'xg' ? renderXg() :
-               state.sub === 'teamStats' ? renderTeamStats() :
                state.sub === 'parlay' ? renderParlay() :
-               state.sub === 'record' ? renderRecord() : renderScorers();
+               state.sub === 'record' ? renderRecord() : renderFixtures();
   el.innerHTML = header + body;
 }
 
@@ -1271,142 +1238,6 @@ function renderStandings() {
     </tr>`).join('')}</tbody>
   </table></div>
   <div class="xg-note">数据来源:Football-Data.org 官方积分榜(每日更新)</div>`;
-}
-
-// ===== xG 数据 =====
-function renderXg() {
-  const xg = state.xg[state.league];
-  const teams = Object.values(xg?.data?.teams || xg?.teamsData || {});
-  if (!teams.length) return `<div class="empty-state">
-    <div class="icon">📈</div>
-    <div>${state.league === 'CL' ? '欧冠休赛期,暂无 xG 数据' : '该联赛暂无 xG 数据'}</div>
-    <div style="font-size:11px;margin-top:8px;color:var(--text-3)">${state.league === 'CL' ? '9 月欧冠正赛开赛后自动显示' : '请在本机运行:python scripts/xg_fetch_local.py --push'}</div>
-  </div>`;
-  const rows = teams.sort((a, b) => (b.xG || 0) - (a.xG || 0));
-  // FBref 增强列(射门效率/防守)
-  const adv = state.teamStats[state.league]?.data;
-  const shootMap = {}, gkMap = {};
-  if (adv) {
-    (adv.shooting||[]).forEach(t => { shootMap[t.team] = t; });
-    (adv.goalkeeper||[]).forEach(t => { gkMap[t.team] = t; });
-  }
-  const hasAdv = Object.keys(shootMap).length > 0;
-  return `<div class="table-wrap"><table class="standings">
-    <thead><tr><th>#</th><th>球队</th><th style="text-align:right">xG</th><th style="text-align:right">xGA</th>${hasAdv ? '<th style="text-align:right">射门/90</th><th style="text-align:right">射正%</th><th style="text-align:right">进球/射</th><th style="text-align:right">扑救%</th>' : ''}<th style="text-align:right">实际积分</th><th style="text-align:right">xG积分</th><th>差值</th></tr></thead>
-    <tbody>${rows.map((t, i) => {
-      const pts = t.pts || 0, xPts = t.xPTS || t.xpts || 0, diff = pts - xPts;
-      const sh = shootMap[t.title] || shootMap[cnTeam(t.title)] || {};
-      const gk = gkMap[t.title] || gkMap[cnTeam(t.title)] || {};
-      return `<tr>
-        <td class="pos">${i + 1}</td>
-        <td class="team">${cnTeam(t.title)}<span class="en">${esc(t.title !== cnTeam(t.title) ? t.title : '')}</span></td>
-        <td style="text-align:right;font-weight:700">${(t.xG || 0).toFixed(2)}</td>
-        <td style="text-align:right">${(t.xGA || 0).toFixed(2)}</td>
-        ${hasAdv ? `<td style="text-align:right">${sh.shotsPer90 != null ? sh.shotsPer90.toFixed(2) : '-'}</td>
-        <td style="text-align:right">${sh.sotPct != null ? sh.sotPct.toFixed(1) + '%' : '-'}</td>
-        <td style="text-align:right">${sh.goalPerShot != null ? sh.goalPerShot.toFixed(3) : '-'}</td>
-        <td style="text-align:right">${gk.savePct != null ? gk.savePct.toFixed(1) + '%' : '-'}</td>` : ''}
-        <td style="text-align:right">${pts}</td>
-        <td style="text-align:right">${xPts.toFixed(1)}</td>
-        <td class="${diff > 0 ? 'up' : diff < 0 ? 'down' : ''}">${diff > 0 ? '+' : ''}${diff.toFixed(1)}</td>
-      </tr>`;
-    }).join('')}</tbody>
-  </table></div>
-  <div class="xg-note">xG积分 = 按 xG 推算的期望积分${hasAdv ? ' · 射门/扑救数据来自 FBref' : ''}(超预期球队为"运气队",低于预期球队后续大概率回暖)</div>`;
-}
-
-// ===== 球队数据(FBref 高阶) =====
-function renderTeamStats() {
-  const adv = state.teamStats[state.league]?.data;
-  if (!adv) return `<div class="empty-state">
-    <div class="icon">📊</div>
-    <div>该联赛暂无高级数据</div>
-    <div style="font-size:11px;margin-top:8px;color:var(--text-3)">请在本机运行:python scripts/fbref_advanced.py [赛季]</div>
-  </div>`;
-
-  const section = (title, rows, cols) => {
-    if (!rows.length) return '';
-    const maxVals = {};
-    cols.filter(c => c.sort).forEach(c => {
-      maxVals[c.key] = Math.max(...rows.map(r => Math.abs(r[c.key] || 0)), 1);
-    });
-    return `<div class="section-title" style="margin-top:16px">${title}</div>
-    <div class="table-wrap"><table class="standings">
-      <thead><tr><th>#</th><th>球队</th>${cols.map(c => `<th style="text-align:right">${c.label}</th>`).join('')}</tr></thead>
-      <tbody>${rows.map((r, i) => `<tr>
-        <td class="pos">${i + 1}</td>
-        <td class="team">${cnTeam(r.team)}<span class="en">${esc(cnTeam(r.team) !== r.team ? r.team : '')}</span></td>
-        ${cols.map(c => {
-          const v = r[c.key];
-          if (v == null) return '<td style="text-align:right">-</td>';
-          const pct = c.sort && maxVals[c.key] ? Math.max(3, Math.abs(v) / maxVals[c.key] * 100) : 0;
-          return `<td style="text-align:right;position:relative">
-            ${c.sort ? `<div style="position:absolute;left:0;bottom:0;height:2px;width:${pct}%;background:var(--accent);opacity:0.3;border-radius:1px"></div>` : ''}
-            ${c.fmt ? c.fmt(v) : (Number.isInteger(v) ? v : v.toFixed(1))}
-          </td>`;
-        }).join('')}
-      </tr>`).join('')}</tbody>
-    </table></div>`;
-  };
-
-  // 射门效率
-  const shoot = [...(adv.shooting || [])].sort((a, b) => (b.goalPerShot || 0) - (a.goalPerShot || 0));
-  const s1 = section('🎯 射门效率', shoot, [
-    { key: 'goals', label: '进球', sort: true, fmt: v => v },
-    { key: 'shots', label: '射门', sort: true, fmt: v => v },
-    { key: 'shotsOnTarget', label: '射正', sort: true, fmt: v => v },
-    { key: 'sotPct', label: '射正%', sort: true, fmt: v => v.toFixed(1) + '%' },
-    { key: 'goalPerShot', label: '进球/射门', sort: true, fmt: v => v.toFixed(3) },
-    { key: 'goalPerSot', label: '进球/射正', sort: true, fmt: v => v.toFixed(2) },
-  ]);
-
-  // 门将
-  const gk = [...(adv.goalkeeper || [])].sort((a, b) => (b.savePct || 0) - (a.savePct || 0));
-  const s2 = section('🧤 门将防守', gk, [
-    { key: 'goalsAgainst', label: '失球', sort: true, fmt: v => v },
-    { key: 'gaPer90', label: '失球/90', sort: true, fmt: v => v.toFixed(2) },
-    { key: 'saves', label: '扑救', sort: true, fmt: v => v },
-    { key: 'savePct', label: '扑救%', sort: true, fmt: v => v.toFixed(1) + '%' },
-    { key: 'cleanSheets', label: '零封', sort: true, fmt: v => v },
-    { key: 'csPct', label: '零封%', sort: true, fmt: v => v.toFixed(1) + '%' },
-  ]);
-
-  // 纪律
-  const disc = [...(adv.discipline || [])].sort((a, b) => (b.yellowCards || 0) - (a.yellowCards || 0));
-  const s3 = section('🟨 纪律与对抗', disc, [
-    { key: 'yellowCards', label: '黄牌', sort: true, fmt: v => v },
-    { key: 'redCards', label: '红牌', sort: true, fmt: v => v },
-    { key: 'fouls', label: '犯规', sort: true, fmt: v => v },
-    { key: 'fouled', label: '被犯规', sort: true, fmt: v => v },
-    { key: 'interceptions', label: '拦截', sort: true, fmt: v => v },
-    { key: 'tacklesWon', label: '抢断', sort: true, fmt: v => v },
-  ]);
-
-  const season = state.teamStats[state.league]?.season || '';
-  return `<div style="margin-top:8px">${s1}${s2}${s3}
-    <div class="xg-note" style="margin-top:8px">数据来源:FBref${season ? ' · 赛季 ' + season : ''} · 运行 python scripts/fbref_advanced.py [赛季] 更新</div></div>`;
-}
-
-// ===== 射手榜 =====
-function renderScorers() {
-  const xg = state.xg[state.league];
-  const players = xg?.data?.players || xg?.playersData || null;
-  if (!players) return `<div class="empty-state">
-    <div class="icon">⚽</div>
-    <div>暂无射手数据</div>
-    <div style="font-size:11px;margin-top:8px;color:var(--text-3)">请在本机运行:python scripts/xg_fetch_local.py --push</div>
-  </div>`;
-  const sorted = players.sort((a, b) => (b.goals || 0) - (a.goals || 0)).slice(0, 20);
-  const max = sorted[0]?.goals || 1;
-  return sorted.map((p, i) => `<div class="xg-row">
-    <div class="rank">${i + 1}</div>
-    <div class="name">${esc(p.player_name)} <span style="color:var(--text-3);font-size:11px">${esc(p.team_title || '')}</span></div>
-    <div style="flex:1;display:flex;align-items:center;gap:8px">
-      <div class="bar-wrap"><div class="bar" style="width:${Math.max(3, (p.goals || 0) / max * 100)}%"></div></div>
-    </div>
-    <div class="val">${p.goals || 0} 球</div>
-    <div style="min-width:52px;text-align:right;font-size:11px;color:var(--text-2)">xG ${(p.xG || 0).toFixed(2)}</div>
-  </div>`).join('') || `<div class="empty-state">暂无射手数据</div>`;
 }
 
 // ===== 预测战绩 =====

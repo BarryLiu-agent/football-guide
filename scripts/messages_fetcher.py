@@ -52,7 +52,7 @@ class MessageSource:
 # ── RSS 新闻源（默认）────────────────────────────────────
 
 class RssNewsSource(MessageSource):
-    """从公开 RSS 抓取新闻。"""
+    """从公开 RSS 抓取新闻（含正文全文增强，失败时回退摘要）。"""
 
     def fetch(self) -> list:
         url = self.config.get("url", "")
@@ -67,19 +67,65 @@ class RssNewsSource(MessageSource):
 
         items = self._parse(r.text)
         messages = []
-        for it in items:
+        # 全文抓取只针对最新 N 条（RSS 按时间排序；旧消息伤停信息已过期）
+        full_limit = int(self.config.get("fullTextLimit", 15))
+        for idx, it in enumerate(items):
+            meta = {
+                "link": it.get("link", ""),
+                "lang": self.config.get("lang", "en"),
+                "summary": it.get("summary", "")[:500],
+            }
+            # 正文全文抓取（供 AI 提取伤停/状态细节）；失败不影响主流程
+            if meta["link"] and idx < full_limit:
+                meta["content"] = self._fetch_full_text(meta["link"])
             messages.append({
                 "source": self.config.get("id", "rss"),
                 "type": "news",
                 "text": it.get("title", ""),
                 "timestamp": it.get("published", "") or datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-                "metadata": {
-                    "link": it.get("link", ""),
-                    "lang": self.config.get("lang", "en"),
-                    "summary": it.get("summary", "")[:500],
-                },
+                "metadata": meta,
             })
         return messages
+
+    def _fetch_full_text(self, link: str, max_chars: int = 1500) -> str:
+        """抓取文章正文纯文本（<p>/<li> 为主），失败或过短返回空串。"""
+        try:
+            r = requests.get(link, headers=HEADERS, timeout=8)
+            r.raise_for_status()
+            if "text/html" not in r.headers.get("Content-Type", "") and "html" not in r.text[:200].lower():
+                return ""
+        except Exception:
+            return ""
+
+        from html.parser import HTMLParser
+
+        class _TextExtractor(HTMLParser):
+            def __init__(self):
+                super().__init__()
+                self.parts = []
+                self.skip = 0
+
+            def handle_starttag(self, tag, attrs):
+                if tag in ("script", "style", "noscript", "nav", "header", "footer", "aside"):
+                    self.skip += 1
+
+            def handle_endtag(self, tag):
+                if tag in ("script", "style", "noscript", "nav", "header", "footer", "aside") and self.skip:
+                    self.skip -= 1
+                if tag in ("p", "li", "h1", "h2", "h3", "br", "div"):
+                    self.parts.append("\n")
+
+            def handle_data(self, data):
+                if not self.skip:
+                    self.parts.append(data)
+
+        try:
+            p = _TextExtractor()
+            p.feed(r.text)
+            text = " ".join(" ".join(p.parts).split())
+            return text[:max_chars]
+        except Exception:
+            return ""
 
     def _parse(self, xml_text: str) -> list:
         """解析 RSS/Atom XML。"""
