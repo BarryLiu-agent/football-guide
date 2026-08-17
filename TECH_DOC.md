@@ -64,7 +64,6 @@ FOOTBALL/
 ├── scripts/                   # 所有抓取/预测脚本
 │   ├── fetch_data.py          # football-data.org 赛程/积分榜
 │   ├── odds_fetcher.py        # The Odds API 多Key轮换赔率
-│   ├── asian_fetch.py         # football-data.co.uk 亚盘历史
 │   ├── messages_fetcher.py    # ESPN/Sky RSS 新闻消息
 │   ├── lineup_fetcher.py      # 赛前首发多源回退
 │   ├── jingcai_fetch_local.py # 竞彩 SP（本地）
@@ -92,7 +91,6 @@ FOOTBALL/
 │   ├── predictions.json       # 预测输出（58 场/每 30 分钟）
 │   ├── odds/{PL,PD,SA,BL1,FL1,CL}.json  # 欧赔+history走势
 │   ├── jingcai.json           # 竞彩 SP
-│   ├── asian/{PL..FL1}.json   # 亚盘历史
 │   ├── xg/{PL..FL1}.json      # xG 球队榜
 │   ├── advanced/{PL..FL1}.json # FBref 高级数据
 │   ├── season_2025.json       # 上赛季 485 场赛果+xG（模型训练）

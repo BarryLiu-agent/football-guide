@@ -43,10 +43,6 @@ for p in preds:
     if not p.get("status"):
         issues.append(f"[{l}] {h}vs{a}: no status")
 
-    asian = p.get("asian", {})
-    if not asian or asian.get("point") is None:
-        issues.append(f"[{l}] {h}vs{a}: no asian")
-
     ou = p.get("overUnder", {})
     if not ou or ou.get("line") is None:
         issues.append(f"[{l}] {h}vs{a}: no overUnder")
