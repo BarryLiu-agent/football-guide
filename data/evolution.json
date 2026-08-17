@@ -1,1 +1,1 @@
-{"generatedAt":"2026-08-17T01:03:41Z","modelVersion":1,"settledSamples":4,"calibration":[{"bucket":"low","label":"<50%","n":2,"hitRate":0.0,"avgConf":0.469,"bias":-0.469,"verdict":"偏乐观"}],"overallBias":null,"highConfDiscount":1.0,"ouRate":0.5,"spRate":0.5,"recommendations":["样本不足 20 场，暂不调参，继续积累"],"applied":false}
+{"generatedAt":"2026-08-17T01:42:25Z","modelVersion":1,"settledSamples":4,"calibration":[],"overallBias":null,"highConfDiscount":1.0,"ouRate":0,"spRate":0,"recommendations":["样本不足 20 场，暂不调参，继续积累"],"applied":false}
