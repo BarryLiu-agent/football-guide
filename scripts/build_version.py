@@ -29,7 +29,7 @@ DATA_DIR = ROOT / "data"
 
 # 与 index.html loadAll() 一致的数据文件清单
 NAMED = [
-    "fixtures.json", "predictions.json", "standings.json", "jingcai.json",
+    "fixtures.json", "predictions.json", "standings.json",
     "prediction_history.json", "calibration.json",
     "calibration_ou.json", "team_names.json",
 ]

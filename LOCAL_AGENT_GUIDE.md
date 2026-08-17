@@ -23,9 +23,8 @@
 
 | 任务名 | 频率 | 命令 | 产出 |
 |---|---|---|---|
-| FootballLocalJC | 每小时 | `python scripts/jingcai_fetch_local.py --push` | `data/jingcai.json`（竞彩 SP） |
-| FootballLocalXG | 每天 9:00 | `python scripts/xg_fetch_local.py --push` | `data/xg/{联赛}.json`（球队 xG 榜） |
-| FootballLocalFBref | 每天 10:30 | `python scripts/fbref_advanced.py` + git push | `data/advanced/{联赛}.json` |
+| FootballLocalXG | 每天 9:00 | `python scripts/xg_fetch_local.py --push` | `data/xg/{联赛}.json`（球队 xG 榜,已停用） |
+| FootballLocalFBref | 每天 10:30 | `python scripts/fbref_advanced.py` + git push | `data/advanced/{联赛}.json`（已停用） |
 
 **共同特征**：跑完自动 `git push` 到 GitHub，网页随之更新。
 
@@ -156,7 +155,7 @@ print(f'{mis} 场不一致 (应为0)')
 ```text
 项目: C:/Users/QZ/Desktop/FOOTBALL（足球数据面板）
 先读: TECH_DOC.md（架构）+ LOCAL_AGENT_GUIDE.md（本文件）
-当前状态: 竞彩/球队xG/FBref 三个本地任务正常；单场xG已停用
+当前状态: 全部数据源已上云(GitHub Actions)，本地无计划任务；竞彩功能已移除
 数据源: 云端 Actions 全自动 + 本地 3 任务
 密钥: .env（勿提交）
 验证: git status 干净 + status.json 全 ok + 网页可访问

@@ -788,33 +788,10 @@ def _load_lineups() -> dict:
     return lineups_by_match
 
 
-# 竞彩联赛中文名（用于 jingcai ↔ odds 联赛代码映射）
-JINGCAI_LEAGUE_CN = {
-    "PL": ("英格兰超级联赛", "英超"),
-    "PD": ("西班牙甲级联赛", "西甲"),
-    "SA": ("意大利甲级联赛", "意甲"),
-    "BL1": ("德国甲级联赛", "德甲"),
-    "FL1": ("法国甲级联赛", "法甲"),
-    "CL": ("欧洲冠军联赛", "欧冠"),
-}
-
-
 def load_jingcai() -> dict:
-    """加载 data/jingcai.json → 按 (主队归一化, 客队归一化) 索引（同队名可多联赛，故为列表）。
-    供波胆价值(模型概率 vs 竞彩 crsOdds 隐含)使用。返回 dict[(h_norm, a_norm)] -> [match, ...]。"""
-    jc_by_key = {}
-    path = DATA_DIR / "jingcai.json"
-    if not path.exists():
-        return jc_by_key
-    try:
-        with open(path, encoding="utf-8") as f:
-            data = json.load(f)
-        for m in data.get("matches", []):
-            key = (norm_team(m.get("homeTeam", "")), norm_team(m.get("awayTeam", "")))
-            jc_by_key.setdefault(key, []).append(m)
-    except Exception as e:
-        print(f"  ⚠ 竞彩数据解析失败: {e}")
-    return jc_by_key
+    """已弃用：竞彩功能移除。保留空实现避免引用报错。"""
+    return {}
+
 
 
 def main():
@@ -851,9 +828,6 @@ def main():
 
     # 赛前首发/伤停（lineups.json，来自每小时 FotMob/ESPN/Sofascore 抓取）
     lineups_by_match = _load_lineups()
-
-    # 竞彩（波胆 crsOdds 价值对账用）
-    jingcai_by_key = load_jingcai()
 
     predictor = ScorePredictor(rules)
     predictions = []
@@ -1192,35 +1166,9 @@ def main():
                             "source": "value:spread", "edge": sp_model["edge"],
                         })
 
-            # ── 波胆候选（模型 DC 波胆概率 vs 竞彩 crsOdds 隐含）──
-            jc_matches = jingcai_by_key.get((norm_team(home), norm_team(away)), [])
-            cn_leagues = JINGCAI_LEAGUE_CN.get(league, ())
-            jc_match = next((jm for jm in jc_matches
-                             if any(seg in (jm.get("leagueName") or "") for seg in cn_leagues)), None)
-            for cs in dc_all:
-                price = (jc_match or {}).get("crsOdds", {}).get(cs["score"]) if jc_match else None
-                try:
-                    price = float(price) if price not in (None, "") else None
-                except (ValueError, TypeError):
-                    price = None
-                if price and price > 1:
-                    p = cs.get("prob") or 0
-                    if p <= 0:
-                        continue
-                    implied = 1 / price
-                    edge_cs = p - implied
-                    if edge_cs >= value_threshold:
-                        kl_cs = (price * p - 1) / (price - 1)
-                        stake_cs = round(max(0.0, min(0.05, kl_cs)), 4)
-                        if stake_cs > 0:
-                            bet_candidates.append({
-                                "market": "score", "side": cs["score"], "score": cs["score"],
-                                "odds": round(price, 2), "stake": stake_cs,
-                                "source": "value:crs", "edge": round(edge_cs, 3),
-                            })
-                            break  # 只用模型波胆 Top 里第一个有值的
+            # ── 波胆候选（模型 DC 波胆概率，竞彩价值对比已随竞彩功能移除）──
 
-            # ── 跨盘口类型价值投注列表：命中胜负/让球/波胆各自有值即各自成注 ──
+            # ── 跨盘口类型价值投注列表：命中胜负/让球各自有值即各自成注 ──
             # 每个 market 独立成 betRec(正期望,注额=凯利上限5%),供按盘口类型分别结算。
             # pred["betRec"] 保留"最优单注"供旧字段兼容; 结算/展示用 pred["betRecs"]。
             pred["betRecs"] = bet_candidates

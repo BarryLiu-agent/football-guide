@@ -48,9 +48,8 @@
 | ESPN + Sky RSS | 新闻/伤病/转会消息 | 每天 | GitHub Actions | 免费 |
 | FotMob→ESPN→Sofascore | 赛前首发名单+伤停 | 赛前每小时 | GitHub Actions | 免费 |
 | DeepSeek | AI 研判（吃模型输出+首发生成建议） | 每 4 小时 | GitHub Actions | AI_API_KEY |
-| 竞彩官方 sporttery | 竞彩 SP（胜平负/让球/总进球/半全场/波胆） | 每小时 | **本地电脑** | 免费(仅国内IP) |
-| Understat | 球队赛季 xG 榜 + 射手榜 | 每天 9:00 | **本地电脑** | 免费 |
-| FBref | 高级数据（射门/门将/纪律） | 每天 10:30 | **本地电脑** | 免费 |
+| Understat | 球队赛季 xG 榜 + 射手榜 | 每天 | GitHub Actions | 免费(Playwright) |
+| FBref | 高级数据（射门/门将/纪律） | 每天 | GitHub Actions | 免费 |
 
 **配额说明**：The Odds API 每 Key 500 次/月，4 个 Key 轮换；一次请求=1 次配额（与 markets 数量无关）；每月 1 日重置。
 
@@ -212,9 +211,8 @@ lineup_fetcher(多源回退) → 写回 lineups.json[skip ci]（rebase+重试）
 
 | 任务 | 频率 | 脚本 | 输出 | 备注 |
 |---|---|---|---|---|
-| FootballLocalJC | 每小时 | `local_sync_jc.bat` → jingcai_fetch_local.py --push | jingcai.json | 接口仅限国内IP |
-| FootballLocalXG | 每天 9:00 | `local_sync_xg.bat` → xg_fetch_local.py --push | xg/{联赛}.json | 赛季榜 |
-| FootballLocalFBref | 每天 10:30 | `local_sync_fbref.bat` → fbref_advanced.py | advanced/{联赛}.json | 空数据保护 |
+| FootballLocalXG | 每天 9:00 | `local_sync_xg.bat` → xg_fetch_local.py --push | xg/{联赛}.json | 赛季榜(已停用,上云) |
+| FootballLocalFBref | 每天 10:30 | `local_sync_fbref.bat` → fbref_advanced.py | advanced/{联赛}.json | 空数据保护(已停用,上云) |
 
 **依赖**：Python 3.11 + requests + beautifulsoup4 + lxml + playwright（xg）+ soccerdata（fbref）
 

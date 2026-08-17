@@ -28,6 +28,16 @@ jobs:
       - name: Install dependencies
         run: pip install requests beautifulsoup4 lxml
 
+      - name: Fetch FBref advanced stats (球队射门/门将/纪律)
+        run: python scripts/fbref_advanced.py
+
+      - name: Fetch team xG table (球队赛季xG榜, Understat)
+        continue-on-error: true  # Understat 反爬可能失败，不影响其他步骤
+        run: |
+          pip install playwright -q
+          python -m playwright install chromium --with-deps -q
+          python scripts/xg_fetch_local.py
+
       - name: Fetch fixtures
         env:
           FOOTBALL_API_KEY: ${{ secrets.FOOTBALL_API_KEY }}
