@@ -201,9 +201,18 @@ def _build_context(pred: dict) -> str:
     # 双方进球概率
     if pred.get("btts") is not None:
         lines.append(f"双方进球概率: {pred.get('btts')}")
-    # 消息信号
+    # 消息信号（含新闻摘要全文，供 AI 提取伤停/状态信息）
     if msg:
-        lines.append("消息信号: " + "; ".join(str(m)[:120] for m in msg[:3]))
+        msg_txt = []
+        for m in msg[:5]:
+            if isinstance(m, dict):
+                t = m.get("text", "")[:100]
+                s = m.get("summary", "")
+                c = m.get("content", "")
+                msg_txt.append(t + ((" | " + s[:150]) if s else "") + ((" | " + c[:200]) if c else ""))
+            else:
+                msg_txt.append(str(m)[:120])
+        lines.append("相关新闻: " + " || ".join(msg_txt))
     return "\n".join(lines)
 
 

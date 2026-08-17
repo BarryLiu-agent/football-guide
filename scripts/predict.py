@@ -223,8 +223,14 @@ class MessageAnalyzer(Analyzer):
                 scores[team] += score
                 mentions[team] += 1
             if matched:
+                # 附上摘要/全文（含伤停/状态细节），供 AI 研判参考；标题限 120 字符
+                meta = msg.get("metadata") or {}
+                summary = (meta.get("summary") or "").strip()[:300]
+                content = (meta.get("content") or "").strip()[:400]
                 evidence.append({
                     "text": msg.get("text", "")[:120],
+                    "summary": summary,
+                    "content": content,
                     "teams": list(involved),
                     "keywords": matched[:5],
                     "score": round(score, 3),

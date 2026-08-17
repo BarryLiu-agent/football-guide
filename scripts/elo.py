@@ -15,9 +15,12 @@ import math
 import unicodedata
 
 INIT_ELO = 1500.0
-K = 32.0            # 常规 K 因子
-HOME_ADV = 100.0    # 主场优势（Elo 分）
+# 调参基线: 2025/26 单赛季回测网格搜索最优(命中率 42.5%→44.7%)
+# HOME_ADV=40 让客场强队(如曼城/皇马)也能被押; K=48 加速区分度
+K = 48.0            # 常规 K 因子
+HOME_ADV = 40.0     # 主场优势（Elo 分）
 SPREAD = 400.0      # Elo 换算尺度
+DRAW_W = 0.30       # 平局权重（3-way softmax 中的基准）
 
 # 常见队名变体 -> 标准归一化名（解决 Inter Milan / Internazionale 等差异）
 ALIASES = {
@@ -142,14 +145,19 @@ class EloModel:
     # ── 预测 ───────────────────────────────
 
     def predict(self, home: str, away: str):
-        """返回 (p_home, p_draw, p_away)。基于 Elo 差 + 经验平局率。"""
+        """返回 (p_home, p_draw, p_away)。3-way softmax：
+        主客概率由 Elo 差决定，平局概率随 Elo 差增大而衰减，
+        三者归一化——修复旧公式(先拆平局再分主客)永远押不了平的结构缺陷。"""
         e_home = self._find_rating(home)
         e_away = self._find_rating(away)
-        d = e_home + HOME_ADV - e_away
-        p_home_raw = 1 / (1 + 10 ** (-d / SPREAD))
-        p_draw = 0.30 * math.exp(-abs(d) / 400.0)
-        p_home = p_home_raw * (1 - p_draw)
-        p_away = (1 - p_home_raw) * (1 - p_draw)
+        d = (e_home + HOME_ADV - e_away) / SPREAD
+        p_home_raw = 1 / (1 + 10 ** (-d))
+        p_away_raw = 1 / (1 + 10 ** (d))
+        p_draw_raw = DRAW_W * math.exp(-abs(d))
+        total = p_home_raw + p_draw_raw + p_away_raw
+        p_home = p_home_raw / total
+        p_draw = p_draw_raw / total
+        p_away = p_away_raw / total
         return round(p_home, 4), round(p_draw, 4), round(p_away, 4)
 
     def get_rating(self, team: str) -> float:

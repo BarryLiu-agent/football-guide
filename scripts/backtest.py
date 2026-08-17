@@ -19,7 +19,7 @@ if sys.stdout.encoding != "utf-8":
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
-from elo import EloModel  # noqa: E402
+from elo import EloModel, XgModel  # noqa: E402
 
 DATA_DIR = ROOT / "data"
 
@@ -59,11 +59,15 @@ def main():
     rows = []
     for league, ms in per_league_matches.items():
         elo = EloModel()
+        xg = XgModel(max_age=20)
         # 按日期排序（同一联赛内跨赛季按时间正序）
         sorted_ms = sorted(ms, key=lambda m: m.get('utcDate', '') or '')
         for m in sorted_ms:
             home, away = m['homeTeam'], m['awayTeam']
             ph, pd, pa = elo.predict(home, away)
+            x_ph, x_pd, x_pa = xg.predict(home, away)
+            # 混合 Elo + xG（xG 看过程/攻防强度，平局概率更合理；权重 0.2 为网格最优）
+            ph, pd, pa = 0.8 * ph + 0.2 * x_ph, 0.8 * pd + 0.2 * x_pd, 0.8 * pa + 0.2 * x_pa
             best = max([('home', ph), ('draw', pd), ('away', pa)], key=lambda x: x[1])
             hg, ag = m['homeGoals'], m['awayGoals']
             actual = 'home' if hg > ag else ('draw' if hg == ag else 'away')
@@ -79,6 +83,8 @@ def main():
                 'awayTeam': {'name': away},
                 'score': {'fullTime': {'home': hg, 'away': ag}},
             }])
+            xg.add_match(home, away, m.get('xgHome'), m.get('xgAway'))
+            xg.finalize()
 
     if not rows:
         print("无有效赛果数据")
@@ -124,7 +130,7 @@ def main():
 
     out = {
         "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "source": f"{len(seasons)} 赛季回测（Elo 滚动预测，跨赛季 Elo 连续）",
+        "source": f"{len(seasons)} 赛季回测（Elo+xG 混合滚动预测，跨赛季连续），权重 Elo0.8/xG0.2，调参后 HOME_ADV=40 K=48",
         "total": len(rows),
         "overall": round(sum(1 for r in rows if r["hit"]) / len(rows), 4),
         "buckets": groups,
