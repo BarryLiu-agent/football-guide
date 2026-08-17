@@ -26,9 +26,10 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests beautifulsoup4 lxml
+        run: pip install requests beautifulsoup4 lxml soccerdata
 
       - name: Fetch FBref advanced stats (球队射门/门将/纪律)
+        continue-on-error: true  # FBref 反爬/空赛季可能失败，不影响其他步骤
         run: python scripts/fbref_advanced.py
 
       - name: Fetch team xG table (球队赛季xG榜, Understat)
