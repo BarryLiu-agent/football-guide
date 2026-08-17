@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="五大联赛+欧冠实时比分、欧赔/让球/竞彩 SP 赔率、模型预测与 AI 研判 - 个人数据分析工具站">
+<meta name="description" content="五大联赛+欧冠实时比分、欧赔/亚盘、模型预测与 AI 研判 - 个人数据分析工具站">
 <meta property="og:title" content="足球数据面板">
 <meta property="og:description" content="五大联赛+欧冠赔率与模型预测数据分析">
 <meta property="og:type" content="website">
@@ -167,10 +167,6 @@ img { display: block; }
 }
 .mc-pred .ps { font-size: 15px; font-weight: 800; color: var(--green); }
 .mc-pred .pc { font-size: 10px; color: var(--text-2); margin-top: 1px; }
-.mc-badge-jc {
-  font-size: 10px; padding: 3px 6px; border-radius: 6px;
-  background: var(--gold-dim); color: #fff; font-weight: 700;
-}
 .mc-alert {
   font-size: 10px; padding: 3px 6px; border-radius: 6px;
   background: var(--red-bg); color: var(--red); font-weight: 700;
@@ -578,7 +574,6 @@ let state = {
   xg: {},             // xG {code: {...}}
   predictions: [],    // 预测
   predictionsMeta: null,
-  jingcai: [],        // 竞彩
   history: null,      // 预测战绩
   teamNames: {},
   calibration: null,  // 模型校准报告
@@ -605,7 +600,7 @@ function normTeam(s) {
     .normalize('NFKD').replace(/[\u0300-\u036f]/g, '')  // ü->u, é->e
     .replace(/\b(fc|afc|cf|sc|ac)\b/g, '')
     .replace(/[-\u2013\u2014]/g, ' ')   // 连字符变空格(saint-germain -> saint germain)
-    .replace(/[^\u4e00-\u9fa5a-z0-9 ]/g, '')  // 保留中文(竞彩队名是中文),其余非字母数字清掉
+    .replace(/[^\u4e00-\u9fa5a-z0-9 ]/g, '')  // 保留中文(队名可能含中文),其余非字母数字清掉
     .trim().replace(/\s+/g, ' ');
   return TEAM_ALIAS[n] || n;
 }
@@ -666,35 +661,6 @@ function findPrediction(home, away, league) {
   }
   return cands[0];
 }
-function findJingcai(home, away, league) {
-  const h = normTeam(home), a = normTeam(away);
-  if (!h || !a) return null;
-  // 中文名匹配通道:英文名 → teamNames 中文 → 与竞彩中文队名比对
-  // (竞彩接口返回中文队名如"阿拉维斯",预测数据是英文"Alaves",两边要靠中文桥接)
-  const cn = (en) => {
-    if (!en) return '';
-    const t = state.teamNames[en] || state.teamNames[en.replace(/\s+(FC|CF|SC|AFC|UD|CD)$/i, '')];
-    return t || '';
-  };
-  const hCn = cn(home), aCn = cn(away);
-  // 中译名归一:常见异译统一(竞彩"赫塔费" vs 映射"赫塔菲"等)
-  const normCn = (s) => (s || '').replace('赫塔费', '赫塔菲').replace('高云地利', '考文垂');
-  return (state.jingcai || []).find(m => {
-    const mh = normCn(normTeam(m.homeTeam)), ma = normCn(normTeam(m.awayTeam));
-    if (!mh && !ma) return false;
-    const lgOk = !league || !m.leagueName || LEAGUE_CN[league] === m.leagueName ||
-      (COMPETITIONS[league] && (m.leagueName || '').includes(COMPETITIONS[league]));
-    if (lgOk) {
-      // 英文直接匹配
-      if (mh && ma && ((mh === h && ma === a) ||
-          (mh.split(' ')[0] === h.split(' ')[0] && ma.split(' ')[0] === a.split(' ')[0]))) return true;
-      // 中文桥接匹配:竞彩中文队名 vs 预测英文名翻译的中文
-      if (hCn && aCn && ((mh && mh === normCn(hCn) && ma && ma === normCn(aCn)) ||
-          (mh && mh.split(' ')[0] === normCn(hCn).split(' ')[0] && ma && ma.split(' ')[0] === normCn(aCn).split(' ')[0]))) return true;
-    }
-    return false;
-  });
-}
 
 // ===== 数据加载 =====
 // 缓存策略：数据文件带 ?v=<version>（版本号 = CI 对全部数据文件的 MD5 汇总），
@@ -714,7 +680,6 @@ const STATUS_MODULES = [
   { key: 'fixtures',       label: '赛程/赛果',   source: 'football-data.org', cadence: '每 30 分钟', staleAfter: 5400,  note: '' },
   { key: 'odds',           label: '欧赔',        source: 'The Odds API',      cadence: '每天 10:00', staleAfter: 90000, note: '' },
   { key: 'predictions',    label: '预测模型',    source: '本地管线',           cadence: '每 30 分钟', staleAfter: 7200,  note: '' },
-  { key: 'jingcai',        label: '竞彩 SP',     source: '竞彩官方',           cadence: '每小时',     staleAfter: 10800, note: '本地脚本运行才有;电脑关机/脚本停 = 显示停更', local: true },
   { key: 'lineups',        label: '首发名单',    source: 'FotMob/ESPN/Sofa',  cadence: '赛前每小时', staleAfter: 0,     note: '赛前 1 小时公布;非比赛时段无数据属正常', gray: true },
   { key: 'xgTeams',        label: 'xG 球队榜',   source: 'Understat',          cadence: '不定期(本地)', staleAfter: 604800, note: '本地脚本抓取', local: true },
   { key: 'messages',       label: '新闻消息',    source: 'ESPN/Sky RSS',      cadence: '每天',       staleAfter: 172800, note: '' },
@@ -822,7 +787,7 @@ function renderStatus() {
   const dot = $('statusDot');
   if (dot) dot.style.display = (bad > 0) ? 'block' : 'none';
   // 页脚简版:取最关键的 4 个
-  const pick = ['fixtures', 'odds', 'predictions', 'jingcai'];
+  const pick = ['fixtures', 'odds', 'predictions'];
   const footTxt = pick.map(k => {
     const mod = STATUS_MODULES.find(x => x.key === k);
     const m = byKey[k];
@@ -863,7 +828,6 @@ async function loadAll() {
     track('fixtures.json', loadJson('data/fixtures.json').then(d => { state.fixtures = d.matches || []; })),
     track('predictions.json', loadJson('data/predictions.json').then(d => { state.predictions = d.predictions || []; state.predictionsMeta = d; })),
     track('standings.json', loadJson('data/standings.json').then(d => { state.standings = d.standings || {}; })),
-    track('jingcai.json', loadJson('data/jingcai.json').then(d => { state.jingcai = d.matches || []; state.jingcaiGen = d.generatedAt || ''; })),
     track('prediction_history.json', loadJson('data/prediction_history.json').then(d => { state.history = d; })),
     track('calibration.json', loadJson('data/calibration.json').then(d => { state.calibration = d; })),
     track('calibration_ou.json', loadJson('data/calibration_ou.json').then(d => { state.calibOu = d; })),
@@ -895,17 +859,6 @@ async function loadAll() {
   const d = state.history?.stats;
   const gen = state.predictionsMeta?.generatedAt;
   if (gen) $('lastUpdated').textContent = '数据 ' + gen.slice(5, 16).replace('T', ' ');
-  // 竞彩新鲜度提示(本地每小时推送;>2 小时未更新 = 电脑未运行/脚本停了)
-  if (state.jingcaiGen) {
-    const jcAge = Date.now() - new Date(state.jingcaiGen).getTime();
-    if (jcAge > 2 * 3600000) {
-      const h = Math.floor(jcAge / 3600000);
-      const el = $('pageContent');
-      if (el && !el.querySelector('.jc-stale')) {
-        el.insertAdjacentHTML('afterbegin', '<div class="stale-banner jc-stale" style="background:rgba(59,130,246,.12);border-color:rgba(59,130,246,.35)">⚠️ 竞彩数据 ' + h + ' 小时前更新(本地电脑计划任务未运行,电脑关机?)。其余数据由云端自动更新不受影响。</div>');
-      }
-    }
-  }
   // 数据过期提示(>12 小时)
   if (gen) {
     const age = Date.now() - new Date(gen).getTime();
@@ -1205,7 +1158,6 @@ function renderCard(m) {
   const homeName = m.homeTeam?.name || m.homeTeam?.shortName || '?';
   const awayName = m.awayTeam?.name || m.awayTeam?.shortName || '?';
   const pred = m.pred || findPrediction(homeName, awayName, m.competition?.code);
-  const jc = findJingcai(homeName, awayName, m.competition?.code);
   const score = getScore(m);
   // 异动标红:赔率涨跌 >= 0.2
   let hot = '';
@@ -1284,7 +1236,6 @@ function renderCard(m) {
     </div>
     <div class="mc-score ${score.cls}"><div class="s">${score.text === 'VS' ? 'VS' : score.text}</div>${score.statusText && score.statusText !== 'VS' ? `<div class="st">${score.statusText}</div>` : ''}</div>
     ${pred && pred.signalLevel !== 'none' ? `<div class="mc-pred"><div class="ps">${pred.predictedScore}</div><div class="pc">预测 ${Math.round((pred.confidence||0)*100)}%</div></div>` : ''}
-    ${jc ? `<div class="mc-badge-jc">竞彩</div>` : ''}
     ${(() => { const vp = (pred && pred.valuePicks && pred.valuePicks.length) ? pred.valuePicks[0] : null; return vp ? `<span class="val-tag" title="${vp.label}: 模型${Math.round(vp.modelProb*100)}% vs 盘口${Math.round(vp.oddsProb*100)}%">💰${vp.label} ${vp.edge > 0 ? '+' : ''}${Math.round(vp.edge*100)}%</span>` : ''; })()}
     ${pred && pred.signalLevel === 'gold' && pred.valuePicks?.length ? `<span class="val-tag gold">💰 ${pred.valuePicks.map(v => v.label).join('/')}</span>` : (pred && pred.signalLevel === 'watch' ? `<span class="val-tag watch">👀 关注</span>` : '')}
     ${hot || diff || value || divTag || revTag || injTag || riskTags ? `<div style="display:flex;gap:4px;margin-top:6px;flex-wrap:wrap">${hot}${value}${diff}${divTag}${revTag}${injTag}${riskTags}</div>` : ''}
@@ -1590,18 +1541,16 @@ function renderRecord() {
 }
 
 // ===== 详情 =====
-let currentPred = null, currentJc = null, pollTimer = null, lastVersion = null;
+let currentPred = null, pollTimer = null, lastVersion = null;
 function openDetail(homeName, awayName, league) {
   currentPred = findPrediction(homeName, awayName, league);
-  currentJc = findJingcai(homeName, awayName, league);
   $('modalTitle').innerHTML = `${cnTeam(homeName)} <span style="color:var(--text-3);font-weight:400">vs</span> ${cnTeam(awayName)}`;
   $('mktTabs').innerHTML = `
     <button class="mkt-tab active" data-mkt="h2h" onclick="switchMkt('h2h')">胜平负</button>
-    <button class="mkt-tab" data-mkt="jc" onclick="switchMkt('jc')">竞彩 SP</button>
     <button class="mkt-tab" data-mkt="ou" onclick="switchMkt('ou')">大小球</button>
     <button class="mkt-tab" data-mkt="sp" onclick="switchMkt('sp')">让球</button>
     <button class="mkt-tab" data-mkt="cs" onclick="switchMkt('cs')">波胆</button>`;
-  $('analysisBox').textContent = currentPred?.analysis || (currentJc ? '竞彩比赛:赔率见上方,完整分析待赔率管道生成。' : '该场比赛暂无赔率与预测数据。');
+  $('analysisBox').textContent = currentPred?.analysis || '该场比赛暂无赔率与预测数据。';
   // 本赛季交锋记录
   const n1 = normTeam(homeName), n2 = normTeam(awayName);
   const h2h = (state.fixtures || []).filter(f => f.status === 'FINISHED' && (
@@ -1661,7 +1610,7 @@ function oddsTrendBlock(p) {
 function switchMkt(mkt) {
   document.querySelectorAll('.mkt-tab').forEach(b => b.classList.toggle('active', b.dataset.mkt === mkt));
   const el = $('mktContent');
-  const p = currentPred, jc = currentJc;
+  const p = currentPred;
   if (mkt === 'h2h') {
     if (!p) { el.innerHTML = '<div class="empty-state">暂无欧赔数据</div>'; return; }
     const pr = p.probabilities || {};
@@ -1708,37 +1657,6 @@ function switchMkt(mkt) {
       <b>${esc(p.awayTeam)}:</b> ${p.lineup.awayLineup.slice(0, 11).map(esc).join('、') || '未公布'}
     </div>` : ''}
     ${(p.valuePicks || []).length ? `<div style="font-size:11px;padding:8px 10px;border-radius:8px;background:rgba(240,185,11,.1);border:1px solid rgba(240,185,11,.3);color:var(--gold);margin-top:8px">💰 价值信号:${(p.valuePicks||[]).map(v => v.label + ' 模型' + Math.round(v.modelProb*100) + '% vs 盘口' + Math.round(v.oddsProb*100) + '%').join('、')}</div>` : ''}` : ''}`;
-  } else if (mkt === 'jc') {
-    if (!jc) { el.innerHTML = '<div class="empty-state">该场比赛未开售竞彩(或不在售)</div>'; return; }
-    const had = jc.had || {};
-    const hhad = jc.hhad || {};
-    const ttg = jc.ttg || {};
-    el.innerHTML = `
-      ${(function(){ const oh = (jc.oddsHistory || []).filter(o => o && o.had && (o.had.h || o.had.d || o.had.a)).slice().sort((a, b) => (a.time || '').localeCompare(b.time || '')); if (!oh.length) return ''; const first = oh[0], last = oh[oh.length - 1]; const arrow = (a, b) => { const na = parseFloat(a), nb = parseFloat(b); if (isNaN(na) || isNaN(nb)) return ''; if (na === nb) return '<span style="color:var(--muted)">平</span>'; return na > nb ? '<span style="color:var(--red)">↗' + (na - nb).toFixed(2) + '</span>' : '<span style="color:var(--green)">↘' + (nb - na).toFixed(2) + '</span>'; }; const fh = first.had, lh = last.had; return '<div style="font-size:10px;color:var(--muted);margin-bottom:8px">SP 走势：主胜 ' + (fh.h || '—') + arrow(lh.h, fh.h) + ' · 平 ' + (fh.d || '—') + arrow(lh.d, fh.d) + ' · 客 ' + (fh.a || '—') + arrow(lh.a, fh.a) + '（' + oh.length + ' 次采样）</div>'; })()}
-      <div style="font-size:10px;color:var(--muted);margin-bottom:6px">竞彩官方可下注盘口(本地定时抓取)。让球胜平负为竞彩口——与「让球」(The Odds 盘) 不同源。</div>
-      <div class="section-title" style="margin-top:0">胜平负 SP</div>
-      <div class="odds-grid">
-        <div class="odds-box"><div class="label">主胜</div><div class="value">${had.h ?? '-'}</div></div>
-        <div class="odds-box"><div class="label">平局</div><div class="value">${had.d ?? '-'}</div></div>
-        <div class="odds-box"><div class="label">客胜</div><div class="value">${had.a ?? '-'}</div></div>
-      </div>
-      <div class="section-title">竞彩让球胜平负(${jc.hhad?.goalLine ? '让 ' + jc.hhad.goalLine + ' 球' : ''})</div>
-      <div class="odds-grid">
-        <div class="odds-box"><div class="label">主胜</div><div class="value">${hhad.h ?? '-'}</div></div>
-        <div class="odds-box"><div class="label">平局</div><div class="value">${hhad.d ?? '-'}</div></div>
-        <div class="odds-box"><div class="label">客胜</div><div class="value">${hhad.a ?? '-'}</div></div>
-      </div>
-      <div class="section-title">总进球 SP</div>
-      <div class="odds-grid" style="grid-template-columns:repeat(4,1fr)">
-        ${[0,1,2,3,4,5,6,7].map(i => `<div class="odds-box"><div class="label">${i === 7 ? '7+' : i + '球'}</div><div class="value" style="font-size:14px">${ttg[i] ?? '-'}</div></div>`).join('')}
-      </div>
-      ${(function(){ const crs = jc.crsOdds || {}; const entries = Object.entries(crs); if (!entries.length) return ''; const top = entries.sort((a,b) => parseFloat(a[1]) - parseFloat(b[1])).slice(0, 8); return '<div class="section-title">比分玩法 SP(波胆)</div><div class="cs-grid">' + top.map(([s, o]) => '<div class="cs-item"><div class="score">' + s + '</div><div class="p">' + o + '</div></div>').join('') + '</div>'; })()}
-      <div class="section-title">半全场 SP</div>
-      <div class="odds-grid" style="grid-template-columns:repeat(3,1fr)">
-        ${[['胜胜','hh'],['胜平','hd'],['胜负','ha'],['平胜','dh'],['平平','dd'],['平负','da'],['负胜','ah'],['负平','ad'],['负负','aa']].map(([cn, k]) =>
-          `<div class="odds-box"><div class="label">${cn}</div><div class="value" style="font-size:13px">${(jc.hafu || {})[cn] ?? '-'}</div></div>`).join('')}
-      </div>
-      <div class="xg-note">竞彩官方 SP(本地脚本定时抓取)· ${jc.matchNumStr || ''}</div>`;
   } else if (mkt === 'ou') {
     if (!p) { el.innerHTML = '<div class="empty-state">暂无大小球数据</div>'; return; }
     const ou = p.overUnder || {};
@@ -1764,7 +1682,7 @@ function switchMkt(mkt) {
     const sm = p.spModel;
     const eCls = sm && sm.edge != null ? (sm.edge > 0.02 ? 'color:#22c55e' : (sm.edge < -0.02 ? 'color:#ef4444' : 'color:var(--muted)')) : '';
     el.innerHTML = `<div class="section-title" style="margin-top:0">🧭 让球分析（The Odds API 实时盘 + 模型）</div>
-    <div style="font-size:10px;color:var(--muted);margin-bottom:6px">与「竞彩 SP」的竞彩让球盘(hhad) 是不同数据源,勿混看。</div>
+    <div style="font-size:10px;color:var(--muted);margin-bottom:6px">让球盘为 The Odds 口径(欧赔)。</div>
     <div class="odds-grid">
       <div class="odds-box"><div class="label">主队让球</div><div class="value">${s.home?.point ?? '-'}</div><div class="sub">赔率 ${s.home?.price ?? '-'}</div></div>
       <div class="odds-box"><div class="label">客队受让</div><div class="value">${s.away?.point ?? '-'}</div><div class="sub">赔率 ${s.away?.price ?? '-'}</div></div>
@@ -1779,23 +1697,9 @@ function switchMkt(mkt) {
   } else if (mkt === 'cs') {
     if (!p) { el.innerHTML = '<div class="empty-state">暂无波胆数据</div>'; return; }
     const cs = p.correctScores || [];
-    const crs = (jc && jc.crsOdds) || {};
-    const hasCrs = Object.keys(crs).length > 0;
-    const items = cs.map(c => {
-      const price = crs[c.score];
-      let val = '';
-      if (price) {
-        const pval = parseFloat(price);
-        const implied = pval > 0 ? 1 / pval : 0;
-        const edge = c.prob - implied;
-        val = `<div class="sub" style="${edge > 0.02 ? 'color:#22c55e;font-weight:700' : 'color:var(--muted)'}">竞彩 ${price}${edge > 0.02 ? ' · 💰价值' : ''}</div>`;
-      }
-      return `<div class="cs-item"><div class="score">${c.score}</div><div class="p">${pct(c.prob)}</div>${val}</div>`;
-    }).join('');
-    el.innerHTML = `<div class="section-title" style="margin-top:0">🎯 波胆分析（模型概率 vs 竞彩比值）</div>
-    <div style="font-size:10px;color:var(--muted);margin-bottom:6px">竞彩可下注的波胆 SP 清单见「竞彩 SP」页;这里是对比模型与竞彩隐含、给出有价值比分。</div>
+    const items = cs.map(c => `<div class="cs-item"><div class="score">${c.score}</div><div class="p">${pct(c.prob)}</div></div>`).join('');
+    el.innerHTML = `<div class="section-title" style="margin-top:0">🎯 波胆分析（模型概率）</div>
     <div class="cs-grid">${items}</div>` +
-      (hasCrs ? '<div style="font-size:10px;color:var(--muted);margin-top:6px">模型比分概率 vs 竞彩波胆赔率隐含概率:模型概率更高 = 该比分有价值(开赛后自动出现)</div>' : '<div style="font-size:10px;color:var(--muted);margin-top:6px">竞彩波胆未开售该场比赛,无法对比价值</div>') +
       (() => { const big = cs.filter(c => { const [h, a] = c.score.split('-').map(Number); return h >= 3 || a >= 3; }); if (!big.length) return ''; const top = big[0]; return '<div style="font-size:10.5px;color:var(--gold);margin-top:8px;padding:6px 8px;border-radius:6px;background:rgba(240,185,11,.08);border:1px solid rgba(240,185,11,.2)">🎯 若爆大比分,最可能 <b>' + top.score + '</b> (' + pct(top.prob) + ')</div>'; })();
   }
 }

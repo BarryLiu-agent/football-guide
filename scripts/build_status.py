@@ -32,7 +32,6 @@ SINGLE_FILE = {
     "fixtures": "fixtures.json",
     "predictions": "predictions.json",
     "standings": "standings.json",
-    "jingcai": "jingcai.json",
     "messages": "messages.json",
     "lineups": "lineups.json",
     "oddsQuota": "odds_quota.json",
