@@ -1,0 +1,55 @@
+name: Cloud Extra Data (FBref + Team xG)
+
+on:
+  schedule:
+    # 每天 12:00 UTC (北京 20:00)，独立于主流水线
+    # FBref/soccerdata 抓取很慢且易反爬，放独立 workflow 避免阻塞部署
+    - cron: '0 12 * * *'
+  workflow_dispatch:
+
+jobs:
+  fetch-extra:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests beautifulsoup4 lxml soccerdata
+
+      - name: Fetch FBref advanced stats (球队射门/门将/纪律)
+        continue-on-error: true
+        run: python scripts/fbref_advanced.py
+
+      - name: Fetch team xG table (球队赛季xG榜, Understat)
+        continue-on-error: true
+        run: |
+          pip install playwright -q
+          python -m playwright install chromium --with-deps -q
+          python scripts/xg_fetch_local.py
+
+      - name: Commit extra data back to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/advanced data/xg
+          if git diff --cached --quiet; then
+            echo "无数据变化"
+          else
+            git commit -m "chore: 云端更新 FBref/xG 数据 [skip ci]"
+            for i in 1 2 3; do
+              if git pull --rebase --autostash origin main && git push origin main; then
+                echo "已写回 main"
+                break
+              fi
+              sleep 5
+            done
+          fi
