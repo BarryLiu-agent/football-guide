@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-{"generatedAt":"2026-08-17T04:25:50Z","totalMatches":251,"notableMatches":102,"competitions":{"PL":"英超","PD":"西甲","SA":"意甲","BL1":"德甲","FL1":"法甲","CL":"欧冠"},"byCompetition":{"PL":50,"PD":70,"SA":50,"BL1":36,"FL1":45}}
-=======
-{"generatedAt":"2026-08-17T04:51:14Z","totalMatches":251,"notableMatches":102,"competitions":{"PL":"英超","PD":"西甲","SA":"意甲","BL1":"德甲","FL1":"法甲","CL":"欧冠"},"byCompetition":{"PL":50,"PD":70,"SA":50,"BL1":36,"FL1":45}}
->>>>>>> 7021d0d (chore: CI 更新数据 [skip ci])
+{"generatedAt":"2026-08-17T05:22:27Z","totalMatches":251,"notableMatches":102,"competitions":{"PL":"英超","PD":"西甲","SA":"意甲","BL1":"德甲","FL1":"法甲","CL":"欧冠"},"byCompetition":{"PL":50,"PD":70,"SA":50,"BL1":36,"FL1":45}}
