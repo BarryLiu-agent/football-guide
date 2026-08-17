@@ -675,13 +675,13 @@ async function loadJson(url) {
 }
 
 // ===== 数据状态抽屉(模块描述表,与 CI 生成的 status.json key 对齐)=====
-// staleAfter: 秒。local: 本地脚本抓取。gray: 正常无数据时灰灯(不报红)。
+// staleAfter: 秒。gray: 正常无数据时灰灯(不报红)。
 const STATUS_MODULES = [
   { key: 'fixtures',       label: '赛程/赛果',   source: 'football-data.org', cadence: '每 30 分钟', staleAfter: 5400,  note: '' },
   { key: 'odds',           label: '欧赔',        source: 'The Odds API',      cadence: '每天 10:00', staleAfter: 90000, note: '' },
-  { key: 'predictions',    label: '预测模型',    source: '本地管线',           cadence: '每 30 分钟', staleAfter: 7200,  note: '' },
+  { key: 'predictions',    label: '预测模型',    source: '云端管线',           cadence: '每 30 分钟', staleAfter: 7200,  note: '' },
   { key: 'lineups',        label: '首发名单',    source: 'FotMob/ESPN/Sofa',  cadence: '赛前每小时', staleAfter: 0,     note: '赛前 1 小时公布;非比赛时段无数据属正常', gray: true },
-  { key: 'xgTeams',        label: 'xG 球队榜',   source: 'Understat',          cadence: '不定期(本地)', staleAfter: 604800, note: '本地脚本抓取', local: true },
+  { key: 'xgTeams',        label: 'xG 球队榜',   source: 'Understat',          cadence: '每天 20:00', staleAfter: 604800, note: '' },
   { key: 'messages',       label: '新闻消息',    source: 'ESPN/Sky RSS',      cadence: '每天',       staleAfter: 172800, note: '' },
   { key: 'standings',      label: '积分榜',      source: 'football-data.org', cadence: '每天',       staleAfter: 172800, note: '' },
 ];
