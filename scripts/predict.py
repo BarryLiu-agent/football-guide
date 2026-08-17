@@ -997,7 +997,6 @@ def main():
                         kelly[k] = None
             pred["kelly"] = kelly
             pred["spreads"] = m.get("markets", {}).get("spreads")
-            pred["asian"] = m.get("markets", {}).get("asian")
 
             # ── Elo 输出 + 价值检测 ──
             pred["eloProb"] = {k: round(v, 3) for k, v in pred_elo.items()}

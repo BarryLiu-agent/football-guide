@@ -45,10 +45,6 @@ for p in preds:
     if not p.get("status"):
         issues.append(f"[{l}] {h}vs{a}: no status")
 
-    asian = p.get("asian", {})
-    if not asian or asian.get("point") is None:
-        issues.append(f"[{l}] {h}vs{a}: no asian")
-
     ou = p.get("overUnder", {})
     if not ou or ou.get("line") is None:
         issues.append(f"[{l}] {h}vs{a}: no overUnder")
@@ -116,13 +112,7 @@ for fname in ["PL", "PD", "BL1", "SA", "FL1", "CL"]:
     else:
         issues.append(f"MISSING: xg/{fname}.json")
 
-# ── 6. asian ──
-for fp in sorted((ROOT / "asian").glob("*.json")):
-    ah = json.loads(fp.read_text(encoding="utf-8"))
-    n = len(ah) if isinstance(ah, list) else len(ah.get("matches", ah))
-    print(f"asian/{fp.name}: {n} records")
-
-# ── 7. backtest（产物名 calibration.json / calibration_ou.json）──
+# ── 6. backtest（产物名 calibration.json / calibration_ou.json）──
 for bname in ("calibration.json", "calibration_ou.json"):
     bf = ROOT / bname
     if bf.exists():

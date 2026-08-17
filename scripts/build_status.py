@@ -43,7 +43,6 @@ SINGLE_FILE = {
 # 多文件模块: key -> (glob 模式, 期望文件数)
 MULTI_FILE = {
     "odds": ("odds/*.json", 6),
-    "asian": ("asian/*.json", 5),
     "xgTeams": ("xg/*.json", 6),  # xg/PL.json 等联赛榜（含 CL stub，不含 matches.json）
 }
 
@@ -67,7 +66,7 @@ def _is_empty_stub(path: Path) -> bool:
         ms = d.get("matches")
         if isinstance(ms, list):
             return len(ms) == 0
-        # asian/xg 榜单类：看 data.teams 或 top 级 total
+        # xg 榜单类：看 data.teams 或 top 级 total
         if d.get("total") == 0:
             return True
         # xg 榜单：teams 为空 或 players 全为空行（抓取失败遗留 stub）

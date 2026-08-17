@@ -33,7 +33,7 @@ NAMED = [
     "prediction_history.json", "calibration.json",
     "calibration_ou.json", "team_names.json",
 ]
-GLOBS = ["odds/*.json", "xg/*.json", "advanced/*.json", "asian/*.json"]
+GLOBS = ["odds/*.json", "xg/*.json", "advanced/*.json"]
 
 
 def collect_files() -> list:
