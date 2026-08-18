@@ -332,19 +332,31 @@ class ScoreModel:
         self.lam_a = 1.1
         self.score_prior = {}   # 常见比分先验(scorePrior): { '1-0': 0.1, ... }，可选
 
-    def fit(self, p_home, p_draw, p_away):
-        """数值求解 λh/λa 使模型 1X2 概率最接近输入概率。"""
+    def fit(self, p_home, p_draw, p_away, xg_hint=None):
+        """数值求解 λh/λa 使模型 1X2 概率最接近输入概率。
+        xg_hint: (lam_h, lam_a) 元组，来自 xG 攻防强度。有 hint 时缩小搜索范围到 ±0.5。"""
         if not p_home or not p_draw or not p_away:
             return self
         best_err, best = 1e9, (self.lam_h, self.lam_a)
-        # 网格搜索: 总进球 1.4~3.6, 主队份额 0.25~0.80（覆盖强主队 0.8+ 胜率场景）
-        for total in [x * 0.1 for x in range(14, 37)]:
-            for share in [x * 0.01 for x in range(25, 81)]:
-                lh, la = total * share, total * (1 - share)
-                ph, pd, pa = self._probs(lh, la)
-                err = abs(ph - p_home) + abs(pd - p_draw) + abs(pa - p_away)
-                if err < best_err:
-                    best_err, best = err, (lh, la)
+        if xg_hint and xg_hint[0] and xg_hint[1]:
+            # xG 引导搜索：以 xG λ 为中心，±0.5 范围，步长 0.05
+            ch, ca = xg_hint
+            for dh in [x * 0.05 for x in range(-10, 11)]:
+                for da in [x * 0.05 for x in range(-10, 11)]:
+                    lh, la = max(0.3, ch + dh), max(0.3, ca + da)
+                    ph, pd, pa = self._probs(lh, la)
+                    err = abs(ph - p_home) + abs(pd - p_draw) + abs(pa - p_away)
+                    if err < best_err:
+                        best_err, best = err, (lh, la)
+        else:
+            # 原始全范围网格搜索: 总进球 1.4~3.6, 主队份额 0.25~0.80
+            for total in [x * 0.1 for x in range(14, 37)]:
+                for share in [x * 0.01 for x in range(25, 81)]:
+                    lh, la = total * share, total * (1 - share)
+                    ph, pd, pa = self._probs(lh, la)
+                    err = abs(ph - p_home) + abs(pd - p_draw) + abs(pa - p_away)
+                    if err < best_err:
+                        best_err, best = err, (lh, la)
         self.lam_h, self.lam_a = best
         return self
 
@@ -935,7 +947,7 @@ def main():
                 model_prob = pred_elo
 
             score_model = ScoreModel()
-            score_model.fit(f_home, f_draw, f_away)
+            score_model.fit(f_home, f_draw, f_away, xg_hint=xg_model.get_lambda(home, away))
             score_model.score_prior = rules.get("scorePrior", {}) or {}
 
             # ── 多模型分歧：Elo vs Dixon-Coles vs 市场（方向不一致 = 不碰）──
