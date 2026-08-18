@@ -892,7 +892,7 @@ def main():
             if fa_v is None and isinstance(fa, dict):
                 fa_v = fa.get("overall")
             if fh_v is not None and fa_v is not None:
-                adj = (fh_v - fa_v) * 0.02
+                adj = (fh_v - fa_v) * 0.05
                 ep_home += adj
                 ep_away -= adj
                 _s = ep_home + ep_draw + ep_away
@@ -922,6 +922,17 @@ def main():
                     f_home, f_draw, f_away = f_home / _s, f_draw / _s, f_away / _s
             else:
                 f_home, f_draw, f_away = ep_home, ep_draw, ep_away
+
+            # ── 纯模型概率（Elo+xG+Form，不含市场赔率）：用于价值检测 ──
+            # 比纯 Elo 更准：xG 补充攻防强度，form 补充近期状态
+            m_h = w_elo * ep_home + w_xg * xg_h
+            m_d = w_elo * ep_draw + w_xg * xg_d
+            m_a = w_elo * ep_away + w_xg * xg_a
+            _ms = m_h + m_d + m_a
+            if _ms > 0:
+                model_prob = {"home": m_h / _ms, "draw": m_d / _ms, "away": m_a / _ms}
+            else:
+                model_prob = pred_elo
 
             score_model = ScoreModel()
             score_model.fit(f_home, f_draw, f_away)
@@ -1037,10 +1048,10 @@ def main():
             reverse_picks = []  # 模型 vs 市场对立（负 edge）：提示不碰，非价值
             value_threshold = rules.get("valueThreshold", 0.1)
             if market_prob:
-                sorted_probs = sorted(pred_elo.values(), reverse=True)
+                sorted_probs = sorted(model_prob.values(), reverse=True)
                 model_conf = sorted_probs[0] - sorted_probs[1] if len(sorted_probs) > 1 else 0
                 for k, label in (("home", "主胜"), ("draw", "平局"), ("away", "客胜")):
-                    diff = pred_elo[k] - market_prob[k]
+                    diff = model_prob[k] - market_prob[k]
                     if diff >= value_threshold:  # 正 edge：模型比市场更看好 = 价值信号
                         level = "gold" if diff >= 0.15 and model_conf >= 0.15 else "watch"
                         value_picks.append({
