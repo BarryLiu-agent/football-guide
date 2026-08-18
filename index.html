@@ -882,31 +882,13 @@ function render() {
   el.innerHTML = header + body;
 }
 
-// ===== 顶部信息栏:模型校准 + 今日精选 =====
+// ===== 顶部信息栏:模型校准 =====
 function renderTopBar(leagueCode) {
   const mi = state.predictionsMeta || {};
   const stats = state.history?.stats;
   const calib = mi.modelInfo || {};
   const season = calib.season || {};
   const started = season.seasonStarted ? '赛季第' + (season.round || '?') + '轮' : '休赛期(未校准)';
-  // 今日精选:黄金信号 + 今天/明天
-  const t = todayBJ(), tm = fmtDate(new Date(Date.now() + 86400000).toISOString());
-  const picks = (state.predictions || []).filter(p =>
-    p.league === leagueCode && p.signalLevel === 'gold' &&
-    (fmtDate(p.kickoff) === t || fmtDate(p.kickoff) === tm)).slice(0, 3);
-  let picksHtml = '';
-  if (picks.length) {
-    picksHtml = '<div style="margin-bottom:12px"><div class="section-title" style="margin-bottom:8px">⭐ 今日精选</div>' +
-      picks.map(p => {
-        const vp = (p.valuePicks || [])[0];
-        return `<div class="match-card" onclick="openDetail('${esc(p.homeTeam)}','${esc(p.awayTeam)}','${p.league}')">` +
-          '<div class="mc-teams"><div class="mc-team"><span class="cn">' + cnTeam(p.homeTeam) + '</span></div>' +
-          '<div class="mc-team"><span class="cn">' + cnTeam(p.awayTeam) + '</span></div></div>' +
-          (vp ? '<div class="val-tag">💰 ' + vp.label + ' 差' + (vp.edge > 0 ? '+' : '') + Math.round(vp.edge * 100) + '%</div>' : '') +
-          '<div class="mc-pred"><div class="ps">' + p.predictedScore + '</div><div class="pc">' + Math.round((p.confidence || 0) * 100) + '%</div></div>' +
-          '</div>';
-      }).join('') + '</div>';
-  }
   const statsHtml = stats ? '<span class="rec-chip">普通预测方向 ' + Math.round((stats.outcomeRate || 0) * 100) + '%(' + (stats.finished || 0) + '场)</span>' +
     (stats.valueTotal ? '<span class="rec-chip gold">💰价值信号 ' + Math.round((stats.valueRate || 0) * 100) + '%(' + stats.valueTotal + '场)</span>' : '') : '';
   return '<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px;font-size:11px;color:var(--text-3)">' +
@@ -914,7 +896,7 @@ function renderTopBar(leagueCode) {
     '<span class="rec-chip">📅 ' + started + '</span>' +
     '<span class="rec-chip">⚔️ 已结算 ' + (stats?.finished || 0) + ' 场</span>' +
     statsHtml +
-    '</div>' + picksHtml;
+    '</div>';
 }
 
 // ===== 串关推荐(全局页,跨联赛组合)=====
