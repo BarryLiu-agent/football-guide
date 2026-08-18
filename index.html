@@ -1163,7 +1163,7 @@ function renderCard(m) {
     const inj = [];
     if (ms.home != null && ms.home <= -0.15) inj.push(cnTeam(homeName) + '缺阵信号' + ms.home.toFixed(2));
     if (ms.away != null && ms.away <= -0.15) inj.push(cnTeam(awayName) + '缺阵信号' + ms.away.toFixed(2));
-    if (inj.length) injTag = '<span class="diff-tag warn" title="消息面伤停/停赛信号:' + inj.join(';') + '">⚠️核心缺阵</span>';
+    if (inj.length) injTag = '<span class="diff-tag warn" title="消息面伤停/停赛信号:' + inj.join(';') + '">⚠️' + (inj.length > 1 ? '双方缺阵' : inj[0].replace(/缺阵信号.*/, '缺阵')) + '</span>';
   }
   // 赛程风险:周中 / 3 天内双赛
   let riskTags = '';
