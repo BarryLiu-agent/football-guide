@@ -1047,16 +1047,16 @@ def main():
             value_picks = []
             reverse_picks = []  # 模型 vs 市场对立（负 edge）：提示不碰，非价值
             value_threshold = rules.get("valueThreshold", 0.1)
-            if market_prob:
+            if market_prob and not diverge:
                 sorted_probs = sorted(model_prob.values(), reverse=True)
                 model_conf = sorted_probs[0] - sorted_probs[1] if len(sorted_probs) > 1 else 0
                 for k, label in (("home", "主胜"), ("draw", "平局"), ("away", "客胜")):
                     diff = model_prob[k] - market_prob[k]
                     if diff >= value_threshold:  # 正 edge：模型比市场更看好 = 价值信号
-                        level = "gold" if diff >= 0.15 and model_conf >= 0.15 else "watch"
+                        level = "gold" if diff >= 0.20 and model_conf >= 0.20 else "watch"
                         value_picks.append({
                             "side": k, "label": label,
-                            "modelProb": round(pred_elo[k], 3),
+                            "modelProb": round(model_prob[k], 3),
                             "oddsProb": round(market_prob[k], 3),
                             "edge": round(diff, 3),
                             "level": level,
@@ -1065,7 +1065,7 @@ def main():
                     elif diff <= -value_threshold:  # 负 edge：模型比市场更不看好 = 反向信号（提示不碰）
                         reverse_picks.append({
                             "side": k, "label": label,
-                            "modelProb": round(pred_elo[k], 3),
+                            "modelProb": round(model_prob[k], 3),
                             "oddsProb": round(market_prob[k], 3),
                             "edge": round(diff, 3),
                         })
@@ -1167,6 +1167,25 @@ def main():
                 "home": round(score_model.lam_h, 2), "away": round(score_model.lam_a, 2)
             }
             pred["analysis"] = AnalysisWriter.generate(home, away, odds_result, msg_result, score_model, ou, pred["spreads"], pred["standings"], {"valuePicks": value_picks}, ou_model)
+
+            # ── 跨市场交叉确认：给 h2h bet 加入 spread 确认数 ──
+            # 逻辑：主胜 pick + sp_model 主赢盘正 edge = 确认; 客胜 pick + sp_model 负 edge = 确认
+            for bc in bet_candidates:
+                if bc["market"] != "h2h":
+                    continue
+                side = bc["side"]
+                confirm = 0
+                if sp_model and sp_model.get("edge") is not None:
+                    if side == "home" and sp_model["edge"] > 0.02:
+                        confirm += 1
+                    elif side == "away" and sp_model["edge"] < -0.02:
+                        confirm += 1
+                if ou_model and ou_model.get("edge") is not None:
+                    if side == "home" and ou_model["edge"] > 0.03:
+                        confirm += 1
+                    elif side == "away" and ou_model["edge"] < -0.03:
+                        confirm += 1
+                bc["crossConfirm"] = confirm
 
             # ── 让球候选（模型 spModel vs The Odds API 让球盘）──
             if sp_model and sp_model.get("edge") is not None and sp_model["edge"] >= value_threshold:
