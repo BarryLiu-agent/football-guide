@@ -297,6 +297,10 @@ table.standings .down { color: var(--red); }
   background: var(--bg-2); border: 1px solid var(--border); color: var(--text-2);
 }
 .mkt-tab.active { background: var(--gold); color: #0b0e14; font-weight: 700; border-color: var(--gold); }
+.odds-collapse { margin-bottom: 12px; }
+.odds-collapse summary { cursor: pointer; font-size: 13px; color: var(--text-3); padding: 8px 0; font-weight: 600; }
+.odds-collapse summary:hover { color: var(--text); }
+.odds-collapse[open] summary { margin-bottom: 8px; }
 .odds-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px; }
 .odds-box {
   background: var(--bg-2); border: 1px solid var(--border);
@@ -518,8 +522,12 @@ table.standings .down { color: var(--red); }
       <button class="modal-close" onclick="closeDetail()" aria-label="关闭" title="关闭">×</button>
     </div>
     <div class="modal-body">
-      <div class="mkt-tabs" id="mktTabs"></div>
-      <div id="mktContent"></div>
+      <div id="aiSection"></div>
+      <details class="odds-collapse">
+        <summary>📊 盘口数据（赔率/走势/波胆）</summary>
+        <div class="mkt-tabs" id="mktTabs"></div>
+        <div id="mktContent"></div>
+      </details>
       <div class="section-title">📝 数据分析</div>
       <div class="analysis-box" id="analysisBox"></div>
       <div id="h2hBox"></div>
@@ -1386,6 +1394,59 @@ function openDetail(homeName, awayName, league) {
   } else {
     h2hEl.innerHTML = '<div class="section-title" style="margin-top:12px">🔄 本赛季交锋</div><div style="font-size:12px;color:var(--muted);padding:6px 0">本赛季暂无两队交锋记录(赛季开始后自动积累)</div>';
   }
+  // ── aiSection: AI研判 + 独立模型 + 价值信号 + 首发（打开即见）──
+  const aiP = currentPred;
+  const prAi = aiP ? (aiP.probabilities || {}) : {};
+  (() => {
+    const el = $('aiSection');
+    if (!aiP) { el.innerHTML = ''; return; }
+    const aiBox = 'padding:10px 12px;border-radius:8px;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.25);font-size:12px;line-height:1.7';
+    const note = '<div style="font-size:10px;color:var(--muted);margin-top:6px">⚠️ AI 研判仅供参考,方向受统计模型约束</div>';
+    // 独立模型
+    let modelHtml = '';
+    if (aiP.eloProb) {
+      modelHtml = `<div class="section-title" style="margin-top:10px">🤖 独立模型 (Elo+xG+DC)</div>
+        <div class="odds-grid">
+          <div class="odds-box"><div class="label">主胜</div><div class="value">${pct(aiP.eloProb.home)}</div><div class="sub">盘口 ${pct(prAi.home)}</div></div>
+          <div class="odds-box"><div class="label">平局</div><div class="value">${pct(aiP.eloProb.draw)}</div><div class="sub">盘口 ${pct(prAi.draw)}</div></div>
+          <div class="odds-box"><div class="label">客胜</div><div class="value">${pct(aiP.eloProb.away)}</div><div class="sub">盘口 ${pct(prAi.away)}</div></div>
+        </div>`;
+      if (aiP.xgProb) modelHtml += `<div style="font-size:11px;color:var(--muted);margin-top:6px">xG攻防: 主 ${pct(aiP.xgProb.home)} / 平 ${pct(aiP.xgProb.draw)} / 客 ${pct(aiP.xgProb.away)}</div>`;
+    }
+    // AI 研判
+    let aiHtml = '';
+    const a = aiP.aiJudge;
+    if (!a) {
+      aiHtml = `<div class="section-title" style="margin-top:10px">🤖 AI 研判</div><div style="${aiBox};color:var(--muted)">AI 研判未生成(未配置或调用失败)。${note}</div>`;
+    } else {
+      const cn = {home:'主胜',draw:'平局',away:'客胜',none:'不碰'};
+      const conf = a.confidence != null ? Math.round(a.confidence*100) : null;
+      const diffScore = a.score && aiP.predictedScore && a.score !== aiP.predictedScore ? ' <span style="color:var(--gold)">(模型 ' + aiP.predictedScore + ')</span>' : '';
+      const staleTag = aiP.aiJudgeStale ? ' · 基于上次数据' : '';
+      const an = a.analysis || {};
+      const sec = (t, txt) => txt ? `<div style="margin-top:6px"><div style="font-size:11px;color:#a5b4fc;font-weight:700;margin-bottom:2px">${t}</div><div style="color:var(--text-2)">${esc(txt)}</div></div>` : '';
+      const secs = sec('⚽ 胜平负', an.h2h) + sec('📊 大小球', an.ou) + sec('🧭 让球盘', an.spread) + sec('🤝 双方进球', an.btts) + sec('🎯 比分看法', an.score);
+      const factors = (a.keyFactors && a.keyFactors.length) ? `<div style="margin-top:6px"><div style="font-size:11px;color:#a5b4fc;font-weight:700;margin-bottom:2px">🔑 关键因素</div>${a.keyFactors.map(f => '<div style="color:var(--text-2);padding-left:12px">· ' + esc(f) + '</div>').join('')}</div>` : '';
+      const risks = (a.risks && a.risks.length) ? `<div style="margin-top:6px"><div style="font-size:11px;color:#f87171;font-weight:700;margin-bottom:2px">⚠️ 风险提示</div>${a.risks.map(r => '<div style="color:var(--text-2);padding-left:12px">· ' + esc(r) + '</div>').join('')}</div>` : '';
+      aiHtml = `<div class="section-title" style="margin-top:10px">🤖 AI 研判<span style="font-size:10px;color:var(--muted);font-weight:400"> ${a.model || ''} · ${a.latency != null ? a.latency + 's' : ''}${staleTag}</span></div>
+        <div style="${aiBox}"><div style="margin-bottom:4px"><b>${a.pick && a.pick !== 'none' ? cn[a.pick] : '无明显倾向'}</b>${a.score ? ' · 比分 ' + a.score : ''}${diffScore}${a.altScore ? ' · 备选 ' + esc(a.altScore) : ''}${conf != null ? ' · 置信度 ' + conf + '%' : ''}</div>${a.reason ? '<div style="color:var(--text-2);margin-bottom:4px">' + esc(a.reason) + '</div>' : ''}${secs}${factors}${risks}${note}</div>`;
+    }
+    // 价值信号
+    let valHtml = '';
+    if ((aiP.valuePicks || []).length) {
+      valHtml = `<div style="font-size:11px;padding:8px 10px;border-radius:8px;background:rgba(240,185,11,.1);border:1px solid rgba(240,185,11,.3);color:var(--gold);margin-top:8px">💰 价值信号:${aiP.valuePicks.map(v => v.label + ' 模型' + Math.round(v.modelProb*100) + '% vs 盘口' + Math.round(v.oddsProb*100) + '%').join('、')}</div>`;
+    }
+    // 首发名单
+    let luHtml = '';
+    if (aiP.lineup && (aiP.lineup.homeLineup.length || aiP.lineup.awayLineup.length)) {
+      luHtml = `<details style="margin-top:8px"><summary style="cursor:pointer;font-size:12px;color:var(--text-3);font-weight:600">📋 首发名单 ${aiP.lineup.source || ''}</summary>
+        <div style="font-size:11px;line-height:1.8;color:var(--text-2);padding:8px 10px;border-radius:8px;background:var(--surface-2);border:1px solid var(--border);margin-top:4px">
+          <b>${esc(aiP.homeTeam)}:</b> ${aiP.lineup.homeLineup.slice(0, 11).map(esc).join('、') || '未公布'}<br>
+          <b>${esc(aiP.awayTeam)}:</b> ${aiP.lineup.awayLineup.slice(0, 11).map(esc).join('、') || '未公布'}
+        </div></details>`;
+    }
+    el.innerHTML = modelHtml + aiHtml + valHtml + luHtml;
+  })();
   switchMkt('h2h');
   $('detailModal').classList.add('open');
 }
@@ -1457,21 +1518,7 @@ function switchMkt(mkt) {
     </div>
     <div style="font-size:10px;color:var(--muted);margin-top:6px;text-align:center">↗ 较上次快照升(看淡)↘ 降(看好)· 凯利>0 有正期望 · 快照持续累积后将升级为走势曲线</div>
     ${oddsTrendBlock(p)}
-    ${(() => { const om = p.ouModel || {}; const over = om.over; if (over == null) return ''; const overPct = Math.round(over * 100); if (overPct < 55) return ''; const big = (p.correctScores || []).filter(c => { const [h, a] = c.score.split('-').map(Number); return h + a >= 4; }); let t = '🔥 大球倾向:模型看总进球≥' + om.line + ' 概率 ' + overPct + '%' + (om.edge != null ? ' (edge ' + (om.edge >= 0 ? '+' : '') + Math.round(om.edge * 100) + '%)' : '') + ' · 模型口径,非盘口'; if (big.length) t += ' · 若大球最可能 ' + big[0].score; return '<div style="font-size:10.5px;color:#16c784;margin-top:8px;padding:6px 8px;border-radius:6px;background:rgba(22,199,132,.08);border:1px solid rgba(22,199,132,.25)">' + t + '</div>'; })()}
-    ${(function(a){ const aiBox = 'padding:10px 12px;border-radius:8px;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.25);font-size:12px;line-height:1.7'; const note = '<div style="font-size:10px;color:var(--muted);margin-top:6px">⚠️ AI 研判仅供参考,方向受统计模型约束(置信度已钳制在模型概率附近)</div>'; if (!a) return `<div class="section-title" style="margin-top:10px">🤖 AI 研判</div><div style="${aiBox};color:var(--muted)">AI 研判未生成(未配置或调用失败),当前展示为纯统计模型输出。${note}</div>`; const cn = {home:'主胜',draw:'平局',away:'客胜',none:'不碰'}; const conf = a.confidence != null ? Math.round(a.confidence*100) : null; const diffScore = a.score && p.predictedScore && a.score !== p.predictedScore ? ' <span style="color:var(--gold)">(模型预测 ' + p.predictedScore + ')</span>' : ''; const staleTag = p.aiJudgeStale ? ' · 基于上次数据' : ''; const an = a.analysis || {}; const sec = (t, txt) => txt ? `<div style="margin-top:6px"><div style="font-size:11px;color:#a5b4fc;font-weight:700;margin-bottom:2px">${t}</div><div style="color:var(--text-2)">${esc(txt)}</div></div>` : ''; const secs = sec('⚽ 胜平负', an.h2h) + sec('📊 大小球', an.ou) + sec('🧭 让球盘', an.spread) + sec('🤝 双方进球', an.btts) + sec('🎯 比分看法', an.score); const factors = (a.keyFactors && a.keyFactors.length) ? `<div style="margin-top:6px"><div style="font-size:11px;color:#a5b4fc;font-weight:700;margin-bottom:2px">🔑 关键因素</div>${a.keyFactors.map(f => '<div style="color:var(--text-2);padding-left:12px;position:relative">· ' + esc(f) + '</div>').join('')}</div>` : ''; const risks = (a.risks && a.risks.length) ? `<div style="margin-top:6px"><div style="font-size:11px;color:#f87171;font-weight:700;margin-bottom:2px">⚠️ 风险提示</div>${a.risks.map(r => '<div style="color:var(--text-2);padding-left:12px;position:relative">· ' + esc(r) + '</div>').join('')}</div>` : ''; return `<div class="section-title" style="margin-top:10px">🤖 AI 研判<span style="font-size:10px;color:var(--muted);font-weight:400"> ${a.model || ''} · ${a.latency != null ? a.latency + 's' : ''}${staleTag} · 仅供参考</span></div><div style="${aiBox}"><div style="margin-bottom:4px"><b>${a.pick && a.pick !== 'none' ? cn[a.pick] : '无明显倾向'}</b>${a.score ? ' · 比分 ' + a.score : ''}${diffScore}${a.altScore ? ' · 备选 ' + esc(a.altScore) : ''}${conf != null ? ' · 置信度 ' + conf + '%' : ''}</div>${a.reason ? '<div style="color:var(--text-2);margin-bottom:4px">' + esc(a.reason) + '</div>' : ''}${secs}${factors}${risks}${note}</div>`; })(p.aiJudge)}
-    ${p.eloProb ? `<div class="section-title" style="margin-top:10px">🤖 独立模型 (Elo+xG+DC)</div>
-    <div class="odds-grid">
-      <div class="odds-box"><div class="label">主胜</div><div class="value">${pct(p.eloProb.home)}</div><div class="sub">盘口 ${pct(pr.home)}</div></div>
-      <div class="odds-box"><div class="label">平局</div><div class="value">${pct(p.eloProb.draw)}</div><div class="sub">盘口 ${pct(pr.draw)}</div></div>
-      <div class="odds-box"><div class="label">客胜</div><div class="value">${pct(p.eloProb.away)}</div><div class="sub">盘口 ${pct(pr.away)}</div></div>
-    </div>
-    ${p.xgProb ? `<div style="font-size:11px;color:var(--muted);margin-top:6px">xG攻防模型: 主 ${pct(p.xgProb.home)} / 平 ${pct(p.xgProb.draw)} / 客 ${pct(p.xgProb.away)}</div>` : ''}
-    ${p.lineup && (p.lineup.homeLineup.length || p.lineup.awayLineup.length) ? `<div class="section-title" style="margin-top:10px">📋 首发名单<span style="font-size:10px;color:var(--muted);font-weight:400"> ${p.lineup.source || ''}</span></div>
-    <div style="font-size:11px;line-height:1.8;color:var(--text-2);padding:8px 10px;border-radius:8px;background:var(--surface-2);border:1px solid var(--border)">
-      <b>${esc(p.homeTeam)}:</b> ${p.lineup.homeLineup.slice(0, 11).map(esc).join('、') || '未公布'}<br>
-      <b>${esc(p.awayTeam)}:</b> ${p.lineup.awayLineup.slice(0, 11).map(esc).join('、') || '未公布'}
-    </div>` : ''}
-    ${(p.valuePicks || []).length ? `<div style="font-size:11px;padding:8px 10px;border-radius:8px;background:rgba(240,185,11,.1);border:1px solid rgba(240,185,11,.3);color:var(--gold);margin-top:8px">💰 价值信号:${(p.valuePicks||[]).map(v => v.label + ' 模型' + Math.round(v.modelProb*100) + '% vs 盘口' + Math.round(v.oddsProb*100) + '%').join('、')}</div>` : ''}` : ''}`;
+    `;
   } else if (mkt === 'ou') {
     if (!p) { el.innerHTML = '<div class="empty-state">暂无大小球数据</div>'; return; }
     const ou = p.overUnder || {};
@@ -1589,9 +1636,9 @@ function startPoll() {
 }
 
 function syncDetail() {
-  // 详情弹窗打开时同步最新分析文本
+  // 详情弹窗打开时同步最新分析:重建整个弹窗(aiSection+盘口+分析+交锋全量刷新)
   const fresh = state.predictions.find(p => p.homeTeam === currentPred.homeTeam && p.awayTeam === currentPred.awayTeam && p.league === currentPred.league);
-  if (fresh) { currentPred = fresh; $('analysisBox').textContent = fresh.analysis || ''; }
+  if (fresh) { currentPred = fresh; openDetail(fresh.homeTeam, fresh.awayTeam, fresh.league); }
 }
 
 // ===== Init =====
