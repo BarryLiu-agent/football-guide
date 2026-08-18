@@ -264,17 +264,24 @@ class XgModel:
                 self.attack[t] = sum(r[0] for r in rec) / len(rec)
                 self.defense[t] = sum(r[1] for r in rec) / len(rec)
 
-    def predict(self, home: str, away: str):
-        """返回 (p_home, p_draw, p_away)。两队缺数据时回退均匀 1/3。"""
+    def get_lambda(self, home: str, away: str):
+        """返回 xG 攻防强度导出的 (lam_home, lam_away)，供 ScoreModel.fit(xg_hint=...) 使用。
+        两队缺数据时返回 None。"""
         h, a = norm_team(home), norm_team(away)
         atk_h = self.attack.get(h)
         def_a = self.defense.get(a)
         atk_a = self.attack.get(a)
         def_h = self.defense.get(h)
         if None in (atk_h, def_a, atk_a, def_h):
-            return 1 / 3, 1 / 3, 1 / 3
-        # 主队 λ：主场基准 × 攻(主)/主场均值 × 防(客)/客场均值（防守弱=丢球多）
+            return None
         lam_home = self.avg_home_xg * (atk_h / self.avg_home_xg) * (def_a / self.avg_away_xg)
         lam_away = self.avg_away_xg * (atk_a / self.avg_away_xg) * (def_h / self.avg_home_xg)
-        p_home, p_draw, p_away = dc_1x2_from(lam_home, lam_away)
+        return (lam_home, lam_away)
+
+    def predict(self, home: str, away: str):
+        """返回 (p_home, p_draw, p_away)。两队缺数据时回退均匀 1/3。"""
+        lam = self.get_lambda(home, away)
+        if lam is None:
+            return 1 / 3, 1 / 3, 1 / 3
+        p_home, p_draw, p_away = dc_1x2_from(lam[0], lam[1])
         return round(p_home, 4), round(p_draw, 4), round(p_away, 4)
