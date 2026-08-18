@@ -55,6 +55,8 @@ PROMPT_SYSTEM = (
     "4. 如果认为没有明显倾向，pick 用 'none'，confidence 用 0.5；\n"
     "5. analysis 各子项要具体引用数据（赔率/概率/盘口数值），不要空泛；\n"
     "6. keyFactors 至少 2 条、risks 至少 1 条，都要有数据支撑。\n"
+    "7. 如果提供了相关新闻消息，必须在 keyFactors 或 risks 中引用新闻内容（伤停/状态/转会等）作为判断依据；\n"
+    "   如果新闻中有伤停、停赛、复出等关键信息，必须在 analysis.h2h 或 risks 中明确提及。\n"
 )
 
 
