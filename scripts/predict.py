@@ -1465,6 +1465,8 @@ def evaluate_predictions(predictions):
             # 盘口方向（用于按盘口类型统计）
             "ouModel": p.get("ouModel"),
             "spModel": p.get("spModel"),
+            "hitOu": p.get("hitOu"),
+            "hitSp": p.get("hitSp"),
             "predictedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         })
 

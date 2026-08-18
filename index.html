@@ -1338,6 +1338,8 @@ function renderRecord() {
       '<span style="color:var(--muted);font-size:11px">预测</span> <span class="pred">' + (r.predictedScore || '-') + '</span>' +
       '<span style="color:var(--muted);font-size:11px">实际</span> <span class="actual">' + (r.actualScore || '-') + '</span>' +
       (aiHit == null ? '' : '<span class="res ' + (aiHit ? 'hit' : 'miss') + '" style="margin-left:6px" title="AI 研判:' + (r.aiScore || '-') + '">🤖' + (aiHit ? '✓' : '✗') + '</span>') +
+      (r.hitOu == null ? '' : '<span class="res ' + (r.hitOu ? 'hit' : 'miss') + '" style="margin-left:6px;font-size:10px" title="大小球: 模型' + (r.ouModel?.over >= 0.5 ? '大' : '小') + (r.ouModel?.line || '') + '球">OU' + (r.hitOu ? '✓' : '✗') + '</span>') +
+      (r.hitSp == null ? '' : '<span class="res ' + (r.hitSp ? 'hit' : 'miss') + '" style="margin-left:6px;font-size:10px" title="让球: 主' + (r.spModel?.point > 0 ? '+' + r.spModel?.point : r.spModel?.point) + '盘 模型' + (r.spModel?.cover >= 0.5 ? '主赢盘' : '客赢盘') + '">盘' + (r.hitSp ? '✓' : '✗') + '</span>') +
       '</div>';
   }).join('');
   return calibHtml +
