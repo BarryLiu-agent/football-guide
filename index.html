@@ -1534,6 +1534,9 @@ function switchMkt(mkt) {
       <div class="odds-box"><div class="label">客胜 ${trend(ro.away, p.prevOdds?.away)}</div><div class="value">${ro.away ?? '-'}${chg(oc.away)}</div><div class="sub">${pct(pr.away)}</div>${kellyTxt(kl.away)}</div>
     </div>
     <div style="font-size:10px;color:var(--muted);margin-top:6px;text-align:center">↗ 较上次快照升(看淡)↘ 降(看好)· 凯利>0 有正期望 · 快照持续累积后将升级为走势曲线</div>
+    ${(() => { const mkt = p.marketProbs; const mod = p.pureModelProbs; if (!mkt || !mod) return ''; const row = (label, k) => { const mv = mkt[k], dv = mod[k]; if (mv == null || dv == null) return ''; const diff = dv - mv; const cls = diff >= 0.05 ? '#22c55e' : (diff <= -0.05 ? '#ef4444' : 'var(--muted)'); const arrow = diff >= 0.05 ? '▲' : (diff <= -0.05 ? '▼' : '＝'); const note = diff >= 0.05 ? '模型更看好' : (diff <= -0.05 ? '模型不看好' : '基本一致'); return `<div class="odds-box"><div class="label">${label}</div><div class="value">${pct(dv)}</div><div class="sub" style="color:${cls}">市场 ${pct(mv)} · ${arrow}${diff > 0 ? '+' : ''}${(diff * 100).toFixed(0)}% ${note}</div></div>`; }; return `<div class="section-title" style="margin-top:10px">🧭 纯模型 vs 市场（不含市场先验）</div>
+    <div class="odds-grid">${row('主胜', 'home')}${row('平局', 'draw')}${row('客胜', 'away')}</div>
+    <div style="font-size:10px;color:var(--muted);margin-top:4px">▲绿=模型比市场更看好(价值方向) · ▼红=模型不看好(反向) · 融合值=60%市场+25%Elo+15%xG(上方主面板)</div>`; })()}
     ${oddsTrendBlock(p)}
     `;
   } else if (mkt === 'ou') {

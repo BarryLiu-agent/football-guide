@@ -134,6 +134,8 @@ def _build_context(pred: dict) -> str:
     league = pred.get("league", "")
     kickoff = pred.get("kickoff", "")
     probs = pred.get("probabilities") or {}
+    mp = pred.get("marketProbs") or {}
+    pm = pred.get("pureModelProbs") or {}
     raw = pred.get("rawOdds") or {}
     cs = pred.get("correctScores") or []
     top3 = cs[:3]
@@ -154,7 +156,9 @@ def _build_context(pred: dict) -> str:
     lines = [
         f"比赛: {home} vs {away} ({league}) 开赛 {kickoff}",
         f"统计模型比分预测: {pred.get('predictedScore', '?')}",
-        f"统计模型胜负概率: 主{probs.get('home')} 平{probs.get('draw')} 客{probs.get('away')}",
+        f"融合概率(市场60%+Elo25%+xG15%): 主{probs.get('home')} 平{probs.get('draw')} 客{probs.get('away')}",
+        f"纯模型概率(Elo+xG+Form,不含市场): 主{pm.get('home')} 平{pm.get('draw')} 客{pm.get('away')}",
+        f"市场去水概率: 主{mp.get('home')} 平{mp.get('draw')} 客{mp.get('away')}",
         f"欧赔: 主{raw.get('home')} 平{raw.get('draw')} 客{raw.get('away')}",
         f"Elo概率: 主{elo.get('home')} 平{elo.get('draw')} 客{elo.get('away')}",
         f"xG攻防模型概率: 主{xg.get('home')} 平{xg.get('draw')} 客{xg.get('away')}",
