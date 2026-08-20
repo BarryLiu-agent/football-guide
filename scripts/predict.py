@@ -11,6 +11,14 @@ predict.py - 比分预测引擎
   新分析器: 继承 Analyzer, 在 ANALYSIS_REGISTRY 注册即可, 主流程不改
 """
 
+# ── AI 研判费用控制 ──
+# 只对开赛前 72h 内的比赛调用 AI（覆盖本周末+周中窗口），更远的沿用旧研判。
+AI_WINDOW_HOURS = 72
+# 临场期：距开赛 <24h 时每次刷新都重新调用 AI（赛前伤停/赔率/阵容变动密集，必须及时反映）。
+AI_LATE_HOURS = 24
+# 远期（≥24h 且 ≤72h）同场 12h 内已有研判则不重复调用（CI 高频刷新时避免重复扣费）。
+AI_COOLDOWN_HOURS = 12
+
 import argparse
 import io
 import json
@@ -1223,12 +1231,40 @@ def main():
             pred["betRec"] = bet_candidates[0] if bet_candidates else None
 
             # ── AI 最终研判（可选增强层）：失败返回 None，不影响统计预测 ──
+            # 费用控制：仅对 72h 内开赛的比赛调用；临场期(<24h)每次刷新都重调
+            # (赛前伤停/赔率/阵容变动敏感)，远期(≥24h)12h 冷却；窗口外沿用旧研判。
             if not args.skip_ai:
                 try:
                     from ai_predictor import ai_judge
-                    ai = ai_judge(pred)
-                    if ai:
-                        pred["aiJudge"] = ai
+                    now = datetime.now(timezone.utc)
+                    kick = None
+                    if pred.get("utcDate"):
+                        try:
+                            kick = datetime.fromisoformat(pred["utcDate"].replace("Z", "+00:00"))
+                        except Exception:
+                            kick = None
+                    hours_to_kick = (kick - now).total_seconds() / 3600 if kick else None
+                    in_window = hours_to_kick is not None and 0 <= hours_to_kick <= AI_WINDOW_HOURS
+                    need_fresh = False
+                    if in_window:
+                        # 临场期(<24h)：每次刷新都重调，确保赛前变动进入研判
+                        need_fresh = hours_to_kick < AI_LATE_HOURS
+                        if not need_fresh:
+                            # 远期(≥24h)：同场 12h 内不重复调用（省额度）
+                            at = pred.get("aiJudgeAt")
+                            if at:
+                                try:
+                                    age_h = (now - datetime.fromisoformat(at.replace("Z", "+00:00"))).total_seconds() / 3600
+                                    need_fresh = age_h >= AI_COOLDOWN_HOURS
+                                except Exception:
+                                    need_fresh = True
+                            else:
+                                need_fresh = True
+                    if need_fresh:
+                        ai = ai_judge(pred)
+                        if ai:
+                            pred["aiJudge"] = ai
+                            pred["aiJudgeAt"] = now.strftime("%Y-%m-%dT%H:%M:%SZ")
                 except Exception as e:
                     print(f"  [predict] AI 研判失败(降级): {e}")
             predictions.append(pred)
@@ -1260,23 +1296,24 @@ def main():
         "disclaimer": "本结果仅用于个人数据分析与研究, 不构成任何投注建议",
     }
 
-    # ── AI 研判保留：--skip-ai 模式下沿用上次已生成的研判（省额度，避免高频刷新清空 AI 区块）──
-    if args.skip_ai:
-        try:
-            old_path = DATA_DIR / "predictions.json"
-            if old_path.exists():
-                old = json.loads(old_path.read_text(encoding="utf-8"))
-                by_key = {}
-                for op in old.get("predictions", []):
-                    if op.get("aiJudge"):
-                        by_key[(op.get("league"), op.get("homeTeam", "").lower(), op.get("awayTeam", "").lower())] = op["aiJudge"]
-                for p in predictions:
-                    k = (p.get("league"), p.get("homeTeam", "").lower(), p.get("awayTeam", "").lower())
-                    if k in by_key and not p.get("aiJudge"):
-                        p["aiJudge"] = by_key[k]
-                        p["aiJudgeStale"] = True  # 基于上次数据，供前端提示
-        except Exception:
-            pass
+    # ── AI 研判继承：窗口外/冷却中的比赛沿用上次已生成的研判（省额度）──
+    # 窗口内且冷却已过的比赛已在上方循环中生成新研判，这里只补窗口外的。
+    try:
+        old_path = DATA_DIR / "predictions.json"
+        if old_path.exists():
+            old = json.loads(old_path.read_text(encoding="utf-8"))
+            by_key = {}
+            for op in old.get("predictions", []):
+                if op.get("aiJudge"):
+                    by_key[(op.get("league"), op.get("homeTeam", "").lower(), op.get("awayTeam", "").lower())] = op
+            for p in predictions:
+                k = (p.get("league"), p.get("homeTeam", "").lower(), p.get("awayTeam", "").lower())
+                if k in by_key and not p.get("aiJudge"):
+                    p["aiJudge"] = by_key[k]["aiJudge"]
+                    p["aiJudgeAt"] = by_key[k].get("aiJudgeAt")
+                    p["aiJudgeStale"] = True  # 基于上次数据，供前端提示
+    except Exception:
+        pass
 
     # ── 预测战绩：存档 + 赛果对比 + 成功率统计 ──
     stats = evaluate_predictions(predictions)
