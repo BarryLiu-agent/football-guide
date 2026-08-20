@@ -1049,6 +1049,16 @@ def main():
             pred["modelProbs"] = {
                 "home": round(f_home, 3), "draw": round(f_draw, 3), "away": round(f_away, 3)
             }
+            # 市场去水概率（独立展示，供"模型 vs 市场"对比，不参与任何模型下游）
+            pred["marketProbs"] = {
+                k: round(market_prob[k], 3) for k in ("home", "draw", "away")
+            } if market_prob else None
+            # 纯模型概率（Elo+xG+Form，不含市场先验）：价值检测同源，前端双列对比用
+            pred["pureModelProbs"] = {
+                "home": round(model_prob["home"], 3),
+                "draw": round(model_prob["draw"], 3),
+                "away": round(model_prob["away"], 3),
+            }
             # 统一胜率：probabilities（前端 h2h 面板/AI 输入）复用融合概率，
             # 避免 ScorePredictor 的"市场+消息"版本与下游模型不一致（Getafe 场曾出现 52/24/23 vs 39/27/34）
             pred["probabilities"] = {
