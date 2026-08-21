@@ -1083,13 +1083,15 @@ function renderResults() {
     const mp = r.modelProbs || r.probabilities || {};
     const pct = (v) => v == null ? '—' : Math.round(v * 100) + '%';
     const mOut = outcomeOf(r.predictedScore), aOut = outcomeOf(r.actualScore);
-    // 比分精确命中 + 胜负方向命中分开计算
-    const mExact = r.predictedScore === r.actualScore;
+    // 波胆列表命中：模型 Top6 波胆任一等于实际比分即算比分命中（老存档无 correctScores 时回退单一主推）
+    const csList = r.correctScores && r.correctScores.length ? r.correctScores : null;
+    const mExact = csList ? csList.some(c => c.score === r.actualScore) : (r.predictedScore === r.actualScore);
     const mHit = mOut === aOut;
     const aiExact = r.aiScore === r.actualScore;
     const aiHit = r.aiPick != null && r.aiPick !== 'none' ? r.aiPick === aOut : null;
     const mScoreTxt = `<span class="${mExact ? 'hit' : 'miss'}">比分${mExact ? '✓' : '✗'}</span> <span class="${mHit ? 'hit' : 'miss'}">胜负${mHit ? '✓' : '✗'}</span>`;
     const aiScoreTxt = aiHit === null ? '' : `<span class="${aiExact ? 'hit' : 'miss'}">比分${aiExact ? '✓' : '✗'}</span> <span class="${aiHit ? 'hit' : 'miss'}">胜负${aiHit ? '✓' : '✗'}</span>`;
+    const csTxt = csList ? `<div class="s">波胆 ${csList.map(c => c.score).join(' ')}${csList.some(c => c.score === r.actualScore) ? ' <span style="color:var(--green)">命中✓</span>' : ''}</div>` : '';
     return `<div class="res-card">
       <div class="res-head"><b>${cn(r.homeTeam)}</b> <span class="res-score">${r.actualScore || '—'}</span> <b>${cn(r.awayTeam)}</b>
         <span class="res-date">${(r.kickoff || '').slice(0, 10)}</span></div>
@@ -1098,6 +1100,7 @@ function renderResults() {
           <div class="k">🤖 模型预测</div>
           <div class="v">${r.predictedScore || '—'} ${mScoreTxt}</div>
           <div class="s">主${pct(mp.home)} 平${pct(mp.draw)} 客${pct(mp.away)}</div>
+          ${csTxt}
         </div>
         <div class="res-cell ai">
           <div class="k">✨ AI 研判</div>
@@ -1330,6 +1333,10 @@ function renderRecord() {
    const mktBetRow = mktBetRows ? '<div class="record-cards" style="margin-top:8px;border:1px solid var(--border);border-radius:12px;padding:6px">' + mktBetRows + '</div>' : '';
   const rows = (h.results || []).slice().reverse().slice(0, 30).map(r => {
     const hit = r.hitOutcome;
+    // 波胆列表命中标记（老存档无 correctScores 时回退 hitExact）
+    const csList = r.correctScores && r.correctScores.length ? r.correctScores : null;
+    const csHit = csList ? csList.some(c => c.score === r.actualScore) : r.hitExact;
+    const csTag = csList ? '<span class="res ' + (csHit ? 'hit' : 'miss') + '" style="margin-left:6px;font-size:10px" title="波胆:' + csList.map(c => c.score).join(' ') + '">🎯' + (csHit ? '✓' : '✗') + '</span>' : '';
     const aiHit = r.aiPick && r.aiPick !== 'none' ? r.aiHitOutcome : null;
     const br = r.betRec;
     const mkLb = { h2h: '胜负', spread: '让球', score: '波胆' };
@@ -1345,6 +1352,7 @@ function renderRecord() {
       '<span style="flex:1">' + cnTeam(r.homeTeam) + ' vs ' + cnTeam(r.awayTeam) + '</span>' +
       '<span style="color:var(--muted);font-size:11px">预测</span> <span class="pred">' + (r.predictedScore || '-') + '</span>' +
       '<span style="color:var(--muted);font-size:11px">实际</span> <span class="actual">' + (r.actualScore || '-') + '</span>' +
+      csTag +
       (aiHit == null ? '' : '<span class="res ' + (aiHit ? 'hit' : 'miss') + '" style="margin-left:6px" title="AI 研判:' + (r.aiScore || '-') + '">🤖' + (aiHit ? '✓' : '✗') + '</span>') +
       (r.hitOu == null ? '' : '<span class="res ' + (r.hitOu ? 'hit' : 'miss') + '" style="margin-left:6px;font-size:10px" title="大小球: 模型' + (r.ouModel?.over >= 0.5 ? '大' : '小') + (r.ouModel?.line || '') + '球">OU' + (r.hitOu ? '✓' : '✗') + '</span>') +
       (r.hitSp == null ? '' : '<span class="res ' + (r.hitSp ? 'hit' : 'miss') + '" style="margin-left:6px;font-size:10px" title="让球: 主' + (r.spModel?.point > 0 ? '+' + r.spModel?.point : r.spModel?.point) + '盘 模型' + (r.spModel?.cover >= 0.5 ? '主赢盘' : '客赢盘') + '">盘' + (r.hitSp ? '✓' : '✗') + '</span>') +

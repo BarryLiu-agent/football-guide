@@ -1536,6 +1536,7 @@ def evaluate_predictions(predictions):
             "kickoff": p.get("kickoff", ""),
             "predictedScore": p["predictedScore"],
             "confidence": p.get("confidence"),
+            "correctScores": (p.get("correctScores") or [])[:6],
             "modelProbs": p.get("modelProbs") or p.get("probabilities") or {},
             "probabilities": p.get("probabilities") or {},
             "valuePicks": p.get("valuePicks") or [],
@@ -1603,6 +1604,8 @@ def evaluate_predictions(predictions):
     evaluated = 0
     exact_hit = 0
     outcome_hit = 0
+    cs_total = 0   # 波胆列表命中（任一 Top6 波胆中即命中）
+    cs_hit = 0
     value_total = 0
     value_hit = 0
     ai_total = 0
@@ -1623,6 +1626,16 @@ def evaluate_predictions(predictions):
     for p in hist["predictions"]:
         if p.get("actualScore"):
             evaluated += 1
+            # 已结算历史记录：补算波胆列表命中（老存档无 correctScores，从当前预测补齐近似）
+            if p.get("hitCs") is None:
+                _cur = pred_by_key.get((p.get("league", ""), norm_team(p["homeTeam"]), norm_team(p["awayTeam"])))
+                _cs = (p.get("correctScores") or (_cur or {}).get("correctScores") or [])
+                p["correctScores"] = list(_cs)[:6]
+                p["hitCs"] = p["actualScore"] in [c.get("score") for c in _cs]
+            if p.get("correctScores"):
+                cs_total += 1
+                if p.get("hitCs"):
+                    cs_hit += 1
             if p.get("hitExact"):
                 exact_hit += 1
             if p.get("hitOutcome"):
@@ -1678,7 +1691,13 @@ def evaluate_predictions(predictions):
             p["evaluatedAt"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
             p["hitExact"] = (p["predictedScore"] == r["actualScore"])
             p["hitOutcome"] = (outcome_of(p["predictedScore"]) == outcome_of(r["actualScore"]))
+            # 波胆列表命中：模型 Top6 波胆任一等于实际比分即命中（比单一主推比分更合理）
+            cs_scores = [c.get("score") for c in (p.get("correctScores") or [])]
+            p["hitCs"] = r["actualScore"] in cs_scores
             evaluated += 1
+            cs_total += 1
+            if p["hitCs"]:
+                cs_hit += 1
             if p["hitExact"]:
                 exact_hit += 1
             if p["hitOutcome"]:
@@ -1773,6 +1792,8 @@ def evaluate_predictions(predictions):
                 "actualScore": r["actualScore"],
                 "hitExact": p["hitExact"],
                 "hitOutcome": p["hitOutcome"],
+                "hitCs": p.get("hitCs"),
+                "correctScores": (p.get("correctScores") or [])[:6],
                 "modelProbs": p.get("modelProbs") or p.get("probabilities") or {},
                 "probabilities": p.get("probabilities") or {},
                 "aiPick": p.get("aiPick"),
@@ -1785,6 +1806,16 @@ def evaluate_predictions(predictions):
                 "betRecs": p.get("betRecs"),
             })
 
+    # 3.5 历史 results 记录补波胆列表（老存档无 correctScores，从当前预测补齐，命中重算）
+    for rec in hist.get("results", []):
+        if rec.get("correctScores"):
+            continue
+        _cur = pred_by_key.get((rec.get("league", ""), norm_team(rec.get("homeTeam", "")), norm_team(rec.get("awayTeam", ""))))
+        _cs = (_cur or {}).get("correctScores") or []
+        if _cs:
+            rec["correctScores"] = list(_cs)[:6]
+            rec["hitCs"] = rec.get("actualScore") in [c.get("score") for c in _cs]
+
     # 4. 统计
     stats = {
         "total": len(hist["predictions"]),
@@ -1793,6 +1824,9 @@ def evaluate_predictions(predictions):
         "exactRate": round(exact_hit / evaluated, 4) if evaluated else 0,
         "outcomeHit": outcome_hit,
         "outcomeRate": round(outcome_hit / evaluated, 4) if evaluated else 0,
+        "csTotal": cs_total,
+        "csHit": cs_hit,
+        "csRate": round(cs_hit / cs_total, 4) if cs_total else 0,
         "valueTotal": value_total,
         "valueHit": value_hit,
         "valueRate": round(value_hit / value_total, 4) if value_total else 0,
