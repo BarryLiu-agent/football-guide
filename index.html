@@ -1083,7 +1083,7 @@ function renderResults() {
     const mp = r.modelProbs || r.probabilities || {};
     const pct = (v) => v == null ? '—' : Math.round(v * 100) + '%';
     const mOut = outcomeOf(r.predictedScore), aOut = outcomeOf(r.actualScore);
-    // 波胆列表命中：模型 Top6 波胆任一等于实际比分即算比分命中（老存档无 correctScores 时回退单一主推）
+    // 波胆列表命中：模型 Top3 波胆任一等于实际比分即算比分命中（老存档无 correctScores 时回退单一主推）
     const csList = r.correctScores && r.correctScores.length ? r.correctScores : null;
     const mExact = csList ? csList.some(c => c.score === r.actualScore) : (r.predictedScore === r.actualScore);
     const mHit = mOut === aOut;

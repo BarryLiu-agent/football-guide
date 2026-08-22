@@ -1124,7 +1124,7 @@ def main():
 
             # Dixon-Coles 波胆 + 大小球 + 分布
             dc_all = score_model.dc_scores(6)
-            pred["correctScores"] = dc_all
+            pred["correctScores"] = dc_all[:3]  # 全站统一展示 Top3（波胆页签/结果页对比）
             # 预测比分与波胆列表同口径（DC 修正），且与 probabilities 方向一致：
             # 全局波胆 Top1 常是 1-1（联合分布众数），会与边际 1X2 方向矛盾（如概率指向客胜却预测 1-1），
             # 因此从 DC 波胆中取与 probabilities 方向相同的最高概率比分。
@@ -1536,7 +1536,7 @@ def evaluate_predictions(predictions):
             "kickoff": p.get("kickoff", ""),
             "predictedScore": p["predictedScore"],
             "confidence": p.get("confidence"),
-            "correctScores": (p.get("correctScores") or [])[:6],
+            "correctScores": (p.get("correctScores") or [])[:3],
             "modelProbs": p.get("modelProbs") or p.get("probabilities") or {},
             "probabilities": p.get("probabilities") or {},
             "valuePicks": p.get("valuePicks") or [],
@@ -1630,7 +1630,7 @@ def evaluate_predictions(predictions):
             if p.get("hitCs") is None:
                 _cur = pred_by_key.get((p.get("league", ""), norm_team(p["homeTeam"]), norm_team(p["awayTeam"])))
                 _cs = (p.get("correctScores") or (_cur or {}).get("correctScores") or [])
-                p["correctScores"] = list(_cs)[:6]
+                p["correctScores"] = list(_cs)[:3]
                 p["hitCs"] = p["actualScore"] in [c.get("score") for c in _cs]
             if p.get("correctScores"):
                 cs_total += 1
@@ -1793,7 +1793,7 @@ def evaluate_predictions(predictions):
                 "hitExact": p["hitExact"],
                 "hitOutcome": p["hitOutcome"],
                 "hitCs": p.get("hitCs"),
-                "correctScores": (p.get("correctScores") or [])[:6],
+                "correctScores": (p.get("correctScores") or [])[:3],
                 "modelProbs": p.get("modelProbs") or p.get("probabilities") or {},
                 "probabilities": p.get("probabilities") or {},
                 "aiPick": p.get("aiPick"),
@@ -1813,7 +1813,7 @@ def evaluate_predictions(predictions):
         _cur = pred_by_key.get((rec.get("league", ""), norm_team(rec.get("homeTeam", "")), norm_team(rec.get("awayTeam", ""))))
         _cs = (_cur or {}).get("correctScores") or []
         if _cs:
-            rec["correctScores"] = list(_cs)[:6]
+            rec["correctScores"] = list(_cs)[:3]
             rec["hitCs"] = rec.get("actualScore") in [c.get("score") for c in _cs]
 
     # 4. 统计
