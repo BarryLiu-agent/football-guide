@@ -48,6 +48,8 @@ PROMPT_SYSTEM = (
     '     },\n'
     '     "keyFactors": ["关键因素1(数据依据)", "关键因素2", "关键因素3"],\n'
     '     "risks": ["风险点1", "风险点2"],\n'
+    '     "drawConsidered": "平局评估一句话（是否认真考虑过平局、依据）",\n'
+    '     "divergesFromModel": true或false（你的方向/比分是否与统计模型不同）,\n'
     '     "altScore": "备选比分 X-Y",\n'
     '     "reason": "一句话总结(中文)"\n'
     '   }\n'
@@ -57,6 +59,10 @@ PROMPT_SYSTEM = (
     "6. keyFactors 至少 2 条、risks 至少 1 条，都要有数据支撑。\n"
     "7. 如果提供了相关新闻消息，必须在 keyFactors 或 risks 中引用新闻内容（伤停/状态/转会等）作为判断依据；\n"
     "   如果新闻中有伤停、停赛、复出等关键信息，必须在 analysis.h2h 或 risks 中明确提及。\n"
+    "8. 必须独立评估平局可能性：即使统计模型方向明确，也要在 drawConsidered 中写明平局概率判断"
+    "依据（双方实力接近/防守型踢法/历史交锋平局多等），不要无条件跟随模型方向；\n"
+    "9. 若你的最终方向/比分与统计模型不同，divergesFromModel 设为 true，并在 reason 中以"
+    "「与模型分歧：」开头说明理由（市场异动/新闻信号/平局风险等）。\n"
 )
 
 
@@ -266,11 +272,17 @@ def ai_judge(pred: dict, timeout: int = DEFAULT_TIMEOUT) -> dict | None:
         risks = data.get("risks") or []
         if not isinstance(risks, list):
             risks = []
+        # AI 独立研判标记：drawConsidered（平局评估）与 divergesFromModel（与统计模型分歧）
+        div_model = data.get("divergesFromModel")
+        if not isinstance(div_model, bool):
+            div_model = str(div_model).lower() in ("true", "1", "yes")
         return {
             "pick": pick,
             "score": score,
             "confidence": round(conf, 3),
             "reason": str(data.get("reason", "")).strip(),
+            "drawConsidered": str(data.get("drawConsidered", "")).strip(),
+            "divergesFromModel": div_model,
             "analysis": {
                 "h2h": str(analysis.get("h2h", "")).strip(),
                 "ou": str(analysis.get("ou", "")).strip(),
