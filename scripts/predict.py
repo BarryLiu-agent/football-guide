@@ -340,18 +340,23 @@ class ScoreModel:
         self.lam_a = 1.1
         self.score_prior = {}   # 常见比分先验(scorePrior): { '1-0': 0.1, ... }，可选
 
-    def fit(self, p_home, p_draw, p_away, xg_hint=None):
+    def fit(self, p_home, p_draw, p_away, xg_hint=None, min_total_goals=None):
         """数值求解 λh/λa 使模型 1X2 概率最接近输入概率。
-        xg_hint: (lam_h, lam_a) 元组，来自 xG 攻防强度。有 hint 时缩小搜索范围到 ±0.5。"""
+        xg_hint: (lam_h, lam_a) 元组，来自 xG 攻防强度。有 hint 时缩小搜索范围到 ±0.5。
+        min_total_goals: 联赛近期场均总进球（如 2.8）。搜索时 λh+λa 不低于该值的 85%，
+        避免模型反推出过低 λ（实际联赛进球普遍被低估，导致波胆/大小球偏小）。"""
         if not p_home or not p_draw or not p_away:
             return self
         best_err, best = 1e9, (self.lam_h, self.lam_a)
+        min_total = (min_total_goals or 0) * 0.85
         if xg_hint and xg_hint[0] and xg_hint[1]:
             # xG 引导搜索：以 xG λ 为中心，±0.5 范围，步长 0.05
             ch, ca = xg_hint
             for dh in [x * 0.05 for x in range(-10, 11)]:
                 for da in [x * 0.05 for x in range(-10, 11)]:
                     lh, la = max(0.3, ch + dh), max(0.3, ca + da)
+                    if lh + la < min_total:
+                        continue
                     ph, pd, pa = self._probs(lh, la)
                     err = abs(ph - p_home) + abs(pd - p_draw) + abs(pa - p_away)
                     if err < best_err:
@@ -361,6 +366,8 @@ class ScoreModel:
             for total in [x * 0.1 for x in range(14, 37)]:
                 for share in [x * 0.01 for x in range(25, 81)]:
                     lh, la = total * share, total * (1 - share)
+                    if lh + la < min_total:
+                        continue
                     ph, pd, pa = self._probs(lh, la)
                     err = abs(ph - p_home) + abs(pd - p_draw) + abs(pa - p_away)
                     if err < best_err:
@@ -725,6 +732,33 @@ def load_form(min_kickoff=""):
     return form
 
 
+def _league_avg_goals(min_kickoff=""):
+    """各联赛历史场均总进球：{league: 场均总进球}。
+    数据源 data/season_2025.json（与 load_form/Elo 训练同源同口径）。
+    只统计早于预测窗口的赛果（防未来函数），球队数≥5 才纳入（避免单场噪声）。"""
+    path = DATA_DIR / "season_2025.json"
+    if not path.exists():
+        return {}
+    try:
+        with open(path, encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception:
+        return {}
+    goals = {}
+    for m in data.get("matches", []):
+        hg, ag = m.get("homeGoals"), m.get("awayGoals")
+        if hg is None or ag is None:
+            continue
+        if min_kickoff and (m.get("utcDate") or "") >= min_kickoff:
+            continue
+        goals.setdefault(m.get("league", ""), []).append(hg + ag)
+    out = {}
+    for lg, gs in goals.items():
+        if len(gs) >= 5:
+            out[lg] = round(sum(gs) / len(gs), 2)
+    return out
+
+
 # The Odds API 联赛代码 → Football-Data.org 联赛代码（积分榜用）
 LEAGUE_ALIAS = {
     "CH": "ELC", "ED": "DED", "BDF": "BPL", "JLG": "J1", "KL1": "KLE",
@@ -845,6 +879,11 @@ def main():
     form = load_form(min_kickoff)
     print(f"赔率联赛: {list(odds_by_league.keys())}, 消息: {len(messages)} 条, 积分榜联赛: {len(standings_by_league)}, 近5场form球队: {len(form)}")
 
+    # 各联赛历史场均总进球（供 ScoreModel 入参：避免波胆/大小球被低 λ 系统性低估）
+    league_avg_goals = _league_avg_goals(min_kickoff)
+    if league_avg_goals:
+        print(f"联赛场均总进球: " + ", ".join(f"{k}={v:.2f}" for k, v in sorted(league_avg_goals.items())))
+
     # 模型训练：Elo（赛果）+ xG（攻防强度）并行独立训练，互不依赖
     elo, season_total, finished_count = _train_elo(standings_by_league, min_kickoff)
     print(f"Elo: {len(elo.ratings)} 队, 已用 {season_total} 场上赛季 + {finished_count} 场本赛季赛果迭代")
@@ -940,6 +979,15 @@ def main():
                 _s = f_home + f_draw + f_away
                 if _s > 0:
                     f_home, f_draw, f_away = f_home / _s, f_draw / _s, f_away / _s
+                # 平局钳制：模型平局低于市场平局的 70% 时，向市场平局抬升
+                # （模型由 1X2 反推 λ 会系统性压低平局；市场平局定价 ~24-27%，更可信）
+                # 抬升后重新归一化，保持三方向概率和为 1。
+                draw_floor = 0.70 * market_prob["draw"]
+                if f_draw < draw_floor:
+                    f_draw = draw_floor
+                    _s = f_home + f_draw + f_away
+                    if _s > 0:
+                        f_home, f_draw, f_away = f_home / _s, f_draw / _s, f_away / _s
             else:
                 f_home, f_draw, f_away = ep_home, ep_draw, ep_away
 
@@ -955,7 +1003,8 @@ def main():
                 model_prob = pred_elo
 
             score_model = ScoreModel()
-            score_model.fit(f_home, f_draw, f_away, xg_hint=xg_model.get_lambda(home, away))
+            score_model.fit(f_home, f_draw, f_away, xg_hint=xg_model.get_lambda(home, away),
+                            min_total_goals=league_avg_goals.get(league))
             score_model.score_prior = rules.get("scorePrior", {}) or {}
 
             # ── 多模型分歧：Elo vs Dixon-Coles vs 市场（方向不一致 = 不碰）──
@@ -1083,7 +1132,8 @@ def main():
                 for k, label in (("home", "主胜"), ("draw", "平局"), ("away", "客胜")):
                     diff = model_prob[k] - market_prob[k]
                     if diff >= value_threshold:  # 正 edge：模型比市场更看好 = 价值信号
-                        level = "gold" if diff >= 0.20 and model_conf >= 0.20 else "watch"
+                        # gold 门槛收紧到 25%（此前 20% 的假信号伤害大；25%+ 才配得上 gold 展示）
+                        level = "gold" if diff >= 0.25 and model_conf >= 0.25 else "watch"
                         value_picks.append({
                             "side": k, "label": label,
                             "modelProb": round(model_prob[k], 3),
@@ -1108,19 +1158,22 @@ def main():
             # 候选类型: h2h(胜负) / spread(让球,Odds 盘) / score(波胆,竞彩 crsOdds)。
             bet_candidates = []
             # h2h 候选：价值信号方向 + 欧赔 + 凯利注额（用模型概率重算，避免旧版误用市场概率恒≈0）
+            # 止血：仅 edge≥8% 的强信号才进投注池（弱 edge 多为模型误差，此前 6 注全输的教训）
             if value_picks:
-                best_vp = max(value_picks, key=lambda v: abs(v.get("edge", 0)))
-                o = raw_odds.get(best_vp["side"]) if raw_odds else None
-                if isinstance(o, (int, float)) and o > 1:
-                    mp = best_vp.get("modelProb")
-                    kl = (o * mp - 1) / (o - 1) if mp else 0
-                    stake = round(max(0.0, min(0.05, kl)), 4)
-                    if stake > 0:
-                        bet_candidates.append({
-                            "market": "h2h", "side": best_vp["side"],
-                            "score": None, "odds": round(o, 2), "stake": stake,
-                            "source": "value:" + best_vp["level"], "edge": best_vp.get("edge"),
-                        })
+                strong_vp = [v for v in value_picks if v.get("edge", 0) >= 0.08]
+                if strong_vp:
+                    best_vp = max(strong_vp, key=lambda v: abs(v.get("edge", 0)))
+                    o = raw_odds.get(best_vp["side"]) if raw_odds else None
+                    if isinstance(o, (int, float)) and o > 1:
+                        mp = best_vp.get("modelProb")
+                        kl = (o * mp - 1) / (o - 1) if mp else 0
+                        stake = round(max(0.0, min(0.05, kl)), 4)
+                        if stake > 0:
+                            bet_candidates.append({
+                                "market": "h2h", "side": best_vp["side"],
+                                "score": None, "odds": round(o, 2), "stake": stake,
+                                "source": "value:" + best_vp["level"], "edge": best_vp.get("edge"),
+                            })
 
             # Dixon-Coles 波胆 + 大小球 + 分布
             dc_all = score_model.dc_scores(6)
