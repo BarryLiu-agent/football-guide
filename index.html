@@ -969,6 +969,15 @@ function renderFixtures() {
   const t = todayBJ();
   const maxD = fmtDate(new Date(Date.now() + 30 * 86400000).toISOString());
   const now = Date.now();
+  // 过期但未回填终局比分的比赛（Football-Data 免费接口常滞后）：开赛超 3h 仍无比分 → 从赛程移除，
+  // 不显示成未开赛（否则用户看到“凌晨早该结束的比赛还挂在赛程栏”）。
+  const staleCutoff = 3 * 3600000;
+  ms = ms.filter(m => {
+    const kick = new Date(m.utcDate).getTime();
+    if (!isFinite(kick)) return true;
+    if (now - kick > staleCutoff && !isFinished(m)) return false;  // 超3h且无比分→剔除
+    return true;
+  });
   // 展示模式:已完赛倒序(最近在前),最多 120 场
   const finished = ms.filter(isFinished);
   if (finished.length >= ms.length * 0.8) {
