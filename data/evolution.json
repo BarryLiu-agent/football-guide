@@ -1,1 +1,1 @@
-{"generatedAt":"2026-08-31T12:30:21Z","modelVersion":1,"settledSamples":86,"calibration":[{"bucket":"low","label":"<50%","n":1,"hitRate":1.0,"avgConf":0.487,"bias":0.513,"verdict":"偏保守"}],"overallBias":null,"highConfDiscount":1.0,"ouRate":1.0,"spRate":1.0,"recommendations":["校准良好，无需调整"],"applied":false}
+{"generatedAt":"2026-08-31T12:48:29Z","modelVersion":1,"settledSamples":86,"calibration":[],"overallBias":null,"highConfDiscount":1.0,"ouRate":0,"spRate":0,"recommendations":["校准良好，无需调整"],"applied":false}
