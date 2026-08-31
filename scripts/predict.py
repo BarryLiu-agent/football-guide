@@ -1301,9 +1301,10 @@ def main():
                     from ai_predictor import ai_judge
                     now = datetime.now(timezone.utc)
                     kick = None
-                    if pred.get("utcDate"):
+                    # 注意：预测管道只写入 pred["kickoff"]（无 utcDate 字段），窗口判断必须读 kickoff
+                    if pred.get("kickoff"):
                         try:
-                            kick = datetime.fromisoformat(pred["utcDate"].replace("Z", "+00:00"))
+                            kick = datetime.fromisoformat(pred["kickoff"].replace("Z", "+00:00"))
                         except Exception:
                             kick = None
                     hours_to_kick = (kick - now).total_seconds() / 3600 if kick else None
