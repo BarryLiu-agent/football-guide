@@ -1860,6 +1860,28 @@ def evaluate_predictions(predictions):
                 "betRecs": p.get("betRecs"),
             })
 
+    # 3.4 补齐无预测的赛果：fixtures 已 FINISHED 但当时无赔率/无预测的比赛也要展示实际比分
+    # （否则赛果页缺失最近完赛场次，造成“更新不及时”观感）
+    matched = set()
+    for rec in hist.get("results", []):
+        matched.add((norm_team(rec.get("homeTeam", "")), norm_team(rec.get("awayTeam", "")), rec.get("kickoff", "")[:10]))
+    for (nh, na, kd), r in result_keys.items():
+        if (nh, na, kd) in matched:
+            continue
+        if not r.get("actualScore"):
+            continue
+        hist["results"].append({
+            "homeTeam": r["homeTeam"], "awayTeam": r["awayTeam"],
+            "league": None,  # 前端用 fixtures 队名匹配推断
+            "kickoff": r["kickoff"],
+            "predictedScore": None, "actualScore": r["actualScore"],
+            "hitExact": None, "hitOutcome": None, "hitCs": None,
+            "correctScores": [], "modelProbs": {}, "probabilities": {},
+            "aiPick": None, "aiScore": None, "aiConfidence": None, "aiReason": None,
+            "aiHitOutcome": None, "aiHitExact": None,
+            "betRec": None, "betRecs": [],
+        })
+
     # 3.5 历史 results 记录补波胆列表（老存档无 correctScores，从当前预测补齐，命中重算）
     for rec in hist.get("results", []):
         if rec.get("correctScores"):

@@ -191,18 +191,9 @@ img { display: block; }
 .date-label.is-tomorrow .dot { background: var(--blue); }
 .date-label .count { font-size: 10px; color: var(--text-3); font-weight: 400; }
 
-/* 无价值信号场次:默认折叠,减少无效出手干扰 */
-.no-signal { margin-top: 2px; }
-.no-signal summary {
-  cursor: pointer; list-style: none; font-size: 11px; color: var(--text-3);
-  padding: 6px 10px; border-radius: 8px; background: var(--bg-2);
-  display: inline-flex; align-items: center; gap: 6px; user-select: none;
-}
-.no-signal summary:hover { color: var(--text-2); }
-.no-signal summary::before { content: '▸'; transition: transform .15s; }
-.no-signal[open] summary::before { transform: rotate(90deg); }
-.no-signal .match-list.dim { opacity: .55; filter: saturate(.6); }
-.no-signal .match-list.dim .match-card { box-shadow: none; border-color: var(--border); }
+/* 无价值信号场次:直接平铺展示(不再折叠),弱化视觉但不隐藏 */
+.match-list.dim { opacity: .55; filter: saturate(.6); }
+.match-list.dim .match-card { box-shadow: none; border-color: var(--border); }
 
 /* 盘口走势(初盘→临场) */
 .calib-card {
@@ -1034,7 +1025,7 @@ function renderFixtures() {
     return `<div class="date-group">
       <div class="date-label ${cls}"><span class="dot"></span>${dateLabel(d)} <span class="count">${list.length} 场</span></div>
       ${sig.length ? `<div class="match-list">${sig.map(renderCard).join('')}</div>` : ''}
-      ${rest.length ? `<details class="no-signal"><summary>其他 ${rest.length} 场(无价值信号)</summary><div class="match-list dim">${rest.map(renderCard).join('')}</div></details>` : ''}
+      ${rest.length ? `<div class="match-list dim">${rest.map(renderCard).join('')}</div>` : ''}
     </div>`;
   }).join('');
   return upcomingHtml;
