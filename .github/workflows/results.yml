@@ -9,6 +9,12 @@ on:
     - cron: '15 2,6,10,14,18,22 * * *'
   workflow_dispatch:
 
+# 与 daily.yml 共享同一并发组：防止 30min 定时与 push 触发同时跑,
+# 并发改写 data/fixtures.json、predictions.json 等共享文件导致状态不一致。
+concurrency:
+  group: data-pipeline
+  cancel-in-progress: true
+
 jobs:
   refresh-results:
     runs-on: ubuntu-latest

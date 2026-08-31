@@ -10,6 +10,12 @@ on:
     branches: [main]
   workflow_dispatch:  # 允许手动触发（消耗配额，注意剩余量）
 
+# 与 results.yml 共享同一并发组：防止 push 触发与 30min 定时同时跑,
+# 并发改写 data/fixtures.json、predictions.json 等共享文件导致状态不一致。
+concurrency:
+  group: data-pipeline
+  cancel-in-progress: true
+
 jobs:
   fetch-and-deploy:
     runs-on: ubuntu-latest
