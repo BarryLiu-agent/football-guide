@@ -970,7 +970,7 @@ function renderFixtures() {
   const maxD = fmtDate(new Date(Date.now() + 30 * 86400000).toISOString());
   const now = Date.now();
   // 展示模式:已完赛倒序(最近在前),最多 120 场
-  const finished = ms.filter(m => m.status === 'FINISHED');
+  const finished = ms.filter(isFinished);
   if (finished.length >= ms.length * 0.8) {
     ms = finished.sort((a, b) => b.utcDate.localeCompare(a.utcDate)).slice(0, 120);
   } else {
@@ -994,7 +994,7 @@ function renderFixtures() {
     const mh = normTeam(m.homeTeam?.name || m.homeTeam?.shortName);
     const ma = normTeam(m.awayTeam?.name || m.awayTeam?.shortName);
     if (!teamMatch(mh, h) || !teamMatch(ma, a)) return false;
-    return ['FINISHED', 'POSTPONED', 'CANCELLED', 'AWARDED', 'SUSPENDED', 'ABANDONED'].includes(m.status);
+    return isClosed(m);
   });
   const extras = (state.predictions || []).filter(p => p.league === state.league)
     .filter(p => !hasFix(normTeam(p.homeTeam), normTeam(p.awayTeam)))
@@ -1038,7 +1038,7 @@ function renderResults() {
   // league 缺失的旧记录：用 fixtures 已完赛场次做队名模糊匹配推断联赛归属
   const finByCode = {};
   (state.fixtures || []).forEach(f => {
-    if (f.status === 'FINISHED') {
+    if (isFinished(f)) {
       const c = f.competition?.code;
       const key = normTeam(f.homeTeam?.name) + '|' + normTeam(f.awayTeam?.name);
       finByCode[key] = c;
@@ -1051,7 +1051,7 @@ function renderResults() {
     if (finByCode[rk]) return finByCode[rk] === code;
     const rh = normTeam(r.homeTeam), ra = normTeam(r.awayTeam);
     for (const f of (state.fixtures || [])) {
-      if (f.status !== 'FINISHED') continue;
+      if (!isFinished(f)) continue;
       const fh = normTeam(f.homeTeam?.name), fa = normTeam(f.awayTeam?.name);
       // 匹配：完全相等 / 首词相等(≥4字符) / 一方核心词包含在另一方队名中
       const hitH = rh === fh || (rh && fh && (rh.includes(fh) || fh.includes(rh) ||
@@ -1193,6 +1193,20 @@ function renderCard(m) {
   </div>`;
 }
 
+// 视为已完赛：显式 FINISHED，或 fullTime 已有完整终局比分（Football-Data 免费接口
+// 常出现“比分先回、status 仍标 IN_PLAY/TIMED”的滞后，用有终局比分兜底判定完赛）。
+function isFinished(m) {
+  if (!m) return false;
+  if (m.status === 'FINISHED') return true;
+  const ft = m.score?.fullTime || {};
+  return ft.home != null && ft.away != null;
+}
+// 视为“不可再作为未开赛/预测补充”的关闭状态（含已完赛／延期／取消等）
+function isClosed(m) {
+  if (!m) return false;
+  return ['FINISHED', 'POSTPONED', 'CANCELLED', 'AWARDED', 'SUSPENDED', 'ABANDONED'].includes(m.status) || isFinished(m);
+}
+
 function getScore(m) {
   const { score, status } = m;
   if (status === 'IN_PLAY' || status === 'LIVE' || status === 'PAUSED') {
@@ -1204,6 +1218,9 @@ function getScore(m) {
     return { text: `${ft.home ?? '-'}-${ft.away ?? '-'}`, cls: '', statusText: '完赛' };
   }
   if (status === 'POSTPONED') return { text: '延期', cls: '', statusText: '延期' };
+  // 兜底：状态仍标 TIMED/SCHEDULED 但已有终局比分 → 视为已完赛展示比分
+  const ft = score?.fullTime || {};
+  if (ft.home != null && ft.away != null) return { text: `${ft.home}-${ft.away}`, cls: '', statusText: '完赛' };
   return { text: 'VS', cls: '', statusText: '' };
 }
 
@@ -1375,7 +1392,7 @@ function openDetail(homeName, awayName, league) {
   $('analysisBox').textContent = currentPred?.analysis || '该场比赛暂无赔率与预测数据。';
   // 本赛季交锋记录
   const n1 = normTeam(homeName), n2 = normTeam(awayName);
-  const h2h = (state.fixtures || []).filter(f => f.status === 'FINISHED' && (
+  const h2h = (state.fixtures || []).filter(f => isFinished(f) && (
     (normTeam(f.homeTeam?.name || f.homeTeam?.shortName) === n1 && normTeam(f.awayTeam?.name || f.awayTeam?.shortName) === n2) ||
     (normTeam(f.homeTeam?.name || f.homeTeam?.shortName) === n2 && normTeam(f.awayTeam?.name || f.awayTeam?.shortName) === n1)
   )).sort((a, b) => b.utcDate.localeCompare(a.utcDate)).slice(0, 5);
