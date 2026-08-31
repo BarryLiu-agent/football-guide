@@ -1597,7 +1597,8 @@ function refreshAll() {
   const pat = localStorage.getItem('gh_pat');
   // 1 有 Token 则触发云端 Actions 重抓(不等待本地加载)
   if (pat) {
-    fetch('https://api.github.com/repos/BarryLiu-agent/football-guide/actions/workflows/daily.yml/dispatches', {
+    // 优先触发 results.yml（每30分钟刷赛程/赛果/结算,轻量不耗赔率配额）；失败才回退 daily.yml
+    fetch('https://api.github.com/repos/BarryLiu-agent/football-guide/actions/workflows/results.yml/dispatches', {
       method: 'POST',
       headers: { 'Accept': 'application/vnd.github+json', 'Authorization': 'Bearer ' + pat, 'X-GitHub-Api-Version': '2022-11-28' },
       body: JSON.stringify({ ref: 'main' })
