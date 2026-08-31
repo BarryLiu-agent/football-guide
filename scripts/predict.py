@@ -1444,7 +1444,7 @@ def _prune_history(hist: dict, keep_seasons: int = 2):
     return hist
 
 
-_REBET = {"push": None, False: False, True: True}
+REBET_PUSH = None  # 走水：退本金，不记胜负（与 _settle_bets 的 w is None 契约一致）
 
 
 def _bet_won(br: dict, actual_score: str):
@@ -1465,9 +1465,9 @@ def _bet_won(br: dict, actual_score: str):
             return False
         # 主队让球点(pt 负=主让)。主队赢盘 ⇔ 净胜差 > -pt；整球盘恰等于 -pt 为走水
         diff = h - a
-        cover = diff > -pt
         if float(pt).is_integer() and diff == -pt:
-            return _REBET[None]
+            return REBET_PUSH  # 走水：直接返回 None，避免对不存在的 dict key 取下标
+        cover = diff > -pt
         return cover
     # h2h（默认）：胜负方向比对
     ao = "home" if h > a else ("draw" if h == a else "away")
@@ -1621,15 +1621,16 @@ def evaluate_predictions(predictions):
         try:
             fix = json.loads(fixtures_path.read_text(encoding="utf-8"))
             for m in fix.get("matches", []):
-                if m.get("status") == "FINISHED" and m.get("score", {}).get("fullTime"):
-                    ft = m["score"]["fullTime"]
-                    if ft.get("home") is not None and ft.get("away") is not None:
-                        finished.append({
-                            "homeTeam": m["homeTeam"]["name"],
-                            "awayTeam": m["awayTeam"]["name"],
-                            "kickoff": m.get("utcDate", ""),
-                            "actualScore": f"{ft['home']}-{ft['away']}",
-                        })
+                # 前后端判据对齐：只要有完整终局比分即视为已完赛可结算，
+                # 不依赖 status=="FINISHED"（Football-Data 免费接口常出现“比分先回、status 仍标 IN_PLAY/TIMED”滞后）。
+                ft = m.get("score", {}).get("fullTime")
+                if ft and ft.get("home") is not None and ft.get("away") is not None:
+                    finished.append({
+                        "homeTeam": m["homeTeam"]["name"],
+                        "awayTeam": m["awayTeam"]["name"],
+                        "kickoff": m.get("utcDate", ""),
+                        "actualScore": f"{ft['home']}-{ft['away']}",
+                    })
         except Exception:
             pass
 
