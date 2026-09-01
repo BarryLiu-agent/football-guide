@@ -980,8 +980,16 @@ function renderFixtures() {
   });
   // 展示模式:已完赛倒序(最近在前),最多 120 场
   const finished = ms.filter(isFinished);
+  // 已完赛的归“赛果”页(renderResults),赛程页只保留未开赛的比赛。
+  // 之前逻辑:若 finished 占比>=80% 就把它当赛程展示 → 已完赛场次混进赛程栏(用户看到已结束还挂在赛程)。
+  // 修正:赛程页过滤掉已完赛,只显示未开赛;若确实无未开赛,显示空态引导去赛果页。
   if (finished.length >= ms.length * 0.8) {
-    ms = finished.sort((a, b) => b.utcDate.localeCompare(a.utcDate)).slice(0, 120);
+    // 大部分已完赛:剩下未开赛的极少,直接展示这些未开赛的;若全完赛则空态
+    const upcoming = ms.filter(m => !isFinished(m));
+    if (!upcoming.length) {
+      return `<div class="empty-state"><div class="icon">📭</div>该联赛暂无未开赛赛程(近期场次已完赛,请查看「⚽ 赛果」页签)</div>`;
+    }
+    ms = upcoming.sort((a, b) => a.utcDate.localeCompare(b.utcDate));
   } else {
     // 常规模式:今天 + 未来 30 天
     ms = ms.filter(m => {
