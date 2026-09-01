@@ -97,7 +97,12 @@ class TheOddsApiSource(OddsSource):
                     env_name = item.get("env")
                     key = os.environ.get(env_name, "").strip()
                     if key and item.get("remaining") is not None:
-                        self._key_quota[key] = int(item["remaining"])
+                        rem = int(item["remaining"])
+                        # 剩余 <=0 的快照不可信（配额可能已于月初重置但旧文件仍是 0）：
+                        # 不写入 _key_quota，让该 key 保持“未记录”状态，fetch 时以未记录=可试重新探测，
+                        # 否则会因旧快照为 0 而永久跳过 → 无法读回真实 remaining（死锁）。
+                        if rem > 0:
+                            self._key_quota[key] = rem
             except Exception:
                 pass
 
@@ -187,8 +192,11 @@ class TheOddsApiSource(OddsSource):
             url = f"{self.config['baseUrl']}/sports/{sport}/odds"
 
             for key in keys:
-                # 配额保护：本次运行内剩余不足则跳过
-                if self._key_quota.get(key, 999) < self.MIN_REMAINING:
+                # 配额保护：仅当“本次运行内已记录过配额且确实 < MIN_REMAINING”才跳过。
+                # 快照为 0 不代表真实耗尽（每月重置后旧快照污染），因此不要因 remaining=0 就永久跳过，
+                # 否则永远发不出请求、读不到真实 remaining → 死锁。
+                prev = self._key_quota.get(key)
+                if prev is not None and prev < self.MIN_REMAINING:
                     continue
                 params = dict(params_base, apiKey=key)
                 # 亚盘降级：部分 region 不支持 asian_handicap → 422 时去掉重试
