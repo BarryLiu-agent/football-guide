@@ -1210,13 +1210,21 @@ function renderCard(m) {
   </div>`;
 }
 
-// 视为已完赛：显式 FINISHED，或 fullTime 已有完整终局比分（Football-Data 免费接口
-// 常出现“比分先回、status 仍标 IN_PLAY/TIMED”的滞后，用有终局比分兜底判定完赛）。
+// 视为已完赛：显式 FINISHED，或 fullTime 已有完整终局比分，或开球已超完赛预估时长仍未完结
+// （Football-Data 免费接口常出现“比分先回、status 仍标 IN_PLAY/TIMED”的滞后，用有终局比分
+// 兜底判定完赛；对“开球超 3h 仍无终局”的极端滞后用时间兜底，避免早该结束的比赛仍显示成未开赛）。
 function isFinished(m) {
   if (!m) return false;
   if (m.status === 'FINISHED') return true;
   const ft = m.score?.fullTime || {};
-  return ft.home != null && ft.away != null;
+  if (ft.home != null && ft.away != null) return true;
+  // 兜底：开球时间已超过完赛预估时长（含中场/伤停）且未给终局 -> 判定为已完结
+  const kick = new Date(m.utcDate).getTime();
+  if (isFinite(kick)) {
+    const FINISHED_AFTER_MS = 3 * 3600000;  // 与后端 STALE_MATCH_HOURS=3.0 对齐
+    if (Date.now() - kick > FINISHED_AFTER_MS) return true;
+  }
+  return false;
 }
 // 视为“不可再作为未开赛/预测补充”的关闭状态（含已完赛／延期／取消等）
 function isClosed(m) {
@@ -1226,18 +1234,23 @@ function isClosed(m) {
 
 function getScore(m) {
   const { score, status } = m;
+  const ft = score?.fullTime || {};
   if (status === 'IN_PLAY' || status === 'LIVE' || status === 'PAUSED') {
-    const ft = score?.fullTime || {};
     return { text: `${ft.home ?? '-'}-${ft.away ?? '-'}`, cls: 'live', statusText: status === 'PAUSED' ? '暂停' : '● 进行中' };
   }
   if (status === 'FINISHED') {
-    const ft = score?.fullTime || {};
-    return { text: `${ft.home ?? '-'}-${ft.away ?? '-'}`, cls: '', statusText: '完赛' };
+    if (ft.home != null && ft.away != null) return { text: `${ft.home}-${ft.away}`, cls: '', statusText: '完赛' };
+    return { text: '-', cls: '', statusText: '已结束(比分待补)' };
   }
   if (status === 'POSTPONED') return { text: '延期', cls: '', statusText: '延期' };
   // 兜底：状态仍标 TIMED/SCHEDULED 但已有终局比分 → 视为已完赛展示比分
-  const ft = score?.fullTime || {};
   if (ft.home != null && ft.away != null) return { text: `${ft.home}-${ft.away}`, cls: '', statusText: '完赛' };
+  // 兜底：开球已超完赛预估时长仍未完结 → 视为已结束（比分待补），不显示成未开赛
+  const kick = new Date(m.utcDate).getTime();
+  if (isFinite(kick)) {
+    const FINISHED_AFTER_MS = 3 * 3600000;
+    if (Date.now() - kick > FINISHED_AFTER_MS) return { text: '-', cls: '', statusText: '已结束(比分待补)' };
+  }
   return { text: 'VS', cls: '', statusText: '' };
 }
 
