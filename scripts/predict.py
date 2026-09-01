@@ -25,7 +25,7 @@ import json
 import math
 import re
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 if sys.stdout.encoding != "utf-8":
@@ -678,6 +678,34 @@ def norm_team(s):
     return __import__('elo').norm_team(s)
 
 
+def _is_finished_match(m: dict) -> bool:
+    """是否已完赛（与前端 isFinished()/数据端过期标记同一判据，避免各函数用 status 判断而遗漏）。
+    Football-Data 免费接口对已结束比赛回填滞后：status 常停留在 TIMED 而比分/状态未更新，
+    因此按 status==FINISHED 或已有完整终局比分或开球超 STALE_MATCH_HOURS 未完结→判定完赛。"""
+    if not m:
+        return False
+    if m.get("status") == "FINISHED":
+        return True
+    ft = (m.get("score") or {}).get("fullTime") or {}
+    if ft.get("home") is not None and ft.get("away") is not None:
+        return True
+    try:
+        kick = datetime.fromisoformat((m.get("utcDate") or "").replace("Z", "+00:00"))
+    except ValueError:
+        return False
+    if datetime.now(timezone.utc) - kick > timedelta(hours=3.0):
+        return True
+    return False
+
+
+def _has_full_score(m: dict) -> bool:
+    """是否有完整终局比分（Elo 结算只更新有比分的场次）。"""
+    if not m:
+        return False
+    ft = (m.get("score") or {}).get("fullTime") or {}
+    return ft.get("home") is not None and ft.get("away") is not None
+
+
 FORM_LAST = 5  # 近 5 场状态
 
 
@@ -856,7 +884,7 @@ def _train_elo(standings_by_league: dict, min_kickoff: str):
         # 本赛季已完赛（开赛后逐步积累，最后迭代使其权重最高）
         with open(DATA_DIR / "fixtures.json", encoding="utf-8") as f:
             fixtures_all = json.load(f).get("matches", [])
-        finished = [m for m in fixtures_all if m.get("status") == "FINISHED"]
+        finished = [m for m in fixtures_all if _is_finished_match(m) and _has_full_score(m)]
         elo.update(finished)
         finished_count = len(finished)
     except Exception as e:
@@ -1393,7 +1421,7 @@ def main():
     try:
         with open(DATA_DIR / "fixtures.json", encoding="utf-8") as f:
             fx = json.load(f).get("matches", [])
-        fin = [m for m in fx if m.get("status") == "FINISHED"]
+        fin = [m for m in fx if _is_finished_match(m)]
         season_info["finishedMatches"] = len(fin)
         if fin:
             season_info["seasonStarted"] = True

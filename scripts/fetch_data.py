@@ -244,6 +244,40 @@ def main(no_filter=False, no_standings=False):
     if errors:
         print(f"  ⚠ 抓取失败联赛: {[e['name'] for e in errors]}")
 
+    # ── 过期比赛兜底标记 ───────────────────────────────────────
+    # Football-Data 免费接口对已结束比赛存在 status/比分 回填滞后：
+    # 已开赛超 STALE_MATCH_HOURS 但 status 仍标 TIMED/SCHEDULED 且 fullTime 为空，
+    # 前端 isFinished()/predict.py 结算都会把它当成未开赛/无赛果。
+    # 这里显式把这类比赛标记完结，让前端 isFinished()/getScore() 立即按"已完赛"处理，
+    # 避免"早该结束的比赛仍显示未开赛"。
+    STALE_MATCH_HOURS = 3.0  # 含中场/伤停在内的完赛预估时长上限
+    # 明确仍在进行的状态（不标记完结），其余视为"应已结束"
+    LIVE_STATUSES = {"IN_PLAY", "LIVE", "PAUSED"}
+    now_utc = datetime.now(timezone.utc)
+    stale_marked = 0
+    for m in all_matches:
+        # 已有明确终态或已有终局比分的不处理
+        if m.get("status") in {"FINISHED", "POSTPONED", "CANCELLED", "AWARDED", "SUSPENDED", "ABANDONED"}:
+            continue
+        if m.get("status") in LIVE_STATUSES:
+            continue
+        ft = (m.get("score") or {}).get("fullTime") or {}
+        if ft.get("home") is not None and ft.get("away") is not None:
+            continue
+        try:
+            kick = datetime.fromisoformat(m.get("utcDate", "").replace("Z", "+00:00"))
+        except ValueError:
+            continue
+        # 开球时间已超过完赛预估时长且未给终局 -> 判定为已结束
+        if now_utc - kick > timedelta(hours=STALE_MATCH_HOURS):
+            m["status"] = "FINISHED"
+            m.setdefault("score", {})["fullTime"] = {
+                "home": None, "away": None  # 比分待接口回填，前端按"已完赛待比分"展示
+            }
+            stale_marked += 1
+    if stale_marked:
+        print(f"  ✓ 过期未回填比赛标记完结: {stale_marked} 场")
+
     # Build output
     output = {
         "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
