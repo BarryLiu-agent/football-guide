@@ -683,45 +683,101 @@ FORM_LAST = 5  # 近 5 场状态
 
 def load_form(min_kickoff=""):
     """每队最近 N 场场均积分（0~3），主/客场分开计算。
-    数据源 data/season_2025.json。
+    数据源：data/season_2025.json（上赛季历史）叠加 data/fixtures.json（本赛季已完赛）。
     只使用早于预测窗口开赛日的赛果（防未来函数），并按时间排序取每队最近 FORM_LAST 场。
-    返回 { team: {"home": 场均主场积分, "away": 场均客场积分, "overall": 场均总积分} }"""
-    path = DATA_DIR / "season_2025.json"
-    if not path.exists():
-        return {}
-    try:
-        with open(path, encoding="utf-8") as f:
-            data = json.load(f)
-    except Exception:
-        return {}
+    返回 { team_norm: {"home": 场均主场积分, "away": 场均客场积分, "overall": 场均总积分} }
+
+    队名归一化：由于 season（全名如 Celta Vigo）与 fixtures（shortName 如 Celta）口径不一致，
+    本函数建立“全词包含”别名索引：查询时先精确匹配，再一方全词包含于另一方（要求查询词数>=2
+    或单词长度>=4），从而让 Celta/Deportivo 等短名也能匹配到赛季全名，避免 form 丢失近期战绩。"""
     team_matches = {}
-    for m in data.get("matches", []):
-        if m.get("homeGoals") is None or m.get("awayGoals") is None:
-            continue
-        # 未来赛果（>= 最早预测开赛日）不参与 form 计算
-        if min_kickoff and (m.get("utcDate") or "") >= min_kickoff:
-            continue
-        for side in ("home", "away"):
-            t = norm_team(m[f"{side}Team"])
-            team_matches.setdefault(t, []).append({"m": m, "side": side})
+    # 1. 上赛季历史（season_2025.json）
+    s_path = DATA_DIR / "season_2025.json"
+    if s_path.exists():
+        try:
+            data = json.loads(s_path.read_text(encoding="utf-8"))
+            for m in data.get("matches", []):
+                if m.get("homeGoals") is None or m.get("awayGoals") is None:
+                    continue
+                if min_kickoff and (m.get("utcDate") or "") >= min_kickoff:
+                    continue
+                for side in ("home", "away"):
+                    t = norm_team(m[f"{side}Team"])
+                    team_matches.setdefault(t, []).append({"m": m, "side": side})
+        except Exception:
+            pass
+    # 2. 本赛季已完赛（fixtures.json，反映近期真实状态）
+    f_path = DATA_DIR / "fixtures.json"
+    if f_path.exists():
+        try:
+            fx = json.loads(f_path.read_text(encoding="utf-8"))
+            for m in fx.get("matches", []):
+                ft = m.get("score", {}).get("fullTime")
+                if not ft or ft.get("home") is None or ft.get("away") is None:
+                    continue
+                if m.get("status") != "FINISHED" and not (ft.get("home") is not None and ft.get("away") is not None):
+                    continue
+                if min_kickoff and (m.get("utcDate") or "") >= min_kickoff:
+                    continue
+                # 队名优先用 shortName（和 season 简称更接近），其次 name
+                h = m.get("homeTeam") or {}
+                a = m.get("awayTeam") or {}
+                hn = norm_team(h.get("shortName") or h.get("name") or "")
+                an = norm_team(a.get("shortName") or a.get("name") or "")
+                if not hn or not an:
+                    continue
+                rec = {"hg": ft["home"], "ga": ft["away"], "date": m.get("utcDate", "")}
+                team_matches.setdefault(hn, []).append({"m": rec, "side": "home"})
+                team_matches.setdefault(an, []).append({"m": rec, "side": "away"})
+        except Exception:
+            pass
+    # 3. 计算 form（键 = 归一化队名；含“全词包含”别名索引）
     form = {}
+    # 建立别名→主键映射：短名(如 celta) 全词包含于全名(如 celta vigo) 时，把短名的比赛归并到全名主键下，
+    # 避免 season 与 fixtures 队名口径不一致导致 form 分裂。
+    form_keys = {}
+    for t in team_matches:
+        form_keys[t] = t  # 精确键
+    for t in team_matches:
+        words = [w for w in t.split() if w]
+        if not words:
+            continue
+        for k in team_matches:
+            if k == t:
+                continue
+            kwords = [w for w in k.split() if w]
+            match = False
+            if len(words) >= 2 and all(w in kwords for w in words):
+                match = True
+            elif len(words) == 1 and len(words[0]) >= 4 and words[0] in kwords:
+                match = True
+            # 只把“短名/简称”归并到“更完整的全名”主键下（t 是 k 的子集时），避免双向覆盖
+            if match and len(kwords) > len(words) and k not in form_keys:
+                form_keys[t] = k
+    # 聚合：把别名 t 的比赛并入主键 form_keys[t]
+    merged = {}
     for t, ms in team_matches.items():
-        ms = sorted(ms, key=lambda x: x["m"].get("utcDate", ""))
-        # 最近 N 场总体
+        key = form_keys.get(t, t)
+        merged.setdefault(key, []).extend(ms)
+    def avg_pts(items):
+        if not items:
+            return None
+        total = 0.0
+        for it in items:
+            r = it["m"]
+            # 兼容 season（homeGoals/awayGoals）与 fixtures（hg/ga）两种字段
+            gf = r.get("homeGoals", r.get("hg"))
+            ga = r.get("awayGoals", r.get("ga"))
+            if gf is None or ga is None:
+                continue
+            pts = 3 if gf > ga else (1 if gf == ga else 0)
+            total += pts
+        return round(total / max(1, len(items)), 3)
+    for t, ms in merged.items():
+        ms = sorted(ms, key=lambda x: x["m"].get("date") or x["m"].get("utcDate", ""))
         recent = ms[-FORM_LAST:]
         if not recent:
             continue
-        def avg_pts(items):
-            if not items:
-                return None
-            total = 0.0
-            for it in items:
-                m = it["m"]
-                gf, ga = m["homeGoals"], m["awayGoals"]
-                pts = 3 if gf > ga else (1 if gf == ga else 0)
-                total += pts
-            return round(total / len(items), 3)
-        # 主场只看主队身份的最近 N 场；客场只看客队身份
         home_ms = [it for it in recent if it["side"] == "home"][-FORM_LAST:]
         away_ms = [it for it in recent if it["side"] == "away"][-FORM_LAST:]
         form[t] = {
